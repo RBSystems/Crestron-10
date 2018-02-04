@@ -1,0 +1,101 @@
+// +++ Dyrektywy kompilatora +++
+#SYMBOL_NAME "RemoteSourceSelect"
+#CATEGORY "32" // Miscellaneous 
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+// --- Dyrektywy kompilatora ---
+
+// +++ Stale +++
+#DEFINE_CONSTANT SOURCES_COUNT 20
+#DEFINE_CONSTANT PULSE_LENGTH 10
+// --- Stale ---
+
+// +++ Wejscia +++
+ANALOG_INPUT Audio_Source;
+ANALOG_INPUT Audio_Source_FB;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT Video_Source;
+ANALOG_INPUT Video_Source_FB;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT Source_Audio_ID[SOURCES_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT Source_Video_ID[SOURCES_COUNT];
+// --- Wejscia ---
+
+// +++ Wyjscia +++
+DIGITAL_OUTPUT RemoteOff;
+DIGITAL_OUTPUT RemoteSource[SOURCES_COUNT];
+// --- Wyjscia --- 
+
+// +++ Zmienne globalne +++
+INTEGER NoAudioFlag;
+INTEGER NoVideoFlag;
+// --- Zmienne globalne ---
+
+// +++ Obsluga zdarzen +++
+CHANGE Audio_Source_FB
+{
+	INTEGER i;
+
+	if (Audio_Source_FB = Audio_Source) return;
+    
+    if (Audio_Source_FB = 0)
+    {
+    	NoAudioFlag = 1;
+
+    	PULSE(PULSE_LENGTH, RemoteOff);
+    	return;
+    }
+    
+	for (i = 1 to SOURCES_COUNT)
+	{
+		if (Source_Audio_ID[i] = Audio_Source_FB)
+		{
+			PULSE(PULSE_LENGTH, RemoteSource[i]);
+			NoAudioFlag = 0;
+			return;
+		}
+	}
+	
+	
+	if (NoVideoFlag = 1) PULSE(PULSE_LENGTH, RemoteOff);
+
+	//NoAudioFlag = 0;
+}
+
+CHANGE Video_Source_FB
+{
+	INTEGER i;
+
+	if (Video_Source_FB = Video_Source) return;
+
+	for (i = 1 to SOURCES_COUNT)
+	{
+		if (Source_Video_ID[i] = Video_Source_FB)
+		{
+			PULSE(PULSE_LENGTH, RemoteSource[i]);
+			NoVideoFlag = 0;
+			return;
+		}
+		
+	}
+
+	NoVideoFlag = 1;
+
+	if (NoAudioFlag = 1) PULSE(PULSE_LENGTH, RemoteOff);
+
+	//NoVideoFlag = 0;
+}
+// --- Obsluga zdarzen ---
+
+// +++ Funkcja Main +++
+Function Main()
+{
+    WaitForInitializationComplete();
+
+	NoAudioFlag = 0;
+	NoVideoFlag = 0;
+}
+// --- Funkcja Main ---

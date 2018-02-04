@@ -1,0 +1,204 @@
+//	Dyrektywy kompilatora
+#CATEGORY "41"
+#SYMBOL_NAME "AVS_DeviceManager"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+//	Biblioteki
+#USER_LIBRARY "usl_AVSystem_Constants"
+#USER_SIMPLSHARP_LIBRARY "ssl_AVSystem"
+
+//	Sygnaly wejsciowe
+DIGITAL_INPUT	sys_Initialize;
+DIGITAL_INPUT	dev_Ready_FB;
+DIGITAL_INPUT	_SKIP_;
+DIGITAL_INPUT	dev_Mute_FB[ZONE_COUNT, ZONE_COUNT];
+DIGITAL_INPUT	_SKIP_;
+ANALOG_INPUT	dev_Volume#_FB[ZONE_COUNT];
+ANALOG_INPUT	_SKIP_;
+ANALOG_INPUT	dev_AudioSource#_FB[ZONE_COUNT, ZONE_COUNT];
+
+//	Sygnaly wyjsciowe
+DIGITAL_OUTPUT	sys_Initialized_FB;
+DIGITAL_OUTPUT	_SKIP_, _SKIP_;
+DIGITAL_OUTPUT	dev_Mute_On[ZONE_COUNT];
+DIGITAL_OUTPUT	_SKIP_;
+DIGITAL_OUTPUT	dev_Mute_Off[ZONE_COUNT];
+DIGITAL_OUTPUT	_SKIP_;
+ANALOG_OUTPUT	dev_Volume#[ZONE_COUNT];
+ANALOG_OUTPUT	_SKIP_;
+ANALOG_OUTPUT	dev_AudioSource#[ZONE_COUNT];
+ANALOG_OUTPUT	_SKIP_;
+ANALOG_OUTPUT	dev_VideoSource#[ZONE_COUNT, ZONE_COUNT];
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje przekazujace wartosci sygnalow wejsciowych do Simpl#
+
+FUNCTION PassMuteFromDevice(INTEGER zoneId)
+{
+	if (CElementManager.IsInitialized = 1) CDevice.UpdateZoneMute(zoneId, dev_Mute_FB[zoneId]);
+}
+
+FUNCTION PassAudioSourceFromDevice(INTEGER zoneId)
+{
+    if (CElementManager.IsInitialized = 1) CDevice.UpdateZoneSelectedAudioId(zoneId, dev_AudioSource#_FB[zoneId]);
+}
+
+
+FUNCTION PassVolumeFromDevice(INTEGER zoneId)
+{
+    if (CElementManager.IsInitialized = 1) CDevice.UpdateZoneVolume(zoneId, dev_Volume#_FB[zoneId]);
+}
+
+FUNCTION PassSignalsFromDevice()
+{
+	INTEGER zoneId;
+
+	for (zoneId = 1 to ZONE_COUNT)
+	{
+		PassMuteFromDevice(zoneId);
+        PassAudioSourceFromDevice(zoneId);
+        PassVolumeFromDevice(zoneId);
+	}
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje Callback dla delegat Simpl#
+CALLBACK FUNCTION TraceMessageCallback(STRING _message)
+{
+	trace("%s", _message);
+}
+
+CALLBACK FUNCTION AudioSourceSelectCallback(INTEGER _zoneId, INTEGER _audioId)
+{
+	if (dev_Ready_FB = 0 || CElementManager.IsInitialized = 0) return;
+	trace("S+: AudioSourceSelectCallback(%u,%u)", _zoneId, _audioId);
+	dev_AudioSource#[_zoneId] = _audioId;
+}
+
+CALLBACK FUNCTION VideoSourceSelectCallback(INTEGER _zoneId, INTEGER _videoId)
+{
+	if (dev_Ready_FB = 0 || CElementManager.IsInitialized = 0) return;
+	trace("S+: VideoSourceSelectCallback(%u,%u)", _zoneId, _videoId);
+	dev_VideoSource#[_zoneId] = _videoId;
+}
+
+CALLBACK FUNCTION VolumeSetCallback(INTEGER _zoneId, INTEGER _volume)
+{
+	if (dev_Ready_FB = 0 || CElementManager.IsInitialized = 0) return;
+	
+	dev_Volume#[_zoneId] = _volume;
+}
+
+CALLBACK FUNCTION MuteSetCallback(INTEGER _zoneId, INTEGER _mute)
+{
+	if (dev_Ready_FB = 0 || CElementManager.IsInitialized = 0) return;
+	
+	if (_mute = 0) pulse(PULSE_TIME, dev_Mute_Off[_zoneId]);
+	else pulse(PULSE_TIME, dev_Mute_On[_zoneId]);
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje obslugujace zdarzenia wywylane przez Simpl#
+
+EVENTHANDLER ElementManagerInitializedHandler(CElement element, EventArgs e)
+{
+	if (dev_Ready_FB = 1)
+	{
+		PassSignalsFromDevice();
+		sys_Initialized_FB = 1;
+	}
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje inicializujace
+
+FUNCTION InitializeSharpConstants()
+{
+	CElement.SHORT_NAME_LENGTH = SHORT_NAME_LENGTH;
+    CElement.LONG_NAME_LENGTH = LONG_NAME_LENGTH;
+	CSource.COUNT = SOURCE_COUNT;
+	CZone.COUNT = ZONE_COUNT;
+	CGroup.COUNT = GROUP_COUNT;	
+}
+
+FUNCTION RegisterSharpDelegates()
+{
+	RegisterDelegate(CDebugHelper, TraceMessage, TraceMessageCallback);
+    RegisterDelegate(CDevice, AudioSourceSelect, AudioSourceSelectCallback);
+    RegisterDelegate(CDevice, VideoSourceSelect, VideoSourceSelectCallback);
+    RegisterDelegate(CDevice, VolumeSet, VolumeSetCallback);
+	RegisterDelegate(CDevice, MuteSet, MuteSetCallback);
+}
+
+FUNCTION RegisterSharpEvents()
+{
+	RegisterEvent(CElementManager, ElementManagerInitialized, ElementManagerInitializedHandler);
+}
+
+FUNCTION InitializeModule()
+{
+	InitializeSharpConstants();
+	RegisterSharpDelegates();
+	RegisterSharpEvents();
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Obsluga sygnalow wejsciowych
+
+PUSH sys_Initialize
+{
+	if (CElementManager.IsInitialized = 0) CElementManager.Initialize();
+}
+
+PUSH dev_Ready_FB
+{
+	if (CElementManager.IsInitialized = 1)
+	{
+		PassSignalsFromDevice();
+		sys_Initialized_FB = 1;
+	}
+}
+
+CHANGE dev_Mute_FB
+{
+	PassMuteFromDevice(getLastModifiedArrayIndex());
+}
+
+CHANGE dev_AudioSource#_FB
+{
+	PassAudioSourceFromDevice(getLastModifiedArrayIndex());	
+}
+
+CHANGE dev_Volume#_FB
+{
+	PassVolumeFromDevice(getLastModifiedArrayIndex());
+}
+
+/*
+ *	=================================================================
+ */
+
+// Funkcja Main
+Function Main()
+{
+	InitializeModule();
+	WaitForInitializationComplete();
+	// TODO Init
+}

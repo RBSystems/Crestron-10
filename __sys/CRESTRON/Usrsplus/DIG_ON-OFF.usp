@@ -1,0 +1,42 @@
+//Compiler Directives
+#SYMBOL_NAME "DIG_ON-OFF"
+#HINT ""
+// #CATEGORY ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT PULSE_TIME 10
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+// Inputs & Outputs
+
+DIGITAL_INPUT digOn, digOff, _SKIP_, digOn_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, digToggle;
+
+// Sockets
+// Parameters
+// Parameter Properietes
+// Structure Definitions
+// Global Variables
+// Functions
+// Event Handlers
+
+PUSH digOn
+{
+	if (digOn_FB = 0) Pulse(PULSE_TIME, digToggle);
+}
+
+PUSH digOff
+{
+	if (digOn_FB = 1) Pulse(PULSE_TIME, digToggle);
+}
+
+Function Main()
+{
+}

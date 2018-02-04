@@ -1,0 +1,34 @@
+[Crestron_Toolbox_Address_Book]
+
+[Entries]
+This .xadr file was created using Toolbox v2.41 or later.=:slot 01
+It is not compatible with this version of Toolbox.=:slot 02
+Please open a .adr Address Book to continue.=:slot 03
+
+[AddressBookInfo]
+Schema=2.0
+Version=1.0
+DefaultEntry=
+
+[ComSpecs]
+DIN-DALI_1_Remote_Indirect=DIN-AP3_Remote:cresnet A0
+DIN-DALI_2_Remote_Indirect=DIN-AP3_Remote:cresnet A1
+011_usb=usb
+DIN-AP3=auto 192.168.1.201
+DIN-DALI_1=auto 192.168.1.211
+DIN-DALI_2=auto 192.168.1.212
+DIN-AP3_Remote=auto 188.125.46.176
+DIN-DALI_1_Remote=auto 188.125.46.176,51795
+DIN-DALI_2_Remote=auto 188.125.46.176,61795
+
+[Notes]
+DIN-DALI_1_Remote_Indirect=
+DIN-DALI_2_Remote_Indirect=
+011_usb=
+DIN-AP3=
+DIN-DALI_1=
+DIN-DALI_2=
+DIN-AP3_Remote=
+DIN-DALI_1_Remote=
+DIN-DALI_2_Remote=
+

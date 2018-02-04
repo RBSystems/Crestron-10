@@ -1,0 +1,110 @@
+#CATEGORY "46" "Parsers" // Custom
+#SYMBOL_NAME "VictronAnalogParser"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT ELEMENT_LENGTH 10
+#DEFINE_CONSTANT OUTPUT_LENGTH 50
+#DEFINE_CONSTANT MAX_VALUE 65535
+#DEFINE_CONSTANT HALF_VALUE 32767
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+// Inputs & Outputs
+
+ANALOG_INPUT analogIn;
+STRING_OUTPUT serialOut;
+
+// Sockets
+// Parameters
+
+INTEGER_PARAMETER parsingType;
+STRING_PARAMETER suffix[ELEMENT_LENGTH];
+
+// Parameter Properietes
+
+#BEGIN_PARAMETER_PROPERTIES parsingType
+   propValidUnits = unitDecimal;
+   propList =  { 1d , "int16/10" } , { 2d , "int16/100" } , { 3d , "int16x10" }, { 4d , "uint16/10" }, { 5d , "uint16/100" } ;
+#END_PARAMETER_PROPERTIES
+
+// Structure Definitions
+// Global Variables
+
+STRING buffer[OUTPUT_LENGTH];
+
+// Functions
+
+INTEGER_FUNCTION isNegative()
+{
+	if (analogIn > HALF_VALUE)
+	{
+		buffer = "- ";
+		return(1);
+	}
+	else return(0);
+}
+
+INTEGER_FUNCTION int16AbsoluteValue()
+{
+	if (isNegative()) return(MAX_VALUE-analogIn);
+	else return(analogIn);
+}
+
+FUNCTION process()
+{
+	INTEGER value;
+	
+	switch(parsingType)
+	{
+		CASE (1):
+		{
+			value = int16AbsoluteValue();
+			buffer = buffer + itoa(value/10) + "," + itoa(value%10);
+		}
+
+		CASE (2):
+		{
+			value = int16AbsoluteValue();
+			buffer = buffer + itoa(value/100) + "," + itoa(value%100);
+		}
+
+		CASE (3):
+		{
+			value = int16AbsoluteValue();
+			buffer = buffer + itoa(value*10);
+		}
+
+		CASE (4):
+		{
+			value = analogIn;
+			buffer = buffer + itoa(value/10) + "," + itoa(value%10);
+		}
+
+		CASE (5):
+			{
+				value = analogIn;
+				buffer = buffer + itoa(value/100) + "," + itoa(value%100);
+			}
+
+	}
+
+	serialOut = buffer + suffix;
+	buffer = "";
+}
+
+// Event Handlers
+
+CHANGE analogIn
+{
+	process();
+}
+
+Function Main()
+{
+	buffer = "";
+	serialOut = "0" + suffix;
+}

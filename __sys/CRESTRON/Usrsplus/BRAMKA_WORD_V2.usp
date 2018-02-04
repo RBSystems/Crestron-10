@@ -1,0 +1,107 @@
+#SYMBOL_NAME "BRAMKA_WORD_v2"
+#CATEGORY "41" // Remote System Interface
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT MIN_STR_COUNT 10
+#DEFINE_CONSTANT MAX_STR_COUNT 100
+#DEFINE_CONSTANT MSG_SIZE 40
+
+DIGITAL_INPUT connected, _SKIP_;
+
+STRING_INPUT strIn[MSG_SIZE], _SKIP_;
+
+ANALOG_INPUT str_i[MAX_STR_COUNT, MIN_STR_COUNT];
+
+
+STRING_OUTPUT _SKIP_,_SKIP_, strOut, _SKIP_;
+ANALOG_OUTPUT str_o[MAX_STR_COUNT, MIN_STR_COUNT];
+
+INTEGER gInStrCount, gOutStrCount, gBlockZeroFlag;
+
+INTEGER_FUNCTION GetInputStringsCount()
+{
+	INTEGER i;
+	   	
+	for (i = MAX_STR_COUNT to 1 step -1)
+	{
+		if (isSignalDefined(str_i[i]))
+		{
+			return(i);
+		}
+	}
+}
+
+INTEGER_FUNCTION GetOutputStringsCount()
+{
+	INTEGER i;
+	   	
+	for (i = MAX_STR_COUNT to 1 step -1)
+	{
+		if (isSignalDefined(str_o[i]))
+		{
+			return(i);
+		}
+	}
+}
+
+FUNCTION SendStringByIndex(INTEGER _index)
+{
+	INTEGER value;
+
+	value = str_i[_index];
+	
+	if (gBlockZeroFlag = 1 && value = 0) return;
+
+	strOut = itoa(_index) + "_" + itoa(value);
+}
+ 
+PUSH connected
+{
+	INTEGER i;
+
+	for (i=1 TO gInStrCount) 
+	{
+	 	SendStringByIndex(i);
+	}
+    
+	gBlockZeroFlag = 0;
+}
+
+RELEASE connected
+{  
+	INTEGER i;
+
+	for (i=1 TO gOutStrCount) 
+	{
+	 	str_o[i]=0;
+	}
+
+	gBlockZeroFlag = 1;
+} 
+ 
+CHANGE strIn
+{            
+	integer n;
+	                        
+	n=find("_",strIn);
+	str_o[atoi(strIn)]=atoi(right(strIn,len(strIn)-n));      
+}
+
+CHANGE str_i
+{
+	SendStringByIndex(GetLastModifiedArrayIndex());
+}
+
+Function Main()
+{
+    gBlockZeroFlag = 1;
+
+	gOutStrCount = GetOutputStringsCount();
+	gInStrCount =  GetInputStringsCount();
+
+    WaitForInitializationComplete();
+}
+
+

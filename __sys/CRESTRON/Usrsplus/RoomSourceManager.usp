@@ -1,0 +1,216 @@
+//Compiler Directives
+#SYMBOL_NAME "RoomSourceManager"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+
+#DEFINE_CONSTANT SOURCES_COUNT 20
+#DEFINE_CONSTANT SOURCE_ID_LENGTH 3
+#DEFINE_CONSTANT ID_STRING_LENGTH 60
+#DEFINE_CONSTANT ROOM_NAME_LENGTH 50
+#DEFINE_CONSTANT SOURCE_NAME_LENGTH 25
+#DEFINE_CONSTANT SOURCE_NAME_SHORT_LENGTH 7
+#DEFINE_CONSTANT NAMES_STRING_LENGTH 500
+#DEFINE_CONSTANT NAMES_STRING_SHORT_LENGTH 140
+#DEFINE_CONSTANT STARTUP_DELAY 500
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Inputs
+
+DIGITAL_INPUT _SKIP_, Power_Toggle, Power_On, Power_Off, _SKIP_;
+DIGITAL_INPUT Select_Source[SOURCES_COUNT, SOURCES_COUNT], _SKIP_;
+
+ANALOG_INPUT Audio_Source#_FB, Video_Source#_FB, _SKIP_;
+
+BUFFER_INPUT Sources_Audio_IDs$[ID_STRING_LENGTH];
+BUFFER_INPUT Sources_Video_IDs$[ID_STRING_LENGTH];
+BUFFER_INPUT Sources_Names$[NAMES_STRING_LENGTH];
+BUFFER_INPUT Sources_Names_Short$[NAMES_STRING_SHORT_LENGTH];
+
+// Outputs
+
+DIGITAL_OUTPUT _SKIP_, _SKIP_, Power_On_FB, Power_Off_FB, _SKIP_;
+DIGITAL_OUTPUT Source_Selected_FB[SOURCES_COUNT, SOURCES_COUNT], _SKIP_;
+ANALOG_OUTPUT Audio_Source#, Video_Source#, _SKIP_;
+
+STRING_OUTPUT Room_Name$, Selected_Source_Name$, Selected_Source_Name_Short$;
+
+// Sockets
+// Parameters
+
+STRING_PARAMETER pRoom_Name[ROOM_NAME_LENGTH], _SKIP_, _SKIP_, _SKIP_;
+INTEGER_PARAMETER pDefault_Source;
+
+// Parameter Properietes
+
+#BEGIN_PARAMETER_PROPERTIES pRoom_Name
+   propValidUnits = unitString;
+   propDefaultUnit = unitString;
+   propDefaultValue = "";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES pDefault_Source
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , 20d;
+#END_PARAMETER_PROPERTIES
+
+// Structure Definitions
+// Global Variables
+
+INTEGER gSourceAudioID[SOURCES_COUNT];
+INTEGER gSourceVideoID[SOURCES_COUNT];
+STRING gSourceName[SOURCES_COUNT][SOURCE_NAME_LENGTH];
+STRING gSourceNameShort[SOURCES_COUNT][SOURCE_NAME_SHORT_LENGTH];
+
+INTEGER gSelectedSource;
+
+// Functions
+
+FUNCTION ReadSourcesInfo()
+{
+	Integer i;
+    String tempSourceAudioID[SOURCE_ID_LENGTH];
+	String tempSourceVideoID[SOURCE_ID_LENGTH];
+	String tempSourceName[SOURCE_NAME_LENGTH];
+	String tempSourceNameShort[SOURCE_NAME_SHORT_LENGTH];
+
+    for (i = 1 to SOURCES_COUNT)
+	{
+		tempSourceAudioID = REMOVE("|", Sources_Audio_IDs$);
+		tempSourceVideoID = REMOVE("|", Sources_Video_IDs$);
+		tempSourceName = REMOVE("|", Sources_Names$);
+		tempSourceNameShort = REMOVE("|", Sources_Names_Short$);
+
+		gSourceAudioID[i] = ATOI(tempSourceAudioID);
+		gSourceVideoID[i] = ATOI(tempSourceVideoID);
+		gSourceName[i] = LEFT(tempSourceName, LEN(tempSourceName) - 1);
+		gSourceNameShort[i] = LEFT(tempSourceNameShort, LEN(tempSourceNameShort) - 1);
+	}
+
+	
+}
+
+INTEGER_FUNCTION GetSourceNumberByVideoID(INTEGER videoID)
+{
+	INTEGER sourceNumber;
+
+	if (videoID = 0) return(0);
+
+	for (sourceNumber = 1 to SOURCES_COUNT)
+	{
+		if (gSourceVideoID[sourceNumber] = videoID) return(sourceNumber);
+	}
+
+	return(-1);
+}
+
+INTEGER_FUNCTION GetSourceNumberByAudioID(INTEGER audioID)
+{
+	INTEGER sourceNumber;
+
+	if (audioID = 0) return(0);
+
+	for (sourceNumber = 1 to SOURCES_COUNT)
+	{
+		if (gSourceAudioID[sourceNumber] = audioID) return(sourceNumber);
+	}
+
+	return(-1);
+}
+
+FUNCTION SetSourceFB(INTEGER sourceNumber)
+{
+	INTEGER index;
+
+	if (sourceNumber > 0)
+	{
+		Power_On_FB = 1;
+		Power_Off_FB = 0;
+		Selected_Source_Name$ = gSourceName[sourceNumber];
+		Selected_Source_Name_Short$ = gSourceNameShort[sourceNumber];
+	}
+	else
+	{
+		Power_On_FB = 0;
+		Power_Off_FB = 1;
+		Selected_Source_Name$ = "BRAK";
+		Selected_Source_Name_Short$ = "BRAK";
+	}
+
+	for (index = 1 to SOURCES_COUNT)
+	{
+		if (index = sourceNumber) Source_Selected_FB[index] = 1;
+		else Source_Selected_FB[index] = 0;
+	}
+
+}
+
+FUNCTION SelectSourceByNumber(INTEGER sourceNumber)
+{
+	Audio_Source# = gSourceAudioID[sourceNumber];
+	Video_Source# = gSourceVideoID[sourceNumber];
+}
+
+// Event Handlers
+
+PUSH Power_Toggle
+{
+	if (Power_On_FB = 1) SelectSourceByNumber(0);
+	else SelectSourceByNumber(pDefault_Source);
+}
+
+PUSH Power_On
+{
+	if (Power_Off_FB = 1) SelectSourceByNumber(pDefault_Source);
+}
+
+PUSH Power_Off
+{
+	if (Power_On_FB = 1) SelectSourceByNumber(0);
+}
+
+PUSH Select_Source
+{
+	SelectSourceByNumber(getLastModifiedArrayIndex());
+}
+
+CHANGE Video_Source#_FB, Audio_Source#_FB 
+{
+	INTEGER videoSourceNr, audioSourceNr;
+
+	videoSourceNr = GetSourceNumberByVideoID(Video_Source#_FB);
+
+	if (videoSourceNr > 0)
+	{
+		SetSourceFB(videoSourceNr);
+		return;
+	}
+
+    audioSourceNr = GetSourceNumberByAudioID(Audio_Source#_FB);
+
+	if (audioSourceNr > 0)
+	{
+		SetSourceFB(audioSourceNr);
+		return;
+	}
+
+    SetSourceFB(0);
+}
+
+// Main Function
+
+FUNCTION Main()
+{
+	delay(STARTUP_DELAY);
+	ReadSourcesInfo();
+	SetSourceFB(0);
+	Room_Name$ = pRoom_Name;
+}

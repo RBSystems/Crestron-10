@@ -1,0 +1,107 @@
+//Compiler Directives
+#CATEGORY "13" // Timers
+#SYMBOL_NAME "Button Combo"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+// Constants
+
+#DEFINE_CONSTANT PULSE_TIME 1
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+
+
+
+// Inputs
+
+DIGITAL_INPUT _SKIP_, _SKIP_, in;
+
+// Outputs
+
+DIGITAL_OUTPUT _SKIP_, _SKIP_, singleTap, doubleTap, tripleTap, _SKIP_, hold;
+
+// Sockets
+
+
+
+// Parameters
+
+INTEGER_PARAMETER pTapInterval, pHoldTime;
+
+// Parameter Properietes
+
+
+#BEGIN_PARAMETER_PROPERTIES pTapInterval, pHoldTime
+   propValidUnits = unitTime;
+   propDefaultUnit = unitTime;
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+
+
+
+// Global Variables
+
+INTEGER gHoldFlag, gTapCounter;
+INTEGER gOldTime, gNewTime;
+// Functions
+
+FUNCTION HandleTap(INTEGER _tapCount)
+{
+	
+}
+
+// Event Handlers
+
+PUSH in
+{
+    gTapCounter = gTapCounter + 1;
+
+	wait (pTapInterval, WAIT_TAP)
+	{
+		HandleTap(gTapCounter);
+	}
+
+	wait (pHoldTime, WAIT_HOLD)
+	{
+ 	 	cancelWait(WAIT_TAP);
+		PULSE(PULSE_TIME, hold);
+ 	 	gHoldFlag = 1;
+ 	}
+	
+}
+
+RELEASE in
+{
+    cancelWait(WAIT_HOLD);
+ 	   
+
+	if (gHoldFlag = 0)
+	{
+ 	 	// TODO not hold
+ 	}
+                 
+ 	gHoldFlag = 0;	
+}
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	gHoldFlag = 0;
+	gTapCounter = 0;
+	gOldTime = 0;
+	gNewTime = 0;
+}

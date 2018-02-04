@@ -1,0 +1,92 @@
+//Compiler Directives
+#CATEGORY "41"#SYMBOL_NAME "eKinex Temperature Copy"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+// Constants
+
+#DEFINE_CONSTANT ZONES_COUNT 20
+#DEFINE_CONSTANT MIN_TARGET 1500
+#DEFINE_CONSTANT MAX_TARGET 3300
+#DEFINE_CONSTANT DEF_DELAY 5
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+
+
+
+// Inputs
+DIGITAL_INPUT update;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT heating_FB;
+ANALOG_INPUT target#;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT zoneBaseHeating#_FB[ZONES_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT zoneBaseCooling#_FB[ZONES_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT zoneTarget#_FB[ZONES_COUNT, ZONES_COUNT];
+
+
+// Outputs
+ANALOG_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+ANALOG_OUTPUT zoneBaseHeating#[ZONES_COUNT];
+ANALOG_OUTPUT _SKIP_; 
+ANALOG_OUTPUT zoneBaseCooling#[ZONES_COUNT, ZONES_COUNT];
+
+// Global Variables
+
+
+
+// Functions
+
+FUNCTION setZoneHeatingBase(INTEGER _zoneID, INTEGER _target)
+{
+	INTEGER offset;
+
+	offset = zoneTarget#_FB[_zoneID] - zoneBaseHeating#_FB[_zoneID];
+
+	zoneBaseHeating#[_zoneID] = _target - offset;
+}
+
+FUNCTION setZoneCoolingBase(INTEGER _zoneID, INTEGER _target)
+{
+	INTEGER offset;
+
+	offset = zoneTarget#_FB[_zoneID] - zoneBaseCooling#_FB[_zoneID];
+
+	zoneBaseCooling#[_zoneID] = _target - offset;
+}
+
+FUNCTION setAllZonesBase()
+{
+	INTEGER i;
+    if (heating_FB = 1) for (i = 1 to ZONES_COUNT) setZoneHeatingBase(i, target#);
+	else for (i = 1 to ZONES_COUNT) setZoneCoolingBase(i, target#);
+}
+
+// Event Handlers
+
+PUSH update
+{
+	if (target# < MIN_TARGET || target# > MAX_TARGET) return;
+	delay (DEF_DELAY);
+	setAllZonesBase();
+}
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}

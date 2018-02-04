@@ -1,0 +1,128 @@
+//Compiler Directives
+
+#CATEGORY "40" // Interface-Specific Logic
+#SYMBOL_NAME "eKinexMultiroom"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND AllWithAny
+
+// Constants
+
+#DEFINE_CONSTANT MAX_SOURCES_COUNT 20
+#DEFINE_CONSTANT PULSE_TIME 50
+#DEFINE_CONSTANT SOURCE_NAME_LENGTH 15
+#DEFINE_CONSTANT VOLUME_INFO_LENGTH 6
+#DEFINE_CONSTANT ZONE_INFO_LENGTH 14
+
+// Inputs
+
+DIGITAL_INPUT Next_Source, Previous_Source, _SKIP_;
+DIGITAL_INPUT Source_Selected_FB[MAX_SOURCES_COUNT];
+
+
+//ANALOG_INPUT Source#_FB, _SKIP_;
+STRING_INPUT _SKIP_, Source_Name$[SOURCE_NAME_LENGTH];
+STRING_INPUT Volume_Info$[VOLUME_INFO_LENGTH];
+
+// Outputs
+
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, Select_Source[MAX_SOURCES_COUNT];
+STRING_OUTPUT _SKIP_, Zone_Info$;
+
+// Parameters
+
+//INTEGER_PARAMETER _SKIP_, _SKIP_, _SKIP_, pSourceAvailable[MAX_SOURCES_COUNT];
+
+// Parameter Properietes
+/*
+#BEGIN_PARAMETER_PROPERTIES pSourceAvailable
+   propValidUnits= unitDecimal;
+   propDefaultUnit=unitDecimal;
+   propBounds= 1d , MAX_SOURCES_COUNT d;
+#END_PARAMETER_PROPERTIES
+*/
+// Global Variables
+
+INTEGER gSourcesCount, gLocalSourceSelected;
+
+// Functions
+
+INTEGER_FUNCTION GetSourcesCount()
+{
+	INTEGER i;
+
+	for (i = MAX_SOURCES_COUNT to 1 step -1) if (IsSignalDefined(Select_Source[i])) return (i);	
+}
+
+FUNCTION SelectNextSource()
+{
+	INTEGER sourceToSelect;
+
+	sourceToSelect = gLocalSourceSelected + 1;
+	if (sourceToSelect > 0 && sourceToSelect <= gSourcesCount) Pulse(PULSE_TIME, Select_Source[sourceToSelect]);
+	else Pulse(PULSE_TIME, Select_Source[1]);
+}
+
+FUNCTION SelectPreviousSource()
+{
+	INTEGER sourceToSelect;
+
+	sourceToSelect = gLocalSourceSelected - 1;
+	if (sourceToSelect > 0 && sourceToSelect <= gSourcesCount) Pulse(PULSE_TIME, Select_Source[sourceToSelect]);
+	else Pulse(PULSE_TIME, Select_Source[gSourcesCount]);
+}
+
+FUNCTION CheckSelectedSource()
+{
+	INTEGER i;
+
+	for (i = 1 to gSourcesCount)
+	{
+		if (Source_Selected_FB[i])
+		{
+			gLocalSourceSelected = i;
+			return;
+		}
+	}
+
+	gLocalSourceSelected = 0;
+}
+
+// Event Handlers
+
+PUSH Next_Source
+{
+	SelectNextSource();
+}
+
+PUSH Previous_Source
+{
+	SelectPreviousSource();
+}
+
+CHANGE Source_Selected_FB
+{
+	CheckSelectedSource();
+}
+
+CHANGE Source_Name$, Volume_Info$
+{
+	STRING tempInfo[ZONE_INFO_LENGTH];
+
+	tempInfo = Source_Name$ + " : " + Volume_Info$;
+
+	while (len(tempInfo) < ZONE_INFO_LENGTH) tempInfo = tempInfo + " ";
+
+	Zone_Info$ = tempInfo;
+}
+
+// Main Function
+
+Function Main()
+{
+	gSourcesCount = GetSourcesCount();
+    WaitForInitializationComplete();
+	CheckSelectedSource();
+}

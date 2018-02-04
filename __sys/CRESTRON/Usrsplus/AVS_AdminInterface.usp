@@ -1,0 +1,450 @@
+//	Dyrektywy kompilatora
+#CATEGORY "41"
+#SYMBOL_NAME "AVS_AdminInterface"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+//	Biblioteki
+#USER_LIBRARY "usl_AVSystem_Constants"
+#USER_SIMPLSHARP_LIBRARY "ssl_AVSystem"
+
+//	Sygnaly wejsciowe
+DIGITAL_INPUT mod_Source_FB;
+DIGITAL_INPUT mod_Zone_FB;
+DIGITAL_INPUT mod_Group_FB;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT element_Save;
+DIGITAL_INPUT element_ToggleEnable;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT destination_ToggleUseDafaultSource;
+DIGITAL_INPUT destination_ToggleUseDafaultVolume;
+DIGITAL_INPUT destination_DafaultVolumeUp;
+DIGITAL_INPUT destination_DafaultVolumeDown;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT schedule_ToggleEnable;
+DIGITAL_INPUT schedule_HourStartUp;
+DIGITAL_INPUT schedule_HourStartDown;
+DIGITAL_INPUT schedule_MinuteStartUp;
+DIGITAL_INPUT schedule_MinuteStartDown;
+DIGITAL_INPUT schedule_HourStopUp;
+DIGITAL_INPUT schedule_HourStopDown;
+DIGITAL_INPUT schedule_MinuteStopUp;
+DIGITAL_INPUT schedule_MinuteStopDown;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT schedule_ToggleDayEnable[DAYS_OF_WEEK, DAYS_OF_WEEK];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT element_Select#;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT destination_DefaultSourceSelect#;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT group_ZoneToAddSelect#;
+ANALOG_INPUT group_ZoneToRemoveSelect#;
+ANALOG_INPUT _SKIP_;
+STRING_INPUT element_NameShort_New$[SHORT_NAME_LENGTH];
+STRING_INPUT element_NameLong_New$[LONG_NAME_LENGTH];
+
+//	Sygnaly wyjsciowe
+DIGITAL_OUTPUT admin_Busy_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT showSaveMessage;
+DIGITAL_OUTPUT element_Enabled_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT destination_UsingDafaultSource_FB;
+DIGITAL_OUTPUT destination_UsingDafaultVolume_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT schedule_Enabled_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT schedule_DayEnabled_FB[DAYS_OF_WEEK];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT group_FreeZoneVisible_FB[ZONE_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT group_GroupZoneVisible_FB[ZONE_COUNT, ZONE_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT element_Id$;
+STRING_OUTPUT element_NameShort_Current$;
+STRING_OUTPUT element_NameLong_Current$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT source_audioId$;
+STRING_OUTPUT source_videoId$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT destination_DefaultSourceName$;
+STRING_OUTPUT destination_DefaultVolume$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT zone_AssignedGroupName$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT schedule_HourStart$;
+STRING_OUTPUT schedule_MinuteStart$;
+STRING_OUTPUT schedule_HourStop$;
+STRING_OUTPUT schedule_MinuteStop$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT SaveMessage$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT element_NameShort_New_Out$;
+STRING_OUTPUT element_NameLong_New_Out$;
+
+//	Zmienne globalne
+CAdminInterface adminInterface;
+
+/*
+ *	=================================================================
+ */
+
+FUNCTION InitializeSelectedElementNewNames()
+{
+	element_NameShort_New_Out$ = adminInterface.SelectedElement.NameShort;
+	element_NameLong_New_Out$ = adminInterface.SelectedElement.NameLong;
+}
+
+FUNCTION RefreshSelectedElement()
+{
+	if (CElementManager.IsInitialized = 0) return;
+	
+	admin_Busy_FB = 1;
+
+	element_Enabled_FB = adminInterface.SelectedElement.IsEnabled;
+	element_Id$ = itoa(adminInterface.SelectedElement.Id);
+	element_NameShort_Current$ = adminInterface.SelectedElement.NameShort;
+	element_NameLong_Current$ = adminInterface.SelectedElement.NameLong;
+
+     admin_Busy_FB = 0;
+}
+
+FUNCTION RefreshSelectedSource()
+{
+	if (CElementManager.IsInitialized = 0) return;
+     
+	admin_Busy_FB = 1;
+
+	source_audioId$ = itoa(adminInterface.SelectedSource.AudioId);
+	source_videoId$ = itoa(adminInterface.SelectedSource.VideoId);
+
+	admin_Busy_FB = 0;
+}
+
+FUNCTION RefreshSelectedDestination()
+{
+	if (CElementManager.IsInitialized = 0) return;
+    
+	admin_Busy_FB = 1;
+
+	destination_UsingDafaultSource_FB = adminInterface.SelectedDestination.IsSourceStartupDefault;
+	destination_UsingDafaultVolume_FB = adminInterface.SelectedDestination.IsVolumeStartupDefault;
+
+    destination_DefaultSourceName$ = adminInterface.SelectedDestination.DefaultSource.NameLong;
+	destination_DefaultVolume$ = itoa(adminInterface.SelectedDestination.DefaultVolume);
+
+	admin_Busy_FB = 0;
+}
+
+FUNCTION RefreshSelectedZone()
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	zone_AssignedGroupName$ = CElementManager.GroupArray[adminInterface.SelectedZone.AssignedGroupId].NameLong;
+}
+
+FUNCTION RefreshSelectedGroupZonesList()
+{
+	INTEGER zoneId;
+
+	if (CElementManager.IsInitialized = 0) return;
+
+	admin_Busy_FB = 1;
+
+	for (zoneId = 1 to CZone.COUNT)
+	{
+		if (CElementManager.ZoneArray[zoneId].AssignedGroupId = 0)
+		{
+			group_FreeZoneVisible_FB[zoneId] = 1;
+			group_GroupZoneVisible_FB[zoneId] = 0;
+		}
+		else if (CElementManager.ZoneArray[zoneId].AssignedGroupId = adminInterface.SelectedGroup.Id)
+		{
+			group_FreeZoneVisible_FB[zoneId] = 0;
+			group_GroupZoneVisible_FB[zoneId] = 1;
+		}
+		else
+		{
+			group_FreeZoneVisible_FB[zoneId] = 0;
+			group_GroupZoneVisible_FB[zoneId] = 0;
+		}
+	}
+
+	admin_Busy_FB = 0;
+}
+
+FUNCTION RefreshSelectedGroupScheduleEnabled()
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+    schedule_Enabled_FB = adminInterface.SelectedGroup.Schedule.IsEnabled;
+}
+
+FUNCTION RefreshSelectedGroupScheduleDays()
+{
+	INTEGER dayOfWeek;
+
+    if (CElementManager.IsInitialized = 0) return;
+    
+	admin_Busy_FB = 1;
+
+	for (dayOfWeek = 1 to DAYS_OF_WEEK) schedule_DayEnabled_FB[dayOfWeek] = adminInterface.SelectedGroup.Schedule.IsDayOfWeekEnabled[dayOfWeek];
+
+	admin_Busy_FB = 0;
+}
+
+FUNCTION RefreshSelectedGroupScheduleTimes()
+{
+	if (CElementManager.IsInitialized = 0) return;
+    
+	admin_Busy_FB = 1;
+
+	schedule_HourStart$ = adminInterface.SelectedGroup.Schedule.GetHourStartText();
+	schedule_MinuteStart$ = adminInterface.SelectedGroup.Schedule.GetMinuteStartText();
+    schedule_HourStop$ = adminInterface.SelectedGroup.Schedule.GetHourStopText();
+	schedule_MinuteStop$ = adminInterface.SelectedGroup.Schedule.GetMinuteStopText();
+
+	admin_Busy_FB = 0;
+}
+
+FUNCTION RefreshSelectedGroup()
+{
+	if (CElementManager.IsInitialized = 0) return;
+    
+	RefreshSelectedGroupZonesList();
+
+	RefreshSelectedGroupScheduleEnabled();
+
+	RefreshSelectedGroupScheduleDays();
+
+	RefreshSelectedGroupScheduleTimes();		
+}
+
+FUNCTION UpdateSource()
+{
+    RefreshSelectedElement();
+	RefreshSelectedSource();
+}
+
+FUNCTION UpdateZone()
+{
+    RefreshSelectedElement();
+	RefreshSelectedDestination();
+	RefreshSelectedZone();
+}
+
+FUNCTION UpdateGroup()
+{
+    RefreshSelectedElement();
+	RefreshSelectedDestination();
+	RefreshSelectedGroup();
+}
+
+FUNCTION SaveElement()
+{
+	admin_Busy_FB = 1;
+	adminInterface.SelectedElement.SetNameShort(element_NameShort_New$);
+	adminInterface.SelectedElement.SetNameLong(element_NameLong_New$);
+	adminInterface.SaveSelectedElement();
+	SaveMessage$ = adminInterface.SaveMessage;
+	admin_Busy_FB = 0;
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje obslugujace zdarzenia wywylane przez Simpl#
+
+EVENTHANDLER ElementManagerInitializedHandler(CElement element, EventArgs e)
+{
+	adminInterface.Initialize();
+	UpdateSource();
+	admin_Busy_FB = 0;
+}
+
+/*
+ *	=================================================================
+ */
+
+FUNCTION RegisterSharpEvents()
+{
+	RegisterEvent(CElementManager, ElementManagerInitialized, ElementManagerInitializedHandler);
+}
+
+FUNCTION InitializeModule()
+{
+	RegisterSharpEvents();
+}
+
+/*
+ *	=================================================================
+ */
+
+PUSH mod_Source_FB
+{
+	adminInterface.SelectedMode = InterfaceMode.Source;
+	UpdateSource();
+	InitializeSelectedElementNewNames();
+}
+
+PUSH mod_Zone_FB
+{
+	adminInterface.SelectedMode = InterfaceMode.Zone;
+	UpdateZone();
+	InitializeSelectedElementNewNames();
+}
+
+PUSH mod_Group_FB
+{
+	adminInterface.SelectedMode = InterfaceMode.Group;
+	UpdateGroup();
+	InitializeSelectedElementNewNames();
+}
+
+PUSH element_Save
+{
+	SaveElement();
+	Pulse(PULSE_TIME, showSaveMessage);
+}
+
+PUSH element_ToggleEnable
+{
+	adminInterface.SelectedElement.ToggleEnabled();
+	RefreshSelectedElement();
+}
+
+PUSH destination_ToggleUseDafaultSource
+{
+	adminInterface.SelectedDestination.ToggleSourceStartup();
+	RefreshSelectedDestination();
+}
+
+PUSH destination_ToggleUseDafaultVolume
+{
+	adminInterface.SelectedDestination.ToggleVolumeStartup();
+	RefreshSelectedDestination();
+}
+
+PUSH destination_DafaultVolumeUp
+{
+	adminInterface.SelectedDestination.IncreaseDefaultVolume();
+	RefreshSelectedDestination();
+}
+
+PUSH destination_DafaultVolumeDown
+{
+	adminInterface.SelectedDestination.DecreaseDefaultVolume();
+	RefreshSelectedDestination();
+}
+
+PUSH schedule_ToggleEnable
+{
+	adminInterface.SelectedGroup.Schedule.ToggleEnabled();
+	RefreshSelectedGroupScheduleEnabled();
+}
+
+PUSH schedule_HourStartUp
+{
+	adminInterface.SelectedGroup.Schedule.IncrementHourStart();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_HourStartDown
+{
+	adminInterface.SelectedGroup.Schedule.DecrementHourStart();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_MinuteStartUp
+{
+	adminInterface.SelectedGroup.Schedule.IncrementMinuteStart();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_MinuteStartDown
+{
+	adminInterface.SelectedGroup.Schedule.DecrementMinuteStart();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_HourStopUp
+{
+	adminInterface.SelectedGroup.Schedule.IncrementHourStop();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_HourStopDown
+{
+	adminInterface.SelectedGroup.Schedule.DecrementHourStop();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_MinuteStopUp
+{
+	adminInterface.SelectedGroup.Schedule.IncrementMinuteStop();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_MinuteStopDown
+{
+	adminInterface.SelectedGroup.Schedule.DecrementMinuteStop();
+	RefreshSelectedGroupScheduleTimes();
+}
+
+PUSH schedule_ToggleDayEnable
+{
+	adminInterface.SelectedGroup.Schedule.ToggleDayOfWeekEnebled(getLastModifiedArrayIndex());
+	RefreshSelectedGroupScheduleDays();
+}
+
+CHANGE element_Select#
+{
+	if (element_Select# = 0) return;
+
+	if (adminInterface.SelectedMode = InterfaceMode.Source)
+	{
+		adminInterface.SetSelectedSource(element_Select#);
+		UpdateSource();
+	}
+	else if (adminInterface.SelectedMode = InterfaceMode.Zone)
+	{
+		adminInterface.SetSelectedZone(element_Select#);
+		UpdateZone();
+	}
+	else if (adminInterface.SelectedMode = InterfaceMode.Group)
+	{
+		adminInterface.SetSelectedGroup(element_Select#);
+		UpdateGroup();
+	}
+
+	InitializeSelectedElementNewNames();
+}
+
+CHANGE destination_DefaultSourceSelect#
+{
+	adminInterface.SelectedDestination.SetDefaultSourceId(destination_DefaultSourceSelect#);
+	RefreshSelectedDestination();
+}
+
+CHANGE group_ZoneToAddSelect#
+{
+	adminInterface.SelectedGroup.AddZone(group_ZoneToAddSelect#);
+	RefreshSelectedGroupZonesList();
+}
+
+CHANGE group_ZoneToRemoveSelect#
+{
+	adminInterface.SelectedGroup.RemoveZone(group_ZoneToRemoveSelect#);
+	RefreshSelectedGroupZonesList();
+}
+
+// Funkcja Main
+Function Main()
+{
+	admin_Busy_FB = 1;
+	InitializeModule();
+	WaitForInitializationComplete();
+	// TODO Init
+}

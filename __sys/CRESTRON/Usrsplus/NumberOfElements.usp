@@ -1,0 +1,69 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "NumberOfElements"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+//#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+// Constants
+#DEFINE_CONSTANT MAX_ELEMENTS_COUNT 30
+
+// Inputs
+DIGITAL_INPUT enable;
+ANALOG_INPUT numberOfElements;
+
+// Outputs
+DIGITAL_OUTPUT noElementsVisible, _SKIP_;
+DIGITAL_OUTPUT elementVisible[MAX_ELEMENTS_COUNT, MAX_ELEMENTS_COUNT];
+
+// Global Variables
+
+
+
+// Functions
+FUNCTION setVisibleElements()
+{
+	INTEGER i;
+	
+	if (numberOfElements = 0 && enable = 1) noElementsVisible = 1;
+	else noElementsVisible = 0;
+	
+	for (i = 1 to MAX_ELEMENTS_COUNT)
+	{
+		if (i <= numberOfElements && enable = 1) elementVisible[i] = 1;
+		else elementVisible[i] = 0;
+	}
+}
+
+// Event Handlers
+
+PUSH enable
+{
+	setVisibleElements();
+}
+
+RELEASE enable
+{
+	setVisibleElements();
+}
+
+CHANGE numberOfElements
+{
+	setVisibleElements();
+}
+
+// Main Function
+Function Main()
+{
+	INTEGER i;
+	
+	WaitForInitializationComplete();
+
+	noElementsVisible = 0;
+	
+	for (i = 1 to MAX_ELEMENTS_COUNT)
+	{
+		elementVisible[i] = 0;
+	}
+}

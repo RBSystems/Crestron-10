@@ -1,0 +1,1573 @@
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/00 BACnet Objects' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACNET_ANALOG_VALUE :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+   
+Structure:	Contains all relevant properties of BACnet Object Analog Value. 
+Source: BACnetObjects.EXP
+
+Version:	1.2
+Date: 		22.11.2013
+*************************************************************************************)
+STRUCT
+(*************************************************************************************
+Mandatory Properties- Do not delete or commentate!
+*************************************************************************************)
+	Object_Identifier		:BACnetObjectIdentifier;
+	Object_Name			:STRING(50);
+	Object_Type			:BACnetObjectType;
+(*************************************************************************************
+Library Mandatory Properties- Do not delete or commentate if using BACnetLib_02.lib
+to avoid compilation error
+*************************************************************************************)
+	Present_Value		:REAL;
+	Priority_Array			:BACnetPriorityArray;
+(*************************************************************************************
+Optional Properties- commentate out where neecessary
+*************************************************************************************)
+	Status_Flags			:BACnetStatusFlags;
+	Out_Of_Service		:BOOL;
+	(*
+	Relinquish_Default	:REAL;
+	Description			:STRING(50);
+	Event_State			:BACnetEventState;
+	Reliability				:BACnetReliability;
+	Units					:BACnetEngineeringUnits;
+	COV_Increment		:REAL;					
+	Time_Delay			:DWORD;
+	Notification_Class	:DWORD;
+	High_Limit			:REAL;
+	Low_Limit				:REAL;
+	Deadband				:REAL;
+	Limit_Enable			:BACnetLimitEnable;
+	Event_Enable			:BACnetEventTransitionBits;
+	Acked_Transitions	:BACnetEventTransitionBits;
+	Notify_Type			:BACnetNotifyType;
+	Event_Time_Stamps	:ARRAY [1..3] OF BACnetTimeStamp;
+	*)
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(************************************************************************************************
+Index		DATE			Remark,Description,Changes			   					
+----------------------------------------------------------------------------------------------------------------------
+A			23.04.2013		Version 1.0												
+B			26.09.2013		Version 1.1, String value changed to from 48 to50	
+C			22.11.2013		Version 1.2, Library mandatory properties added													
+**************************************************************************************************)
+
+
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/00 BACnet Objects' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACNET_BINARY_VALUE :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+   
+Structure:	Contains all relevant properties of BACnet Object Binary Value
+Source: BACnetObjects.EXP
+
+Version:	1.2
+Date: 		22.11.2013
+*************************************************************************************)
+STRUCT
+(*************************************************************************************
+Mandatory Properties- Do not delete or commentate!
+*************************************************************************************)
+	Object_Identifier					:BACnetObjectIdentifier;
+	Object_Name						:STRING(50);
+	Object_Type						:BACnetObjectType;
+(*************************************************************************************
+Library Mandatory Properties- Do not delete or commentate if using BACnetLib_02.lib
+to avoid compilation error
+*************************************************************************************)
+	Present_Value					:BACnetBinaryPV;
+	Priority_Array						:BACnetPriorityArray;
+(*************************************************************************************
+Optional Properties- commentate out where neecessary
+*************************************************************************************)
+	Out_Of_Service					:BOOL;
+	Relinquish_Default				:BACnetBinaryPV;
+	(*
+	Description						:STRING(50);
+	Status_Flags						:BACnetStatusFlags;
+	Event_State						:BACnetEventState;
+	Reliability							:BACnetReliability;
+	Minimum_Off_Time				:DWORD;
+	Minimum_On_Time				:DWORD;
+	Inactive_Text						:STRING(50);
+	Active_Text							:STRING(50);
+	Change_Of_State_Time			:BACnetDateTime;
+	Change_Of_State_Count			:DWORD;
+	Time_Of_State_Count_Reset	:BACnetDateTime;
+	Elapsed_Active_Time				:DWORD;
+	Time_Of_Active_Time_Reset	:BACnetDateTime;
+	Time_Delay						:DWORD;
+	Notification_Class				:DWORD;
+	Alarm_Value						:BACnetBinaryPV;
+	Event_Enable						:BACnetEventTransitionBits;
+	Acked_Transitions				:BACnetEventTransitionBits;
+	Notify_Type						:BACnetNotifyType;
+	Event_Time_Stamps				:ARRAY [1..3] OF BACnetTimeStamp;
+	*)
+
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(************************************************************************************************
+Index		DATE			Remark,Description,Changes			   					
+----------------------------------------------------------------------------------------------------------------------
+A			23.04.2013		Version 1.0												
+B			26.09.2013		Version 1.1, String value changed to from 48 to50
+C			22.11.2013		Version 1.2, Library mandatory properties added														
+**************************************************************************************************)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/00 BACnet Objects' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACNET_LOOP :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+   
+Structure:	Contains all relevant properties of BACnet Loop Object Type
+Source: BACnetObjects.EXP
+Restriction: : Compatible only with BACnet IP-Controller 750-831
+
+Version:	1.1
+Date: 		22.11.2013
+*************************************************************************************)
+STRUCT
+(*************************************************************************************
+Mandatory Properties- Do not delete or commentate!
+*************************************************************************************)
+	Object_Identifier						:BACnetObjectIdentifier;
+	Object_Name							:STRING(50);
+	Object_Type							:BACnetObjectType;
+
+(*************************************************************************************
+Library Mandatory Properties- Do not delete or commentate if using BACnetLib_02.lib
+to avoid compilation error
+*************************************************************************************)
+	(**Setpoint***)
+	Setpoint								:REAL;					(*Value of the loop setpoint referenced by Setpoint_Reference. Expressed in units of the Controlled_Variable_Units*)
+
+	(**Gain*******)
+	Proportional_Constant				:REAL;					(*value of the proportional gain parameter used by the loop algorithm*)
+	Integral_Constant						:REAL;					(*value of the integral gain parameter used by the loop algorithm*)
+	Derivative_Constant					:REAL;					(*value of the derivative gain parameter used by the loop algorithm*)
+
+	(********Normally used to prevent the algorithm from controlling beyond the range of the controlled device and to prevent integral term "windup."*******)
+	Maximum_Output						:REAL;					(*maximum value of the Present_Value property as limited by the PID loop algorithm*)
+	Minimum_Output						:REAL;					(*minimum value of the Present_Value property as limited by the loop algorithm*)
+
+(*************************************************************************************
+Optional Properties- commentate out where neecessary
+*************************************************************************************)
+	LoopAction							:BACnetAction;			(*Defines whether the loop is DIRECT or REVERSE acting.*)
+	(*
+	Setpoint_Reference					:BACnetSetpointReference;
+	Present_Value						:REAL;
+	Status_Flags							:BACnetStatusFlags;
+	Out_Of_Service						:BOOL;
+	Priority_For_Writing					:DWORD:=16;				(*Provides a priority to be used by the command prioritization mechanism*)
+	Update_Interval						:DWORD;					(*Indicates the interval in milliseconds at which the loop algorithm updates Present_Value*)
+	Output_Units							:BACnetEngineeringUnits;(*Indicates the engineering units for the output Present_Value*)
+	Description							:STRING(50);
+	Event_State							:BACnetEventState;
+	Reliability								:BACnetReliability;
+	COV_Increment						:REAL;					(*This property is required if the object supports COV reporting.*)
+	Bias									:REAL;					(*Value used by the loop algorithm expressed in units of the Output_Units property*)
+	Manipulate_Variable_Reference		:BACnetDeviceObjectPropertyReference;
+	Controlled_Variable_Value			:REAL;					(*The value of the property of the object referenced by the Controlled_Variable_Reference*)
+	Controlled_Variable_Units			:BACnetEngineeringUnits;(*Indicates the engineering units for the Controlled_Variable_Value *)
+	Controlled_Variable_Reference		:BACnetDeviceObjectPropertyReference;
+	Proportional_Constant_Units		:BACnetEngineeringUnits;
+	Integral_Constant_Units				:BACnetEngineeringUnits;
+	Derivative_Constant_Units			:BACnetEngineeringUnits;
+	Time_Delay							:DWORD;
+	Notification_Class					:DWORD;
+	Error_Limit							:REAL;
+	Event_Enable							:BACnetEventTransitionBits;
+	Acked_Transitions					:BACnetEventTransitionBits;
+	Notify_Type							:BACnetNotifyType;
+	Event_Time_Stamps					:ARRAY [1..3] OF BACnetTimeStamp;
+	*)
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(************************************************************************************************
+Index		DATE			Remark,Description,Changes			   					
+----------------------------------------------------------------------------------------------------------------------
+A			26.09.2013		Version 1.0
+B			22.11.2013		Version 1.1, Library mandatory properties added													
+**************************************************************************************************)
+
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/00 BACnet Objects' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACNET_MULTISTATE_INPUT :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+   
+Structure:	Contains all relevant properties of BACnet Object Multistate Input
+Source: BACnetObjects.EXP
+Restriction: : Compatible only with BACnet IP-Controller 750-831
+
+Version:	1.1
+Date: 		22.11.2013
+*************************************************************************************)
+STRUCT
+(*************************************************************************************
+Mandatory Properties- Do not delete or commentate!
+*************************************************************************************)
+	Object_Identifier		:BACnetObjectIdentifier;
+	Object_Name			:STRING(50);
+	Object_Type			:BACnetObjectType;
+(*************************************************************************************
+Library Mandatory Properties- Do not delete or commentate if using BACnetLib_02.lib
+to avoid compilation error
+*************************************************************************************)
+	Present_Value		:DWORD;
+	Number_Of_States	:DWORD:=1;
+(*************************************************************************************
+Optional Properties- commentate out where neecessary
+**************************************************************************************)
+	Out_Of_Service		:BOOL;
+	(*
+	Description			:STRING(50);
+	Status_Flags			:BACnetStatusFlags;
+	Event_State			:BACnetEventState;	
+	Time_Delay			:DWORD;
+	Notification_Class	:DWORD;
+	Alarm_Values			:ARRAY [1..24] OF DWORD;
+	Fault_Values			:ARRAY [1..24] OF DWORD;
+	Reliability				:BACnetReliability;
+	Event_Enable			:BACnetEventTransitionBits;
+	Acked_Transitions	:BACnetEventTransitionBits;
+	Notify_Type			:BACnetNotifyType;
+	Event_Time_Stamps	:ARRAY [1..3] OF BACnetTimeStamp;
+	*)
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(************************************************************************************************
+Index		DATE			Remark,Description,Changes			   					
+----------------------------------------------------------------------------------------------------------------------
+A			26.09.2013		Version 1.0
+B			22.11.2013		Version 1.1, Library mandatory properties added													
+**************************************************************************************************)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/00 BACnet Objects' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACNET_MULTISTATE_OUTPUT :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+   
+Structure:	Contains all relevant properties of BACnet Object Multistate Input
+Source: BACnetObjects.EXP
+Restriction: : Compatible only with BACnet IP-Controller 750-831
+
+Version:	1.1
+Date: 		22.11.2013
+*************************************************************************************)
+STRUCT
+(*************************************************************************************
+Mandatory Properties- Do not delete or commentate!
+*************************************************************************************)
+	Object_Identifier		:BACnetObjectIdentifier;
+	Object_Name			:STRING(50);
+	Object_Type			:BACnetObjectType;
+(*************************************************************************************
+Library Mandatory Properties- Do not delete or commentate if using BACnetLib_02.lib
+to avoid compilation error
+*************************************************************************************)
+	Present_Value		:DWORD;
+	Priority_Array			:BACnetPriorityArray;
+	Number_Of_States	:DWORD:=1;
+(*************************************************************************************
+Optional Properties- commentate out where neecessary
+**************************************************************************************)
+	Out_Of_Service		:BOOL;
+	(*
+	Relinquish_Default	:DWORD;
+	Description			:STRING(50);
+	Status_Flags			:BACnetStatusFlags;
+	Event_State			:BACnetEventState;	
+	Time_Delay			:DWORD;
+	Notification_Class	:DWORD;
+	Feedback_Value		:DWORD;
+	Alarm_Values			:ARRAY [1..24] OF DWORD;
+	Fault_Values			:ARRAY [1..24] OF DWORD;
+	Reliability				:BACnetReliability;
+	Event_Enable			:BACnetEventTransitionBits;
+	Acked_Transitions	:BACnetEventTransitionBits;
+	Notify_Type			:BACnetNotifyType;
+	Event_Time_Stamps	:ARRAY [1..3] OF BACnetTimeStamp;
+	*)
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(************************************************************************************************
+Index		DATE			Remark,Description,Changes			   					
+----------------------------------------------------------------------------------------------------------------------
+A			26.09.2013		Version 1.0
+B			22.11.2013		Version 1.1, Library mandatory properties added													
+**************************************************************************************************)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/00 BACnet Objects' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACNET_MULTISTATE_VALUE :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+   
+Structure:	Contains all relevant properties of BACnet Object Multistate Value
+Source: BACnetObjects.EXP
+
+Version:	1.2
+Date: 		22.11.2013
+*************************************************************************************)
+STRUCT
+(*************************************************************************************
+Mandatory Properties- Do not delete or commentate!
+*************************************************************************************)
+	Object_Identifier		:BACnetObjectIdentifier;
+	Object_Name			:STRING(50);
+	Object_Type			:BACnetObjectType;
+(*************************************************************************************
+Library Mandatory Properties- Do not delete or commentate if using BACnetLib_02.lib
+to avoid compilation error
+*************************************************************************************)
+	Present_Value		:DWORD;
+	Priority_Array			:BACnetPriorityArray;
+	Number_Of_States	:DWORD:=1;
+(*************************************************************************************
+Optional Properties- commentate out where neecessary
+**************************************************************************************)
+	Out_Of_Service		:BOOL;
+	(*
+	Relinquish_Default	:DWORD;
+	Description			:STRING(50);
+	Status_Flags			:BACnetStatusFlags;
+	Event_State			:BACnetEventState;	
+	Time_Delay			:DWORD;
+	Notification_Class	:DWORD;
+	Alarm_Values			:ARRAY [1..24] OF DWORD;
+	Fault_Values			:ARRAY [1..24] OF DWORD;
+	Reliability				:BACnetReliability;
+	Event_Enable			:BACnetEventTransitionBits;
+	Acked_Transitions	:BACnetEventTransitionBits;
+	Notify_Type			:BACnetNotifyType;
+	Event_Time_Stamps	:ARRAY [1..3] OF BACnetTimeStamp;
+	*)
+END_STRUCT
+END_TYPE
+(*Structure's History*)
+(************************************************************************************************
+Index		DATE			Remark,Description,Changes			   					
+----------------------------------------------------------------------------------------------------------------------
+A			24.09.2013		Version 1.0												
+B			26.09.2013		Version 1.1, String value changed to from 48 to50
+C			22.11.2013		Version 1.2, Library mandatory properties added														
+**************************************************************************************************)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetDateTime :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+
+For internal use only! 
+Source: BACnetObjects.EXP
+  
+Structure:	BACnet Date Time
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	BACnetDate	:DATE;
+	BACnetTime	:TOD;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		first version Version 1.0								*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetDeviceObjectPropertyReference :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP  
+Structure:	BACnet Device Object Property Reference 
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	objectIdentifier		:BACnetObjectIdentifier;
+	propertyIdentifier		:BACnetPropertyIdentifier;
+	propertyArrayIndex		:WORD;
+	deviceIdentifier		:BACnetObjectIdentifier;
+	devicePresent			:BOOL;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		first version Version 1.0								*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetDeviceObjectReference :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Device Object Reference
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	deviceIdentifier	:BACnetObjectIdentifier;
+	objectIdentifier	:BACnetObjectIdentifier;
+	devicePresent		:BOOL;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		first version Version 1.0								*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetEventTransitionBits :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Event Transition Bits 
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	to_offnormal	:BOOL;
+	to_fault		:BOOL;
+	to_normal		:BOOL;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetLimitEnable :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Limit Enable
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	lowLimitEnable		:BOOL;
+	highLimitEnable		:BOOL;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetObjectIdentifier :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP  
+Structure:	BACnet Object Identifier 
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	BACnetObjectType	:BACnetObjectType;
+	Instance				:DINT;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetObjectPropertyReference :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Object Property Reference
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	objectIdentifier		:BACnetObjectIdentifier;
+	propertyIdentifier		:BACnetPropertyIdentifier;
+	propertyArrayIndex		:WORD;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetPrescale :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Prescale 
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	multiplier		:WORD;
+	moduloDivide	:WORD;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetPriorityArray :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Priority Array 
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	PriorityArray:ARRAY[1..16] OF BACnetPriorityValue;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetPriorityValue :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Priority Value
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	CHOICE	:BYTE;
+	VALUE	:DWORD;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetScale :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Scale
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	CHOICE	: BYTE;
+	VALUE		: ARRAY [0..3] OF BYTE;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetSetpointReference :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Setpoint Reference
+Version:	1.0
+Date: 		04.02.2013
+*************************************************************************************)
+
+STRUCT
+	setpointReference		:BACnetObjectPropertyReference;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			04.02.2013		first version Version 1.0								*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetStatusFlags :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Status Flags
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	in_alarm					:BOOL;
+	fault						:BOOL;
+	overridden_StatusFlage	:BOOL;
+	out_of_service			:BOOL;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/01 Datatypes' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetTimeStamp :
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Structure:	BACnet Time Stamp
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+STRUCT
+	CHOICE	:DWORD;
+	VALUE		:ARRAY [0..7] OF BYTE;
+END_STRUCT
+END_TYPE
+
+(*Structure's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetAction :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Action
+
+Version:	1.0
+Date: 		04.02.2013
+*************************************************************************************)
+	BACnet_direct		:=0,
+	BACnet_reverse		:=1);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			04.02.2013		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetBinaryPV :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Binary Present Value
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+	BACnet_inactive	:=0,
+	BACnet_active		:=1);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetEngineeringUnits :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Engineering Units
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+	BACnet_square_meters	:=	0	,
+	BACnet_square_feet		:=	1	,
+	BACnet_milliamperes		:=	2	,
+	BACnet_amperes			:=	3	,
+	BACnet_ohms				:=	4	,
+	BACnet_volts				:=	5	,
+	BACnet_kilovolts			:=	6	,
+	BACnet_megavolts			:=	7	,
+	BACnet_volt_amperes		:=	8	,
+	BACnet_kilovolt_amperes	:=	9	,
+	BACnet_megavolt_amperes			:=	10	,
+	BACnet_volt_amperes_reactive		:=	11	,
+	BACnet_kilovolt_amperes_reactive	:=	12	,
+	BACnet_megavolt_amperes_reactive	:=	13	,
+	BACnet_degrees_phase				:=	14	,
+	BACnet_power_factor					:=	15	,
+	BACnet_joules							:=	16	,
+	BACnet_kilojoules					:=	17	,
+	BACnet_watt_hours				:=	18	,
+	BACnet_kilowatt_hours			:=	19	,
+	BACnet_btus						:=	20	,
+	BACnet_therms						:=	21	,
+	BACnet_ton_hours					:=	22	,
+	BACnet_joules_per_kilogram_dry_air		:=	23	,
+	BACnet_btus_per_pound_dry_air			:=	24	,
+	BACnet_cycles_per_hour					:=	25	,
+	BACnet_cycles_per_minute				:=	26	,
+	BACnet_hertz								:=	27	,
+	BACnet_grams_of_water_per_kilogram_dry_air	:=	28	,
+	BACnet_percent_relative_humidity				:=	29	,
+	BACnet_millimeters								:=	30	,
+	BACnet_meters			:=	31	,
+	BACnet_inches			:=	32	,
+	BACnet_feet			:=	33	,
+	BACnet_watts_per_square_foot		:=	34	,
+	BACnet_watts_per_square_meter		:=	35	,
+	BACnet_lumens						:=	36	,
+	BACnet_luxes							:=	37	,
+	BACnet_foot_candles				:=	38	,
+	BACnet_kilograms					:=	39	,
+	BACnet_pounds_mass			:=	40	,
+	BACnet_tons						:=	41	,
+	BACnet_kilograms_per_second	:=	42	,
+	BACnet_kilograms_per_minute	:=	43	,
+	BACnet_kilograms_per_hour		:=	44	,
+	BACnet_pounds_mass_per_minute	:=	45	,
+	BACnet_pounds_mass_per_hour	:=	46	,
+	BACnet_watts			:=	47	,
+	BACnet_kilowatts		:=	48	,
+	BACnet_megawatts	:=	49	,
+	BACnet_btus_per_hour	:=	50	,
+	BACnet_horsepower		:=	51	,
+	BACnet_tons_refrigeration	:=	52	,
+	BACnet_pascals			:=	53	,
+	BACnet_kilopascals		:=	54	,
+	BACnet_bars				:=	55	,
+	BACnet_pounds_force_per_square_inch	:=	56	,
+	BACnet_centimeters_of_water		:=	57	,
+	BACnet_inches_of_water			:=	58	,
+	BACnet_millimeters_of_mercury	:=	59	,
+	BACnet_centimeters_of_mercury	:=	60	,
+	BACnet_inches_of_mercury		:=	61	,
+	BACnet_degrees_Celsius			:=	62	,
+	BACnet_degrees_Kelvin			:=	63	,
+	BACnet_degrees_Fahrenheit		:=	64	,
+	BACnet_degree_days_Celsius	:=	65	,
+	BACnet_degree_days_Fahrenheit	:=	66	,
+	BACnet_years		:=	67	,
+	BACnet_months	:=	68	,
+	BACnet_weeks		:=	69	,
+	BACnet_days		:=	70	,
+	BACnet_hours		:=	71	,
+	BACnet_minutes	:=	72	,
+	BACnet_seconds	:=	73	,
+	BACnet_meters_per_second	:=	74	,
+	BACnet_kilometers_per_hour	:=	75	,
+	BACnet_feet_per_second		:=	76	,
+	BACnet_feet_per_minute		:=	77	,
+	BACnet_miles_per_hour		:=	78	,
+	BACnet_cubic_feet				:=	79	,
+	BACnet_cubic_meters			:=	80	,
+	BACnet_imperial_gallons		:=	81	,
+	BACnet_liters					:=	82	,
+	BACnet_us_gallons			:=	83	,
+	BACnet_cubic_feet_per_minute		:=	84	,
+	BACnet_cubic_meters_per_second	:=	85	,
+	BACnet_imperial_gallons_per_minute	:=	86	,
+	BACnet_liters_per_second				:=	87	,
+	BACnet_liters_per_minute					:=	88	,
+	BACnet_us_gallons_per_minute			:=	89	,
+	BACnet_degrees_angular					:=	90	,
+	BACnet_degrees_Celsius_per_hour		:=	91	,
+	BACnet_degrees_Celsius_per_minute	:=	92	,
+	BACnet_degrees_Fahrenheit_per_hour	:=	93	,
+	BACnet_degrees_Fahrenheit_per_minute	:=	94	,
+	BACnet_no_units				:=	95	,
+	BACnet_parts_per_million		:=	96	,
+	BACnet_parts_per_billion		:=	97	,
+	BACnet_percent				:=	98	,
+	BACnet_percent_per_second	:=	99	,
+	BACnet_per_minute			:=	100	,
+	BACnet_per_second			:=	101	,
+	BACnet_psi_per_degree_Fahrenheit	:=	102	,
+	BACnet_radians					:=	103	,
+	BACnet_revolutions_per_minute	:=	104	,
+	BACnet_currency1					:=	105	,
+	BACnet_currency2					:=	106	,
+	BACnet_currency3					:=	107	,
+	BACnet_currency4					:=	108	,
+	BACnet_currency5					:=	109	,
+	BACnet_currency6					:=	110	,
+	BACnet_currency7					:=	111	,
+	BACnet_currency8					:=	112	,
+	BACnet_currency9					:=	113	,
+	BACnet_currency10				:=	114	,
+	BACnet_square_inches			:=	115	,
+	BACnet_square_centimeters		:=	116	,
+	BACnet_btus_per_pound			:=	117	,
+	BACnet_centimeters				:=	118	,
+	BACnet_pounds_mass_per_second	:=	119	,
+	BACnet_delta_degrees_Fahrenheit	:=	120	,
+	BACnet_delta_degrees_Kelvin		:=	121	,
+	BACnet_kilohms					:=	122	,
+	BACnet_megohms					:=	123	,
+	BACnet_millivolts					:=	124	,
+	BACnet_kilojoules_per_kilogram	:=	125	,
+	BACnet_megajoules				:=	126	,
+	BACnet_joules_per_degree_Kelvin				:=	127	,
+	BACnet_joules_per_kilogram_degree_Kelvin	:=	128	,
+	BACnet_kilohertz			:=	129	,
+	BACnet_megahertz			:=	130	,
+	BACnet_per_hour			:=	131	,
+	BACnet_milliwatts			:=	132	,
+	BACnet_hectopascals		:=	133	,
+	BACnet_millibars			:=	134	,
+	BACnet_cubic_meters_per_hour	:=	135	,
+	BACnet_liters_per_hour			:=	136	,
+	BACnet_kilowatt_hours_per_square_meter	:=	137	,
+	BACnet_kilowatt_hours_per_square_foot		:=	138	,
+	BACnet_megajoules_per_square_meter		:=	139	,
+	BACnet_megajoules_per_square_foot		:=	140	,
+	BACnet_watts_per_square_meter_degree_kelvin	:=	141	,
+	BACnet_cubic_feet_per_second			:=	142	,
+	BACnet_percent_obscuration_per_foot	:=	143	,
+	BACnet_percent_obscuration_per_meter	:=	144	,
+	BACnet_milliohms							:=	145	,
+	BACnet_megawatt_hours					:=	146	,
+	BACnet_kilo_btus							:=	147	,
+	BACnet_mega_btus						:=	148	,
+	BACnet_kilojoules_per_kilogram_dry_air	:=	149	,
+	BACnet_megajoules_per_kilogram_dry_air	:=	150	,
+	BACnet_kilojoules_per_degree_Kelvin	:=	151	,
+	BACnet_megajoules_per_degree_Kelvin	:=	152	,
+	BACnet_newton							:=	153	,
+	BACnet_grams_per_second				:=	154	,
+	BACnet_grams_per_minute				:=	155	,
+	BACnet_tons_per_hour					:=	156	,
+	BACnet_kilo_btus_per_hour				:=	157	,
+	BACnet_hundredths_seconds				:=	158	,
+	BACnet_milliseconds						:=	159	,
+	BACnet_newton_meters					:=	160	,
+	BACnet_millimeters_per_second			:=	161	,
+	BACnet_millimeters_per_minute			:=	162	,
+	BACnet_meters_per_minute				:=	163	,
+	BACnet_meters_per_hour					:=	164	,
+	BACnet_cubic_meters_per_minute		:=	165	,
+	BACnet_meters_per_second_per_second	:=	166	,
+	BACnet_amperes_per_meter				:=	167	,
+	BACnet_amperes_per_square_meter	:=	168	,
+	BACnet_ampere_square_meters			:=	169	,
+	BACnet_farads								:=	170	,
+	BACnet_henrys								:=	171	,
+	BACnet_ohm_meters						:=	172	,
+	BACnet_siemens							:=	173	,
+	BACnet_siemens_per_meter				:=	174	,
+	BACnet_teslas								:=	175	,
+	BACnet_volts_per_degree_Kelvin			:=	176	,
+	BACnet_volts_per_meter					:=	177	,
+	BACnet_webers							:=	178	,
+	BACnet_candelas							:=	179	,
+	BACnet_candelas_per_square_meter	:=	180	,
+	BACnet_degrees_Kelvin_per_hour		:=	181	,
+	BACnet_degrees_Kelvin_per_minute		:=	182	,
+	BACnet_joule_seconds					:=	183	,
+	BACnet_radians_per_second				:=	184	,
+	BACnet_square_meters_per_Newton		:=	185	,
+	BACnet_kilograms_per_cubic_meter		:=	186	,
+	BACnet_newton_seconds					:=	187	,
+	BACnet_newtons_per_meter				:=	188	,
+	BACnet_watts_per_meter_per_degree_Kelvin	:=	189);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetEventState :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Event State
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_normal,
+	BACnet_fault1,
+	BACnet_offnormal,
+	BACnet_high_limit,
+	BACnet_low_limit,
+	BACnet_life_safety_alarm);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetLifeSafetyMode :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Life Safety Mode
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_off							:=0,
+	BACnet_on							:=1,
+	BACnet_test						:=2,
+	BACnet_manned						:=3,
+	BACnet_unmanned					:=4,
+	BACnet_armed						:=5,
+	BACnet_disarmed					:=6,
+	BACnet_prearmed					:=7,
+	BACnet_slow						:=8,
+	BACnet_fast						:=9,
+	BACnet_disconnected				:=10,
+	BACnet_enabled						:=11,
+	BACnet_disabled					:=12,
+	BACnet_automatic_release_disabled	:=13,
+	BACnet_default						:=14);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetLifeSafetyOperation :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Life Safety Operation
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_none				:=0,
+	BACnet_silence				:=1,
+	BACnet_silence_audible		:=2,
+	BACnet_silence_visual		:=3,
+	BACnet_reset				:=4,
+	BACnet_reset_alarm			:=5,
+	BACnet_reset_fault			:=6,
+	BACnet_unsilence			:=7,
+	BACnet_unsilence_audible	:=8,
+	BACnet_unsilence_visual	:=9);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		first version Version 1.0								*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetLifeSafetyState :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Life Safety State
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_quiet				:=0,
+	BACnet_pre_alarm			:=1,
+	BACnet_alarm_LiveState		:=2,
+	BACnet_fault_LiveState		:=3,
+	BACnet_fault_pre_alarm		:=4,
+	BACnet_fault_alarm			:=5,
+	BACnet_NOT_ready			:=6,
+	BACnet_active_LiveState	:=7,
+	BACnet_tamper				:=8,
+	BACnet_test_alarm			:=9,
+	BACnet_test_active			:=10,
+	BACnet_test_fault			:=11,
+	BACnet_test_fault_alarm	:=12,
+	BACnet_holdup				:=13,
+	BACnet_duress				:=14,
+	BACnet_tamper_alarm		:=15,
+	BACnet_abnormal_LiveState	:=16,
+	BACnet_emergency_power		:=17,
+	BACnet_delayed				:=18,
+	BACnet_blocked				:=19,
+	BACnet_local_alarm			:=20,
+	BACnet_general_alarm		:=21,
+	BACnet_supervisory			:=22,
+	BACnet_test_supervisory	:=23);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetMaintenance :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP  
+Enumeration: BACnet Maintenance
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+	BACnet_none_Maintenance			:=0,
+	BACnet_periodic_test				:=1,
+	BACnet_need_service_operational	:=2,
+	BACnet_need_service_inoperative	:=3);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetNotifyType :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Notify Type
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+
+	BACnet_alarm,
+	BACnet_event,
+	BACnet_ack_notification);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetObjectType :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Object Type 
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_analog_input		:=0,
+	BACnet_analog_output		:=1,
+	BACnet_analog_value		:=2,
+	BACnet_binary_input		:=3,
+	BACnet_binary_output		:=4,
+	BACnet_binary_value		:=5,
+	BACnet_calendar			:=6,
+	BACnet_command			:=7,
+	BACnet_device				:=8,
+	BACnet_event_enrollment	:=9,
+	BACnet_file					:=10,
+	BACnet_group				:=11,
+	BACnet_loop				:=12,
+	BACnet_multi_state_input	:=13,
+	BACnet_multi_state_output:=14,
+	BACnet_notification_class	:=15,
+	BACnet_program_			:=16,
+	BACnet_schedule			:=17,
+	BACnet_averaging			:=18,
+	BACnet_multi_state_value	:=19,
+	BACnet_trend_log			:=20,
+	BACnet_life_safety_point	:=21,
+	BACnet_life_safety_zone	:=22,
+	BACnet_accumulator		:=23,
+	BACnet_pulse_converter	:=24);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetPolarity :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Polarity
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_normal_Polarity	:=0,
+	BACnet_reverse_Polarity	:=1);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetPropertyIdentifier :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Property Identifier
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_acked_transitions						:=0,
+	BACnet_ack_required							:=1,
+	BACnet_action_								:=2,
+	BACnet_action_text								:=3,
+	BACnet_active_text								:=4,
+	BACnet_active_vt_sessions					:=5,
+	BACnet_alarm_value							:=6,
+	BACnet_alarm_values							:=7,
+	BACnet_all										:=8,
+	BACnet_all_writes_successful				:=9,
+	BACnet_apdu_segment_timeout				:=10,
+	BACnet_apdu_timeout							:=11,
+	BACnet_application_software_version		:=12,
+	BACnet_archive									:=13,
+	BACnet_bias									:=14,
+	BACnet_change_of_state_count				:=15,
+	BACnet_change_of_state_time				:=16,
+	BACnet_notification_class_Identifier			:=17,
+	BACnet_the_property_in_this_place_was_deleted	:=18,
+	BACnet_controlled_variable_reference			:=19,
+	BACnet_controlled_variable_units					:=20,
+	BACnet_controlled_variable_value				:=21,
+	BACnet_cov_increment							:=22,
+	BACnet_date_list									:=23,
+	BACnet_daylight_savings_status					:=24,
+	BACnet_deadband									:=25,
+	BACnet_derivative_constant						:=26,
+	BACnet_derivative_constant_units					:=27,
+	BACnet_description								:=28,
+	BACnet_description_of_halt						:=29,
+	BACnet_device_address_binding					:=30,
+	BACnet_device_type								:=31,
+	BACnet_effective_period							:=32,
+	BACnet_elapsed_active_time						:=33,
+	BACnet_error_limit									:=34,
+	BACnet_event_enable								:=35,
+	BACnet_event_state								:=36,
+	BACnet_event_type									:=37,
+	BACnet_exception_schedule						:=38,
+	BACnet_fault_values								:=39,
+	BACnet_feedback_value							:=40,
+	BACnet_file_access_method						:=41,
+	BACnet_file_size									:=42,
+	BACnet_file_type									:=43,
+	BACnet_firmware_revision							:=44,
+	BACnet_high_limit_identifier						:=45,
+	BACnet_inactive_text								:=46,
+	BACnet_in_process								:=47,
+	BACnet_instance_of								:=48,
+	BACnet_integral_constant							:=49,
+	BACnet_integral_constant_units					:=50,
+	BACnet_issue_confirmed_notifications			:=51,
+	BACnet_limit_enable								:=52,
+	BACnet_list_of_group_members					:=53,
+	BACnet_list_of_object_property_references		:=54,
+	BACnet_list_of_session_keys						:=55,
+	BACnet_local_date									:=56,
+	BACnet_local_time									:=57,
+	BACnet_location									:=58,
+	BACnet_low_limit_identifier						:=59,
+	BACnet_manipulated_variable_reference			:=60,
+	BACnet_maximum_output							:=61,
+	BACnet_max_apdu_length_accepted				:=62,
+	BACnet_max_info_frames							:=63,
+	BACnet_max_master								:=64,
+	BACnet_max_pres_value							:=65,
+	BACnet_minimum_off_time						:=66,
+	BACnet_minimum_on_time						:=67,
+	BACnet_minimum_output							:=68,
+	BACnet_min_pres_value							:=69,
+	BACnet_model_name								:=70,
+	BACnet_modification_date							:=71,
+	BACnet_notify_type									:=72,
+	BACnet_number_of_APDU_retries				:=73,
+	BACnet_number_of_states						:=74,
+	BACnet_objectidentifier							:=75,
+	BACnet_object_list									:=76,
+	BACnet_object_name								:=77,
+	BACnet_object_property_reference				:=78,
+	BACnet_objecttype									:=79,
+	BACnet_optional									:=80,
+	BACnet_out_of_service_identifier					:=81,
+	BACnet_output_units								:=82,
+	BACnet_event_parameters						:=83,
+	(*see_event_parameters					:=83,*)
+	BACnet_polarity										:=84,
+	BACnet_presentvalue								:=85,
+	BACnet_priority										:=86,
+	BACnet_priority_array								:=87,
+	BACnet_priority_for_writing						:=88,
+	BACnet_process_identifier							:=89,
+	BACnet_program_change							:=90,
+	BACnet_program_location							:=91,
+	BACnet_program_state							:=92,
+	BACnet_proportional_constant					:=93,
+	BACnet_proportional_constant_units				:=94,
+	BACnet_protocol_conformance_class			:=95,
+	BACnet_protocol_object_types_supported		:=96,
+	BACnet_protocol_services_supported			:=97,
+	BACnet_protocol_version							:=98,
+	BACnet_read_only_								:=99,
+	BACnet_reason_for_halt							:=100,
+	BACnet_recipient								:=101,
+	BACnet_recipient_list							:=102,
+	BACnet_reliability								:=103,
+	BACnet_relinquish_default						:=104,
+	BACnet_required								:=105,
+	BACnet_resolution								:=106,
+	BACnet_segmentation_supported				:=107,
+	BACnet_setpoint								:=108,
+	BACnet_setpoint_reference					:=109,
+	BACnet_state_text								:=110,
+	BACnet_status_flags							:=111,
+	BACnet_system_status						:=112,
+	BACnet_time_delay							:=113,
+	BACnet_time_of_active_time_reset			:=114,
+	BACnet_time_of_state_count_reset			:=115,
+	BACnet_time_synchronization_recipients		:=116,
+	BACnet_units									:=117,
+	BACnet_update_interval						:=118,
+	BACnet_utc_offset								:=119,
+	BACnet_vendor_identifier						:=120,
+	BACnet_vendor_name							:=121,
+	BACnet_vt_classes_supported				:=122,
+	BACnet_weekly_schedule						:=123,
+	BACnet_attempted_samples					:=124,
+	BACnet_average_value						:=125,
+	BACnet_buffer_size							:=126,
+	BACnet_client_cov_increment					:=127,
+	BACnet_cov_resubscription_interval			:=128,
+	BACnet_current_notify_time					:=129,
+	BACnet_event_time_stamps					:=130,
+	BACnet_log_buffer								:=131,
+	BACnet_log_device_object_property			:=132,
+	BACnet_log_enable							:=133,
+	BACnet_log_interval							:=134,
+	BACnet_maximum_value						:=135,
+	BACnet_minimum_value						:=136,
+	BACnet_notification_threshold					:=137,
+	BACnet_previous_notify_time					:=138,
+	BACnet_protocol_revision						:=139,
+	BACnet_records_since_notification			:=140,
+	BACnet_record_count							:=141,
+	BACnet_start_time								:=142,
+	BACnet_stop_time								:=143,
+	BACnet_stop_when_full						:=144,
+	BACnet_total_record_count					:=145,
+	BACnet_valid_samples						:=146,
+	BACnet_window_interval						:=147,
+	BACnet_window_samples						:=148,
+	BACnet_maximum_value_timestamp			:=149,
+	BACnet_minimum_value_timestamp			:=150,
+	BACnet_variance_value						:=151,
+	BACnet_active_cov_subscriptions				:=152,
+	BACnet_backup_failure_timeout				:=153,
+	BACnet_configuration_files					:=154,
+	BACnet_database_revision					:=155,
+	BACnet_direct_reading							:=156,
+	BACnet_last_restore_time						:=157,
+	BACnet_maintenance_required				:=158,
+	BACnet_member_of							:=159,
+	BACnet_mode									:=160,
+	BACnet_operation_expected					:=161,
+	BACnet_setting									:=162,
+	BACnet_silenced								:=163,
+	BACnet_tracking_value							:=164,
+	BACnet_zone_members						:=165,
+	BACnet_life_safety_alarm_values				:=166,
+	BACnet_max_segments_accepted			:=167,
+	BACnet_profile_name							:=168,
+	BACnet_auto_slave_discovery					:=169,
+	BACnet_manual_slave_address_binding		:=170,
+	BACnet_slave_address_binding				:=171,
+	BACnet_slave_proxy_enable					:=172,
+	BACnet_last_notify_record						:=173,
+	BACnet_schedule_default						:=174,
+	BACnet_accepted_modes						:=175,
+	BACnet_adjust_value							:=176,
+	BACnet_count									:=177,
+	BACnet_count_before_change				:=178,
+	BACnet_count_change_time					:=179,
+	BACnet_cov_period							:=180,
+	BACnet_input_reference						:=181,
+	BACnet_limit_monitoring_interval				:=182,
+	BACnet_logging_object						:=183,
+	BACnet_logging_record						:=184,
+	BACnet_prescale								:=185,
+	BACnet_pulse_rate								:=186,
+	BACnet_scale									:=187,
+	BACnet_scale_factor							:=188,
+	BACnet_update_time							:=189,
+	BACnet_value_before_change					:=190,
+	BACnet_value_set								:=191,
+	BACnet_value_change_time					:=192);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetReliability :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Reliability
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_no_fault_detected,
+	BACnet_no_sensor,
+	BACnet_over_range,
+	BACnet_under_range,
+	BACnet_open_loop,
+	BACnet_shorted_loop,
+	BACnet_no_output,
+	BACnet_unreliable_other,
+	BACnet_process_error,
+	BACnet_multi_state_fault,
+	BACnet_configuration_error);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)
+
+(* @NESTEDCOMMENTS := 'Yes' *)
+(* @PATH := '\/Private (Internal use only)\/02 Enumerationen' *)
+(* @OBJECTFLAGS := '0, 8' *)
+TYPE BACnetSilencedState :(
+(*************************************************************************************
+WAGO Kontakttechnik GmbH Hansastr. 27, 32423 Minden(Westf.) 
+Tel. +49 571/887-0                                                                                                
+For internal use only! 
+Source: BACnetObjects.EXP   
+Enumeration: BACnet Silenced State
+
+Version:	1.0
+Date: 		10.12.2012
+*************************************************************************************)
+	BACnet_unsilenced			:=0,
+	BACnet_audible_silenced	:=1,
+	BACnet_visible_silenced	:=2,
+	BACnet_all_silenced		:=3);
+END_TYPE
+
+(*Enumeration's History*)
+(*Index			DATE			Remark,Description,Changes			   					*)
+(*--------------------------------------------------------------------------------------*)
+(*	A			10.12.2012		Version 1.0												*)
+(* @END_DECLARATION := '0' *)

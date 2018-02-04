@@ -1,0 +1,89 @@
+//Compiler Directives
+#CATEGORY "16" // Time/Date
+#SYMBOL_NAME "TOD_Parser"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT  TOD_SIZE 20
+#DEFINE_CONSTANT  TOD_SUB_SIZE 12
+#DEFINE_CONSTANT  MAX_ELEMENT_SIZE 4
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+// Inputs & Outputs
+STRING_INPUT tod$[TOD_SIZE];
+STRING_OUTPUT date$, time$, dayOfWeek$;
+ANALOG_OUTPUT year#, month#, day#, hour#, minute#; 
+
+// Sockets
+// Parameters
+// Parameter Properietes
+// Structure Definitions
+// Global Variables
+STRING todSub$[TOD_SUB_SIZE];
+// Functions
+// Event Handlers
+
+FUNCTION PrintDayOfWeek()
+{
+	INTEGER dayOfWeek;
+
+	dayOfWeek = GetDayOfWeekNum();
+
+	switch (dayOfWeek)
+	{
+		case (0) : dayOfWeek$ = "Niedziela";
+		case (1) : dayOfWeek$ = "Poniedzialek";
+		case (2) : dayOfWeek$ = "Wtorek";
+		case (3) : dayOfWeek$ = "Sroda";
+		case (4) : dayOfWeek$ = "Czwartek";
+		case (5) : dayOfWeek$ = "Piatek";
+		case (6) : dayOfWeek$ = "Sobota";
+        default : dayOfWeek$ = "???";
+	}
+}
+
+// mmddyyyyhhmmssxxxx
+CHANGE tod$
+{
+	STRING year$[MAX_ELEMENT_SIZE],
+		   month$[MAX_ELEMENT_SIZE],
+		   day$[MAX_ELEMENT_SIZE],
+		   hour$[MAX_ELEMENT_SIZE],
+		   minute$[MAX_ELEMENT_SIZE],
+		   buffer$[TOD_SUB_SIZE];
+    
+	buffer$ = left(tod$, TOD_SUB_SIZE);
+
+	if (todSub$ = buffer$) return;
+    
+	todSub$ = buffer$;
+
+	year$ = mid(tod$, 5, 4);
+	month$ = mid(tod$, 1, 2);
+	day$ = mid(tod$, 3, 2);
+	hour$ = mid(tod$, 9, 2);
+	minute$ = mid(tod$, 11, 2);
+
+	date$ = day$ + "." + month$ + "." + year$;
+	time$ = hour$ + ":" + minute$;
+
+	year# = atoi(year$);
+	month# = atoi(month$);
+	day# = atoi(day$);
+	hour# = atoi(hour$);
+	minute# = atoi(minute$);
+
+	PrintDayOfWeek();
+}
+
+Function Main()
+{
+	todSub$ = "";
+}

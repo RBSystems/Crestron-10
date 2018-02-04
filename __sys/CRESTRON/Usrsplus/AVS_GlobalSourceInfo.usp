@@ -1,0 +1,78 @@
+//	Dyrektywy kompilatora
+#CATEGORY "41"
+#SYMBOL_NAME "AVS_GlobalSourceInfo"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+//	Biblioteki
+#USER_LIBRARY "usl_AVSystem_Constants"
+#USER_SIMPLSHARP_LIBRARY "ssl_AVSystem"
+
+//	Sygnaly wyjsciowe
+DIGITAL_OUTPUT inf_SourceEnabled_FB[SOURCE_COUNT, SOURCE_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT inf_SourceNameShort$[SOURCE_COUNT];
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT inf_SourceNameLong$[SOURCE_COUNT, SOURCE_COUNT];
+
+/*
+ *	=================================================================
+ */
+
+FUNCTION UpdateSourceInfoSignals(INTEGER _sourceId)
+{
+	if (CElementManager.IsInitialized = 0) return;
+	
+	inf_SourceEnabled_FB[_sourceId] = CElementManager.SourceArray[_sourceId].IsEnabled;
+    inf_SourceNameShort$[_sourceId] = CElementManager.SourceArray[_sourceId].NameShort;
+	inf_SourceNameLong$[_sourceId] = CElementManager.SourceArray[_sourceId].NameLong;
+}
+
+FUNCTION InitializeSourceInfoSignals()
+{
+	INTEGER i;
+
+	for(i = 1 to SOURCE_COUNT) UpdateSourceInfoSignals(i);
+}
+
+/*
+ *	=================================================================
+ */
+
+EVENTHANDLER SourceInfoChangedHandler(CSource zone, EventArgs e)
+{
+	UpdateSourceInfoSignals(zone.Id);
+}
+
+EVENTHANDLER ElementManagerInitializedHandler(CElement element, EventArgs e)
+{
+	InitializeSourceInfoSignals();
+}
+
+/*
+ *	=================================================================
+ */
+
+FUNCTION RegisterSharpEvents()
+{
+	RegisterEvent(CElementManager, ElementManagerInitialized, ElementManagerInitializedHandler);
+	RegisterEvent(CSource, SourceInfoChanged, SourceInfoChangedHandler);
+}
+
+FUNCTION InitializeModule()
+{	
+    RegisterSharpEvents();
+}
+
+/*
+ *	=================================================================
+ */
+
+// Funkcja Main
+Function Main()
+{
+	InitializeModule();
+	WaitForInitializationComplete();
+	// TODO Init
+}

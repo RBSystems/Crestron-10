@@ -1,0 +1,121 @@
+VAR_GLOBAL
+
+(* SA_P0 Kampman feedback *)
+	K2_Tryb_Pracy_FB: WORD;
+	K2_Czujnik_Regulacyjny: WORD;
+	K2_Wentylator_FB: WORD;
+	K2_On_Off_FB: WORD;
+	K2_Usterka: WORD;
+	K2_Komendy: WORD;
+	K2_Eco_Dzien_FB: WORD;
+	K2_Nastawa_Temp_FB: WORD;
+
+	K3_Tryb_Pracy_FB: WORD;
+	K3_Czujnik_Regulacyjny: WORD;
+	K3_Wentylator_FB: WORD;
+	K3_On_Off_FB: WORD;
+	K3_Usterka: WORD;
+	K3_Komendy: WORD;
+	K3_Eco_Dzien_FB: WORD;
+	K3_Nastawa_Temp_FB: WORD;
+
+	K4_Tryb_Pracy_FB: WORD;
+	K4_Czujnik_Regulacyjny: WORD;
+	K4_Wentylator_FB: WORD;
+	K4_On_Off_FB: WORD;
+	K4_Usterka: WORD;
+	K4_Komendy: WORD;
+	K4_Eco_Dzien_FB: WORD;
+	K4_Nastawa_Temp_FB: WORD;
+
+	K8_Tryb_Pracy_FB: WORD;
+	K8_Czujnik_Regulacyjny: WORD;
+	K8_Wentylator_FB: WORD;
+	K8_On_Off_FB: WORD;
+	K8_Usterka: WORD;
+	K8_Komendy: WORD;
+	K8_Eco_Dzien_FB: WORD;
+	K8_Nastawa_Temp_FB: WORD;
+
+	K9_Tryb_Pracy_FB: WORD;
+	K9_Czujnik_Regulacyjny: WORD;
+	K9_Wentylator_FB: WORD;
+	K9_On_Off_FB: WORD;
+	K9_Usterka: WORD;
+	K9_Komendy: WORD;
+	K9_Eco_Dzien_FB: WORD;
+	K9_Nastawa_Temp_FB: WORD;
+
+	K13_Tryb_Pracy_FB: WORD;
+	K13_Czujnik_Regulacyjny: WORD;
+	K13_Wentylator_FB: WORD;
+	K13_On_Off_FB: WORD;
+	K13_Usterka: WORD;
+	K13_Komendy: WORD;
+	K13_Eco_Dzien_FB: WORD;
+	K13_Nastawa_Temp_FB: WORD;
+
+	K14_Tryb_Pracy_FB: WORD;
+	K14_Czujnik_Regulacyjny: WORD;
+	K14_Wentylator_FB: WORD;
+	K14_On_Off_FB: WORD;
+	K14_Usterka: WORD;
+	K14_Komendy: WORD;
+	K14_Eco_Dzien_FB: WORD;
+	K14_Nastawa_Temp_FB: WORD;
+
+	K16_Tryb_Pracy_FB: WORD;
+	K16_Czujnik_Regulacyjny: WORD;
+	K16_Wentylator_FB: WORD;
+	K16_On_Off_FB: WORD;
+	K16_Usterka: WORD;
+	K16_Komendy: WORD;
+	K16_Eco_Dzien_FB: WORD;
+	K16_Nastawa_Temp_FB: WORD;
+
+	K33_Tryb_Pracy_FB: WORD;
+	K33_Czujnik_Regulacyjny: WORD;
+	K33_Wentylator_FB: WORD;
+	K33_On_Off_FB: WORD;
+	K33_Usterka: WORD;
+	K33_Komendy: WORD;
+	K33_Eco_Dzien_FB: WORD;
+	K33_Nastawa_Temp_FB: WORD;
+
+	K34_Tryb_Pracy_FB: WORD;
+	K34_Czujnik_Regulacyjny: WORD;
+	K34_Wentylator_FB: WORD;
+	K34_On_Off_FB: WORD;
+	K34_Usterka: WORD;
+	K34_Komendy: WORD;
+	K34_Eco_Dzien_FB: WORD;
+	K34_Nastawa_Temp_FB: WORD;
+
+	K27_Czujnik_Regulacyjny: WORD;
+	K27_Tryb_Pracy_FB: WORD;
+	K27_Wentylator_FB: WORD;
+	K27_On_Off_FB: WORD;
+	K27_Usterka: WORD;
+	K27_Komendy: WORD;
+	K27_Eco_Dzien_FB: WORD;
+	K27_Nastawa_Temp_FB: WORD;
+
+	K31_Czujnik_Regulacyjny: WORD;
+	K31_Tryb_Pracy_FB: WORD;
+	K31_Wentylator_FB: WORD;
+	K31_On_Off_FB: WORD;
+	K31_Usterka: WORD;
+	K31_Komendy: WORD;
+	K31_Eco_Dzien_FB: WORD;
+	K31_Nastawa_Temp_FB: WORD;
+
+	K35_Czujnik_Regulacyjny: WORD;
+	K35_Tryb_Pracy_FB: WORD;
+	K35_Wentylator_FB: WORD;
+	K35_On_Off_FB: WORD;
+	K35_Usterka: WORD;
+	K35_Komendy: WORD;
+	K35_Eco_Dzien_FB: WORD;
+	K35_Nastawa_Temp_FB: WORD;
+
+END_VAR

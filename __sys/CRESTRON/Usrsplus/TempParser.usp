@@ -1,0 +1,78 @@
+#CATEGORY "40" // Interface-Specific Logic
+//Compiler Directives
+#SYMBOL_NAME "TempParser"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT TENS_BASE 10
+//#DEFINE_CONSTANT HUNDREDS_BASE 100
+#DEFINE_CONSTANT MAX_VALUE 65535
+#DEFINE_CONSTANT TRESHOLD 2000
+#DEFINE_CONSTANT TEMP_STRING_LENGTH 10
+
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+//Inputs & Outputs
+
+ANALOG_INPUT tempIn#;
+STRING_OUTPUT tempOut$;
+
+// Sockets
+// Parameters
+// Parameter Properietes
+// Structure Definitions
+// Global Variables
+
+INTEGER _negativeFlag;
+INTEGER _absoluteTemp;
+STRING _tempString[TEMP_STRING_LENGTH];
+
+// Functions
+
+FUNCTION makeTempString()
+{
+	INTEGER _tens, _units;
+
+	if (_negativeFlag = 1)
+	{
+		_tempString = "- ";
+	}
+	else _tempString = "";
+
+	_tens = _absoluteTemp / TENS_BASE;
+	_units = _absoluteTemp - (_tens * TENS_BASE);
+
+	_tempString = _tempString + itoa(_tens) + "," + itoa(_units);
+
+	tempOut$ = _tempString;
+}
+
+// Event Handlers
+
+CHANGE tempIn#
+{
+	if (tempIn# > TRESHOLD)
+	{
+		_negativeFlag = 1;
+		_absoluteTemp = MAX_VALUE - tempIn#;
+	}
+	else
+	{
+		_negativeFlag = 0;
+		_absoluteTemp = tempIn#;
+	}
+
+	makeTempString();
+}
+
+Function Main()
+{
+	_negativeFlag = 0;
+	_absoluteTemp = 0;
+}

@@ -1,0 +1,82 @@
+VAR_GLOBAL PERSISTENT RETAIN
+
+(* SA_P0 Kampman *)
+	K2_Tryb_Pracy: WORD;
+	K2_Wentylator: WORD;
+	K2_On_Off: WORD;
+	K2_Eco_Dzien: WORD;
+	K2_Nastawa_Temp: WORD;
+
+	K3_Tryb_Pracy: WORD;
+	K3_Wentylator: WORD;
+	K3_On_Off: WORD;
+	K3_Eco_Dzien: WORD;
+	K3_Nastawa_Temp: WORD;
+
+	K4_Tryb_Pracy: WORD;
+	K4_Wentylator: WORD;
+	K4_On_Off: WORD;
+	K4_Eco_Dzien: WORD;
+	K4_Nastawa_Temp: WORD;
+
+	K8_Tryb_Pracy: WORD;
+	K8_Wentylator: WORD;
+	K8_On_Off: WORD;
+	K8_Eco_Dzien: WORD;
+	K8_Nastawa_Temp: WORD;
+
+	K9_Tryb_Pracy: WORD;
+	K9_Wentylator: WORD;
+	K9_On_Off: WORD;
+	K9_Eco_Dzien: WORD;
+	K9_Nastawa_Temp: WORD;
+
+	K13_Tryb_Pracy: WORD;
+	K13_Wentylator: WORD;
+	K13_On_Off: WORD;
+	K13_Eco_Dzien: WORD;
+	K13_Nastawa_Temp: WORD;
+
+	K14_Tryb_Pracy: WORD;
+	K14_Wentylator: WORD;
+	K14_On_Off: WORD;
+	K14_Eco_Dzien: WORD;
+	K14_Nastawa_Temp: WORD;
+
+	K16_Tryb_Pracy: WORD;
+	K16_Wentylator: WORD;
+	K16_On_Off: WORD;
+	K16_Eco_Dzien: WORD;
+	K16_Nastawa_Temp: WORD;
+
+	K33_Tryb_Pracy: WORD;
+	K33_Wentylator: WORD;
+	K33_On_Off: WORD;
+	K33_Eco_Dzien: WORD;
+	K33_Nastawa_Temp: WORD;
+
+	K34_Tryb_Pracy: WORD;
+	K34_Wentylator: WORD;
+	K34_On_Off: WORD;
+	K34_Eco_Dzien: WORD;
+	K34_Nastawa_Temp: WORD;
+
+	K27_Tryb_Pracy: WORD;
+	K27_Wentylator: WORD;
+	K27_On_Off: WORD;
+	K27_Eco_Dzien: WORD;
+	K27_Nastawa_Temp: WORD;
+
+	K31_Tryb_Pracy: WORD;
+	K31_Wentylator: WORD;
+	K31_On_Off: WORD;
+	K31_Eco_Dzien: WORD;
+	K31_Nastawa_Temp: WORD;
+
+	K35_Tryb_Pracy: WORD;
+	K35_Wentylator: WORD;
+	K35_On_Off: WORD;
+	K35_Eco_Dzien: WORD;
+	K35_Nastawa_Temp: WORD;
+
+END_VAR

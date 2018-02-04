@@ -1,0 +1,66 @@
+//Compiler Directives
+#SYMBOL_NAME "SourcesNameReader"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT MAX_SOURCES_COUNT 20
+#DEFINE_CONSTANT NAMES_STRING_LENGTH 300
+#DEFINE_CONSTANT SOURCE_NAME_LENGTH 15
+#DEFINE_CONSTANT STARTUP_DELAY 500
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+// Inputs & Outputs
+
+BUFFER_INPUT Sources_Names$[NAMES_STRING_LENGTH];
+
+STRING_OUTPUT Source_Name$[MAX_SOURCES_COUNT];
+
+// Sockets
+// Parameters
+// Parameter Properietes
+// Structure Definitions
+// Global Variables
+
+INTEGER gSourcesCount;
+
+// Functions
+
+INTEGER_FUNCTION GetSourcesCount()
+{
+	INTEGER i;
+
+	for(i = MAX_SOURCES_COUNT to 1 step -1)
+	{
+		if (IsSignalDefined(Source_Name$[i])) break;
+	}
+
+	return (i);
+}
+
+FUNCTION ReadSourcesNames()
+{
+	INTEGER i;
+	STRING tempSourceName[SOURCE_NAME_LENGTH];
+
+	for (i = 1 to gSourcesCount)
+	{
+		tempSourceName = REMOVE("|", Sources_Names$);
+		Source_Name$[i] = LEFT(tempSourceName, LEN(tempSourceName) - 1);
+	}
+}
+
+// Event Handlers 
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	gSourcesCount = GetSourcesCount();
+	delay(STARTUP_DELAY);
+	ReadSourcesNames();		
+}

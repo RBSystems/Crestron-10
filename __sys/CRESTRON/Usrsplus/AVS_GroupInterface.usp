@@ -1,0 +1,290 @@
+//	Dyrektywy kompilatora
+#CATEGORY "41"
+#SYMBOL_NAME "AVS_GroupInterface"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+//	Biblioteki
+#USER_LIBRARY "usl_AVSystem_Constants"
+#USER_SIMPLSHARP_LIBRARY "ssl_AVSystem"
+
+//	Sygnaly wejsciowe
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT PowerOn, PowerOff, PowerToggle;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT MuteOn, MuteOff, MuteToggle;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT VolumeUp, VolumeDown, VolumeDefault;
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT SelectSource[SOURCE_COUNT, SOURCE_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT SelectGroup#;
+ANALOG_INPUT _SKIP_, _SKIP_, _SKIP_;
+ANALOG_INPUT SelectSource#;
+
+//	Sygnaly wyjsciowe
+DIGITAL_OUTPUT Enabled_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT PowerOn_FB, PowerOff_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_;
+DIGITAL_OUTPUT MuteOn_FB, MuteOff_FB, MuteMixed_FB;
+DIGITAL_OUTPUT  _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT SelectedSource_Mixed_FB;
+DIGITAL_OUTPUT SelectedSource_FB[SOURCE_COUNT, SOURCE_COUNT];
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT SelectedGroup#_FB;
+STRING_OUTPUT SelectedGroupNameShort$;
+STRING_OUTPUT SelectedGroupNameLong$;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT SelectedSource#_FB;
+STRING_OUTPUT SelectedSourceNameShort$;
+STRING_OUTPUT SelectedSourceNameLong$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT CurrentVolume$;
+
+//	Parametry
+INTEGER_PARAMETER _SKIP_, pDefaultGroupId;
+
+//	Wlasciwosci parametrow
+#BEGIN_PARAMETER_PROPERTIES pDefaultGroupId
+	propValidUnits = unitDecimal;
+	propDefaultUnit = unitDecimal;
+	propBounds = 1d , GROUP_COUNT d;
+#END_PARAMETER_PROPERTIES
+
+//	Zmienne globalne
+INTEGER gSelectedGroupId;
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje ustawiajace sygnaly wyjsciowe
+
+FUNCTION UpdateSelectedSource(INTEGER _sourceId)
+{
+	INTEGER i;
+
+	SelectedSource#_FB = _sourceId;
+
+	for (i = 1 to SOURCE_COUNT) SelectedSource_FB[i] = 0;
+
+	if (_sourceId > 0) SelectedSource_FB[_sourceId] = 1;
+
+	SelectedSourceNameShort$ = CElementManager.GroupArray[gSelectedGroupId].GetCurrentSourceTextShort();
+    SelectedSourceNameLong$ = CElementManager.GroupArray[gSelectedGroupId].GetCurrentSourceTextLong();
+}
+
+FUNCTION UpdatePower()
+{
+	if (CElementManager.GroupArray[gSelectedGroupId].SelectedSourceType = SourceType.None)
+	{
+		PowerOn_FB = 0;
+		PowerOff_FB = 1;
+        SelectedSource_Mixed_FB = 0;
+	}
+	else if (CElementManager.GroupArray[gSelectedGroupId].SelectedSourceType = SourceType.Equal)
+	{
+		PowerOn_FB = 1;
+		PowerOff_FB = 0;
+        SelectedSource_Mixed_FB = 0;
+	}
+	else
+	{
+		PowerOn_FB = 1;
+		PowerOff_FB = 0;
+        SelectedSource_Mixed_FB = 1;
+	}
+}
+
+FUNCTION UpdateMute()
+{
+	if (CElementManager.GroupArray[gSelectedGroupId].CurrentMuteType = MuteType.Off)
+	{
+		MuteOn_FB = 0;
+		MuteOff_FB = 1;
+        MuteMixed_FB = 0;
+	}
+	else if (CElementManager.GroupArray[gSelectedGroupId].CurrentMuteType = MuteType.On)
+	{
+		MuteOn_FB = 1;
+		MuteOff_FB = 0;
+        MuteMixed_FB = 0;
+	}
+	else
+	{
+		MuteOn_FB = 0;
+		MuteOff_FB = 1;	//	Czy lepiej 0 ?
+        MuteMixed_FB = 1;
+	}
+}
+
+FUNCTION UpdateGroupInfoSignals()
+{
+	Enabled_FB = CElementManager.GroupArray[gSelectedGroupId].IsEnabled;
+	SelectedGroupNameShort$ = CElementManager.GroupArray[gSelectedGroupId].NameShort;
+	SelectedGroupNameLong$ = CElementManager.GroupArray[gSelectedGroupId].NameLong;
+}
+
+FUNCTION UpdateGroupStateSignals()
+{
+	UpdatePower();
+
+	UpdateMute();
+
+    UpdateSelectedSource(CElementManager.GroupArray[gSelectedGroupId].CurrentEqualSourceId);
+
+    CurrentVolume$ = CElementManager.GroupArray[gSelectedGroupId].GetCurrentVolumeText();
+}
+
+FUNCTION UpdateAllGroupSignals()
+{
+	UpdateGroupInfoSignals();
+	UpdateGroupStateSignals();
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje obslugujace zdarzenia wywylane przez Simpl#
+
+EVENTHANDLER ElementManagerInitializedHandler(CElement element, EventArgs e)
+{
+	UpdateAllGroupSignals();
+}
+
+EVENTHANDLER GroupInfoChangedHandler(CGroup group, EventArgs e)
+{
+	if (CElementManager.IsInitialized = 1 && group.Id = gSelectedGroupId) UpdateGroupInfoSignals();
+}
+
+EVENTHANDLER GroupStateChangedHandler(CGroup group, EventArgs e)
+{
+	if (CElementManager.IsInitialized = 1 && group.Id = gSelectedGroupId) UpdateGroupStateSignals();
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje inicializujace
+
+FUNCTION RegisterSharpEvents()
+{	
+	RegisterEvent(CElementManager, ElementManagerInitialized, ElementManagerInitializedHandler);
+	RegisterEvent(CGroup, GroupInfoChanged, GroupInfoChangedHandler);
+	RegisterEvent(CGroup, GroupPlusStateChanged, GroupStateChangedHandler);
+}
+
+FUNCTION InitializeModule()
+{	
+    RegisterSharpEvents();
+	gSelectedGroupId = pDefaultGroupId;
+	SelectedGroup#_FB = gSelectedGroupId;
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Obsluga sygnalow wejsciowych
+
+PUSH PowerOn
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].PowerOn();
+}
+
+PUSH PowerOff
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].PowerOff();
+}
+
+PUSH PowerToggle
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].TogglePower();
+}
+
+PUSH MuteOn
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].SetMute(1);
+}
+
+PUSH MuteOff
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].SetMute(0);
+}
+
+PUSH MuteToggle
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].ToggleMute();
+}
+
+PUSH VolumeUp
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].IncreaseVolume();
+}
+
+PUSH VolumeDown
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].DecreaseVolume();
+}
+
+PUSH VolumeDefault
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].SetDefaultVolume();
+}
+
+PUSH SelectSource
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].SetSource(getLastModifiedArrayIndex());
+}
+
+CHANGE SelectGroup#
+{
+	if (CElementManager.IsInitialized = 0 || SelectGroup# > GROUP_COUNT) return;
+
+    gSelectedGroupId = SelectGroup#;
+    UpdateAllGroupSignals();
+	SelectedGroup#_FB = gSelectedGroupId;
+}
+
+CHANGE SelectSource#
+{
+	if (CElementManager.IsInitialized = 0 || SelectSource# > SOURCE_COUNT) return;
+
+	CElementManager.GroupArray[gSelectedGroupId].SetSource(SelectSource#);
+}
+
+/*
+ *	=================================================================
+ */
+
+// Funkcja Main
+Function Main()
+{
+	InitializeModule();
+	WaitForInitializationComplete();
+	// TODO Init
+}

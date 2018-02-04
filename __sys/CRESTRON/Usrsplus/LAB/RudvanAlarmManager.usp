@@ -1,0 +1,262 @@
+//Compiler Directives
+
+#CATEGORY "2" // Conditional
+#SYMBOL_NAME "RudvanAlarmManager"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND AllWithAny
+ 
+// Constants
+
+#DEFINE_CONSTANT MAX_PROBLEM_COUNT 15
+#DEFINE_CONSTANT PROBLEMS_QUEUE_SIZE 30
+
+// Inputs
+
+DIGITAL_INPUT Drive_FB, Alarm_Stop, _SKIP_, _SKIP_;
+DIGITAL_INPUT Problem_FB[MAX_PROBLEM_COUNT];
+
+// Outputs
+
+DIGITAL_OUTPUT Warning_FB, Alarm_FB, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT Long_Problem_FB[MAX_PROBLEM_COUNT];
+
+// Parameters
+
+INTEGER_PARAMETER _SKIP_, _SKIP_, pWaitTime, _SKIP_, pDriveAlarm[MAX_PROBLEM_COUNT];
+                                              
+// Parameter Properietes
+
+#BEGIN_PARAMETER_PROPERTIES pWaitTime
+
+   propValidUnits = unitTime;
+   propDefaultUnit = unitTime;
+   propBounds = 1s , 10s;
+   propDefaultValue = 3s;
+
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES pDriveAlarm
+
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propDefaultValue = 0d;
+   propList = { 0d,"NO" },{ 1d,"YES" };
+
+#END_PARAMETER_PROPERTIES
+
+// Global Variables
+
+INTEGER gProblemsCount, gQueueSemaphore, gAlarmSemaphore, gItemsInQueue;
+INTEGER gProblemAlarms[MAX_PROBLEM_COUNT];
+INTEGER gProblemsQeue[PROBLEMS_QUEUE_SIZE];
+
+// Functions
+
+INTEGER_FUNCTION GetProblemsCount()
+{
+	INTEGER i;
+
+	for (i = MAX_PROBLEM_COUNT to 1 step -1)
+	{
+		if (IsSignalDefined(Problem_FB[i]))
+		{
+			return(i);
+		}
+	}
+}
+
+FUNCTION AddProblemToQueue(INTEGER _index)
+{
+	INTEGER i;
+    
+	Trace("Start AddProblemToQueue(%u)", _index);
+
+	while (gQueueSemaphore) Trace("Waiting for queue semaphore");
+    
+	gQueueSemaphore = 1;
+
+	for (i = 1 to PROBLEMS_QUEUE_SIZE)
+	{
+		if (gProblemsQeue[i] = 0)
+		{			
+			gProblemsQeue[i] = _index;
+			Trace("End AddProblemToQueue(%u) - Added problem nr %u at index %u.", _index, _index, i);
+			gQueueSemaphore = 0;
+			gItemsInQueue = gItemsInQueue + 1;
+			return;
+		}
+	}
+
+	Trace("End AddProblemToQueue(%u) - no problem added", _index);
+}
+
+INTEGER_FUNCTION GetProblemFromQueue()
+{
+	INTEGER i;
+    
+	Trace("Start GetProblemFromQueue");
+
+	while (gQueueSemaphore) Trace("Waiting for queue semaphore");
+    
+	gQueueSemaphore = 1;    
+
+	for (i = 1 to PROBLEMS_QUEUE_SIZE)
+	{
+		gProblemsQeue[i-1] = gProblemsQeue[i];
+	}
+
+	gProblemsQeue[i-1] = 0;    
+	Trace("End GetProblemFromQueue - Removed problem nr %u.", gProblemsQeue[0]);    
+	gItemsInQueue = gItemsInQueue - 1;
+	gQueueSemaphore = 0;
+
+	return(gProblemsQeue[0]);
+}
+
+FUNCTION SetProblemAlarmByIndex(INTEGER _index, INTEGER val)
+{
+	Trace("Start SetProblemAlarmByIndex(%u, %u)", _index, val);
+
+	while (gAlarmSemaphore) Trace("Waiting for alarm semaphore");
+	gAlarmSemaphore = 1;
+	gProblemAlarms[_index] = val;
+	gAlarmSemaphore = 0;
+	Trace("End SetProblemAlarmByIndex(%u, %u)", _index, val);
+}
+
+FUNCTION CheckForAlarmByIndex(INTEGER _index)
+{
+	Trace("Start CheckForAlarmByIndex(%u)", _index);
+	
+	if ((pDriveAlarm[_index] = 0) || (pDriveAlarm[_index] && Drive_FB))
+	{
+		Alarm_FB = 1;
+		SetProblemAlarmByIndex(_index, 1);
+		Trace("End CheckForAlarmByIndex(%u) - Fired ALARM for problem nr %u.", _index, _index);
+	}
+
+	Trace("End CheckForAlarmByIndex(%u) - No ALARM for problem nr %u fired.", _index, _index);
+}
+
+FUNCTION CheckForWarning()
+{
+	INTEGER i;
+    
+    Trace("Start CheckForWarning");
+	
+	for (i = 1 to gProblemsCount)
+	{
+		while (gAlarmSemaphore) Trace("Waiting for alarm semaphore");
+
+        gAlarmSemaphore = 1;
+
+		if (gProblemAlarms[i])
+		{			
+			Warning_FB = 1;
+			gAlarmSemaphore = 0;
+			Trace("End CheckForWarning - YES");
+			return;
+		}
+
+		gAlarmSemaphore = 0;
+	}
+    
+    gAlarmSemaphore = 0;
+	Warning_FB = 0;
+
+	Trace("End CheckForWarning - NO");
+}
+
+FUNCTION CheckAll()
+{
+	INTEGER i;
+    
+	Trace("Start CheckAll");
+
+	for (i = 1 to gProblemsCount) if (Long_Problem_FB[i]) CheckForAlarmByIndex(i); 
+
+	CheckForWarning();
+
+	Trace("End CheckAll");
+}
+
+FUNCTION HandleQueueElement()
+{
+	INTEGER index;
+	
+	Trace("Start HandleQueueElement");
+
+	index = GetProblemFromQueue();
+	
+	if(Problem_FB[index])
+	{
+		Long_Problem_FB[index] = 1;
+
+		CheckForAlarmByIndex(index);
+	}
+
+	Trace("End HandleQueueElement");
+}
+
+// Event Handlers
+
+PUSH Drive_FB
+{
+	CheckAll();
+}
+
+PUSH Alarm_Stop
+{
+	Alarm_FB = 0;
+}
+
+CHANGE Problem_FB
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+    
+	Trace("Start CHANGE Problem_FB[%u]", i);
+
+	if (Problem_FB[i] = 0)
+	{
+		Trace("Problem_FB nr %u changed to 0.", i);
+		SetProblemAlarmByIndex(i, 0);
+		Long_Problem_FB[i] = 0;
+	}
+	else
+	{
+        Trace("Problem_FB nr %u changed to 1.", i);
+
+		AddProblemToQueue(i);
+
+        Trace("Before WAIT");
+
+		wait(pWaitTime, QUEUE_WAIT)
+		{
+            Trace("Start WAIT");
+			HandleQueueElement();
+			Trace("End WAIT");
+		}
+	}
+
+	CheckForWarning();
+	
+	Trace("End CHANGE Problem_FB[%u]", i);
+}
+
+// Main Function
+
+Function Main()
+{
+	Trace("Start Main");
+	gQueueSemaphore = 0;
+	gAlarmSemaphore = 0;
+	gItemsInQueue = 0;
+	gProblemsCount = GetProblemsCount();
+	Trace("Problems count = %u", gProblemsCount);
+	CheckAll();
+	Trace("End Main");
+}

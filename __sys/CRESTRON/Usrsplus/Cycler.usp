@@ -1,0 +1,81 @@
+#SYMBOL_NAME "Cycler"
+#DEFINE_CONSTANT MIN_ITEM_COUNT 2
+#DEFINE_CONSTANT MAX_ITEM_COUNT 50
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+DIGITAL_INPUT nextItem, previousItem;
+ANALOG_INPUT selectItem#;
+
+DIGITAL_OUTPUT activeItem_FB[MAX_ITEM_COUNT, MIN_ITEM_COUNT];
+ANALOG_OUTPUT activeItem#_FB;
+
+INTEGER gItemCount;
+
+FUNCTION CalculateItemCount()
+{
+	INTEGER i;
+
+	for (i = MAX_ITEM_COUNT to MIN_ITEM_COUNT step -1)
+	{
+		if (isSignalDefined(activeItem_FB[i])<>0)
+		{
+			gItemCount = i;
+			return;
+		} 
+	}
+}
+
+FUNCTION SetActiveItem(INTEGER itemNr)
+{
+	INTEGER i, targetNr;
+	
+	if (itemNr > gItemCount) targetNr = 1;
+	else if (itemNr < 1) targetNr = gItemCount;
+	else targetNr = itemNr;
+
+	activeItem#_FB = targetNr;
+
+	for (i = 1 to gItemCount) activeItem_FB[i] = 0;
+
+	activeItem_FB[targetNr] = 1;
+}
+
+
+PUSH nextItem
+{
+	SetActiveItem(activeItem#_FB + 1);
+}
+
+PUSH previousItem
+{
+	SetActiveItem(activeItem#_FB - 1);
+}
+
+
+CHANGE selectItem#
+{
+	SetActiveItem(selectItem#);
+}
+
+
+Function Main()
+{
+    // TODO:  Add code here
+    // Initialize declared global and local variables/arrays as needed.
+
+	
+
+    WaitForInitializationComplete();
+    // If you are reading any Input or Output variables, uncomment
+    //   the WaitForInitializationComplete statement above and read
+    //   them afterwards.  Input/Output variables will not have
+    //   their correct values set until after the logic processor
+    //   runs and propagates the values to them.
+
+	CalculateItemCount();
+	SetActiveItem(1);
+}
+
+

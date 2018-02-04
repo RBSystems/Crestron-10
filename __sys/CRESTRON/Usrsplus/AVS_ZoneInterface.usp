@@ -1,0 +1,247 @@
+//	Dyrektywy kompilatora
+#CATEGORY "41"
+#SYMBOL_NAME "AVS_ZoneInterface"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+//	Biblioteki
+#USER_LIBRARY "usl_AVSystem_Constants"
+#USER_SIMPLSHARP_LIBRARY "ssl_AVSystem"
+
+//	Sygnaly wejsciowe
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT PowerOn, PowerOff, PowerToggle;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT MuteOn, MuteOff, MuteToggle;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT VolumeUp, VolumeDown, VolumeDefault;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT SelectSource[SOURCE_COUNT, SOURCE_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT SelectZone#;
+ANALOG_INPUT _SKIP_, _SKIP_, _SKIP_;
+ANALOG_INPUT SelectSource#;
+
+//	Sygnaly wyjsciowe
+DIGITAL_OUTPUT Enabled_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT PowerOn_FB, PowerOff_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_;
+DIGITAL_OUTPUT MuteOn_FB, MuteOff_FB;
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT SelectedSource_FB[SOURCE_COUNT, SOURCE_COUNT];
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT SelectedZone#_FB;
+STRING_OUTPUT SelectedZoneNameShort$;
+STRING_OUTPUT SelectedZoneNameLong$;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT SelectedSource#_FB;
+STRING_OUTPUT SelectedSourceNameShort$;
+STRING_OUTPUT SelectedSourceNameLong$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT CurrentVolume$;
+
+//	Parametry
+INTEGER_PARAMETER _SKIP_, pDefaultZoneId;
+
+//	Wlasciwosci parametrow
+#BEGIN_PARAMETER_PROPERTIES pDefaultZoneId
+	propValidUnits = unitDecimal;
+	propDefaultUnit = unitDecimal;
+	propBounds = 1d , ZONE_COUNT d;
+#END_PARAMETER_PROPERTIES
+
+//	Zmienne globalne
+INTEGER gSelectedZoneId;
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje ustawiajace sygnaly wyjsciowe
+
+FUNCTION UpdateSelectedSource(INTEGER _sourceId)
+{
+	INTEGER i;
+
+	SelectedSource#_FB = _sourceId;
+
+	for (i = 1 to SOURCE_COUNT) SelectedSource_FB[i] = 0;
+
+	if (_sourceId > 0) SelectedSource_FB[_sourceId] = 1;
+
+	SelectedSourceNameShort$ = CElementManager.ZoneArray[gSelectedZoneId].GetCurrentSourceTextShort();
+    SelectedSourceNameLong$ = CElementManager.ZoneArray[gSelectedZoneId].GetCurrentSourceTextLong();	
+}
+
+FUNCTION UpdateZoneInfoSignals()
+{
+	Enabled_FB = CElementManager.ZoneArray[gSelectedZoneId].IsEnabled;
+	SelectedZoneNameShort$ = CElementManager.ZoneArray[gSelectedZoneId].NameShort;
+	SelectedZoneNameLong$ = CElementManager.ZoneArray[gSelectedZoneId].NameLong;
+}
+
+FUNCTION UpdateZoneStateSignals()
+{
+	PowerOn_FB = CElementManager.ZoneArray[gSelectedZoneId].IsPoweredOn;
+	PowerOff_FB = 1 - PowerOn_FB;
+
+	MuteOn_FB = CElementManager.ZoneArray[gSelectedZoneId].IsMuted;
+	MuteOff_FB = 1 - MuteOn_FB;
+
+    UpdateSelectedSource(CElementManager.ZoneArray[gSelectedZoneId].CurrentSourceId);
+
+    CurrentVolume$ = CElementManager.ZoneArray[gSelectedZoneId].GetCurrentVolumeText();
+}
+
+FUNCTION UpdateAllZoneSignals()
+{
+	UpdateZoneInfoSignals();
+	UpdateZoneStateSignals();
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje obslugujace zdarzenia wywylane przez Simpl#
+
+EVENTHANDLER ElementManagerInitializedHandler(CElement element, EventArgs e)
+{
+	UpdateAllZoneSignals();
+}
+
+EVENTHANDLER ZoneInfoChangedHandler(CZone zone, EventArgs e)
+{
+	if (CElementManager.IsInitialized = 1 && zone.Id = gSelectedZoneId) UpdateZoneInfoSignals();
+}
+
+EVENTHANDLER ZoneStateChangedHandler(CZone zone, EventArgs e)
+{
+	if (CElementManager.IsInitialized = 1 && zone.Id = gSelectedZoneId) UpdateZoneStateSignals();
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Funkcje inicializujace
+
+FUNCTION RegisterSharpEvents()
+{	
+	RegisterEvent(CElementManager, ElementManagerInitialized, ElementManagerInitializedHandler);
+	RegisterEvent(CZone, ZoneInfoChanged, ZoneInfoChangedHandler);
+	RegisterEvent(CZone, ZonePlusStateChanged, ZoneStateChangedHandler);
+}
+
+FUNCTION InitializeModule()
+{	
+    RegisterSharpEvents();
+	gSelectedZoneId = pDefaultZoneId;
+	SelectedZone#_FB = gSelectedZoneId;
+}
+
+/*
+ *	=================================================================
+ */
+
+//	Obsluga sygnalow wejsciowych
+
+PUSH PowerOn
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].PowerOn();
+}
+
+PUSH PowerOff
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].PowerOff();
+}
+
+PUSH PowerToggle
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].TogglePower();
+}
+
+PUSH MuteOn
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].SetMute(1);
+}
+
+PUSH MuteOff
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].SetMute(0);
+}
+
+PUSH MuteToggle
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].ToggleMute();
+}
+
+PUSH VolumeUp
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].IncreaseVolume();
+}
+
+PUSH VolumeDown
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].DecreaseVolume();
+}
+
+PUSH VolumeDefault
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].SetDefaultVolume();
+}
+
+PUSH SelectSource
+{
+	if (CElementManager.IsInitialized = 0) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].SetSource(getLastModifiedArrayIndex());
+}
+
+CHANGE SelectZone#
+{
+	if (CElementManager.IsInitialized = 0 || SelectZone# > ZONE_COUNT) return;
+
+    gSelectedZoneId = SelectZone#;
+    UpdateAllZoneSignals();
+	SelectedZone#_FB = gSelectedZoneId;
+}
+
+CHANGE SelectSource#
+{
+	if (CElementManager.IsInitialized = 0 || SelectSource# > SOURCE_COUNT) return;
+
+	CElementManager.ZoneArray[gSelectedZoneId].SetSource(SelectSource#);
+}
+
+/*
+ *	=================================================================
+ */
+
+// Funkcja Main
+Function Main()
+{
+	InitializeModule();
+	WaitForInitializationComplete();
+	// TODO Init
+}

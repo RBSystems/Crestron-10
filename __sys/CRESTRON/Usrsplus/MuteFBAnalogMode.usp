@@ -1,0 +1,56 @@
+//Compiler Directives
+#SYMBOL_NAME "MuteFBAnalogMode"
+#HINT ""
+#CATEGORY "4" // Device Interface
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ANALOG_SERIAL_EXPAND InputsWithOutputs
+#DIGITAL_EXPAND InputsWithOutputs
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+#DEFINE_CONSTANT MAX_COUNT 32
+
+// Include Libraries
+// Inputs & Outputs
+
+DIGITAL_INPUT mute_FB[MAX_COUNT];
+
+ANALOG_OUTPUT mute#_FB[MAX_COUNT];
+
+// Sockets
+// Parameters
+// Parameter Properietes
+// Structure Definitions
+// Global Variables
+
+INTEGER gNumInputsDefined;
+
+// Functions
+
+FUNCTION CheckMuteFBByIndex(INTEGER _index)
+{
+	mute#_FB[_index] = mute_FB[_index];
+}
+
+// Event Handlers
+
+CHANGE mute_FB
+{
+	CheckMuteFBByIndex(GetLastModifiedArrayIndex());
+}
+
+Function Main()
+{
+	INTEGER index;
+
+	for (gNumInputsDefined = MAX_COUNT to 1 step -1)
+	{
+		if (IsSignalDefined(mute_FB[gNumInputsDefined])) break;
+	}
+
+	for (index = 1 to gNumInputsDefined) CheckMuteFBByIndex(index);
+}

@@ -1,0 +1,31 @@
+//	Dyrektywy kompilatora
+#CATEGORY "41"
+#SYMBOL_NAME "AVS_ScheduleChecker"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+//	Biblioteki
+#USER_LIBRARY "usl_AVSystem_Constants"
+#USER_SIMPLSHARP_LIBRARY "ssl_AVSystem"
+
+//	Sygnaly wejsciowe
+ANALOG_INPUT Hour#_FB, Minute#_FB;
+
+CHANGE Minute#_FB
+{
+	INTEGER dayOfWeek;
+
+	dayOfWeek = GetDayOfWeekNum();
+
+	if (dayOfWeek = 0) dayOfWeek = 7;
+	
+	CElementManager.CheckGroupSchedules(dayOfWeek, Hour#_FB, Minute#_FB);
+}
+
+// Funkcja Main
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}

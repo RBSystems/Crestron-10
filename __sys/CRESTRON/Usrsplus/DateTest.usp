@@ -1,0 +1,90 @@
+//Compiler Directives
+
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "Date Test"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+// Constants
+
+#DEFINE_CONSTANT DATE_GETYEAR  		 10000 // used with mod
+#DEFINE_CONSTANT DATE_GETDAY   		 1000000 // used with mod
+#DEFINE_CONSTANT DATE_GETMONTH 		 1000000 // this is used with division
+
+// #DEFINE_CONSTANT
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+
+
+
+// Inputs
+
+// Outputs
+
+ANALOG_OUTPUT dayOfWeekNumber;
+STRING_OUTPUT dayOfWeekText;
+
+// Sockets
+
+
+
+// Parameters
+
+
+
+// Parameter Properietes
+
+/*
+#BEGIN_PARAMETER_PROPERTIES pVariable
+   propValidUnits= unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   propDefaultUnit=unitString or unitDecimal or unitHex or unitPercent or unitCharacter or unitTime or unitTicks;
+   propDefaultValue=default_value or "default_value";
+   propList={ "value","label" },{ "value","label" };
+   propBounds=lower_bound , upper_bound;
+   propShortDescription= "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+*/
+
+// Structure Definitions
+
+
+
+// Global Variables
+
+
+
+// Functions
+
+FUNCTION UpdateDayOfWeek()
+{
+	dayOfWeekNumber = GetDayOfWeekNum();
+	dayOfWeekText = day();
+}
+	
+
+
+// Event Handlers
+
+
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	While (1)
+	{
+		UpdateDayOfWeek();
+		delay(200);
+	}
+}

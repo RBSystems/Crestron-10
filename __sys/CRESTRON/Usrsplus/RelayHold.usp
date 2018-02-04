@@ -1,0 +1,36 @@
+#CATEGORY "29" // Relay Control
+//Compiler Directives
+#SYMBOL_NAME "RelayHold"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT PULSE_TIME 10
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Inputs & Outputs
+
+DIGITAL_INPUT relayHold;
+
+DIGITAL_OUTPUT relayOn, relayOff;
+
+// Event Handlers
+
+PUSH relayHold
+{
+	pulse(PULSE_TIME, relayOn);
+}
+
+RELEASE relayHold
+{
+	pulse(PULSE_TIME, relayOff);
+}
+
+
+Function Main()
+{
+}

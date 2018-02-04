@@ -1,0 +1,364 @@
+//Compiler Directives
+
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "SpeakerCraft MRA"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+
+#DEFINE_CONSTANT MAX_MSG_LENGTH			20
+#DEFINE_CONSTANT VOLUME_DB_LENGTH		10
+
+#DEFINE_CONSTANT ZONES_COUNT			6
+#DEFINE_CONSTANT BUFFER_SIZE			1024
+#DEFINE_CONSTANT DEF_DELAY				5
+#DEFINE_CONSTANT LONG_DELAY				25
+
+#DEFINE_CONSTANT SYNC_HEADER			"\xFF\x55"
+
+#DEFINE_CONSTANT COMMAND_ID_SET_VOLUME	32
+#DEFINE_CONSTANT COMMAND_ID_GET_VOLUME	33
+#DEFINE_CONSTANT COMMAND_ID_SET_SOURCE	38
+#DEFINE_CONSTANT COMMAND_ID_GET_SOURCE	39
+
+#DEFINE_CONSTANT PAYLOAD_LENGTH_SET	3
+#DEFINE_CONSTANT PAYLOAD_LENGTH_GET	2
+
+#DEFINE_CONSTANT RESPONSE_OK			0
+#DEFINE_CONSTANT RESPONSE_DATA			1
+
+#DEFINE_CONSTANT VOLUME_STEP			5
+
+// Inputs
+
+DIGITAL_INPUT updateAll;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT muteToggle[ZONES_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT muteOn[ZONES_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT muteOff[ZONES_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT volumeIncrease[ZONES_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT volumeDecrease[ZONES_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT updateStatus[ZONES_COUNT, ZONES_COUNT];
+DIGITAL_INPUT _SKIP_;
+BUFFER_INPUT Rx$[BUFFER_SIZE];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT source#[ZONES_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT volumePercent#[ZONES_COUNT, ZONES_COUNT];
+
+// Outputs
+
+DIGITAL_OUTPUT _SKIP_, _SKIP_;
+DIGITAL_OUTPUT muteOn_FB[ZONES_COUNT, ZONES_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT Tx$;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT source#_FB[ZONES_COUNT];
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT volumePercent#_FB[ZONES_COUNT, ZONES_COUNT];
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT volumePercent$[ZONES_COUNT];
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT volumeDb$[ZONES_COUNT, ZONES_COUNT];
+
+
+// Parameters
+
+
+
+// Parameter Properietes
+
+/*
+#BEGIN_PARAMETER_PROPERTIES pVariable
+   propValidUnits= unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   propDefaultUnit=unitString or unitDecimal or unitHex or unitPercent or unitCharacter or unitTime or unitTicks;
+   propDefaultValue=default_value or "default_value";
+   propList={ "value","label" },{ "value","label" };
+   propBounds=lower_bound , upper_bound;
+   propShortDescription= "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+*/
+
+// Structure Definitions
+
+
+
+// Global Variables
+
+INTEGER gLastVolumePercent[ZONES_COUNT];
+INTEGER gLastSource[ZONES_COUNT];
+STRING gTempString[MAX_MSG_LENGTH];
+
+// Functions
+STRING_FUNCTION VolumePercentToDb(INTEGER _volumePercent)
+{
+	STRING volumeDb[VOLUME_DB_LENGTH];
+	INTEGER volumeAbsoluteValue;
+
+	volumeDb = "";
+
+	if (_volumePercent < 48)
+	{
+		volumeDb = volumeDb + "-";
+		volumeAbsoluteValue = 48 - _volumePercent;
+	}
+	else if (_volumePercent = 48) volumeAbsoluteValue = 0;
+	else
+	{
+		volumeAbsoluteValue = _volumePercent - 48;
+	}
+
+    volumeDb = volumeDb + itoa(volumeAbsoluteValue/2);
+	
+
+	if ((volumeAbsoluteValue MOD 2) <> 0) volumeDb = volumeDb + ".5 dB";
+	else volumeDb = volumeDb + ".0 dB";
+
+	return (volumeDb);
+}
+
+FUNCTION PrintZoneVolume(INTEGER _zoneID)
+{
+	if (volumePercent#_FB[_zoneID] = 0) muteOn_FB[_zoneID] = 1;
+	else muteOn_FB[_zoneID] = 0;
+
+	volumePercent$[_zoneID] = itoa(volumePercent#_FB[_zoneID]) + "%";
+	volumeDb$[_zoneID] = VolumePercentToDb(volumePercent#_FB[_zoneID]);
+}
+
+FUNCTION UpdateVolumeFB(INTEGER _zoneID, INTEGER _volumePercent)
+{
+	if (gLastVolumePercent[_zoneID] <> volumePercent#_FB[_zoneID]) gLastVolumePercent[_zoneID] = volumePercent#_FB[_zoneID];
+	volumePercent#_FB[_zoneID] = _volumePercent;
+	PrintZoneVolume(_zoneID);
+}
+
+FUNCTION UpdateSourceFB(INTEGER _zoneID, INTEGER _sourceID)
+{
+	if (gLastSource[_zoneID] <> source#_FB[_zoneID]) gLastSource[_zoneID] = source#_FB[_zoneID];
+	source#_FB[_zoneID] = _sourceID;
+}
+
+FUNCTION SetZoneVolume(INTEGER _zoneID, INTEGER _volumePercent)
+{
+	Tx$ = SYNC_HEADER + chr(0) + chr(PAYLOAD_LENGTH_SET)
+	+ chr (COMMAND_ID_SET_VOLUME) + chr(_zoneID) + chr(_volumePercent) 
+	+ chr(256 - (PAYLOAD_LENGTH_SET + COMMAND_ID_SET_VOLUME + _zoneID + _volumePercent));
+    
+	delay(DEF_DELAY);
+
+	UpdateVolumeFB(_zoneID, _volumePercent);
+}
+
+FUNCTION IncreaseZoneVolume(INTEGER _zoneID)
+{
+	if (volumePercent#_FB[_zoneID] <= (100 - VOLUME_STEP)) SetZoneVolume(_zoneID, volumePercent#_FB[_zoneID] + VOLUME_STEP);
+}
+
+FUNCTION DecreaseZoneVolume(INTEGER _zoneID)
+{
+	if (volumePercent#_FB[_zoneID] >= VOLUME_STEP) SetZoneVolume(_zoneID, volumePercent#_FB[_zoneID] - VOLUME_STEP);
+}
+
+FUNCTION MuteZoneOn(INTEGER _zoneID)
+{
+	if (muteOn_FB[_zoneID] = 0)SetZoneVolume(_zoneID, 0);
+}
+
+FUNCTION MuteZoneOff(INTEGER _zoneID)
+{
+	if (muteOn_FB[_zoneID] = 1) SetZoneVolume(_zoneID, gLastVolumePercent[_zoneID]);
+}
+
+FUNCTION MuteZoneToggle(INTEGER _zoneID)
+{
+	if (muteOn_FB[_zoneID] = 1) MuteZoneOff(_zoneID);
+	else MuteZoneOn(_zoneID);
+}
+
+FUNCTION GetVolumeByZone(INTEGER _zoneID)
+{
+	Tx$ = SYNC_HEADER + chr(0) + chr(PAYLOAD_LENGTH_GET)
+	+ chr (COMMAND_ID_GET_VOLUME) + chr(_zoneID) 
+	+ chr(256 - (PAYLOAD_LENGTH_GET + COMMAND_ID_GET_VOLUME + _zoneID));
+    
+	delay(DEF_DELAY);
+}
+
+FUNCTION SetZoneSource(INTEGER _zoneID, INTEGER _sourceID)
+{
+	Tx$ = SYNC_HEADER + chr(0) + chr(PAYLOAD_LENGTH_SET)
+	+ chr (COMMAND_ID_SET_SOURCE) + chr(_sourceID) + chr(_zoneID) 
+	+ chr(256 - (PAYLOAD_LENGTH_SET + COMMAND_ID_SET_SOURCE + _sourceID + _zoneID));
+    
+	delay(LONG_DELAY);
+
+	UpdateSourceFB(_zoneID, _sourceID);
+	GetVolumeByZone(_zoneID);
+}
+
+FUNCTION GetSourceByZone(INTEGER _zoneID)
+{
+	Tx$ = SYNC_HEADER + chr(0) + chr(PAYLOAD_LENGTH_GET)
+	+ chr (COMMAND_ID_GET_SOURCE) + chr(_zoneID) 
+	+ chr(256 - (PAYLOAD_LENGTH_GET + COMMAND_ID_GET_SOURCE + _zoneID));
+    
+	delay(DEF_DELAY);
+}
+
+// Event Handlers
+
+PUSH updateAll
+{
+	INTEGER zoneID;
+
+	for (zoneID = 1 to ZONES_COUNT)
+	{
+		GetVolumeByZone(zoneID);
+		GetSourceByZone(zoneID);
+	}
+}
+
+PUSH updateStatus
+{
+	INTEGER zoneID;
+
+	zoneID = GetLastModifiedArrayIndex();
+
+	GetVolumeByZone(zoneID);
+	GetSourceByZone(zoneID);
+}
+
+PUSH muteToggle
+{
+	MuteZoneToggle(GetLastModifiedArrayIndex());
+}
+
+
+PUSH muteOn
+{
+	MuteZoneOn(GetLastModifiedArrayIndex());
+}
+
+PUSH muteOff
+{
+	MuteZoneOff(GetLastModifiedArrayIndex());
+}
+
+PUSH volumeIncrease
+{
+	IncreaseZoneVolume(GetLastModifiedArrayIndex());
+}
+
+PUSH volumeDecrease
+{
+	DecreaseZoneVolume(GetLastModifiedArrayIndex());
+}
+
+CHANGE source#
+{
+	INTEGER zoneID, sourceID;
+
+	zoneID = GetLastModifiedArrayIndex();
+	sourceID = source#[zoneID];
+
+    if (sourceID > ZONES_COUNT) sourceID = 0;
+
+	SetZoneSource(zoneID, sourceID);
+	
+}
+
+CHANGE volumePercent#
+{
+	INTEGER zoneID, volumePercent;
+
+	zoneID = GetLastModifiedArrayIndex();
+	volumePercent = volumePercent#[zoneID];
+
+    if (volumePercent > 100) volumePercent = 100;
+
+	SetZoneVolume(zoneID, volumePercent);
+	
+}
+
+CHANGE Rx$
+{
+	INTEGER syncPos, commandID;
+
+	if (len(Rx$) < 1)
+	{
+		trace("RX Empty!");
+		return;
+	}
+    
+	while(len(Rx$) > 0)
+    {
+		syncPos = find(SYNC_HEADER, Rx$);
+
+		// Wyjatek - bufor nie poczatkowych dwoch bajtow synchronizacji "\xFF\x55"
+		if (syncPos = 0)
+		{
+			trace("syncPos error");
+			trace("RX = %s", Rx$);
+			return;
+		}
+        
+		// Wyjatek - bufor nie zaczyna sie od bajtow synchronizacji - zostaly jakies smieci z nieobslugiwanej komendy
+		if (syncPos > 1)
+		{
+			gTempString = removeByLength(syncPos - 1, Rx$);
+			syncPos = 1;
+		}
+
+		commandID = byte(Rx$, 5);
+
+		switch(commandID)
+		{
+			CASE (COMMAND_ID_GET_VOLUME) : 
+			{
+				UpdateVolumeFB(byte(Rx$, 7), byte(Rx$, 8));
+				gTempString = removeByLength(9, Rx$);
+			}
+
+			CASE (COMMAND_ID_GET_SOURCE) : 
+			{
+				UpdateSourceFB(byte(Rx$, 7), byte(Rx$, 8));
+				gTempString = removeByLength(9, Rx$);
+			}
+
+			DEFAULT :
+			{
+				trace("Nieobslugiwana wiadomosc");
+				trace("RX = %s", Rx$);
+				gTempString = removeByLength(2, Rx$);
+				return;
+			}
+		}
+		
+	}
+	
+}
+
+// Main Function
+
+Function Main()
+{
+	INTEGER i;
+	
+	WaitForInitializationComplete();
+	// TODO Init
+	gTempString = "";
+	for (i = 1 to ZONES_COUNT)
+	{
+		gLastVolumePercent[i] = 0;
+		gLastSource[i] = 0;
+	}
+}

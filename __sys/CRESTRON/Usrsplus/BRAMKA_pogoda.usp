@@ -1,0 +1,296 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:
+System Name:
+System Number:
+Programmer:
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+// #ENABLE_DYNAMIC
+// #SYMBOL_NAME ""
+// #HINT ""
+// #DEFINE_CONSTANT
+ #CATEGORY "41" 
+// #DEFAULT_VOLATILE
+// #PRINT_TO_TRACE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+// #HELP_PDF_FILE ""
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+/*
+#HELP_BEGIN
+   (add additional lines of help lines)
+#HELP_END
+*/
+
+/*******************************************************************************************
+  Include Libraries
+  (Uncomment and include additional libraries as needed)
+*******************************************************************************************/
+// #CRESTRON_LIBRARY ""
+// #USER_LIBRARY ""
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+ DIGITAL_INPUT Polmrok, Temp_Zew_Dob_UP, Temp_Zew_Dob_DWN, Jasnosc_Czujki_UP, Jasnosc_Czujki_DWN;
+// ANALOG_INPUT 
+STRING_INPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, strIn[15];
+// BUFFER_INPUT 
+
+ DIGITAL_OUTPUT Polmrok_FB,Deszcz_FB;
+// ANALOG_OUTPUT 
+ STRING_OUTPUT Temp_Zew, Wiatr, Temp_Zew_Dob,Temp_Zew_Dob_War,Jasnosc, Jasnosc_War,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, strOut;
+
+/*******************************************************************************************
+  SOCKETS
+  (Uncomment and define socket definitions as needed)
+*******************************************************************************************/
+// TCP_CLIENT
+// TCP_SERVER
+// UDP_SOCKET
+
+/*******************************************************************************************
+  Parameters
+  (Uncomment and declare parameters as needed)
+*******************************************************************************************/
+  //INTEGER_PARAMETER join;
+// SIGNED_INTEGER_PARAMETER
+// LONG_INTEGER_PARAMETER
+// SIGNED_LONG_INTEGER_PARAMETER
+// STRING_PARAMETER
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+/*
+#BEGIN_PARAMETER_PROPERTIES parameter_variable, parameter_variable, ...
+   // propValidUnits = // unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   // propDefaultUnit = // unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+   // propBounds = lower_bound , upper_bound;
+   // propDefaultValue = ;  // or, propDefaultValue = "";
+   // propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+   // propShortDescription = "status_bar_hint_text";
+   // #BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+   // #BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+*/
+
+/*******************************************************************************************
+  Structure Definitions
+  (Uncomment and define structure definitions as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: struct.myString = "";
+*******************************************************************************************/
+/*
+STRUCTURE MyStruct1
+{
+};
+
+MyStruct1 struct;
+*/
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+// INTEGER
+// LONG_INTEGER
+// SIGNED_INTEGER
+// SIGNED_LONG_INTEGER
+// STRING
+
+/*******************************************************************************************
+  Functions
+  (Add any additional functions here)
+  Note:  Functions must be physically placed before the location in
+         the code that calls them.
+*******************************************************************************************/
+ 
+Function Out (string zmienna, string wartosc){
+	strOut=zmienna+"_"+wartosc;     
+}
+
+
+    // TODO:  Add local variable declarations here
+
+    // TODO:  Add code here
+
+
+
+/*
+Integer_Function MyIntFunction1()
+{
+    // TODO:  Add local variable declarations here
+
+    // TODO:  Add code here
+
+    Return (0);
+}
+*/
+
+/*
+String_Function MyStrFunction1()
+{
+    // TODO:  Add local variable declarations here
+
+    // TODO:  Add code here
+
+    Return ("");
+}
+*/
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+         
+PUSH Polmrok
+{   if (Polmrok_FB=1)    
+	{
+		Strout="0"; 
+	}
+	else
+	{
+		Strout="1";
+	}
+}           
+Push Jasnosc_Czujki_UP
+{
+	out("jsn","up");
+}     
+Push Jasnosc_Czujki_DWN
+{
+	out("jsn","dwn");
+}
+Push Temp_Zew_Dob_UP
+{
+	out("tsb","up");
+}   
+Push Temp_Zew_Dob_DWN
+{
+	out("tsb","dwn");
+}
+
+
+/*
+RELEASE input
+{
+    // TODO:  Add code here
+}
+*/
+
+
+CHANGE strIn
+{	
+	INTEGER n,m,k,i;
+	STRING str[10];
+	
+		n=find("_",strIn);
+		//m=find("_",strIn,n+1);
+		str=left(strIn,n-1);
+		/*if (str="j"){   
+			str=right(strIn,1);   
+			if (atoi(str)=1){
+				Polmrok_Fb=1; 
+			}
+			else {
+				Polmrok_Fb=0;
+			} 
+		}*/		
+		
+		if (str="r"){   
+			str=right(strIn,1);   
+			if (atoi(str)=1){
+				Deszcz_FB=1; 
+			}
+			else {
+				Deszcz_FB=0;
+			} 
+		}
+		
+		if (str="t"){      
+			Temp_Zew=mid(strIn,n+1,10);   
+		}
+		else if (str="w"){
+			Wiatr=mid(strIn,n+1,10);       
+		}
+		else if (str="td") {
+			Temp_Zew_Dob=mid(strIn,n+1,10); 
+		}   
+		else if (str="jas") {
+			Jasnosc=mid(strIn,n+1,10);
+		}    
+		else if (str="jasw") {
+			Jasnosc_War=mid(strIn,n+1,10);
+		} 
+		else if (str="tdw") {
+			Temp_Zew_Dob_War=mid(strIn,n+1,10);
+		}
+
+}   
+
+/*
+EVENT
+{
+    // TODO:  Add code here
+}
+*/
+
+/*
+SOCKETCONNECT
+{
+    // TODO:  Add code here
+}
+*/
+
+/*
+SOCKETDISCONNECT
+{
+    // TODO:  Add code here
+}
+*/
+
+/*
+SOCKETRECEIVE
+{
+    // TODO:  Add code here
+}
+*/        
+
+/*
+SOCKETSTATUS
+{
+    // TODO:  Add code here
+}
+*/
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+Function Main()
+{
+
+ 	Temp_Zew = "N/A";
+	Wiatr = "N/A";
+}
+
+

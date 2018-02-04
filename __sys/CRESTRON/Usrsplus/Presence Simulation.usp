@@ -1,0 +1,116 @@
+//Compiler Directives
+
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "Presence Simulation"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+// Constants
+
+#DEFINE_CONSTANT LOADS_COUNT 20
+#DEFINE_CONSTANT PULSE_LENGTH 5
+#DEFINE_CONSTANT DEFAULT_DELAY 300
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+
+
+
+// Inputs
+
+DIGITAL_INPUT simOn, simOff, simTOG;
+
+// Outputs
+
+DIGITAL_OUTPUT simOn_FB, simOff_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT loadTOG[LOADS_COUNT,LOADS_COUNT];
+
+// Sockets
+
+
+
+// Parameters
+
+INTEGER_PARAMETER pFrequency;
+
+// Parameter Properietes
+
+
+#BEGIN_PARAMETER_PROPERTIES pFrequency
+   propValidUnits = unitTime;
+   propDefaultUnit = unitTime;
+   propBounds = 5s , 300s;
+   propDefaultValue = 30s;
+   propShortDescription= "Simulation Frequency";
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+
+
+
+// Global Variables
+
+
+// Functions
+
+FUNCTION SwitchRandomLoad()
+{
+	pulse(PULSE_LENGTH, loadTOG[random(1, LOADS_COUNT)]);
+}
+
+FUNCTION TurnOn()
+{
+	simOn_FB = 1;
+	simOff_FB = 0;
+
+	while (simOn_FB)
+	{
+		SwitchRandomLoad();
+		delay(pFrequency);
+	}
+}
+
+FUNCTION TurnOff()
+{
+	simOn_FB = 0;
+	simOff_FB = 1;
+}
+
+// Event Handlers
+
+PUSH simOn
+{
+	TurnOn();
+}
+
+PUSH simOff
+{
+	TurnOff();
+}
+
+PUSH simTOG
+{
+	if (simOn_FB = 1) TurnOff();
+	else TurnOn();
+}
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+
+	simOff_FB = 1;
+	simOn_FB = 0;
+}

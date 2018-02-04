@@ -1,0 +1,124 @@
+//Compiler Directives
+#CATEGORY "12" // System Control
+#SYMBOL_NAME "SystemLock"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+// Inputs & Outputs
+DIGITAL_INPUT enable, disable, closePopup;
+ANALOG_INPUT year#, month#, day#, hour#;
+
+DIGITAL_OUTPUT reminderShowFB;
+STRING_OUTPUT dueDate$;
+
+// Sockets
+// Parameters
+
+INTEGER_PARAMETER _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+INTEGER_PARAMETER earlyReminderParam, yearParam, monthParam, dayParam;
+
+// Parameter Properietes
+
+#BEGIN_PARAMETER_PROPERTIES earlyReminderParam
+	propValidUnits = unitDecimal;
+	propDefaultUnit = unitDecimal;
+  	propDefaultValue = 0d;
+	propList={ 0d,"NO" },{ 1d,"YES" };
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES yearParam
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 2015d , 2100d;
+   propDefaultValue = 2015d;
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES monthParam
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , 12d;
+   propDefaultValue = 1d;
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES dayParam
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , 31d;
+   propDefaultValue = 1d;
+#END_PARAMETER_PROPERTIES
+
+// Structure Definitions
+// Global Variables
+
+NONVOLATILE INTEGER enabled;
+NONVOLATILE INTEGER locked;
+INTEGER lastHour;
+
+// Functions
+
+FUNCTION checkLocked()
+{
+	if (year# > yearParam) locked = 1;
+	else if (year# = yearParam && month# > monthParam) locked = 1;
+	else if (year# = yearParam && month# = monthParam && day# > dayParam) locked = 1;
+	else locked = 0;
+}
+
+FUNCTION traceStatus()
+{
+	trace("Enebled = %d", enabled);
+	trace("Locked = %d", locked);
+}
+
+// Event Handlers
+
+PUSH enable
+{
+	enabled = 1;
+	checkLocked();
+	traceStatus();
+	if (locked = 1) reminderShowFB = 1;
+}
+
+PUSH disable
+{
+	enabled = 0;
+	locked = 0;
+	reminderShowFB = 0;
+	traceStatus();
+}
+
+PUSH closePopup
+{
+	if(!locked) reminderShowFB = 0;
+}
+
+CHANGE hour#
+{
+	if (!enabled || lastHour = hour#)
+	{
+		traceStatus();
+		return;
+	}
+    lastHour = hour#;
+	checkLocked();
+	traceStatus();
+	if (earlyReminderParam = 1 || locked = 1) reminderShowFB = 1;
+}
+
+Function Main()
+{
+	lastHour = -1;
+	if (enabled > 1) enabled = 0;
+	if (locked > 1) locked = 0;
+	reminderShowFB = locked;
+	dueDate$ = itoa(dayParam) + "." + itoa(monthParam) + "." + itoa(yearParam);
+}

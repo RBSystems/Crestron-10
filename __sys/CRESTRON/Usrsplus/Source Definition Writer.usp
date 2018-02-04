@@ -1,0 +1,90 @@
+// +++ Dyrektywy kompilatora +++
+#SYMBOL_NAME "Source Definition Writer"
+#CATEGORY "32" // Miscellaneous
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+// --- Dyrektywy kompilatora ---
+
+
+// +++ Stale +++
+#DEFINE_CONSTANT SOURCES_COUNT 20
+#DEFINE_CONSTANT SOURCE_NAME_LENGTH 25
+#DEFINE_CONSTANT SOURCE_NAME_SHORT_LENGTH 7
+#DEFINE_CONSTANT SOURCE_ID_LENGTH 3
+#DEFINE_CONSTANT NAMES_STRING_LENGTH 500
+#DEFINE_CONSTANT NAMES_STRING_SHORT_LENGTH 140
+#DEFINE_CONSTANT ID_STRING_LENGTH 60
+// --- Stale ---
+
+// +++ Wyjscia +++ 
+STRING_OUTPUT Sources_Audio_IDs$;
+STRING_OUTPUT Sources_Video_IDs$;
+STRING_OUTPUT Sources_Names$;
+STRING_OUTPUT Sources_Names_Short$;
+// --- Wyjscia --- 
+
+
+// +++ Parametry +++
+INTEGER_PARAMETER Source_Audio_ID[SOURCES_COUNT];
+INTEGER_PARAMETER Source_Video_ID[SOURCES_COUNT];
+STRING_PARAMETER Source_Name[SOURCES_COUNT][SOURCE_NAME_LENGTH];
+STRING_PARAMETER Source_Name_Short[SOURCES_COUNT,SOURCES_COUNT][SOURCE_NAME_SHORT_LENGTH];
+
+// --- Parametry ---
+
+
+// +++ Wlasciwosci parametrow +++
+#BEGIN_PARAMETER_PROPERTIES Source_Audio_ID, Source_Video_ID
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 0d , 24d;
+   propDefaultValue = 0d;
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES Source_Name, Source_Name_Short
+   propValidUnits = unitString;
+   propDefaultUnit = unitString;
+   propDefaultValue = "";
+#END_PARAMETER_PROPERTIES
+// --- Wlasciwosci parametrow ---
+
+
+// +++ Funkcje +++
+FUNCTION WriteSourcesDefinition()
+{
+    Integer i;
+	String temp_names[NAMES_STRING_LENGTH];
+	String temp_names_short[NAMES_STRING_SHORT_LENGTH];
+	String temp_audio_IDs[ID_STRING_LENGTH];
+	String temp_video_IDs[ID_STRING_LENGTH];
+    
+	temp_audio_IDs = "";
+	temp_video_IDs = "";
+	temp_names = "";
+	temp_names_short = "";
+	
+	for (i = 1 to SOURCES_COUNT)
+	{
+		temp_audio_IDs = temp_audio_IDs + itoa(Source_Audio_ID[i]) + "|";
+		temp_video_IDs = temp_video_IDs + itoa(Source_Video_ID[i]) + "|";
+		temp_names = temp_names + Source_Name[i] + "|";
+		temp_names_short = temp_names_short + Source_Name_Short[i] + "|";
+	}
+	
+	Sources_Audio_IDs$ = temp_audio_IDs;
+	Sources_Video_IDs$ = temp_video_IDs;
+	Sources_Names$ = temp_names;
+	Sources_Names_Short$ = temp_names_short;
+}
+// --- Funkcje ---
+
+
+// +++ Funkcja Main +++
+Function Main()
+{
+    WaitForInitializationComplete();
+	WriteSourcesDefinition();
+    
+}
+// --- Funkcja Main ---
