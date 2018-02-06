@@ -1,4 +1,11 @@
-Podsumowanie spotkania z Panem Mieszkiem 02.02.2018
+
+Panowie,
+
+   Poni¿ej macie podsumowanie mojego "obchodu" z Panem Mieszkiem 02.02.2018 (pi¹tek).
+   
+=================================================================
+
+Nowe rzeczy:
 
 - TSW przy wejœciu nie ³¹czy siê do sieci LAN (zasilanie jest ok)
 
@@ -8,10 +15,35 @@ Podsumowanie spotkania z Panem Mieszkiem 02.02.2018
 
 - Gniazda z oran¿erii powinny byæ sterowane (wszystkie pod jeden kana³)
 
-- Kinkiet na winiarni (148 = ), Kinkiet na œmietniku (154 = ) i s³upki bli¿ej oran¿erii (141 = ) - maj¹ byæ spiête razem (jeden kana³)
+- Kinkiet na winiarni (12/1), Kinkiet na œmietniku (12/2) i s³upki bli¿ej oran¿erii (11/1) - maj¹ byæ spiête razem (jeden kana³)
 
 - S³upki id¹ce od drzwi wejœciowych do furtki (3C/1) i takie same s³upki id¹ce wzd³u¿ p³otu (3C/3) - maj¹ byæ spiête razem (jeden kana³)
 
-- Lampy wisz¹ce w oran¿erii (209 = ) powinny byæ DALI
+- Lampy wisz¹ce w oran¿erii (19/5) powinny byæ DALI
 
-- Œmieszne powyginane lampki przed ³ó¿kiem Gamba s¹ na oddzielnych kana³ach (76 i 77 = ) - maj¹ byæ spiête razem (jeden kana³)
+- Œmieszne powyginane lampki przed ³ó¿kiem Gamba s¹ na oddzielnych kana³ach (13/2 i 13/4) - maj¹ byæ spiête razem (jeden kana³)
+
+-------------------------------------------------------------------
+
+Stare rzeczy z poprzedniego spotkania, o których pisa³em wczeœniej (podobno mia³y byæ omówione z Panem Mieszkiem jako dodatki na jakimœ spotkaniu, ale nie wiem w koñcu czy do tego dosz³o bo by³ zdziwiony, ¿e nie zosta³o to zrobione):
+
+- gniazdo w koñcu korytarza czêœci nocnej (3D/7) - powinno byæ wywalone z systemu i zasilone na sta³e
+
+- gniazda z bia³ej sypialni (31/2 i 31/6) - po³¹czyæ w jedno j.w.
+
+- w ³azience w strefie nocnej nie ma gniazd sterowanych - nale¿y wszystkie pod³¹czyæ do 8SW8 na jeden kana³
+
+- w ³azience na piêtrze - tak samo jak wy¿ej
+
+- w sypialni na piêtrze - tak samo jak wy¿ej
+
+- Obwody, które powinny byæ DALI a nie s¹: 
+> kule wisz¹ce w kuchni (35/3)
+> lampy wisz¹ce w salonie na piêtrze (37/4)
+> lampy wisz¹ce w sypialni na piêtrze (37/8)
+> kinkiety w salonie (31/7)
+
+-------------------------------------------------------------------
+=================================================================
+
+   Dla ka¿dego punktu proszê o info czy bêdzie coœ z tym robione, czy zostaje tak jak jest.
