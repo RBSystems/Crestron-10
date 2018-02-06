@@ -1,0 +1,17 @@
+Podsumowanie spotkania z Panem Mieszkiem 02.02.2018
+
+- TSW przy wejœciu nie ³¹czy siê do sieci LAN (zasilanie jest ok)
+
+- Pasek LED w czarnej sypialni (modu³ 39/kana³ 5) - ma byæ spiêty razem z kinkietami (3A/8) (jeden kana³ 8SW8)
+
+- Pasek LED w bia³ej sypialni (3C/6) - ma byæ spiêty z gniazdami sterowanymi (31/6) (jeden kana³ 8SW8)
+
+- Gniazda z oran¿erii powinny byæ sterowane (wszystkie pod jeden kana³)
+
+- Kinkiet na winiarni (148 = ), Kinkiet na œmietniku (154 = ) i s³upki bli¿ej oran¿erii (141 = ) - maj¹ byæ spiête razem (jeden kana³)
+
+- S³upki id¹ce od drzwi wejœciowych do furtki (3C/1) i takie same s³upki id¹ce wzd³u¿ p³otu (3C/3) - maj¹ byæ spiête razem (jeden kana³)
+
+- Lampy wisz¹ce w oran¿erii (209 = ) powinny byæ DALI
+
+- Œmieszne powyginane lampki przed ³ó¿kiem Gamba s¹ na oddzielnych kana³ach (76 i 77 = ) - maj¹ byæ spiête razem (jeden kana³)
