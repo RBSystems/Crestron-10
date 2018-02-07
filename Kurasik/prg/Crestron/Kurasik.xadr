@@ -11,24 +11,32 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
-DIN-DALI_1_Remote_Indirect=DIN-AP3_Remote:cresnet A0
-DIN-DALI_2_Remote_Indirect=DIN-AP3_Remote:cresnet A1
-011_usb=usb
+0_usb=usb
 DIN-AP3=auto 192.168.1.201
 DIN-DALI_1=auto 192.168.1.211
 DIN-DALI_2=auto 192.168.1.212
+TSW-750=auto 192.168.1.221
+TSW-560P=auto 192.168.1.222
 DIN-AP3_Remote=auto 188.125.46.176
 DIN-DALI_1_Remote=auto 188.125.46.176,51795
-DIN-DALI_2_Remote=auto 188.125.46.176,61795
+DIN-DALI_2_Remote=auto 188.125.46.176,52795
+TSW-750_Remote=auto 188.125.46.176,53795
+TSW-560P_Remote=auto 188.125.46.176,54795
+DIN-DALI_1_Remote_Indirect=DIN-AP3_Remote:cresnet A0
+DIN-DALI_2_Remote_Indirect=DIN-AP3_Remote:cresnet A1
 
 [Notes]
-DIN-DALI_1_Remote_Indirect=
-DIN-DALI_2_Remote_Indirect=
-011_usb=
+0_usb=
 DIN-AP3=
 DIN-DALI_1=
 DIN-DALI_2=
+TSW-750=
+TSW-560P=
 DIN-AP3_Remote=
 DIN-DALI_1_Remote=
 DIN-DALI_2_Remote=
+TSW-750_Remote=
+TSW-560P_Remote=
+DIN-DALI_1_Remote_Indirect=
+DIN-DALI_2_Remote_Indirect=
 

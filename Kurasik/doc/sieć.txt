@@ -1,4 +1,6 @@
 IP Zewnętrzne		:	188.125.46.176
+Router password		:	s3arts3art
+WiFi password		:	s3arts3art
 
 KNX_1				:	192.168.1.51
 KNX_2				:	192.168.1.52
@@ -6,7 +8,8 @@ KNX_2				:	192.168.1.52
 Rejestrator			:	192.168.1.60
 
 Kamery				:	192.168.1.61 - 77 (17 szt.)
-jakie hasło ?
+Login/Pass			:	
+URL					:	
 
 Moduł Satel	ETHN1+	:	192.168.1.90
 
