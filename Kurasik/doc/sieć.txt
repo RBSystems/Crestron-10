@@ -2,6 +2,8 @@ IP Zewnętrzne		:	188.125.46.176
 Router password		:	s3arts3art
 WiFi password		:	s3arts3art
 
+WAGO-Sauna			:	192.168.1.50
+
 KNX_1				:	192.168.1.51
 KNX_2				:	192.168.1.52
 
