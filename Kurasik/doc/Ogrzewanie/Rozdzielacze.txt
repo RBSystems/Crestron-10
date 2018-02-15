@@ -1,0 +1,69 @@
+Rozdzielacz korytarz "D" 
+moduł Jung 4-krotny
+kanał 1: jadalnia pętla 1d.
+kanał 2: salon pętla 2d/3d/4d.
+kanał 3: oranżeria pętla 5d/6d/7d/8d.
+kanał 4: korytarz pętla 9d.
+
+Rozdzielacz kuchnia hobby "A" 
+moduł ABB 8-krotny
+kanał 1: gabinet pętla 1a/2a/3a.
+kanał 2: korytarz pętla 4a/5a/7a.
+kanał 3: warsztat hobby pętla 6a/10a.
+kanał 4: kuchnia hobby pętla 9a/11a.
+kanał 5: łazienka pętla 8a.
+
+Rozdzielacz wejście "C" 
+moduł Jung 4-krotny 
+kanał 1: salon pętla 1c.
+kanał 2: kuchnia pętla 2c/3c.
+kanał 3: jadalnia pętla 4c/5c.
+kanał 4: hol pod schodami pętla 6c.
+
+Rozdzielacz fitness "E" 
+Moduł Jung 4-krotny 
+kanał 1: basen pętla 1e/2e.
+kanał 2: łazienka sauna pętla 4e.
+kanał 3: korytarz, sauna, grota sól. pętla 5e/6e/7e.
+kanał 4: fitness pętla 8e/9e/10e/11e.
+
+Rozdzielacz garaż 
+Moduł Jung 4-krotny. 
+kanał 1: pokój stróż pętla 1.
+kanał 2: łazienka stróż  pętla 2.
+kanał 3: garaż pętla 3/4.
+kanał 4: garaż pętla 5/6.
+
+Rozdzielacz garderoba duża piętro. 
+Moduł Jung 4-krotny. 
+kanał 1: garderoba pętla 1.
+kanał 2: garderoba pętla 2.
+kanał 3: garderoba pętla 3.
+kanał 4: garderoba pętla 4.
+
+Rozdzielacz wejście "B" 
+Moduł Jung 4-krotny. 
+kanał 1: salon przy oknie frontowym pętla 1b/2b.
+kanał 2: salon pętla 3b/4b/5b/6b.
+kanał 3: oświetlenie zewnętrzne drzewa przy wejściu do domu 6 sztuk (nowe).
+ 
+Rozdzielacz garderoba przy wejściu. 
+Moduł ABB 8-krotny. 
+kanał 1: pralnia pętla 1.
+kanał 2: garderoba duża parter pętla 2/3.
+kanał 3: wejść wiatrołap pętla 4.
+kanał 4: sypialni jasna pętla 5/6.
+kanał 5: łazienka dół pętla 7.
+kanał 6: sypialnia ciemna pętla 8/9.
+kanał 7: hol strefa noc pętla 10.
+
+Rozdzielacz piętro. 
+Moduł ABB 8-krotny. 
+kanał 1: sypialnia pętla 1.
+kanał 2: sypialnia pętla 2.
+kanał 4: sypialnia pętla 3.
+kanał 5: łazienka góra pętla 4.
+kanał 6: salon pętla 5/6.
+kanał 7: salon pętla 7.
+kanał 8: salon pętla 8.
+W tym module kanał 3 jest uszkodzony. 
