@@ -1,0 +1,29 @@
+
+4.	po nocy naciskam komfort i nie zmieniaj¹ siê ikony i globalnie jest noc na i padzie
+
+[G] zbadaæ problem z Grzeœkiem na miejscu
+
+5.	brak obwodów sciemnianych na ipadzie i i phonie
+
+[G] zgadza siê. dodamy sterowanie DIM-ami z iPad i iPhone jak tylko rozszycia na WAGO bêd¹ w ostatecznej wersji
+
+10.	Przycisk na wizualizacji "zamknij" zamieñiæ nazwê na "bariery" i daæ mo¿liwoœæ uzbrojenia barier bez wzglêdu na trb
+
+[G] grafika (Barto) i funkcjonalnosc (Grzesiek). Czy to (funkcjonalnoœæ) wogóle da siê zrobiæ?
+Uzbrajanie PIR-ów zewnêtrznych bez wzglêdu na aktualny tryb domu
+Ma wyskakiwaæ potwierdzenie Tak/Nie
+
+11.	mo¿liwoœæ programowania scen œwietlnych
+
+- faktycznie nie dzia³a zapis i wywolanie scen (np. w salonie na piêtrze)
+
+nowe:
+
+kontaktrony:
+
+- drzwi do pomieszczenia technicznego - nie mam wogóle sygnalu w programie
+- drzwi szatnia-garaz - mam w programie ale nie dzia³a
+
+OBWODY:
+
+- obwód w SPA nad lustrem - nie mam w programie
