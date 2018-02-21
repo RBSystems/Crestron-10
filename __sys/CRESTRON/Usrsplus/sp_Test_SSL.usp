@@ -9,15 +9,34 @@
 #DIGITAL_EXPAND OutputsWithParams
 
 //	Biblioteki
-//#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
 #USER_SIMPLSHARP_LIBRARY "ssl_Residence"
+
+// Stale
+
+#DEFINE_CONSTANT PULSE_TIME 1
 
 // Inputs
 
-DIGITAL_INPUT in1, in2, in3;
+DIGITAL_INPUT residenceInitialize, _SKIP_, loop_On_FB, loop_Off_FB, _SKIP_, loop_TOG;
 
 // Outputs
 
+DIGITAL_OUTPUT residenceInitialized_FB, _SKIP_, loop_On, loop_Off;
+
+//	Parametry
+INTEGER_PARAMETER _SKIP_, pHeatingLoopId;
+
+//	Wlasciwosci parametrow
+#BEGIN_PARAMETER_PROPERTIES pHeatingLoopId
+	propValidUnits = unitDecimal;
+	propDefaultUnit = unitDecimal;
+	propBounds = 1d , 64d;
+#END_PARAMETER_PROPERTIES
+
+//
+
+HeatingLoop gThisLoop;
+INTEGER gIsModuleInitialized;
 
 //	Funkcje Callback dla delegat Simpl#
 CALLBACK FUNCTION PrintTraceMessageCallback(STRING _message)
@@ -25,39 +44,89 @@ CALLBACK FUNCTION PrintTraceMessageCallback(STRING _message)
 	trace("%s", _message);
 }
 
+CALLBACK FUNCTION TurnHeatingLoopOnCallback()
+{
+	trace("Wlaczanie petli ID = %d", gThisLoop.Id);
+	pulse(PULSE_TIME, loop_On);
+}
+
+CALLBACK FUNCTION TurnHeatingLoopOffCallback()
+{
+	trace("Wylaczanie petli ID = %d", gThisLoop.Id);
+	pulse(PULSE_TIME, loop_Off);
+}
+
 //	Rejestracja delegat Simpl#
-FUNCTION RegisterSharpDelegates()
+FUNCTION RegisterStaticDelegates()
 {
 	RegisterDelegate(MessagePrinter, PrintTraceMessage, PrintTraceMessageCallback);
 }
 
-Function InitializeModule()
+FUNCTION RegisterHeatingLoopDelegates()
 {
-	RegisterSharpDelegates();
+	if (Residence.IsInitialized <> 1) return;
+    
+	gThisLoop = Residence.HeatingLoopArray[pHeatingLoopId];
+	
+	RegisterDelegate(gThisLoop, TurnHeatingLoopOn, TurnHeatingLoopOnCallback);
+    RegisterDelegate(gThisLoop, TurnHeatingLoopOff, TurnHeatingLoopOffCallback);
+} 
+
+//	Funkcje obslugujace zdarzenia Simpl#
+EVENTHANDLER ResidenceInitializedHandler(Dummy sender, EventArgs e)
+{
+	residenceInitialized_FB = 1;
+	RegisterHeatingLoopDelegates();
+	gIsModuleInitialized = 1;
+}
+
+//	Rejestracja obslugi zdarzen Simpl#
+FUNCTION RegisterStaticEvents()
+{
+	RegisterEvent(Residence, ResidenceInitialized, ResidenceInitializedHandler);
+}
+
+FUNCTION Register()
+{
+	RegisterStaticDelegates();
+	RegisterStaticEvents();
 }
 
 // Event Handlers
 
-PUSH in1
+PUSH residenceInitialize
 {
-	Residence.PrintInfo();
+	Residence.Initialize();
 }
 
-PUSH in2
+PUSH loop_On_FB
 {
-
+	if (gIsModuleInitialized <> 1) return;
+	
+	gThisLoop.UpdatePowerState(1);
 }
 
-PUSH in3
+PUSH loop_Off_FB
 {
+	if (gIsModuleInitialized <> 1) return;
+	
+	gThisLoop.UpdatePowerState(0);
+}
 
+PUSH loop_TOG
+{
+	if (gIsModuleInitialized <> 1) return;
+
+	gThisLoop.PowerToggle();
 }
 
 // Main Function
 
 Function Main()
 {
-	InitializeModule();
+	residenceInitialized_FB = 0;
+	gIsModuleInitialized = 0;
+	Register();
 	WaitForInitializationComplete();
 	// TODO Init
 }
