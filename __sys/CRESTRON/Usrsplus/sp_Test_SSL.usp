@@ -1,0 +1,63 @@
+//Compiler Directives
+
+#CATEGORY "41" 
+#SYMBOL_NAME "sp_Test_SSL"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+//	Biblioteki
+//#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
+#USER_SIMPLSHARP_LIBRARY "ssl_Residence"
+
+// Inputs
+
+DIGITAL_INPUT in1, in2, in3;
+
+// Outputs
+
+
+//	Funkcje Callback dla delegat Simpl#
+CALLBACK FUNCTION PrintTraceMessageCallback(STRING _message)
+{
+	trace("%s", _message);
+}
+
+//	Rejestracja delegat Simpl#
+FUNCTION RegisterSharpDelegates()
+{
+	RegisterDelegate(MessagePrinter, PrintTraceMessage, PrintTraceMessageCallback);
+}
+
+Function InitializeModule()
+{
+	RegisterSharpDelegates();
+}
+
+// Event Handlers
+
+PUSH in1
+{
+	Residence.PrintInfo();
+}
+
+PUSH in2
+{
+
+}
+
+PUSH in3
+{
+
+}
+
+// Main Function
+
+Function Main()
+{
+	InitializeModule();
+	WaitForInitializationComplete();
+	// TODO Init
+}

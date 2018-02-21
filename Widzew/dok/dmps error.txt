@@ -1,0 +1,24 @@
+
+273. Info: dm_mfs_avmanager.exe # 2016-12-15 05:10:53  # DmLibraryApp::ProcessAllAppsStarted 
+274. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 513, Max = 512
+275. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 531, Max = 512
+276. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 531, Max = 512
+277. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 531, Max = 512
+278. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 531, Max = 512
+279. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 531, Max = 512
+280. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 460: Buffer Input overflow. New = 531, Max = 512
+281. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:57  # Module S-2.5.2 : Ecler_MIMO88_Full at line 691: Unhandled Exception: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at Crestron.Logos
+
+282. Warning: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:57  # Module S-2.5.2 : Ecler_MIMO88_Full at line 677: UpdateInputValue: Could not get m_BufferReadyEvent
+
+283. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:57  # .SplusObjects.CrestronString.a(Int32 A_0, CrestronString A_1)
+   at Crestron.Logos.SplusObjects.CrestronString.Remove(Int32 length, Boolean bGrabLock)
+   at Crestron.Logos.SplusObjects.CrestronStringExtentions.Remove(CrestronString CRString, Int32 lengt284. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:57  # h)
+   at Crestron.Logos.SplusLibrary.Functions.Remove(Int32 length, CrestronString input)
+   at UserModule_ECLER_MIMO88_FULL.UserModuleClass_ECLER_MIMO88_FULL.RX__DOLLAR___OnChange_3(Object __EventInfo__)
+   at Amib.Threading.Internal.WorkItem.ExecuteW285. Error: splusmanagerapp.exe [App 1] # 2016-12-15 05:10:57  # orkItem()
+   at Amib.Threading.Internal.WorkItem.Execute()
+   at Amib.Threading.SmartThreadPool.ExecuteWorkItem(WorkItem workItem)
+   at Amib.Threading.SmartThreadPool.ProcessQueuedItems()

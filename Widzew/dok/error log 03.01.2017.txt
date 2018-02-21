@@ -1,0 +1,29 @@
+
+275. Error: splusmanagerapp.exe [App 1] # 2016-12-20 03:27:28  # Module S-2.5.2 : Ecler_MIMO88_Full at line 691: Invalid remove length: 17  String length : 0
+
+
+
+
+
+329. Error: splusmanagerapp.exe [App 1] # 2017-01-03 11:49:56  # Module S-2.5.2 : Ecler_MIMO88_Full at line 610: Invalid remove length: 5  String length : 3
+
+
+330. Error: splusmanagerapp.exe [App 1] # 2017-01-03 11:50:39  # Module S-2.5.2 : Ecler_MIMO88_Full at line 586: Unhandled Exception: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at Crestron.Logos331. Error: splusmanagerapp.exe [App 1] # 2017-01-03 11:50:39  # .SplusObjects.CrestronString.Remove(Int32 length, Boolean bGrabLock)
+   at Crestron.Logos.SplusObjects.CrestronStringExtentions.Remove(CrestronString CRString, Int32 length)
+   at Crestron.Logos.SplusObjects.CrestronStringExtentions.Remove(CrestronStrin332. Error: splusmanagerapp.exe [App 1] # 2017-01-03 11:50:39  # g CRString, String matchStr, Int32 startPos)
+   at Crestron.Logos.SplusLibrary.Functions.Remove(String matchStr, CrestronString input)
+   at UserModule_ECLER_MIMO88_FULL.UserModuleClass_ECLER_MIMO88_FULL.HANDLEDATAOLEVELMSG(SplusExecutionContext __conte333. Error: splusmanagerapp.exe [App 1] # 2017-01-03 11:50:39  # xt__)
+   at UserModule_ECLER_MIMO88_FULL.UserModuleClass_ECLER_MIMO88_FULL.HANDLEDATAMSG(SplusExecutionContext __context__)
+   at UserModule_ECLER_MIMO88_FULL.UserModuleClass_ECLER_MIMO88_FULL.RX__DOLLAR___OnChange_3(Object __EventInfo__)
+   at Amib.Th334. Error: splusmanagerapp.exe [App 1] # 2017-01-03 11:50:39  # reading.Internal.WorkItem.ExecuteWorkItem()
+   at Amib.Threading.Internal.WorkItem.Execute()
+   at Amib.Threading.SmartThreadPool.ExecuteWorkItem(WorkItem workItem)
+   at Amib.Threading.SmartThreadPool.ProcessQueuedItems()
+
+343. Error: splusmanagerapp.exe [App 1] # 2017-01-03 12:12:46  # Module S-2.5.2 : Ecler_MIMO88_Full at line 691: Invalid remove length: 17  String length : 0
+
+ Total Msgs Logged = 350
+ END OF SYSTEM LOG
+

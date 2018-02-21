@@ -1,0 +1,24 @@
+WiFi 		: OFFICE
+Pass 		: 12345678
+
+Brama		:	10.0.100.1
+Maska		:	255.255.252.0
+
+DMPS		:	10.0.100.245
+Sony		:	10.0.100.246		(user / pass : root / Projector1)
+MIMO		:	10.0.100.247
+AirMedia	:	10.0.100.248
+
+VPN (FortiClient)
+IP			:	31.182.48.202
+Port		:	8443
+
+User		:	s3artvideo
+Pass		:	dfgdfg1!
+
+User		:	irbis
+Pass		:	IRbisXY!
+
+=====================
+
+DMPS xPanel Password	:	WidzewMistrzem
