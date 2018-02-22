@@ -17,7 +17,7 @@
 
 // Inputs
 
-DIGITAL_INPUT residenceInitialize, _SKIP_, loop_On_FB, loop_Off_FB, _SKIP_, loop_TOG;
+DIGITAL_INPUT residenceInitialize, _SKIP_, loop_On_FB, loop_Off_FB, _SKIP_, loop_TOG, _SKIP_, test_1, test_2, test_3, test_4, test_5, test_6;
 
 // Outputs
 
@@ -118,6 +118,41 @@ PUSH loop_TOG
 	if (gIsModuleInitialized <> 1) return;
 
 	gThisLoop.PowerToggle();
+}
+
+threadsafe PUSH test_1
+{
+	MessagePrinter.PrintDate();
+}
+
+threadsafe PUSH test_2
+{
+	MessagePrinter.PrintThicks();
+}
+
+threadsafe PUSH test_3
+{
+	MessagePrinter.LogError();
+}
+
+threadsafe PUSH test_4
+{
+	MessagePrinter.LogWarning();
+}
+
+threadsafe PUSH test_5
+{
+	MessagePrinter.LogNotice();
+}
+
+threadsafe PUSH test_6
+{
+	MessagePrinter.StartStopWatch();
+}
+
+threadsafe RELEASE test_6
+{
+	MessagePrinter.StopStopWatch();
 }
 
 // Main Function
