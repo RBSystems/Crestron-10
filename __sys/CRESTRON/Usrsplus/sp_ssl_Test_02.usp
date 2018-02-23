@@ -1,0 +1,41 @@
+//Compiler Directives
+
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "sp_ssl_Test_02"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
+
+#DEFINE_CONSTANT STRING_SIZE 128
+
+DIGITAL_INPUT dIn_1;
+ANALOG_INPUT aIn_1;
+STRING_INPUT sIn_1[STRING_SIZE];
+
+USPModule thisModule;
+
+CHANGE dIn_1
+{
+	thisModule.DigitalInput_1.SetValue(dIn_1);
+}
+
+CHANGE aIn_1
+{
+	thisModule.AnalogInput_1.SetValue(aIn_1);
+}
+
+CHANGE sIn_1
+{
+	thisModule.SerialInput_1.SetValue(sIn_1);
+}
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}
