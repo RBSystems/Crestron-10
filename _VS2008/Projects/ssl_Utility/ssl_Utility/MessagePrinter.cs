@@ -54,5 +54,11 @@ namespace ssl_Utility
             stopWatch.Reset();
         }
 
+        public static void PrintToConsole()
+        {
+            //CrestronConsole.PrintLine("Custom print to console");
+            CrestronConsole.ConsoleCommandResponse("Custom print to console");
+        }
+
     }
 }

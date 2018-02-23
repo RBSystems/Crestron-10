@@ -147,13 +147,9 @@ threadsafe PUSH test_5
 
 threadsafe PUSH test_6
 {
-	MessagePrinter.StartStopWatch();
+	MessagePrinter.PrintToConsole();
 }
 
-threadsafe RELEASE test_6
-{
-	MessagePrinter.StopStopWatch();
-}
 
 // Main Function
 
