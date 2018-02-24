@@ -3,28 +3,26 @@ using System.Text;
 using Crestron.SimplSharp;
 
 namespace ssl_Utility
-{
-    public delegate void DPrintTraceMessage(SimplSharpString _message);
-
-    public static class MessagePrinter
+{    
+    public static class DebugHelper
     {
-        public static DPrintTraceMessage PrintTraceMessage { get; set; }
+        public static StringActionDelegate PrintTraceCallback { get; set; }
 
         private static Stopwatch stopWatch = new Stopwatch();
 
-        public static void PrintAsTrace(string _message)
+        public static void PrintTrace(string _message)
         {
-            if (PrintTraceMessage != null) PrintTraceMessage("S#: " + _message);
+            if (PrintTraceCallback != null) PrintTraceCallback("S#: " + _message);
         }
 
         public static void PrintDate()
         {
-            PrintAsTrace("Data: " + CrestronEnvironment.GetLocalTime().ToString());
+            PrintTrace("Data: " + CrestronEnvironment.GetLocalTime().ToString());
         }
 
         public static void PrintThicks()
         {
-            PrintAsTrace("Thicks: " + CrestronEnvironment.TickCount);
+            PrintTrace("Thicks: " + CrestronEnvironment.TickCount);
         }
 
         public static void LogError()
@@ -50,14 +48,8 @@ namespace ssl_Utility
         public static void StopStopWatch()
         {
             stopWatch.Stop();
-            PrintAsTrace("Uplynelo " + stopWatch.ElapsedMilliseconds + " milisekund");
+            PrintTrace("Uplynelo " + stopWatch.ElapsedMilliseconds + " milisekund");
             stopWatch.Reset();
-        }
-
-        public static void PrintToConsole()
-        {
-            //CrestronConsole.PrintLine("Custom print to console");
-            CrestronConsole.ConsoleCommandResponse("Custom print to console");
         }
 
     }

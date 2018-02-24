@@ -39,7 +39,7 @@ HeatingLoop gThisLoop;
 INTEGER gIsModuleInitialized;
 
 //	Funkcje Callback dla delegat Simpl#
-CALLBACK FUNCTION PrintTraceMessageCallback(STRING _message)
+CALLBACK FUNCTION PrintTrace(STRING _message)
 {
 	trace("%s", _message);
 }
@@ -59,7 +59,7 @@ CALLBACK FUNCTION TurnHeatingLoopOffCallback()
 //	Rejestracja delegat Simpl#
 FUNCTION RegisterStaticDelegates()
 {
-	RegisterDelegate(MessagePrinter, PrintTraceMessage, PrintTraceMessageCallback);
+	RegisterDelegate(DebugHelper, PrintTraceCallback, PrintTrace);
 }
 
 FUNCTION RegisterHeatingLoopDelegates()
@@ -122,32 +122,32 @@ PUSH loop_TOG
 
 threadsafe PUSH test_1
 {
-	MessagePrinter.PrintDate();
+	DebugHelper.PrintDate();
 }
 
 threadsafe PUSH test_2
 {
-	MessagePrinter.PrintThicks();
+	DebugHelper.PrintThicks();
 }
 
 threadsafe PUSH test_3
 {
-	MessagePrinter.LogError();
+	DebugHelper.LogError();
 }
 
 threadsafe PUSH test_4
 {
-	MessagePrinter.LogWarning();
+	DebugHelper.LogWarning();
 }
 
 threadsafe PUSH test_5
 {
-	MessagePrinter.LogNotice();
+	DebugHelper.LogNotice();
 }
 
 threadsafe PUSH test_6
 {
-	MessagePrinter.PrintToConsole();
+
 }
 
 

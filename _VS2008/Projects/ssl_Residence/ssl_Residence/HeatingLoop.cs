@@ -22,20 +22,20 @@ namespace ssl_Residence
         {
             Id = 0;
             PowerState = 0;
-            MessagePrinter.PrintAsTrace("Utworzono petle 0 (default)");
+            DebugHelper.PrintTrace("Utworzono petle 0 (default)");
         }
         
         public HeatingLoop(ushort _id)
         {
             Id = _id;
             PowerState = 0;
-            MessagePrinter.PrintAsTrace("Utworzono petle ID = " + _id);
+            DebugHelper.PrintTrace("Utworzono petle ID = " + _id);
         }
 
         public void UpdatePowerState(ushort _powerState)
         {
             PowerState = _powerState;
-            MessagePrinter.PrintAsTrace("Petla ID = " + Id + " zaktualizowala swoj stan = " + _powerState);
+            DebugHelper.PrintTrace("Petla ID = " + Id + " zaktualizowala swoj stan = " + _powerState);
         }
 
         public void PowerOn()
