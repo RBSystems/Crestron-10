@@ -21,12 +21,15 @@ namespace ssl_Utility
         protected ushort AnalogValue { get; set; }
         protected String SerialValue { get; set; }
 
+        public String Name { get; set; }
+
         public event EventHandler ValueChangedEventHandler;
 
         public Signal()
         {
             DigitalValue = false;
             ParseDigitalValue();
+            Name = "Empty";
         }
 
         private void OnValueChanged()
@@ -35,7 +38,7 @@ namespace ssl_Utility
 
             if (SignalHelper.DEBUGMODE)
             {
-                DebugHelper.PrintTrace("Signal : Signal changed");
+                DebugHelper.PrintTrace("Signal : Signal named " + Name + " changed");
                 DebugHelper.PrintTrace("Signal : Signal digital value = " + this.DigitalValue.ToString());
                 DebugHelper.PrintTrace("Signal : Signal analog value = " + this.AnalogValue.ToString());
                 DebugHelper.PrintTrace("Signal : Signal serial value = " + this.SerialValue);
@@ -64,36 +67,32 @@ namespace ssl_Utility
         {
             bool tempValue = _value > SignalHelper.MIN_ANALOG_VALUE;
 
-            if (tempValue != DigitalValue)
-            {
-                OnValueChanged();
-            }
+            bool changedFlag = (DigitalValue != tempValue);
 
             DigitalValue = tempValue;
             ParseDigitalValue();
+
+            if (changedFlag) OnValueChanged();
         }
 
         protected virtual void SetAnalogValue(ushort _value)
         {
-            if (_value != AnalogValue)
-            {
-
-                OnValueChanged();
-            }
+            bool changedFlag = (_value != AnalogValue);
 
             AnalogValue = _value;
             ParseAnalogValue();
+
+            if (changedFlag) OnValueChanged();
         }
 
         protected virtual void SetSerialValue(SimplSharpString _value)
         {
-            if (_value.ToString() != SerialValue)
-            {
-                OnValueChanged();
-            }
+            bool changedFlag = (_value.ToString() != SerialValue);
 
             SerialValue = _value.ToString();
             ParseSerialValue();
+
+            if (changedFlag) OnValueChanged();
         }
     }
 
@@ -103,12 +102,19 @@ namespace ssl_Utility
     {
         public bool IsInitialized { get; protected set; }
 
+        public EmptyActionDelegate PollValueCallback {get; set;}
+
         public event EventHandler InitializedEventHandler;
 
         public InputSignal()
             : base()
         {
             IsInitialized = false;
+        }
+
+        public void PollValue()
+        {
+            if (PollValueCallback != null) PollValueCallback();
         }
 
         private void OnInitialized()
@@ -239,7 +245,44 @@ namespace ssl_Utility
         }
     }
 
+    public class DigitalOutputSignal : OutputSignal
+    {
+        public DigitalOutputSignal()
+            : base()
+        {
+        }
 
+        public void SetValue(ushort _value)
+        {
+            SetDigitalValue(_value);
+        }
+    }
+
+    public class AnalogOutputSignal : OutputSignal
+    {
+        public AnalogOutputSignal()
+            : base()
+        {
+        }
+
+        public void SetValue(ushort _value)
+        {
+            SetAnalogValue(_value);
+        }
+    }
+
+    public class SerialOutputSignal : OutputSignal
+    {
+        public SerialOutputSignal()
+            : base()
+        {
+        }
+
+        public void SetValue(SimplSharpString _value)
+        {
+            SetSerialValue(_value);
+        }
+    }
 
     #endregion
 

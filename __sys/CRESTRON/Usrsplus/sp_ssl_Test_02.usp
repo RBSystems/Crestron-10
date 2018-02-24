@@ -13,7 +13,7 @@
 
 #DEFINE_CONSTANT STRING_SIZE 128
 
-DIGITAL_INPUT dIn_1;
+DIGITAL_INPUT pollAllInputs, listenToChange, _SKIP_, test_01, test_02, test_03, _SKIP_, dIn_1;
 ANALOG_INPUT aIn_1;
 STRING_INPUT sIn_1[STRING_SIZE];
 
@@ -23,23 +23,114 @@ STRING_OUTPUT sOut_1;
 
 USPModule thisModule;
 
-CHANGE dIn_1
+// Input callback functions
+CALLBACK FUNCTION Poll_dIn_1()
 {
 	thisModule.DigitalInput_1.SetValue(dIn_1);
 }
 
-CHANGE aIn_1
+CALLBACK FUNCTION Poll_aIn_1()
 {
 	thisModule.AnalogInput_1.SetValue(aIn_1);
 }
 
-CHANGE sIn_1
+CALLBACK FUNCTION Poll_sIn_1()
 {
 	thisModule.SerialInput_1.SetValue(sIn_1);
 }
 
+// Output callback functions
+
+CALLBACK FUNCTION Set_dOut_1(INTEGER _value)
+{
+	dOut_1 = _value;
+}
+
+CALLBACK FUNCTION Set_aOut_1(INTEGER _value)
+{
+	aOut_1 = _value;
+}
+
+CALLBACK FUNCTION Set_sOut_1(STRING _value)
+{
+	sOut_1 = _value;
+}
+
+
+// Registration functions
+FUNCTION RegisterInputDelegates()
+{
+	InputSignal tempInputSignal;
+                                                 
+	tempInputSignal = thisModule.DigitalInput_1;
+	RegisterDelegate(tempInputSignal, PollValueCallback, Poll_dIn_1);
+
+	tempInputSignal = thisModule.AnalogInput_1;
+	RegisterDelegate(tempInputSignal, PollValueCallback, Poll_aIn_1);
+
+    tempInputSignal = thisModule.SerialInput_1;
+	RegisterDelegate(tempInputSignal, PollValueCallback, Poll_sIn_1);
+}
+
+FUNCTION RegisterOutputDelegates()
+{
+	OutputSignal tempOutputSignal;
+
+	tempOutputSignal = thisModule.DigitalOutput_1;
+    RegisterDelegate(tempOutputSignal, SetDigitalValueCallback, Set_dOut_1);
+
+	tempOutputSignal = thisModule.AnalogOutput_1;
+    RegisterDelegate(tempOutputSignal, SetAnalogValueCallback, Set_aOut_1);
+
+	tempOutputSignal = thisModule.SerialOutput_1;
+    RegisterDelegate(tempOutputSignal, SetSerialValueCallback, Set_sOut_1);
+}
+
+// Signal event handling
+
+CHANGE dIn_1
+{
+	if (listenToChange = 1) Poll_dIn_1();
+}
+
+CHANGE aIn_1
+{
+	if (listenToChange = 1) Poll_aIn_1();
+}
+
+CHANGE sIn_1
+{
+	if (listenToChange = 1) Poll_sIn_1();
+}
+
+PUSH pollAllInputs
+{
+	thisModule.DigitalInput_1.PollValue();
+    thisModule.AnalogInput_1.PollValue();
+	thisModule.SerialInput_1.PollValue();
+}
+
+PUSH test_01
+{
+	thisModule.Test_01();
+}
+
+PUSH test_02
+{
+	thisModule.Test_02();
+}
+
+PUSH test_03
+{
+	thisModule.Test_03();
+}
+
+// Main function
+
 Function Main()
 {
+	RegisterInputDelegates();
+	RegisterOutputDelegates();
 	WaitForInitializationComplete();
 	// TODO Init
 }
