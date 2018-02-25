@@ -1,4 +1,4 @@
-#CATEGORY "3" // Debugging
+#CATEGORY "12" // System Control
 #SYMBOL_NAME "SharpHelper"
 #DEFAULT_VOLATILE
 #ENABLE_STACK_CHECKING
@@ -6,6 +6,7 @@
 
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
 
+DIGITAL_INPUT InitializeSystem;
 DIGITAL_OUTPUT ContainerInitialized_FB;
 
 CALLBACK FUNCTION PrintTrace(STRING _message)
@@ -15,14 +16,18 @@ CALLBACK FUNCTION PrintTrace(STRING _message)
 
 EVENTHANDLER ModuleContainerInitializedEventHandler(Dummy _dummy, EventArgs _e)
 {
+	trace("SharpHelper - InitializedEventHandler");
 	ContainerInitialized_FB = 1;
+}
+
+PUSH InitializeSystem
+{
+	ModuleContainer.Initialize();
 }
 
 Function Main()
 {
 	RegisterDelegate(DebugHelper, PrintTraceCallback, PrintTrace);
 	RegisterEvent(ModuleContainer, InitializedEvent, ModuleContainerInitializedEventHandler);
-	ModuleContainer.Initialize();
 	WaitForInitializationComplete();
-	// TODO Init
 }

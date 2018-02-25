@@ -40,6 +40,7 @@ namespace ssl_Utility
         public Signal(ushort _id) : this()
         {
             Id = _id;
+            Name = "ID_" + _id;
         }
 
         private void OnValueChanged()

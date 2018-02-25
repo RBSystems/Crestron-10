@@ -8,7 +8,7 @@
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
 
 //	Define constants
-#DEFINE_CONSTANT MAX_MODULES_COUNT 512
+#DEFINE_CONSTANT MAX_MODULES_COUNT 255
 #DEFINE_CONSTANT MAX_SIGNAL_COUNT 255
 #DEFINE_CONSTANT STRING_SIZE 255
 
@@ -106,6 +106,8 @@ FUNCTION UpdateAllInputs()
 //	Sharp event handlers
 EVENTHANDLER ModuleContainerInitializedEventHandler(Dummy _dummy, EventArgs _e)
 {
+	trace("SUM nr %d - InitializedEventHandler", pModuleId);
+
 	InitializeSharp();
 	UpdateAllInputs();
 }
@@ -143,5 +145,6 @@ CHANGE SerialInput
 //	Main Function
 Function Main()
 {
+	RegisterSharpEventHandlers();
 	WaitForInitializationComplete();	
 }

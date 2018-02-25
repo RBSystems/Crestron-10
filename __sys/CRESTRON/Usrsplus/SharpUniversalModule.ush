@@ -2139,5 +2139,5 @@
   DNF=1
   VVS=1
   LR=0d
-  HR=512d
+  HR=255d
 [END]

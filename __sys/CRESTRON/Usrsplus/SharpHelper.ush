@@ -22,11 +22,13 @@
   Code=1
   SysRev5=4.000
   SMWRev=3.00.00
+  InputCue1=InitializeSystem
+  InputSigType1=Digital
   OutputCue1=ContainerInitialized_FB
   OutputSigType1=Digital
   ParamCue1=[Reference Name]
-  MinVariableInputs=0
-  MaxVariableInputs=0
+  MinVariableInputs=1
+  MaxVariableInputs=1
   MinVariableInputsList2=0
   MaxVariableInputsList2=0
   MinVariableOutputs=1
@@ -38,7 +40,7 @@
   Expand=expand_separately
   Expand2=expand_separately
   ProgramTree=Logic
-  SymbolTree=3
+  SymbolTree=12
   Hint=
   PdfHelp=
   HelpID= 
