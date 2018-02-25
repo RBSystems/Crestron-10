@@ -13,10 +13,14 @@ namespace ssl_Utility
 
         public const ushort MIN_ANALOG_VALUE = 0;
         public const ushort MAX_ANALOG_VALUE = 65535;
+
+        public const ushort MAX_SIGNAL_COUNT = 256;
     }
 
     public class Signal
     {
+        protected ushort Id { get; private set; }
+
         protected bool DigitalValue { get; set; }
         protected ushort AnalogValue { get; set; }
         protected String SerialValue { get; set; }
@@ -27,9 +31,15 @@ namespace ssl_Utility
 
         public Signal()
         {
+            Id = 0;
             DigitalValue = false;
             ParseDigitalValue();
             Name = "Empty";
+        }
+
+        public Signal(ushort _id) : this()
+        {
+            Id = _id;
         }
 
         private void OnValueChanged()
@@ -112,6 +122,12 @@ namespace ssl_Utility
             IsInitialized = false;
         }
 
+        public InputSignal(ushort _id)
+            : base(_id)
+        {
+            IsInitialized = false;
+        }
+
         public void PollValue()
         {
             if (PollValueCallback != null) PollValueCallback();
@@ -165,7 +181,12 @@ namespace ssl_Utility
         {
         }
 
-        public void SetValue(ushort _value)
+        public DigitalInputSignal(ushort _id)
+            : base(_id)
+        {
+        }
+
+        public void UpdateValue(ushort _value)
         {
             SetDigitalValue(_value);
         }
@@ -183,7 +204,12 @@ namespace ssl_Utility
         {
         }
 
-        public void SetValue(ushort _value)
+        public AnalogInputSignal(ushort _id)
+            : base(_id)
+        {
+        }
+
+        public void UpdateValue(ushort _value)
         {
             SetAnalogValue(_value);
         }
@@ -201,7 +227,12 @@ namespace ssl_Utility
         {
         }
 
-        public void SetValue(String _value)
+        public SerialInputSignal(ushort _id)
+            : base(_id)
+        {
+        }
+
+        public void UpdateValue(String _value)
         {
             SetSerialValue(_value);
         }
@@ -213,33 +244,37 @@ namespace ssl_Utility
 
     public class OutputSignal : Signal
     {
-        public IntegerActionDelegate SetDigitalValueCallback { get; set; }
-        public IntegerActionDelegate SetAnalogValueCallback { get; set; }
-        public StringActionDelegate SetSerialValueCallback { get; set; }
+        public IdIntegerActionDelegate SendDigitalValueDelegate { get; set; }
+        public IdIntegerActionDelegate SendAnalogValueDelegate { get; set; }
+        public IdStringActionDelegate SendSerialValueDelegate { get; set; }
 
         public OutputSignal()
             : base()
         {
+        }
 
+        public OutputSignal(ushort _id)
+            : base(_id)
+        {
         }
 
         protected override void SetDigitalValue(ushort _value)
         {
-            if (SetDigitalValueCallback != null) SetDigitalValueCallback(_value);
+            if (SendDigitalValueDelegate != null) SendDigitalValueDelegate(Id, _value);
 
             base.SetDigitalValue(_value);
         }
 
         protected override void SetAnalogValue(ushort _value)
         {
-            if (SetAnalogValueCallback != null) SetAnalogValueCallback(_value);
+            if (SendAnalogValueDelegate != null) SendAnalogValueDelegate(Id, _value);
 
             base.SetAnalogValue(_value);
         }
 
         protected override void SetSerialValue(SimplSharpString _value)
         {
-            if (SetSerialValueCallback != null) SetSerialValueCallback(_value);
+            if (SendSerialValueDelegate != null) SendSerialValueDelegate(Id, _value);
 
             base.SetSerialValue(_value);
         }
@@ -252,7 +287,12 @@ namespace ssl_Utility
         {
         }
 
-        public void SetValue(ushort _value)
+        public DigitalOutputSignal(ushort _id)
+            : base(_id)
+        {
+        }
+
+        public void SendValue(ushort _value)
         {
             SetDigitalValue(_value);
         }
@@ -265,7 +305,12 @@ namespace ssl_Utility
         {
         }
 
-        public void SetValue(ushort _value)
+        public AnalogOutputSignal(ushort _id)
+            : base(_id)
+        {
+        }
+
+        public void SendValue(ushort _value)
         {
             SetAnalogValue(_value);
         }
@@ -278,7 +323,12 @@ namespace ssl_Utility
         {
         }
 
-        public void SetValue(SimplSharpString _value)
+        public SerialOutputSignal(ushort _id)
+            : base(_id)
+        {
+        }
+
+        public void SendValue(SimplSharpString _value)
         {
             SetSerialValue(_value);
         }

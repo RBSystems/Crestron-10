@@ -26,32 +26,32 @@ USPModule thisModule;
 // Input callback functions
 CALLBACK FUNCTION Poll_dIn_1()
 {
-	thisModule.DigitalInput_1.SetValue(dIn_1);
+	thisModule.DigitalInput_1.UpdateValue(dIn_1);
 }
 
 CALLBACK FUNCTION Poll_aIn_1()
 {
-	thisModule.AnalogInput_1.SetValue(aIn_1);
+	thisModule.AnalogInput_1.UpdateValue(aIn_1);
 }
 
 CALLBACK FUNCTION Poll_sIn_1()
 {
-	thisModule.SerialInput_1.SetValue(sIn_1);
+	thisModule.SerialInput_1.UpdateValue(sIn_1);
 }
 
 // Output callback functions
 
-CALLBACK FUNCTION Set_dOut_1(INTEGER _value)
+CALLBACK FUNCTION Set_dOut_1(INTEGER _id, INTEGER _value)
 {
 	dOut_1 = _value;
 }
 
-CALLBACK FUNCTION Set_aOut_1(INTEGER _value)
+CALLBACK FUNCTION Set_aOut_1(INTEGER _id, INTEGER _value)
 {
 	aOut_1 = _value;
 }
 
-CALLBACK FUNCTION Set_sOut_1(STRING _value)
+CALLBACK FUNCTION Set_sOut_1(INTEGER _id, STRING _value)
 {
 	sOut_1 = _value;
 }
@@ -77,13 +77,13 @@ FUNCTION RegisterOutputDelegates()
 	OutputSignal tempOutputSignal;
 
 	tempOutputSignal = thisModule.DigitalOutput_1;
-    RegisterDelegate(tempOutputSignal, SetDigitalValueCallback, Set_dOut_1);
+    RegisterDelegate(tempOutputSignal, SendDigitalValueDelegate, Set_dOut_1);
 
 	tempOutputSignal = thisModule.AnalogOutput_1;
-    RegisterDelegate(tempOutputSignal, SetAnalogValueCallback, Set_aOut_1);
+    RegisterDelegate(tempOutputSignal, SendAnalogValueDelegate, Set_aOut_1);
 
 	tempOutputSignal = thisModule.SerialOutput_1;
-    RegisterDelegate(tempOutputSignal, SetSerialValueCallback, Set_sOut_1);
+    RegisterDelegate(tempOutputSignal, SendSerialValueDelegate, Set_sOut_1);
 }
 
 // Signal event handling

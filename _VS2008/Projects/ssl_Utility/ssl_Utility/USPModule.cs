@@ -37,30 +37,30 @@ namespace ssl_Utility
 
         public void Test_01()
         {
-            DigitalOutput_1.SetValue(1);
-            AnalogOutput_1.SetValue(997);
-            SerialOutput_1.SetValue("Policja");
+            DigitalOutput_1.SendValue(1);
+            AnalogOutput_1.SendValue(997);
+            SerialOutput_1.SendValue("Policja");
         }
 
         public void Test_02()
         {
-            DigitalOutput_1.SetValue(0);
-            AnalogOutput_1.SetValue(998);
-            SerialOutput_1.SetValue("Straz");
+            DigitalOutput_1.SendValue(0);
+            AnalogOutput_1.SendValue(998);
+            SerialOutput_1.SendValue("Straz");
         }
 
         public void Test_03()
         {
-            DigitalOutput_1.SetValue(1);
-            AnalogOutput_1.SetValue(999);
-            DigitalOutput_1.SetValue(0);
-            SerialOutput_1.SetValue("Pogotowie");
-            DigitalOutput_1.SetValue(1);
-            SerialOutput_1.SetValue("io io io");
-            AnalogOutput_1.SetValue(112);
-            DigitalOutput_1.SetValue(0);
-            AnalogOutput_1.SetValue(0);
-            SerialOutput_1.SetValue("");
+            DigitalOutput_1.SendValue(1);
+            AnalogOutput_1.SendValue(999);
+            DigitalOutput_1.SendValue(0);
+            SerialOutput_1.SendValue("Pogotowie");
+            DigitalOutput_1.SendValue(1);
+            SerialOutput_1.SendValue("io io io");
+            AnalogOutput_1.SendValue(112);
+            DigitalOutput_1.SendValue(0);
+            AnalogOutput_1.SendValue(0);
+            SerialOutput_1.SendValue("");
         }
     }
 }

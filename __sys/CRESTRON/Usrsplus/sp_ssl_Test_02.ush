@@ -20,7 +20,7 @@
   Name=sp_ssl_Test_02
   SmplCName=sp_ssl_Test_02.usp
   Code=1
-  SysRev5=4.006
+  SysRev5=4.000
   SMWRev=3.00.00
   InputCue1=pollAllInputs
   InputSigType1=Digital
@@ -84,7 +84,7 @@
   SymJam=NonExclusive
   FileName=sp_ssl_Test_02.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Residence
+  clz1=ssl_Utility
 [END]
 [BEGIN]
   ObjTp=Dp
