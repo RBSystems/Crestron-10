@@ -8,7 +8,7 @@ namespace ssl_Utility
 {
     public static class ModuleHelper
     {
-        public const ushort MAX_MODULES_COUNT = 256;
+        public const ushort MAX_MODULES_COUNT = 101;
     }
     
     public class UniversalModule

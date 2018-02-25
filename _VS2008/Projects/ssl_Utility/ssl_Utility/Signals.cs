@@ -14,7 +14,7 @@ namespace ssl_Utility
         public const ushort MIN_ANALOG_VALUE = 0;
         public const ushort MAX_ANALOG_VALUE = 65535;
 
-        public const ushort MAX_SIGNAL_COUNT = 256;
+        public const ushort MAX_SIGNAL_COUNT = 51;
     }
 
     public class Signal
