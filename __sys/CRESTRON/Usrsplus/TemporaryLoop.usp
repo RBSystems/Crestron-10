@@ -1,0 +1,58 @@
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "TemporaryLoop"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT PULSE_TIME 10
+
+// Inputs
+DIGITAL_INPUT Initialize, _SKIP_;
+ANALOG_INPUT TempAct, TempSet;
+
+// Outputs
+DIGITAL_OUTPUT Initialized_FB, _SKIP_, LoopOn, LoopOff;
+
+
+// Parameters
+INTEGER_PARAMETER pOffset;
+
+
+// Parameter Properietes
+#BEGIN_PARAMETER_PROPERTIES pOffset
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 0d , 200d;
+   propDefaultValue = 50d;
+#END_PARAMETER_PROPERTIES
+
+// Functions
+FUNCTION CheckTemperatures()
+{
+	if (Initialized_FB = 0) return;
+
+	if (TempAct >= TempSet) pulse(PULSE_TIME, LoopOff);
+
+	if (TempAct < (TempSet - pOffset)) pulse(PULSE_TIME, LoopOn);
+}
+
+// Event Handlers
+PUSH Initialize
+{
+	Initialized_FB = 1;
+	CheckTemperatures();
+}
+
+CHANGE TempAct, TempSet
+{
+	CheckTemperatures();
+}
+
+// Main Function
+Function Main()
+{
+	Initialized_FB = 0;
+	WaitForInitializationComplete();
+}
