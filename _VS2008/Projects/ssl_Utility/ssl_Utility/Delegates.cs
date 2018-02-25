@@ -11,4 +11,8 @@ namespace ssl_Utility
     public delegate void IdIntegerActionDelegate(ushort _id, ushort _value);
     public delegate void StringActionDelegate(SimplSharpString _message);
     public delegate void IdStringActionDelegate(ushort _id, SimplSharpString _message);
+
+    public class Dummy
+    {
+    }
 }
