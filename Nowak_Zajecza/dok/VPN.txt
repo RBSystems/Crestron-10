@@ -1,4 +1,0 @@
-PPTP
-ip: 176.116.151.106
-l: s3art
-p: s3artpany

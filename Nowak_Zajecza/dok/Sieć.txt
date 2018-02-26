@@ -1,0 +1,38 @@
+WiFi
+
+SSID		:	SR30
+Password	:	R8TQ95W1V2R
+
+========================
+VPN (L2TP with IPSec)
+
+185.122.173.38
+
+user		:	s3art_1
+password	:	s3artpany
+
+user		:	s3art_2
+password	:	s3artpany
+
+user		:	VR
+password	:	japierdole69
+
+user		:	VR8
+password	:	japierdole96
+
+IPSec		:	pojebanyklucz
+
+========================
+
+PPPoE
+login		:	pppoe01335
+password	:	478548
+
+public IP	:	185.122.173.38
+
+========================
+
+Router Mikrotik RB201 1UiAS-RM
+
+login		:	admin
+password	:	t21o35X17i18c
