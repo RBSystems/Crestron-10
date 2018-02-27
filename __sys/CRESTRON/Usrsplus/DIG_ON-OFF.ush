@@ -22,7 +22,7 @@
   SmplCName=DIG_ON-OFF.usp
   Code=1
   SysRev5=4.000
-  SMWRev=2.02.05
+  SMWRev=3.00.00
   InputCue1=digOn
   InputSigType1=Digital
   InputCue2=digOff
@@ -75,6 +75,7 @@
   SymJam=NonExclusive
   FileName=DIG_ON-OFF.ush
   SIMPLPlusModuleEncoding=0
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
