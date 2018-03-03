@@ -1,0 +1,17 @@
+Digital:
+
+Strony (show_FB)				:	001 - 124
+
+Wspólne							:	151 - 174
+
+Kondygnacje						:	181 - 248
+
+Pokoje (wspolne+DIG+DIM+ROL)	:	261 - 592
+
+Pokoje (PopUp-y)				:	601 - 663
+
+StanDomu						:	671 - 732
+
+PopUp-y Globalne				:	741 - 774
+
+=========================================

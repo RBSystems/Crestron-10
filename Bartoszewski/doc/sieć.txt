@@ -1,0 +1,47 @@
+Zdalny dostêp
+IP: 77.237.15.72
+
+Router
+IP: 192.168.0.50
+user: admin
+pass: admin
+
+VPN
+User: S3art
+Pass: Service
+
+VPN
+User: Bartoszewski
+Pass: P@ssw0rd
+
+VPN
+User: arba
+Pass: Arb@5670
+
+WiFi
+SSID: AM33_Salon
+pass: Arb@5670
+IP: 192.168.0.211
+
+WiFi
+SSID: AM33_Gabinet
+pass: Arb@5670
+IP: 192.168.0.213
+
+WiFi
+SSID: AM33_Pietro
+pass: Arb@5670
+IP: 192.168.0.212
+
+Przekierowania
+WAGO: 		
+	192.168.0.250:81
+	192.168.0.250:137
+	192.168.0.250:2455
+	192.168.0.250:6626	
+KNX:	
+	192.168.0.250:3671
+Crestron:
+	192.168.0.200:41790	
+	192.168.0.200:41795
+	192.168.0.200:41890
