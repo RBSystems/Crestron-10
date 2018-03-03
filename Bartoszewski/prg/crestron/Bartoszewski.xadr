@@ -11,8 +11,10 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
+DIN-AP2_Remote=auto 77.237.15.72
 DIN-AP2=auto 192.168.0.200
 
 [Notes]
+DIN-AP2_Remote=
 DIN-AP2=
 
