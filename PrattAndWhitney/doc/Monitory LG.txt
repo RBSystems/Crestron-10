@@ -1,0 +1,102 @@
+
+1 Enter ‘https://Product IP address:3737’ in the browser's address bar to access the Control Manager login page.
+
+2 Enter the password in the Password window (The default password is ‘000000’).
+
+==========
+
+In the Option menu, the Set ID must be between 1 and 1000 without being duplicated.
+
+=========
+
+TCP/IP Telnet (port 23) (39603)
+
+porty do sprawdzenia
+
+8080 	(Server Open)
+5432	(PostgreSQL DB)
+6950	(Search for the player)
+9000	(Update server)
+9		(Wake on lan)
+
+
+???		49091
+=========
+
+Baud Rate: 9600 BPS
+Data Length: 8 bit
+Parity Bit: None
+Stop Bit: 1 bit
+Flow Control: None
+Communication Code: ASCII code
+
+================
+
+When monitors connected via Daisy Chain (that
+controls multiple monitors) are turned off and
+on successively, some monitors may not turn
+on. In this case, you can turn those monitors on
+by pressing the MONITOR ON button, not the
+POWER button.
+
+===================
+
+Transmission/Reception Protocol
+
+Transmission
+
+[Command1][Command2][ ][Set ID][ ][Data][Cr]
+
+* [Command1]: identifies between the factory setting and the user setting modes.
+
+* [Command2]: controls monitor sets.
+
+* [Set ID]: Used for selecting a set you want to control. A unique Set ID can be assigned to each set ranging from 1 to 1000(01H~3E8H) under Settings in the OSD menu. Selecting ‘00H’ for Set ID allows the simultaneous control of all connected monitors. (The maximum value may differ depending on the model.)
+
+* [Data]: Transmits command data. Data count may increase depending on the command.
+
+* [Cr]: Carriage Return. Corresponds to ‘0x0D’ in ASCII code.
+
+* [ ]: White Space. Corresponds to ‘0x20’ in ASCII code.
+
+------------------
+
+Acknowledgement
+
+[Command2][ ][Set ID][ ][OK/NG][Data][x]
+
+* The Product transmits ACK (acknowledgement) based on this format when receiving normal data. At this time, if the data is FF, it indicates the present status data. If the data is in data write mode, it returns the data of the PC computer.
+
+* If a command is sent with Set ID ‘00’ (=0x00), the data is reflected to all monitor sets and each monitor set does not send an acknowledgement (ACK).
+
+* If the data value ‘FF’ is sent in control mode via RS-232C, the current setting value of a function can be checked (only for some functions).
+
+*Some commands are not supported depending on the model.
+
+===================
+
+01. Power (Command: k a)
+
+Controls the power on/off of the set.
+
+Transmission
+
+[k][a][ ][Set ID][ ][Data][Cr]
+
+Data
+- 00: Off
+- 01: On
+
+---------------
+
+Acknowledgement
+
+[a][ ][Set ID][ ][OK/NG][Data][x]
+
+*The acknowledgement signal is returned properly only when
+the monitor is fully powered on.
+
+* There may be a delay between the transmission and
+acknowledgement signals.
+
+===================

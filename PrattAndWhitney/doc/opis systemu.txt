@@ -1,0 +1,27 @@
+W sali są dwa monitory LG oraz jeden projektor SONY.
+
+Obraz z bramki am-101 wchodzi w spliter Crestrona a z tamtad na jeden monitor i projektor.
+
+Tak samo rzecz się ma jeżeli chodzi o obraz z receivera HD-MD-400 wchodzi w drugi spliter i pozniej po hdmi idzie do drugiego monitora i do projektora na drugie wejście.
+
+Fliptop i przyciski służą do:
+- podnodzenie i opuszczania ekranu + wlacz/wylacz projektor,
+- Wlacz/ wylacz monitory
+- Przelacz źródło na projektorze
+- Wlacz/wylacz swiatlo (podłączone do 2 styków w 8sw8 - jeden styk na krotko zwarty zapala swiatlo, przytrzymany rozjasnia. Drugi styk wyłacza i przyciemnia analogicznie do pierwszego)
+
+1x		DIN-AP3				(Procesor)
+
+1x		DIN-8SW8			(Moduł sterowania oświetleniem i ekranem)
+
+1x		FT-TS600-B			(FlipTop™ Touch Screen, Brush aluminium)
+
+1x		CLWI-KPLCN-ANTH		(Włącznik naścienny - 6 przycisków)
+
+2x		HD-DA2-4K-E			(Spliter sygnału HDMI)
+
+1x		HD-MD-400-C-E		(CRESTRON HD Scaling Auto-Switcher & Extender)
+
+1x		AM-101				(Bezprzewodowa prezentacja AirMedia)
+
+1x		SAROS SB-200-P-B	(Saros® Sound Bar 200, Powered, Black)

@@ -1,0 +1,19 @@
+Brama		:		10.16.54.1
+Maska		:		255.255.255.0
+
+Pula		:		10.16.54.150 - 155
+
+AIR_Media_1	:		10.16.54.150
+DIN-AP3		:		10.16.54.151
+FT-TS600	:		10.16.54.152	(IP-ID	:	11)
+Projektor	:		10.16.54.153	(IP-ID	:	03)		(user / pass : root / Projector1)
+AirMedia_2	:		10.16.54.154
+
+Cresnet
+
+DIN-8SW8	:	03
+CLWI-KPL	:	04
+
+
+
+
