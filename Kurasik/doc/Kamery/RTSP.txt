@@ -1,0 +1,23 @@
+rtsp://<login>:<password>@<RejestratorIpAddress>:554/Streaming/Channels/<CameraID>01
+
+£¹czenie z rejestratorem i wybieranie kana³u strumienia jako nr kamery
+
+rtsp://admin:damat2711@192.168.1.60:554/Streaming/Channels/<CameraID>01
+
+CameraID : 1 - 24 <brak nr 7 - 192.168.1.67>
+
+Przyk³ad (kamera nr 8)
+
+rtsp://admin:damat2711@192.168.1.60:554/Streaming/Channels/801
+
+
+============================================================
+
+http://admin:damat2711@192.168.1.61/Streaming/channels/102/httpPreview
+
+
+http://192.168.1.61/Streaming/channels/1/picture
+
+Tylko poni¿sze dzia³a we wspó³pracy z dynami graphic object (refresh 1s)
+
+http://admin:damat2711@192.168.1.61/Streaming/channels/1/picture
