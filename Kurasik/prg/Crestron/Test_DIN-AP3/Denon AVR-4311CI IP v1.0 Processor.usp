@@ -99,7 +99,7 @@ STRING	Tempstring$[3000], Command$[2], Sub$[3], Sub3$[1], MainLevelInt$[10],
 String_Function CalculateVolumeText(Integer Value)
 {	
 	String Text$[10];
-	String Value$[3];
+	String Value$[5]; // bylo 3 zamiast 5
 	Integer Remainder;
 	
 	if(Value >= 800)

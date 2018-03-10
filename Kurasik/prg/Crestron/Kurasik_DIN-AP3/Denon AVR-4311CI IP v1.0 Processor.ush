@@ -23,6 +23,8 @@
   Name=Denon AVR-4311CI IP v1.0 Processor
   SmplCName=Denon AVR-4311CI IP v1.0 Processor.usp
   Code=1
+  SysRev5=4.000
+  SMWRev=3.00.00
   InputCue1=AM_Enabled
   InputSigType1=Digital
   InputCue2=FM_Enabled
@@ -287,6 +289,7 @@
   SymJam=NonExclusive
   FileName=Denon AVR-4311CI IP v1.0 Processor.ush
   SIMPLPlusModuleEncoding=0
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
