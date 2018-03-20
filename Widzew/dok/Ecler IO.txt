@@ -1,0 +1,17 @@
+Inputs:
+
+1)	DMPS
+2)	Mic_1 (gęsia szyja)
+3)	Mic_2 (ręczny)
+4)	Mic_3 (nagłowny)
+
+Outputs:
+
+1)	Sala
+2)	Platforma
+3)	Platforma
+4)	Parking
+5)	Parking
+6)	---
+7)	---
+8)	Sala
