@@ -1,1 +1,2 @@
 Input 1 = Alarm przepełnienia szamba za kotłownią
+Input 2 = Zasuwa pokrywy basenu (1 = zasunięta)
