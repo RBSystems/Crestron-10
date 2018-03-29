@@ -1,0 +1,10 @@
+192.168.1.90:7094
+
+Connecting to 192.168.1.90 ...
+Connected to 192.168.1.90
+Connection closed
+Connecting to 192.168.1.90 ...
+Connected to 192.168.1.90
+Connection closed
+
+Zamyka po³¹cenie po 25s
