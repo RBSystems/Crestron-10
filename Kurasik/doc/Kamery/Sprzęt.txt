@@ -1,0 +1,13 @@
+Modele:
+
+DS-2CD4D26FWD-IZS(2.8-12mm) - końcówka 61
+DS-2CD4B26FWD-IZS -końcówka 62, 63, 71
+DS-2CD2T25FWD-I5(2.8mm) - pozostałe.
+DS-7732NI-K4 - rejestrator.
+
+==================================
+
+Aplikacje:
+
+IVMS 4200 (PC)
+IVMS 4500 (Android)
