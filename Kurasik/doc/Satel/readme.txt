@@ -1,1 +1,1 @@
-port domyslny 7090
+port dedykowany 7094
