@@ -1,0 +1,263 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "SATEL_INT-RS_Processor"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT BUFFER_SIZE 512
+#DEFINE_CONSTANT MAX_FRAME_SIZE 128
+
+#DEFINE_CONSTANT INPUTS_COUNT 256
+#DEFINE_CONSTANT ZONES_COUNT 32
+#DEFINE_CONSTANT PULSE_TIME 5
+#DEFINE_CONSTANT DELAY_TIME 10
+#DEFINE_CONSTANT INTERVAL 100
+
+#DEFINE_CONSTANT MAX_ATTEMPTS 3
+
+#DEFINE_CONSTANT FRAME_START "\xFE\xFE"
+#DEFINE_CONSTANT FRAME_END "\xFE\x0D"
+
+#DEFINE_CONSTANT SPECIAL_FE "\xFE"
+#DEFINE_CONSTANT SPECIAL_FEF0 "\xFE\xF0"
+
+#DEFINE_CONSTANT INPUTS_QUERY_FRAME "\xFE\xFE\x00\x00\x50\x8A\xFE\x0D"
+#DEFINE_CONSTANT ZONES_QUERY_FRAME "\xFE\xFE\x0A\xD7\xEC\xFE\x0D"
+
+#DEFINE_CONSTANT CMD_INPUTS_QUERY "\x00"
+#DEFINE_CONSTANT CMD_ZONES_QUERY "\x0A"
+
+// Inputs
+DIGITAL_INPUT enable, _SKIP_, tcp_Connected_FB;
+DIGITAL_INPUT _SKIP_;
+BUFFER_INPUT Rx$[BUFFER_SIZE];
+
+// Outputs
+DIGITAL_OUTPUT tcp_Connect, tcp_Disconnect, _SKIP_;
+DIGITAL_OUTPUT input_FB[INPUTS_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT zone_FB[ZONES_COUNT, ZONES_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT Tx$;
+
+// Global Variables
+INTEGER gConnectAttemptCounter;
+INTEGER gReceiveAttemptCounter;
+
+
+// Functions
+
+FUNCTION Disconnect()
+{
+	trace("Disconnecting...");
+	PULSE(PULSE_TIME, tcp_Disconnect);
+}
+
+INTEGER_FUNCTION Connect()
+{
+	trace("Connecting...");
+
+    gConnectAttemptCounter = 1;
+
+	PULSE(PULSE_TIME, tcp_Connect);
+    DELAY(DELAY_TIME);
+
+	while (tcp_Connected_FB = 0 && gConnectAttemptCounter <= MAX_ATTEMPTS)
+	{
+		gConnectAttemptCounter = gConnectAttemptCounter + 1;
+		DELAY(DELAY_TIME);
+	}
+
+	if (gConnectAttemptCounter > MAX_ATTEMPTS)
+	{
+		trace("Connecting failed after %u attempts.", MAX_ATTEMPTS);
+
+		Disconnect();
+		// TODO : Connection failure
+		return (0);
+	}
+    
+	trace("Connection established after %u attempt", gConnectAttemptCounter);
+
+	return (1);	
+}
+
+STRING_FUNCTION ExtractData(STRING _frame)
+{	
+	STRING extractedData[MAX_FRAME_SIZE];
+
+    INTEGER dataSize;
+	INTEGER specialPosition;
+
+	trace("Extracting data...");
+    
+    dataSize = len(_frame) - 4;	
+	extractedData = mid(_frame, 3, dataSize);    
+	specialPosition = find(SPECIAL_FEF0, extractedData);
+
+	while (specialPosition > 0)
+	{
+		trace("Replacing special FEF0 with FE...");
+
+		extractedData = left(extractedData, specialPosition) + right(extractedData, dataSize - specialPosition - 1);
+		dataSize = dataSize - 1;
+		specialPosition = find(SPECIAL_FEF0, extractedData);
+	}
+
+	extractedData = left(extractedData, dataSize - 2);
+	
+	trace("Data extracted successfully");
+
+	return(extractedData);
+}
+
+FUNCTION HandleData(STRING _data)
+{
+	STRING commandByte[1];
+	STRING dataBytes[MAX_FRAME_SIZE];
+	INTEGER dataBytesCount;
+
+	INTEGER byteIndex, bitIndex, signalIndex;
+    
+	trace("Handling data...");
+
+	if (find("ERR", _data) = 1)
+	{
+		trace("Cannot handle data. %s", _data);
+		return;
+	}
+
+	commandByte = left(_data, 1);
+	dataBytesCount = len(_data) - 1;
+	dataBytes = right(_data, dataBytesCount);
+
+	if (commandByte = CMD_INPUTS_QUERY)
+	{
+		trace("Handling inputs...");
+
+		for (byteIndex = 1 to dataBytesCount)
+			for (bitIndex = 0 to 7)
+			{
+				signalIndex = 8*(byteIndex - 1) + bitIndex + 1;
+				input_FB[signalIndex] = bit(dataBytes, byteIndex, bitIndex);
+			}
+	}
+	else if (commandByte = CMD_ZONES_QUERY)
+	{
+		trace("Handling zones...");
+
+		for (byteIndex = 1 to dataBytesCount)
+			for (bitIndex = 0 to 7)
+			{
+				signalIndex = 8*(byteIndex - 1) + bitIndex + 1;
+				zone_FB[signalIndex] = bit(dataBytes, byteIndex, bitIndex);
+			}
+	}
+
+}
+
+STRING_FUNCTION SendAndReceive(STRING _frameToSend)
+{
+	STRING receivedFrame[MAX_FRAME_SIZE];
+
+	trace("Sending frame...");
+
+	gReceiveAttemptCounter = 1;	
+	Tx$ = _frameToSend;
+
+	trace("Frame sent. Waiting for answer...");    
+
+	delay(DELAY_TIME);
+	
+	while (len(Rx$) = 0 && gReceiveAttemptCounter <= MAX_ATTEMPTS)
+	{
+		gReceiveAttemptCounter = gReceiveAttemptCounter + 1;
+		DELAY(DELAY_TIME);
+	}
+
+	if (gReceiveAttemptCounter > MAX_ATTEMPTS)
+	{
+		trace("Receiving answer failed after %u attempts", MAX_ATTEMPTS);
+		// TODO : Receive failure
+		return ("ERR - No answer");
+	}
+    
+	trace("Answer received after %u attempt", gReceiveAttemptCounter);
+
+	if (find(FRAME_START, Rx$) <> 1 || find(FRAME_END, Rx$) = 0)
+	{
+		trace("Frame format invalid!");
+		// TODO : Frame failure
+		return ("ERR - Frame format invalid");
+	}
+
+	receivedFrame = remove(FRAME_END, Rx$);
+	clearbuffer(Rx$);
+	
+    return (ExtractData(receivedFrame));
+}
+
+FUNCTION ClearAll()
+{
+	INTEGER i;
+    
+	trace("Clearing all...");
+
+	for (i = 1 to INPUTS_COUNT)
+	{
+		input_FB[i] = 0;
+
+		if (i <= ZONES_COUNT) zone_FB[i] = 0;
+	}
+}
+
+FUNCTION Start()
+{
+	do
+	{
+		trace("Starting communications...");
+	}
+	until (Connect() = 1 || enable = 0);
+	
+	while (enable = 1)
+	{		
+		if (tcp_Connected_FB = 1)
+		{
+			HandleData(SendAndReceive(INPUTS_QUERY_FRAME));
+			HandleData(SendAndReceive(ZONES_QUERY_FRAME));
+			// TODO : j.w. dla kolejki
+		}
+		else
+		{
+			do
+			{
+				trace("Restarting communications...");
+			}
+			until (Connect() = 1 || enable = 0);
+		}
+		
+		DELAY(INTERVAL);		
+	}
+
+	Disconnect();
+	
+	ClearAll();
+
+	trace("Communications stopped.");
+}
+
+// Event Handlers
+PUSH enable
+{
+	Start();
+}
+
+// Main Function
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}
