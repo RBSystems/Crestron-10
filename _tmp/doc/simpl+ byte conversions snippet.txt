@@ -1,0 +1,55 @@
+FUNCTION test_01()
+{
+	STRING crcStrFull[2];
+	STRING crcStrFromInt[2];
+	INTEGER crcIntFull, crcIntLow, crcIntHigh;
+
+	crcStrFull = "\x14\x7A";
+
+	crcIntFull = 0x147A;
+	crcIntHigh = high(crcIntFull);
+	crcIntLow = low(crcIntFull);
+	
+	trace("crcStrFull - 2 byte String: %s", crcStrFull);
+	delay(10);
+	testOut$ = crcStrFull; // \x14\x7A
+
+	delay(10);
+
+	trace("crcIntFull - Integer decimal: %u", crcIntFull); // 5242
+	delay(10);
+	trace("crcIntFull - Integer hexadecimal: %X", crcIntFull); // 147A
+	delay(10);
+
+	delay(10);
+
+	trace("crcIntHigh - Integer decimal: %u", crcIntHigh); // 20
+	delay(10);
+	trace("crcIntHigh - Integer hexadecimal: %X", crcIntHigh); // 14
+	delay(10);
+
+    delay(10);
+
+	trace("crcIntLow - Integer decimal: %u", crcIntLow); // 122
+	delay(10);
+	trace("crcIntLow - Integer hexadecimal: %X", crcIntLow); // 7A
+	delay(10);
+
+	crcStrFromInt = chr(crcIntHigh) + chr(crcIntLow);
+    trace("crcStrFromInt - 2 byte String made from crcHigh and crcLow: %s", crcStrFromInt);
+	delay(10);
+	testOut$ = crcStrFromInt; // \x14\x7A
+
+	delay(10);
+
+	trace("Byte(crcStrFull, 1) = 0x14 decimal = %u", byte(crcStrFull, 1)); // 20
+	trace("Byte(crcStrFull, 1) = 0x14 hexadecimal = %X", byte(crcStrFull, 1)); // 14
+
+	delay(10);
+
+    trace("Byte(crcStrFull, 2) = 0x7A decimal = %u", byte(crcStrFull, 2)); // 122
+	trace("Byte(crcStrFull, 2) = 0x7A hexadecimal = %X", byte(crcStrFull, 2)); // 7A
+
+	clearBuffer(testIn$);
+
+}

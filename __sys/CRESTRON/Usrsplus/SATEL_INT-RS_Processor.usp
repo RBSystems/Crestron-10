@@ -91,9 +91,19 @@ FUNCTION test_01()
 	crcStrFromInt = chr(crcIntHigh) + chr(crcIntLow);
     trace("crcStrFromInt - 2 byte String made from crcHigh and crcLow: %s", crcStrFromInt);
 	delay(10);
-	testOut$ = crcStrFromInt;
+	testOut$ = crcStrFromInt; // \x14\x7A
 
-	clearBuffer(testIn$); // \x14\x7A
+	delay(10);
+
+	trace("Byte(crcStrFull, 1) = 0x14 decimal = %u", byte(crcStrFull, 1)); // 20
+	trace("Byte(crcStrFull, 1) = 0x14 hexadecimal = %X", byte(crcStrFull, 1)); // 14
+
+	delay(10);
+
+    trace("Byte(crcStrFull, 2) = 0x7A decimal = %u", byte(crcStrFull, 2)); // 122
+	trace("Byte(crcStrFull, 2) = 0x7A hexadecimal = %X", byte(crcStrFull, 2)); // 7A
+
+	clearBuffer(testIn$);
 
 }
 
