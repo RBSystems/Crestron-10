@@ -34,6 +34,7 @@
 DIGITAL_INPUT enable, _SKIP_, tcp_Connected_FB;
 DIGITAL_INPUT _SKIP_;
 BUFFER_INPUT Rx$[BUFFER_SIZE];
+BUFFER_INPUT testIn$[BUFFER_SIZE];
 
 // Outputs
 DIGITAL_OUTPUT tcp_Connect, tcp_Disconnect, _SKIP_;
@@ -42,6 +43,7 @@ DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT zone_FB[ZONES_COUNT, ZONES_COUNT];
 DIGITAL_OUTPUT _SKIP_;
 STRING_OUTPUT Tx$;
+STRING_OUTPUT testOut$;
 
 // Global Variables
 INTEGER gConnectAttemptCounter;
@@ -49,6 +51,62 @@ INTEGER gReceiveAttemptCounter;
 
 
 // Functions
+FUNCTION test_01()
+{
+	STRING crcStrFull[2];
+	STRING crcStrFromInt[2];
+	INTEGER crcIntFull, crcIntLow, crcIntHigh;
+
+	crcStrFull = "\x14\x7A";
+
+	crcIntFull = 0x147A;
+	crcIntHigh = high(crcIntFull);
+	crcIntLow = low(crcIntFull);
+	
+	trace("crcStrFull - 2 byte String: %s", crcStrFull);
+	delay(10);
+	testOut$ = crcStrFull; // \x14\x7A
+
+	delay(10);
+
+	trace("crcIntFull - Integer decimal: %u", crcIntFull); // 5242
+	delay(10);
+	trace("crcIntFull - Integer hexadecimal: %X", crcIntFull); // 147A
+	delay(10);
+
+	delay(10);
+
+	trace("crcIntHigh - Integer decimal: %u", crcIntHigh); // 20
+	delay(10);
+	trace("crcIntHigh - Integer hexadecimal: %X", crcIntHigh); // 14
+	delay(10);
+
+    delay(10);
+
+	trace("crcIntLow - Integer decimal: %u", crcIntLow); // 122
+	delay(10);
+	trace("crcIntLow - Integer hexadecimal: %X", crcIntLow); // 7A
+	delay(10);
+
+	crcStrFromInt = chr(crcIntHigh) + chr(crcIntLow);
+    trace("crcStrFromInt - 2 byte String made from crcHigh and crcLow: %s", crcStrFromInt);
+	delay(10);
+	testOut$ = crcStrFromInt;
+
+	clearBuffer(testIn$); // \x14\x7A
+
+}
+
+STRING_FUNCTION CalculateCRC(STRING _data)
+{
+	return("");
+}
+
+
+STRING_FUNCTION CreateFrame(STRING _data)
+{
+	return("");
+}
 
 FUNCTION Disconnect()
 {
@@ -253,6 +311,11 @@ FUNCTION Start()
 PUSH enable
 {
 	Start();
+}
+
+CHANGE testIn$
+{
+	test_01();
 }
 
 // Main Function
