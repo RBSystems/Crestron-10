@@ -51,3 +51,11 @@ Przykład, strefa 9 i 16:
 
 Przykład, strefa 10 i 25, 26, 27: 
 0000 0000 | 0000 0010 | 0000 0000 | 0000 0111 , czyli w HEX: 00 02 00 07
+
+==========================
+
+Komenda generująca FE w sumie CRC
+
+komenda	=	E0 30 49 FF FF (odczytywanie danych o użytkowniku z kodem 3049)
+crc		=	89 FE
+ramka	=	FE FE E0 30 49 FF FF 89 FE F0 FE 0D

@@ -22,13 +22,19 @@
 #DEFINE_CONSTANT FRAME_END "\xFE\x0D"
 
 #DEFINE_CONSTANT SPECIAL_FE "\xFE"
+#DEFINE_CONSTANT SPECIAL_F0 "\xF0"
 #DEFINE_CONSTANT SPECIAL_FEF0 "\xFE\xF0"
+
+#DEFINE_CONSTANT SPECIAL_FE_INT	0xFE
 
 #DEFINE_CONSTANT INPUTS_QUERY_FRAME "\xFE\xFE\x00\x00\x50\x8A\xFE\x0D"
 #DEFINE_CONSTANT ZONES_QUERY_FRAME "\xFE\xFE\x0A\xD7\xEC\xFE\x0D"
 
 #DEFINE_CONSTANT CMD_INPUTS_QUERY "\x00"
 #DEFINE_CONSTANT CMD_ZONES_QUERY "\x0A"
+
+#DEFINE_CONSTANT CMD_ZONES_ARM "\x80"
+#DEFINE_CONSTANT CMD_ZONES_DISARM "\x84"
 
 // Inputs
 DIGITAL_INPUT enable, _SKIP_, tcp_Connected_FB;
@@ -49,73 +55,68 @@ STRING_OUTPUT testOut$;
 INTEGER gConnectAttemptCounter;
 INTEGER gReceiveAttemptCounter;
 
-
-// Functions
-FUNCTION test_01()
-{
-	STRING crcStrFull[2];
-	STRING crcStrFromInt[2];
-	INTEGER crcIntFull, crcIntLow, crcIntHigh;
-
-	crcStrFull = "\x14\x7A";
-
-	crcIntFull = 0x147A;
-	crcIntHigh = high(crcIntFull);
-	crcIntLow = low(crcIntFull);
-	
-	trace("crcStrFull - 2 byte String: %s", crcStrFull);
-	delay(10);
-	testOut$ = crcStrFull; // \x14\x7A
-
-	delay(10);
-
-	trace("crcIntFull - Integer decimal: %u", crcIntFull); // 5242
-	delay(10);
-	trace("crcIntFull - Integer hexadecimal: %X", crcIntFull); // 147A
-	delay(10);
-
-	delay(10);
-
-	trace("crcIntHigh - Integer decimal: %u", crcIntHigh); // 20
-	delay(10);
-	trace("crcIntHigh - Integer hexadecimal: %X", crcIntHigh); // 14
-	delay(10);
-
-    delay(10);
-
-	trace("crcIntLow - Integer decimal: %u", crcIntLow); // 122
-	delay(10);
-	trace("crcIntLow - Integer hexadecimal: %X", crcIntLow); // 7A
-	delay(10);
-
-	crcStrFromInt = chr(crcIntHigh) + chr(crcIntLow);
-    trace("crcStrFromInt - 2 byte String made from crcHigh and crcLow: %s", crcStrFromInt);
-	delay(10);
-	testOut$ = crcStrFromInt; // \x14\x7A
-
-	delay(10);
-
-	trace("Byte(crcStrFull, 1) = 0x14 decimal = %u", byte(crcStrFull, 1)); // 20
-	trace("Byte(crcStrFull, 1) = 0x14 hexadecimal = %X", byte(crcStrFull, 1)); // 14
-
-	delay(10);
-
-    trace("Byte(crcStrFull, 2) = 0x7A decimal = %u", byte(crcStrFull, 2)); // 122
-	trace("Byte(crcStrFull, 2) = 0x7A hexadecimal = %X", byte(crcStrFull, 2)); // 7A
-
-	clearBuffer(testIn$);
-
-}
-
 STRING_FUNCTION CalculateCRC(STRING _data)
 {
-	return("");
+	STRING crcString[2];
+	INTEGER crc;
+	INTEGER dataSize;
+	INTEGER i;
+
+	crc = 0x147A;
+	dataSize = len(_data);
+    
+	trace("CRC - Initial value = %X", crc);
+
+	for (i = 1 to dataSize)
+	{
+		crc = rotateLeft(crc, 1);
+		trace("CRC - Byte %u - Step 1 = %X", i, crc);
+		crc = crc ^ 0xFFFF;
+		trace("CRC - Byte %u - Step 2 = %X", i, crc);
+		crc = crc + high(crc) + byte(_data, i);
+		trace("CRC - Byte %u - Step 3 = %X", i, crc);
+		delay(10);
+	}
+	
+	crcString = chr(high(crc)) + chr(low(crc));
+
+	return(crcString);
 }
 
+// Functions
 
 STRING_FUNCTION CreateFrame(STRING _data)
 {
-	return("");
+	STRING frame[MAX_FRAME_SIZE];
+	INTEGER frameSize;    
+	INTEGER byteIndex;    
+
+	frame = _data + CalculateCRC(_data);
+	frameSize = len(frame);
+
+	for (byteIndex = 1 to frameSize)
+	{
+		if (byte(frame, byteIndex) = SPECIAL_FE_INT)
+		{
+			frame = left(frame, byteIndex) + SPECIAL_F0 + right(frame, frameSize - byteIndex);
+			frameSize = frameSize + 1;
+			byteIndex = byteIndex +1;
+        }
+	}
+	
+	frame = FRAME_START + frame + FRAME_END;
+	
+	return(frame);
+}
+
+// TODO
+STRING_FUNCTION CreateZoneArmFrame(INTEGER _zoneId, STRING _userCode)
+{
+	STRING data[13];
+
+	data = CMD_ZONES_ARM;
+
+	return (CreateFrame(data));
 }
 
 FUNCTION Disconnect()
@@ -325,7 +326,8 @@ PUSH enable
 
 CHANGE testIn$
 {
-	test_01();
+	testOut$ = createFrame(testIn$);
+	clearBuffer(testIn$);
 }
 
 // Main Function
