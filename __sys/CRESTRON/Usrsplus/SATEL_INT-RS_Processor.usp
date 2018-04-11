@@ -109,7 +109,32 @@ STRING_FUNCTION CreateFrame(STRING _data)
 	return(frame);
 }
 
-// TODO
+/*
+0x80 arm in mode 0:
+
++ 8 bytes - user code (with prefix, if required by INTEGRA), e.g.:
+
+if code is '1234', no prefixes: 0x12, 0x34, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+if code is '1234', prefix is '97': 0x97, 0x12, 0x34, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+
++ 4 bytes - partition list, e.g.:
+
+if partition 1, 2, and 29 have to be armed: 0x03, 0x00, 0x00, 0x10
+
+Function should return the following codes (see the 0xEF command for details):
+
+0x00 - ok
+0x01 - requesting user code not found
+0x11 - can not arm, but can use force arm
+0x12 - can not arm
+
+*/
+
+/*
+- Co z prefixem?
+- Kod ma od 4 do 8 cyfr
+- Czy jesli kod ma 5 cyfr (np 12345) to (0x12, 0x34, 0x5F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF) ?
+*/
 STRING_FUNCTION CreateZoneArmFrame(INTEGER _zoneId, STRING _userCode)
 {
 	STRING data[13];
