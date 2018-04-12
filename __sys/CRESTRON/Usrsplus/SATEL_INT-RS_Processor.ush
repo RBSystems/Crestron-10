@@ -20,7 +20,7 @@
   Name=SATEL_INT-RS_Processor
   SmplCName=SATEL_INT-RS_Processor.usp
   Code=1
-  SysRev5=3.090
+  SysRev5=3.137
   SMWRev=2.02.05
   InputCue1=enable
   InputSigType1=Digital
@@ -622,7 +622,7 @@
   InputList2SigType2=Serial
   OutputList2Cue1=Tx$
   OutputList2SigType1=Serial
-  OutputList2Cue2=testOut$
+  OutputList2Cue2=resultInfo$
   OutputList2SigType2=Serial
   ParamCue1=[Reference Name]
   MinVariableInputs=4

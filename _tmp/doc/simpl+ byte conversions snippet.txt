@@ -51,5 +51,118 @@ FUNCTION test_01()
 	trace("Byte(crcStrFull, 2) = 0x7A hexadecimal = %X", byte(crcStrFull, 2)); // 7A
 
 	clearBuffer(testIn$);
+}
 
+FUNCTION test_02()
+{
+	STRING userCode[4];
+	STRING twoDigits[2];
+	STRING oneChar[1];
+
+	userCode = "1234";
+
+	trace("Original user code = %s", userCode);
+
+	twoDigits = left(userCode, 2);
+
+	trace("First two digits of user code = %s", twoDigits);
+
+	oneChar = chr(hextoi(twoDigits));
+
+	trace("OneChar = %s", oneChar);
+
+	testOut$ = oneChar; // "\x12"
+
+	twoDigits = right(userCode, 2);
+
+	trace("Last two digits of user code = %s", twoDigits);
+
+	oneChar = chr(hextoi(twoDigits));
+
+	trace("OneChar = %s", oneChar);
+
+	testOut$ = oneChar; // "\x34"	
+}
+
+FUNCTION test_02()
+{
+	STRING userCode[8];
+	STRING prefix[2];
+	
+	userCode = "1234";
+	prefix = "";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "1234567";
+	prefix = "";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "12345678";
+	prefix = "";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+    userCode = "1234";
+	prefix = "97";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "1234567";
+	prefix = "97";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "12345678";
+	prefix = "97";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "1234";
+	prefix = "5";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "1234567";
+	prefix = "5";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+
+	userCode = "12345678";
+	prefix = "5";
+	trace("Code = %s | Prefix = %s", userCode, prefix);
+	testOut$ = UserCodeToBytes(userCode, prefix);
+	delay(50);
+}
+
+FUNCTION test_01()
+{
+	INTEGER byteValue;
+
+	byteValue = 1;
+	trace("Init value = %u (DEC) = %X (HEX)", byteValue, byteValue); // 1,1
+    
+	byteValue = byteValue << 1;
+	trace("After shift left by 1 = %u (DEC) = %X (HEX)", byteValue, byteValue); // 2,4
+    
+	byteValue = 1;
+	byteValue = byteValue << 2;
+	trace("After shift left by 2 = %u (DEC) = %X (HEX)", byteValue, byteValue); // 4,4
+
+	byteValue = 1;
+	byteValue = byteValue >> 1;
+	trace("After shift right by 1 = %u (DEC) = %X (HEX)", byteValue, byteValue); // 0,0
+
+	byteValue = 1;
+	byteValue = byteValue >> 2;
+	trace("After shift right by 2 = %u (DEC) = %X (HEX)", byteValue, byteValue); // 0,0
 }

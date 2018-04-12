@@ -9,6 +9,7 @@
 // Constants
 #DEFINE_CONSTANT BUFFER_SIZE 512
 #DEFINE_CONSTANT MAX_FRAME_SIZE 128
+#DEFINE_CONSTANT RESULT_STRING_SIZE 50
 
 #DEFINE_CONSTANT INPUTS_COUNT 256
 #DEFINE_CONSTANT ZONES_COUNT 32
@@ -36,6 +37,8 @@
 #DEFINE_CONSTANT CMD_ZONES_ARM "\x80"
 #DEFINE_CONSTANT CMD_ZONES_DISARM "\x84"
 
+#DEFINE_CONSTANT CMD_RESULT "\xEF"
+
 // Inputs
 DIGITAL_INPUT enable, _SKIP_, tcp_Connected_FB;
 DIGITAL_INPUT _SKIP_;
@@ -49,12 +52,13 @@ DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT zone_FB[ZONES_COUNT, ZONES_COUNT];
 DIGITAL_OUTPUT _SKIP_;
 STRING_OUTPUT Tx$;
-STRING_OUTPUT testOut$;
+STRING_OUTPUT resultInfo$;
 
 // Global Variables
 INTEGER gConnectAttemptCounter;
 INTEGER gReceiveAttemptCounter;
 
+// Functions
 STRING_FUNCTION CalculateCRC(STRING _data)
 {
 	STRING crcString[2];
@@ -65,25 +69,17 @@ STRING_FUNCTION CalculateCRC(STRING _data)
 	crc = 0x147A;
 	dataSize = len(_data);
     
-	trace("CRC - Initial value = %X", crc);
-
 	for (i = 1 to dataSize)
 	{
 		crc = rotateLeft(crc, 1);
-		trace("CRC - Byte %u - Step 1 = %X", i, crc);
 		crc = crc ^ 0xFFFF;
-		trace("CRC - Byte %u - Step 2 = %X", i, crc);
 		crc = crc + high(crc) + byte(_data, i);
-		trace("CRC - Byte %u - Step 3 = %X", i, crc);
-		delay(10);
 	}
 	
 	crcString = chr(high(crc)) + chr(low(crc));
 
 	return(crcString);
 }
-
-// Functions
 
 STRING_FUNCTION CreateFrame(STRING _data)
 {
@@ -110,6 +106,64 @@ STRING_FUNCTION CreateFrame(STRING _data)
 }
 
 /*
+8 bytes - user code (with prefix, if required by INTEGRA), e.g.:
+
+if code is '1234', no prefixes: 0x12, 0x34, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+if code is '12345', no prefixes: 0x12, 0x34, 0x5F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF (???)
+if code is '1234', prefix is '97': 0x97, 0x12, 0x34, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF
+*/
+STRING_FUNCTION UserCodeToBytes(STRING _userCode, STRING _prefix)
+{
+	STRING tempData[10];
+	STRING data[8];
+
+	INTEGER tempDataSize;
+	INTEGER i;
+    
+	data = "";
+	tempData = _prefix + _userCode;
+    
+    if(len(_prefix) = 1) tempData = "0" + tempData;
+
+	if(len(_userCode) % 2 = 1) tempData = tempData + "F";
+
+	tempDataSize = len(tempData);
+         
+	for (i = 1 to tempDataSize step 2) data = data + chr(hextoi(mid(tempData, i, 2)));
+
+	tempDataSize = tempDataSize/2;
+	
+    for (i = tempDataSize + 1 to 8) data = data + "\xFF";
+	
+	return(data);
+}
+/*
+4 bytes - zone ID:
+
+if partition 1 have to be armed: 0x01, 0x00, 0x00, 0x00
+if partition 29 have to be armed: 0x00, 0x00, 0x00, 0x10
+*/
+STRING_FUNCTION ZoneIdToBytes(INTEGER _zoneId)
+{
+	STRING data[4];
+	INTEGER byteIndex;
+	INTEGER bitsToShift;
+	INTEGER byteValue;
+    
+	data = "\x00\x00\x00\x00";
+
+	if (_zoneId > 32) return(data);
+
+	byteValue = 1;
+	byteIndex = ((_zoneId - 1) / 8) + 1;
+    bitsToShift = _zoneId - (byteIndex - 1)*8 - 1;
+	byteValue = byteValue << bitsToShift;
+	SetByte(data, byteIndex, byteValue);
+
+	return(data);
+}
+
+/*
 0x80 arm in mode 0:
 
 + 8 bytes - user code (with prefix, if required by INTEGRA), e.g.:
@@ -129,17 +183,21 @@ Function should return the following codes (see the 0xEF command for details):
 0x12 - can not arm
 
 */
-
-/*
-- Co z prefixem?
-- Kod ma od 4 do 8 cyfr
-- Czy jesli kod ma 5 cyfr (np 12345) to (0x12, 0x34, 0x5F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF) ?
-*/
-STRING_FUNCTION CreateZoneArmFrame(INTEGER _zoneId, STRING _userCode)
+// Tylko jedna strefa na raz
+STRING_FUNCTION CreateZoneArmFrame(INTEGER _zoneId, STRING _userCode, STRING _prefix)
 {
 	STRING data[13];
 
-	data = CMD_ZONES_ARM;
+	data = CMD_ZONES_ARM + UserCodeToBytes(_userCode, _prefix) + ZoneIdToBytes(_zoneId);
+
+	return (CreateFrame(data));
+}
+
+STRING_FUNCTION CreateZoneDisarmFrame(INTEGER _zoneId, STRING _userCode, STRING _prefix)
+{
+	STRING data[13];
+
+	data = CMD_ZONES_DISARM + UserCodeToBytes(_userCode, _prefix) + ZoneIdToBytes(_zoneId);
 
 	return (CreateFrame(data));
 }
@@ -185,8 +243,6 @@ STRING_FUNCTION ExtractData(STRING _frame)
 
     INTEGER dataSize;
 	INTEGER specialPosition;
-
-	trace("Extracting data...");
     
     dataSize = len(_frame) - 4;	
 	extractedData = mid(_frame, 3, dataSize);    
@@ -194,8 +250,6 @@ STRING_FUNCTION ExtractData(STRING _frame)
 
 	while (specialPosition > 0)
 	{
-		trace("Replacing special FEF0 with FE...");
-
 		extractedData = left(extractedData, specialPosition) + right(extractedData, dataSize - specialPosition - 1);
 		dataSize = dataSize - 1;
 		specialPosition = find(SPECIAL_FEF0, extractedData);
@@ -203,9 +257,111 @@ STRING_FUNCTION ExtractData(STRING _frame)
 
 	extractedData = left(extractedData, dataSize - 2);
 	
-	trace("Data extracted successfully");
-
 	return(extractedData);
+}
+
+FUNCTION HandleInputs(STRING _dataBytes)
+{
+    INTEGER byteIndex, bitIndex, signalIndex, dataBytesCount;
+
+	dataBytesCount = len(_dataBytes);
+
+	for (byteIndex = 1 to dataBytesCount)
+		for (bitIndex = 0 to 7)
+		{
+			signalIndex = 8*(byteIndex - 1) + bitIndex + 1;
+			input_FB[signalIndex] = bit(_dataBytes, byteIndex, bitIndex);
+		}
+}
+
+FUNCTION HandleZones(STRING _dataBytes)
+{
+    INTEGER byteIndex, bitIndex, signalIndex, dataBytesCount;
+
+	dataBytesCount = len(_dataBytes);
+
+	for (byteIndex = 1 to dataBytesCount)
+		for (bitIndex = 0 to 7)
+		{
+			signalIndex = 8*(byteIndex - 1) + bitIndex + 1;
+			zone_FB[signalIndex] = bit(_dataBytes, byteIndex, bitIndex);
+		}
+}
+
+/*
+	1 byte - result code:
+
+	0x00 - ok
+	0x01 - requesting user code not found
+	0x02 - no access
+	0x03 - selected user does not exist
+	0x04 - selected user already exists
+	0x05 - wrong code or code already exists
+	0x06 - telephone code already exists
+	0x07 - changed code is the same
+	0x08 - other error
+	0x11 - can not arm, but can use force arm
+	0x12 - can not arm
+	0x8? - other errors
+	0xFF - command accepted (i.e. data length and crc ok), will be processed
+*/
+FUNCTION HandleResult(INTEGER resultByte)
+{
+	switch(resultByte)
+		{
+			CASE (0x00):
+			{
+				resultInfo$ = "ok";
+			}
+			CASE (0x01):
+			{
+				resultInfo$ = "requesting user code not found";
+			}
+			CASE (0x02):
+			{
+				resultInfo$ = "no access";
+			}
+			CASE (0x03):
+			{
+				resultInfo$ = "selected user does not exist";
+			}
+			CASE (0x04):
+			{
+				resultInfo$ = "selected user already exists";
+			}
+			CASE (0x05):
+			{
+				resultInfo$ = "wrong code or code already exists";
+			}
+			CASE (0x06):
+			{
+				resultInfo$ = "telephone code already exists";
+			}
+			CASE (0x07):
+			{
+				resultInfo$ = "changed code is the same";
+			}
+			CASE (0x08):
+			{
+				resultInfo$ = "other error";
+			}
+			CASE (0x11):
+			{
+				resultInfo$ = "can not arm, but can use force arm";
+			}
+			CASE (0x12):
+			{
+				resultInfo$ = "can not arm";
+			}
+			CASE (0xFF):
+			{
+				resultInfo$ = "command accepted";
+			}
+			DEFAULT:
+			{
+				resultInfo$ = "other errors";
+			}
+		}
 }
 
 FUNCTION HandleData(STRING _data)
@@ -215,8 +371,6 @@ FUNCTION HandleData(STRING _data)
 	INTEGER dataBytesCount;
 
 	INTEGER byteIndex, bitIndex, signalIndex;
-    
-	trace("Handling data...");
 
 	if (find("ERR", _data) = 1)
 	{
@@ -230,25 +384,15 @@ FUNCTION HandleData(STRING _data)
 
 	if (commandByte = CMD_INPUTS_QUERY)
 	{
-		trace("Handling inputs...");
-
-		for (byteIndex = 1 to dataBytesCount)
-			for (bitIndex = 0 to 7)
-			{
-				signalIndex = 8*(byteIndex - 1) + bitIndex + 1;
-				input_FB[signalIndex] = bit(dataBytes, byteIndex, bitIndex);
-			}
+		HandleInputs(dataBytes);
 	}
 	else if (commandByte = CMD_ZONES_QUERY)
 	{
-		trace("Handling zones...");
-
-		for (byteIndex = 1 to dataBytesCount)
-			for (bitIndex = 0 to 7)
-			{
-				signalIndex = 8*(byteIndex - 1) + bitIndex + 1;
-				zone_FB[signalIndex] = bit(dataBytes, byteIndex, bitIndex);
-			}
+		HandleZones(dataBytes);
+	}
+	else if (commandByte = CMD_RESULT)
+	{
+		HandleResult(byte(dataBytes, 1));
 	}
 
 }
@@ -351,7 +495,8 @@ PUSH enable
 
 CHANGE testIn$
 {
-	testOut$ = createFrame(testIn$);
+    
+	//testOut$ = createFrame(testIn$);
 	clearBuffer(testIn$);
 }
 
