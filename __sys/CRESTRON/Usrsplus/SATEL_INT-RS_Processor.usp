@@ -9,6 +9,9 @@
 // Constants
 #DEFINE_CONSTANT BUFFER_SIZE 512
 #DEFINE_CONSTANT MAX_FRAME_SIZE 128
+
+#DEFINE_CONSTANT USER_CODE_STRING_SIZE 8
+#DEFINE_CONSTANT PREFIX_STRING_SIZE 2
 #DEFINE_CONSTANT RESULT_STRING_SIZE 50
 
 #DEFINE_CONSTANT INPUTS_COUNT 256
@@ -40,23 +43,53 @@
 #DEFINE_CONSTANT CMD_RESULT "\xEF"
 
 // Inputs
-DIGITAL_INPUT enable, _SKIP_, tcp_Connected_FB;
-DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT enable, tcp_Connected_FB;
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT armZone, disarmZone;
+ANALOG_INPUT selectedZone#;
+STRING_INPUT userCode$[USER_CODE_STRING_SIZE];
+STRING_INPUT _SKIP_;
 BUFFER_INPUT Rx$[BUFFER_SIZE];
-BUFFER_INPUT testIn$[BUFFER_SIZE];
 
 // Outputs
-DIGITAL_OUTPUT tcp_Connect, tcp_Disconnect, _SKIP_;
+DIGITAL_OUTPUT tcp_Connect, tcp_Disconnect;
+DIGITAL_OUTPUT _SKIP_, _SKIP_;
 DIGITAL_OUTPUT input_FB[INPUTS_COUNT];
 DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT zone_FB[ZONES_COUNT, ZONES_COUNT];
 DIGITAL_OUTPUT _SKIP_;
-STRING_OUTPUT Tx$;
 STRING_OUTPUT resultInfo$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT Tx$;
+
+// Parameters
+INTEGER_PARAMETER _SKIP_, _SKIP_;
+INTEGER_PARAMETER pDefaultZone;
+STRING_PARAMETER pPrefix[PREFIX_STRING_SIZE];
+
+// Parameter Properietes
+
+#BEGIN_PARAMETER_PROPERTIES pDefaultZone
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d, 32d;
+   propDefaultValue = 1d;
+   propShortDescription = "default zone";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES pPrefix
+   propValidUnits = unitString;
+   propDefaultUnit = unitString;
+   propDefaultValue = "";
+   propShortDescription = "prefix";
+#END_PARAMETER_PROPERTIES
 
 // Global Variables
 INTEGER gConnectAttemptCounter;
 INTEGER gReceiveAttemptCounter;
+INTEGER gZoneToArm;
+INTEGER gZoneToDisarm;
+STRING gUserCode[USER_CODE_STRING_SIZE];
 
 // Functions
 STRING_FUNCTION CalculateCRC(STRING _data)
@@ -204,14 +237,11 @@ STRING_FUNCTION CreateZoneDisarmFrame(INTEGER _zoneId, STRING _userCode, STRING 
 
 FUNCTION Disconnect()
 {
-	trace("Disconnecting...");
 	PULSE(PULSE_TIME, tcp_Disconnect);
 }
 
 INTEGER_FUNCTION Connect()
 {
-	trace("Connecting...");
-
     gConnectAttemptCounter = 1;
 
 	PULSE(PULSE_TIME, tcp_Connect);
@@ -225,14 +255,10 @@ INTEGER_FUNCTION Connect()
 
 	if (gConnectAttemptCounter > MAX_ATTEMPTS)
 	{
-		trace("Connecting failed after %u attempts.", MAX_ATTEMPTS);
-
 		Disconnect();
 		// TODO : Connection failure
 		return (0);
 	}
-    
-	trace("Connection established after %u attempt", gConnectAttemptCounter);
 
 	return (1);	
 }
@@ -456,7 +482,7 @@ FUNCTION Start()
 {
 	do
 	{
-		trace("Starting communications...");
+		delay(DELAY_TIME);
 	}
 	until (Connect() = 1 || enable = 0);
 	
@@ -466,7 +492,21 @@ FUNCTION Start()
 		{
 			HandleData(SendAndReceive(INPUTS_QUERY_FRAME));
 			HandleData(SendAndReceive(ZONES_QUERY_FRAME));
-			// TODO : j.w. dla kolejki
+
+			if(gZoneToArm > 0)
+			{
+				HandleData(SendAndReceive(CreateZoneArmFrame(gZoneToArm, gUserCode, pPrefix)));
+				gZoneToArm = 0;
+				gUserCode = "";
+			}
+
+			if(gZoneToDisarm > 0)
+			{
+				HandleData(SendAndReceive(CreateZoneDisarmFrame(gZoneToDisarm, gUserCode, pPrefix)));
+				gZoneToDisarm = 0;
+				gUserCode = "";
+			}
+
 		}
 		else
 		{
@@ -493,11 +533,20 @@ PUSH enable
 	Start();
 }
 
-CHANGE testIn$
+PUSH armZone
 {
-    
-	//testOut$ = createFrame(testIn$);
-	clearBuffer(testIn$);
+	if(IsSignalDefined(selectedZone#)) gZoneToArm = selectedZone#;
+	else gZoneToArm = pDefaultZone;
+
+	gUserCode = userCode$;
+}
+
+PUSH disarmZone
+{
+	if(IsSignalDefined(selectedZone#)) gZoneToDisarm = selectedZone#;
+	else gZoneToDisarm = pDefaultZone;
+
+	gUserCode = userCode$;
 }
 
 // Main Function
