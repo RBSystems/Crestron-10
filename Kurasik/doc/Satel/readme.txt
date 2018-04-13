@@ -2,6 +2,12 @@ port dedykowany 7094
 
 ======================
 
+Tymczasowi użytkownicy:
+1) 2018
+2) 20180
+
+======================
+
 Wsparcie techniczne Gdańsk - (58) 320 94 20
 
 ==========================
