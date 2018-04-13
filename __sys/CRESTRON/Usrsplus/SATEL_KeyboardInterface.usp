@@ -1,0 +1,162 @@
+//Compiler Directives
+#SYMBOL_NAME "SATEL_KeyboardInterface" 
+#CATEGORY "40" // Interface-Specific Logic
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT BUFFER_SIZE 50
+#DEFINE_CONSTANT DIGITS_COUNT 10
+#DEFINE_CONSTANT MIN_CODE_LENGTH 4
+#DEFINE_CONSTANT MAX_CODE_LENGTH 8
+#DEFINE_CONSTANT ZONES_COUNT 32
+
+// Inputs
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT stars_TOG, back, clear;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT arm, disarm;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT digits[DIGITS_COUNT, DIGITS_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT zoneId#;
+ANALOG_INPUT _SKIP_; 
+STRING_INPUT toKeyboard$[BUFFER_SIZE];
+
+// Outputs
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT stars_FB;
+DIGITAL_OUTPUT _SKIP_;
+ANALOG_OUTPUT zoneId#_FB;
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT code$, info$;
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT fromKeyboard$;
+
+// Parameters
+INTEGER_PARAMETER pDefaultZone;
+
+// Parameter Properietes
+#BEGIN_PARAMETER_PROPERTIES pDefaultZone
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d, 32d;
+   propDefaultValue = 1d;
+   propShortDescription = "default zone";
+#END_PARAMETER_PROPERTIES
+
+// Global Variables
+STRING gUserCode[MAX_CODE_LENGTH];
+
+// Functions
+FUNCTION ClearCodeAndDisplay()
+{
+	gUserCode = "";
+	code$ = "";
+}
+
+FUNCTION CalculateDisplay()
+{	          
+	if (stars_FB) code$ = right("********",len(gUserCode));		 	
+	else code$ = gUserCode;          
+}
+
+// 1 = ok; 0 = too short
+INTEGER_FUNCTION CheckUserCode()
+{
+	if (len(gUserCode) < MIN_CODE_LENGTH) return(0);
+	else return (1);
+}
+
+FUNCTION ArmZone()
+{
+	fromKeyboard$ = "ARM_" + itoa(zoneId#_FB) + "_" + gUserCode;
+}
+
+FUNCTION DisarmZone()
+{
+	fromKeyboard$ = "DISARM_" + itoa(zoneId#_FB) + "_" + gUserCode;
+}
+
+// Event Handlers
+PUSH stars_TOG
+{
+ 	if (stars_FB) stars_FB = 0;
+ 	else stars_FB = 1;
+              
+	CalculateDisplay();
+}
+
+PUSH back
+{
+	gUserCode = left(gUserCode, len(gUserCode) - 1);  	 
+	CalculateDisplay();
+}
+
+PUSH clear
+{
+	ClearCodeAndDisplay();
+}
+ 
+PUSH arm
+{
+	if (CheckUserCode())
+	{
+		info$ = "Uzbrajanie...";
+		ArmZone();
+		ClearCodeAndDisplay();
+	}
+	else
+	{
+		info$ = "Kod za krotki";
+	}
+}
+
+PUSH disarm
+{
+	if (CheckUserCode())
+	{
+		info$ = "Rozbrajanie...";
+		DisarmZone();
+		ClearCodeAndDisplay();
+	}
+	else
+	{
+		info$ = "Kod za krotki";
+	}
+}
+
+PUSH digits
+{
+	INTEGER digit;
+
+	if (len(gUserCode) < MAX_CODE_LENGTH)
+	{
+        digit = GetLastModifiedArrayIndex();
+
+		if (digit = 10) digit = 0;
+
+		gUserCode = gUserCode + itoa(digit);
+		CalculateDisplay();
+	}
+}
+
+CHANGE zoneId#
+{
+	if (zoneId# > 0 && zoneId# < ZONES_COUNT) zoneId#_FB = zoneId#;
+}
+
+CHANGE toKeyboard$
+{
+	info$ = toKeyboard$;
+	clearBuffer(toKeyboard$);
+}
+
+// Main Function
+Function Main()
+{
+	stars_FB = 1;
+	zoneId#_FB = pDefaultZone;
+	WaitForInitializationComplete();	
+}

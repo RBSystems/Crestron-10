@@ -22,6 +22,12 @@
 
 #DEFINE_CONSTANT MAX_ATTEMPTS 3
 
+#DEFINE_CONSTANT KEYBOARD_STRING_SIZE 20
+
+#DEFINE_CONSTANT KEYBOARD_DELIMITER "_"
+#DEFINE_CONSTANT KEYBOARD_CMD_ARM "ARM_"
+#DEFINE_CONSTANT KEYBOARD_CMD_DISARM "DISARM_"
+
 #DEFINE_CONSTANT FRAME_START "\xFE\xFE"
 #DEFINE_CONSTANT FRAME_END "\xFE\x0D"
 
@@ -45,9 +51,7 @@
 // Inputs
 DIGITAL_INPUT enable, tcp_Connected_FB;
 DIGITAL_INPUT _SKIP_, _SKIP_;
-DIGITAL_INPUT armZone, disarmZone;
-ANALOG_INPUT selectedZone#;
-STRING_INPUT userCode$[USER_CODE_STRING_SIZE];
+STRING_INPUT fromKeyboard$[KEYBOARD_STRING_SIZE];
 STRING_INPUT _SKIP_;
 BUFFER_INPUT Rx$[BUFFER_SIZE];
 
@@ -58,25 +62,15 @@ DIGITAL_OUTPUT input_FB[INPUTS_COUNT];
 DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT zone_FB[ZONES_COUNT, ZONES_COUNT];
 DIGITAL_OUTPUT _SKIP_;
-STRING_OUTPUT resultInfo$;
+STRING_OUTPUT toKeyboard$;
 STRING_OUTPUT _SKIP_;
 STRING_OUTPUT Tx$;
 
 // Parameters
 INTEGER_PARAMETER _SKIP_, _SKIP_;
-INTEGER_PARAMETER pDefaultZone;
 STRING_PARAMETER pPrefix[PREFIX_STRING_SIZE];
 
 // Parameter Properietes
-
-#BEGIN_PARAMETER_PROPERTIES pDefaultZone
-   propValidUnits = unitDecimal;
-   propDefaultUnit = unitDecimal;
-   propBounds = 1d, 32d;
-   propDefaultValue = 1d;
-   propShortDescription = "default zone";
-#END_PARAMETER_PROPERTIES
-
 #BEGIN_PARAMETER_PROPERTIES pPrefix
    propValidUnits = unitString;
    propDefaultUnit = unitString;
@@ -337,55 +331,55 @@ FUNCTION HandleResult(INTEGER resultByte)
 		{
 			CASE (0x00):
 			{
-				resultInfo$ = "ok";
+				toKeyboard$ = "ok";
 			}
 			CASE (0x01):
 			{
-				resultInfo$ = "requesting user code not found";
+				toKeyboard$ = "requesting user code not found";
 			}
 			CASE (0x02):
 			{
-				resultInfo$ = "no access";
+				toKeyboard$ = "no access";
 			}
 			CASE (0x03):
 			{
-				resultInfo$ = "selected user does not exist";
+				toKeyboard$ = "selected user does not exist";
 			}
 			CASE (0x04):
 			{
-				resultInfo$ = "selected user already exists";
+				toKeyboard$ = "selected user already exists";
 			}
 			CASE (0x05):
 			{
-				resultInfo$ = "wrong code or code already exists";
+				toKeyboard$ = "wrong code or code already exists";
 			}
 			CASE (0x06):
 			{
-				resultInfo$ = "telephone code already exists";
+				toKeyboard$ = "telephone code already exists";
 			}
 			CASE (0x07):
 			{
-				resultInfo$ = "changed code is the same";
+				toKeyboard$ = "changed code is the same";
 			}
 			CASE (0x08):
 			{
-				resultInfo$ = "other error";
+				toKeyboard$ = "other error";
 			}
 			CASE (0x11):
 			{
-				resultInfo$ = "can not arm, but can use force arm";
+				toKeyboard$ = "can not arm, but can use force arm";
 			}
 			CASE (0x12):
 			{
-				resultInfo$ = "can not arm";
+				toKeyboard$ = "can not arm";
 			}
 			CASE (0xFF):
 			{
-				resultInfo$ = "command accepted";
+				toKeyboard$ = "command accepted";
 			}
 			DEFAULT:
 			{
-				resultInfo$ = "other errors";
+				toKeyboard$ = "other errors";
 			}
 		}
 }
@@ -400,7 +394,6 @@ FUNCTION HandleData(STRING _data)
 
 	if (find("ERR", _data) = 1)
 	{
-		trace("Cannot handle data. %s", _data);
 		return;
 	}
 
@@ -420,19 +413,14 @@ FUNCTION HandleData(STRING _data)
 	{
 		HandleResult(byte(dataBytes, 1));
 	}
-
 }
 
 STRING_FUNCTION SendAndReceive(STRING _frameToSend)
 {
 	STRING receivedFrame[MAX_FRAME_SIZE];
 
-	trace("Sending frame...");
-
 	gReceiveAttemptCounter = 1;	
-	Tx$ = _frameToSend;
-
-	trace("Frame sent. Waiting for answer...");    
+	Tx$ = _frameToSend;    
 
 	delay(DELAY_TIME);
 	
@@ -444,16 +432,12 @@ STRING_FUNCTION SendAndReceive(STRING _frameToSend)
 
 	if (gReceiveAttemptCounter > MAX_ATTEMPTS)
 	{
-		trace("Receiving answer failed after %u attempts", MAX_ATTEMPTS);
 		// TODO : Receive failure
 		return ("ERR - No answer");
 	}
-    
-	trace("Answer received after %u attempt", gReceiveAttemptCounter);
 
 	if (find(FRAME_START, Rx$) <> 1 || find(FRAME_END, Rx$) = 0)
 	{
-		trace("Frame format invalid!");
 		// TODO : Frame failure
 		return ("ERR - Frame format invalid");
 	}
@@ -467,8 +451,6 @@ STRING_FUNCTION SendAndReceive(STRING _frameToSend)
 FUNCTION ClearAll()
 {
 	INTEGER i;
-    
-	trace("Clearing all...");
 
 	for (i = 1 to INPUTS_COUNT)
 	{
@@ -512,7 +494,7 @@ FUNCTION Start()
 		{
 			do
 			{
-				trace("Restarting communications...");
+				delay(DELAY_TIME);
 			}
 			until (Connect() = 1 || enable = 0);
 		}
@@ -523,8 +505,25 @@ FUNCTION Start()
 	Disconnect();
 	
 	ClearAll();
+}
+// ARM_3_1234
+// DISARM_1_12345
+FUNCTION HandleDataFromKeyboard(STRING _data)
+{
+	STRING keyboardCmd[10];
 
-	trace("Communications stopped.");
+	keyboardCmd = remove(KEYBOARD_DELIMITER, _data);
+	
+	if (keyboardCmd = KEYBOARD_CMD_ARM)
+	{
+		gZoneToArm = atoi(remove(KEYBOARD_DELIMITER, _data));
+		gUserCode = _data;
+	}
+	else if (keyboardCmd = KEYBOARD_CMD_DISARM)
+	{
+		gZoneToDisarm = atoi(remove(KEYBOARD_DELIMITER, _data));
+		gUserCode = _data;
+	}
 }
 
 // Event Handlers
@@ -533,20 +532,10 @@ PUSH enable
 	Start();
 }
 
-PUSH armZone
+CHANGE fromKeyboard$
 {
-	if(IsSignalDefined(selectedZone#)) gZoneToArm = selectedZone#;
-	else gZoneToArm = pDefaultZone;
-
-	gUserCode = userCode$;
-}
-
-PUSH disarmZone
-{
-	if(IsSignalDefined(selectedZone#)) gZoneToDisarm = selectedZone#;
-	else gZoneToDisarm = pDefaultZone;
-
-	gUserCode = userCode$;
+	HandleDataFromKeyboard(fromKeyboard$);
+	clearBuffer(fromKeyboard$);
 }
 
 // Main Function
