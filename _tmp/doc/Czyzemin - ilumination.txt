@@ -1,0 +1,7 @@
+19:00 = 6600
+19:30 = 2700
+19:45 = 1300
+20:00 = 400
+20:15 = 100
+
+Po zmierzchu skoki do 47000 (chyba lampy w daszkach)
