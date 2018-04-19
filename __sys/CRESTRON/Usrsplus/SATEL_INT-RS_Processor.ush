@@ -21,7 +21,7 @@
   SmplCName=SATEL_INT-RS_Processor.usp
   Code=1
   SysRev5=4.000
-  SMWRev=2.02.05
+  SMWRev=3.00.00
   InputCue1=enable
   InputSigType1=Digital
   InputCue2=tcp_Connected_FB
@@ -673,6 +673,7 @@
   SymJam=NonExclusive
   FileName=SATEL_INT-RS_Processor.ush
   SIMPLPlusModuleEncoding=0
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

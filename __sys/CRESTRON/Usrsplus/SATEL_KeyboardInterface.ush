@@ -21,7 +21,7 @@
   SmplCName=SATEL_KeyboardInterface.usp
   Code=1
   SysRev5=4.000
-  SMWRev=2.02.05
+  SMWRev=3.00.00
   InputCue1=[~UNUSED~]
   InputSigType1=Digital
   InputCue2=stars_TOG
@@ -105,6 +105,7 @@
   SymJam=NonExclusive
   FileName=SATEL_KeyboardInterface.ush
   SIMPLPlusModuleEncoding=0
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
