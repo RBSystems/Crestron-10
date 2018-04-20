@@ -18,7 +18,7 @@
 #DEFINE_CONSTANT ZONES_COUNT 32
 #DEFINE_CONSTANT PULSE_TIME 5
 #DEFINE_CONSTANT DELAY_TIME 10
-#DEFINE_CONSTANT INTERVAL 100
+#DEFINE_CONSTANT INTERVAL 25
 
 #DEFINE_CONSTANT MAX_ATTEMPTS 3
 
@@ -335,15 +335,15 @@ FUNCTION HandleResult(INTEGER resultByte)
 			}
 			CASE (0x01):
 			{
-				toKeyboard$ = "requesting user code not found";
+				toKeyboard$ = "Bledny kod";
 			}
 			CASE (0x02):
 			{
-				toKeyboard$ = "no access";
+				toKeyboard$ = "Brak dostepu";
 			}
 			CASE (0x03):
 			{
-				toKeyboard$ = "selected user does not exist";
+				toKeyboard$ = "Uzytkownik nie istnieje";
 			}
 			CASE (0x04):
 			{
@@ -363,7 +363,7 @@ FUNCTION HandleResult(INTEGER resultByte)
 			}
 			CASE (0x08):
 			{
-				toKeyboard$ = "other error";
+				toKeyboard$ = "Blad";
 			}
 			CASE (0x11):
 			{
@@ -371,11 +371,11 @@ FUNCTION HandleResult(INTEGER resultByte)
 			}
 			CASE (0x12):
 			{
-				toKeyboard$ = "can not arm";
+				toKeyboard$ = "Nie mozna zakodowac - zamknij drzwi/okna";
 			}
 			CASE (0xFF):
 			{
-				toKeyboard$ = "command accepted";
+				toKeyboard$ = "OK";
 			}
 			DEFAULT:
 			{
