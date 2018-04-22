@@ -1,0 +1,213 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "Czyzemin_AV"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT PULSE_TIME 1
+#DEFINE_CONSTANT DELAY_TIME 100
+#DEFINE_CONSTANT AVR_INPUT_COUNT 6
+
+// Inputs
+DIGITAL_INPUT AllOff;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT Tv_On_FB, Tv_Busy_FB, _SKIP_, _SKIP_;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT Projection_On_FB, Projection_Busy_FB; // Dotyczy projektora, ekranu i windy
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT AVR_Power_FB, AVR_Busy_FB;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT AVR_Input_FB[AVR_INPUT_COUNT]; // 1 = TvAudio, 2 = CblSat, 3 = Game, 4 = BluRay, 5 = Aux, 6 = Tuner;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT TV_Scenes[AVR_INPUT_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT Projection_Scenes[AVR_INPUT_COUNT, AVR_INPUT_COUNT];
+
+// Outputs
+DIGITAL_OUTPUT Off_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT AllOff_Scenes_Busy_FB, Tv_Scenes_Busy_FB, Projection_Scenes_Busy_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT Tv_Power_On, Tv_Power_Off, Tv_Input_Tv, Tv_Input_HDMI;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT Projection_Start, Projection_Stop;  // Dotyczy projektora, ekranu i windy
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT AVR_Power_On, AVR_Power_Off;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT AVR_Input[AVR_INPUT_COUNT]; //1 = TvAudio, 2 = CblSat, 3 = Game, 4 = BluRay, 5 = Aux, 6 = Tuner;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT TV_Scenes_FB[AVR_INPUT_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT Projection_Scenes_FB[AVR_INPUT_COUNT, AVR_INPUT_COUNT];
+
+// Global variables
+INTEGER gCurrentTvScene, gCurrentProjectionScene, gCurrentAVRInput;
+
+// Functions
+FUNCTION CalculateScenesBusyFB()
+{
+	// AllOff_Scenes_Busy_FB
+	if (AVR_Busy_FB = 1 || (Tv_On_FB = 1 && Tv_Busy_FB = 1) || (Projection_On_FB = 1 && Projection_Busy_FB = 1) ) AllOff_Scenes_Busy_FB = 1;
+	else AllOff_Scenes_Busy_FB = 0;
+
+	// Tv_Scenes_Busy_FB
+	if (AVR_Busy_FB = 1 || Tv_Busy_FB = 1 || (Projection_On_FB = 1 && Projection_Busy_FB = 1)) Tv_Scenes_Busy_FB = 1;
+	else Tv_Scenes_Busy_FB = 0;
+
+	// Projection_Scenes_Busy_FB
+	if (AVR_Busy_FB = 1 || Projection_Busy_FB = 1 || (Tv_On_FB = 1 && Tv_Busy_FB = 1)) Projection_Scenes_Busy_FB = 1;
+	else Projection_Scenes_Busy_FB = 0;	
+}
+
+FUNCTION ClearScenesFB()
+{
+	INTEGER i;
+	
+	for (i = 1 to AVR_INPUT_COUNT)
+	{
+		TV_Scenes_FB[i] = 0;
+		Projection_Scenes_FB[i] = 0;
+	}
+}
+
+FUNCTION SetTvScene(INTEGER _index)
+{
+	if (_index > 0) TV_Scenes_FB[_index] = 1;
+
+	gCurrentTvScene = _index;
+}
+
+FUNCTION SetProjectionScene(INTEGER _index)
+{
+	if (_index > 0)	Projection_Scenes_FB[_index] = 1;
+	
+	gCurrentProjectionScene = _index;
+}
+
+FUNCTION SetAVR(INTEGER _index)
+{
+	if (_index <= AVR_INPUT_COUNT && _index <> gCurrentAVRInput)
+	{
+		gCurrentAVRInput = _index;		
+
+		if (_index = 0)
+		{
+			if (AVR_Power_FB = 1) pulse(PULSE_TIME, AVR_Power_Off);
+			return;
+		}
+		else
+		{
+			if (AVR_Power_FB = 0)
+			{
+				pulse(PULSE_TIME, AVR_Power_On);
+				delay(DELAY_TIME);
+			}
+			
+			pulse(PULSE_TIME, AVR_Input[_index]);
+		}
+	}
+}
+
+FUNCTION PerformScenes()
+{
+	if (gCurrentTvScene = 0)
+	{
+		if (Tv_On_FB = 1) pulse(PULSE_TIME, Tv_Power_Off);
+	}
+	else
+	{
+		if (Tv_On_FB = 0)
+		{
+			pulse(PULSE_TIME, Tv_Power_On);
+			delay(DELAY_TIME);
+		}
+	
+		if(gCurrentTvScene = 1) pulse(PULSE_TIME, Tv_Input_Tv);
+		else pulse(PULSE_TIME, Tv_Input_HDMI);
+	}
+	
+	if (gCurrentProjectionScene = 0)
+	{
+		if (Projection_On_FB = 1) pulse(PULSE_TIME, Projection_Stop);
+	}
+	else
+	{
+		if (Projection_On_FB = 0)
+		{
+			pulse(PULSE_TIME, Projection_Start);
+			delay(DELAY_TIME);
+		}
+	}
+}
+
+FUNCTION CalculateOffFB()
+{
+	if (gCurrentTvScene = 0 && gCurrentProjectionScene = 0 && gCurrentAVRInput = 0) Off_FB = 1;
+	else Off_FB = 0;
+}
+
+// Event Handlers
+CHANGE Tv_On_FB, Tv_Busy_FB, Projection_On_FB, Projection_Busy_FB, AVR_Busy_FB
+{
+	CalculateScenesBusyFB();
+}
+
+PUSH AVR_Input_FB
+{
+	gCurrentAVRInput = getLastModifiedArrayIndex();
+}
+
+PUSH AllOff
+{
+    ClearScenesFB();
+	SetAVR(0);
+	SetProjectionScene(0);
+    SetTvScene(0);
+	PerformScenes();
+	CalculateOffFB();
+}
+
+PUSH TV_Scenes
+{
+	INTEGER index;
+	
+	index = getLastModifiedArrayIndex();
+
+	if (index = gCurrentTvScene || Tv_Scenes_Busy_FB = 1) return;
+
+	ClearScenesFB();
+	SetAVR(index);
+	SetProjectionScene(0);
+    SetTvScene(index);
+	PerformScenes();
+	CalculateOffFB();
+}
+
+PUSH Projection_Scenes
+{
+	INTEGER index;
+	
+	index = getLastModifiedArrayIndex();
+
+	if (index = gCurrentProjectionScene || Projection_Scenes_Busy_FB = 1) return;
+
+	ClearScenesFB();
+	SetAVR(index);
+	SetTvScene(0);
+    SetProjectionScene(index);
+    PerformScenes();
+	CalculateOffFB();
+}
+
+// Main Function
+Function Main()
+{
+	CalculateOffFB();
+	WaitForInitializationComplete();
+	// TODO Init
+}

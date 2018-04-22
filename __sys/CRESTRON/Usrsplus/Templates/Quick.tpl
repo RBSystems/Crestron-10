@@ -1,43 +1,34 @@
 //Compiler Directives
-
 #CATEGORY "41" // Remote System Interface
 #SYMBOL_NAME "Template"
 #HINT ""
-// HELP_PDF_FILE ""
 #DEFAULT_VOLATILE
 #ENABLE_STACK_CHECKING
 #ENABLE_TRACE
-#DIGITAL_EXPAND OutputsWithParams
 
 // Constants
-
 // #DEFINE_CONSTANT
-
-// Help
-
-#HELP_BEGIN
-	----------------------
-#HELP_END
 
 // Include Libraries
 
-
-
 // Inputs
 
-
+// DIGITAL_INPUT
+// ANALOG_INPUT
+// STRING_INPUT
+// BUFFER_INPUT
+// _SKIP_
 
 // Outputs
 
-
-
-// Sockets
-
-
+// DIGITAL_OUTPUT
+// ANALOG_OUTPUT
+// STRING_OUTPUT
 
 // Parameters
 
-
+// INTEGER_PARAMETER
+// STRING_PARAMETER
 
 // Parameter Properietes
 
@@ -54,19 +45,11 @@
 
 // Structure Definitions
 
-
-
 // Global Variables
-
-
 
 // Functions
 
-
-
 // Event Handlers
-
-
 
 // Main Function
 
