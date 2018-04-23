@@ -52,7 +52,7 @@ INTEGER gCurrentTvScene, gCurrentProjectionScene, gCurrentAVRInput;
 FUNCTION CalculateScenesBusyFB()
 {
 	// AllOff_Scenes_Busy_FB
-	if (AVR_Busy_FB = 1 || (Tv_On_FB = 1 && Tv_Busy_FB = 1) || (Projection_On_FB = 1 && Projection_Busy_FB = 1) ) AllOff_Scenes_Busy_FB = 1;
+	if (AVR_Busy_FB = 1 || Tv_Busy_FB = 1 || (Projection_On_FB = 1 && Projection_Busy_FB = 1) ) AllOff_Scenes_Busy_FB = 1;
 	else AllOff_Scenes_Busy_FB = 0;
 
 	// Tv_Scenes_Busy_FB
@@ -60,7 +60,7 @@ FUNCTION CalculateScenesBusyFB()
 	else Tv_Scenes_Busy_FB = 0;
 
 	// Projection_Scenes_Busy_FB
-	if (AVR_Busy_FB = 1 || Projection_Busy_FB = 1 || (Tv_On_FB = 1 && Tv_Busy_FB = 1)) Projection_Scenes_Busy_FB = 1;
+	if (AVR_Busy_FB = 1 || (Projection_On_FB = 0 && Projection_Busy_FB = 1) || Tv_Busy_FB = 1) Projection_Scenes_Busy_FB = 1;
 	else Projection_Scenes_Busy_FB = 0;	
 }
 
