@@ -419,7 +419,8 @@ STRING_FUNCTION SendAndReceive(STRING _frameToSend)
 {
 	STRING receivedFrame[MAX_FRAME_SIZE];
 
-	gReceiveAttemptCounter = 1;	
+	clearbuffer(Rx$); // TEST
+	gReceiveAttemptCounter = 1;
 	Tx$ = _frameToSend;    
 
 	delay(DELAY_TIME);
@@ -439,6 +440,8 @@ STRING_FUNCTION SendAndReceive(STRING _frameToSend)
 	if (find(FRAME_START, Rx$) <> 1 || find(FRAME_END, Rx$) = 0)
 	{
 		// TODO : Frame failure
+		trace("INT-RS Error: Frame format invalid (clearing input buffer)");
+		clearbuffer(Rx$); // TEST
 		return ("ERR - Frame format invalid");
 	}
 
