@@ -1,0 +1,109 @@
+A) Enabling/Disabling Remote Management
+
+UDP port 444
+
+ENABLE remote management data stream: 0x08 0x00 0x00 0x00 0xFF 0xEE 0x00 0xBB
+DISABLE remote management data stream: 0x08 0x00 0x00 0x00 0xDD 0xCC 0x11 0xAA
+
+B) Management Messages
+
+TCP port 10200
+
+Checksum (dec) = 256 - leastSignificantByte(LengthHi + LengthLo + Command [+ Result] + [Data1 + ... + DataN])
+
+--------------------------------------------------------------------------------------
+
+1) Set Current Volume (Command ID = 0x20)
+
+Request:
+
+0xFF 0x55 0x00  0x03 0x20 [ZoneID] [VolumePercent] [Checksum]
+
+ZoneID : 0x01 to 0x06
+VolumePercent : 0x00 (mute) to 0x64 (100%) {100% = +26 dB; 1% step = 0.5 dB}
+
+Response OK:
+
+0xFF 0x55 0x00 0x02  0x20 0x00 0xDE
+
+--------------------------------------------------------------------------------------
+
+2) Get Current Volume (Command ID = 0x21)
+
+Request:
+
+0xFF 0x55 0x00 0x02 0x21 [ZoneID] [Checksum]
+
+Response:
+
+0xFF 0x55 0x00 0x04 0x21 0x01 [ZoneID] [VolumePercent] [Checksum]
+
+Example response (zone 3 vol 55%) = \xFF\x55\x00\x04\x21\x01\x03\x37\x01  (jebac checksum :P)
+
+--------------------------------------------------------------------------------------
+
+3) Set Routing Map (Command ID = 0x26) {200 ms}
+
+Request:
+
+0xFF 0x55 0x00 0x03 0x26 [SourceID] [ZoneID] [Checksum]
+
+SourceID : 0x00 to 0x06 {0x00 = OFF}
+
+Response OK:
+
+0xFF 0x55 0x00 0x02 0x26 0x00 0xD8
+
+--------------------------------------------------------------------------------------
+
+4) Get Routing Map (Command ID = 0x27)
+
+Request:
+
+0xFF 0x55 0x00 0x02 0x27 [ZoneID] [Checksum]
+
+Response:
+
+0xFF 0x55 0x00 0x04 0x27 0x01 [ZoneID] [SourceID] [Checksum]
+
+Example response (zone 3 source 4) = \xFF\x55\x00\x04\x27\x01\x03\x04\x01 (jebac checksum :P)
+ustawia zrodlo na wieksze niz 6
+
+=============================================================
+
+Funkcje w Simpl+ 
+
+String CHR(INTEGER _code)
+CHR(255) zwraca znak o kodzie 255
+
+INTEGER Byte(String _sourceString, INTEGER _bytePosition) - zwraca wartość INT konkretnego bajtu w łańcuchu znaków
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

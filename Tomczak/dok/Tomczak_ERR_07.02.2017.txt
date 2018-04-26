@@ -1,0 +1,504 @@
+err sys SYSTEM LOG:
+  1. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:17:37  # Sonos System - Error Getting Favorites.
+  2. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:18:18  # Sonos System - Error Getting Favorites.
+  3. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:18:59  # Sonos System - Error Getting Favorites.
+  4. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:19:41  # Sonos System - Error Getting Favorites.
+  5. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:20:22  # Sonos System - Error Getting Favorites.
+  6. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:21:03  # Sonos System - Error Getting Favorites.
+  7. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:21:44  # Sonos System - Error Getting Favorites.
+  8. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:22:25  # Sonos System - Error Getting Favorites.
+  9. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:23:06  # Sonos System - Error Getting Favorites.
+ 10. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:23:47  # Sonos System - Error Getting Favorites.
+ 11. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:24:28  # Sonos System - Error Getting Favorites.
+ 12. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:25:09  # Sonos System - Error Getting Favorites.
+ 13. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:25:50  # Sonos System - Error Getting Favorites.
+ 14. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:26:31  # Sonos System - Error Getting Favorites.
+ 15. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:27:12  # Sonos System - Error Getting Favorites.
+ 16. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:27:53  # Sonos System - Error Getting Favorites.
+ 17. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:28:34  # Sonos System - Error Getting Favorites.
+ 18. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:29:15  # Sonos System - Error Getting Favorites.
+ 19. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:29:56  # Sonos System - Error Getting Favorites.
+ 20. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:30:37  # Sonos System - Error Getting Favorites.
+ 21. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:31:18  # Sonos System - Error Getting Favorites.
+ 22. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:31:59  # Sonos System - Error Getting Favorites.
+ 23. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:32:40  # Sonos System - Error Getting Favorites.
+ 24. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:33:21  # Sonos System - Error Getting Favorites.
+ 25. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:34:02  # Sonos System - Error Getting Favorites.
+ 26. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:34:43  # Sonos System - Error Getting Favorites.
+ 27. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:35:24  # Sonos System - Error Getting Favorites.
+ 28. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:36:05  # Sonos System - Error Getting Favorites.
+ 29. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:36:46  # Sonos System - Error Getting Favorites.
+ 30. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:37:27  # Sonos System - Error Getting Favorites.
+ 31. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:38:08  # Sonos System - Error Getting Favorites.
+ 32. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:38:49  # Sonos System - Error Getting Favorites.
+ 33. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:39:30  # Sonos System - Error Getting Favorites.
+ 34. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:40:11  # Sonos System - Error Getting Favorites.
+ 35. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:40:52  # Sonos System - Error Getting Favorites.
+ 36. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:41:33  # Sonos System - Error Getting Favorites.
+ 37. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:42:14  # Sonos System - Error Getting Favorites.
+ 38. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:42:55  # Sonos System - Error Getting Favorites.
+ 39. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:43:36  # Sonos System - Error Getting Favorites.
+ 40. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:44:17  # Sonos System - Error Getting Favorites.
+ 41. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:44:58  # Sonos System - Error Getting Favorites.
+ 42. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:45:39  # Sonos System - Error Getting Favorites.
+ 43. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:46:20  # Sonos System - Error Getting Favorites.
+ 44. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:47:01  # Sonos System - Error Getting Favorites.
+ 45. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:47:42  # Sonos System - Error Getting Favorites.
+ 46. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:48:23  # Sonos System - Error Getting Favorites.
+ 47. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:49:04  # Sonos System - Error Getting Favorites.
+ 48. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:49:46  # Sonos System - Error Getting Favorites.
+ 49. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:50:27  # Sonos System - Error Getting Favorites.
+ 50. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:51:08  # Sonos System - Error Getting Favorites.
+ 51. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:51:49  # Sonos System - Error Getting Favorites.
+ 52. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:52:30  # Sonos System - Error Getting Favorites.
+ 53. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:53:11  # Sonos System - Error Getting Favorites.
+ 54. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:53:52  # Sonos System - Error Getting Favorites.
+ 55. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:54:33  # Sonos System - Error Getting Favorites.
+ 56. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:55:14  # Sonos System - Error Getting Favorites.
+ 57. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:55:55  # Sonos System - Error Getting Favorites.
+ 58. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:56:36  # Sonos System - Error Getting Favorites.
+ 59. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:57:17  # Sonos System - Error Getting Favorites.
+ 60. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:57:58  # Sonos System - Error Getting Favorites.
+ 61. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:58:39  # Sonos System - Error Getting Favorites.
+ 62. Error: splusmanagerapp.exe [App 1] # 2017-01-29 09:59:20  # Sonos System - Error Getting Favorites.
+ 63. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:00:01  # Sonos System - Error Getting Favorites.
+ 64. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:00:42  # Sonos System - Error Getting Favorites.
+ 65. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:01:23  # Sonos System - Error Getting Favorites.
+ 66. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:02:04  # Sonos System - Error Getting Favorites.
+ 67. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:02:45  # Sonos System - Error Getting Favorites.
+ 68. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:03:26  # Sonos System - Error Getting Favorites.
+ 69. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:04:07  # Sonos System - Error Getting Favorites.
+ 70. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:04:48  # Sonos System - Error Getting Favorites.
+ 71. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:05:29  # Sonos System - Error Getting Favorites.
+ 72. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:06:10  # Sonos System - Error Getting Favorites.
+ 73. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:06:51  # Sonos System - Error Getting Favorites.
+ 74. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:07:32  # Sonos System - Error Getting Favorites.
+ 75. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:08:13  # Sonos System - Error Getting Favorites.
+ 76. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:08:54  # Sonos System - Error Getting Favorites.
+ 77. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:09:35  # Sonos System - Error Getting Favorites.
+ 78. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:10:16  # Sonos System - Error Getting Favorites.
+ 79. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:10:57  # Sonos System - Error Getting Favorites.
+ 80. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:11:38  # Sonos System - Error Getting Favorites.
+ 81. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:12:20  # Sonos System - Error Getting Favorites.
+ 82. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:13:01  # Sonos System - Error Getting Favorites.
+ 83. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:13:42  # Sonos System - Error Getting Favorites.
+ 84. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:14:23  # Sonos System - Error Getting Favorites.
+ 85. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:15:04  # Sonos System - Error Getting Favorites.
+ 86. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:15:45  # Sonos System - Error Getting Favorites.
+ 87. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:16:26  # Sonos System - Error Getting Favorites.
+ 88. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:17:07  # Sonos System - Error Getting Favorites.
+ 89. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:17:48  # Sonos System - Error Getting Favorites.
+ 90. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:18:29  # Sonos System - Error Getting Favorites.
+ 91. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:19:10  # Sonos System - Error Getting Favorites.
+ 92. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:19:51  # Sonos System - Error Getting Favorites.
+ 93. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:20:32  # Sonos System - Error Getting Favorites.
+ 94. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:21:13  # Sonos System - Error Getting Favorites.
+ 95. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:21:54  # Sonos System - Error Getting Favorites.
+ 96. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:22:35  # Sonos System - Error Getting Favorites.
+ 97. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:23:16  # Sonos System - Error Getting Favorites.
+ 98. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:23:57  # Sonos System - Error Getting Favorites.
+ 99. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:24:38  # Sonos System - Error Getting Favorites.
+100. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:25:19  # Sonos System - Error Getting Favorites.
+101. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:26:00  # Sonos System - Error Getting Favorites.
+102. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:26:41  # Sonos System - Error Getting Favorites.
+103. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:27:22  # Sonos System - Error Getting Favorites.
+104. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:28:03  # Sonos System - Error Getting Favorites.
+105. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:28:44  # Sonos System - Error Getting Favorites.
+106. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:29:25  # Sonos System - Error Getting Favorites.
+107. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:30:06  # Sonos System - Error Getting Favorites.
+108. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:30:47  # Sonos System - Error Getting Favorites.
+109. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:31:28  # Sonos System - Error Getting Favorites.
+110. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:32:09  # Sonos System - Error Getting Favorites.
+111. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:32:50  # Sonos System - Error Getting Favorites.
+112. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:33:31  # Sonos System - Error Getting Favorites.
+113. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:34:12  # Sonos System - Error Getting Favorites.
+114. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:34:53  # Sonos System - Error Getting Favorites.
+115. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:35:34  # Sonos System - Error Getting Favorites.
+116. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:36:15  # Sonos System - Error Getting Favorites.
+117. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:36:56  # Sonos System - Error Getting Favorites.
+118. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:37:37  # Sonos System - Error Getting Favorites.
+119. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:38:18  # Sonos System - Error Getting Favorites.
+120. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:38:59  # Sonos System - Error Getting Favorites.
+121. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:39:40  # Sonos System - Error Getting Favorites.
+122. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:40:21  # Sonos System - Error Getting Favorites.
+123. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:41:02  # Sonos System - Error Getting Favorites.
+124. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:41:43  # Sonos System - Error Getting Favorites.
+125. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:42:24  # Sonos System - Error Getting Favorites.
+126. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:43:05  # Sonos System - Error Getting Favorites.
+127. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:43:46  # Sonos System - Error Getting Favorites.
+128. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:44:27  # Sonos System - Error Getting Favorites.
+129. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:45:08  # Sonos System - Error Getting Favorites.
+130. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:45:50  # Sonos System - Error Getting Favorites.
+131. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:46:31  # Sonos System - Error Getting Favorites.
+132. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:47:12  # Sonos System - Error Getting Favorites.
+133. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:47:53  # Sonos System - Error Getting Favorites.
+134. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:48:34  # Sonos System - Error Getting Favorites.
+135. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:49:15  # Sonos System - Error Getting Favorites.
+136. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:49:56  # Sonos System - Error Getting Favorites.
+137. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:50:37  # Sonos System - Error Getting Favorites.
+138. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:51:18  # Sonos System - Error Getting Favorites.
+139. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:51:59  # Sonos System - Error Getting Favorites.
+140. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:52:40  # Sonos System - Error Getting Favorites.
+141. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:53:21  # Sonos System - Error Getting Favorites.
+142. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:54:02  # Sonos System - Error Getting Favorites.
+143. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:54:43  # Sonos System - Error Getting Favorites.
+144. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:55:24  # Sonos System - Error Getting Favorites.
+145. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:56:05  # Sonos System - Error Getting Favorites.
+146. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:56:46  # Sonos System - Error Getting Favorites.
+147. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:57:27  # Sonos System - Error Getting Favorites.
+148. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:58:08  # Sonos System - Error Getting Favorites.
+149. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:58:49  # Sonos System - Error Getting Favorites.
+150. Error: splusmanagerapp.exe [App 1] # 2017-01-29 10:59:30  # Sonos System - Error Getting Favorites.
+151. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:00:11  # Sonos System - Error Getting Favorites.
+152. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:00:52  # Sonos System - Error Getting Favorites.
+153. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:01:33  # Sonos System - Error Getting Favorites.
+154. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:02:14  # Sonos System - Error Getting Favorites.
+155. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:02:55  # Sonos System - Error Getting Favorites.
+156. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:03:36  # Sonos System - Error Getting Favorites.
+157. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:04:17  # Sonos System - Error Getting Favorites.
+158. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:04:58  # Sonos System - Error Getting Favorites.
+159. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:05:39  # Sonos System - Error Getting Favorites.
+160. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:06:20  # Sonos System - Error Getting Favorites.
+161. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:07:01  # Sonos System - Error Getting Favorites.
+162. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:07:42  # Sonos System - Error Getting Favorites.
+163. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:08:23  # Sonos System - Error Getting Favorites.
+164. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:09:04  # Sonos System - Error Getting Favorites.
+165. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:09:45  # Sonos System - Error Getting Favorites.
+166. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:10:26  # Sonos System - Error Getting Favorites.
+167. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:11:07  # Sonos System - Error Getting Favorites.
+168. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:11:48  # Sonos System - Error Getting Favorites.
+169. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:12:29  # Sonos System - Error Getting Favorites.
+170. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:13:10  # Sonos System - Error Getting Favorites.
+171. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:13:51  # Sonos System - Error Getting Favorites.
+172. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:14:32  # Sonos System - Error Getting Favorites.
+173. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:15:13  # Sonos System - Error Getting Favorites.
+174. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:15:54  # Sonos System - Error Getting Favorites.
+175. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:16:35  # Sonos System - Error Getting Favorites.
+176. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:17:16  # Sonos System - Error Getting Favorites.
+177. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:17:57  # Sonos System - Error Getting Favorites.
+178. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:18:38  # Sonos System - Error Getting Favorites.
+179. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:19:20  # Sonos System - Error Getting Favorites.
+180. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:20:01  # Sonos System - Error Getting Favorites.
+181. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:20:42  # Sonos System - Error Getting Favorites.
+182. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:21:23  # Sonos System - Error Getting Favorites.
+183. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:22:04  # Sonos System - Error Getting Favorites.
+184. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:22:45  # Sonos System - Error Getting Favorites.
+185. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:23:26  # Sonos System - Error Getting Favorites.
+186. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:24:07  # Sonos System - Error Getting Favorites.
+187. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:24:48  # Sonos System - Error Getting Favorites.
+188. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:25:29  # Sonos System - Error Getting Favorites.
+189. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:26:10  # Sonos System - Error Getting Favorites.
+190. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:26:51  # Sonos System - Error Getting Favorites.
+191. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:27:32  # Sonos System - Error Getting Favorites.
+192. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:28:13  # Sonos System - Error Getting Favorites.
+193. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:28:54  # Sonos System - Error Getting Favorites.
+194. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:29:35  # Sonos System - Error Getting Favorites.
+195. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:30:16  # Sonos System - Error Getting Favorites.
+196. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:30:57  # Sonos System - Error Getting Favorites.
+197. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:31:38  # Sonos System - Error Getting Favorites.
+198. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:32:19  # Sonos System - Error Getting Favorites.
+199. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:33:00  # Sonos System - Error Getting Favorites.
+200. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:33:41  # Sonos System - Error Getting Favorites.
+201. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:34:22  # Sonos System - Error Getting Favorites.
+202. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:35:03  # Sonos System - Error Getting Favorites.
+203. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:35:44  # Sonos System - Error Getting Favorites.
+204. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:36:25  # Sonos System - Error Getting Favorites.
+205. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:37:06  # Sonos System - Error Getting Favorites.
+206. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:37:47  # Sonos System - Error Getting Favorites.
+207. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:38:28  # Sonos System - Error Getting Favorites.
+208. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:39:09  # Sonos System - Error Getting Favorites.
+209. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:39:50  # Sonos System - Error Getting Favorites.
+210. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:40:31  # Sonos System - Error Getting Favorites.
+211. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:41:12  # Sonos System - Error Getting Favorites.
+212. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:41:54  # Sonos System - Error Getting Favorites.
+213. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:42:35  # Sonos System - Error Getting Favorites.
+214. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:43:16  # Sonos System - Error Getting Favorites.
+215. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:43:57  # Sonos System - Error Getting Favorites.
+216. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:44:38  # Sonos System - Error Getting Favorites.
+217. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:45:19  # Sonos System - Error Getting Favorites.
+218. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:46:00  # Sonos System - Error Getting Favorites.
+219. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:46:41  # Sonos System - Error Getting Favorites.
+220. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:47:22  # Sonos System - Error Getting Favorites.
+221. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:48:03  # Sonos System - Error Getting Favorites.
+222. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:48:44  # Sonos System - Error Getting Favorites.
+223. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:49:25  # Sonos System - Error Getting Favorites.
+224. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:50:06  # Sonos System - Error Getting Favorites.
+225. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:50:47  # Sonos System - Error Getting Favorites.
+226. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:51:28  # Sonos System - Error Getting Favorites.
+227. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:52:09  # Sonos System - Error Getting Favorites.
+228. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:52:50  # Sonos System - Error Getting Favorites.
+229. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:53:31  # Sonos System - Error Getting Favorites.
+230. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:54:12  # Sonos System - Error Getting Favorites.
+231. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:54:53  # Sonos System - Error Getting Favorites.
+232. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:55:34  # Sonos System - Error Getting Favorites.
+233. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:56:15  # Sonos System - Error Getting Favorites.
+234. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:56:56  # Sonos System - Error Getting Favorites.
+235. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:57:37  # Sonos System - Error Getting Favorites.
+236. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:58:18  # Sonos System - Error Getting Favorites.
+237. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:58:59  # Sonos System - Error Getting Favorites.
+238. Error: splusmanagerapp.exe [App 1] # 2017-01-29 11:59:40  # Sonos System - Error Getting Favorites.
+239. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:00:21  # Sonos System - Error Getting Favorites.
+240. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:01:02  # Sonos System - Error Getting Favorites.
+241. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:01:43  # Sonos System - Error Getting Favorites.
+242. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:02:24  # Sonos System - Error Getting Favorites.
+243. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:03:05  # Sonos System - Error Getting Favorites.
+244. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:03:46  # Sonos System - Error Getting Favorites.
+245. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:04:27  # Sonos System - Error Getting Favorites.
+246. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:05:08  # Sonos System - Error Getting Favorites.
+247. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:05:49  # Sonos System - Error Getting Favorites.
+248. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:06:30  # Sonos System - Error Getting Favorites.
+249. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:07:11  # Sonos System - Error Getting Favorites.
+250. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:07:52  # Sonos System - Error Getting Favorites.
+251. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:08:33  # Sonos System - Error Getting Favorites.
+252. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:09:14  # Sonos System - Error Getting Favorites.
+253. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:09:55  # Sonos System - Error Getting Favorites.
+254. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:10:36  # Sonos System - Error Getting Favorites.
+255. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:11:17  # Sonos System - Error Getting Favorites.
+256. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:11:58  # Sonos System - Error Getting Favorites.
+257. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:12:39  # Sonos System - Error Getting Favorites.
+258. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:13:20  # Sonos System - Error Getting Favorites.
+259. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:14:01  # Sonos System - Error Getting Favorites.
+260. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:14:42  # Sonos System - Error Getting Favorites.
+261. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:15:23  # Sonos System - Error Getting Favorites.
+262. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:16:04  # Sonos System - Error Getting Favorites.
+263. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:16:45  # Sonos System - Error Getting Favorites.
+264. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:17:26  # Sonos System - Error Getting Favorites.
+265. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:18:07  # Sonos System - Error Getting Favorites.
+266. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:18:48  # Sonos System - Error Getting Favorites.
+267. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:19:29  # Sonos System - Error Getting Favorites.
+268. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:20:10  # Sonos System - Error Getting Favorites.
+269. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:20:52  # Sonos System - Error Getting Favorites.
+270. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:21:33  # Sonos System - Error Getting Favorites.
+271. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:22:14  # Sonos System - Error Getting Favorites.
+272. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:22:55  # Sonos System - Error Getting Favorites.
+273. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:23:36  # Sonos System - Error Getting Favorites.
+274. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:24:17  # Sonos System - Error Getting Favorites.
+275. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:24:58  # Sonos System - Error Getting Favorites.
+276. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:25:39  # Sonos System - Error Getting Favorites.
+277. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:26:20  # Sonos System - Error Getting Favorites.
+278. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:27:01  # Sonos System - Error Getting Favorites.
+279. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:27:42  # Sonos System - Error Getting Favorites.
+280. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:28:23  # Sonos System - Error Getting Favorites.
+281. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:29:04  # Sonos System - Error Getting Favorites.
+282. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:29:45  # Sonos System - Error Getting Favorites.
+283. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:30:26  # Sonos System - Error Getting Favorites.
+284. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:31:07  # Sonos System - Error Getting Favorites.
+285. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:31:48  # Sonos System - Error Getting Favorites.
+286. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:32:29  # Sonos System - Error Getting Favorites.
+287. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:33:10  # Sonos System - Error Getting Favorites.
+288. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:33:51  # Sonos System - Error Getting Favorites.
+289. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:34:32  # Sonos System - Error Getting Favorites.
+290. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:35:13  # Sonos System - Error Getting Favorites.
+291. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:35:54  # Sonos System - Error Getting Favorites.
+292. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:36:35  # Sonos System - Error Getting Favorites.
+293. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:37:16  # Sonos System - Error Getting Favorites.
+294. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:37:57  # Sonos System - Error Getting Favorites.
+295. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:38:38  # Sonos System - Error Getting Favorites.
+296. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:39:19  # Sonos System - Error Getting Favorites.
+297. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:40:00  # Sonos System - Error Getting Favorites.
+298. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:40:41  # Sonos System - Error Getting Favorites.
+299. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:41:22  # Sonos System - Error Getting Favorites.
+300. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:42:03  # Sonos System - Error Getting Favorites.
+301. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:42:44  # Sonos System - Error Getting Favorites.
+302. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:43:25  # Sonos System - Error Getting Favorites.
+303. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:44:06  # Sonos System - Error Getting Favorites.
+304. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:44:47  # Sonos System - Error Getting Favorites.
+305. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:45:28  # Sonos System - Error Getting Favorites.
+306. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:46:09  # Sonos System - Error Getting Favorites.
+307. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:46:50  # Sonos System - Error Getting Favorites.
+308. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:47:31  # Sonos System - Error Getting Favorites.
+309. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:48:12  # Sonos System - Error Getting Favorites.
+310. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:48:53  # Sonos System - Error Getting Favorites.
+311. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:49:34  # Sonos System - Error Getting Favorites.
+312. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:50:15  # Sonos System - Error Getting Favorites.
+313. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:50:56  # Sonos System - Error Getting Favorites.
+314. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:51:37  # Sonos System - Error Getting Favorites.
+315. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:52:18  # Sonos System - Error Getting Favorites.
+316. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:52:59  # Sonos System - Error Getting Favorites.
+317. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:53:40  # Sonos System - Error Getting Favorites.
+318. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:54:21  # Sonos System - Error Getting Favorites.
+319. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:55:03  # Sonos System - Error Getting Favorites.
+320. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:55:44  # Sonos System - Error Getting Favorites.
+321. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:56:25  # Sonos System - Error Getting Favorites.
+322. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:57:06  # Sonos System - Error Getting Favorites.
+323. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:57:47  # Sonos System - Error Getting Favorites.
+324. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:58:28  # Sonos System - Error Getting Favorites.
+325. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:59:09  # Sonos System - Error Getting Favorites.
+326. Error: splusmanagerapp.exe [App 1] # 2017-01-29 12:59:50  # Sonos System - Error Getting Favorites.
+327. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:00:31  # Sonos System - Error Getting Favorites.
+328. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:01:12  # Sonos System - Error Getting Favorites.
+329. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:01:53  # Sonos System - Error Getting Favorites.
+330. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:02:34  # Sonos System - Error Getting Favorites.
+331. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:03:15  # Sonos System - Error Getting Favorites.
+332. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:03:56  # Sonos System - Error Getting Favorites.
+333. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:04:37  # Sonos System - Error Getting Favorites.
+334. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:05:18  # Sonos System - Error Getting Favorites.
+335. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:05:59  # Sonos System - Error Getting Favorites.
+336. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:06:40  # Sonos System - Error Getting Favorites.
+337. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:07:21  # Sonos System - Error Getting Favorites.
+338. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:08:02  # Sonos System - Error Getting Favorites.
+339. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:08:43  # Sonos System - Error Getting Favorites.
+340. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:09:24  # Sonos System - Error Getting Favorites.
+341. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:10:05  # Sonos System - Error Getting Favorites.
+342. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:10:46  # Sonos System - Error Getting Favorites.
+343. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:11:27  # Sonos System - Error Getting Favorites.
+344. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:12:08  # Sonos System - Error Getting Favorites.
+345. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:12:49  # Sonos System - Error Getting Favorites.
+346. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:13:30  # Sonos System - Error Getting Favorites.
+347. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:14:11  # Sonos System - Error Getting Favorites.
+348. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:14:52  # Sonos System - Error Getting Favorites.
+349. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:15:33  # Sonos System - Error Getting Favorites.
+350. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:16:14  # Sonos System - Error Getting Favorites.
+351. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:16:55  # Sonos System - Error Getting Favorites.
+352. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:17:36  # Sonos System - Error Getting Favorites.
+353. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:18:17  # Sonos System - Error Getting Favorites.
+354. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:18:58  # Sonos System - Error Getting Favorites.
+355. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:19:39  # Sonos System - Error Getting Favorites.
+356. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:20:20  # Sonos System - Error Getting Favorites.
+357. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:21:01  # Sonos System - Error Getting Favorites.
+358. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:21:42  # Sonos System - Error Getting Favorites.
+359. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:22:23  # Sonos System - Error Getting Favorites.
+360. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:23:04  # Sonos System - Error Getting Favorites.
+361. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:23:45  # Sonos System - Error Getting Favorites.
+362. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:24:26  # Sonos System - Error Getting Favorites.
+363. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:25:07  # Sonos System - Error Getting Favorites.
+364. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:25:48  # Sonos System - Error Getting Favorites.
+365. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:26:29  # Sonos System - Error Getting Favorites.
+366. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:27:10  # Sonos System - Error Getting Favorites.
+367. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:27:51  # Sonos System - Error Getting Favorites.
+368. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:28:32  # Sonos System - Error Getting Favorites.
+369. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:29:14  # Sonos System - Error Getting Favorites.
+370. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:29:55  # Sonos System - Error Getting Favorites.
+371. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:30:36  # Sonos System - Error Getting Favorites.
+372. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:31:17  # Sonos System - Error Getting Favorites.
+373. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:31:58  # Sonos System - Error Getting Favorites.
+374. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:32:39  # Sonos System - Error Getting Favorites.
+375. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:33:20  # Sonos System - Error Getting Favorites.
+376. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:34:01  # Sonos System - Error Getting Favorites.
+377. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:34:42  # Sonos System - Error Getting Favorites.
+378. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:35:23  # Sonos System - Error Getting Favorites.
+379. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:36:04  # Sonos System - Error Getting Favorites.
+380. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:36:45  # Sonos System - Error Getting Favorites.
+381. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:37:26  # Sonos System - Error Getting Favorites.
+382. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:38:07  # Sonos System - Error Getting Favorites.
+383. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:38:48  # Sonos System - Error Getting Favorites.
+384. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:39:29  # Sonos System - Error Getting Favorites.
+385. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:40:10  # Sonos System - Error Getting Favorites.
+386. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:40:51  # Sonos System - Error Getting Favorites.
+387. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:41:32  # Sonos System - Error Getting Favorites.
+388. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:42:13  # Sonos System - Error Getting Favorites.
+389. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:42:54  # Sonos System - Error Getting Favorites.
+390. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:43:35  # Sonos System - Error Getting Favorites.
+391. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:44:16  # Sonos System - Error Getting Favorites.
+392. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:44:57  # Sonos System - Error Getting Favorites.
+393. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:45:38  # Sonos System - Error Getting Favorites.
+394. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:46:19  # Sonos System - Error Getting Favorites.
+395. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:47:00  # Sonos System - Error Getting Favorites.
+396. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:47:41  # Sonos System - Error Getting Favorites.
+397. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:48:22  # Sonos System - Error Getting Favorites.
+398. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:49:03  # Sonos System - Error Getting Favorites.
+399. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:49:44  # Sonos System - Error Getting Favorites.
+400. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:50:25  # Sonos System - Error Getting Favorites.
+401. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:51:06  # Sonos System - Error Getting Favorites.
+402. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:51:47  # Sonos System - Error Getting Favorites.
+403. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:52:28  # Sonos System - Error Getting Favorites.
+404. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:53:09  # Sonos System - Error Getting Favorites.
+405. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:53:50  # Sonos System - Error Getting Favorites.
+406. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:54:31  # Sonos System - Error Getting Favorites.
+407. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:55:12  # Sonos System - Error Getting Favorites.
+408. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:55:53  # Sonos System - Error Getting Favorites.
+409. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:56:34  # Sonos System - Error Getting Favorites.
+410. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:57:15  # Sonos System - Error Getting Favorites.
+411. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:57:56  # Sonos System - Error Getting Favorites.
+412. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:58:37  # Sonos System - Error Getting Favorites.
+413. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:59:18  # Sonos System - Error Getting Favorites.
+414. Error: splusmanagerapp.exe [App 1] # 2017-01-29 13:59:59  # Sonos System - Error Getting Favorites.
+415. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:00:40  # Sonos System - Error Getting Favorites.
+416. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:01:21  # Sonos System - Error Getting Favorites.
+417. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:02:02  # Sonos System - Error Getting Favorites.
+418. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:02:43  # Sonos System - Error Getting Favorites.
+419. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:03:24  # Sonos System - Error Getting Favorites.
+420. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:04:05  # Sonos System - Error Getting Favorites.
+421. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:04:46  # Sonos System - Error Getting Favorites.
+422. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:05:27  # Sonos System - Error Getting Favorites.
+423. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:06:08  # Sonos System - Error Getting Favorites.
+424. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:06:49  # Sonos System - Error Getting Favorites.
+425. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:07:30  # Sonos System - Error Getting Favorites.
+426. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:08:11  # Sonos System - Error Getting Favorites.
+427. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:08:52  # Sonos System - Error Getting Favorites.
+428. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:09:33  # Sonos System - Error Getting Favorites.
+429. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:10:14  # Sonos System - Error Getting Favorites.
+430. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:10:55  # Sonos System - Error Getting Favorites.
+431. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:11:36  # Sonos System - Error Getting Favorites.
+432. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:12:17  # Sonos System - Error Getting Favorites.
+433. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:12:58  # Sonos System - Error Getting Favorites.
+434. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:13:39  # Sonos System - Error Getting Favorites.
+435. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:14:21  # Sonos System - Error Getting Favorites.
+436. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:15:02  # Sonos System - Error Getting Favorites.
+437. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:15:43  # Sonos System - Error Getting Favorites.
+438. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:16:24  # Sonos System - Error Getting Favorites.
+439. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:17:05  # Sonos System - Error Getting Favorites.
+440. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:17:46  # Sonos System - Error Getting Favorites.
+441. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:18:27  # Sonos System - Error Getting Favorites.
+442. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:19:08  # Sonos System - Error Getting Favorites.
+443. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:19:49  # Sonos System - Error Getting Favorites.
+444. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:20:30  # Sonos System - Error Getting Favorites.
+445. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:21:11  # Sonos System - Error Getting Favorites.
+446. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:21:52  # Sonos System - Error Getting Favorites.
+447. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:22:33  # Sonos System - Error Getting Favorites.
+448. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:23:14  # Sonos System - Error Getting Favorites.
+449. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:23:55  # Sonos System - Error Getting Favorites.
+450. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:24:36  # Sonos System - Error Getting Favorites.
+451. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:25:17  # Sonos System - Error Getting Favorites.
+452. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:25:58  # Sonos System - Error Getting Favorites.
+453. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:26:39  # Sonos System - Error Getting Favorites.
+454. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:27:20  # Sonos System - Error Getting Favorites.
+455. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:28:01  # Sonos System - Error Getting Favorites.
+456. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:28:42  # Sonos System - Error Getting Favorites.
+457. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:29:23  # Sonos System - Error Getting Favorites.
+458. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:30:04  # Sonos System - Error Getting Favorites.
+459. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:30:45  # Sonos System - Error Getting Favorites.
+460. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:31:26  # Sonos System - Error Getting Favorites.
+461. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:32:07  # Sonos System - Error Getting Favorites.
+462. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:32:48  # Sonos System - Error Getting Favorites.
+463. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:33:29  # Sonos System - Error Getting Favorites.
+464. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:34:10  # Sonos System - Error Getting Favorites.
+465. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:34:51  # Sonos System - Error Getting Favorites.
+466. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:35:32  # Sonos System - Error Getting Favorites.
+467. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:36:13  # Sonos System - Error Getting Favorites.
+468. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:36:54  # Sonos System - Error Getting Favorites.
+469. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:37:35  # Sonos System - Error Getting Favorites.
+470. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:38:16  # Sonos System - Error Getting Favorites.
+471. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:38:57  # Sonos System - Error Getting Favorites.
+472. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:39:38  # Sonos System - Error Getting Favorites.
+473. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:40:19  # Sonos System - Error Getting Favorites.
+474. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:41:00  # Sonos System - Error Getting Favorites.
+475. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:41:41  # Sonos System - Error Getting Favorites.
+476. Info: LogicEngine.exe [App 1] # 2017-01-29 14:41:42  # Stopping Program.
+477. Notice: TLDM.exe # 2017-01-29 14:41:49  # **Program 1 Stopped**
+478. Info: LogicEngine.exe [App 1] # 2017-01-29 14:41:55  # Loading program from \SIMPL\app01
+479. Info: LogicEngine.exe [App 1] # 2017-01-29 14:41:55  # Loading Program \SIMPL\app01\Tomczak_DIN-AP3.bin.
+480. Notice: LogicEngine.exe # 2017-01-29 14:42:14  # **Program 1 Started**
+481. Info: LogicEngine.exe [App 1] # 2017-01-29 14:42:14  #  Going to steady state now 
+482. Info: TLDM.exe # 2017-01-29 14:42:15  #  Event rcvd is 8 
+483. Notice: splusmanagerapp.exe [App 1] # 2017-01-29 14:42:18  # CRPCConnectionHelper - Created CIP Transport for ipaddress: 192.168.0.201, port: 41800, adapterID: 0
+484. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:42:21  # Module S-2.2.1.2.3 : SpeakerCraft_MRA at line 328: Invalid remove length: 9  String length : 0
+485. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:42:44  # Module S-2.2.1.2.3 : SpeakerCraft_MRA at line 328: Invalid remove length: 9  String length : 5
+486. Error: splusmanagerapp.exe [App 1] # 2017-01-29 14:42:44  # Module S-2.2.1.2.3 : SpeakerCraft_MRA at line 328: Invalid remove length: 9  String length : 5
+487. Warning: ConsoleServiceCE.exe # 2017-02-07 19:52:19  # Deprecated CTP connection accepted from address 109.241.17.61:59695.
+488. Notice: ConsoleServiceCE.exe # 2017-02-07 19:52:19  # CTP Connection from: 109.241.17.61 
+489. Exception 'Data Abort' (0x4): Thread-Id=053c01a2(pth=950b0088), Proc-Id=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe', VM-active=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe'
+490. PC=0022d2a4(???+0x0022d2a4) RA=00211e1c(???+0x00211e1c) SP=028ffa8c, BVA=00000000
+491. Exception 'Data Abort' (0x4): Thread-Id=053c01a2(pth=950b0088), Proc-Id=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe', VM-active=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe'
+492. PC=0022d2a4(???+0x0022d2a4) RA=00211e1c(???+0x00211e1c) SP=028ffa8c, BVA=00000000
+493. Exception 'Data Abort' (0x4): Thread-Id=053c01a2(pth=950b0088), Proc-Id=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe', VM-active=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe'
+494. PC=0022d2a4(???+0x0022d2a4) RA=00211e1c(???+0x00211e1c) SP=028ffa8c, BVA=00000000
+495. Exception 'Data Abort' (0x4): Thread-Id=053c01a2(pth=950b0088), Proc-Id=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe', VM-active=05540046(pprc=95096e4c) 'ConsoleServiceCE.exe'
+496. PC=0022d2a4(???+0x0022d2a4) RA=00211e1c(???+0x00211e1c) SP=028ffa8c, BVA=00000000
+497. Warning: ConsoleServiceCE.exe # 2017-02-07 19:54:22  # Deprecated CTP connection accepted from address 109.241.17.61:59876.
+498. Notice: ConsoleServiceCE.exe # 2017-02-07 19:54:22  # CTP Connection from: 109.241.17.61 
+499. Warning: ConsoleServiceCE.exe # 2017-02-07 19:55:56  # Deprecated CTP connection accepted from address 109.241.17.61:60015.
+500. Notice: ConsoleServiceCE.exe # 2017-02-07 19:55:57  # CTP Connection from: 109.241.17.61 
+ Total Msgs Logged = 34705
+ END OF SYSTEM LOG
+

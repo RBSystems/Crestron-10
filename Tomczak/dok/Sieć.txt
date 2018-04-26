@@ -1,0 +1,31 @@
+SSID	:	s3art
+Pass	:	s3arts3art
+
+Router	:	192.168.0.1
+Login	:	admin
+Pass	:	admin
+
+Publiczne IP	:	85.89.190.221
+iPad IP-ID		:	0A
+xPanel IP-ID	:	1A
+
+====================================
+
+Router dodatkowy	:	192.168.0.177
+
+DIN-AP3		:	192.168.0.201
+CI-KNX_1	:	192.168.0.211
+CI-KNX_2	:	192.168.0.212
+
+MRA_1		:	192.168.0.221 (F8:57:2E:00:1E:74)
+MRA_2		:	192.168.0.222 (F8:57:2E:00:20:B9)
+
+iPad code	:	2601
+SC code		:	3526
+
+===================
+
+Crestron user
+
+User : user01
+Pass : crestronDom01

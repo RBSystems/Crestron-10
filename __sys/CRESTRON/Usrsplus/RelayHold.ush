@@ -21,8 +21,8 @@
   Name=RelayHold
   SmplCName=RelayHold.usp
   Code=1
-  SysRev5=3.083
-  SMWRev=2.02.05
+  SysRev5=4.000
+  SMWRev=3.00.00
   InputCue1=relayHold
   InputSigType1=Digital
   OutputCue1=relayOn
@@ -43,7 +43,7 @@
   Expand=expand_separately
   Expand2=expand_separately
   ProgramTree=Logic
-  SymbolTree=32
+  SymbolTree=29
   Hint=
   PdfHelp=
   HelpID= 
@@ -65,6 +65,7 @@
   SymJam=NonExclusive
   FileName=RelayHold.ush
   SIMPLPlusModuleEncoding=0
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

@@ -1,0 +1,2 @@
+12:36:22 +00:00.000   Session started
+12:36:23 +00:01.042   Connecting to 192.168.0.221:10200 from 51624...error: winerror #10061
