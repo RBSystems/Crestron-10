@@ -6,28 +6,18 @@
 
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
 
-DIGITAL_INPUT InitializeSystem;
-DIGITAL_OUTPUT ContainerInitialized_FB;
-
 CALLBACK FUNCTION PrintTrace(STRING _message)
 {
 	trace("%s", _message);
 }
 
-EVENTHANDLER ModuleContainerInitializedEventHandler(Dummy _dummy, EventArgs _e)
+FUNCTION RegisterDelegates()
 {
-	trace("SharpHelper - InitializedEventHandler");
-	ContainerInitialized_FB = 1;
-}
-
-PUSH InitializeSystem
-{
-	ModuleContainer.Initialize();
+	RegisterDelegate(DebugHelper, PrintTraceCallback, PrintTrace);	
 }
 
 Function Main()
 {
-	RegisterDelegate(DebugHelper, PrintTraceCallback, PrintTrace);
-	RegisterEvent(ModuleContainer, InitializedEvent, ModuleContainerInitializedEventHandler);
+	RegisterDelegates();
 	WaitForInitializationComplete();
 }

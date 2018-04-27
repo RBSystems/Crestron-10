@@ -1,0 +1,124 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "ssl_ElementsTest"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT STRING_SIZE 255
+#DEFINE_CONSTANT ARRAY_SIZE 20
+
+
+// Include Libraries
+
+#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
+
+// Inputs
+
+DIGITAL_INPUT singleDigitalIn_01;
+DIGITAL_INPUT digitalArrayIn_01[ARRAY_SIZE, ARRAY_SIZE];
+ANALOG_INPUT singleAnalogIn_01;
+STRING_INPUT singleStringIn_01[STRING_SIZE];
+// BUFFER_INPUT
+// _SKIP_
+
+// Outputs
+
+DIGITAL_OUTPUT singleDigitalOut_01;
+ANALOG_OUTPUT singleAnalogOut_01;
+STRING_OUTPUT singleStringOut_01;
+
+// Parameters
+
+// INTEGER_PARAMETER
+// STRING_PARAMETER
+
+// Parameter Properietes
+
+/*
+#BEGIN_PARAMETER_PROPERTIES pVariable
+   propValidUnits = unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   propDefaultUnit = unitString or unitDecimal or unitHex or unitPercent or unitCharacter or unitTime or unitTicks;
+   propList = { "value","label" },{ "value","label" };
+   propBounds = lower_bound , upper_bound;
+   propDefaultValue = default_value or "default_value";
+   propShortDescription = "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+*/
+
+// Structure Definitions
+
+// Global Variables
+TestModule thisModule;
+
+// Sharp Delegates
+CALLBACK FUNCTION Send_singleDigitalOut_01(INTEGER _value)
+{
+	singleDigitalOut_01 = _value;
+}
+
+CALLBACK FUNCTION Send_singleAnalogOut_01(INTEGER _value)
+{
+	singleAnalogOut_01 = _value;
+}
+
+CALLBACK FUNCTION Send_singleStringOut_01(STRING _value)
+{
+	singleStringOut_01 = _value;
+}
+
+// Functions
+FUNCTION RegisterDelegates()
+{
+	DigitalOut dOut;
+    AnalogOut aOut;
+	StringOut sOut;
+
+	dOut = thisModule.SingleDigitalOutput_01;
+	RegisterDelegate(dOut, SendDigitalValueDelegate, Send_singleDigitalOut_01);
+
+	aOut = thisModule.SingleAnalogOutput_01;
+	RegisterDelegate(aOut, SendAnalogValueDelegate, Send_singleAnalogOut_01);
+
+	sOut = thisModule.SingleStringOutput_01;
+	RegisterDelegate(sOut, SendStringValueDelegate, Send_singleStringOut_01);
+}
+
+// Signal Event Handlers
+
+CHANGE singleDigitalIn_01
+{
+	thisModule.SingleDigitalInput_01.SetDigitalValue(singleDigitalIn_01);
+}
+
+CHANGE singleAnalogIn_01
+{
+	thisModule.SingleAnalogInput_01.SetAnalogValue(singleAnalogIn_01);
+}
+
+CHANGE singleStringIn_01
+{
+	thisModule.SingleStringInput_01.SetStringValue(singleStringIn_01);
+}
+
+CHANGE digitalArrayIn_01
+{
+	INTEGER index;
+	DigitalInArray digArray;
+
+	index = getLastModifiedArrayIndex();
+	digArray = thisModule.DigitalInputArray_01;
+
+	digArray.SetDigitalValue(index, digitalArrayIn_01[index]);
+}
+
+// Main Function
+
+Function Main()
+{
+	RegisterDelegates();
+	WaitForInitializationComplete();
+	// TODO Init
+}

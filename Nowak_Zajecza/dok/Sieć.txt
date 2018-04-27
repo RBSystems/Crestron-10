@@ -6,7 +6,7 @@ Password	:	R8TQ95W1V2R
 ========================
 VPN (L2TP with IPSec)
 
-185.122.173.38
+Adres IP	:	185.122.173.38
 
 user		:	s3art_1
 password	:	s3artpany

@@ -17,6 +17,8 @@ namespace ssl_Utility
         public const ushort MAX_SIGNAL_COUNT = 51;
     }
 
+
+
     public class Signal
     {
         protected ushort Id { get; private set; }
