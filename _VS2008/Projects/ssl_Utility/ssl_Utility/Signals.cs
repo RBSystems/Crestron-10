@@ -22,9 +22,10 @@ namespace ssl_Utility
             _index = index;
         }
 
-        protected void OnValueChanged()
+        protected virtual void OnValueChanged()
         {
             if (ValueChanged != null) ValueChanged(this, EventArgs.Empty);
+            DebugHelper.PrintDebugTrace("Signal changed: Type = " + this.GetType().ToString() + " | Index = " + this.Index );
         }
     }
 
@@ -48,6 +49,12 @@ namespace ssl_Utility
         {
             return _value.ToString();
         }
+
+        protected override void OnValueChanged()
+        {
+            base.OnValueChanged();
+            DebugHelper.PrintDebugTrace("DigitalSignal changed: Type = " + this.GetType().ToString() + " | Value = " + this.Value);
+        }
     }
 
     public class DigitalInputSignal : DigitalSignal
@@ -68,6 +75,12 @@ namespace ssl_Utility
 
             _value = value;
             OnValueChanged();
+        }
+
+        protected override void OnValueChanged()
+        {
+            base.OnValueChanged();
+            DebugHelper.PrintDebugTrace("DigitalInputSignal changed: Type = " + this.GetType().ToString() + " | ArrayId = " + this.Array.Index);
         }
     }
 

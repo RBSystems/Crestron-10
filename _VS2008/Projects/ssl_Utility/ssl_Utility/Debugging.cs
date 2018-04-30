@@ -10,6 +10,13 @@ namespace ssl_Utility
 
         private static Stopwatch stopWatch = new Stopwatch();
 
+        public const bool DebugTraceMode = true;
+
+        public static void PrintDebugTrace(string _message)
+        {
+            if (PrintTraceCallback != null && DebugTraceMode) PrintTraceCallback("S# (debug): " + _message);
+        }
+        
         public static void PrintTrace(string _message)
         {
             if (PrintTraceCallback != null) PrintTraceCallback("S#: " + _message);
