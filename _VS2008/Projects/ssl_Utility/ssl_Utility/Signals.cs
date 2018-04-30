@@ -4,339 +4,218 @@ using System.Linq;
 using System.Text;
 using Crestron.SimplSharp;
 
+
+
 namespace ssl_Utility
 {
 
-    public static class SignalHelper
-    {
-        public const bool DEBUGMODE = true;
-
-        public const ushort MIN_ANALOG_VALUE = 0;
-        public const ushort MAX_ANALOG_VALUE = 65535;
-
-        public const ushort MAX_SIGNAL_COUNT = 51;
-    }
-
-
-
     public class Signal
     {
-        protected ushort Id { get; private set; }
+        public event EventHandler ValueChanged;
 
-        protected bool DigitalValue { get; set; }
-        protected ushort AnalogValue { get; set; }
-        protected String SerialValue { get; set; }
+        protected ushort _index;
 
-        public String Name { get; set; }
+        public ushort Index { get { return _index; } }
 
-        public event EventHandler ValueChangedEventHandler;
-
-        public Signal()
+        public Signal(ushort index)
         {
-            Id = 0;
-            DigitalValue = false;
-            ParseDigitalValue();
-            Name = "Empty";
+            _index = index;
         }
 
-        public Signal(ushort _id) : this()
+        protected void OnValueChanged()
         {
-            Id = _id;
-            Name = "ID_" + _id;
-        }
-
-        private void OnValueChanged()
-        {
-            if (ValueChangedEventHandler != null) ValueChangedEventHandler(this, EventArgs.Empty);
-
-            if (SignalHelper.DEBUGMODE)
-            {
-                DebugHelper.PrintTrace("Signal : Signal named " + Name + " changed");
-                DebugHelper.PrintTrace("Signal : Signal digital value = " + this.DigitalValue.ToString());
-                DebugHelper.PrintTrace("Signal : Signal analog value = " + this.AnalogValue.ToString());
-                DebugHelper.PrintTrace("Signal : Signal serial value = " + this.SerialValue);
-            }
-        }
-
-        protected void ParseDigitalValue()
-        {
-            AnalogValue = DigitalValue ? SignalHelper.MAX_ANALOG_VALUE : SignalHelper.MIN_ANALOG_VALUE;
-            SerialValue = DigitalValue.ToString();
-        }
-
-        protected void ParseAnalogValue()
-        {
-            DigitalValue = (AnalogValue > SignalHelper.MIN_ANALOG_VALUE);
-            SerialValue = AnalogValue.ToString();
-        }
-
-        protected void ParseSerialValue()
-        {
-            AnalogValue = (ushort)SerialValue.ToString().Length;
-            DigitalValue = (AnalogValue > SignalHelper.MIN_ANALOG_VALUE);
-        }
-
-        protected virtual void SetDigitalValue(ushort _value)
-        {
-            bool tempValue = _value > SignalHelper.MIN_ANALOG_VALUE;
-
-            bool changedFlag = (DigitalValue != tempValue);
-
-            DigitalValue = tempValue;
-            ParseDigitalValue();
-
-            if (changedFlag) OnValueChanged();
-        }
-
-        protected virtual void SetAnalogValue(ushort _value)
-        {
-            bool changedFlag = (_value != AnalogValue);
-
-            AnalogValue = _value;
-            ParseAnalogValue();
-
-            if (changedFlag) OnValueChanged();
-        }
-
-        protected virtual void SetSerialValue(SimplSharpString _value)
-        {
-            bool changedFlag = (_value.ToString() != SerialValue);
-
-            SerialValue = _value.ToString();
-            ParseSerialValue();
-
-            if (changedFlag) OnValueChanged();
+            if (ValueChanged != null) ValueChanged(this, EventArgs.Empty);
         }
     }
 
-    #region Input signals
-
-    public class InputSignal : Signal
+    public class DigitalSignal : Signal
     {
-        public bool IsInitialized { get; protected set; }
+        protected bool _value;
 
-        public EmptyActionDelegate PollValueCallback {get; set;}
+        public bool Value { get { return _value; } }
 
-        public event EventHandler InitializedEventHandler;
-
-        public InputSignal()
-            : base()
+        public DigitalSignal(ushort index)
+            : base(index)
         {
-            IsInitialized = false;
         }
 
-        public InputSignal(ushort _id)
-            : base(_id)
+        public ushort ToAnalog()
         {
-            IsInitialized = false;
+            return (ushort)(_value ? 1 : 0);
         }
 
-        public void PollValue()
+        public override String ToString()
         {
-            if (PollValueCallback != null) PollValueCallback();
+            return _value.ToString();
         }
-
-        private void OnInitialized()
-        {
-            if (InitializedEventHandler != null) InitializedEventHandler(this, EventArgs.Empty);
-
-            IsInitialized = true;
-
-            if (SignalHelper.DEBUGMODE)
-            {
-                DebugHelper.PrintTrace("InputSignal : Signal initialized");
-            }
-        }
-
-        protected override void SetDigitalValue(ushort _value)
-        {
-            if (!IsInitialized) OnInitialized();
-
-            base.SetDigitalValue(_value);
-        }
-
-        protected override void SetAnalogValue(ushort _value)
-        {
-            if (!IsInitialized) OnInitialized();
-
-            base.SetAnalogValue(_value);
-        }
-
-        protected override void SetSerialValue(SimplSharpString _value)
-        {
-            if (!IsInitialized) OnInitialized();
-
-            base.SetSerialValue(_value);
-        }
-
-
     }
 
-    public class DigitalInputSignal : InputSignal
+    public class DigitalInputSignal : DigitalSignal
     {
-        public bool Value
+        private DigitalInputSignalArray _array;
+
+        public DigitalInputSignalArray Array { get { return _array; } }
+
+        public DigitalInputSignal(DigitalInputSignalArray array, ushort index)
+            : base(index)
         {
-            get { return DigitalValue; }
+            _array = array;
         }
 
-        public DigitalInputSignal()
-            : base()
+        public void UpdateValue(bool value)
         {
-        }
+            if (_value == value) return;
 
-        public DigitalInputSignal(ushort _id)
-            : base(_id)
-        {
-        }
-
-        public void UpdateValue(ushort _value)
-        {
-            SetDigitalValue(_value);
+            _value = value;
+            OnValueChanged();
         }
     }
 
-    public class AnalogInputSignal : InputSignal
+    public class DigitalOutputSignal : DigitalSignal
     {
-        public ushort Value
+        private DigitalOutputSignalArray _array;
+
+        public DigitalOutputSignalArray Array { get { return _array; } }
+
+        public DigitalOutputSignal(DigitalOutputSignalArray array, ushort index)
+            : base(index)
         {
-            get { return AnalogValue; }
+            _array = array;
         }
 
-        public AnalogInputSignal()
-            : base()
+        public void SendValue(bool value)
         {
-        }
-
-        public AnalogInputSignal(ushort _id)
-            : base(_id)
-        {
-        }
-
-        public void UpdateValue(ushort _value)
-        {
-            SetAnalogValue(_value);
+            _value = value;
+            _array.Send(this);
         }
     }
 
-    public class SerialInputSignal : InputSignal
+
+    public class AnalogSignal : Signal
     {
-        public SimplSharpString Value
-        {
-            get { return SerialValue; }
-        }
+        protected ushort _value;
 
-        public SerialInputSignal()
-            : base()
-        {
-        }
+        public ushort Value { get { return _value; } }
 
-        public SerialInputSignal(ushort _id)
-            : base(_id)
+        public AnalogSignal(ushort index)
+            : base(index)
         {
         }
 
-        public void UpdateValue(String _value)
+        public bool ToDigital()
         {
-            SetSerialValue(_value);
+            return (_value == 0 ? false : true);
+        }
+
+        public override String ToString()
+        {
+            return _value.ToString();
         }
     }
 
-    #endregion
 
-    #region Output signals
-
-    public class OutputSignal : Signal
+    public class AnalogInputSignal : AnalogSignal
     {
-        public IdIntegerActionDelegate SendDigitalValueDelegate { get; set; }
-        public IdIntegerActionDelegate SendAnalogValueDelegate { get; set; }
-        public IdStringActionDelegate SendSerialValueDelegate { get; set; }
+        private AnalogInputSignalArray _array;
 
-        public OutputSignal()
-            : base()
+        public AnalogInputSignalArray Array { get { return _array; } }
+
+        public AnalogInputSignal(AnalogInputSignalArray array, ushort index)
+            : base(index)
         {
+            _array = array;
         }
 
-        public OutputSignal(ushort _id)
-            : base(_id)
+        public void UpdateValue(ushort value)
         {
-        }
+            if (_value == value) return;
 
-        protected override void SetDigitalValue(ushort _value)
-        {
-            if (SendDigitalValueDelegate != null) SendDigitalValueDelegate(Id, _value);
-
-            base.SetDigitalValue(_value);
-        }
-
-        protected override void SetAnalogValue(ushort _value)
-        {
-            if (SendAnalogValueDelegate != null) SendAnalogValueDelegate(Id, _value);
-
-            base.SetAnalogValue(_value);
-        }
-
-        protected override void SetSerialValue(SimplSharpString _value)
-        {
-            if (SendSerialValueDelegate != null) SendSerialValueDelegate(Id, _value);
-
-            base.SetSerialValue(_value);
+            _value = value;
+            OnValueChanged();
         }
     }
 
-    public class DigitalOutputSignal : OutputSignal
+    public class AnalogOutputSignal : AnalogSignal
     {
-        public DigitalOutputSignal()
-            : base()
+        private AnalogOutputSignalArray _array;
+
+        public AnalogOutputSignalArray Array { get { return _array; } }
+
+        public AnalogOutputSignal(AnalogOutputSignalArray array, ushort index)
+            : base(index)
         {
+            _array = array;
         }
 
-        public DigitalOutputSignal(ushort _id)
-            : base(_id)
+        public void SendValue(ushort value)
         {
-        }
-
-        public void SendValue(ushort _value)
-        {
-            SetDigitalValue(_value);
+            _value = value;
+            _array.Send(this);
         }
     }
 
-    public class AnalogOutputSignal : OutputSignal
+
+    public class StringSignal : Signal
     {
-        public AnalogOutputSignal()
-            : base()
+        protected String _value = "";
+
+        public String Value { get { return _value; } }
+
+        public StringSignal(ushort index)
+            : base(index)
         {
         }
 
-        public AnalogOutputSignal(ushort _id)
-            : base(_id)
+        public bool ToDigital()
         {
+            return (_value.Length == 0 ? false : true);
         }
 
-        public void SendValue(ushort _value)
+        public ushort ToAnalog()
         {
-            SetAnalogValue(_value);
+            return (ushort)_value.Length;
         }
     }
 
-    public class SerialOutputSignal : OutputSignal
+
+    public class StringInputSignal : StringSignal
     {
-        public SerialOutputSignal()
-            : base()
+        private StringInputSignalArray _array;
+
+        public StringInputSignalArray Array { get { return _array; } }
+
+        public StringInputSignal(StringInputSignalArray array, ushort index)
+            : base(index)
         {
+            _array = array;
         }
 
-        public SerialOutputSignal(ushort _id)
-            : base(_id)
+        public void UpdateValue(String value)
         {
-        }
+            if (_value == value) return;
 
-        public void SendValue(SimplSharpString _value)
-        {
-            SetSerialValue(_value);
+            _value = value;
+            OnValueChanged();
         }
     }
 
-    #endregion
+    public class StringOutputSignal : StringSignal
+    {
+        private StringOutputSignalArray _array;
 
-}
+        public StringOutputSignalArray Array { get { return _array; } }
+
+        public StringOutputSignal(StringOutputSignalArray array, ushort index)
+            : base(index)
+        {
+            _array = array;
+        }
+
+        public void SendValue(String value)
+        {
+            _value = value;
+            _array.Send(this);
+        }
+    }
+
+}   

@@ -6,7 +6,7 @@ namespace ssl_Utility
 {    
     public static class DebugHelper
     {
-        public static StringActionDelegate PrintTraceCallback { get; set; }
+        public static ActionStringDelegate PrintTraceCallback { get; set; }
 
         private static Stopwatch stopWatch = new Stopwatch();
 

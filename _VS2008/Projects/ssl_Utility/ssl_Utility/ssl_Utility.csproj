@@ -66,6 +66,7 @@
     <Compile Include="Signals.cs" />
     <Compile Include="Modules.cs" />
     <Compile Include="SimplElements.cs" />
+    <Compile Include="SignalArrays.cs" />
     <None Include="Properties\ControlSystem.cfg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />

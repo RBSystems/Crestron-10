@@ -1,0 +1,62 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "SSL Signal Logic Test"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT STRING_SIZE 50
+
+// Include Libraries
+#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
+
+// Inputs
+
+DIGITAL_INPUT dIn_01, dIn_02, dIn_03;
+ANALOG_INPUT aIn_01, aIn_02, aIn_03;
+STRING_INPUT sIn_01[STRING_SIZE], sIn_02[STRING_SIZE], sIn_03[STRING_SIZE];
+// BUFFER_INPUT
+// _SKIP_
+
+// Outputs
+
+DIGITAL_OUTPUT dOut_01, dOut_02, dOut_03;
+ANALOG_OUTPUT aOut_01, aOut_02, aOut_03;
+STRING_OUTPUT sOut_01, sOut_02, sOut_03;
+
+// Parameters
+
+// INTEGER_PARAMETER
+// STRING_PARAMETER
+
+// Parameter Properietes
+
+/*
+#BEGIN_PARAMETER_PROPERTIES pVariable
+   propValidUnits = unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   propDefaultUnit = unitString or unitDecimal or unitHex or unitPercent or unitCharacter or unitTime or unitTicks;
+   propList = { "value","label" },{ "value","label" };
+   propBounds = lower_bound , upper_bound;
+   propDefaultValue = default_value or "default_value";
+   propShortDescription = "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+*/
+
+// Structure Definitions
+
+// Global Variables
+Module module;
+
+// Functions
+
+// Event Handlers
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}
