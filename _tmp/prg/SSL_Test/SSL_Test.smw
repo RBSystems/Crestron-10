@@ -2104,7 +2104,7 @@ SmC=156
 Nm=Logic
 ObjVer=1
 SmVr=1055
-CF=2
+CF=1
 mC=3
 C1=48
 C2=43
@@ -2970,8 +2970,27 @@ Nm=SUBSYSTEM
 ObjVer=1
 SmVr=1055
 PrH=4
-CF=2
+CF=1
 Cmn1=SSL SignalLogic Test
+mC=1
+C1=52
+]
+[
+ObjTp=Sm
+H=52
+SmC=103
+Nm=ssl_SignalLogic_Test.usp
+ObjVer=1
+PrH=51
+CF=1
+n1I=26
+n2I=61
+n1O=26
+mI=87
+mO=87
+tO=87
+mP=1
+P1=
 ]
 [
 ObjTp=Sg
