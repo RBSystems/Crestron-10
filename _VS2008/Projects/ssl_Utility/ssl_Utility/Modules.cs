@@ -7,7 +7,7 @@ using Crestron.SimplSharp;
 
 namespace ssl_Utility
 {
-    public class Module
+    public class PlusModule
     {
         public ActionUshortUshortUshortDelegate SendDigitalOutputDelegate { get; set; }
         public ActionUshortUshortUshortDelegate SendAnalogOutputDelegate { get; set; }
@@ -29,7 +29,7 @@ namespace ssl_Utility
         private AnalogOutputSignalArray[] _analogOutputArrays;
         private StringOutputSignalArray[] _stringOutputArrays;        
 
-        public Module()
+        public PlusModule()
         {
         }
 
@@ -205,5 +205,38 @@ namespace ssl_Utility
 
         #endregion
 
+        #region Signal Getters
+
+        public DigitalInputSignal GetDigitalInput(ushort arrayIndex, ushort signalIndex)
+        {
+            return _digitalInputArrays[arrayIndex].Signals[signalIndex];
+        }
+
+        public AnalogInputSignal GetAnalogInput(ushort arrayIndex, ushort signalIndex)
+        {
+            return _analogInputArrays[arrayIndex].Signals[signalIndex];
+        }
+
+        public StringInputSignal GetStringInput(ushort arrayIndex, ushort signalIndex)
+        {
+            return _stringInputArrays[arrayIndex].Signals[signalIndex];
+        }
+
+        public DigitalOutputSignal GetDigitalOutput(ushort arrayIndex, ushort signalIndex)
+        {
+            return _digitalOutputArrays[arrayIndex].Signals[signalIndex];
+        }
+
+        public AnalogOutputSignal GetAnalogOutput(ushort arrayIndex, ushort signalIndex)
+        {
+            return _analogOutputArrays[arrayIndex].Signals[signalIndex];
+        }
+
+        public StringOutputSignal GetStringOutput(ushort arrayIndex, ushort signalIndex)
+        {
+            return _stringOutputArrays[arrayIndex].Signals[signalIndex];
+        }
+
+        #endregion
     }
 }

@@ -20,7 +20,7 @@
   Name=SSL Signal Logic Test
   SmplCName=ssl_SignalLogic_Test.usp
   Code=1
-  SysRev5=3.090
+  SysRev5=4.000
   SMWRev=3.00.00
   InputCue1=dIn_01
   InputSigType1=Digital
@@ -451,6 +451,8 @@
   OutputList2Cue68=sArrOut_03[#]
   OutputList2SigType68=Serial
   ParamCue1=[Reference Name]
+  ParamCue2=pModuleId
+  ParamSigType2=Constant
   MinVariableInputs=39
   MaxVariableInputs=39
   MinVariableInputsList2=77
@@ -459,8 +461,8 @@
   MaxVariableOutputs=39
   MinVariableOutputsList2=77
   MaxVariableOutputsList2=77
-  MinVariableParams=0
-  MaxVariableParams=0
+  MinVariableParams=1
+  MaxVariableParams=1
   Expand=expand_separately
   Expand2=expand_separately
   ProgramTree=Logic
@@ -475,7 +477,8 @@
   CompilerParamCode5=14
   NumFixedParams=1
   Pp1=1
-  MPp=1
+  Pp2=2
+  MPp=2
   NVStorage=10
   ParamSigType1=String
   SmplCInputCue1=o#
@@ -493,4 +496,20 @@
   H=1
   Tp=1
   NoS=False
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=2
+  Tp=1
+  SD=Unique module Id
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
 [END]

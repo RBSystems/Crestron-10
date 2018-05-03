@@ -6,14 +6,46 @@
 
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
 
-CALLBACK FUNCTION PrintTrace(STRING _message)
+DIGITAL_INPUT Test_01, Test_02, Test_03, Test_04, Test_05, Test_06;
+
+CALLBACK FUNCTION PrintTraceCallback(STRING _message)
 {
 	trace("%s", _message);
 }
 
 FUNCTION RegisterDelegates()
 {
-	RegisterDelegate(DebugHelper, PrintTraceCallback, PrintTrace);	
+	RegisterDelegate(DebugHelper, PrintTraceDelegate, PrintTraceCallback);	
+}
+
+PUSH Test_01
+{
+	PlusContainer.Test_01();
+}
+
+PUSH Test_02
+{
+	PlusContainer.Test_02();
+}
+
+PUSH Test_03
+{
+	PlusContainer.Test_03();
+}
+
+PUSH Test_04
+{
+	PlusContainer.Test_04();
+}
+
+PUSH Test_05
+{
+	PlusContainer.Test_05();
+}
+
+PUSH Test_06
+{
+	PlusContainer.Test_06();
 }
 
 Function Main()

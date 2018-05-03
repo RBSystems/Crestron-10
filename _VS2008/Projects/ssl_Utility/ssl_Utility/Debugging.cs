@@ -6,7 +6,7 @@ namespace ssl_Utility
 {    
     public static class DebugHelper
     {
-        public static ActionStringDelegate PrintTraceCallback { get; set; }
+        public static ActionStringDelegate PrintTraceDelegate { get; set; }
 
         private static Stopwatch stopWatch = new Stopwatch();
 
@@ -14,12 +14,12 @@ namespace ssl_Utility
 
         public static void PrintDebugTrace(string _message)
         {
-            if (PrintTraceCallback != null && DebugTraceMode) PrintTraceCallback("S# (debug): " + _message);
+            if (PrintTraceDelegate != null && DebugTraceMode) PrintTraceDelegate("S# (debug): " + _message);
         }
         
         public static void PrintTrace(string _message)
         {
-            if (PrintTraceCallback != null) PrintTraceCallback("S#: " + _message);
+            if (PrintTraceDelegate != null) PrintTraceDelegate("S#: " + _message);
         }
 
         public static void PrintDate()

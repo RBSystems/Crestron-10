@@ -73,26 +73,25 @@ STRING_OUTPUT sArrOut_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE]; // {3}
 
 // Parameters
 
-// INTEGER_PARAMETER
+INTEGER_PARAMETER pModuleId;
 // STRING_PARAMETER
 
 // Parameter Properietes
 
-/*
-#BEGIN_PARAMETER_PROPERTIES pVariable
-   propValidUnits = unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
-   propDefaultUnit = unitString or unitDecimal or unitHex or unitPercent or unitCharacter or unitTime or unitTicks;
-   propList = { "value","label" },{ "value","label" };
-   propBounds = lower_bound , upper_bound;
-   propDefaultValue = default_value or "default_value";
-   propShortDescription = "status_bar_hint_text";
+
+#BEGIN_PARAMETER_PROPERTIES pModuleId
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 0d , 999d;
+   propDefaultValue = 0d;
+   propShortDescription = "Unique module Id";
 #END_PARAMETER_PROPERTIES
-*/
+
 
 // Structure Definitions
 
-// Global Variables
-Module thisModule;
+// Global Variable
+PlusModule thisModule;
 
 // Delegates
 
@@ -204,6 +203,7 @@ FUNCTION InitializeModule()
 	thisModule.CreateStringOutputArray(3, 10);
 
 	RegisterDelegates();
+	PlusContainer.AddModule(pModuleId, thisModule);
 }
 
 // Event Handlers

@@ -25,7 +25,6 @@ namespace ssl_Utility
         protected virtual void OnValueChanged()
         {
             if (ValueChanged != null) ValueChanged(this, EventArgs.Empty);
-            DebugHelper.PrintDebugTrace("Signal changed: Type = " + this.GetType().ToString() + " | Index = " + this.Index );
         }
     }
 
@@ -49,16 +48,10 @@ namespace ssl_Utility
         {
             return _value.ToString();
         }
-
-        protected override void OnValueChanged()
-        {
-            base.OnValueChanged();
-            DebugHelper.PrintDebugTrace("DigitalSignal changed: Type = " + this.GetType().ToString() + " | Value = " + this.Value);
-        }
     }
 
     public class DigitalInputSignal : DigitalSignal
-    {
+    {   
         private DigitalInputSignalArray _array;
 
         public DigitalInputSignalArray Array { get { return _array; } }
@@ -80,12 +73,15 @@ namespace ssl_Utility
         protected override void OnValueChanged()
         {
             base.OnValueChanged();
-            DebugHelper.PrintDebugTrace("DigitalInputSignal changed: Type = " + this.GetType().ToString() + " | ArrayId = " + this.Array.Index);
+            DebugHelper.PrintDebugTrace("DigitalInput changed: ArrayId = " + this.Array.Index + " | SignalId = " + this.Index + " | Value = " + this.Value);
         }
     }
 
     public class DigitalOutputSignal : DigitalSignal
     {
+        private const int DEFAULT_PULSE_TIME = 10;
+        private bool _isPulsing;
+        
         private DigitalOutputSignalArray _array;
 
         public DigitalOutputSignalArray Array { get { return _array; } }
@@ -100,6 +96,22 @@ namespace ssl_Utility
         {
             _value = value;
             _array.Send(this);
+        }
+
+        public void Pulse()
+        {
+            Pulse(DEFAULT_PULSE_TIME);
+        }
+
+        public void Pulse(int pulseTimeMs)
+        {
+            if (_isPulsing) return;
+
+            _isPulsing = true;
+            SendValue(true);
+            CrestronEnvironment.Sleep(pulseTimeMs);
+            SendValue(false);
+            _isPulsing = false;
         }
     }
 
@@ -145,6 +157,12 @@ namespace ssl_Utility
 
             _value = value;
             OnValueChanged();
+        }
+
+        protected override void OnValueChanged()
+        {
+            base.OnValueChanged();
+            DebugHelper.PrintDebugTrace("AnalogInput changed: ArrayId = " + this.Array.Index + " | SignalId = " + this.Index + " | Value = " + this.Value);
         }
     }
 
@@ -209,6 +227,12 @@ namespace ssl_Utility
 
             _value = value;
             OnValueChanged();
+        }
+
+        protected override void OnValueChanged()
+        {
+            base.OnValueChanged();
+            DebugHelper.PrintDebugTrace("StringInput changed: ArrayId = " + this.Array.Index + " | SignalId = " + this.Index + " | Value = " + this.Value);
         }
     }
 

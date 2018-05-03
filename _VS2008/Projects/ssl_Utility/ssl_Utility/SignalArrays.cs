@@ -9,13 +9,13 @@ namespace ssl_Utility
 {
     public class SignalArray
     {
-        protected Module _module;
+        protected PlusModule _module;
         protected ushort _index;
 
-        public Module Module { get { return _module; } }
+        public PlusModule Module { get { return _module; } }
         public ushort Index { get { return _index; } }
 
-        public SignalArray(Module module, ushort index)
+        public SignalArray(PlusModule module, ushort index)
         {
             _module = module;
             _index = index;
@@ -27,7 +27,9 @@ namespace ssl_Utility
     {
         private DigitalInputSignal[] _signals;
 
-        public DigitalInputSignalArray(Module module, ushort index, ushort signalCount)
+        public DigitalInputSignal[] Signals { get { return _signals; } }
+
+        public DigitalInputSignalArray(PlusModule module, ushort index, ushort signalCount)
             : base(module, index)
         {
             _signals = new DigitalInputSignal[signalCount + 1];
@@ -51,7 +53,9 @@ namespace ssl_Utility
     {
         private DigitalOutputSignal[] _signals;
 
-        public DigitalOutputSignalArray(Module module, ushort index, ushort signalCount)
+        public DigitalOutputSignal[] Signals { get { return _signals; } }
+
+        public DigitalOutputSignalArray(PlusModule module, ushort index, ushort signalCount)
             : base(module, index)
         {
             _signals = new DigitalOutputSignal[signalCount + 1];
@@ -69,7 +73,9 @@ namespace ssl_Utility
     {
         private AnalogInputSignal[] _signals;
 
-        public AnalogInputSignalArray(Module module, ushort index, ushort signalCount)
+        public AnalogInputSignal[] Signals { get { return _signals; } }
+
+        public AnalogInputSignalArray(PlusModule module, ushort index, ushort signalCount)
             : base(module, index)
         {
             _signals = new AnalogInputSignal[signalCount + 1];
@@ -93,7 +99,9 @@ namespace ssl_Utility
     {
         private AnalogOutputSignal[] _signals;
 
-        public AnalogOutputSignalArray(Module module, ushort index, ushort signalCount)
+        public AnalogOutputSignal[] Signals { get { return _signals; } }
+
+        public AnalogOutputSignalArray(PlusModule module, ushort index, ushort signalCount)
             : base(module, index)
         {
             _signals = new AnalogOutputSignal[signalCount + 1];
@@ -111,7 +119,9 @@ namespace ssl_Utility
     {
         private StringInputSignal[] _signals;
 
-        public StringInputSignalArray(Module module, ushort index, ushort signalCount)
+        public StringInputSignal[] Signals { get { return _signals; } }
+
+        public StringInputSignalArray(PlusModule module, ushort index, ushort signalCount)
             : base(module, index)
         {
             _signals = new StringInputSignal[signalCount + 1];
@@ -135,7 +145,9 @@ namespace ssl_Utility
     {
         private StringOutputSignal[] _signals;
 
-        public StringOutputSignalArray(Module module, ushort index, ushort signalCount)
+        public StringOutputSignal[] Signals { get { return _signals; } }
+
+        public StringOutputSignalArray(PlusModule module, ushort index, ushort signalCount)
             : base(module, index)
         {
             _signals = new StringOutputSignal[signalCount + 1];
