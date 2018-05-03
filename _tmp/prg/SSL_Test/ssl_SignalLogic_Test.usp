@@ -16,38 +16,60 @@
 // Inputs
 
 DIGITAL_INPUT dIn_01, dIn_02, dIn_03, dIn_04, dIn_05; // {0}
+DIGITAL_INPUT _SKIP_;
 DIGITAL_INPUT dArrIn_01[MAX_ARRAY_SIZE]; // {1}
+DIGITAL_INPUT _SKIP_;
 DIGITAL_INPUT dArrIn_02[MAX_ARRAY_SIZE]; // {2}
-DIGITAL_INPUT dArrIn_03[MAX_ARRAY_SIZE]; // {3}
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT dArrIn_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE]; // {3}
+DIGITAL_INPUT _SKIP_;
 
 ANALOG_INPUT aIn_01, aIn_02, aIn_03, aIn_04, aIn_05; // {0}
+ANALOG_INPUT _SKIP_;
 STRING_INPUT sIn_01[STRING_SIZE], sIn_02[STRING_SIZE], sIn_03[STRING_SIZE], sIn_04[STRING_SIZE], sIn_05[STRING_SIZE]; // {0}
+ANALOG_INPUT _SKIP_;
 
 ANALOG_INPUT aArrIn_01[MAX_ARRAY_SIZE]; // {1}
+ANALOG_INPUT _SKIP_;
 ANALOG_INPUT aArrIn_02[MAX_ARRAY_SIZE]; // {2}
-ANALOG_INPUT aArrIn_03[MAX_ARRAY_SIZE]; // {3}
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT aArrIn_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE]; // {3}
+ANALOG_INPUT _SKIP_;
 
 STRING_INPUT sArrIn_01[MAX_ARRAY_SIZE][STRING_SIZE]; // {1}
+ANALOG_INPUT _SKIP_;
 STRING_INPUT sArrIn_02[MAX_ARRAY_SIZE][STRING_SIZE]; // {2}
-STRING_INPUT sArrIn_03[MAX_ARRAY_SIZE][STRING_SIZE]; // {3}
+ANALOG_INPUT _SKIP_;
+STRING_INPUT sArrIn_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE][STRING_SIZE]; // {3}
 
 // Outputs
 
 DIGITAL_OUTPUT dOut_01, dOut_02, dOut_03, dOut_04, dOut_05; // {0}
+DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT dArrOut_01[MAX_ARRAY_SIZE]; // {1}
+DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT dArrOut_02[MAX_ARRAY_SIZE]; // {2}
-DIGITAL_OUTPUT dArrOut_03[MAX_ARRAY_SIZE]; // {3}
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT dArrOut_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE]; // {3}
+DIGITAL_OUTPUT _SKIP_;
 
 ANALOG_OUTPUT aOut_01, aOut_02, aOut_03, aOut_04, aOut_05; // {0}
+ANALOG_OUTPUT _SKIP_;
 STRING_OUTPUT sOut_01, sOut_02, sOut_03, sOut_04, sOut_05; // {0}
+ANALOG_OUTPUT _SKIP_;
 
 ANALOG_OUTPUT aArrOut_01[MAX_ARRAY_SIZE]; // {1}
+ANALOG_OUTPUT _SKIP_;
 ANALOG_OUTPUT aArrOut_02[MAX_ARRAY_SIZE]; // {2}
-ANALOG_OUTPUT aArrOut_03[MAX_ARRAY_SIZE]; // {3}
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT aArrOut_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE]; // {3}
+ANALOG_OUTPUT _SKIP_;
 
 STRING_OUTPUT sArrOut_01[MAX_ARRAY_SIZE]; // {1}
+ANALOG_OUTPUT _SKIP_;
 STRING_OUTPUT sArrOut_02[MAX_ARRAY_SIZE]; // {2}
-STRING_OUTPUT sArrOut_03[MAX_ARRAY_SIZE]; // {3}
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT sArrOut_03[MAX_ARRAY_SIZE, MAX_ARRAY_SIZE]; // {3}
 
 // Parameters
 
@@ -70,21 +92,289 @@ STRING_OUTPUT sArrOut_03[MAX_ARRAY_SIZE]; // {3}
 // Structure Definitions
 
 // Global Variables
-Module module;
+Module thisModule;
+
+// Delegates
+
+CALLBACK FUNCTION SendDigitalOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
+{
+	switch (_arrayIndex)
+	{
+		case (0): switch (_signalIndex)
+		{
+			case (1): dOut_01 = _signalValue;
+			case (2): dOut_02 = _signalValue;
+			case (3): dOut_03 = _signalValue;
+			case (4): dOut_04 = _signalValue;
+			case (5): dOut_05 = _signalValue;
+		}
+
+		case (1): dArrOut_01[_signalIndex] = _signalValue;
+		case (2): dArrOut_02[_signalIndex] = _signalValue;
+		case (3): dArrOut_03[_signalIndex] = _signalValue;
+	}
+}
+
+CALLBACK FUNCTION SendAnalogOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
+{
+	switch (_arrayIndex)
+	{
+		case (0): switch (_signalIndex)
+		{
+			case (1): aOut_01 = _signalValue;
+			case (2): aOut_02 = _signalValue;
+			case (3): aOut_03 = _signalValue;
+			case (4): aOut_04 = _signalValue;
+			case (5): aOut_05 = _signalValue;
+		}
+
+		case (1): aArrOut_01[_signalIndex] = _signalValue;
+		case (2): aArrOut_02[_signalIndex] = _signalValue;
+		case (3): aArrOut_03[_signalIndex] = _signalValue;
+	}
+}
+
+CALLBACK FUNCTION SendStringOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, STRING _signalValue)
+{
+	switch (_arrayIndex)
+	{
+		case (0): switch (_signalIndex)
+		{
+			case (1): sOut_01 = _signalValue;
+			case (2): sOut_02 = _signalValue;
+			case (3): sOut_03 = _signalValue;
+			case (4): sOut_04 = _signalValue;
+			case (5): sOut_05 = _signalValue;
+		}
+
+		case (1): sArrOut_01[_signalIndex] = _signalValue;
+		case (2): sArrOut_02[_signalIndex] = _signalValue;
+		case (3): sArrOut_03[_signalIndex] = _signalValue;
+	}
+}
 
 // Functions
 
+FUNCTION RegisterDelegates()
+{
+	RegisterDelegate(thisModule, SendDigitalOutputDelegate, SendDigitalOutputCallback);
+	RegisterDelegate(thisModule, SendAnalogOutputDelegate, SendAnalogOutputCallback);
+	RegisterDelegate(thisModule, SendStringOutputDelegate, SendStringOutputCallback);
+}
+
 FUNCTION InitializeModule()
 {
-	
+	thisModule.SetDigitalInputArrayCount(4);
+	thisModule.SetAnalogInputArrayCount(4);
+	thisModule.SetStringInputArrayCount(4);
+
+    thisModule.SetDigitalOutputArrayCount(4);
+	thisModule.SetAnalogOutputArrayCount(4);
+	thisModule.SetStringOutputArrayCount(4);
+
+
+	thisModule.CreateDigitalInputArray(0, 5);
+	thisModule.CreateDigitalInputArray(1, 10);
+	thisModule.CreateDigitalInputArray(2, 10);
+	thisModule.CreateDigitalInputArray(3, 10);
+
+	thisModule.CreateAnalogInputArray(0, 5);
+	thisModule.CreateAnalogInputArray(1, 10);
+	thisModule.CreateAnalogInputArray(2, 10);
+	thisModule.CreateAnalogInputArray(3, 10);
+
+	thisModule.CreateStringInputArray(0, 5);
+	thisModule.CreateStringInputArray(1, 10);
+	thisModule.CreateStringInputArray(2, 10);
+	thisModule.CreateStringInputArray(3, 10);
+
+	thisModule.CreateDigitalOutputArray(0, 5);
+	thisModule.CreateDigitalOutputArray(1, 10);
+	thisModule.CreateDigitalOutputArray(2, 10);
+	thisModule.CreateDigitalOutputArray(3, 10);
+
+	thisModule.CreateAnalogOutputArray(0, 5);
+	thisModule.CreateAnalogOutputArray(1, 10);
+	thisModule.CreateAnalogOutputArray(2, 10);
+	thisModule.CreateAnalogOutputArray(3, 10);
+
+	thisModule.CreateStringOutputArray(0, 5);
+	thisModule.CreateStringOutputArray(1, 10);
+	thisModule.CreateStringOutputArray(2, 10);
+	thisModule.CreateStringOutputArray(3, 10);
+
+	RegisterDelegates();
 }
 
 // Event Handlers
+
+/* Single Digital Inputs */
+CHANGE dIn_01
+{
+	thisModule.UpdateDigitalInput(0, 1, dIn_01);
+}
+
+CHANGE dIn_02
+{
+	thisModule.UpdateDigitalInput(0, 2, dIn_02);
+}
+
+CHANGE dIn_03
+{
+	thisModule.UpdateDigitalInput(0, 3, dIn_03);
+}
+
+CHANGE dIn_04
+{
+	thisModule.UpdateDigitalInput(0, 4, dIn_04);
+}
+
+CHANGE dIn_05
+{
+	thisModule.UpdateDigitalInput(0, 5, dIn_05);
+}
+/* ================= */
+
+/* Single Analog Inputs */
+CHANGE aIn_01
+{
+	thisModule.UpdateAnalogInput(0, 1, aIn_01);
+}
+
+CHANGE aIn_02
+{
+	thisModule.UpdateAnalogInput(0, 2, aIn_02);
+}
+
+CHANGE aIn_03
+{
+	thisModule.UpdateAnalogInput(0, 3, aIn_03);
+}
+
+CHANGE aIn_04
+{
+	thisModule.UpdateAnalogInput(0, 4, aIn_04);
+}
+
+CHANGE aIn_05
+{
+	thisModule.UpdateAnalogInput(0, 5, aIn_05);
+}
+/* ================= */
+
+/* Single String Inputs */
+CHANGE sIn_01
+{
+	thisModule.UpdateStringInput(0, 1, sIn_01);
+}
+
+CHANGE sIn_02
+{
+	thisModule.UpdateStringInput(0, 2, sIn_02);
+}
+
+CHANGE sIn_03
+{
+	thisModule.UpdateStringInput(0, 3, sIn_03);
+}
+
+CHANGE sIn_04
+{
+	thisModule.UpdateStringInput(0, 4, sIn_04);
+}
+
+CHANGE sIn_05
+{
+	thisModule.UpdateStringInput(0, 5, sIn_05);
+}
+/* ================= */
+
+
+
+
+/* Digital Array Inputs */
+CHANGE dArrIn_01
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateDigitalInput(1, i, dArrIn_01[i]);
+}
+
+CHANGE dArrIn_02
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateDigitalInput(2, i, dArrIn_02[i]);
+}
+
+CHANGE dArrIn_03
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateDigitalInput(3, i, dArrIn_03[i]);
+}
+/* ================= */
+
+/* Analog Array Inputs */
+CHANGE aArrIn_01
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateAnalogInput(1, i, aArrIn_01[i]);
+}
+
+CHANGE aArrIn_02
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateAnalogInput(2, i, aArrIn_02[i]);
+}
+
+CHANGE aArrIn_03
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateAnalogInput(3, i, aArrIn_03[i]);
+}
+/* ================= */
+
+/* String Array Inputs */
+CHANGE sArrIn_01
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateStringInput(1, i, sArrIn_01[i]);
+}
+
+CHANGE sArrIn_02
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateStringInput(2, i, sArrIn_02[i]);
+}
+
+CHANGE sArrIn_03
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	thisModule.UpdateStringInput(3, i, sArrIn_03[i]);
+}
+/* ================= */
 
 // Main Function
 
 Function Main()
 {
+	InitializeModule();
 	WaitForInitializationComplete();
 	// TODO Init
 }
