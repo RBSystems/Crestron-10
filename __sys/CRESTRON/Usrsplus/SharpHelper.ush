@@ -20,7 +20,7 @@
   Name=SharpHelper
   SmplCName=SharpHelper.usp
   Code=1
-  SysRev5=3.090
+  SysRev5=4.000
   SMWRev=3.00.00
   InputCue1=Test_01
   InputSigType1=Digital
@@ -71,6 +71,7 @@
   FileName=SharpHelper.ush
   SIMPLPlusModuleEncoding=0
   clz1=ssl_Utility
+  clz2=ssl_Residence
 [END]
 [BEGIN]
   ObjTp=Dp

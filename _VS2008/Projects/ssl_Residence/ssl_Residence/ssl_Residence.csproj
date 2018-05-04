@@ -64,8 +64,13 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AreaModules.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="DeviceModules.cs" />
     <Compile Include="Residence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Zone.cs" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\ControlSystem.cfg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />

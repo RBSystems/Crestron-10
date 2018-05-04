@@ -1,0 +1,112 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "SSL SwitchLightsModule"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT STRING_SIZE 30
+#DEFINE_CONSTANT MAX_NUMBER_OF_LIGHTS 10
+
+// Include Libraries
+#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
+#USER_SIMPLSHARP_LIBRARY "ssl_Residence"
+
+// Inputs
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT light_On_FB[MAX_NUMBER_OF_LIGHTS]; // {0}
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT light_TOG[MAX_NUMBER_OF_LIGHTS, MAX_NUMBER_OF_LIGHTS];
+
+// Outputs
+DIGITAL_OUTPUT _SKIP_, _SKIP_;
+DIGITAL_OUTPUT light_On[MAX_NUMBER_OF_LIGHTS]; // {0}
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT light_Off[MAX_NUMBER_OF_LIGHTS, MAX_NUMBER_OF_LIGHTS]; // {1}
+
+// Parameters
+INTEGER_PARAMETER pModuleId;
+INTEGER_PARAMETER _SKIP_;
+INTEGER_PARAMETER pLightId[MAX_NUMBER_OF_LIGHTS];
+INTEGER_PARAMETER _SKIP_;
+STRING_PARAMETER pLightName[MAX_NUMBER_OF_LIGHTS, MAX_NUMBER_OF_LIGHTS][STRING_SIZE];
+
+// Parameter Properietes
+
+
+#BEGIN_PARAMETER_PROPERTIES pModuleId, pLightId
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , 999d;
+   propShortDescription = "Unique light Id";
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+
+// Global Variable
+PlusModule masterModule;
+SwitchLightsModule switchLightsModule;
+
+// Delegates
+
+CALLBACK FUNCTION SendDigitalOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
+{
+	switch (_arrayIndex)
+	{
+		case (0): light_On[_signalIndex] = _signalValue;
+		case (1): light_Off[_signalIndex] = _signalValue;
+	}
+}
+
+// Functions
+
+FUNCTION RegisterDelegates()
+{
+	RegisterDelegate(masterModule, SendDigitalOutputDelegate, SendDigitalOutputCallback);
+}
+
+FUNCTION AddLights()
+{
+	INTEGER i;
+
+	for (i = 1 to MAX_NUMBER_OF_LIGHTS) switchLightsModule.AddLight(i, pLightId[i], pLightName[i]);
+}
+
+FUNCTION Initialize()
+{
+	RegisterDelegates();
+    masterModule.Register(pModuleId);
+	switchLightsModule.SetPlusModule(pModuleId);
+	switchLightsModule.SetNumberOfLights(MAX_NUMBER_OF_LIGHTS);
+	AddLights();
+}
+
+// Event Handlers
+
+CHANGE light_On_FB
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	masterModule.UpdateDigitalInput(0, i, light_On_FB[i]);
+}
+
+PUSH light_TOG
+{
+	INTEGER i;
+
+	i = GetLastModifiedArrayIndex();
+	switchLightsModule.ToggleLight(pLightId[i]);
+}
+
+// Main Function
+
+Function Main()
+{
+	Initialize();
+	WaitForInitializationComplete();
+	// TODO Init
+}

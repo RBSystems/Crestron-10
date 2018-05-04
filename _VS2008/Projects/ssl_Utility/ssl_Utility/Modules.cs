@@ -9,28 +9,36 @@ namespace ssl_Utility
 {
     public class PlusModule
     {
+        public ushort Id { get; private set; }
+        
         public ActionUshortUshortUshortDelegate SendDigitalOutputDelegate { get; set; }
         public ActionUshortUshortUshortDelegate SendAnalogOutputDelegate { get; set; }
         public ActionUshortUshortStringDelegate SendStringOutputDelegate { get; set; }
-        
-        private ushort _digitalInputArrayCount;
-        private ushort _analogInputArrayCount;
-        private ushort _stringInputArrayCount;
 
-        private ushort _digitalOutputArrayCount;
-        private ushort _analogOutputArrayCount;
-        private ushort _stringOutputArrayCount;
+        protected ushort _digitalInputArrayCount;
+        protected ushort _analogInputArrayCount;
+        protected ushort _stringInputArrayCount;
 
-        private DigitalInputSignalArray[] _digitalInputArrays;
-        private AnalogInputSignalArray[] _analogInputArrays;
-        private StringInputSignalArray[] _stringInputArrays;
+        protected ushort _digitalOutputArrayCount;
+        protected ushort _analogOutputArrayCount;
+        protected ushort _stringOutputArrayCount;
 
-        private DigitalOutputSignalArray[] _digitalOutputArrays;
-        private AnalogOutputSignalArray[] _analogOutputArrays;
-        private StringOutputSignalArray[] _stringOutputArrays;        
+        protected DigitalInputSignalArray[] _digitalInputArrays;
+        protected AnalogInputSignalArray[] _analogInputArrays;
+        protected StringInputSignalArray[] _stringInputArrays;
+
+        protected DigitalOutputSignalArray[] _digitalOutputArrays;
+        protected AnalogOutputSignalArray[] _analogOutputArrays;
+        protected StringOutputSignalArray[] _stringOutputArrays;
 
         public PlusModule()
         {
+        }
+
+        public void Register(ushort id)
+        {
+            Id = id;
+            PlusContainer.AddModule(this);
         }
 
         #region Arrays Count Setters
@@ -239,4 +247,6 @@ namespace ssl_Utility
 
         #endregion
     }
+
+
 }
