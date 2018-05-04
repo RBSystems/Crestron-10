@@ -11,15 +11,6 @@ namespace ssl_Residence
         
         public static ushort IsInitialized { get; private set; }
 
-        public static HeatingLoop[] HeatingLoopArray;
-
-        public static void CreateHeatingLoopArray()
-        {
-            HeatingLoopArray = new HeatingLoop[HeatingLoop.COUNT + 1];
-
-            for (ushort id = 0; id <= HeatingLoop.COUNT; id++) HeatingLoopArray[id] = new HeatingLoop(id);
-        }
-
         private static void OnResidenceInitialized()
         {
             if (ResidenceInitialized != null) ResidenceInitialized(new Dummy(), EventArgs.Empty);
@@ -29,7 +20,6 @@ namespace ssl_Residence
         {
             if (IsInitialized == 1) return;
             
-            CreateHeatingLoopArray();
             IsInitialized = 1;
             OnResidenceInitialized();
         }
