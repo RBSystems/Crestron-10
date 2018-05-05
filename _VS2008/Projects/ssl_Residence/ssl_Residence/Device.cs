@@ -7,28 +7,14 @@ using ssl_Utility;
 
 namespace ssl_Residence
 {
-    public interface IPowerable
-    {
-        bool IsOn { get; }
-
-        void On();
-        void Off();
-        void Toggle();
-    }
 
     public class Device
     {
         public String Name { get; protected set; }
-        public Zone Location { get; protected set; }
 
         public Device()
         {
             Name = "";
-        }
-
-        public void SetLocation(Zone location)
-        {
-            Location = location;
         }
 
         public void SetName(String name)
@@ -37,17 +23,15 @@ namespace ssl_Residence
         }
     }
 
-    public class Light : Device, IPowerable
+    public class Light : Device
     {
-        protected bool _isOn;
-        
         public ushort Id { get; private set; }
-        public bool IsOn { get { return _isOn; } }
-
+        public bool IsOn {get; protected set;}
+        
         public Light(ushort id)
         {
             Id = id;
-            _isOn = false;
+            IsOn = false;
         }
 
         public virtual void On()
@@ -60,65 +44,66 @@ namespace ssl_Residence
 
         public void Toggle()
         {
-            if (_isOn) Off();
+            if (IsOn) Off();
             else On();
         }
     }
 
     public class SwitchLight : Light
     {
-        private DigitalInputSignal _powerFBSignal;
-        private DigitalOutputSignal _powerOnSignal;
-        private DigitalOutputSignal _powerOffSignal;
+        private SwitchLoad _load;
 
-        public SwitchLight(ushort id, DigitalInputSignal powerFBSignal, DigitalOutputSignal powerOnSignal, DigitalOutputSignal powerOffSignal)
+        public SwitchLight(ushort id, SwitchLoad load)
             : base(id)
         {
-            _powerFBSignal = powerFBSignal;
-            _powerOnSignal = powerOnSignal;
-            _powerOffSignal = powerOffSignal;
-
-            _powerFBSignal.ValueChanged += new EventHandler(PowerFBSignalChanged);
+            _load = load;
+            _load.Changed += new EventHandler(LoadChanged);
         }
 
-        private void PowerFBSignalChanged(object sender, EventArgs e)
+        private void LoadChanged(object sender, EventArgs e)
         {
-            _isOn = _powerFBSignal.Value;
-            DebugHelper.PrintDebugTrace("SwitchLight nr " + Id + " is " + (_isOn?"ON":"OFF"));
+            IsOn = _load.IsOn;
+            //DebugHelper.PrintDebugTrace("SwitchLight nr " + Id + " (" + Name + ") is " + (IsOn?"ON":"OFF"));
         }
         
         public override void On()
         {
-            _powerOnSignal.Pulse();
+            _load.On();
         }
 
         public override void Off()
         {
-            _powerOffSignal.Pulse();
+            _load.Off();
+        }
+    }
+
+    public class ElectricalOutlet : SwitchLight
+    {
+        public ElectricalOutlet(ushort id, SwitchLoad load)
+            : base(id, load)
+        {
         }
     }
 
     public class DimLight : Light
     {
-        private AnalogInputSignal _levelFBSignal;
-        private AnalogOutputSignal _levelSignal;
+        private DimLoad _load;
         private ushort _maxLevel = ushort.MaxValue;
 
         public ushort Level { get; private set; }
         
-        public DimLight(ushort id, AnalogInputSignal levelFBSignal, AnalogOutputSignal levelSignal)
+        public DimLight(ushort id, DimLoad load)
             : base(id)
         {
-            _levelFBSignal = levelFBSignal;
-            _levelSignal = levelSignal;
+            _load = load;
 
-            _levelFBSignal.ValueChanged += new EventHandler(LevelFBSignalChanged);
+            _load.Changed += new EventHandler(LoadChanged);
         }
 
-        void LevelFBSignalChanged(object sender, EventArgs e)
+        private void LoadChanged(object sender, EventArgs e)
         {
-            _isOn = _levelFBSignal.ToDigital();
-            Level = _levelFBSignal.Value;
+            IsOn = _load.IsOn;
+            Level = _load.Level;
         }
 
         public void SetMaxLevel(ushort maxLevel)
@@ -128,18 +113,32 @@ namespace ssl_Residence
 
         public override void On()
         {
-            _levelSignal.SendValue(_maxLevel);
+            _load.On();
         }
 
         public override void Off()
         {
-            _levelSignal.SendValue(0);
+            _load.Off();
         }
 
         public void SetLevel(ushort level)
         {
-            if (level > _maxLevel) _levelSignal.SendValue(_maxLevel);
-            else _levelSignal.SendValue(level);
+            _load.SetLevel(level);
+        }
+
+        public void Raise()
+        {
+            _load.Raise();
+        }
+
+        public void Lower()
+        {
+            _load.Lower();
+        }
+
+        public void Stop()
+        {
+            _load.Stop();
         }
     }
 }

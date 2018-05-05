@@ -67,6 +67,7 @@
     <Compile Include="AreaModules.cs" />
     <Compile Include="Device.cs" />
     <Compile Include="DeviceModules.cs" />
+    <Compile Include="Loads.cs" />
     <Compile Include="Residence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Zone.cs" />

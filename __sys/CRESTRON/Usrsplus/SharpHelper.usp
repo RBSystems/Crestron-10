@@ -42,17 +42,17 @@ PUSH Test_03
 
 PUSH Test_04
 {
-	//PlusContainer.Test_04();
+	Residence.Test_04();
 }
 
 PUSH Test_05
 {
-	//PlusContainer.Test_05();
+	Residence.Test_05();
 }
 
-PUSH Test_06
+RELEASE Test_04, Test_05
 {
-	//PlusContainer.Test_06();
+	Residence.Test_06();
 }
 
 Function Main()

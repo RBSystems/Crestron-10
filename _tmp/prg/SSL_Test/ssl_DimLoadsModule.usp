@@ -1,6 +1,6 @@
 //Compiler Directives
 #CATEGORY "41" // Remote System Interface
-#SYMBOL_NAME "SSL switchLoadsModule"
+#SYMBOL_NAME "SSL DimLoadsModule"
 #HINT ""
 #DEFAULT_VOLATILE
 #ENABLE_STACK_CHECKING
@@ -16,13 +16,15 @@
 
 // Inputs
 DIGITAL_INPUT _SKIP_, _SKIP_;
-DIGITAL_INPUT load_On_FB[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {0}
+ANALOG_INPUT load_Level_FB[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {0}
 
 // Outputs
 DIGITAL_OUTPUT _SKIP_, _SKIP_;
-DIGITAL_OUTPUT load_On[MAX_NUMBER_OF_LOADS]; // {0}
+DIGITAL_OUTPUT load_Raise[MAX_NUMBER_OF_LOADS]; // {0}
 DIGITAL_OUTPUT _SKIP_;
-DIGITAL_OUTPUT load_Off[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {1}
+DIGITAL_OUTPUT load_Lower[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {1}
+DIGITAL_OUTPUT _SKIP_;
+ANALOG_OUTPUT load_Level[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {0}
 
 // Parameters
 INTEGER_PARAMETER pModuleId;
@@ -45,7 +47,7 @@ STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE
 #BEGIN_PARAMETER_PROPERTIES pLoadType
    propValidUnits = unitDecimal;
    propDefaultUnit = unitDecimal;
-   propList = { 1d,"Lights" },{ 2d,"Electrical Outlets" };
+   propList = { 1d,"Lights" };
    propShortDescription = "Type of load";
 #END_PARAMETER_PROPERTIES
 
@@ -55,7 +57,7 @@ STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE
 
 // Global Variable
 PlusModule masterModule;
-SwitchLoadsModule switchLoadsModule;
+DimLoadsModule dimLoadsModule;
 
 // Delegates
 
@@ -63,36 +65,37 @@ CALLBACK FUNCTION SendDigitalOutputCallback(INTEGER _arrayIndex, INTEGER _signal
 {
 	switch (_arrayIndex)
 	{
-		case (0): load_On[_signalIndex] = _signalValue;
-		case (1): load_Off[_signalIndex] = _signalValue;
+		case (0): load_Raise[_signalIndex] = _signalValue;
+		case (1): load_Lower[_signalIndex] = _signalValue;
 	}
 }
+
+CALLBACK FUNCTION SendAnalogOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
+{
+	switch (_arrayIndex)
+	{
+		case (0): load_Level[_signalIndex] = _signalValue;
+	}
+}
+
 
 // Functions
 
 FUNCTION RegisterDelegates()
 {
 	RegisterDelegate(masterModule, SendDigitalOutputDelegate, SendDigitalOutputCallback);
+	RegisterDelegate(masterModule, SendAnalogOutputDelegate, SendAnalogOutputCallback);
+
 }
-
-
 
 FUNCTION AddLights()
 {
 	INTEGER i;
 
 	for (i = 1 to MAX_NUMBER_OF_LOADS)
-		if (IsSignalDefined(load_On[i]))
-			switchLoadsModule.AddLight(i, pLoadId[i], pLoadName[i]);
-}
-
-FUNCTION AddElectricalOutlets()
-{
-	INTEGER i;
-
-	for (i = 1 to MAX_NUMBER_OF_LOADS)
-		if (IsSignalDefined(load_On[i]))
-			switchLoadsModule.AddElectricalOutlet(i, pLoadId[i], pLoadName[i]);
+		if (IsSignalDefined(load_Level[i]))
+			dimLoadsModule.AddLight(i, pLoadId[i], pLoadName[i]);
+			
 }
 
 FUNCTION AddLoads()
@@ -100,7 +103,6 @@ FUNCTION AddLoads()
 	switch (pLoadType)
 	{
 		case (1): AddLights();
-		case (2): AddElectricalOutlets();
 	}
 }
 
@@ -108,19 +110,19 @@ FUNCTION Initialize()
 {
 	RegisterDelegates();
     masterModule.Register(pModuleId);
-	switchLoadsModule.SetPlusModule(pModuleId);
-	switchLoadsModule.SetNumberOfLoads(MAX_NUMBER_OF_LOADS);
+	dimLoadsModule.SetPlusModule(pModuleId);
+	dimLoadsModule.SetNumberOfLoads(MAX_NUMBER_OF_LOADS);
 	AddLoads();
 }
 
 // Event Handlers
 
-CHANGE load_On_FB
+CHANGE load_Level_FB
 {
 	INTEGER i;
 
 	i = GetLastModifiedArrayIndex();
-	masterModule.UpdateDigitalInput(0, i, load_On_FB[i]);
+	masterModule.UpdateAnalogInput(0, i, load_Level_FB[i]);
 }
 
 // Main Function
