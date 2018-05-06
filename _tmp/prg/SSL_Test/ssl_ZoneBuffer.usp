@@ -1,0 +1,93 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "ssl_ZoneBuffer"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT MAX_SWITCH_LIGHTS 20
+
+// Include Libraries
+#USER_SIMPLSHARP_LIBRARY "ssl_Utility"
+#USER_SIMPLSHARP_LIBRARY "ssl_Residence"
+
+// Inputs
+
+DIGITAL_INPUT switchLight_TOG[MAX_SWITCH_LIGHTS, MAX_SWITCH_LIGHTS];
+ANALOG_INPUT zoneId#;
+// STRING_INPUT
+// BUFFER_INPUT
+// _SKIP_
+
+// Outputs
+
+// DIGITAL_OUTPUT
+ANALOG_OUTPUT zoneId#_FB;
+// STRING_OUTPUT
+
+// Parameters
+
+// Parameter Properietes
+
+
+// Structure Definitions
+
+// Global Variables
+Zone selectedZone;
+
+// Functions
+
+FUNCTION SelectZone(INTEGER zoneId)
+{
+	if (selectedZone.TryCloneById(zoneId) = 0) return;
+	else zoneId#_FB = zoneId;
+}
+
+/*
+EVENTHANDLER DevicesInitializedHandler(Dummy dummy, EventArgs e)
+{
+	AddDevices();
+}
+*/
+
+
+
+FUNCTION RegisterSharpEvents()
+{
+	//RegisterEvent(Residence, DevicesInitialized, DevicesInitializedHandler);
+}
+
+FUNCTION Initialize()
+{
+	RegisterSharpEvents();
+}
+
+// Event Handlers
+
+PUSH switchLight_TOG
+{
+	INTEGER id;
+	SwitchLight switchLight;
+
+	id = GetLastModifiedArrayIndex() - 1;
+
+	if (zoneId#_FB = 0 || id >= selectedZone.SwitchLightsCount) return;
+
+	switchLight = selectedZone.SwitchLightsArray[id];
+    SwitchLight.Toggle();
+}
+
+CHANGE zoneId#
+{
+	SelectZone(zoneId#);
+}
+
+// Main Function
+
+Function Main()
+{
+	Initialize();
+	WaitForInitializationComplete();
+	// TODO Init
+}

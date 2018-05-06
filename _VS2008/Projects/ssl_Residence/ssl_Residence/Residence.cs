@@ -8,14 +8,20 @@ namespace ssl_Residence
 {
     public static class Residence
     {
+        private static bool _switchLightsInitialized;
+        private static bool _switchOutletsInitialized;
+        private static bool _dimLightsInitialized;
+        private static bool _devicesInitialized;
+        
         public static event EventHandler ResidenceInitialized;
+        public static event EventHandler DevicesInitialized;
         
         public static ushort IsInitialized { get; private set; }
 
         public static Dictionary<ushort, Zone> Zones { get; private set; }
-        public static List<ZoneGroup> ZoneGroups { get; private set; }
+        public static Dictionary<ushort, ZoneGroup> ZoneGroups { get; private set; }
 
-        public static Dictionary<ushort, ElectricalOutlet> ElectricalOutlets { get; private set; }
+        public static Dictionary<ushort, SwitchOutlet> SwitchOutlets { get; private set; }
         public static Dictionary<ushort, SwitchLight> SwitchLights { get; private set; }
         public static Dictionary<ushort, DimLight> DimLights { get; private set; }
 
@@ -24,105 +30,106 @@ namespace ssl_Residence
             if (ResidenceInitialized != null) ResidenceInitialized(new Dummy(), EventArgs.Empty);
         }
 
+        private static void OnDevicesInitialized()
+        {
+            if (DevicesInitialized != null) DevicesInitialized(new Dummy(), EventArgs.Empty);
+        }
+
         public static void Initialize()
         {
             if (IsInitialized == 1) return;
 
-            Zones = new Dictionary<ushort, Zone>();
-            ZoneGroups = new List<ZoneGroup>();
-            ElectricalOutlets = new Dictionary<ushort, ElectricalOutlet>();
             SwitchLights = new Dictionary<ushort, SwitchLight>();
+            SwitchOutlets = new Dictionary<ushort, SwitchOutlet>();
             DimLights = new Dictionary<ushort, DimLight>();
+
+            Zones = new Dictionary<ushort, Zone>();
+            ZoneGroups = new Dictionary<ushort, ZoneGroup>();
 
             IsInitialized = 1;
             OnResidenceInitialized();
         }
 
-        public static void Test_01()
+        public static void AddZone(Zone zone)
         {
-            DimLights[3].On();
-            DimLights[6].On();
-            DimLights[9].On();
+            try
+            {
+                Zones.Add(zone.Id, zone);
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
-        public static void Test_02()
+        public static void SwitchLightsInitialized()
         {
-            DimLights[3].Off();
-            DimLights[6].Off();
-            DimLights[9].Off();
+            _switchLightsInitialized = true;
+            CheckDevicesInitialized();
         }
 
-        public static void Test_03()
+        public static void SwitchOutletsInitialized()
         {
-            DimLights[3].SetLevel(32000);
-            DimLights[6].SetLevel(16000);
-            DimLights[9].SetLevel(8000);
+            _switchOutletsInitialized = true;
+            CheckDevicesInitialized();
         }
 
-        public static void Test_04()
+        public static void DimLightsInitialized()
         {
-            DimLights[3].Raise();
-            DimLights[6].Raise();
-            DimLights[9].Raise();
+            _dimLightsInitialized = true;
+            CheckDevicesInitialized();
         }
 
-        public static void Test_05()
+        private static void CheckDevicesInitialized()
         {
-            DimLights[3].Lower();
-            DimLights[6].Lower();
-            DimLights[9].Lower();
+            if (_devicesInitialized) return;
+
+            if (_switchLightsInitialized && _switchOutletsInitialized && _dimLightsInitialized)
+            {
+                _devicesInitialized = true;
+                OnDevicesInitialized();
+            }
         }
 
-        public static void Test_06()
-        {
-            DimLights[3].Stop();
-            DimLights[6].Stop();
-            DimLights[9].Stop();
-        }
-        
         /*
-        public static  void Test_01()
+        public static ushort IsZoneExisting(ushort zoneId)
         {
-            SwitchLights[2].On();
-            SwitchLights[4].On();
-            SwitchLights[6].On();
-        }
-
-        public static void Test_02()
-        {
-            SwitchLights[2].Off();
-            SwitchLights[4].Off();
-            SwitchLights[6].Off();
-        }
-
-        public static void Test_03()
-        {
-            SwitchLights[1].Toggle();
-            SwitchLights[3].Toggle();
-            SwitchLights[5].Toggle();
-        }
-
-        public static void Test_04()
-        {
-            ElectricalOutlets[2].On();
-            ElectricalOutlets[4].On();
-            ElectricalOutlets[6].On();
-        }
-
-        public static void Test_05()
-        {
-            ElectricalOutlets[2].Off();
-            ElectricalOutlets[4].Off();
-            ElectricalOutlets[6].Off();
-        }
-
-        public static void Test_06()
-        {
-            ElectricalOutlets[1].Toggle();
-            ElectricalOutlets[3].Toggle();
-            ElectricalOutlets[5].Toggle();
+            return (ushort)(Zones.ContainsKey(zoneId)?1:0);
         }
         */
+
+
+
+        public static void Test_01()
+        {
+            Zones[1].AllOn();
+        }
+
+        public static void Test_02()
+        {
+            Zones[1].AllOff();
+        }
+
+        public static void Test_03()
+        {
+            Zones[2].AllOn();
+        }
+
+        public static void Test_04()
+        {
+            Zones[2].AllOff();
+        }
+
+        public static void Test_05()
+        {
+            Zones[3].AllOn();
+        }
+
+        public static void Test_06()
+        {
+            Zones[3].AllOff();
+        }
+        
+       
 
     }
 }

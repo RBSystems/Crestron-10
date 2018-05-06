@@ -200,7 +200,7 @@
   Val1=1d
   Lbl1=Lights
   Val2=2d
-  Lbl2=Electrical Outlets
+  Lbl2=Outlets
 [END]
 [BEGIN]
   ObjTp=Dp

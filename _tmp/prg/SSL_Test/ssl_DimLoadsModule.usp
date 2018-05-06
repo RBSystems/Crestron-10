@@ -95,7 +95,8 @@ FUNCTION AddLights()
 	for (i = 1 to MAX_NUMBER_OF_LOADS)
 		if (IsSignalDefined(load_Level[i]))
 			dimLoadsModule.AddLight(i, pLoadId[i], pLoadName[i]);
-			
+
+	Residence.DimLightsInitialized();
 }
 
 FUNCTION AddLoads()

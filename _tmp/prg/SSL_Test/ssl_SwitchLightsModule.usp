@@ -45,7 +45,7 @@ STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE
 #BEGIN_PARAMETER_PROPERTIES pLoadType
    propValidUnits = unitDecimal;
    propDefaultUnit = unitDecimal;
-   propList = { 1d,"Lights" },{ 2d,"Electrical Outlets" };
+   propList = { 1d,"Lights" },{ 2d,"Outlets" };
    propShortDescription = "Type of load";
 #END_PARAMETER_PROPERTIES
 
@@ -84,15 +84,19 @@ FUNCTION AddLights()
 	for (i = 1 to MAX_NUMBER_OF_LOADS)
 		if (IsSignalDefined(load_On[i]))
 			switchLoadsModule.AddLight(i, pLoadId[i], pLoadName[i]);
+
+	Residence.SwitchLightsInitialized();
 }
 
-FUNCTION AddElectricalOutlets()
+FUNCTION AddOutlets()
 {
 	INTEGER i;
 
 	for (i = 1 to MAX_NUMBER_OF_LOADS)
 		if (IsSignalDefined(load_On[i]))
-			switchLoadsModule.AddElectricalOutlet(i, pLoadId[i], pLoadName[i]);
+			switchLoadsModule.AddSwitchOutlet(i, pLoadId[i], pLoadName[i]);
+
+	Residence.SwitchOutletsInitialized();
 }
 
 FUNCTION AddLoads()
@@ -100,7 +104,7 @@ FUNCTION AddLoads()
 	switch (pLoadType)
 	{
 		case (1): AddLights();
-		case (2): AddElectricalOutlets();
+		case (2): AddOutlets();
 	}
 }
 

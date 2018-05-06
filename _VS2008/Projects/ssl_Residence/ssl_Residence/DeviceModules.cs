@@ -48,13 +48,13 @@ namespace ssl_Residence
             }
         }
 
-        public void AddElectricalOutlet(ushort signalIndex, ushort lightId, String name)
+        public void AddSwitchOutlet(ushort signalIndex, ushort lightId, String name)
         {
             try
             {
-                ElectricalOutlet electricalOutlet = new ElectricalOutlet(lightId, new SwitchLoad(_plusModule.GetDigitalInput(fbArrayIndex, signalIndex), _plusModule.GetDigitalOutput(onArrayIndex, signalIndex), _plusModule.GetDigitalOutput(offArrayIndex, signalIndex)));
-                electricalOutlet.SetName(name);
-                Residence.ElectricalOutlets.Add(lightId, electricalOutlet);
+                SwitchOutlet switchOutlet = new SwitchOutlet(lightId, new SwitchLoad(_plusModule.GetDigitalInput(fbArrayIndex, signalIndex), _plusModule.GetDigitalOutput(onArrayIndex, signalIndex), _plusModule.GetDigitalOutput(offArrayIndex, signalIndex)));
+                switchOutlet.SetName(name);
+                Residence.SwitchOutlets.Add(lightId, switchOutlet);
             }
             catch (Exception ex)
             {

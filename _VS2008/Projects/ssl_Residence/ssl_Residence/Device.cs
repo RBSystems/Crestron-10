@@ -27,6 +27,10 @@ namespace ssl_Residence
     {
         public ushort Id { get; private set; }
         public bool IsOn {get; protected set;}
+
+        public Light()
+        {
+        }
         
         public Light(ushort id)
         {
@@ -53,6 +57,10 @@ namespace ssl_Residence
     {
         private SwitchLoad _load;
 
+        public SwitchLight()
+        {
+        }
+
         public SwitchLight(ushort id, SwitchLoad load)
             : base(id)
         {
@@ -77,9 +85,13 @@ namespace ssl_Residence
         }
     }
 
-    public class ElectricalOutlet : SwitchLight
+    public class SwitchOutlet : SwitchLight
     {
-        public ElectricalOutlet(ushort id, SwitchLoad load)
+        public SwitchOutlet()
+        {
+        }
+
+        public SwitchOutlet(ushort id, SwitchLoad load)
             : base(id, load)
         {
         }
@@ -91,7 +103,11 @@ namespace ssl_Residence
         private ushort _maxLevel = ushort.MaxValue;
 
         public ushort Level { get; private set; }
-        
+
+        public DimLight()
+        {
+        }
+
         public DimLight(ushort id, DimLoad load)
             : base(id)
         {
