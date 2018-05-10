@@ -4,10 +4,13 @@ Pass 		: 12345678
 Brama		:	10.0.100.1
 Maska		:	255.255.252.0
 
-DMPS		:	10.0.100.245
-Sony		:	10.0.100.246		(user / pass : root / Projector1)
-MIMO		:	10.0.100.247
-AirMedia	:	10.0.100.248
+DMPS		:	10.0.100.245 (--)
+Sony		:	10.0.100.246 (03)		(user / pass : root / Projector1)
+MIMO		:	10.0.100.247 (04)
+AirMedia	:	10.0.100.248 (--)
+
+iPad		:	(0A)
+xPanel		:	(1A)
 
 VPN (FortiClient)
 IP			:	31.182.48.202

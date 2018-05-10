@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Crestron.SimplSharp;
+using ssl_Utility;
 
 namespace ssl_Residence
 {
+    public delegate void RefreshDelegate();
+
     public class Area
     {
         public ushort Id { get; protected set; }
@@ -28,6 +31,10 @@ namespace ssl_Residence
     
     public class Zone : Area
     {
+        public RefreshDelegate RefreshSwitchLightsDelegate { get; set; }
+        public RefreshDelegate RefreshSwitchOutletsDelegate { get; set; }
+        public RefreshDelegate RefreshDimLightsDelegate { get; set; }
+        
         protected List<SwitchLight> _switchLights;
         protected List<SwitchOutlet> _switchOutlets;
         protected List<DimLight> _dimLights;
@@ -39,7 +46,25 @@ namespace ssl_Residence
         public ushort SwitchLightsCount { get { return (ushort)_switchLights.Count; } }
         public ushort SwitchOutletsCount { get { return (ushort)_switchOutlets.Count; } }
         public ushort DimLightsCount { get { return (ushort)_dimLights.Count; } }
+
+        public EventHandler SwitchLightChangedHandler { get; private set; }
+        public EventHandler SwitchOutletChangedHandler { get; private set; }
         
+        public void RefreshSwitchLights()
+        {
+            if (RefreshSwitchLightsDelegate != null) RefreshSwitchLightsDelegate();
+        }
+
+        public void RefreshSwitchOutlets()
+        {
+            if (RefreshSwitchOutletsDelegate != null) RefreshSwitchOutletsDelegate();
+        }
+
+        public void RefreshDimLights()
+        {
+            if (RefreshDimLightsDelegate != null) RefreshDimLightsDelegate();
+        }
+
         public Zone()
         {
             _switchLights = new List<SwitchLight>();
@@ -53,33 +78,62 @@ namespace ssl_Residence
         {
             try
             {
-                if (!_switchLights.Contains(Residence.SwitchLights[switchLightId])) _switchLights.Add(Residence.SwitchLights[switchLightId]);
+                if (!_switchLights.Contains(Residence.SwitchLights[switchLightId]))
+                {
+                    _switchLights.Add(Residence.SwitchLights[switchLightId]);
+                    SwitchLightChangedHandler = new EventHandler(SwitchLightChanged);
+                    Residence.SwitchLights[switchLightId].Changed += SwitchLightChangedHandler;
+                }
             }
             catch (Exception ex)
             {
             }
+        }
+
+        void SwitchLightChanged(object sender, EventArgs e)
+        {
+            RefreshSwitchLights();
         }
 
         public void AddSwitchOutlet(ushort switchOutletId)
         {
             try
             {
-                if (!_switchOutlets.Contains(Residence.SwitchOutlets[switchOutletId])) _switchOutlets.Add(Residence.SwitchOutlets[switchOutletId]);
+                if (!_switchOutlets.Contains(Residence.SwitchOutlets[switchOutletId]))
+                {
+                    _switchOutlets.Add(Residence.SwitchOutlets[switchOutletId]);
+                    SwitchOutletChangedHandler = new EventHandler(SwitchOutletChanged);
+                    Residence.SwitchOutlets[switchOutletId].Changed += SwitchOutletChangedHandler;
+                }
             }
             catch (Exception ex)
             {
             }
         }
 
+        void SwitchOutletChanged(object sender, EventArgs e)
+        {
+            RefreshSwitchOutlets();
+        }
+
         public void AddDimLight(ushort dimLightId)
         {
             try
             {
-                if (!_dimLights.Contains(Residence.DimLights[dimLightId])) _dimLights.Add(Residence.DimLights[dimLightId]);
+                if (!_dimLights.Contains(Residence.DimLights[dimLightId]))
+                {
+                    _dimLights.Add(Residence.DimLights[dimLightId]);
+                    Residence.DimLights[dimLightId].Changed += new EventHandler(DimLightChanged);
+                }
             }
             catch (Exception ex)
             {
             }
+        }
+
+        void DimLightChanged(object sender, EventArgs e)
+        {
+            RefreshDimLights();
         }
 
         #endregion
@@ -142,6 +196,11 @@ namespace ssl_Residence
             this._switchLights = Residence.Zones[zoneId]._switchLights;
             this._switchOutlets = Residence.Zones[zoneId]._switchOutlets;
             this._dimLights = Residence.Zones[zoneId]._dimLights;
+
+            this.SwitchLightChangedHandler = Residence.Zones[zoneId].SwitchLightChangedHandler;
+            this.SwitchOutletChangedHandler = Residence.Zones[zoneId].SwitchOutletChangedHandler;
+
+            SwitchLightChangedHandler.
 
             return 1;
         }

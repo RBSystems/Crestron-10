@@ -25,8 +25,11 @@ namespace ssl_Residence
 
     public class Light : Device
     {
+        public event EventHandler Changed;
+        
         public ushort Id { get; private set; }
         public bool IsOn {get; protected set;}
+        public ushort IsOnUshort { get { return (ushort)(IsOn ? 1 : 0); } }
 
         public Light()
         {
@@ -51,6 +54,11 @@ namespace ssl_Residence
             if (IsOn) Off();
             else On();
         }
+
+        protected virtual void OnChanged()
+        {
+            if (Changed != null) Changed(this, EventArgs.Empty);
+        }
     }
 
     public class SwitchLight : Light
@@ -71,6 +79,7 @@ namespace ssl_Residence
         private void LoadChanged(object sender, EventArgs e)
         {
             IsOn = _load.IsOn;
+            OnChanged();
             //DebugHelper.PrintDebugTrace("SwitchLight nr " + Id + " (" + Name + ") is " + (IsOn?"ON":"OFF"));
         }
         
@@ -120,6 +129,7 @@ namespace ssl_Residence
         {
             IsOn = _load.IsOn;
             Level = _load.Level;
+            OnChanged();
         }
 
         public void SetMaxLevel(ushort maxLevel)

@@ -1,12 +1,12 @@
 //Compiler Directives
 #CATEGORY "41" // Remote System Interface
-#SYMBOL_NAME "ssl_ZoneBuffer"
+#SYMBOL_NAME "ssl_Zone_SwitchLoadsBuffer"
 #DEFAULT_VOLATILE
 #ENABLE_STACK_CHECKING
 #ENABLE_TRACE
 
 // Constants
-#DEFINE_CONSTANT MAX_SWITCH_LIGHTS 20
+#DEFINE_CONSTANT MAX_SWITCH_LOADS 20
 
 // Include Libraries
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
@@ -14,7 +14,8 @@
 
 // Inputs
 
-DIGITAL_INPUT switchLight_TOG[MAX_SWITCH_LIGHTS, MAX_SWITCH_LIGHTS];
+DIGITAL_INPUT load_TOG[MAX_SWITCH_LOADS, MAX_SWITCH_LOADS];
+DIGITAL_INPUT _SKIP_;
 ANALOG_INPUT zoneId#;
 // STRING_INPUT
 // BUFFER_INPUT
@@ -22,9 +23,15 @@ ANALOG_INPUT zoneId#;
 
 // Outputs
 
-// DIGITAL_OUTPUT
+DIGITAL_OUTPUT load_FB[MAX_SWITCH_LOADS, MAX_SWITCH_LOADS];
+DIGITAL_OUTPUT _SKIP_;
 ANALOG_OUTPUT zoneId#_FB;
-// STRING_OUTPUT
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT loadsCount#_FB;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT loadType#_FB[MAX_SWITCH_LOADS, MAX_SWITCH_LOADS];
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT loadName$[MAX_SWITCH_LOADS, MAX_SWITCH_LOADS];
 
 // Parameters
 
@@ -38,10 +45,74 @@ Zone selectedZone;
 
 // Functions
 
+FUNCTION SetLoadsType()
+{
+	INTEGER i;
+    
+	if (loadsCount#_FB = 0) return;
+
+	for (i = 1 to loadsCount#_FB)
+	{
+		if (i <= selectedZone.SwitchLightsCount) 
+		{
+			loadType#_FB[i] = 0; // Light
+		}
+		else loadType#_FB[i] = 1; // Outlet
+	}
+}
+
+CALLBACK FUNCTION RefreshLights()
+{
+	INTEGER i;
+	SwitchLight switchLight;
+
+	if (selectedZone.SwitchLightsCount = 0) return;
+
+	for (i=1 to selectedZone.SwitchLightsCount)
+	{
+		switchLight = selectedZone.SwitchLightsArray[i-1];
+		load_FB[i] = switchLight.IsOnUshort;
+		loadName$[i] = switchLight.Name;
+	}
+}
+
+CALLBACK FUNCTION RefreshOutlets()
+{
+	INTEGER i;
+	SwitchOutlet switchOutlet;
+
+	if (selectedZone.SwitchOutletsCount = 0) return;
+
+	for (i=selectedZone.SwitchLightsCount+1 to loadsCount#_FB)
+	{
+		switchOutlet = selectedZone.SwitchOutletsArray[i-selectedZone.SwitchLightsCount-1];
+		load_FB[i] = switchOutlet.IsOnUshort;
+		loadName$[i] = switchOutlet.Name;
+	}
+}
+
+FUNCTION ClearUnusedFB()
+{
+	INTEGER i;
+
+	if (loadsCount#_FB >= MAX_SWITCH_LOADS) return;
+
+	for (i = loadsCount#_FB + 1 to MAX_SWITCH_LOADS) load_FB[i] = 0;
+}
+
+
 FUNCTION SelectZone(INTEGER zoneId)
 {
 	if (selectedZone.TryCloneById(zoneId) = 0) return;
-	else zoneId#_FB = zoneId;
+	else
+	{
+		zoneId#_FB = zoneId;
+		loadsCount#_FB = selectedZone.SwitchLightsCount + selectedZone.SwitchOutletsCount;
+		SetLoadsType();
+		RefreshLights();
+        RefreshOutlets();
+        ClearUnusedFB();
+	}
 }
 
 /*
@@ -51,7 +122,11 @@ EVENTHANDLER DevicesInitializedHandler(Dummy dummy, EventArgs e)
 }
 */
 
-
+FUNCTION RegisterSharpDelegates()
+{
+	RegisterDelegate(selectedZone, RefreshSwitchLightsDelegate, RefreshLights);
+	RegisterDelegate(selectedZone, RefreshSwitchOutletsDelegate, RefreshOutlets);
+}
 
 FUNCTION RegisterSharpEvents()
 {
@@ -60,21 +135,24 @@ FUNCTION RegisterSharpEvents()
 
 FUNCTION Initialize()
 {
+	RegisterSharpDelegates();
 	RegisterSharpEvents();
 }
 
 // Event Handlers
 
-PUSH switchLight_TOG
+PUSH load_TOG
 {
 	INTEGER id;
 	SwitchLight switchLight;
 
-	id = GetLastModifiedArrayIndex() - 1;
+	id = GetLastModifiedArrayIndex();
 
-	if (zoneId#_FB = 0 || id >= selectedZone.SwitchLightsCount) return;
+	if (zoneId#_FB = 0 || id >= loadsCount#_FB) return;
 
-	switchLight = selectedZone.SwitchLightsArray[id];
+	if (loadType#_FB[id] = 0) switchLight = selectedZone.SwitchLightsArray[id-1];
+	else if (loadType#_FB[id] = 1) switchLight = selectedZone.SwitchOutletsArray[id-selectedZone.SwitchLightsCount-1];
+
     SwitchLight.Toggle();
 }
 

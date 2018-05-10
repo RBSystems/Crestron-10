@@ -18,7 +18,7 @@
   Exclusions_CDS=5
   Inclusions_CDS=6
   Name=SSL switchLoadsModule
-  SmplCName=ssl_SwitchLightsModule.usp
+  SmplCName=ssl_SwitchLoadsModule.usp
   Code=1
   SysRev5=4.000
   SMWRev=3.00.00
@@ -156,9 +156,9 @@
   SmplCOutputCue1=i#
   SmplCInputList2Cue1=an#
   SmplCOutputList2Cue1=ai#
-  SPlus2CompiledName=S2_ssl_SwitchLightsModule
+  SPlus2CompiledName=S2_ssl_SwitchLoadsModule
   SymJam=NonExclusive
-  FileName=ssl_SwitchLightsModule.ush
+  FileName=ssl_SwitchLoadsModule.ush
   SIMPLPlusModuleEncoding=0
   clz1=ssl_Utility
   clz2=ssl_Residence
