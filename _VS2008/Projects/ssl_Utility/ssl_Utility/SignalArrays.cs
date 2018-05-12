@@ -22,7 +22,6 @@ namespace ssl_Utility
         }
     }
 
-
     public class DigitalInputSignalArray : SignalArray
     {
         private DigitalInputSignal[] _signals;

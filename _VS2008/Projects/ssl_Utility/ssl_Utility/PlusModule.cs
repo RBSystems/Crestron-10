@@ -9,7 +9,7 @@ namespace ssl_Utility
 {
     public class PlusModule
     {
-        public ushort Id { get; private set; }
+        //public ushort Id { get; private set; }
         
         public ActionUshortUshortUshortDelegate SendDigitalOutputDelegate { get; set; }
         public ActionUshortUshortUshortDelegate SendAnalogOutputDelegate { get; set; }
@@ -35,11 +35,13 @@ namespace ssl_Utility
         {
         }
 
+        /*
         public void Register(ushort id)
         {
             Id = id;
             PlusContainer.AddModule(this);
         }
+        */
 
         #region Arrays Count Setters
 
@@ -247,6 +249,5 @@ namespace ssl_Utility
 
         #endregion
     }
-
 
 }

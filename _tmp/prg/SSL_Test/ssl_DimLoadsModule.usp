@@ -8,11 +8,10 @@
 
 // Constants
 #DEFINE_CONSTANT STRING_SIZE 30
-#DEFINE_CONSTANT MAX_NUMBER_OF_LOADS 10
+#DEFINE_CONSTANT MAX_NUMBER_OF_LOADS 100
 
 // Include Libraries
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
-#USER_SIMPLSHARP_LIBRARY "ssl_Residence"
 
 // Inputs
 DIGITAL_INPUT _SKIP_, _SKIP_;
@@ -27,40 +26,44 @@ DIGITAL_OUTPUT _SKIP_;
 ANALOG_OUTPUT load_Level[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {0}
 
 // Parameters
-INTEGER_PARAMETER pModuleId;
-INTEGER_PARAMETER pLoadType;
+INTEGER_PARAMETER pUsedLoads;
+INTEGER_PARAMETER _SKIP_;
 INTEGER_PARAMETER pLoadId[MAX_NUMBER_OF_LOADS];
+INTEGER_PARAMETER _SKIP_;
+INTEGER_PARAMETER pLoadType[MAX_NUMBER_OF_LOADS];
 INTEGER_PARAMETER _SKIP_;
 STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE];
 
 // Parameter Properietes
+#BEGIN_PARAMETER_PROPERTIES pUsedLoads
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , MAX_NUMBER_OF_LOADS d;
+   propShortDescription = "Number of loads used in this module";
+#END_PARAMETER_PROPERTIES
 
-
-#BEGIN_PARAMETER_PROPERTIES pModuleId, pLoadId
+#BEGIN_PARAMETER_PROPERTIES pLoadId
    propValidUnits = unitDecimal;
    propDefaultUnit = unitDecimal;
    propBounds = 0d , 999d;
-   propShortDescription = "Unique light Id";
+   propDefaultValue = 0d;
+   propShortDescription = "Unique load Id";
 #END_PARAMETER_PROPERTIES
+
 
 
 #BEGIN_PARAMETER_PROPERTIES pLoadType
    propValidUnits = unitDecimal;
    propDefaultUnit = unitDecimal;
-   propList = { 1d,"Lights" };
+   propDefaultValue = 0d;
+   propList = { 0d,"Light" },{ 1d,"Outlet" },{ 2d,"Other" };
    propShortDescription = "Type of load";
 #END_PARAMETER_PROPERTIES
 
-
-
-// Structure Definitions
-
 // Global Variable
-PlusModule masterModule;
-DimLoadsModule dimLoadsModule;
+DimLoadsModule thisModule;
 
 // Delegates
-
 CALLBACK FUNCTION SendDigitalOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
 {
 	switch (_arrayIndex)
@@ -80,39 +83,27 @@ CALLBACK FUNCTION SendAnalogOutputCallback(INTEGER _arrayIndex, INTEGER _signalI
 
 
 // Functions
-
 FUNCTION RegisterDelegates()
 {
-	RegisterDelegate(masterModule, SendDigitalOutputDelegate, SendDigitalOutputCallback);
-	RegisterDelegate(masterModule, SendAnalogOutputDelegate, SendAnalogOutputCallback);
+	RegisterDelegate(thisModule, SendDigitalOutputDelegate, SendDigitalOutputCallback);
+	RegisterDelegate(thisModule, SendAnalogOutputDelegate, SendAnalogOutputCallback);
 
-}
-
-FUNCTION AddLights()
-{
-	INTEGER i;
-
-	for (i = 1 to MAX_NUMBER_OF_LOADS)
-		if (IsSignalDefined(load_Level[i]))
-			dimLoadsModule.AddLight(i, pLoadId[i], pLoadName[i]);
-
-	Residence.DimLightsInitialized();
 }
 
 FUNCTION AddLoads()
 {
-	switch (pLoadType)
-	{
-		case (1): AddLights();
-	}
+	INTEGER i;
+
+	for (i = 1 to pUsedLoads)
+		if (pLoadId[i] > 0) thisModule.AddLoad(i, pLoadId[i], pLoadType[i], pLoadName[i]);
+
+	SimplSystem.DimLoadsInitialized();
 }
 
 FUNCTION Initialize()
 {
 	RegisterDelegates();
-    masterModule.Register(pModuleId);
-	dimLoadsModule.SetPlusModule(pModuleId);
-	dimLoadsModule.SetNumberOfLoads(MAX_NUMBER_OF_LOADS);
+	thisModule.SetNumberOfLoads(pUsedLoads);
 	AddLoads();
 }
 
@@ -123,7 +114,7 @@ CHANGE load_Level_FB
 	INTEGER i;
 
 	i = GetLastModifiedArrayIndex();
-	masterModule.UpdateAnalogInput(0, i, load_Level_FB[i]);
+	thisModule.UpdateAnalogInput(0, i, load_Level_FB[i]);
 }
 
 // Main Function
