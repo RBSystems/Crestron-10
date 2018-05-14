@@ -28,6 +28,9 @@ namespace ssl_Utility
 
     public class Zone : Area
     {
+        public event EventHandler SwitchLoadChanged;
+        public event EventHandler DimLoadChanged;
+        
         public List<SwitchLoad> SwitchLoads { get; private set; }
         public List<DimLoad> DimLoads { get; private set; }
 
@@ -46,13 +49,13 @@ namespace ssl_Utility
                 if (!SwitchLoads.Contains(SimplSystem.SwitchLoads[switchLoadId]))
                 {
                     SwitchLoads.Add(SimplSystem.SwitchLoads[switchLoadId]);
+                    SimplSystem.SwitchLoads[switchLoadId].Changed += SwitchLoadChangedHandler;
                 }
             }
             catch (Exception ex)
             {
             }
         }
-
 
         public void AddDimLoad(ushort dimLoadId)
         {
@@ -61,11 +64,40 @@ namespace ssl_Utility
                 if (!DimLoads.Contains(SimplSystem.DimLoads[dimLoadId]))
                 {
                     DimLoads.Add(SimplSystem.DimLoads[dimLoadId]);
+                    SimplSystem.DimLoads[dimLoadId].Changed += DimLoadChangedHandler;
                 }
             }
             catch (Exception ex)
             {
             }
+        }
+
+        #endregion
+
+        #region Load Change Handlers
+
+        void SwitchLoadChangedHandler(object sender, EventArgs e)
+        {
+            OnSwitchLoadChanged();
+        }
+
+        void DimLoadChangedHandler(object sender, EventArgs e)
+        {
+            OnDimLoadChanged();
+        }
+
+        #endregion
+
+        #region Events
+
+        private void OnSwitchLoadChanged()
+        {
+            if (SwitchLoadChanged != null) SwitchLoadChanged(this, EventArgs.Empty);
+        }
+
+        private void OnDimLoadChanged()
+        {
+            if (DimLoadChanged != null) DimLoadChanged(this, EventArgs.Empty);
         }
 
         #endregion

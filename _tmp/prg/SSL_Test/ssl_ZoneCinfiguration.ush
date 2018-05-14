@@ -27,14 +27,10 @@
   ParamSigType2=Constant
   ParamCue3=pZoneName
   ParamSigType3=String
-  ParamCue4=pSwitchLightsId
+  ParamCue4=pSwitchLoadsId
   ParamSigType4=String
-  ParamCue5=pSwitchOutletsId
+  ParamCue5=pDimLoadsId
   ParamSigType5=String
-  ParamCue6=pDimLightsId
-  ParamSigType6=String
-  ParamCue7=pDimOutletsId
-  ParamSigType7=String
   MinVariableInputs=0
   MaxVariableInputs=0
   MinVariableInputsList2=0
@@ -43,8 +39,8 @@
   MaxVariableOutputs=0
   MinVariableOutputsList2=0
   MaxVariableOutputsList2=0
-  MinVariableParams=6
-  MaxVariableParams=6
+  MinVariableParams=4
+  MaxVariableParams=4
   Expand=expand_separately
   Expand2=expand_separately
   ProgramTree=Logic
@@ -63,9 +59,7 @@
   Pp3=3
   Pp4=4
   Pp5=5
-  Pp6=6
-  Pp7=7
-  MPp=7
+  MPp=5
   NVStorage=10
   ParamSigType1=String
   SmplCInputCue1=o#
@@ -77,7 +71,6 @@
   FileName=ssl_ZoneCinfiguration.ush
   SIMPLPlusModuleEncoding=0
   clz1=ssl_Utility
-  clz2=ssl_Residence
 [END]
 [BEGIN]
   ObjTp=Dp
@@ -119,22 +112,6 @@
 [BEGIN]
   ObjTp=Dp
   H=5
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=6
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=7
   Tp=1
   HD=False
   NoS=False

@@ -7,12 +7,11 @@
 
 // Constants
 #DEFINE_CONSTANT DELIMITER ","
-#DEFINE_CONSTANT NAME_STRING_SIZE 30
-#DEFINE_CONSTANT ELEMENTS_STRING_SIZE 30
+#DEFINE_CONSTANT NAME_STRING_SIZE 32
+#DEFINE_CONSTANT ELEMENTS_STRING_SIZE 64
 
 // Include Libraries
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
-#USER_SIMPLSHARP_LIBRARY "ssl_Residence"
 
 // Inputs
 
@@ -32,10 +31,8 @@
 
 INTEGER_PARAMETER pZoneId;
 STRING_PARAMETER pZoneName[NAME_STRING_SIZE];
-STRING_PARAMETER pSwitchLightsId[ELEMENTS_STRING_SIZE];
-STRING_PARAMETER pSwitchOutletsId[ELEMENTS_STRING_SIZE];
-STRING_PARAMETER pDimLightsId[ELEMENTS_STRING_SIZE];
-STRING_PARAMETER pDimOutletsId[ELEMENTS_STRING_SIZE];
+STRING_PARAMETER pSwitchLoadsId[ELEMENTS_STRING_SIZE];
+STRING_PARAMETER pDimLoadsId[ELEMENTS_STRING_SIZE];
 
 // Parameter Properietes
 
@@ -54,56 +51,40 @@ Zone thisZone;
 
 // Functions
 
-FUNCTION AddSwitchLights()
+FUNCTION AddSwitchLoads()
 {
 	STRING tempString[ELEMENTS_STRING_SIZE];
 
-	tempString = pSwitchLightsId;
+	tempString = pSwitchLoadsId;
 
 	while (find(DELIMITER, tempString) > 0)
 	{
-		thisZone.AddSwitchLight(atoi(remove(DELIMITER, tempString)));
+		thisZone.AddSwitchLoad(atoi(remove(DELIMITER, tempString)));
 	}
 
-	if (len(tempString) > 0) thisZone.AddSwitchLight(atoi(tempString));
+	if (len(tempString) > 0) thisZone.AddSwitchLoad(atoi(tempString));
 	
 }
 
-FUNCTION AddSwitchOutlets()
+FUNCTION AddDimLoads()
 {
 	STRING tempString[ELEMENTS_STRING_SIZE];
 
-	tempString = pSwitchOutletsId;
+	tempString = pDimLoadsId;
 
 	while (find(DELIMITER, tempString) > 0)
 	{
-		thisZone.AddSwitchOutlet(atoi(remove(DELIMITER, tempString)));
+		thisZone.AddDimLoad(atoi(remove(DELIMITER, tempString)));
 	}
 
-	if (len(tempString) > 0) thisZone.AddSwitchOutlet(atoi(tempString));
-	
-}
-
-FUNCTION AddDimLights()
-{
-	STRING tempString[ELEMENTS_STRING_SIZE];
-
-	tempString = pDimLightsId;
-
-	while (find(DELIMITER, tempString) > 0)
-	{
-		thisZone.AddDimLight(atoi(remove(DELIMITER, tempString)));
-	}
-
-	if (len(tempString) > 0) thisZone.AddDimLight(atoi(tempString));
+	if (len(tempString) > 0) thisZone.AddDimLoad(atoi(tempString));
 	
 }
 
 FUNCTION AddDevices()
 {
-	AddSwitchLights();
-	AddSwitchOutlets();
-	AddDimLights();
+	AddSwitchLoads();
+	AddDimLoads();
 }
 
 EVENTHANDLER DevicesInitializedHandler(Dummy dummy, EventArgs e)
@@ -113,7 +94,7 @@ EVENTHANDLER DevicesInitializedHandler(Dummy dummy, EventArgs e)
 
 FUNCTION RegisterSharpEvents()
 {
-	RegisterEvent(Residence, DevicesInitialized, DevicesInitializedHandler);
+	RegisterEvent(SimplSystem, DevicesInitialized, DevicesInitializedHandler);
 }
 
 FUNCTION Initialize()
@@ -121,7 +102,7 @@ FUNCTION Initialize()
 	RegisterSharpEvents();
 	thisZone.SetId(pZoneId);
 	thisZone.SetName(pZoneName);
-	Residence.AddZone(thisZone);
+	SimplSystem.AddZone(thisZone);
 }
 
 // Event Handlers

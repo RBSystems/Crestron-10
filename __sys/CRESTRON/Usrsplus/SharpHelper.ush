@@ -71,7 +71,6 @@
   FileName=SharpHelper.ush
   SIMPLPlusModuleEncoding=0
   clz1=ssl_Utility
-  clz2=ssl_Residence
 [END]
 [BEGIN]
   ObjTp=Dp

@@ -5,7 +5,6 @@
 #ENABLE_TRACE
 
 #USER_SIMPLSHARP_LIBRARY "ssl_Utility"
-#USER_SIMPLSHARP_LIBRARY "ssl_Residence"
 
 DIGITAL_INPUT Test_01, Test_02, Test_03, Test_04, Test_05, Test_06;
 
@@ -21,38 +20,38 @@ FUNCTION RegisterDelegates()
 
 FUNCTION Initialize()
 {
-	Residence.Initialize();
+	SimplSystem.Initialize();
 	RegisterDelegate(DebugHelper, PrintTraceDelegate, PrintTraceCallback);
 }
 
 PUSH Test_01
 {
-	Residence.Test_01();
+	//Residence.Test_01();
 }
 
 PUSH Test_02
 {
-	Residence.Test_02();
+	//Residence.Test_02();
 }
 
 PUSH Test_03
 {
-	Residence.Test_03();
+	//Residence.Test_03();
 }
 
 PUSH Test_04
 {
-	Residence.Test_04();
+	//Residence.Test_04();
 }
 
 PUSH Test_05
 {
-	Residence.Test_05();
+	//Residence.Test_05();
 }
 
 PUSH Test_06
 {
-	Residence.Test_06();
+	//Residence.Test_06();
 }
 
 Function Main()

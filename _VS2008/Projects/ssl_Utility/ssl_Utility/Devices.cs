@@ -39,7 +39,7 @@ namespace ssl_Utility
         public Load(ushort id, eLoadType loadType)
         {
             Id = id;
-            LoadType = LoadType;
+            LoadType = loadType;
             IsOn = false;
         }
 
@@ -71,10 +71,10 @@ namespace ssl_Utility
             : base(id, loadType)
         {
             _relay = relay;
-            _relay.Changed += new EventHandler(RelayChanged);
+            _relay.Changed += new EventHandler(RelayChangedHandler);
         }
 
-        private void RelayChanged(object sender, EventArgs e)
+        private void RelayChangedHandler(object sender, EventArgs e)
         {
             IsOn = _relay.IsOn;
             OnChanged();
@@ -98,6 +98,14 @@ namespace ssl_Utility
 
         public ushort Level { get; private set; }
 
+        public ushort Percent
+        {
+            get
+            {
+                return (ushort) ( (100 * (int)Level) / _maxLevel );
+            }
+        }
+
         public DimLoad()
         {
         }
@@ -106,10 +114,10 @@ namespace ssl_Utility
             : base(id, loadType)
         {
             _dimmer = dimmer;
-            _dimmer.Changed += new EventHandler(DimmerChanged);
+            _dimmer.Changed += new EventHandler(DimmerChangedHandler);
         }
 
-        private void DimmerChanged(object sender, EventArgs e)
+        private void DimmerChangedHandler(object sender, EventArgs e)
         {
             IsOn = _dimmer.IsOn;
             Level = _dimmer.Level;
