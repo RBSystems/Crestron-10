@@ -13,7 +13,7 @@ namespace ssl_Utility
         {
         }
 
-        public virtual void AddLoad(ushort signalIndex, ushort loadId, ushort loadType, String name)
+        public virtual void AddLoad(ushort id, ushort loadType, String name)
         {
         }
     }
@@ -38,14 +38,14 @@ namespace ssl_Utility
             CreateDigitalOutputArray(OFF_OUTPUT, numberOfLoads);
         }
 
-        public override void AddLoad(ushort signalIndex, ushort loadId, ushort loadType, String name)
+        public override void AddLoad(ushort id, ushort loadType, String name)
         {
             try
             {
-                Relay relay = new Relay(GetDigitalInput(FB_INPUT, signalIndex), GetDigitalOutput(ON_OUTPUT, signalIndex), GetDigitalOutput(OFF_OUTPUT, signalIndex));
-                SwitchLoad switchLoad = new SwitchLoad(loadId, (eLoadType)loadType, relay);
+                Relay relay = new Relay(GetDigitalInput(FB_INPUT, id), GetDigitalOutput(ON_OUTPUT, id), GetDigitalOutput(OFF_OUTPUT, id));
+                SwitchLoad switchLoad = new SwitchLoad(id, (eLoadType)loadType, relay);
                 switchLoad.SetName(name);
-                SimplSystem.SwitchLoads.Add(loadId, switchLoad);
+                SimplSystem.SwitchLoads.Add(id, switchLoad);
             }
             catch (Exception ex)
             {
@@ -79,18 +79,18 @@ namespace ssl_Utility
             CreateAnalogOutputArray(LEVEL_OUTPUT, numberOfLoads);
         }
 
-        public override void AddLoad(ushort signalIndex, ushort loadId, ushort loadType, String name)
+        public override void AddLoad(ushort id, ushort loadType, String name)
         {
             try
             {
-                Dimmer dimmer = new Dimmer(GetAnalogInput(LEVEL_INPUT, signalIndex),
-                                            GetAnalogOutput(LEVEL_OUTPUT, signalIndex),
-                                            GetDigitalOutput(RAISE_OUTPUT, signalIndex),
-                                            GetDigitalOutput(LOWER_OUTPUT, signalIndex));
+                Dimmer dimmer = new Dimmer(GetAnalogInput(LEVEL_INPUT, id),
+                                            GetAnalogOutput(LEVEL_OUTPUT, id),
+                                            GetDigitalOutput(RAISE_OUTPUT, id),
+                                            GetDigitalOutput(LOWER_OUTPUT, id));
 
-                DimLoad dimLight = new DimLoad(loadId, (eLoadType)loadType, dimmer);
+                DimLoad dimLight = new DimLoad(id, (eLoadType)loadType, dimmer);
                 dimLight.SetName(name);
-                SimplSystem.DimLoads.Add(loadId, dimLight);
+                SimplSystem.DimLoads.Add(id, dimLight);
             }
             catch (Exception ex)
             {

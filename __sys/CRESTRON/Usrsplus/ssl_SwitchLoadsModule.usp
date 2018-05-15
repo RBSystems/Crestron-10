@@ -26,8 +26,6 @@ DIGITAL_OUTPUT load_Off[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS]; // {1}
 // Parameters
 INTEGER_PARAMETER pUsedLoads;
 INTEGER_PARAMETER _SKIP_;
-INTEGER_PARAMETER pLoadId[MAX_NUMBER_OF_LOADS];
-INTEGER_PARAMETER _SKIP_;
 INTEGER_PARAMETER pLoadType[MAX_NUMBER_OF_LOADS];
 INTEGER_PARAMETER _SKIP_;
 STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE];
@@ -39,16 +37,6 @@ STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE
    propBounds = 1d , MAX_NUMBER_OF_LOADS d;
    propShortDescription = "Number of loads used in this module";
 #END_PARAMETER_PROPERTIES
-
-#BEGIN_PARAMETER_PROPERTIES pLoadId
-   propValidUnits = unitDecimal;
-   propDefaultUnit = unitDecimal;
-   propBounds = 0d , 999d;
-   propDefaultValue = 0d;
-   propShortDescription = "Unique load Id";
-#END_PARAMETER_PROPERTIES
-
-
 
 #BEGIN_PARAMETER_PROPERTIES pLoadType
    propValidUnits = unitDecimal;
@@ -82,8 +70,7 @@ FUNCTION AddLoads()
 {
 	INTEGER i;
 
-	for (i = 1 to pUsedLoads)
-		if (pLoadId[i] > 0) thisModule.AddLoad(i, pLoadId[i], pLoadType[i], pLoadName[i]);
+	for (i = 1 to pUsedLoads) thisModule.AddLoad(i, pLoadType[i], pLoadName[i]);
 
 	SimplSystem.SwitchLoadsInitialized();
 }

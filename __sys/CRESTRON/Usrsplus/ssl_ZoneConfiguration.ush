@@ -18,7 +18,7 @@
   Exclusions_CDS=5
   Inclusions_CDS=6
   Name=ssl_ZoneConfiguration
-  SmplCName=ssl_ZoneCinfiguration.usp
+  SmplCName=ssl_ZoneConfiguration.usp
   Code=1
   SysRev5=4.000
   SMWRev=3.00.00
@@ -66,11 +66,12 @@
   SmplCOutputCue1=i#
   SmplCInputList2Cue1=an#
   SmplCOutputList2Cue1=ai#
-  SPlus2CompiledName=S2_ssl_ZoneCinfiguration
+  SPlus2CompiledName=S2_ssl_ZoneConfiguration
   SymJam=NonExclusive
-  FileName=ssl_ZoneCinfiguration.ush
+  FileName=ssl_ZoneConfiguration.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
+  clz1=CrestronKNXLibrary
+  clz2=ssl_Utility
 [END]
 [BEGIN]
   ObjTp=Dp

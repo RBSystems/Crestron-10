@@ -44,6 +44,8 @@ namespace ssl_Utility
 
         public void AddSwitchLoad(ushort switchLoadId)
         {
+            if (switchLoadId == 0) return;
+            
             try
             {
                 if (!SwitchLoads.Contains(SimplSystem.SwitchLoads[switchLoadId]))
@@ -59,6 +61,8 @@ namespace ssl_Utility
 
         public void AddDimLoad(ushort dimLoadId)
         {
+            if (dimLoadId == 0) return;
+            
             try
             {
                 if (!DimLoads.Contains(SimplSystem.DimLoads[dimLoadId]))
