@@ -110,8 +110,13 @@ CHANGE Source_Selected_FB
 CHANGE Source_Name$, Volume_Info$
 {
 	STRING tempInfo[ZONE_INFO_LENGTH];
+	STRING tempName[ZONE_INFO_LENGTH];
 
-	tempInfo = Source_Name$ + " : " + Volume_Info$;
+	tempName = Source_Name$;
+
+	if (len(tempName) > 7) tempName = left(tempName, 7);
+
+	tempInfo = tempName + " : " + Volume_Info$;
 
 	while (len(tempInfo) < ZONE_INFO_LENGTH) tempInfo = tempInfo + " ";
 
