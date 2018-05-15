@@ -20,7 +20,7 @@
   Name=AnalogToSerial
   SmplCName=AnalogToSerial.usp
   Code=1
-  SysRev5=4.006
+  SysRev5=4.000
   SMWRev=3.00.00
   InputList2Cue1=[~UNUSED~]
   InputList2SigType1=Analog
@@ -79,7 +79,6 @@
   FileName=AnalogToSerial.ush
   SIMPLPlusModuleEncoding=0
   clz1=CrestronKNXLibrary
-  clz2=SonosLibrary_v1_0
 [END]
 [BEGIN]
   ObjTp=Dp
