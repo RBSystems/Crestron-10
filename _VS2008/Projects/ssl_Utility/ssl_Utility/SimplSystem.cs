@@ -52,6 +52,7 @@ namespace ssl_Utility
             try
             {
                 Zones.Add(zone.Id, zone);
+                ErrorLog.Notice("S#: SimplSystem - Added Zone nr " + zone.Id);
             }
             catch (Exception ex)
             {

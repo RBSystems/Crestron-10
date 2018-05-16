@@ -46,6 +46,7 @@ namespace ssl_Utility
                 SwitchLoad switchLoad = new SwitchLoad(id, (eLoadType)loadType, relay);
                 switchLoad.SetName(name);
                 SimplSystem.SwitchLoads.Add(id, switchLoad);
+                ErrorLog.Notice("S#: SimplSystem - Added SwitchLoad nr " + id);
             }
             catch (Exception ex)
             {
@@ -91,6 +92,7 @@ namespace ssl_Utility
                 DimLoad dimLight = new DimLoad(id, (eLoadType)loadType, dimmer);
                 dimLight.SetName(name);
                 SimplSystem.DimLoads.Add(id, dimLight);
+                ErrorLog.Notice("S#: SimplSystem - Added DimLoad nr " + id);
             }
             catch (Exception ex)
             {

@@ -52,6 +52,7 @@ namespace ssl_Utility
                 {
                     SwitchLoads.Add(SimplSystem.SwitchLoads[switchLoadId]);
                     SimplSystem.SwitchLoads[switchLoadId].Changed += SwitchLoadChangedHandler;
+                    ErrorLog.Notice("S#: Zone(" + Id +  ") - Added SwitchLoad nr " + switchLoadId);
                 }
             }
             catch (Exception ex)
@@ -69,6 +70,7 @@ namespace ssl_Utility
                 {
                     DimLoads.Add(SimplSystem.DimLoads[dimLoadId]);
                     SimplSystem.DimLoads[dimLoadId].Changed += DimLoadChangedHandler;
+                    ErrorLog.Notice("S#: Zone(" + Id + ") - Added DimLoad nr " + dimLoadId);
                 }
             }
             catch (Exception ex)

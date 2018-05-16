@@ -398,8 +398,7 @@
   SymJam=NonExclusive
   FileName=ssl_ZoneBuffer.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
-  clz2=ssl_Utility
+  clz1=ssl_Utility
 [END]
 [BEGIN]
   ObjTp=Dp
