@@ -73,7 +73,6 @@
     <Compile Include="PlusContainer.cs" />
     <Compile Include="SimplSystem.cs" />
     <Compile Include="ZoneModules.cs" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\ControlSystem.cfg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
