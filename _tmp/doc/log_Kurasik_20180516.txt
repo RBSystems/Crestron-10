@@ -1,0 +1,492 @@
+Notice: TLDM.exe # 2018-05-16 15:41:59  # **Program 1 Stopped**
+Info: LogicEngine.exe [App 1] # 2018-05-16 15:42:16  # Loading program from \SIMPL\app01
+Info: LogicEngine.exe [App 1] # 2018-05-16 15:42:16  # Loading Program \SIMPL\app01\Kurasik_DIN-AP3.bin.
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 1
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 2
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 3
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 4
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 5
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 6
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 7
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 8
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 9
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 1
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 10
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 11
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 12
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 2
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 3
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 4
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 5
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 6
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 7
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 8
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 9
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 10
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 13
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 14
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 11
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 12
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 15
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 13
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 16
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 17
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 14
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 15
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 18
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 19
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 16
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 17
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 20
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 18
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 21
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 22
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 19
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 20
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 23
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 21
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 22
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 24
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 25
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 23
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 26
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added SwitchLoad nr 27
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:42  # S#: SimplSystem - Added DimLoad nr 24
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 25
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 28
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 26
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 27
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 29
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 30
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 28
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 31
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 32
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 29
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 30
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 33
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 31
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 34
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 35
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 32
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 33
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 36
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 34
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 35
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 37
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 38
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 36
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 39
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 37
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 38
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 40
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 41
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 39
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 40
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 42
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 41
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 42
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 43
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 44
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added SwitchLoad nr 45
+Notice: LogicEngine.exe # 2018-05-16 15:42:44  # **Program 1 Started**
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:43  # S#: SimplSystem - Added DimLoad nr 43
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:44  # S#: SimplSystem - Added DimLoad nr 44
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:44  # S#: SimplSystem - Added SwitchLoad nr 46
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added SwitchLoad nr 47
+Info: LogicEngine.exe [App 1] # 2018-05-16 15:42:45  #  Going to steady state now 
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added DimLoad nr 45
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added SwitchLoad nr 48
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added SwitchLoad nr 49
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added DimLoad nr 46
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added DimLoad nr 47
+Info: TLDM.exe # 2018-05-16 15:42:46  #  Event rcvd is 8 
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:45  # S#: SimplSystem - Added SwitchLoad nr 50
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 48
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 49
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 51
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 52
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 53
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 50
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 51
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 52
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 54
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 55
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 56
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 53
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 54
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 55
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 57
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 58
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 56
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 57
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 59
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 58
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 59
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 60
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 61
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 60
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 61
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 62
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 63
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 62
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 63
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 64
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 65
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 64
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 65
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 66
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 67
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 66
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 67
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 68
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 69
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 68
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 69
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 70
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 71
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 70
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 71
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 72
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added DimLoad nr 72
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 73
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 74
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 75
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 76
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 77
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 78
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 79
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 80
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 81
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 82
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 83
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 84
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 85
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 86
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 87
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 88
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 89
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 90
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 91
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:46  # S#: SimplSystem - Added SwitchLoad nr 92
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 93
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 94
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 95
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 96
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 97
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 98
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 99
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 100
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 101
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 102
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 103
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 104
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 105
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 106
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 107
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 108
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 109
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 110
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 111
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 112
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 113
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 114
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 115
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 116
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 117
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 118
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 119
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 120
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 121
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 122
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 123
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 124
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 125
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 126
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 127
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 128
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 129
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 130
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 131
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 132
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 133
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 134
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 135
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 136
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 137
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 138
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 139
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 140
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 141
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 142
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 143
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 144
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 145
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 146
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 147
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 148
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 149
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 150
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 151
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 152
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 153
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 154
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 155
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 156
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:47  # S#: SimplSystem - Added SwitchLoad nr 157
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:48  # S#: SimplSystem - Added SwitchLoad nr 158
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:48  # S#: SimplSystem - Added SwitchLoad nr 159
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:48  # S#: SimplSystem - Added SwitchLoad nr 160
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 13 from symbol S-2.1.1.33.2 to "Roleta garderoba wej...".  Maximum Length = 15, New Length would be 24.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 14 from symbol S-2.1.1.33.2 to "Roleta drzwi wejscio...".  Maximum Length = 15, New Length would be 22.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 15 from symbol S-2.1.1.33.2 to "Roleta mala droga".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 16 from symbol S-2.1.1.33.2 to "Roleta duza droga".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 18 from symbol S-2.1.1.33.2 to "Roleta mala stajnia".  Maximum Length = 15, New Length would be 19.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 19 from symbol S-2.1.1.33.2 to "Roleta duza stajnia".  Maximum Length = 15, New Length would be 19.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 40 from symbol S-2.1.1.33.2 to "Roleta przy schodach".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 64 from symbol S-2.1.1.33.2 to "Roleta korytarz hobb...".  Maximum Length = 15, New Length would be 21.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 65 from symbol S-2.1.1.33.2 to "Roleta korytarz fitn...".  Maximum Length = 15, New Length would be 23.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 1 from symbol S-2.1.7.3.2 to "Okno suwane taras".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 2 from symbol S-2.7.1.6.3 to "Kinkiet lozko od dro...".  Maximum Length = 15, New Length would be 22.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 3 from symbol S-2.7.1.6.3 to "Kinkiet lozko nad gl...".  Maximum Length = 15, New Length would be 23.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 14 from symbol S-2.7.1.6.3 to "Lampa wiszaca patyki...".  Maximum Length = 15, New Length would be 29.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 15 from symbol S-2.7.1.6.3 to "Kinkiet sciana klatk...".  Maximum Length = 15, New Length would be 33.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 32 from symbol S-2.7.1.6.3 to "Kinkiety sufit koryt...".  Maximum Length = 15, New Length would be 33.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 33 from symbol S-2.7.1.6.3 to "Kinkiety sciana kory...".  Maximum Length = 15, New Length would be 34.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 45 from symbol S-2.7.1.6.3 to "Kinkiety sufit przy ...".  Maximum Length = 15, New Length would be 30.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 46 from symbol S-2.7.1.6.3 to "Kinkiety sufit przy ...".  Maximum Length = 15, New Length would be 27.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 49 from symbol S-2.7.1.6.3 to "Sufit wejscie 3 oczk...".  Maximum Length = 15, New Length would be 21.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 71 from symbol S-2.7.1.6.3 to "Kinkiety sufit koryt...".  Maximum Length = 15, New Length would be 29.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 72 from symbol S-2.7.1.6.3 to "Sufit korytarz sauna".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 75 from symbol S-2.7.1.6.3 to "Kinkiety sciana fitn...".  Maximum Length = 15, New Length would be 23.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 76 from symbol S-2.7.1.6.3 to "Kinkiety czytanie ja...".  Maximum Length = 15, New Length would be 26.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 77 from symbol S-2.7.1.6.3 to "Led wneka jackuzzi".  Maximum Length = 15, New Length would be 18.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 78 from symbol S-2.7.1.6.3 to "Lozko Ganbanyoku".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 81 from symbol S-2.7.1.6.3 to "Sufit przejsciowy".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 89 from symbol S-2.7.1.6.3 to "Sufit techniczne".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 96 from symbol S-2.7.1.6.3 to "Kinkiety sciana i su...".  Maximum Length = 15, New Length would be 40.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 99 from symbol S-2.7.1.6.3 to "Kinkiety sciana kory...".  Maximum Length = 15, New Length would be 30.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 100 from symbol S-2.7.1.6.3 to "Kinkiety sufit kotyt...".  Maximum Length = 15, New Length would be 36.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 101 from symbol S-2.7.1.6.3 to "Kinkiety sciana kory...".  Maximum Length = 15, New Length would be 38.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 105 from symbol S-2.7.1.6.3 to "Lampa wiszaca bilard".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:48  # Cannot set permanent string at input 106 from symbol S-2.7.1.6.3 to "Droga wokol stawu".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 107 from symbol S-2.7.1.6.3 to "Latarnie stajnia".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 112 from symbol S-2.7.1.6.3 to "Murek i slupy piazza".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 114 from symbol S-2.7.1.6.3 to "Latarnie warzywa".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 115 from symbol S-2.7.1.6.3 to "Latarnie rosliny".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 10 from symbol S-2.7.1.6.4 to "Gniazda 230 lozko".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 12 from symbol S-2.7.1.6.4 to "Gniazdo 230 korytarz...".  Maximum Length = 15, New Length would be 30.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 17 from symbol S-2.7.1.6.4 to "Lampa stojaca szezlo...".  Maximum Length = 15, New Length would be 22.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 18 from symbol S-2.7.1.6.4 to "Lampa stojaca droga".  Maximum Length = 15, New Length would be 19.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 19 from symbol S-2.7.1.6.4 to "Lampa stojaca stajni...".  Maximum Length = 15, New Length would be 21.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 20 from symbol S-2.7.1.6.4 to "Podloga jackuzzi".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 22 from symbol S-2.7.1.6.4 to "Plyta indukcyjna".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 3 from symbol S-2.7.2.3.2 to "Led sciana / sufit s...".  Maximum Length = 15, New Length would be 24.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 4 from symbol S-2.7.2.3.2 to "Led sciana / sufit j...".  Maximum Length = 15, New Length would be 27.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 17 from symbol S-2.7.2.3.2 to "Sufit korytarz hobby".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 22 from symbol S-2.7.2.3.2 to "Led liniowka fitness".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 23 from symbol S-2.7.2.3.2 to "Led liniowka hobby".  Maximum Length = 15, New Length would be 18.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 42 from symbol S-2.7.2.3.2 to "Sufit Floss stajnia".  Maximum Length = 15, New Length would be 19.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 43 from symbol S-2.7.2.3.2 to "Sufit Floss stol".  Maximum Length = 15, New Length would be 16.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 44 from symbol S-2.7.2.3.2 to "Lampa wiszaca stol".  Maximum Length = 15, New Length would be 18.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 45 from symbol S-2.7.2.3.2 to "Sufit Floss 2 od sta...".  Maximum Length = 15, New Length would be 23.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 46 from symbol S-2.7.2.3.2 to "Sufit Floss droga".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 47 from symbol S-2.7.2.3.2 to "Sufit Floss 2 od dro...".  Maximum Length = 15, New Length would be 22.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 48 from symbol S-2.7.2.3.2 to "Sufit Floss droga".  Maximum Length = 15, New Length would be 17.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 49 from symbol S-2.7.2.3.2 to "Sufit wejscie Floss".  Maximum Length = 15, New Length would be 19.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 50 from symbol S-2.7.2.3.2 to "Led liniowka wej?cie".  Maximum Length = 15, New Length would be 20.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 51 from symbol S-2.7.2.3.2 to "Led liniowka piecyk".  Maximum Length = 15, New Length would be 19.  Truncating string to 15 characters.
+Warning: LogicEngine.exe [App 1] # 2018-05-16 15:42:49  # Cannot set permanent string at input 52 from symbol S-2.7.2.3.2 to "Led liniowka brama".  Maximum Length = 15, New Length would be 18.  Truncating string to 15 characters.
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added SwitchLoad nr 151
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added SwitchLoad nr 152
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added SwitchLoad nr 153
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added SwitchLoad nr 155
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added SwitchLoad nr 159
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added SwitchLoad nr 160
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added DimLoad nr 23
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added DimLoad nr 50
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(1) - Added DimLoad nr 52
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: SimplSystem - Added Zone nr 1
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(2) - Added SwitchLoad nr 136
+Notice: ConsoleServiceCE.exe # 2018-05-16 15:42:49  # SHELL Connection from: 192.168.1.115 
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(2) - Added SwitchLoad nr 138
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(2) - Added SwitchLoad nr 139
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(2) - Added SwitchLoad nr 155
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:49  # S#: Zone(2) - Added SwitchLoad nr 157
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:50  # S#: Zone(2) - Added SwitchLoad nr 159
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:50  # S#: Zone(2) - Added DimLoad nr 22
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:50  # S#: Zone(2) - Added DimLoad nr 51
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:50  # S#: SimplSystem - Added Zone nr 2
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:50  # S#: Zone(3) - Added SwitchLoad nr 141
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:50  # S#: Zone(3) - Added SwitchLoad nr 142
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(3) - Added SwitchLoad nr 143
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(3) - Added SwitchLoad nr 144
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(3) - Added SwitchLoad nr 145
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: SimplSystem - Added Zone nr 3
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(4) - Added SwitchLoad nr 56
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(4) - Added SwitchLoad nr 137
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: SimplSystem - Added Zone nr 4
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(5) - Added SwitchLoad nr 45
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(5) - Added SwitchLoad nr 46
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(5) - Added SwitchLoad nr 47
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(5) - Added SwitchLoad nr 49
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(5) - Added DimLoad nr 49
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: SimplSystem - Added Zone nr 5
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 14
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 15
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 32
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 33
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 45
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 46
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 47
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:51  # S#: Zone(6) - Added SwitchLoad nr 49
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 75
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 79
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 83
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 96
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 99
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 100
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 101
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 117
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added SwitchLoad nr 121
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added DimLoad nr 1
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added DimLoad nr 3
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(6) - Added DimLoad nr 17
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: SimplSystem - Added Zone nr 6
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(7) - Added SwitchLoad nr 36
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(7) - Added SwitchLoad nr 37
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(7) - Added SwitchLoad nr 120
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: SimplSystem - Added Zone nr 7
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:52  # S#: Zone(8) - Added SwitchLoad nr 34
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(8) - Added DimLoad nr 36
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: SimplSystem - Added Zone nr 8
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(9) - Added SwitchLoad nr 27
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(9) - Added SwitchLoad nr 28
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(9) - Added SwitchLoad nr 115
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(9) - Added DimLoad nr 33
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: SimplSystem - Added Zone nr 9
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(10) - Added SwitchLoad nr 25
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(10) - Added SwitchLoad nr 29
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(10) - Added SwitchLoad nr 30
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:53  # S#: Zone(10) - Added SwitchLoad nr 116
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(10) - Added DimLoad nr 34
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 10
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(11) - Added SwitchLoad nr 26
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(11) - Added SwitchLoad nr 31
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(11) - Added SwitchLoad nr 118
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(11) - Added DimLoad nr 35
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 11
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(12) - Added SwitchLoad nr 48
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(12) - Added SwitchLoad nr 122
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(12) - Added DimLoad nr 41
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(12) - Added DimLoad nr 42
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(12) - Added DimLoad nr 46
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(12) - Added DimLoad nr 70
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 12
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added SwitchLoad nr 123
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added SwitchLoad nr 124
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added DimLoad nr 43
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added DimLoad nr 44
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added DimLoad nr 45
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added DimLoad nr 47
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(13) - Added DimLoad nr 48
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 13
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(14) - Added SwitchLoad nr 97
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(14) - Added SwitchLoad nr 114
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(14) - Added DimLoad nr 21
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(14) - Added DimLoad nr 65
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 14
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 65
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 66
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 67
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 68
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 69
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 71
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 72
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 74
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 75
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 76
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 77
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 78
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added SwitchLoad nr 125
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added DimLoad nr 2
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(15) - Added DimLoad nr 4
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 15
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(16) - Added SwitchLoad nr 79
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(16) - Added SwitchLoad nr 80
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(16) - Added SwitchLoad nr 82
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(16) - Added SwitchLoad nr 83
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 16
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(17) - Added SwitchLoad nr 81
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(17) - Added SwitchLoad nr 89
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: SimplSystem - Added Zone nr 17
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(18) - Added SwitchLoad nr 98
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(18) - Added SwitchLoad nr 102
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(18) - Added SwitchLoad nr 126
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(18) - Added SwitchLoad nr 127
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:54  # S#: Zone(18) - Added DimLoad nr 18
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 18
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(19) - Added SwitchLoad nr 103
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(19) - Added SwitchLoad nr 128
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(19) - Added DimLoad nr 19
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 19
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(20) - Added SwitchLoad nr 104
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(20) - Added SwitchLoad nr 105
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(20) - Added DimLoad nr 20
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 20
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(21) - Added SwitchLoad nr 11
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 21
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(22) - Added SwitchLoad nr 10
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 22
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(23) - Added SwitchLoad nr 4
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(23) - Added DimLoad nr 37
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 23
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(24) - Added SwitchLoad nr 6
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(24) - Added SwitchLoad nr 17
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(24) - Added DimLoad nr 38
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(24) - Added DimLoad nr 71
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: SimplSystem - Added Zone nr 24
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(25) - Added SwitchLoad nr 9
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(25) - Added SwitchLoad nr 113
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(25) - Added DimLoad nr 39
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:55  # S#: Zone(25) - Added DimLoad nr 40
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:56  # S#: SimplSystem - Added Zone nr 25
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:56  # S#: Zone(26) - Added SwitchLoad nr 2
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:56  # S#: Zone(26) - Added SwitchLoad nr 3
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:56  # S#: Zone(26) - Added SwitchLoad nr 5
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:57  # S#: Zone(26) - Added SwitchLoad nr 7
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:57  # S#: Zone(26) - Added DimLoad nr 72
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:58  # S#: SimplSystem - Added Zone nr 26
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:58  # S#: Zone(27) - Added SwitchLoad nr 1
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:58  # S#: Zone(27) - Added SwitchLoad nr 8
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:58  # S#: SimplSystem - Added Zone nr 27
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:58  # S#: Zone(28) - Added SwitchLoad nr 19
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:58  # S#: SimplSystem - Added Zone nr 28
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:59  # S#: Zone(29) - Added SwitchLoad nr 55
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:42:59  # S#: Zone(29) - Added SwitchLoad nr 112
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: SimplSystem - Added Zone nr 29
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: Zone(30) - Added SwitchLoad nr 53
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: SimplSystem - Added Zone nr 30
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: Zone(31) - Added SwitchLoad nr 51
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: Zone(31) - Added SwitchLoad nr 52
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: Zone(31) - Added SwitchLoad nr 111
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:00  # S#: SimplSystem - Added Zone nr 31
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:01  # S#: Zone(32) - Added SwitchLoad nr 54
+Notice: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:01  # S#: SimplSystem - Added Zone nr 32
+Error: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:16  # Exception:Exception occured while parsing a received CI-KNX message - System.ArgumentException: ArgumentException
+Parameter name: value
+   at System.BitConverter.ToUInt16(Byte[] value, Int32 startIndex)
+   at CrestronKNXLibrary.Communication.CIKNXCommuError: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:16  # nication.ConvertTwoByteData(Byte[] data)
+   at CrestronKNXLibrary.Data_Types.KNXTwoByteSimplSharpComponent.ProcessFeedback(Byte[] data)
+   at CrestronKNXLibrary.Routing.RouterComponent.ProcessFeedback(String address, Byte[] data)
+   at CrestronKNXLibraError: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:16  # ry.Communication.CIKNXCommunication.ProcessGatewayMessage(Byte[] data)
+   at CrestronKNXLibrary.Communication.CIKNXCommunication.ProcessFeedback(Byte[] data)
+   at CrestronKNXLibrary.Communication.CIKNXCommunication.TCPClientSocketReceive(TCPClient myTCError: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:16  # PClient, Int32 bytesReceived)
+   at Crestron.SimplSharp.CrestronSockets.TCPClient.p(IAsyncResult A_0)
+   at System.Net.LazyAsyncResult.InvokeCallback(Boolean asyncCompletion)
+   at System.Net.Sockets.Socket.WorkerThread.doWork()
+   at System.Net.SockeError: splusmanagerapp.exe [App 1] # 2018-05-16 15:43:16  # ts.Socket.WorkerThread.doWorkI(Object o)
+   at System.Threading.ThreadPool.WorkItem.doWork(Object o)
+   at System.Threading.Timer.ring()
+
+Notice: ConsoleServiceCE.exe # 2018-05-16 15:43:34  # SHELL Connection from: 192.168.1.115 
+
