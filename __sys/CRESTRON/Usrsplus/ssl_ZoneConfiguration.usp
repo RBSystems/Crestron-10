@@ -85,6 +85,7 @@ FUNCTION AddDevices()
 {
 	AddSwitchLoads();
 	AddDimLoads();
+	SimplSystem.AddZone(thisZone);
 }
 
 EVENTHANDLER DevicesInitializedHandler(Dummy dummy, EventArgs e)
@@ -102,7 +103,6 @@ FUNCTION Initialize()
 	RegisterSharpEvents();
 	thisZone.SetId(pZoneId);
 	thisZone.SetName(pZoneName);
-	SimplSystem.AddZone(thisZone);
 }
 
 // Event Handlers

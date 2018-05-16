@@ -94,6 +94,13 @@ FUNCTION Initialize()
 	AddLoads();
 }
 
+FUNCTION InitializeInputs()
+{
+	INTEGER i;
+
+	for (i = 1 to pUsedLoads) thisModule.UpdateAnalogInput(0, i, load_Level_FB[i]);
+}
+
 // Event Handlers
 
 CHANGE load_Level_FB
@@ -110,5 +117,5 @@ Function Main()
 {
 	Initialize();
 	WaitForInitializationComplete();
-	// TODO Init
+	//InitializeInputs();
 }

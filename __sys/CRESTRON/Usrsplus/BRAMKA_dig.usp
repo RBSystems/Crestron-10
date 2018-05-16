@@ -238,7 +238,11 @@ RELEASE connected
  
 CHANGE str_in
 {
-	dig_o[atoi(str_in)]=atoi(right(str_in,1));
+	INTEGER index;
+
+	index = atoi(str_in); 
+
+	if (index > 0) dig_o[index]=atoi(right(str_in,1));
 }
 
 /*

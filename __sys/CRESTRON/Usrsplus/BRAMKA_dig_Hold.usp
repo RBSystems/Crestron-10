@@ -211,9 +211,13 @@ RELEASE connected
  
 CHANGE str_in
 {
+	INTEGER index;	
+
 	if (find("OK", str_in) > 0) return;
 	
-	dig_o[atoi(str_in)]=atoi(right(str_in,1));
+	index = atoi(str_in);
+
+	if (index > 0) dig_o[index]=atoi(right(str_in,1));
 }
 
 /*

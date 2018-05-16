@@ -97,7 +97,7 @@ FUNCTION SetAVR(INTEGER _index)
 
 		if (_index = 0)
 		{
-			if (AVR_Power_FB = 1) pulse(PULSE_TIME, AVR_Power_Off);
+			/* if (AVR_Power_FB = 1) */ pulse(PULSE_TIME, AVR_Power_Off);
 			return;
 		}
 		else
