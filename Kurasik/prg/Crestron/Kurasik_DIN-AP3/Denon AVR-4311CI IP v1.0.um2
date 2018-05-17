@@ -16,15 +16,15 @@ S0Nd=1
 S1Nd=2
 SLNd=3
 PrNm=Denon AVR-4311CI IP v1.0.umc
-DbVr=66.05.001.00
-DvcDbVr=91.05.002.00
+DbVr=67.00.003.00
+DvcDbVr=92.05.001.00
 PgmNm=LP
 DlrNm=Crestron Electronics
 CltNm=Denon AVR-4311CI IP v1.0
 Incl=1766,2574,2651,2817,2886,2938,2947,3181,3197,3233,3710,3735,3736,3816,3888,4176,4308,4476,4591,4769,5360,5388,5420,5455,5497,5699,5813,
 McNm=Denon AVR-4311CI IP v1.0
-SmVr=1053
-DvVr=1053
+SmVr=1056
+DvVr=1056
 TpN1=1
 TpN2=2
 TpN3=3
@@ -60,6 +60,35 @@ Nm2=Power
 Sx2=0
 Sy2=0
 Mx2=0
+]
+[
+ObjTp=Bw
+H=1
+Lx=0
+Ly=0
+Rx=759
+Ry=358
+Xm=-1
+Ym=-1
+SH=203
+Z=100
+P=120
+Ht=4
+Hi=4
+]
+[
+ObjTp=Bw
+H=1
+Lx=0
+Ly=358
+Rx=759
+Ry=716
+Xm=-1
+Ym=-1
+SH=43
+Z=100
+Ht=4
+Hi=36
 ]
 [
 ObjTp=Bw

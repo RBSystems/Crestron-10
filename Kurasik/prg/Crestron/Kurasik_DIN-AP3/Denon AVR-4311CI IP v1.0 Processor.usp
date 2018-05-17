@@ -99,15 +99,15 @@ STRING	Tempstring$[3000], Command$[2], Sub$[3], Sub3$[1], MainLevelInt$[10],
 String_Function CalculateVolumeText(Integer Value)
 {	
 	String Text$[10];
-	String Value$[3];
-	Integer Remainder;
+	//String Value$[3];
+	//Integer Remainder;
 	
 	if(Value >= 800)
 		Makestring(Text$, "%u.%u dB", (Value - 800) / 10, (Value - 800) mod 10);
 	else
 	{
 		Value = -(Value - 800);
-		Makestring(Value$, "%03u\n", Value);
+		//Makestring(Value$, "%03u\n", Value);
 		if((Value mod 10) > 0)
 			Makestring(Text$, "- %u.5 dB", Value / 10);
 		else
@@ -119,15 +119,15 @@ String_Function CalculateVolumeText(Integer Value)
 String_Function CalculateChannelText(Integer Value)
 {	
 	String Text$[10];
-	String Value$[3];
-	Integer Remainder;
+	//String Value$[3];
+	//Integer Remainder;
 	
 	if(Value >= 500)
 		Makestring(Text$, "%u.%u dB", (Value - 500) / 10, (Value - 500) mod 10);
 	else
 	{
 		Value = -(Value - 500);
-		Makestring(Value$, "%03u\n", Value);
+		//Makestring(Value$, "%03u\n", Value);
 		if((Value mod 10) > 0)
 			Makestring(Text$, "- %u.5 dB", Value / 10);
 		else
