@@ -1679,8 +1679,8 @@
   SymJam=NonExclusive
   FileName=ssl_SwitchLoadsModule.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
-  clz2=ssl_Utility
+  clz1=ssl_Utility
+  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

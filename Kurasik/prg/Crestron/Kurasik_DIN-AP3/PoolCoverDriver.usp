@@ -1,0 +1,210 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "PoolCoverDriver"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT PULSE_TIME 5
+
+// Inputs
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT OpenRelay_On_FB;
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT CloseRelay_On_FB;
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT SafetyBolt_FB;
+DIGITAL_INPUT OpenLimit_FB;
+DIGITAL_INPUT CloseLimit_FB;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT EmergencyStop;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT OpenHold;
+DIGITAL_INPUT CloseHold;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT OpenFull;
+DIGITAL_INPUT CloseFull;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT OpenSwitch;
+DIGITAL_INPUT CloseSwitch;
+
+// Outputs
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT OpenRelay_On;
+DIGITAL_OUTPUT OpenRelay_Off;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT CloseRelay_On;
+DIGITAL_OUTPUT CloseRelay_Off;
+
+
+
+// Parameters
+INTEGER_PARAMETER pFullTime;
+
+// Parameter Properietes
+#BEGIN_PARAMETER_PROPERTIES pFullTime
+   propValidUnits = unitTime;
+   propDefaultUnit = unitTime;
+   propBounds = 10s , 100s;
+   propShortDescription = "Full Open/Close Time";
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+
+// Global Variables
+INTEGER gState; // 0 = closed, 1 = middle, 2 = opened, 3 = locked
+INTEGER gIsMoving; // 0 = NO, 1 = YES
+
+
+// Functions
+
+FUNCTION Stop()
+{
+	PULSE(PULSE_TIME, CloseRelay_Off);
+	PULSE(PULSE_TIME, OpenRelay_Off);
+    gIsMoving = 0;
+}
+
+FUNCTION StartOpen()
+{
+	Stop();
+	PULSE(PULSE_TIME, OpenRelay_On);
+	gIsMoving = 1;
+	
+}
+
+FUNCTION StartClose()
+{
+	Stop();
+	PULSE(PULSE_TIME, CloseRelay_On);
+	gIsMoving = 1;
+}
+
+FUNCTION FullOpen()
+{
+	if (gIsMoving = 0 && gState < 2)
+	{
+		StartOpen();
+		WAIT(pFullTime, OPEN_WAIT)
+		{
+			Stop();
+		}
+	}
+}
+
+FUNCTION FullClose()
+{
+	if (gIsMoving = 0 && (gState = 1 || gState = 2))
+	{
+		StartClose();
+		WAIT(pFullTime, CLOSE_WAIT)
+		{
+			Stop();
+		}
+	}
+}
+
+FUNCTION StopAndCancel()
+{
+	CancelAllWait();
+    Stop();
+}
+
+// 0 = closed, 1 = middle, 2 = opened, 3 = locked
+FUNCTION CalculateState()
+{
+	if (SafetyBolt_FB = 1)
+	{
+		gState = 3;
+		return;
+	}
+
+	if (OpenLimit_FB = 1)
+	{
+		gState = 2;
+		return;
+	}
+
+	if (CloseLimit_FB = 1)
+	{
+		gState = 0;
+		return;
+	}
+
+	gState = 1;
+}
+
+
+
+// Event Handlers
+
+PUSH OpenRelay_On_FB
+{
+	PULSE(PULSE_TIME, CloseRelay_Off);
+
+	if (gState >= 2) PULSE(PULSE_TIME, OpenRelay_Off);
+}
+
+PUSH CloseRelay_On_FB
+{
+	PULSE(PULSE_TIME, OpenRelay_Off);
+
+	if (gState = 0 || gState = 3) PULSE(PULSE_TIME, CloseRelay_Off);
+}
+
+PUSH SafetyBolt_FB, OpenLimit_FB, CloseLimit_FB
+{
+	StopAndCancel();
+	CalculateState();
+}
+
+RELEASE SafetyBolt_FB, OpenLimit_FB, CloseLimit_FB
+{
+	CalculateState();
+}
+
+PUSH EmergencyStop
+{
+	StopAndCancel();
+}
+
+PUSH OpenHold, OpenFull
+{
+	FullOpen();
+}
+
+PUSH CloseHold, CloseFull
+{
+	FullClose();
+}
+
+RELEASE OpenHold, CloseHold
+{
+	StopAndCancel();
+}
+  
+PUSH OpenSwitch
+{
+	if (gIsMoving = 0) FullOpen();
+	else StopAndCancel();
+}
+
+PUSH CloseSwitch
+{
+	if (gIsMoving = 0) FullClose();
+	else StopAndCancel();
+}
+
+// Main Function
+
+Function Main()
+{
+    gState = 0;
+	gIsMoving = 0;
+	WaitForInitializationComplete();
+	StopAndCancel();;
+	CalculateState();
+}

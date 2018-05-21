@@ -289,7 +289,8 @@
   SymJam=NonExclusive
   FileName=Denon AVR-4311CI IP v1.0 Processor.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
+  clz1=ssl_Utility
+  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

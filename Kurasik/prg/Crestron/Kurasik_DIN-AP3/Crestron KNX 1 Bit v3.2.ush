@@ -79,7 +79,8 @@
   SymJam=NonExclusive
   FileName=Crestron KNX 1 Bit v3.2.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
+  clz1=ssl_Utility
+  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
