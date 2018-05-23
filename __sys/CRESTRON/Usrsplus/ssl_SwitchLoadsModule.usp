@@ -48,6 +48,7 @@ STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE
 
 // Global Variable
 SwitchLoadsModule thisModule;
+INTEGER gIsInitialized;
 
 // Delegates
 CALLBACK FUNCTION SendDigitalOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
@@ -75,13 +76,6 @@ FUNCTION AddLoads()
 	SimplSystem.SwitchLoadsInitialized();
 }
 
-FUNCTION Initialize()
-{
-	RegisterDelegates();
-	thisModule.SetNumberOfLoads(pUsedLoads);
-	AddLoads();
-}
-
 FUNCTION InitializeInputs()
 {
 	INTEGER i;
@@ -89,11 +83,32 @@ FUNCTION InitializeInputs()
 	for (i = 1 to pUsedLoads) thisModule.UpdateDigitalInput(0, i, load_On_FB[i]);
 }
 
+EVENTHANDLER SimplSystemInitializedHandler(Dummy dummy, EventArgs e)
+{
+	InitializeInputs();
+	gIsInitialized = 1;
+}
+
+FUNCTION RegisterSharpEvents()
+{
+	RegisterEvent(SimplSystem, SimplSystemInitialized, SimplSystemInitializedHandler);
+}
+
+FUNCTION Initialize()
+{
+	RegisterDelegates();
+	RegisterSharpEvents();
+	thisModule.SetNumberOfLoads(pUsedLoads);
+	AddLoads();
+}
+
 // Event Handlers
 
 CHANGE load_On_FB
 {
 	INTEGER i;
+
+	if (gIsInitialized = 0) return;
 
 	i = GetLastModifiedArrayIndex();
 	thisModule.UpdateDigitalInput(0, i, load_On_FB[i]);
@@ -103,6 +118,7 @@ CHANGE load_On_FB
 
 Function Main()
 {
+	gIsInitialized = 0;
 	Initialize();
 	WaitForInitializationComplete();
 	//InitializeInputs();

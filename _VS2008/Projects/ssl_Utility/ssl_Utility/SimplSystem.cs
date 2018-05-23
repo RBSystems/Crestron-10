@@ -12,7 +12,7 @@ namespace ssl_Utility
         private static bool _dimLoadsInitialized;
         private static bool _devicesInitialized;
 
-        public static event EventHandler ResidenceInitialized;
+        public static event EventHandler SimplSystemInitialized;
         public static event EventHandler DevicesInitialized;
 
         public static ushort IsInitialized { get; private set; }
@@ -23,14 +23,14 @@ namespace ssl_Utility
         public static Dictionary<ushort, SwitchLoad> SwitchLoads { get; private set; }
         public static Dictionary<ushort, DimLoad> DimLoads { get; private set; }
 
-        private static void OnResidenceInitialized()
-        {
-            if (ResidenceInitialized != null) ResidenceInitialized(new Dummy(), EventArgs.Empty);
-        }
-
         private static void OnDevicesInitialized()
         {
             if (DevicesInitialized != null) DevicesInitialized(new Dummy(), EventArgs.Empty);
+
+            CrestronEnvironment.Sleep(7000);
+            IsInitialized = 1;
+
+            if (SimplSystemInitialized != null) SimplSystemInitialized(new Dummy(), EventArgs.Empty);
         }
 
         public static void Initialize()
@@ -41,10 +41,7 @@ namespace ssl_Utility
             DimLoads = new Dictionary<ushort, DimLoad>();
 
             Zones = new Dictionary<ushort, Zone>();
-            ZoneGroups = new Dictionary<ushort, ZoneGroup>();
-
-            IsInitialized = 1;
-            OnResidenceInitialized();
+            ZoneGroups = new Dictionary<ushort, ZoneGroup>();                        
         }
 
         public static void AddZone(Zone zone)

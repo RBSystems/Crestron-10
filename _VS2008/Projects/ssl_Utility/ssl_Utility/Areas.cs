@@ -6,6 +6,8 @@ using Crestron.SimplSharp;
 
 namespace ssl_Utility
 {
+    public delegate void LoadChangedHandler(ushort _id);
+    
     public class Area
     {
         public ushort Id { get; protected set; }
@@ -28,8 +30,8 @@ namespace ssl_Utility
 
     public class Zone : Area
     {
-        public event EventHandler SwitchLoadChanged;
-        public event EventHandler DimLoadChanged;
+        public event LoadChangedHandler SwitchLoadChanged;
+        public event LoadChangedHandler DimLoadChanged;
         
         public List<SwitchLoad> SwitchLoads { get; private set; }
         public List<DimLoad> DimLoads { get; private set; }
@@ -84,26 +86,30 @@ namespace ssl_Utility
 
         void SwitchLoadChangedHandler(object sender, EventArgs e)
         {
-            OnSwitchLoadChanged();
+            SwitchLoad switchLoad = (SwitchLoad)sender;
+            ushort id = (ushort) SwitchLoads.IndexOf(switchLoad);
+            OnSwitchLoadChanged(id);
         }
 
         void DimLoadChangedHandler(object sender, EventArgs e)
         {
-            OnDimLoadChanged();
+            DimLoad dimLoad = (DimLoad)sender;
+            ushort id = (ushort)DimLoads.IndexOf(dimLoad);
+            OnDimLoadChanged(id);
         }
 
         #endregion
 
         #region Events
 
-        private void OnSwitchLoadChanged()
+        private void OnSwitchLoadChanged(ushort id)
         {
-            if (SwitchLoadChanged != null) SwitchLoadChanged(this, EventArgs.Empty);
+            if (SwitchLoadChanged != null) SwitchLoadChanged(id);
         }
 
-        private void OnDimLoadChanged()
+        private void OnDimLoadChanged(ushort id)
         {
-            if (DimLoadChanged != null) DimLoadChanged(this, EventArgs.Empty);
+            if (DimLoadChanged != null) DimLoadChanged(id);
         }
 
         #endregion

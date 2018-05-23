@@ -82,20 +82,20 @@ namespace ssl_Utility
             SendSwitchInfo();
             SendDimInfo();
 
-            SendSwitchFB();
-            SendDimFB();
+            SendAllSwitchFB();
+            SendAllDimFB();
 
             return id;
         }
 
-        private void DimLoadChangedHandler(object sender, EventArgs e)
+        private void SwitchLoadChangedHandler(ushort id)
         {
-            SendDimFB();
+            SendSingleSwitchFB(++id);
         }
 
-        private void SwitchLoadChangedHandler(object sender, EventArgs e)
+        private void DimLoadChangedHandler(ushort id)
         {
-            SendSwitchFB();
+            SendSingleDimFB(++id);
         }
 
         public void SwitchToggle(ushort id)
@@ -210,14 +210,41 @@ namespace ssl_Utility
             }
         }
 
-        private void SendSwitchFB()
+        private void SendSingleSwitchFB(ushort id)
         {
             try
             {
-                for (ushort i = 1; i <= _maxSwitchCount; i++)
+                if (id <= SelectedZone.SwitchLoads.Count) SendDigitalOutputDelegate(SW_FB_DOUT, id, (ushort)(SelectedZone.SwitchLoads[id - 1].IsOn ? 1 : 0));
+                else SendDigitalOutputDelegate(SW_FB_DOUT, id, 0);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        private void SendAllSwitchFB()
+        {
+            for (ushort i = 1; i <= _maxSwitchCount; i++)
+            {
+                SendSingleSwitchFB(i);
+            }
+        }
+
+        private void SendSingleDimFB(ushort id)
+        {
+            try
+            {
+                if (id <= SelectedZone.DimLoads.Count)
                 {
-                    if (i <= SelectedZone.SwitchLoads.Count) SendDigitalOutputDelegate(SW_FB_DOUT, i, (ushort)(SelectedZone.SwitchLoads[i - 1].IsOn ? 1 : 0));
-                    else SendDigitalOutputDelegate(SW_FB_DOUT, i, 0);
+                    SendDigitalOutputDelegate(DIM_FB_DOUT, id, (ushort)(SelectedZone.DimLoads[id - 1].IsOn ? 1 : 0));
+                    SendAnalogOutputDelegate(DIM_LEVEL_AOUT, id, SelectedZone.DimLoads[id - 1].Level);
+                    SendStringOutputDelegate(DIM_PERCENT_SOUT, id, "" + SelectedZone.DimLoads[id - 1].Percent + " %");
+                }
+                else
+                {
+                    SendDigitalOutputDelegate(DIM_FB_DOUT, id, 0);
+                    SendAnalogOutputDelegate(DIM_LEVEL_AOUT, id, 0);
+                    SendStringOutputDelegate(DIM_PERCENT_SOUT, id, "0 %");
                 }
             }
             catch (Exception ex)
@@ -225,28 +252,11 @@ namespace ssl_Utility
             }
         }
 
-        private void SendDimFB()
+        private void SendAllDimFB()
         {
-            try
+            for (ushort i = 1; i <= _maxDimCount; i++)
             {
-                for (ushort i = 1; i <= _maxDimCount; i++)
-                {
-                    if (i <= SelectedZone.DimLoads.Count)
-                    {
-                        SendDigitalOutputDelegate(DIM_FB_DOUT, i, (ushort)(SelectedZone.DimLoads[i - 1].IsOn ? 1 : 0));
-                        SendAnalogOutputDelegate(DIM_LEVEL_AOUT, i, SelectedZone.DimLoads[i - 1].Level);
-                        SendStringOutputDelegate(DIM_PERCENT_SOUT, i, "" + SelectedZone.DimLoads[i - 1].Percent + " %");
-                    }
-                    else
-                    {
-                        SendDigitalOutputDelegate(DIM_FB_DOUT, i, 0);
-                        SendAnalogOutputDelegate(DIM_LEVEL_AOUT, i, 0);
-                        SendStringOutputDelegate(DIM_PERCENT_SOUT, i, "0 %");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
+                SendSingleDimFB(i);
             }
         }
 

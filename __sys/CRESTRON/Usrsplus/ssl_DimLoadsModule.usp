@@ -50,6 +50,7 @@ STRING_PARAMETER pLoadName[MAX_NUMBER_OF_LOADS, MAX_NUMBER_OF_LOADS][STRING_SIZE
 
 // Global Variable
 DimLoadsModule thisModule;
+INTEGER gIsInitialized;
 
 // Delegates
 CALLBACK FUNCTION SendDigitalOutputCallback(INTEGER _arrayIndex, INTEGER _signalIndex, INTEGER _signalValue)
@@ -69,13 +70,11 @@ CALLBACK FUNCTION SendAnalogOutputCallback(INTEGER _arrayIndex, INTEGER _signalI
 	}
 }
 
-
 // Functions
 FUNCTION RegisterDelegates()
 {
 	RegisterDelegate(thisModule, SendDigitalOutputDelegate, SendDigitalOutputCallback);
 	RegisterDelegate(thisModule, SendAnalogOutputDelegate, SendAnalogOutputCallback);
-
 }
 
 FUNCTION AddLoads()
@@ -87,13 +86,6 @@ FUNCTION AddLoads()
 	SimplSystem.DimLoadsInitialized();
 }
 
-FUNCTION Initialize()
-{
-	RegisterDelegates();
-	thisModule.SetNumberOfLoads(pUsedLoads);
-	AddLoads();
-}
-
 FUNCTION InitializeInputs()
 {
 	INTEGER i;
@@ -101,11 +93,34 @@ FUNCTION InitializeInputs()
 	for (i = 1 to pUsedLoads) thisModule.UpdateAnalogInput(0, i, load_Level_FB[i]);
 }
 
+EVENTHANDLER SimplSystemInitializedHandler(Dummy dummy, EventArgs e)
+{
+	InitializeInputs();
+	gIsInitialized = 1;
+}
+
+FUNCTION RegisterSharpEvents()
+{
+	RegisterEvent(SimplSystem, SimplSystemInitialized, SimplSystemInitializedHandler);
+}
+
+FUNCTION Initialize()
+{
+	RegisterDelegates();
+	RegisterSharpEvents();
+	thisModule.SetNumberOfLoads(pUsedLoads);
+	AddLoads();
+}
+
+
+
 // Event Handlers
 
 CHANGE load_Level_FB
 {
 	INTEGER i;
+    
+	if (gIsInitialized = 0) return;
 
 	i = GetLastModifiedArrayIndex();
 	thisModule.UpdateAnalogInput(0, i, load_Level_FB[i]);
@@ -115,6 +130,7 @@ CHANGE load_Level_FB
 
 Function Main()
 {
+	gIsInitialized = 0;
 	Initialize();
 	WaitForInitializationComplete();
 	//InitializeInputs();
