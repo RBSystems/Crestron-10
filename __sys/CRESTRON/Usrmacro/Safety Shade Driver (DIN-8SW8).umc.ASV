@@ -6,7 +6,7 @@ ObjTp=FSgntr
 Sgntr=UserMacro
 RelVrs=4.09.04
 IntStrVrs=2
-MinSMWVrs=2.07.04
+MinSMWVrs=3.00.00
 MinTIOVrs=0
 SavedBy=SMW4.07.03
 ]
@@ -53,7 +53,7 @@ SmplCName=Safety Shade Driver (DIN-8SW8).umc
 Smpl-C=3
 CompilerTimePrecision=Single_Or_Double_Precision
 Hint=Safe Shade Driver (DIN-8SW8)
-SMWRev=2.07.04
+SMWRev=3.00.00
 TIORev=0
 S+=1
 HelpID=1055

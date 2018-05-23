@@ -37,7 +37,15 @@ DIGITAL_OUTPUT OpenRelay_Off;
 DIGITAL_OUTPUT _SKIP_;
 DIGITAL_OUTPUT CloseRelay_On;
 DIGITAL_OUTPUT CloseRelay_Off;
-
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT PowerRelay_On;
+DIGITAL_OUTPUT PowerRelay_Off;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT moving_FB; // 0 = NO, 1 = YES
+DIGITAL_OUTPUT closing_FB;
+DIGITAL_OUTPUT opening_FB;
+DIGITAL_OUTPUT _SKIP_;
+ANALOG_OUTPUT status#_FB; // 0 = closed, 1 = middle, 2 = opened, 3 = locked
 
 
 // Parameters
@@ -55,8 +63,8 @@ INTEGER_PARAMETER pFullTime;
 // Structure Definitions
 
 // Global Variables
-INTEGER gState; // 0 = closed, 1 = middle, 2 = opened, 3 = locked
-INTEGER gIsMoving; // 0 = NO, 1 = YES
+//INTEGER status#_FB; 
+//INTEGER ; 
 
 
 // Functions
@@ -65,27 +73,25 @@ FUNCTION Stop()
 {
 	PULSE(PULSE_TIME, CloseRelay_Off);
 	PULSE(PULSE_TIME, OpenRelay_Off);
-    gIsMoving = 0;
 }
 
 FUNCTION StartOpen()
 {
 	Stop();
-	PULSE(PULSE_TIME, OpenRelay_On);
-	gIsMoving = 1;
-	
+	delay(5);
+	PULSE(PULSE_TIME, OpenRelay_On);	
 }
 
 FUNCTION StartClose()
 {
 	Stop();
+	delay(5);
 	PULSE(PULSE_TIME, CloseRelay_On);
-	gIsMoving = 1;
 }
 
 FUNCTION FullOpen()
 {
-	if (gIsMoving = 0 && gState < 2)
+	if (moving_FB = 0 && status#_FB < 2)
 	{
 		StartOpen();
 		WAIT(pFullTime, OPEN_WAIT)
@@ -97,7 +103,7 @@ FUNCTION FullOpen()
 
 FUNCTION FullClose()
 {
-	if (gIsMoving = 0 && (gState = 1 || gState = 2))
+	if (moving_FB = 0 && (status#_FB = 1 || status#_FB = 2))
 	{
 		StartClose();
 		WAIT(pFullTime, CLOSE_WAIT)
@@ -118,25 +124,40 @@ FUNCTION CalculateState()
 {
 	if (SafetyBolt_FB = 1)
 	{
-		gState = 3;
+		status#_FB = 3;
+		PULSE(PULSE_TIME, PowerRelay_On);
 		return;
 	}
 
 	if (OpenLimit_FB = 1)
 	{
-		gState = 2;
+		status#_FB = 2;
+		PULSE(PULSE_TIME, PowerRelay_Off);
 		return;
 	}
 
 	if (CloseLimit_FB = 1)
 	{
-		gState = 0;
+		status#_FB = 0;
+		PULSE(PULSE_TIME, PowerRelay_On);
 		return;
 	}
 
-	gState = 1;
+	status#_FB = 1;
+	PULSE(PULSE_TIME, PowerRelay_Off);
 }
 
+FUNCTION CalculateMoving()
+{
+	if (OpenRelay_On_FB = 1) opening_FB = 1;
+	else opening_FB = 0;
+
+	if (CloseRelay_On_FB = 1) closing_FB = 1;
+	else closing_FB = 0;
+
+	if (OpenRelay_On_FB = 1 || CloseRelay_On_FB = 1) moving_FB = 1;
+	else moving_FB = 0;
+}
 
 
 // Event Handlers
@@ -145,14 +166,19 @@ PUSH OpenRelay_On_FB
 {
 	PULSE(PULSE_TIME, CloseRelay_Off);
 
-	if (gState >= 2) PULSE(PULSE_TIME, OpenRelay_Off);
+	if (status#_FB >= 2) PULSE(PULSE_TIME, OpenRelay_Off);
 }
 
 PUSH CloseRelay_On_FB
 {
 	PULSE(PULSE_TIME, OpenRelay_Off);
 
-	if (gState = 0 || gState = 3) PULSE(PULSE_TIME, CloseRelay_Off);
+	if (status#_FB = 0 || status#_FB = 3) PULSE(PULSE_TIME, CloseRelay_Off);
+}
+
+CHANGE OpenRelay_On_FB, CloseRelay_On_FB
+{
+	CalculateMoving();
 }
 
 PUSH SafetyBolt_FB, OpenLimit_FB, CloseLimit_FB
@@ -188,13 +214,13 @@ RELEASE OpenHold, CloseHold
   
 PUSH OpenSwitch
 {
-	if (gIsMoving = 0) FullOpen();
+	if (moving_FB = 0) FullOpen();
 	else StopAndCancel();
 }
 
 PUSH CloseSwitch
 {
-	if (gIsMoving = 0) FullClose();
+	if (moving_FB = 0) FullClose();
 	else StopAndCancel();
 }
 
@@ -202,9 +228,9 @@ PUSH CloseSwitch
 
 Function Main()
 {
-    gState = 0;
-	gIsMoving = 0;
+    status#_FB = 0;
 	WaitForInitializationComplete();
 	StopAndCancel();;
 	CalculateState();
+	CalculateMoving();
 }

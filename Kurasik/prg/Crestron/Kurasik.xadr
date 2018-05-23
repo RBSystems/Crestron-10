@@ -12,7 +12,7 @@ DefaultEntry=
 
 [ComSpecs]
 0_usb=usb
-DIN-AP3=auto 192.168.1.201
+DIN-AP3=ctp 192.168.1.201
 DIN-DALI_1=auto 192.168.1.211
 DIN-DALI_2=auto 192.168.1.212
 TSW-750=auto 192.168.1.221
