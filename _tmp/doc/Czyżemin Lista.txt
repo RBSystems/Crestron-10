@@ -1,0 +1,33 @@
+- sprawdzić obwód dim_001
+
+1. Panel główny i iPad
+   - Emulacja przycisków JUNG
+   - AllOff-y domu, parteru i piętra nie rusząją obw. zew.
+   
+2. Panel dotykowy Sauny/Groty
+   - Sceny (po otrzymaniu ich opisu od Pana)
+   
+3. Automatyka
+   - symulacja obecności (tzw. wakacje - dołożyć rolety z astroclock-a)
+   
+4. AV
+   - zaprogramowanie pilota
+   - sterowanie telewizorem
+
+5. CR-y
+
+- CR_01 wejście += kinkiety ściana korytarz hobby przy WC
+
+- CR_09 WC przy Hobby - (kinkiety sufit korytarz hobby lustra, kinkiety ściana przy wc, 2 lampki sufitowe)
+
+- CR_08 i CR_12 (korytarz Hobby) - cała długa część korytarza
+
+6. Hobby kuchnia - wyjaśnić gniazda
+
+7. Sceny w gabinecie i oranżerii
+
+8. Ustawianie widełek temperatur zewnętrznych. Program będzie reagowwać na ich przekroczenie
+
+9. Poprawić sceny z drzewkiem (dołożenie rolety i obw. zew. po długim wciśnięciu)
+
+10. Automatyka rolet wg rozpiski
