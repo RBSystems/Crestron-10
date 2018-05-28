@@ -1,0 +1,124 @@
+err sys
+ SYSTEM LOG:
+  1. Notice: ConsoleServiceCE.exe # 2018-05-16 09:56:42  # SHELL Connection from: 10.0.2.254 
+  2. Info: LogicEngine.exe [App 7] # 2018-05-16 09:56:47  # Stopping Program.
+  3. Ok: SimplSharpPro.exe # 2018-05-16 09:56:47  #  Thread C49BF2 created for IP-ID-180 at ID 180
+  4. Ok: SimplSharpPro.exe # 2018-05-16 09:56:47  #  Thread C6EF66 created for IP-ID-181 at ID 181
+  5. Ok: SimplSharpPro.exe # 2018-05-16 09:56:47  #  Thread C0B8BA created for IP-ID-182 at ID 182
+  6. Notice: TLDM.exe # 2018-05-16 09:56:47  # **Program 7 Stopped**
+  7. Info: LogicEngine.exe [App 7] # 2018-05-16 09:57:08  # Loading program from \SIMPL\app07
+  8. Info: LogicEngine.exe [App 7] # 2018-05-16 09:57:08  # Loading Program \SIMPL\app07\SSL_Test.bin.
+  9. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added Zone nr 3
+ 10. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added Zone nr 2
+ 11. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added Zone nr 1
+ 12. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 1
+ 13. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 2
+ 14. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 3
+ 15. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 4
+ 16. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 5
+ 17. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 6
+ 18. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 7
+ 19. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 8
+ 20. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 9
+ 21. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added SwitchLoad nr 10
+ 22. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 1
+ 23. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 2
+ 24. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 3
+ 25. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 4
+ 26. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 5
+ 27. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 6
+ 28. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:15  # S#: SimplSystem - Added DimLoad nr 7
+ 29. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 8
+ 30. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 9
+ 31. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 10
+ 32. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 11
+ 33. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 12
+ 34. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 11
+ 35. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 12
+ 36. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 13
+ 37. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 14
+ 38. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 13
+ 39. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 14
+ 40. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 15
+ 41. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 15
+ 42. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 16
+ 43. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 17
+ 44. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 16
+ 45. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 17
+ 46. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 18
+ 47. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 18
+ 48. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 19
+ 49. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 19
+ 50. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 20
+ 51. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added DimLoad nr 20
+ 52. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 21
+ 53. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 22
+ 54. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 23
+ 55. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 24
+ 56. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 25
+ 57. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 26
+ 58. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 27
+ 59. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 28
+ 60. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 29
+ 61. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: SimplSystem - Added SwitchLoad nr 30
+ 62. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 1
+ 63. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 2
+ 64. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 3
+ 65. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 4
+ 66. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 5
+ 67. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 6
+ 68. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 7
+ 69. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 8
+ 70. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 9
+ 71. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added SwitchLoad nr 10
+ 72. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added DimLoad nr 1
+ 73. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added DimLoad nr 2
+ 74. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added DimLoad nr 3
+ 75. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added DimLoad nr 4
+ 76. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(1) - Added DimLoad nr 5
+ 77. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 11
+ 78. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 12
+ 79. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 13
+ 80. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 14
+ 81. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 15
+ 82. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 16
+ 83. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 17
+ 84. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 18
+ 85. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 19
+ 86. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added SwitchLoad nr 20
+ 87. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added DimLoad nr 6
+ 88. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added DimLoad nr 7
+ 89. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added DimLoad nr 8
+ 90. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added DimLoad nr 9
+ 91. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(2) - Added DimLoad nr 10
+ 92. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 6
+ 93. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 7
+ 94. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 8
+ 95. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 9
+ 96. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 10
+ 97. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 11
+ 98. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 12
+ 99. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 13
+100. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 14
+101. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added SwitchLoad nr 15
+102. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added DimLoad nr 3
+103. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added DimLoad nr 4
+104. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added DimLoad nr 5
+105. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added DimLoad nr 6
+106. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added DimLoad nr 7
+107. Notice: splusmanagerapp.exe [App 7] # 2018-05-16 09:57:16  # S#: Zone(3) - Added DimLoad nr 8
+108. Notice: LogicEngine.exe # 2018-05-16 09:57:16  # **Program 7 Started**
+109. Ok: SimplSharpPro.exe # 2018-05-16 09:57:16  #  Thread C49BF6 created for IP-ID-180 at ID 180
+110. Ok: SimplSharpPro.exe # 2018-05-16 09:57:16  #  Thread C6EF6A created for IP-ID-181 at ID 181
+111. Ok: SimplSharpPro.exe # 2018-05-16 09:57:16  #  Thread C0B8BE created for IP-ID-182 at ID 182
+112. Info: dm_mfs_sahara.exe # 2018-05-16 09:57:16  # Dm_Mfs_Sahara TLDMInterface:Received Update Request type 0
+113. Info: LogicEngine.exe [App 7] # 2018-05-16 09:57:16  #  Going to steady state now 
+114. Info: dm_mfs_sahara.exe # 2018-05-16 09:57:17  # Dm_Mfs_Sahara TLDMInterface:Received Update Request type 0
+115. Info: dm_mfs_sahara.exe # 2018-05-16 09:57:17  # Dm_Mfs_Sahara TLDMInterface:Received Update Request type 0
+116. Info: TLDM.exe # 2018-05-16 09:57:17  #  Event rcvd is 8 
+117. Info: dm_mfs_avmanager.exe # 2018-05-16 09:57:17  # DmLibraryApp::ProcessAllAppsStarted 
+118. Notice: ConsoleServiceCE.exe # 2018-05-16 09:57:20  # SHELL Connection from: 10.0.2.254 
+119. Notice: ConsoleServiceCE.exe # 2018-05-16 09:57:35  # SHELL Connection from: 10.0.2.254 
+ Total Msgs Logged = 119
+ END OF SYSTEM LOG
+
