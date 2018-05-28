@@ -16,11 +16,11 @@
 
 5. CR-y
 
-- CR_01 wejście += kinkiety ściana korytarz hobby przy WC
+- CR_01 wejście += kinkiety ściana korytarz hobby przy WC (101)
 
-- CR_09 WC przy Hobby - (kinkiety sufit korytarz hobby lustra, kinkiety ściana przy wc, 2 lampki sufitowe)
+- CR_09 WC przy Hobby - (kinkiety sufit korytarz hobby lustra 100, kinkiety ściana przy wc 101, 2 lampki sufitowe (trzeba rozbić dim_17 na dwa osobne: 17 i 24<nowy>)
 
-- CR_08 i CR_12 (korytarz Hobby) - cała długa część korytarza
+- CR_08 i CR_12 (korytarz Hobby) - cała długa część korytarza (99 i dim _17)
 
 6. Hobby kuchnia - wyjaśnić gniazda
 
