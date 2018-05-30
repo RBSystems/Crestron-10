@@ -21,7 +21,7 @@
   SmplCName=Long_Short.usp
   Code=1
   SysRev5=4.000
-  SMWRev=3.00.00
+  SMWRev=2.02.05
   InputCue1=in
   InputSigType1=Digital
   OutputCue1=short
@@ -30,7 +30,7 @@
   OutputSigType2=Digital
   ParamCue1=[Reference Name]
   ParamCue2=tm
-  ParamSigType2=Constant
+  ParamSigType2=Time
   MinVariableInputs=1
   MaxVariableInputs=1
   MinVariableInputsList2=0
@@ -67,8 +67,6 @@
   SymJam=NonExclusive
   FileName=Long_Short.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
@@ -83,8 +81,10 @@
   HD=False
   Sgn=0
   Lng=False
-  NF=63
+  NF=16
   NoS=True
-  DNF=1
-  VVS=0
+  DNF=16
+  VVS=1
+  LR=0.1s
+  HR=20s
 [END]

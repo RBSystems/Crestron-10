@@ -1,0 +1,118 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "JUNG_Interface"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT MIN_ID 1
+#DEFINE_CONSTANT MAX_ID 255
+#DEFINE_CONSTANT BUTTON_COUNT 10
+
+// Inputs
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT buttonLeft, buttonRight; // L = BUTTON_COUNT+1, R = BUTTON_COUNT+2
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT buttonUp[BUTTON_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT buttonDown[BUTTON_COUNT, BUTTON_COUNT];
+DIGITAL_INPUT _SKIP_;
+ANALOG_INPUT id#;
+
+// Outputs
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT id#_FB;
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT Tx$;
+
+// Parameters
+
+INTEGER_PARAMETER pDefaultId;
+// STRING_PARAMETER
+
+// Parameter Properietes
+
+
+#BEGIN_PARAMETER_PROPERTIES pDefaultId
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = MIN_ID d , MAX_ID d;
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+
+// Global Variables
+
+// Functions
+
+// Event Handlers
+
+CHANGE id#
+{
+	if (id# >= MIN_ID && id# <= MAX_ID) id#_FB = id#;
+}
+
+PUSH buttonLeft
+{
+	Tx$ = itoa(id#_FB) + "_" + itoa(BUTTON_COUNT + 1) + "_1";
+}
+
+RELEASE buttonLeft
+{
+	Tx$ = itoa(id#_FB) + "_" + itoa(BUTTON_COUNT + 1) + "_0"; 
+}
+
+PUSH buttonRight
+{
+	Tx$ = itoa(id#_FB) + "_" + itoa(BUTTON_COUNT + 2) + "_1"; 
+}
+
+RELEASE buttonRight
+{
+	Tx$ = itoa(id#_FB) + "_" + itoa(BUTTON_COUNT + 2) + "_0"; 
+}
+
+PUSH buttonUp
+{
+	INTEGER i;
+	i = getLastModifiedArrayIndex();
+
+	Tx$ = itoa(id#_FB) + "_" + itoa(i) + "_Up_1";
+}
+
+RELEASE buttonUp
+{
+	INTEGER i;
+	i = getLastModifiedArrayIndex();
+
+	Tx$ = itoa(id#_FB) + "_" + itoa(i) + "_Up_0";
+}
+
+PUSH buttonDown
+{
+	INTEGER i;
+	i = getLastModifiedArrayIndex();
+
+	Tx$ = itoa(id#_FB) + "_" + itoa(i) + "_Down_1";
+}
+
+RELEASE buttonDown
+{
+	INTEGER i;
+	i = getLastModifiedArrayIndex();
+
+	Tx$ = itoa(id#_FB) + "_" + itoa(i) + "_Down_0";
+}
+
+
+// Main Function
+
+Function Main()
+{
+	id#_FB = pDefaultId;
+	WaitForInitializationComplete();
+	// TODO Init
+}

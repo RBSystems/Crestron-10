@@ -1,0 +1,80 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "JUNG_Processor"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT MIN_ID 1
+#DEFINE_CONSTANT MAX_ID 255
+#DEFINE_CONSTANT BUTTON_COUNT 10
+
+#DEFINE_CONSTANT STRING_SIZE 32
+#DEFINE_CONSTANT DELIMITER "_"
+
+// Inputs
+STRING_INPUT Rx$[STRING_SIZE];
+
+// Outputs
+DIGITAL_OUTPUT buttonLeft, buttonRight; // L = BUTTON_COUNT+1, R = BUTTON_COUNT+2
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT buttonUp[BUTTON_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT buttonDown[BUTTON_COUNT, BUTTON_COUNT];
+
+// Parameters
+INTEGER_PARAMETER pId;
+
+// Parameter Properietes
+#BEGIN_PARAMETER_PROPERTIES pId
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = MIN_ID d , MAX_ID d;
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+
+// Global Variables
+
+// Functions
+FUNCTION SetButtonUp(INTEGER id, INTEGER state)
+{
+	buttonUp[id] = state;
+}
+// Event Handlers
+
+CHANGE Rx$
+{
+	STRING temp$[STRING_SIZE];
+	INTEGER buttonId;
+	INTEGER buttonState;
+
+	temp$ = Rx$;
+	
+	if (atoi(remove(DELIMITER, temp$)) <> pId) return;	
+    
+	buttonId = atoi(remove(DELIMITER, temp$));
+	buttonState = atoi(temp$);
+
+	if (buttonId = BUTTON_COUNT + 1) buttonLeft = buttonState;
+	else if (buttonId = BUTTON_COUNT + 2) buttonRight = buttonState;
+	else
+	{
+		if (find("Up", temp$) > 0) buttonUp[buttonId] = buttonState;
+		else if (find("Down", temp$) > 0) buttonDown[buttonId] = buttonState;
+	}	
+}
+
+
+
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}
