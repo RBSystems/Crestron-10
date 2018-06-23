@@ -11,6 +11,7 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
+TSR-310=auto 192.168.69.100
 0_usb=usb
 DIN-AP3=ctp 192.168.1.201
 DIN-DALI_1=auto 192.168.1.211
@@ -26,6 +27,7 @@ DIN-DALI_1_Remote_Indirect=DIN-AP3_Remote:cresnet A0
 DIN-DALI_2_Remote_Indirect=DIN-AP3_Remote:cresnet A1
 
 [Notes]
+TSR-310=
 0_usb=
 DIN-AP3=
 DIN-DALI_1=

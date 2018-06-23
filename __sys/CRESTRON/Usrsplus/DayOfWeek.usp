@@ -1,0 +1,38 @@
+//Compiler Directives
+
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "DayOfWeek"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Outputs
+
+ANALOG_OUTPUT dayOfWeekNumber;
+STRING_OUTPUT dayOfWeekText;
+
+// Sockets
+
+
+// Functions
+
+FUNCTION UpdateDayOfWeek()
+{
+	dayOfWeekNumber = GetDayOfWeekNum();
+	dayOfWeekText = day();
+}
+	
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	While (1)
+	{
+		UpdateDayOfWeek();
+		delay(1000);
+	}
+}
