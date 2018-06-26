@@ -24,6 +24,7 @@ DIN-DALI-2_2		:	192.168.1.212 (A1)
 
 TSW_750 (Wejście)	:	192.168.1.221 (B0)
 TSW_560P (Sauna)	:	192.168.1.222 (B1)
+TSR_310 (Salon)		:	192.168.1.223 (B2)
 
 Projektor			:	192.168.1.231
 Amplituner kina		:	192.168.1.232
