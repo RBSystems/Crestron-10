@@ -128247,19 +128247,19 @@ ObjVer=1
 SmVr=1060
 PrH=2020
 CF=2
-n1I=23
+n1I=45
 n1O=2
 Cmn1=TV Commands\\
-mI=23
+mI=45
 I1=10045
 I3=10048
 I4=10049
-I5=10050
-I6=10051
-I7=10590
-I8=2436
-I9=2452
-I10=10
+I5=10
+I6=10050
+I7=10051
+I8=10590
+I9=10
+I10=3079
 I11=171
 I12=123
 I13=172
@@ -128269,37 +128269,81 @@ I16=2202
 I17=2468
 I18=2484
 I19=2500
-I20=2516
-I21=10
-I22=2644
-I23=2660
+I20=10
+I21=283
+I22=2436
+I23=2452
+I24=2912
+I25=2913
+I26=10
+I27=2644
+I28=2660
+I29=2914
+I30=2915
+I31=2916
+I32=2917
+I33=2918
+I34=10
+I35=2516
+I36=2953
+I37=2970
+I38=2976
+I39=10
+I40=2985
+I41=2919
+I42=3034
+I43=3080
+I44=3081
+I45=3086
 mO=2
 tO=2
 O1=10047
-mP=23
+mP=45
 P1=
 P2=ka 00 01\r
 P3=ka 00 00\r
-P4=xb 00 90\r
-P5=xb 00 91\r
-P6=xb 00 00\r
-P7=xb 00 01\r
-P8=xb 00 02\r
-P9=""
-P10=mc 00 10\r
-P11=mc 00 11\r
-P12=mc 00 12\r
-P13=mc 00 13\r
-P14=mc 00 14\r
-P15=mc 00 15\r
-P16=mc 00 16\r
-P17=mc 00 17\r
-P18=mc 00 18\r
-P19=mc 00 19\r
-P20=""
-P21=mc 00 00\r
-P22=mc 00 01\r
-P23=
+P4=""
+P5=xb 00 90\r
+P6=xb 00 91\r
+P7=xb 00 00\r
+P8=""
+P9=mc 00 10\r
+P10=mc 00 11\r
+P11=mc 00 12\r
+P12=mc 00 13\r
+P13=mc 00 14\r
+P14=mc 00 15\r
+P15=mc 00 16\r
+P16=mc 00 17\r
+P17=mc 00 18\r
+P18=mc 00 19\r
+P19=""
+P20=mc 00 06\r
+P21=mc 00 07\r
+P22=mc 00 40\r
+P23=mc 00 41\r
+P24=mc 00 44\r
+P25=""
+P26=mc 00 00\r
+P27=mc 00 01\r
+P28=mc 00 43\r
+P29=mc 00 5B\r
+P30=mc 00 AB\r
+P31=mc 00 7C\r
+P32=mc 00 AA\r
+P33=""
+P34=mc 00 61\r
+P35=mc 00 63\r
+P36=mc 00 71\r
+P37=mc 00 72\r
+P38=""
+P39=mc 00 8E\r
+P40=mc 00 8F\r
+P41=mc 00 B0\r
+P42=mc 00 B1\r
+P43=mc 00 BA\r
+P44=mc 00 BD\r
+P45=
 ]
 [
 ObjTp=Sm
@@ -143015,7 +143059,7 @@ Nm=[8SW8][ROL][Okn_401]_Open_Full_BUF
 [
 ObjTp=Sg
 H=123
-Nm=[TV][Key]_Num_1
+Nm=[TV][Key][NumPad]_2
 ]
 [
 ObjTp=Sg
@@ -143257,12 +143301,12 @@ Nm=[CI-KNX][P_01]_B_03
 [
 ObjTp=Sg
 H=171
-Nm=[TV][Key]_Num_0
+Nm=[TV][Key][NumPad]_1
 ]
 [
 ObjTp=Sg
 H=172
-Nm=[TV][Key]_Num_2
+Nm=[TV][Key][NumPad]_3
 ]
 [
 ObjTp=Sg
@@ -143821,6 +143865,11 @@ Nm=[Lighting][Dim][Load_036]_10%
 ObjTp=Sg
 H=281
 Nm=[Lighting][Dim][Load_037]_10%
+]
+[
+ObjTp=Sg
+H=283
+Nm=[TV][Key]_DPad_Right
 ]
 [
 ObjTp=Sg
@@ -153515,7 +153564,7 @@ Nm=[Lighting][Dim][Load_051]_Off
 [
 ObjTp=Sg
 H=2172
-Nm=[TV][Key]_Num_3
+Nm=[TV][Key][NumPad]_4
 ]
 [
 ObjTp=Sg
@@ -153591,7 +153640,7 @@ Nm=[Lighting][Dim][Load_052]_Off
 [
 ObjTp=Sg
 H=2187
-Nm=[TV][Key]_Num_4
+Nm=[TV][Key][NumPad]_5
 ]
 [
 ObjTp=Sg
@@ -153666,7 +153715,7 @@ Nm=[Lighting][Dim][Load_053]_30%
 [
 ObjTp=Sg
 H=2202
-Nm=[TV][Key]_Num_5
+Nm=[TV][Key][NumPad]_6
 ]
 [
 ObjTp=Sg
@@ -154837,7 +154886,7 @@ Nm=[Lighting][Dim][Load_011]_Off_FB
 [
 ObjTp=Sg
 H=2436
-Nm=[TV]_Input_CADTV
+Nm=[TV][Key]_DPad_Left
 ]
 [
 ObjTp=Sg
@@ -154917,7 +154966,7 @@ Nm=[Lighting][Dim][Load_012]_Off_FB
 [
 ObjTp=Sg
 H=2452
-Nm=[TV]_Input_SatDTV
+Nm=[TV][Key]_DPad_Up
 ]
 [
 ObjTp=Sg
@@ -154997,7 +155046,7 @@ Nm=[Lighting][Dim][Load_013]_Off_FB
 [
 ObjTp=Sg
 H=2468
-Nm=[TV][Key]_Num_6
+Nm=[TV][Key][NumPad]_7
 ]
 [
 ObjTp=Sg
@@ -155077,7 +155126,7 @@ Nm=[Lighting][Dim][Load_014]_Off_FB
 [
 ObjTp=Sg
 H=2484
-Nm=[TV][Key]_Num_7
+Nm=[TV][Key][NumPad]_8
 ]
 [
 ObjTp=Sg
@@ -155157,7 +155206,7 @@ Nm=[Lighting][Dim][Load_015]_Off_FB
 [
 ObjTp=Sg
 H=2500
-Nm=[TV][Key]_Num_8
+Nm=[TV][Key][NumPad]_9
 ]
 [
 ObjTp=Sg
@@ -155237,7 +155286,7 @@ Nm=[Lighting][Dim][Load_016]_Off_FB
 [
 ObjTp=Sg
 H=2516
-Nm=[TV][Key]_Num_9
+Nm=[TV][Key][Color]_Blue
 ]
 [
 ObjTp=Sg
@@ -157244,6 +157293,46 @@ Nm=[CI-KNX][CR_02_06]_Off_FB_OS
 ]
 [
 ObjTp=Sg
+H=2912
+Nm=[TV][Key]_DPad_Down
+]
+[
+ObjTp=Sg
+H=2913
+Nm=[TV][Key]_DPad_Enter
+]
+[
+ObjTp=Sg
+H=2914
+Nm=[TV][Key]_Menu
+]
+[
+ObjTp=Sg
+H=2915
+Nm=[TV][Key]_Exit
+]
+[
+ObjTp=Sg
+H=2916
+Nm=[TV][Key]_Guide
+]
+[
+ObjTp=Sg
+H=2917
+Nm=[TV][Key]_Home
+]
+[
+ObjTp=Sg
+H=2918
+Nm=[TV][Key]_Info
+]
+[
+ObjTp=Sg
+H=2919
+Nm=[TV][Key][Transport]_RWD
+]
+[
+ObjTp=Sg
 H=2920
 Nm=[CI-KNX][P_14]_B_07
 ]
@@ -157411,6 +157500,11 @@ Nm=[Lighting][Dim][Load_072]_On
 ]
 [
 ObjTp=Sg
+H=2953
+Nm=[TV][Key][Color]_Yellow
+]
+[
+ObjTp=Sg
 H=2954
 Nm=[Lighting][Dim][Load_072]_20%
 ]
@@ -157492,6 +157586,11 @@ Nm=[Lighting][Dim][Load_066]_Off
 ]
 [
 ObjTp=Sg
+H=2970
+Nm=[TV][Key][Color]_Green
+]
+[
+ObjTp=Sg
 H=2971
 Nm=[Lighting][Switch][AllOn]_Load_Outside
 ]
@@ -157515,6 +157614,11 @@ SgTp=2
 ObjTp=Sg
 H=2975
 Nm=[Lighting][Switch][AllOff]_Load_Outside
+]
+[
+ObjTp=Sg
+H=2976
+Nm=[TV][Key][Color]_Red
 ]
 [
 ObjTp=Sg
@@ -157555,6 +157659,11 @@ Nm=[Lighting][Dim][Load_066]_40%
 ObjTp=Sg
 H=2984
 Nm=[Lighting][Switch]_Gn_040_Off
+]
+[
+ObjTp=Sg
+H=2985
+Nm=[TV][Key][Transport]_FFD
 ]
 [
 ObjTp=Sg
@@ -157801,6 +157910,11 @@ Nm=[Lighting][Switch]_Gn_041_Off
 ]
 [
 ObjTp=Sg
+H=3034
+Nm=[TV][Key][Transport]_Play
+]
+[
+ObjTp=Sg
 H=3035
 Nm=[Lighting][Dim][Load_068]_Level#
 SgTp=2
@@ -158023,6 +158137,21 @@ Nm=[Lighting][Switch]_Load_087_TOG
 ]
 [
 ObjTp=Sg
+H=3079
+Nm=[TV][Key][NumPad]_0
+]
+[
+ObjTp=Sg
+H=3080
+Nm=[TV][Key][Transport]_Stop
+]
+[
+ObjTp=Sg
+H=3081
+Nm=[TV][Key][Transport]_Pause
+]
+[
+ObjTp=Sg
 H=3082
 Nm=[Lighting][Switch]_Gn_106_On_FB
 ]
@@ -158040,6 +158169,11 @@ Nm=[Lighting][Switch]_Gn_106_On
 ObjTp=Sg
 H=3085
 Nm=[Lighting][Switch][AllOff]_Gn_Pietro
+]
+[
+ObjTp=Sg
+H=3086
+Nm=[TV][Key][Transport]_REC
 ]
 [
 ObjTp=Sg
@@ -193562,22 +193696,22 @@ SgTp=4
 [
 ObjTp=Sg
 H=10048
-Nm=[TV]_PowerOn
+Nm=[TV][Power]_On
 ]
 [
 ObjTp=Sg
 H=10049
-Nm=[TV]_PowerOff
+Nm=[TV][Power]_Off
 ]
 [
 ObjTp=Sg
 H=10050
-Nm=[TV]_Input_HDMI_1
+Nm=[TV][Input]_HDMI_1
 ]
 [
 ObjTp=Sg
 H=10051
-Nm=[TV]_Input_HDMI_2
+Nm=[TV][Input]_HDMI_2
 ]
 [
 ObjTp=Sg
@@ -196123,7 +196257,7 @@ Nm=[System][Clock][Astro]_Night_FB_OS
 [
 ObjTp=Sg
 H=10590
-Nm=[TV]_Input_DTV
+Nm=[TV][Input]_DTV
 ]
 [
 ObjTp=Sg
