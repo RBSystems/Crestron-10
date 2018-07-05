@@ -113579,7 +113579,7 @@ P3=ka 00 00\r
 P4=""
 P5=xb 00 90\r
 P6=xb 00 91\r
-P7=xb 00 00\r
+P7=xb 00 02\r
 P8=""
 P9=mc 00 10\r
 P10=mc 00 11\r
@@ -182207,7 +182207,7 @@ Nm=[System][Clock][Astro]_Night_FB_OS
 [
 ObjTp=Sg
 H=10590
-Nm=[TV][Input]_DTV
+Nm=[TV][Input]_SatDTV
 ]
 [
 ObjTp=Sg
