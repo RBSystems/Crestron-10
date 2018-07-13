@@ -1,4 +1,4 @@
-IP Zewnętrzne		:	178.183.78.195 (stare : 188.125.46.176)
+IP Zewnętrzne		:	178.183.78.195
 Router password		:	s3arts3art
 WiFi password		:	s3arts3art
 
