@@ -23,7 +23,7 @@ DIN-DALI_1_Remote=auto 178.183.78.195,51795
 DIN-DALI_2_Remote=auto 178.183.78.195,52795
 TSW-750_Remote=ssh 178.183.78.195,53795
 TSW-560P_Remote=ssh 178.183.78.195,54795
-TSR-310_Remote=ctp 178.183.78.195,55795
+TSR-310_Remote=ssh 178.183.78.195,55795
 DIN-DALI_1_Remote_Indirect=DIN-AP3_Remote:cresnet A0
 DIN-DALI_2_Remote_Indirect=DIN-AP3_Remote:cresnet A1
 
