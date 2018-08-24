@@ -8471,8 +8471,8 @@ I16=1861
 I17=1862
 I19=1831
 I20=1830
-I22=300
-I23=3937
+I22=4462
+I23=4463
 mO=24
 tO=24
 O1=4464
@@ -9435,16 +9435,16 @@ I1=131
 I2=132
 I4=129
 I5=130
-I7=303
-I8=3937
-I10=303
-I11=3937
-I13=303
-I14=3937
+I7=9932
+I8=9933
+I10=9932
+I11=9933
+I13=9932
+I14=9933
 I16=9934
 I17=9935
-I19=303
-I20=3937
+I19=9932
+I20=9933
 I22=4079
 I23=4076
 mO=24
@@ -58182,7 +58182,7 @@ ObjVer=1
 SmVr=1063
 PrH=26
 CF=2
-Cmn1=Lighting (139, 151)\\
+Cmn1=Lighting (ostatnio blokowane -  139, 151)\\
 mC=4
 C1=106
 C2=272
@@ -129382,11 +129382,6 @@ Nm=[CI-KNX][P_11B]_B_02
 ]
 [
 ObjTp=Sg
-H=300
-Nm=//[Lighting][Switch]_Load_139_On
-]
-[
-ObjTp=Sg
 H=301
 Nm=[CI-KNX][P_03]_B_08
 ]
@@ -129394,11 +129389,6 @@ Nm=[CI-KNX][P_03]_B_08
 ObjTp=Sg
 H=302
 Nm=[Macros][Zone_14][Macro_02_S]_Start
-]
-[
-ObjTp=Sg
-H=303
-Nm=//[Lighting][Switch]_Load_151_On
 ]
 [
 ObjTp=Sg
