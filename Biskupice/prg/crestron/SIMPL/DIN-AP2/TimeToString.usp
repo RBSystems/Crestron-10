@@ -1,0 +1,39 @@
+// +++ Dyrektywy kompilatora +++
+#SYMBOL_NAME "Time to serial"
+#CATEGORY "1" // Analog Operations 
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+// --- Dyrektywy kompilatora ---
+
+// +++ Stale +++
+#DEFINE_CONSTANT SEC_IN_MIN 60
+// --- Stale ---
+
+// +++ Wejscia +++ 
+ANALOG_INPUT duration;
+// --- Wejscia ---
+
+// +++ Wyjscia +++
+STRING_OUTPUT time$;
+// --- Wyjscia --- 
+
+// +++ Obsluga zdarzen +++
+CHANGE duration
+{
+    INTEGER minutes, seconds;
+    
+    minutes = duration / SEC_IN_MIN;
+    seconds = duration - (minutes * SEC_IN_MIN);
+    
+    time$ = "" + itoa(minutes) + " min " + itoa(seconds) + " sec.";
+    ProcessLogic();  
+}
+// --- Obsluga zdarzen ---
+
+// +++ Funkcja Main +++
+Function Main()
+{
+    WaitForInitializationComplete();
+}
+// --- Funkcja Main ---

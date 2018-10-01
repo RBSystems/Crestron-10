@@ -1,0 +1,4547 @@
+[BEGIN]
+  Version=1
+[END]
+[BEGIN]
+  ObjTp=FSgntr
+  Sgntr=UserSPlus
+  RelVrs=1
+  IntStrVrs=1
+  SPlusVrs=4.02.20
+  CrossCplrVrs=1.3
+[END]
+[BEGIN]
+  ObjTp=Symbol
+  Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,718,756,854,1766,2567,2574,2590,2651,2655,2817,2886,2938,2947,3181,3197,3233,3680,3682,3706,3710,3735,3736,3816,3888,4176,4193,4308,4476,4591,4769,5360,5388,5420,5455,
+  Exclusions_CDS=6
+  Inclusions_CDS=5
+  Name=TV SAT Presets
+  SmplCName=TV SAT Presets.usp
+  Code=1
+  SysRev5=4.000
+  SMWRev=2.02.05
+  InputCue1=[~UNUSED~]
+  InputSigType1=Digital
+  InputCue2=[~UNUSED~]
+  InputSigType2=Digital
+  InputCue3=[~UNUSED~]
+  InputSigType3=Digital
+  InputCue4=[~UNUSED~]
+  InputSigType4=Digital
+  InputCue5=[~UNUSED~]
+  InputSigType5=Digital
+  InputCue6=[~UNUSED~]
+  InputSigType6=Digital
+  InputCue7=[~UNUSED~]
+  InputSigType7=Digital
+  InputCue8=[~UNUSED~]
+  InputSigType8=Digital
+  InputCue9=[~UNUSED~]
+  InputSigType9=Digital
+  InputCue10=[~UNUSED~]
+  InputSigType10=Digital
+  InputCue11=presety[#]
+  InputSigType11=Digital
+  OutputCue1=cyfry[1]
+  OutputSigType1=Digital
+  OutputCue2=cyfry[2]
+  OutputSigType2=Digital
+  OutputCue3=cyfry[3]
+  OutputSigType3=Digital
+  OutputCue4=cyfry[4]
+  OutputSigType4=Digital
+  OutputCue5=cyfry[5]
+  OutputSigType5=Digital
+  OutputCue6=cyfry[6]
+  OutputSigType6=Digital
+  OutputCue7=cyfry[7]
+  OutputSigType7=Digital
+  OutputCue8=cyfry[8]
+  OutputSigType8=Digital
+  OutputCue9=cyfry[9]
+  OutputSigType9=Digital
+  OutputCue10=cyfry[10]
+  OutputSigType10=Digital
+  OutputCue11=[~UNUSED~]
+  OutputSigType11=Digital
+  ParamCue1=[Reference Name]
+  ParamCue2=unused[1],0d
+  ParamSigType2=List
+  ParamCue3=unused[2],0d
+  ParamSigType3=List
+  ParamCue4=unused[3],0d
+  ParamSigType4=List
+  ParamCue5=unused[4],0d
+  ParamSigType5=List
+  ParamCue6=unused[5],0d
+  ParamSigType6=List
+  ParamCue7=unused[6],0d
+  ParamSigType7=List
+  ParamCue8=unused[7],0d
+  ParamSigType8=List
+  ParamCue9=unused[8],0d
+  ParamSigType9=List
+  ParamCue10=unused[9],0d
+  ParamSigType10=List
+  ParamCue11=unused[10],0d
+  ParamSigType11=List
+  ParamCue12=kanaly[1]
+  ParamSigType12=Constant
+  ParamCue13=kanaly[2]
+  ParamSigType13=Constant
+  ParamCue14=kanaly[3]
+  ParamSigType14=Constant
+  ParamCue15=kanaly[4]
+  ParamSigType15=Constant
+  ParamCue16=kanaly[5]
+  ParamSigType16=Constant
+  ParamCue17=kanaly[6]
+  ParamSigType17=Constant
+  ParamCue18=kanaly[7]
+  ParamSigType18=Constant
+  ParamCue19=kanaly[8]
+  ParamSigType19=Constant
+  ParamCue20=kanaly[9]
+  ParamSigType20=Constant
+  ParamCue21=kanaly[10]
+  ParamSigType21=Constant
+  ParamCue22=kanaly[11]
+  ParamSigType22=Constant
+  ParamCue23=kanaly[12]
+  ParamSigType23=Constant
+  ParamCue24=kanaly[13]
+  ParamSigType24=Constant
+  ParamCue25=kanaly[14]
+  ParamSigType25=Constant
+  ParamCue26=kanaly[15]
+  ParamSigType26=Constant
+  ParamCue27=kanaly[16]
+  ParamSigType27=Constant
+  ParamCue28=kanaly[17]
+  ParamSigType28=Constant
+  ParamCue29=kanaly[18]
+  ParamSigType29=Constant
+  ParamCue30=kanaly[19]
+  ParamSigType30=Constant
+  ParamCue31=kanaly[20]
+  ParamSigType31=Constant
+  ParamCue32=kanaly[21]
+  ParamSigType32=Constant
+  ParamCue33=kanaly[22]
+  ParamSigType33=Constant
+  ParamCue34=kanaly[23]
+  ParamSigType34=Constant
+  ParamCue35=kanaly[24]
+  ParamSigType35=Constant
+  ParamCue36=kanaly[25]
+  ParamSigType36=Constant
+  ParamCue37=kanaly[26]
+  ParamSigType37=Constant
+  ParamCue38=kanaly[27]
+  ParamSigType38=Constant
+  ParamCue39=kanaly[28]
+  ParamSigType39=Constant
+  ParamCue40=kanaly[29]
+  ParamSigType40=Constant
+  ParamCue41=kanaly[30]
+  ParamSigType41=Constant
+  ParamCue42=kanaly[31]
+  ParamSigType42=Constant
+  ParamCue43=kanaly[32]
+  ParamSigType43=Constant
+  ParamCue44=kanaly[33]
+  ParamSigType44=Constant
+  ParamCue45=kanaly[34]
+  ParamSigType45=Constant
+  ParamCue46=kanaly[35]
+  ParamSigType46=Constant
+  ParamCue47=kanaly[36]
+  ParamSigType47=Constant
+  ParamCue48=kanaly[37]
+  ParamSigType48=Constant
+  ParamCue49=kanaly[38]
+  ParamSigType49=Constant
+  ParamCue50=kanaly[39]
+  ParamSigType50=Constant
+  ParamCue51=kanaly[40]
+  ParamSigType51=Constant
+  ParamCue52=kanaly[41]
+  ParamSigType52=Constant
+  ParamCue53=kanaly[42]
+  ParamSigType53=Constant
+  ParamCue54=kanaly[43]
+  ParamSigType54=Constant
+  ParamCue55=kanaly[44]
+  ParamSigType55=Constant
+  ParamCue56=kanaly[45]
+  ParamSigType56=Constant
+  ParamCue57=kanaly[46]
+  ParamSigType57=Constant
+  ParamCue58=kanaly[47]
+  ParamSigType58=Constant
+  ParamCue59=kanaly[48]
+  ParamSigType59=Constant
+  ParamCue60=kanaly[49]
+  ParamSigType60=Constant
+  ParamCue61=kanaly[50]
+  ParamSigType61=Constant
+  ParamCue62=kanaly[51]
+  ParamSigType62=Constant
+  ParamCue63=kanaly[52]
+  ParamSigType63=Constant
+  ParamCue64=kanaly[53]
+  ParamSigType64=Constant
+  ParamCue65=kanaly[54]
+  ParamSigType65=Constant
+  ParamCue66=kanaly[55]
+  ParamSigType66=Constant
+  ParamCue67=kanaly[56]
+  ParamSigType67=Constant
+  ParamCue68=kanaly[57]
+  ParamSigType68=Constant
+  ParamCue69=kanaly[58]
+  ParamSigType69=Constant
+  ParamCue70=kanaly[59]
+  ParamSigType70=Constant
+  ParamCue71=kanaly[60]
+  ParamSigType71=Constant
+  ParamCue72=kanaly[61]
+  ParamSigType72=Constant
+  ParamCue73=kanaly[62]
+  ParamSigType73=Constant
+  ParamCue74=kanaly[63]
+  ParamSigType74=Constant
+  ParamCue75=kanaly[64]
+  ParamSigType75=Constant
+  ParamCue76=kanaly[65]
+  ParamSigType76=Constant
+  ParamCue77=kanaly[66]
+  ParamSigType77=Constant
+  ParamCue78=kanaly[67]
+  ParamSigType78=Constant
+  ParamCue79=kanaly[68]
+  ParamSigType79=Constant
+  ParamCue80=kanaly[69]
+  ParamSigType80=Constant
+  ParamCue81=kanaly[70]
+  ParamSigType81=Constant
+  ParamCue82=kanaly[71]
+  ParamSigType82=Constant
+  ParamCue83=kanaly[72]
+  ParamSigType83=Constant
+  ParamCue84=kanaly[73]
+  ParamSigType84=Constant
+  ParamCue85=kanaly[74]
+  ParamSigType85=Constant
+  ParamCue86=kanaly[75]
+  ParamSigType86=Constant
+  ParamCue87=kanaly[76]
+  ParamSigType87=Constant
+  ParamCue88=kanaly[77]
+  ParamSigType88=Constant
+  ParamCue89=kanaly[78]
+  ParamSigType89=Constant
+  ParamCue90=kanaly[79]
+  ParamSigType90=Constant
+  ParamCue91=kanaly[80]
+  ParamSigType91=Constant
+  ParamCue92=kanaly[81]
+  ParamSigType92=Constant
+  ParamCue93=kanaly[82]
+  ParamSigType93=Constant
+  ParamCue94=kanaly[83]
+  ParamSigType94=Constant
+  ParamCue95=kanaly[84]
+  ParamSigType95=Constant
+  ParamCue96=kanaly[85]
+  ParamSigType96=Constant
+  ParamCue97=kanaly[86]
+  ParamSigType97=Constant
+  ParamCue98=kanaly[87]
+  ParamSigType98=Constant
+  ParamCue99=kanaly[88]
+  ParamSigType99=Constant
+  ParamCue100=kanaly[89]
+  ParamSigType100=Constant
+  ParamCue101=kanaly[90]
+  ParamSigType101=Constant
+  ParamCue102=kanaly[91]
+  ParamSigType102=Constant
+  ParamCue103=kanaly[92]
+  ParamSigType103=Constant
+  ParamCue104=kanaly[93]
+  ParamSigType104=Constant
+  ParamCue105=kanaly[94]
+  ParamSigType105=Constant
+  ParamCue106=kanaly[95]
+  ParamSigType106=Constant
+  ParamCue107=kanaly[96]
+  ParamSigType107=Constant
+  ParamCue108=kanaly[97]
+  ParamSigType108=Constant
+  ParamCue109=kanaly[98]
+  ParamSigType109=Constant
+  ParamCue110=kanaly[99]
+  ParamSigType110=Constant
+  ParamCue111=kanaly[100]
+  ParamSigType111=Constant
+  ParamCue112=kanaly[101]
+  ParamSigType112=Constant
+  ParamCue113=kanaly[102]
+  ParamSigType113=Constant
+  ParamCue114=kanaly[103]
+  ParamSigType114=Constant
+  ParamCue115=kanaly[104]
+  ParamSigType115=Constant
+  ParamCue116=kanaly[105]
+  ParamSigType116=Constant
+  ParamCue117=kanaly[106]
+  ParamSigType117=Constant
+  ParamCue118=kanaly[107]
+  ParamSigType118=Constant
+  ParamCue119=kanaly[108]
+  ParamSigType119=Constant
+  ParamCue120=kanaly[109]
+  ParamSigType120=Constant
+  ParamCue121=kanaly[110]
+  ParamSigType121=Constant
+  ParamCue122=kanaly[111]
+  ParamSigType122=Constant
+  ParamCue123=kanaly[112]
+  ParamSigType123=Constant
+  ParamCue124=kanaly[113]
+  ParamSigType124=Constant
+  ParamCue125=kanaly[114]
+  ParamSigType125=Constant
+  ParamCue126=kanaly[115]
+  ParamSigType126=Constant
+  ParamCue127=kanaly[116]
+  ParamSigType127=Constant
+  ParamCue128=kanaly[117]
+  ParamSigType128=Constant
+  ParamCue129=kanaly[118]
+  ParamSigType129=Constant
+  ParamCue130=kanaly[119]
+  ParamSigType130=Constant
+  ParamCue131=kanaly[120]
+  ParamSigType131=Constant
+  ParamCue132=kanaly[121]
+  ParamSigType132=Constant
+  ParamCue133=kanaly[122]
+  ParamSigType133=Constant
+  ParamCue134=kanaly[123]
+  ParamSigType134=Constant
+  ParamCue135=kanaly[124]
+  ParamSigType135=Constant
+  ParamCue136=kanaly[125]
+  ParamSigType136=Constant
+  ParamCue137=kanaly[126]
+  ParamSigType137=Constant
+  ParamCue138=kanaly[127]
+  ParamSigType138=Constant
+  ParamCue139=kanaly[128]
+  ParamSigType139=Constant
+  ParamCue140=kanaly[129]
+  ParamSigType140=Constant
+  ParamCue141=kanaly[130]
+  ParamSigType141=Constant
+  ParamCue142=kanaly[131]
+  ParamSigType142=Constant
+  ParamCue143=kanaly[132]
+  ParamSigType143=Constant
+  ParamCue144=kanaly[133]
+  ParamSigType144=Constant
+  ParamCue145=kanaly[134]
+  ParamSigType145=Constant
+  ParamCue146=kanaly[135]
+  ParamSigType146=Constant
+  ParamCue147=kanaly[136]
+  ParamSigType147=Constant
+  ParamCue148=kanaly[137]
+  ParamSigType148=Constant
+  ParamCue149=kanaly[138]
+  ParamSigType149=Constant
+  ParamCue150=kanaly[139]
+  ParamSigType150=Constant
+  ParamCue151=kanaly[140]
+  ParamSigType151=Constant
+  ParamCue152=kanaly[141]
+  ParamSigType152=Constant
+  ParamCue153=kanaly[142]
+  ParamSigType153=Constant
+  ParamCue154=kanaly[143]
+  ParamSigType154=Constant
+  ParamCue155=kanaly[144]
+  ParamSigType155=Constant
+  ParamCue156=kanaly[145]
+  ParamSigType156=Constant
+  ParamCue157=kanaly[146]
+  ParamSigType157=Constant
+  ParamCue158=kanaly[147]
+  ParamSigType158=Constant
+  ParamCue159=kanaly[148]
+  ParamSigType159=Constant
+  ParamCue160=kanaly[149]
+  ParamSigType160=Constant
+  ParamCue161=kanaly[150]
+  ParamSigType161=Constant
+  ParamCue162=kanaly[151]
+  ParamSigType162=Constant
+  ParamCue163=kanaly[152]
+  ParamSigType163=Constant
+  ParamCue164=kanaly[153]
+  ParamSigType164=Constant
+  ParamCue165=kanaly[154]
+  ParamSigType165=Constant
+  ParamCue166=kanaly[155]
+  ParamSigType166=Constant
+  ParamCue167=kanaly[156]
+  ParamSigType167=Constant
+  ParamCue168=kanaly[157]
+  ParamSigType168=Constant
+  ParamCue169=kanaly[158]
+  ParamSigType169=Constant
+  ParamCue170=kanaly[159]
+  ParamSigType170=Constant
+  ParamCue171=kanaly[160]
+  ParamSigType171=Constant
+  ParamCue172=kanaly[161]
+  ParamSigType172=Constant
+  ParamCue173=kanaly[162]
+  ParamSigType173=Constant
+  ParamCue174=kanaly[163]
+  ParamSigType174=Constant
+  ParamCue175=kanaly[164]
+  ParamSigType175=Constant
+  ParamCue176=kanaly[165]
+  ParamSigType176=Constant
+  ParamCue177=kanaly[166]
+  ParamSigType177=Constant
+  ParamCue178=kanaly[167]
+  ParamSigType178=Constant
+  ParamCue179=kanaly[168]
+  ParamSigType179=Constant
+  ParamCue180=kanaly[169]
+  ParamSigType180=Constant
+  ParamCue181=kanaly[170]
+  ParamSigType181=Constant
+  ParamCue182=kanaly[171]
+  ParamSigType182=Constant
+  ParamCue183=kanaly[172]
+  ParamSigType183=Constant
+  ParamCue184=kanaly[173]
+  ParamSigType184=Constant
+  ParamCue185=kanaly[174]
+  ParamSigType185=Constant
+  ParamCue186=kanaly[175]
+  ParamSigType186=Constant
+  ParamCue187=kanaly[176]
+  ParamSigType187=Constant
+  ParamCue188=kanaly[177]
+  ParamSigType188=Constant
+  ParamCue189=kanaly[178]
+  ParamSigType189=Constant
+  ParamCue190=kanaly[179]
+  ParamSigType190=Constant
+  ParamCue191=kanaly[180]
+  ParamSigType191=Constant
+  ParamCue192=kanaly[181]
+  ParamSigType192=Constant
+  ParamCue193=kanaly[182]
+  ParamSigType193=Constant
+  ParamCue194=kanaly[183]
+  ParamSigType194=Constant
+  ParamCue195=kanaly[184]
+  ParamSigType195=Constant
+  ParamCue196=kanaly[185]
+  ParamSigType196=Constant
+  ParamCue197=kanaly[186]
+  ParamSigType197=Constant
+  ParamCue198=kanaly[187]
+  ParamSigType198=Constant
+  ParamCue199=kanaly[188]
+  ParamSigType199=Constant
+  ParamCue200=kanaly[189]
+  ParamSigType200=Constant
+  ParamCue201=kanaly[190]
+  ParamSigType201=Constant
+  ParamCue202=kanaly[191]
+  ParamSigType202=Constant
+  ParamCue203=kanaly[192]
+  ParamSigType203=Constant
+  ParamCue204=kanaly[193]
+  ParamSigType204=Constant
+  ParamCue205=kanaly[194]
+  ParamSigType205=Constant
+  ParamCue206=kanaly[195]
+  ParamSigType206=Constant
+  ParamCue207=kanaly[196]
+  ParamSigType207=Constant
+  ParamCue208=kanaly[197]
+  ParamSigType208=Constant
+  ParamCue209=kanaly[198]
+  ParamSigType209=Constant
+  ParamCue210=kanaly[199]
+  ParamSigType210=Constant
+  ParamCue211=kanaly[200]
+  ParamSigType211=Constant
+  ParamCue212=kanaly[201]
+  ParamSigType212=Constant
+  ParamCue213=kanaly[202]
+  ParamSigType213=Constant
+  ParamCue214=kanaly[203]
+  ParamSigType214=Constant
+  ParamCue215=kanaly[204]
+  ParamSigType215=Constant
+  ParamCue216=kanaly[205]
+  ParamSigType216=Constant
+  ParamCue217=kanaly[206]
+  ParamSigType217=Constant
+  ParamCue218=kanaly[207]
+  ParamSigType218=Constant
+  ParamCue219=kanaly[208]
+  ParamSigType219=Constant
+  ParamCue220=kanaly[209]
+  ParamSigType220=Constant
+  ParamCue221=kanaly[210]
+  ParamSigType221=Constant
+  ParamCue222=kanaly[211]
+  ParamSigType222=Constant
+  ParamCue223=kanaly[212]
+  ParamSigType223=Constant
+  ParamCue224=kanaly[213]
+  ParamSigType224=Constant
+  ParamCue225=kanaly[214]
+  ParamSigType225=Constant
+  ParamCue226=kanaly[215]
+  ParamSigType226=Constant
+  ParamCue227=kanaly[216]
+  ParamSigType227=Constant
+  ParamCue228=kanaly[217]
+  ParamSigType228=Constant
+  ParamCue229=kanaly[218]
+  ParamSigType229=Constant
+  ParamCue230=kanaly[219]
+  ParamSigType230=Constant
+  ParamCue231=kanaly[220]
+  ParamSigType231=Constant
+  ParamCue232=kanaly[221]
+  ParamSigType232=Constant
+  ParamCue233=kanaly[222]
+  ParamSigType233=Constant
+  ParamCue234=kanaly[223]
+  ParamSigType234=Constant
+  ParamCue235=kanaly[224]
+  ParamSigType235=Constant
+  ParamCue236=kanaly[225]
+  ParamSigType236=Constant
+  ParamCue237=kanaly[226]
+  ParamSigType237=Constant
+  ParamCue238=kanaly[227]
+  ParamSigType238=Constant
+  ParamCue239=kanaly[228]
+  ParamSigType239=Constant
+  ParamCue240=kanaly[229]
+  ParamSigType240=Constant
+  ParamCue241=kanaly[230]
+  ParamSigType241=Constant
+  ParamCue242=kanaly[231]
+  ParamSigType242=Constant
+  ParamCue243=kanaly[232]
+  ParamSigType243=Constant
+  ParamCue244=kanaly[233]
+  ParamSigType244=Constant
+  ParamCue245=kanaly[234]
+  ParamSigType245=Constant
+  ParamCue246=kanaly[235]
+  ParamSigType246=Constant
+  ParamCue247=kanaly[236]
+  ParamSigType247=Constant
+  ParamCue248=kanaly[237]
+  ParamSigType248=Constant
+  ParamCue249=kanaly[238]
+  ParamSigType249=Constant
+  ParamCue250=kanaly[239]
+  ParamSigType250=Constant
+  ParamCue251=kanaly[240]
+  ParamSigType251=Constant
+  ParamCue252=kanaly[241]
+  ParamSigType252=Constant
+  ParamCue253=kanaly[242]
+  ParamSigType253=Constant
+  ParamCue254=kanaly[243]
+  ParamSigType254=Constant
+  ParamCue255=kanaly[244]
+  ParamSigType255=Constant
+  ParamCue256=kanaly[245]
+  ParamSigType256=Constant
+  ParamCue257=kanaly[246]
+  ParamSigType257=Constant
+  ParamCue258=kanaly[247]
+  ParamSigType258=Constant
+  ParamCue259=kanaly[248]
+  ParamSigType259=Constant
+  ParamCue260=kanaly[249]
+  ParamSigType260=Constant
+  ParamCue261=kanaly[250]
+  ParamSigType261=Constant
+  MinVariableInputs=13
+  MaxVariableInputs=260
+  MinVariableInputsList2=0
+  MaxVariableInputsList2=0
+  MinVariableOutputs=11
+  MaxVariableOutputs=11
+  MinVariableOutputsList2=0
+  MaxVariableOutputsList2=0
+  MinVariableParams=13
+  MaxVariableParams=260
+  Expand=expand_inputs_with_params
+  Expand2=expand_separately
+  ProgramTree=Logic
+  SymbolTree=40
+  Hint=
+  PdfHelp=
+  HelpID= 
+  Render=4
+  Smpl-C=16
+  CompilerCode=-48
+  CompilerParamCode=27
+  CompilerParamCode5=14
+  NumFixedParams=1
+  Pp1=1
+  Pp2=2
+  Pp3=3
+  Pp4=4
+  Pp5=5
+  Pp6=6
+  Pp7=7
+  Pp8=8
+  Pp9=9
+  Pp10=10
+  Pp11=11
+  Pp12=12
+  Pp13=13
+  Pp14=14
+  Pp15=15
+  Pp16=16
+  Pp17=17
+  Pp18=18
+  Pp19=19
+  Pp20=20
+  Pp21=21
+  Pp22=22
+  Pp23=23
+  Pp24=24
+  Pp25=25
+  Pp26=26
+  Pp27=27
+  Pp28=28
+  Pp29=29
+  Pp30=30
+  Pp31=31
+  Pp32=32
+  Pp33=33
+  Pp34=34
+  Pp35=35
+  Pp36=36
+  Pp37=37
+  Pp38=38
+  Pp39=39
+  Pp40=40
+  Pp41=41
+  Pp42=42
+  Pp43=43
+  Pp44=44
+  Pp45=45
+  Pp46=46
+  Pp47=47
+  Pp48=48
+  Pp49=49
+  Pp50=50
+  Pp51=51
+  Pp52=52
+  Pp53=53
+  Pp54=54
+  Pp55=55
+  Pp56=56
+  Pp57=57
+  Pp58=58
+  Pp59=59
+  Pp60=60
+  Pp61=61
+  Pp62=62
+  Pp63=63
+  Pp64=64
+  Pp65=65
+  Pp66=66
+  Pp67=67
+  Pp68=68
+  Pp69=69
+  Pp70=70
+  Pp71=71
+  Pp72=72
+  Pp73=73
+  Pp74=74
+  Pp75=75
+  Pp76=76
+  Pp77=77
+  Pp78=78
+  Pp79=79
+  Pp80=80
+  Pp81=81
+  Pp82=82
+  Pp83=83
+  Pp84=84
+  Pp85=85
+  Pp86=86
+  Pp87=87
+  Pp88=88
+  Pp89=89
+  Pp90=90
+  Pp91=91
+  Pp92=92
+  Pp93=93
+  Pp94=94
+  Pp95=95
+  Pp96=96
+  Pp97=97
+  Pp98=98
+  Pp99=99
+  Pp100=100
+  Pp101=101
+  Pp102=102
+  Pp103=103
+  Pp104=104
+  Pp105=105
+  Pp106=106
+  Pp107=107
+  Pp108=108
+  Pp109=109
+  Pp110=110
+  Pp111=111
+  Pp112=112
+  Pp113=113
+  Pp114=114
+  Pp115=115
+  Pp116=116
+  Pp117=117
+  Pp118=118
+  Pp119=119
+  Pp120=120
+  Pp121=121
+  Pp122=122
+  Pp123=123
+  Pp124=124
+  Pp125=125
+  Pp126=126
+  Pp127=127
+  Pp128=128
+  Pp129=129
+  Pp130=130
+  Pp131=131
+  Pp132=132
+  Pp133=133
+  Pp134=134
+  Pp135=135
+  Pp136=136
+  Pp137=137
+  Pp138=138
+  Pp139=139
+  Pp140=140
+  Pp141=141
+  Pp142=142
+  Pp143=143
+  Pp144=144
+  Pp145=145
+  Pp146=146
+  Pp147=147
+  Pp148=148
+  Pp149=149
+  Pp150=150
+  Pp151=151
+  Pp152=152
+  Pp153=153
+  Pp154=154
+  Pp155=155
+  Pp156=156
+  Pp157=157
+  Pp158=158
+  Pp159=159
+  Pp160=160
+  Pp161=161
+  Pp162=162
+  Pp163=163
+  Pp164=164
+  Pp165=165
+  Pp166=166
+  Pp167=167
+  Pp168=168
+  Pp169=169
+  Pp170=170
+  Pp171=171
+  Pp172=172
+  Pp173=173
+  Pp174=174
+  Pp175=175
+  Pp176=176
+  Pp177=177
+  Pp178=178
+  Pp179=179
+  Pp180=180
+  Pp181=181
+  Pp182=182
+  Pp183=183
+  Pp184=184
+  Pp185=185
+  Pp186=186
+  Pp187=187
+  Pp188=188
+  Pp189=189
+  Pp190=190
+  Pp191=191
+  Pp192=192
+  Pp193=193
+  Pp194=194
+  Pp195=195
+  Pp196=196
+  Pp197=197
+  Pp198=198
+  Pp199=199
+  Pp200=200
+  Pp201=201
+  Pp202=202
+  Pp203=203
+  Pp204=204
+  Pp205=205
+  Pp206=206
+  Pp207=207
+  Pp208=208
+  Pp209=209
+  Pp210=210
+  Pp211=211
+  Pp212=212
+  Pp213=213
+  Pp214=214
+  Pp215=215
+  Pp216=216
+  Pp217=217
+  Pp218=218
+  Pp219=219
+  Pp220=220
+  Pp221=221
+  Pp222=222
+  Pp223=223
+  Pp224=224
+  Pp225=225
+  Pp226=226
+  Pp227=227
+  Pp228=228
+  Pp229=229
+  Pp230=230
+  Pp231=231
+  Pp232=232
+  Pp233=233
+  Pp234=234
+  Pp235=235
+  Pp236=236
+  Pp237=237
+  Pp238=238
+  Pp239=239
+  Pp240=240
+  Pp241=241
+  Pp242=242
+  Pp243=243
+  Pp244=244
+  Pp245=245
+  Pp246=246
+  Pp247=247
+  Pp248=248
+  Pp249=249
+  Pp250=250
+  Pp251=251
+  Pp252=252
+  Pp253=253
+  Pp254=254
+  Pp255=255
+  Pp256=256
+  Pp257=257
+  Pp258=258
+  Pp259=259
+  Pp260=260
+  Pp261=261
+  MPp=261
+  NVStorage=10
+  ParamSigType1=String
+  SmplCInputCue1=o#
+  SmplCOutputCue1=i#
+  SmplCInputList2Cue1=an#
+  SmplCOutputList2Cue1=ai#
+  SPlus2CompiledName=S2_TV_SAT_Presets
+  SymJam=NonExclusive
+  FileName=TV SAT Presets.ush
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=1
+  Tp=1
+  NoS=False
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=2
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=3
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=4
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=5
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=6
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=7
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=8
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=9
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=10
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=11
+  Tp=1
+  HD=True
+  DV=0d
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=2
+  VN=1
+  Val1=0d
+  Lbl1=NIEUZYWANY
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=12
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=13
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=14
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=15
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=16
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=17
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=18
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=19
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=20
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=21
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=22
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=23
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=24
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=25
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=26
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=27
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=28
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=29
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=30
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=31
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=32
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=33
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=34
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=35
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=36
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=37
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=38
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=39
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=40
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=41
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=42
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=43
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=44
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=45
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=46
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=47
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=48
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=49
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=50
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=51
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=52
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=53
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=54
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=55
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=56
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=57
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=58
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=59
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=60
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=61
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=62
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=63
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=64
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=65
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=66
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=67
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=68
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=69
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=70
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=71
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=72
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=73
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=74
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=75
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=76
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=77
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=78
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=79
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=80
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=81
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=82
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=83
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=84
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=85
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=86
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=87
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=88
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=89
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=90
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=91
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=92
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=93
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=94
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=95
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=96
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=97
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=98
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=99
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=100
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=101
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=102
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=103
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=104
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=105
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=106
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=107
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=108
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=109
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=110
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=111
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=112
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=113
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=114
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=115
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=116
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=117
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=118
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=119
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=120
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=121
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=122
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=123
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=124
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=125
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=126
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=127
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=128
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=129
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=130
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=131
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=132
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=133
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=134
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=135
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=136
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=137
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=138
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=139
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=140
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=141
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=142
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=143
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=144
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=145
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=146
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=147
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=148
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=149
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=150
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=151
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=152
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=153
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=154
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=155
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=156
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=157
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=158
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=159
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=160
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=161
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=162
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=163
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=164
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=165
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=166
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=167
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=168
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=169
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=170
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=171
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=172
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=173
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=174
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=175
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=176
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=177
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=178
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=179
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=180
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=181
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=182
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=183
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=184
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=185
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=186
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=187
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=188
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=189
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=190
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=191
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=192
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=193
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=194
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=195
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=196
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=197
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=198
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=199
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=200
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=201
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=202
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=203
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=204
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=205
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=206
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=207
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=208
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=209
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=210
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=211
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=212
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=213
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=214
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=215
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=216
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=217
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=218
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=219
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=220
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=221
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=222
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=223
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=224
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=225
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=226
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=227
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=228
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=229
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=230
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=231
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=232
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=233
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=234
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=235
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=236
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=237
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=238
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=239
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=240
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=241
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=242
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=243
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=244
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=245
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=246
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=247
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=248
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=249
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=250
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=251
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=252
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=253
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=254
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=255
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=256
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=257
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=258
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=259
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=260
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=261
+  Tp=1
+  HD=False
+  Sgn=0
+  Lng=False
+  NF=1
+  NoS=True
+  DNF=1
+  VVS=1
+  LR=0d
+  HR=999d
+[END]
