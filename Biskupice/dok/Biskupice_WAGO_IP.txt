@@ -1,0 +1,27 @@
+Sterownik Kot³ownia
+
+IP-Address:		10.10.10.40
+Subnet Mask:		255.255.255.0
+Gateway:		10.10.9.2
+Prefered DNS-Server:	10.10.9.2
+Alternative DNS-Server:	0.0.0.0
+
+
+Sterownik Grzesiek (IS-BIS\R\ETH2)
+
+MAC:			00:30:DE:02:60:C9
+IP-Address:		10.10.4.191
+Subnet Mask:		255.255.0.0
+Gateway:		10.10.9.2
+Prefered DNS-Server:	10.10.9.2
+Alternative DNS-Server:	0.0.0.0
+
+
+Sterownik Piotrek (IS-BIS\R\ETH3)
+
+MAC:			00:30:DE:04:0D:B6
+IP-Address:		10.10.4.192
+Subnet Mask:		255.255.0.0
+Gateway:		10.10.9.2
+Prefered DNS-Server:	10.10.9.2
+Alternative DNS-Server:	0.0.0.0

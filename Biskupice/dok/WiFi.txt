@@ -1,0 +1,3 @@
+SSID		:	TASOWLAN
+
+Pass		:	Tasomix to jest to
