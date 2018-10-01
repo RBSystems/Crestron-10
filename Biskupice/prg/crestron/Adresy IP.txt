@@ -1,0 +1,10 @@
+Do wykorzystania podsieæ :
+10.10.4.x
+
+255.255.0.0
+
+brama:
+10.10.9.2
+
+dns:
+10.10.10.1
