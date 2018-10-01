@@ -1,0 +1,273 @@
+[BEGIN]
+  Version=1
+[END]
+[BEGIN]
+  ObjTp=FSgntr
+  Sgntr=UserSPlus
+  RelVrs=1
+  IntStrVrs=1
+  SPlusVrs=3.03.16
+  CrossCplrVrs=1.3
+[END]
+[BEGIN]
+  ObjTp=Symbol
+  Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,718,756,854,1766,2567,2574,2590,2651,2655,2817,
+  Name=BRAMKA_tryb
+  SmplCName=BRAMKA_tryb.usp
+  Code=1
+  SysRev5=4.000
+  SMWRev=2.02.05
+  InputCue1=connected
+  InputSigType1=Digital
+  InputCue2=[~UNUSED~]
+  InputSigType2=Digital
+  InputCue3=update
+  InputSigType3=Digital
+  InputCue4=[~UNUSED~]
+  InputSigType4=Digital
+  InputCue5=trybUP
+  InputSigType5=Digital
+  InputCue6=tryb_in[#]
+  InputSigType6=Digital
+  OutputCue1=[~UNUSED~]
+  OutputSigType1=Digital
+  OutputCue2=[~UNUSED~]
+  OutputSigType2=Digital
+  OutputCue3=[~UNUSED~]
+  OutputSigType3=Digital
+  OutputCue4=[~UNUSED~]
+  OutputSigType4=Digital
+  OutputCue5=[~UNUSED~]
+  OutputSigType5=Digital
+  OutputCue6=tryb_out[#]
+  OutputSigType6=Digital
+  InputList2Cue1=[~UNUSED~]
+  InputList2SigType1=Serial
+  InputList2Cue2=[~UNUSED~]
+  InputList2SigType2=Serial
+  InputList2Cue3=[~UNUSED~]
+  InputList2SigType3=Serial
+  InputList2Cue4=str_in
+  InputList2SigType4=Serial
+  OutputList2Cue1=tryb_a
+  OutputList2SigType1=Analog
+  OutputList2Cue2=tryb
+  OutputList2SigType2=Serial
+  OutputList2Cue3=[~UNUSED~]
+  OutputList2SigType3=Serial
+  OutputList2Cue4=str_out
+  OutputList2SigType4=Serial
+  ParamCue1=[Reference Name]
+  ParamCue2=nieuzywane[1]
+  ParamSigType2=String
+  ParamCue3=nieuzywane[2]
+  ParamSigType3=String
+  ParamCue4=nieuzywane[3]
+  ParamSigType4=String
+  ParamCue5=nieuzywane[4]
+  ParamSigType5=String
+  ParamCue6=nieuzywane[5]
+  ParamSigType6=String
+  ParamCue7=tryb_n[1]
+  ParamSigType7=String
+  ParamCue8=tryb_n[2]
+  ParamSigType8=String
+  ParamCue9=tryb_n[3]
+  ParamSigType9=String
+  ParamCue10=tryb_n[4]
+  ParamSigType10=String
+  ParamCue11=tryb_n[5]
+  ParamSigType11=String
+  ParamCue12=tryb_n[6]
+  ParamSigType12=String
+  ParamCue13=tryb_n[7]
+  ParamSigType13=String
+  ParamCue14=tryb_n[8]
+  ParamSigType14=String
+  ParamCue15=tryb_n[9]
+  ParamSigType15=String
+  ParamCue16=tryb_n[10]
+  ParamSigType16=String
+  MinVariableInputs=7
+  MaxVariableInputs=15
+  MinVariableInputsList2=4
+  MaxVariableInputsList2=4
+  MinVariableOutputs=7
+  MaxVariableOutputs=15
+  MinVariableOutputsList2=4
+  MaxVariableOutputsList2=4
+  MinVariableParams=7
+  MaxVariableParams=15
+  Expand=expand_separately
+  Expand2=expand_separately
+  ProgramTree=Logic
+  SymbolTree=41
+  Hint=
+  PdfHelp=
+  HelpID= 
+  Render=4
+  Smpl-C=16
+  CompilerCode=-48
+  CompilerParamCode=27
+  CompilerParamCode5=14
+  NumFixedParams=1
+  Pp1=1
+  Pp2=2
+  Pp3=3
+  Pp4=4
+  Pp5=5
+  Pp6=6
+  Pp7=7
+  Pp8=8
+  Pp9=9
+  Pp10=10
+  Pp11=11
+  Pp12=12
+  Pp13=13
+  Pp14=14
+  Pp15=15
+  Pp16=16
+  MPp=16
+  NVStorage=10
+  ParamSigType1=String
+  SmplCInputCue1=o#
+  SmplCOutputCue1=i#
+  SmplCInputList2Cue1=an#
+  SmplCOutputList2Cue1=ai#
+  SPlus2CompiledName=S2_BRAMKA_tryb
+  SymJam=NonExclusive
+  FileName=BRAMKA_tryb.ush
+  Usl1=Common_Functions.usl
+  Usl2=Common_Functions.usl
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=1
+  Tp=1
+  NoS=False
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=2
+  Tp=1
+  HD=True
+  DV=NIEUZYWANE
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=3
+  Tp=1
+  HD=True
+  DV=NIEUZYWANE
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=4
+  Tp=1
+  HD=True
+  DV=NIEUZYWANE
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=5
+  Tp=1
+  HD=True
+  DV=NIEUZYWANE
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=6
+  Tp=1
+  HD=True
+  DV=NIEUZYWANE
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=7
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=8
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=9
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=10
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=11
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=12
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=13
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=14
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=15
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=16
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
