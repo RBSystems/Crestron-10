@@ -1,0 +1,58 @@
+[Crestron_Toolbox_Address_Book]
+
+[Entries]
+This .xadr file was created using Toolbox v2.41 or later.=:slot 01
+It is not compatible with this version of Toolbox.=:slot 02
+Please open a .adr Address Book to continue.=:slot 03
+
+[AddressBookInfo]
+Schema=2.0
+Version=1.0
+DefaultEntry=
+
+[ComSpecs]
+DMM-IM=DM-MD8x8:slot 06
+DSP=DMM-IM:slot 01
+MLX-3=RFGWEX:meshnet 03
+RFGWEX=auto 10.9.1.50
+AES=auto 10.9.1.241;password 1234
+DIN-AP2=auto 10.9.1.240;password 1234
+APAD Kuchnia=AES:cresnet 30
+CNAMPX 16x60=AES:cresnet 3D
+APAD fitness=AES:cresnet 2E
+Bramka RF=AES:cresnet 41
+iDoc - USB=usb
+iDoc=auto 10.9.1.245
+TouchPC=auto 10.9.1.243
+DM-MD8x8=auto 10.9.1.200
+C2N-DB12=auto 10.9.1.241:cresnet 71
+TPMC-4X=auto 10.9.1.60
+DIN-AP2 remote=auto 193.169.113.18;password 1234
+iPad mini=auto 10.0.1.8
+iPad Guma=auto 10.0.1.6
+iPad Goscinny pozioma=auto 10.0.1.27
+AES remote=auto 193.169.113.18,41793;password 1234
+
+[Notes]
+DMM-IM=
+DSP=
+MLX-3=
+RFGWEX=
+AES=
+DIN-AP2=
+APAD Kuchnia=
+CNAMPX 16x60=
+APAD fitness=
+Bramka RF=
+iDoc - USB=
+iDoc=
+TouchPC=
+DM-MD8x8=
+C2N-DB12=
+TPMC-4X=
+DIN-AP2 remote=
+iPad mini=
+iPad Guma=
+iPad Goscinny pozioma=
+AES remote=
+
