@@ -11,17 +11,17 @@
 /*
 * DIGITAL_INPUT
 */
-#define __S2_AMFM_Station_AMACTIVE_DIG_INPUT -1
-#define __S2_AMFM_Station_FMACTIVE_DIG_INPUT -1
+#define __S2_AMFM_Station_AMACTIVE_DIG_INPUT 0
+#define __S2_AMFM_Station_FMACTIVE_DIG_INPUT 1
 
 
 /*
 * ANALOG_INPUT
 */
-#define __S2_AMFM_Station_AMFREQIN_ANALOG_INPUT -1
-#define __S2_AMFM_Station_FMFREQIN_ANALOG_INPUT -1
-#define __S2_AMFM_Station_AMPRESETIN_ANALOG_INPUT -1
-#define __S2_AMFM_Station_FMPRESETIN_ANALOG_INPUT -1
+#define __S2_AMFM_Station_AMFREQIN_ANALOG_INPUT 0
+#define __S2_AMFM_Station_FMFREQIN_ANALOG_INPUT 1
+#define __S2_AMFM_Station_AMPRESETIN_ANALOG_INPUT 2
+#define __S2_AMFM_Station_FMPRESETIN_ANALOG_INPUT 3
 
 
 
@@ -35,8 +35,8 @@
 * ANALOG_OUTPUT
 */
 
-#define __S2_AMFM_Station_STATION$_STRING_OUTPUT -1
-#define __S2_AMFM_Station_PRESET$_STRING_OUTPUT -1
+#define __S2_AMFM_Station_STATION$_STRING_OUTPUT 0
+#define __S2_AMFM_Station_PRESET$_STRING_OUTPUT 1
 
 
 /*
