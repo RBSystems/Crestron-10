@@ -363,7 +363,7 @@ DvVr=1067
 Ad=F
 mC=2
 C1=1474
-C2=782
+C2=791
 ]
 [
 ObjTp=Dv
@@ -3405,20 +3405,6 @@ ProdLine=2-Series
 ]
 [
 ObjTp=Dv
-Nm=Bose LifeStyle 650
-H=782
-PrH=23
-DvC=133
-ObjVer=1
-DvVr=1067
-Ad=F
-SmH=259
-RelStat=Release
-ProdLine=2-Series
-DbH=11
-]
-[
-ObjTp=Dv
 Nm=FixedSlot
 H=783
 PrH=796
@@ -3518,6 +3504,20 @@ DvVr=1067
 Ad=02
 mC=1
 C1=887
+]
+[
+ObjTp=Dv
+Nm=Bose LifeStyle 650
+H=791
+PrH=23
+DvC=133
+ObjVer=1
+DvVr=1067
+Ad=F
+SmH=260
+RelStat=Release
+ProdLine=2-Series
+DbH=13
 ]
 [
 ObjTp=Dv
@@ -6491,21 +6491,21 @@ Tpe=DigitalMedia 8G+ Transmitter with 2 Inputs
 ]
 [
 ObjTp=Db
-H=11
-DvH=782
-Whc=2
-Mnf=Bose
-Mdl=LifeStyle 650
-DrF=Bose LifeStyle 650.ir
-]
-[
-ObjTp=Db
 H=12
 DvH=774
 Whc=3
 Mnf=Crestron
 Mdl=DM-MD8x8
 Tpe=Modular DigitalMedia 8x8 Matrix Switch
+]
+[
+ObjTp=Db
+H=13
+DvH=791
+Whc=2
+Mnf=Bose
+Mdl=LifeStyle 650
+DrF=Bose LifeStyle 650.ir
 ]
 [
 ObjTp=Db
@@ -6957,20 +6957,6 @@ Mx3=0
 ]
 [
 ObjTp=Bw
-H=1
-Lx=0
-Ly=0
-Rx=1227
-Ry=304
-Xm=-1
-Ym=-1
-SH=259
-Z=100
-Ht=1
-Hi=6
-]
-[
-ObjTp=Bw
 H=2
 Lx=0
 Ly=0
@@ -7256,7 +7242,7 @@ C3=862
 C4=863
 C5=1135
 C6=1140
-C7=259
+C7=260
 ]
 [
 ObjTp=Sm
@@ -16632,12 +16618,12 @@ DvH=798
 PrH=240
 CF=2
 n1I=760
-n2I=761
+n2I=772
 n1O=760
 Cmn1=DMC-HD-DSP Advanced
-mI=1806
-mO=1521
-tO=1806
+mI=1817
+mO=1532
+tO=1817
 mP=1
 P1=DMC-HD-DSP
 ]
@@ -16668,13 +16654,13 @@ DvH=801
 PrH=242
 CF=2
 n1I=760
-n2I=761
+n2I=772
 n1O=760
 Cmn1=DMC-HD-DSP Advanced
-mI=1806
+mI=1817
 I422=2
-mO=1521
-tO=1806
+mO=1532
+tO=1817
 mP=1
 P1=DMC-HD-DSP
 ]
@@ -16705,12 +16691,12 @@ DvH=804
 PrH=244
 CF=2
 n1I=760
-n2I=761
+n2I=772
 n1O=760
 Cmn1=DMC-HD-DSP Advanced
-mI=1806
-mO=1521
-tO=1806
+mI=1817
+mO=1532
+tO=1817
 mP=1
 P1=DMC-HD-DSP
 ]
@@ -16741,12 +16727,12 @@ DvH=807
 PrH=246
 CF=2
 n1I=760
-n2I=761
+n2I=772
 n1O=760
 Cmn1=DMC-HD-DSP Advanced
-mI=1806
-mO=1521
-tO=1806
+mI=1817
+mO=1532
+tO=1817
 mP=1
 P1=DMC-HD-DSP
 ]
@@ -16835,13 +16821,13 @@ DvH=810
 PrH=252
 CF=2
 n1I=760
-n2I=761
+n2I=772
 n1O=760
 Cmn1=DMC-HD-DSP Advanced
-mI=1806
+mI=1817
 I422=2
-mO=1521
-tO=1806
+mO=1532
+tO=1817
 mP=1
 P1=DMC-HD-DSP
 ]
@@ -16872,12 +16858,12 @@ DvH=813
 PrH=254
 CF=2
 n1I=760
-n2I=761
+n2I=719
 n1O=760
 Cmn1=DMC-DVI Advanced
-mI=1806
-mO=1521
-tO=1806
+mI=1764
+mO=1479
+tO=1764
 mP=1
 P1=DMC-DVI
 ]
@@ -16939,34 +16925,36 @@ n1I=414
 n2I=532
 n1O=414
 Cmn1=C2I-DMTX201C-VGA
-mI=946
+mI=1147
 mO=946
-tO=946
+tO=1147
 ]
 [
 ObjTp=Sm
-H=259
+H=260
 SmC=107
 Nm=Crestron DB IR-controlled device
 ObjVer=1
 SmVr=1067
-DvH=782
+DvH=791
 PrH=10
 CF=2
-n1I=6
+n1I=7
 Cmn1=Bose LifeStyle 650
-mI=6
+mI=7
 I2=7968
 I3=7966
 I4=7985
 I5=7969
 I6=2405
-mP=5
+I7=6205
+mP=6
 P1=Power_On
 P2=Power_Off
 P3=Mute_Toggle
 P4=Volume+
 P5=Volume-
+P6=Source_Analog_1
 ]
 [
 ObjTp=Sm
@@ -33617,14 +33605,14 @@ DvH=816
 PrH=824
 CF=2
 n1I=760
-n2I=761
+n2I=772
 n1O=760
 Cmn1=DMC-C-DSP Advanced
 mC=1
 C1=256
-mI=1806
-mO=1521
-tO=1806
+mI=1817
+mO=1532
+tO=1817
 mP=1
 P1=DMC-C-DSP
 ]
@@ -43158,7 +43146,6 @@ ObjVer=1
 SmVr=1067
 DvH=1474
 PrH=10
-CF=2
 n1I=6
 OpF=0
 HandF=1
@@ -43493,22 +43480,25 @@ SmVr=1067
 PrH=1141
 CF=2
 n1I=1
-n1O=4
+n1O=5
 mI=1
 I1=7968
-mO=4
-tO=4
+mO=5
+tO=5
 O1=165
 O2=7969
 O3=7969
 O4=7969
-mP=6
+O5=6205
+mP=8
 P1=5s
 P2=1s
 P3=1s
 P4=1s
 P5=1s
 P6=1s
+P7=1s
+P8=1s
 ]
 [
 ObjTp=Sm
@@ -114718,6 +114708,11 @@ Nm=[NC+_1]_Menu_MOS
 ObjTp=Sg
 H=6204
 Nm=[NC+_1]_Vol_Mute_MOS
+]
+[
+ObjTp=Sg
+H=6205
+Nm=[Beo4]_Source_Analog_1
 ]
 [
 ObjTp=Sg
