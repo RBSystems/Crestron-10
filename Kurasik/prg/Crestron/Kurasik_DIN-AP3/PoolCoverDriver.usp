@@ -132,7 +132,7 @@ FUNCTION CalculateState()
 	if (OpenLimit_FB = 1)
 	{
 		status#_FB = 2;
-		PULSE(PULSE_TIME, PowerRelay_Off);
+		//PULSE(PULSE_TIME, PowerRelay_Off);
 		return;
 	}
 
@@ -144,7 +144,8 @@ FUNCTION CalculateState()
 	}
 
 	status#_FB = 1;
-	PULSE(PULSE_TIME, PowerRelay_Off);
+
+	if (OpenRelay_On_FB = 1) PULSE(PULSE_TIME, PowerRelay_Off);
 }
 
 FUNCTION CalculateMoving()
