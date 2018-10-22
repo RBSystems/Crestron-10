@@ -102,11 +102,11 @@ FUNCTION SetAVR(INTEGER _index)
 		}
 		else
 		{
-			if (AVR_Power_FB = 0)
-			{
+			//if (AVR_Power_FB = 0)
+			//{
 				pulse(PULSE_TIME, AVR_Power_On);
 				delay(DELAY_TIME);
-			}
+			//}
 			
 			pulse(PULSE_TIME, AVR_Input[_index]);
 		}
@@ -178,12 +178,16 @@ PUSH TV_Scenes
 	
 	index = getLastModifiedArrayIndex();
 
-	if (index = gCurrentTvScene || Tv_Scenes_Busy_FB = 1) return;
+	if (Tv_Scenes_Busy_FB = 1) return;
 
-	ClearScenesFB();
-	SetAVR(index);
-	SetProjectionScene(0);
-    SetTvScene(index);
+	if (index <> gCurrentTvScene)
+	{
+		ClearScenesFB();
+		SetAVR(index);
+		SetProjectionScene(0);
+    	SetTvScene(index);
+	}
+
 	PerformScenes();
 	CalculateOffFB();
 }
@@ -194,12 +198,16 @@ PUSH Projection_Scenes
 	
 	index = getLastModifiedArrayIndex();
 
-	if (index = gCurrentProjectionScene || Projection_Scenes_Busy_FB = 1) return;
+	if (Projection_Scenes_Busy_FB = 1) return;
 
-	ClearScenesFB();
-	SetAVR(index);
-	SetTvScene(0);
-    SetProjectionScene(index);
+	if (index <> gCurrentProjectionScene)
+	{
+		ClearScenesFB();
+		SetAVR(index);
+		SetTvScene(0);
+    	SetProjectionScene(index);
+	}
+
     PerformScenes();
 	CalculateOffFB();
 }
