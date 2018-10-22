@@ -28,3 +28,12 @@ TSR_310 (Salon)		:	192.168.1.223 (B2)
 
 Projektor			:	192.168.1.231
 Amplituner kina		:	192.168.1.232
+
+============================================
+
+VPN
+
+PPTP
+IP		:	178.183.78.195
+Login	:	serwis
+Pass	:	Serwis001
