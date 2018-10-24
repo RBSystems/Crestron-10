@@ -91,7 +91,7 @@ FUNCTION SetProjectionScene(INTEGER _index)
 
 FUNCTION SetAVR(INTEGER _index)
 {
-	if (_index <= AVR_INPUT_COUNT && _index <> gCurrentAVRInput)
+	if (_index <= AVR_INPUT_COUNT)
 	{
 		gCurrentAVRInput = _index;		
 
@@ -179,11 +179,12 @@ PUSH TV_Scenes
 	index = getLastModifiedArrayIndex();
 
 	if (Tv_Scenes_Busy_FB = 1) return;
-
+    
+	SetAVR(index);
+	
 	if (index <> gCurrentTvScene)
 	{
 		ClearScenesFB();
-		SetAVR(index);
 		SetProjectionScene(0);
     	SetTvScene(index);
 	}
@@ -199,11 +200,12 @@ PUSH Projection_Scenes
 	index = getLastModifiedArrayIndex();
 
 	if (Projection_Scenes_Busy_FB = 1) return;
+     
+	SetAVR(index);
 
 	if (index <> gCurrentProjectionScene)
 	{
 		ClearScenesFB();
-		SetAVR(index);
 		SetTvScene(0);
     	SetProjectionScene(index);
 	}

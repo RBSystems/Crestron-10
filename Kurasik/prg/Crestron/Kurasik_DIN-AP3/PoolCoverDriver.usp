@@ -49,16 +49,22 @@ ANALOG_OUTPUT status#_FB; // 0 = closed, 1 = middle, 2 = opened, 3 = locked
 
 
 // Parameters
-INTEGER_PARAMETER pFullTime;
+INTEGER_PARAMETER pFullOpenTime, pFullCloseTime;
 
 // Parameter Properietes
-#BEGIN_PARAMETER_PROPERTIES pFullTime
+#BEGIN_PARAMETER_PROPERTIES pFullOpenTime
    propValidUnits = unitTime;
    propDefaultUnit = unitTime;
    propBounds = 10s , 100s;
-   propShortDescription = "Full Open/Close Time";
+   propShortDescription = "Full Open Time";
 #END_PARAMETER_PROPERTIES
 
+#BEGIN_PARAMETER_PROPERTIES pFullCloseTime
+   propValidUnits = unitTime;
+   propDefaultUnit = unitTime;
+   propBounds = 10s , 100s;
+   propShortDescription = "Full Close Time";
+#END_PARAMETER_PROPERTIES
 
 // Structure Definitions
 
@@ -75,16 +81,22 @@ FUNCTION Stop()
 	PULSE(PULSE_TIME, OpenRelay_Off);
 }
 
+FUNCTION StopAndCancel()
+{
+	CancelAllWait();
+    Stop();
+}
+
 FUNCTION StartOpen()
 {
-	Stop();
+	StopAndCancel();
 	delay(5);
 	PULSE(PULSE_TIME, OpenRelay_On);	
 }
 
 FUNCTION StartClose()
 {
-	Stop();
+	StopAndCancel();
 	delay(5);
 	PULSE(PULSE_TIME, CloseRelay_On);
 }
@@ -94,7 +106,7 @@ FUNCTION FullOpen()
 	if (moving_FB = 0 && status#_FB < 2)
 	{
 		StartOpen();
-		WAIT(pFullTime, OPEN_WAIT)
+		WAIT(pFullOpenTime, OPEN_WAIT)
 		{
 			Stop();
 		}
@@ -106,17 +118,11 @@ FUNCTION FullClose()
 	if (moving_FB = 0 && (status#_FB = 1 || status#_FB = 2))
 	{
 		StartClose();
-		WAIT(pFullTime, CLOSE_WAIT)
+		WAIT(pFullCloseTime, CLOSE_WAIT)
 		{
 			Stop();
 		}
 	}
-}
-
-FUNCTION StopAndCancel()
-{
-	CancelAllWait();
-    Stop();
 }
 
 // 0 = closed, 1 = middle, 2 = opened, 3 = locked
