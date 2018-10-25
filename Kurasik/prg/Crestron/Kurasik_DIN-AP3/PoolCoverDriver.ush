@@ -21,7 +21,7 @@
   SmplCName=PoolCoverDriver.usp
   Code=1
   SysRev5=4.000
-  SMWRev=2.02.05
+  SMWRev=3.00.00
   InputCue1=[~UNUSED~]
   InputSigType1=Digital
   InputCue2=OpenRelay_On_FB
