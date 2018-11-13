@@ -97,17 +97,13 @@ FUNCTION SetAVR(INTEGER _index)
 
 		if (_index = 0)
 		{
-			/* if (AVR_Power_FB = 1) */ pulse(PULSE_TIME, AVR_Power_Off);
+			pulse(PULSE_TIME, AVR_Power_Off);
 			return;
 		}
 		else
 		{
-			//if (AVR_Power_FB = 0)
-			//{
-				pulse(PULSE_TIME, AVR_Power_On);
-				delay(DELAY_TIME);
-			//}
-			
+			pulse(PULSE_TIME, AVR_Power_On);
+			delay(DELAY_TIME);			
 			pulse(PULSE_TIME, AVR_Input[_index]);
 		}
 	}
