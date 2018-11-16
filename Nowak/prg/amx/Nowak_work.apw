@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace [
+
+<!-- Common Elements -->
+<!ELEMENT Identifier (#PCDATA)>
+<!ELEMENT Comments (#PCDATA)>
+<!ELEMENT CreationDate (#PCDATA)>
+
+<!-- Workspace Elements-->
+<!ELEMENT Workspace ( Identifier,
+               CreateVersion,
+               PJS_File?,
+               PJS_ConvertDate?,
+               PJS_CreateDate?,
+               Comments?,
+               Project*)>
+
+<!ATTLIST Workspace 
+      CurrentVersion CDATA   #REQUIRED> 
+
+<!ELEMENT CreateVersion     (#PCDATA)>
+
+
+<!-- Conversion data only: only included for files converted from the old .pjs database -->
+<!ELEMENT PJS_File (#PCDATA)>
+<!ELEMENT PJS_ConvertDate (#PCDATA)>
+<!ELEMENT PJS_CreateDate (#PCDATA)>
+
+<!ELEMENT Project ( Identifier,
+               Designer?,
+               DealerID?,
+               SalesOrder?,
+               PurchaseOrder?,
+               Comments?,
+               System*)>
+
+<!ELEMENT Designer (#PCDATA)>
+<!ELEMENT DealerID (#PCDATA)>
+<!ELEMENT SalesOrder (#PCDATA)>
+<!ELEMENT PurchaseOrder (#PCDATA)>
+
+
+<!ELEMENT System  (  Identifier,
+                 SysID,
+                 TransSerial?,
+                 TransModem?,
+                 TransTCPIP?,
+                 VirtualNetLinxMasterFlag?,
+                 VNMRestoreIPSettings?,
+                 VNMSystemID?,
+                 VNMIPAddress?,
+                 VNMMaskAddress?,
+                 IsAuthenticationEnabled?,
+                 UserName?,
+                 Password?,
+                 Comments?,
+                 File*)>
+
+<!ATTLIST System
+      IsActive   (true | false)   "false"
+      Platform   (Axcess | Netlinx)   "Axcess"
+      Transport   (Serial | Modem | TCPIP) "Serial">
+
+<!ELEMENT SysID (#PCDATA)>
+<!ELEMENT TransSerial (#PCDATA)>
+<!ELEMENT TransModem (#PCDATA)>
+<!ELEMENT TransTCPIP (#PCDATA)>
+<!ELEMENT VirtualNetLinxMasterFlag (#PCDATA)>
+<!ELEMENT VNMRestoreIPSettings (#PCDATA)>
+<!ELEMENT VNMSystemID (#PCDATA)>
+<!ELEMENT VNMIPAddress (#PCDATA)>
+<!ELEMENT VNMMaskAddress (#PCDATA)>
+<!ELEMENT IsAuthenticationEnabled (#PCDATA)>
+<!ELEMENT UserName (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+
+
+<!ELEMENT File ( Identifier,
+               FilePathName,
+               Comments?,
+               DeviceMap*,
+               IRDB*)>
+
+<!ATTLIST File 
+       Type (Source | MasterSrc | Include | Module | AXB | IR | TPD | TP4 | KPD | TKO | AMX_IR_DB | IRN_DB | Other | DUET | TOK | TKN | KPB ) "Other"
+       CompileType (Axcess | Netlinx | None) "None"> 
+
+<!ELEMENT FilePathName	(#PCDATA)>
+                            
+<!ELEMENT DeviceMap (DevName)>
+       <!ATTLIST DeviceMap DevAddr CDATA #REQUIRED>
+
+       <!ELEMENT DevName (#PCDATA)>
+
+<!ELEMENT IRDB    (Property,
+                 DOSName,
+                 UserDBPathName,
+                 Notes)>
+       <!ATTLIST IRDB DBKey CDATA #REQUIRED>
+
+       <!ELEMENT Property (#PCDATA)>
+       <!ELEMENT DOSName (#PCDATA)>
+       <!ELEMENT UserDBPathName (#PCDATA)>
+       <!ELEMENT Notes (#PCDATA)>
+]>
+
+<Workspace CurrentVersion="3.3"><Identifier>Nowak_work</Identifier>
+<CreateVersion>3.2</CreateVersion>
+<PJS_File></PJS_File>
+<PJS_ConvertDate></PJS_ConvertDate>
+<PJS_CreateDate></PJS_CreateDate>
+<Comments></Comments>
+<Project><Identifier>Nowak_Pr</Identifier>
+<Designer></Designer>
+<DealerID></DealerID>
+<SalesOrder></SalesOrder>
+<PurchaseOrder></PurchaseOrder>
+<Comments></Comments>
+<System IsActive="true" Platform="Netlinx" Transport="Serial"><Identifier>Nowak_NX</Identifier>
+<SysID>0</SysID>
+<TransSerial>COM13,115200,8,None,1,None,,</TransSerial>
+<TransModem>COM1,38400,8,None,1,None</TransModem>
+<TransTCPIP>192.168.1.80:1319:1:amx_BIURO::</TransTCPIP>
+<VirtualNetLinxMasterFlag>0</VirtualNetLinxMasterFlag>
+<VNMRestoreIPSettings>192.168.0.198:1319:1:sig</VNMRestoreIPSettings>
+<VNMSystemID>1</VNMSystemID>
+<VNMIPAddress>192.168.0.111</VNMIPAddress>
+<VNMMaskAddress>255.255.255.0</VNMMaskAddress>
+<IsAuthenticationEnabled>1</IsAuthenticationEnabled>
+<UserName>YWRtaW5pc3RyYXRvcg</UserName>
+<Password>cGFzc3dvcmQ</Password>
+<Comments></Comments>
+<File CompileType="None" Type="AMX_IR_DB"><Identifier>AMX IRN: Dream Multimedia</Identifier>
+<FilePathName>AMX IRN Database::1178|51|28441|3853|13187</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvIrDreamBox"><DevName>dvIrDreamBox</DevName>
+</DeviceMap>
+<IRDB DBKey="1178|51|28441|3853|13187"><Property>Dream Multimedia|Digital Satellite Receiver|DM7000S|dream1|</Property>
+<DOSName>Dream_DM7000S_Dream1_DSS_1.irl</DOSName>
+<UserDBPathName></UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+<File CompileType="None" Type="IR"><Identifier>AirWell,N_A,RC4,AirConditioner,1 (1)</Identifier>
+<FilePathName>AirWell,N_A,RC4,AirConditioner,1 (1).irl</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvIrKlimaDol"><DevName>dvIrKlimaDol</DevName>
+</DeviceMap>
+<DeviceMap DevAddr="dvIrKlimaGora"><DevName>dvIrKlimaGora</DevName>
+</DeviceMap>
+</File>
+<File CompileType="None" Type="Include"><Identifier>BramkaWAGO</Identifier>
+<FilePathName>BramkaWAGO.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Other"><Identifier>doorbell2</Identifier>
+<FilePathName>doorbell2.wav</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="IR"><Identifier>Dream_DM7000S_Dream1_DSS_1</Identifier>
+<FilePathName>Dream_DM7000S_Dream1_DSS_1.irl</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>Ecom</Identifier>
+<FilePathName>Ecom.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>MultiRoom</Identifier>
+<FilePathName>MultiRoom.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>MultoRoomPRG</Identifier>
+<FilePathName>MultoRoomPRG.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="Netlinx" Type="MasterSrc"><Identifier>Nowak</Identifier>
+<FilePathName>Nowak.axs</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>PTZ</Identifier>
+<FilePathName>PTZ.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>RGB</Identifier>
+<FilePathName>RGB.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>Satel2</Identifier>
+<FilePathName>Satel2.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>SatelPRG2</Identifier>
+<FilePathName>SatelPRG2.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="Include"><Identifier>VirtualKeypad</Identifier>
+<FilePathName>VirtualKeypad.axi</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="TP4"><Identifier>Nowak</Identifier>
+<FilePathName>..\..\wiz\Nowak.TP4</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvTPmain"><DevName>dvTPmain</DevName>
+</DeviceMap>
+</File>
+<File CompileType="None" Type="DUET"><Identifier>VirtualKeypad_dr1_0_0</Identifier>
+<FilePathName>..\..\..\..\Users\oem\Desktop\Nowak plik jar\VirtualKeypad_dr1_0_0.jar</FilePathName>
+<Comments></Comments>
+</File>
+<File CompileType="None" Type="IRN_DB"><Identifier>User IRN: Unknow-pilotNowaka-1</Identifier>
+<FilePathName>USER IRN Database::2|2|2|2|2</FilePathName>
+<Comments></Comments>
+<IRDB DBKey="2|2|2|2|2"><Property>Unknow|Klima|modelNowaka|pilotNowaka|1</Property>
+<DOSName></DOSName>
+<UserDBPathName>D:\mpm\___r\projekty\2009_06_Nowak\prg\amx\Nowak.irn</UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+<File CompileType="None" Type="IRN_DB"><Identifier>iMon</Identifier>
+<FilePathName>USER IRN Database::2|5|10|13|13</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvIrSerwer"><DevName>dvIrSerwer</DevName>
+</DeviceMap>
+<IRDB DBKey="2|5|10|13|13"><Property>Unknow|Serwer|iMon|iMon|1</Property>
+<DOSName></DOSName>
+<UserDBPathName>D:\projekty\2009_06_Nowak\prg\amx\Nowak.irn</UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+<File CompileType="None" Type="IRN_DB"><Identifier>User IRN: Marantz-RC7000SR-1</Identifier>
+<FilePathName>USER IRN Database::3|1|9|12|12</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvIrMarantz"><DevName>dvIrMarantz</DevName>
+</DeviceMap>
+<DeviceMap DevAddr="dvTPmainIR"><DevName>dvTPmainIR</DevName>
+</DeviceMap>
+<IRDB DBKey="3|1|9|12|12"><Property>Marantz|Unknown|SR7000|RC7000SR|1</Property>
+<DOSName>maran032.irl.IRL</DOSName>
+<UserDBPathName>D:\mpm\___r\projekty\2009_06_Nowak\prg\amx\Nowak.irn</UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+<File CompileType="None" Type="IRN_DB"><Identifier>User IRN: Marantz-Pilot-1</Identifier>
+<FilePathName>USER IRN Database::3|3|3|3|3</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvIrBluRay"><DevName>dvIrBluRay</DevName>
+</DeviceMap>
+<IRDB DBKey="3|3|3|3|3"><Property>Marantz|Blu-Ray|BD7004|Pilot|1</Property>
+<DOSName></DOSName>
+<UserDBPathName>D:\mpm\___r\projekty\2009_06_Nowak\prg\amx\Nowak.irn</UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+<File CompileType="None" Type="IRN_DB"><Identifier>User IRN: Samsung-BN5900687A-1</Identifier>
+<FilePathName>USER IRN Database::4|1|4|4|4</FilePathName>
+<Comments></Comments>
+<DeviceMap DevAddr="dvIrSamsug"><DevName>dvIrSamsug</DevName>
+</DeviceMap>
+<IRDB DBKey="4|1|4|4|4"><Property>Samsung|Unknown|PN50A460S4D (TV)|BN5900687A|1</Property>
+<DOSName>samsun67.irl</DOSName>
+<UserDBPathName>D:\mpm\___r\projekty\2009_06_Nowak\prg\amx\Nowak.irn</UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+<File CompileType="None" Type="IRN_DB"><Identifier>User IRN: Dream-Dream1-1</Identifier>
+<FilePathName>USER IRN Database::5|1|5|7|7</FilePathName>
+<Comments></Comments>
+<IRDB DBKey="5|1|5|7|7"><Property>Dream|Unknown|DM-7000S|Dream1|1</Property>
+<DOSName>Dream_DM7000S_Dream1_DSS_1.irl</DOSName>
+<UserDBPathName>E:\projekty\2009_06_Nowak\prg\amx\Nowak.irn</UserDBPathName>
+<Notes></Notes>
+</IRDB>
+</File>
+</System>
+</Project>
+</Workspace>
