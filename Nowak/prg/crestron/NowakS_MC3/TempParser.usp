@@ -1,0 +1,123 @@
+#CATEGORY "41" // Remote System Interface
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+#DEFINE_CONSTANT max_str 10
+#DEFINE_CONSTANT statusMsgLength 11
+STRING_INPUT str_in[40];
+
+DIGITAL_OUTPUT zone_on[8,8];
+STRING_OUTPUT str_out[max_str, max_str];
+
+STRUCTURE ZoneInfo
+{
+	INTEGER Id;
+	INTEGER muted;
+	INTEGER turnedOn;
+	INTEGER selectedSource;
+	INTEGER volumePercent;
+};
+
+ZoneInfo zonesInfo[7];
+INTEGER currentZoneID;
+INTEGER bytes[statusMsgLength];
+INTEGER flags[1];
+
+FUNCTION FillZoneInfo()
+{
+	INTEGER index;
+
+	index = currentZoneID - 1;
+
+	zonesInfo[index].Id = currentZoneID;
+	zonesInfo[index].muted = flags[0];
+	zonesInfo[index].turnedOn = flags[1];
+	zonesInfo[index].selectedSource = bytes[6] + 1;
+	zonesInfo[index].volumePercent = bytes[7];
+}
+
+// Wypelnia bajtami tablice bytes
+FUNCTION CheckString()
+{
+	INTEGER i;
+
+	for (i=0 to statusMsgLength)
+	{
+		bytes[i] = Byte(str_in, i+1);
+	}
+
+	if (bytes[0] = 85 && bytes[1] = 11 && bytes[2] = 32)
+	{
+        currentZoneID = bytes[3] + 1;
+		flags[0] = Bit(str_in, 6, 0); // Mozliwe, ze zamiast 0 i 1 bedzie 7 i 6
+    	flags[1] = Bit(str_in, 6, 1);
+		FillZoneInfo();
+	}
+	else
+	{
+		Trace("To nie jest ZoneStatusMessage!");
+		return;
+
+	}
+
+	
+
+
+}
+
+// wypelnia tablice str_out wartosciami dziesietnymi poszczególnych bajtów wiadomosci odebranej przez port rs232
+/*
+CHANGE str_in
+{
+	INTEGER i;
+	STRING str_buf[10];
+	
+	i = 1;	
+
+	str_buf = str_in;
+	
+	while (len(str_buf) > 0)
+	{
+		str_out[i] = itoa(getc(str_buf));
+		i = i+1;
+		if (i > max_str) return;
+	}
+}
+*/
+
+
+// czyta wartosc dziesietna 4 bajtu danych i ustawia odpowiednie wyjscie DIG na stan wysoki
+CHANGE str_in
+{
+	integer i;
+	integer length;
+    integer zone;
+    
+	string zone_str[10];
+
+	zone_str = mid(str_in, 4, 1);
+    
+	str_out[1] = zone_str;
+
+	zone_on[getc(zone_str)+1] = 1;
+	
+}
+
+
+
+/*
+CHANGE str_in
+{
+	integer i;
+	integer length;
+
+	length = len(str_in);
+
+	for (i=1 to length)
+	{
+		str_out[i] = itoa(hextoi(mid(str_in, i, 1)));
+	}
+}
+*/
+

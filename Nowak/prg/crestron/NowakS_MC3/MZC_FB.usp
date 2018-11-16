@@ -1,0 +1,208 @@
+#CATEGORY "41" // Remote System Interface
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+// =======================================================
+#DEFINE_CONSTANT maxMsgLength 255
+#DEFINE_CONSTANT zonesCount 8
+// =======================================================
+BUFFER_INPUT msgIn[maxMsgLength];
+// =======================================================
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT iPodStop_FB;
+DIGITAL_OUTPUT iPodPlay_FB;
+DIGITAL_OUTPUT iPodPause_FB;
+DIGITAL_OUTPUT iPodRepeatOff_FB;
+DIGITAL_OUTPUT iPodRepeatOne_FB;
+DIGITAL_OUTPUT iPodRepeatAll_FB;
+DIGITAL_OUTPUT iPodShuffleOff_FB;
+DIGITAL_OUTPUT iPodShuffleSongs_FB;
+DIGITAL_OUTPUT iPodShuffleAlbums_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT zoneOn[zonesCount];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT zoneMuted[zonesCount, zonesCount];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT tuner1Info;
+STRING_OUTPUT tuner2Info;
+STRING_OUTPUT iPodInfo;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT iPodStateStamp;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT zoneSource[zonesCount];
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT zoneVolumePercent[zonesCount];
+// =======================================================
+INTEGER msgLength;
+INTEGER bytes[maxMsgLength];
+STRING singleMsg[maxMsgLength];
+// =======================================================
+FUNCTION ProcessZoneStatusMsg()
+{
+	INTEGER currentZoneID;
+
+	currentZoneID = bytes[4] + 1;
+	
+	zoneOn[currentZoneID] = Bit(singleMsg, 6, 1);		// czemu generuje: Access outside source string in Bit() ?
+	zoneMuted[currentZoneID] = Bit(singleMsg, 6, 0);	// czemu generuje: Access outside source string in Bit() ?
+    
+	if (bytes[7] = 255) zoneSource[currentZoneID] = 0;
+	else zoneSource[currentZoneID] = bytes[7] + 1;
+	
+	zoneVolumePercent[currentZoneID] = bytes[8];
+}
+
+FUNCTION ProcessSourceInfoMsg()
+{
+	STRING infoMsg[maxMsgLength];
+
+	infoMsg = mid(singleMsg, 5, msgLength-6); 
+
+	switch (bytes[4])
+	{
+		case (0): tuner1Info = infoMsg;
+
+		case (1): tuner2Info = infoMsg;
+
+		case (2): iPodInfo = infoMsg;
+
+		default: trace("SourceInfo: nieobslugiwane zrodlo!");		
+	}
+}
+
+FUNCTION ProcessMediaInfoMsg()
+{
+	if (bytes[4] != 49)
+	{
+		trace("MediaInfo: nieobslugiwane zrodlo!");
+		return;
+	}
+
+	iPodStateStamp = bytes[5];
+
+	switch (bytes[8])
+	{
+		case (0):
+		{
+			iPodStop_FB = 1;
+			iPodPlay_FB = 0;
+			iPodPause_FB = 0;
+		}
+		case (1):
+		{
+			iPodStop_FB = 0;
+			iPodPlay_FB = 1;
+			iPodPause_FB = 0;
+		}
+		case (2):
+		{
+			iPodStop_FB = 0;
+			iPodPlay_FB = 0;
+			iPodPause_FB = 1;
+		}
+	}
+
+	switch (bytes[9])
+	{
+		case (0):
+		{
+			iPodRepeatOff_FB = 1;
+			iPodRepeatOne_FB = 0;
+			iPodRepeatAll_FB = 0;
+		}
+		case (1):
+		{
+			iPodRepeatOff_FB = 0;
+			iPodRepeatOne_FB = 1;
+			iPodRepeatAll_FB = 0;
+		}
+		case (2):
+		{
+			iPodRepeatOff_FB = 0;
+			iPodRepeatOne_FB = 0;
+			iPodRepeatAll_FB = 1;
+		}
+	}
+
+	switch (bytes[10])
+	{
+		case (0):
+		{
+			iPodShuffleOff_FB = 1;
+			iPodShuffleSongs_FB = 0;
+			iPodShuffleAlbums_FB = 0;
+		}
+		case (1):
+		{
+			iPodShuffleOff_FB = 0;
+			iPodShuffleSongs_FB = 1;
+			iPodShuffleAlbums_FB = 0;
+		}
+		case (2):
+		{
+			iPodShuffleOff_FB = 0;
+			iPodShuffleSongs_FB = 0;
+			iPodShuffleAlbums_FB = 1;
+		}
+	}		
+}
+
+FUNCTION GetBytes()
+{
+	INTEGER i;
+
+	for (i=1 to msgLength)
+	{
+		bytes[i] = Byte(singleMsg, i);
+	}
+}
+
+FUNCTION ProcessBytes()
+{
+
+	switch (bytes[3])
+	{
+    	case (32): ProcessZoneStatusMsg();
+        
+		case (39): ProcessSourceInfoMsg();
+
+		case (147): ProcessMediaInfoMsg();
+
+		default:
+		{
+			trace("Nieoblugiwany typ wiadomosci!");
+		}
+	}
+
+}
+// =======================================================
+CHANGE msgIn
+{
+	INTEGER syncPos;
+    
+	// Pozycja bajtu synchronizacji
+	syncPos = find("\x55", msgIn);
+
+	// Wyjatek - bufor nie zawiera bajtu synchronizacji "\x55"
+	if (syncPos=0)
+	{
+		return;
+	}
+	// Wyjatek - bufor nie zaczyna sie od bajtu synchronizacji "\x55"
+	if (!(syncPos = 1))
+	{
+		msgIn = mid(msgIn, syncPos, len(msgIn));
+	}
+	
+	// Ilosc bajtow w pojedynczej wiadomosci
+	msgLength = byte(msgIn, 2) + 1;
+	
+	// Wyjatek - w buforze nie ma jeszcze wszystkich bajtów wiadomosci
+	if (len(msgIn) < msgLength) return;
+	
+	// Wyciagniecie pojedynczej wiadomosci z bufora
+	singleMsg = removeByLength(msgLength, msgIn);
+	
+	GetBytes();
+	ProcessBytes();
+}

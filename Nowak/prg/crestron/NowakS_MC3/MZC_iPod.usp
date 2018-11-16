@@ -1,0 +1,73 @@
+#CATEGORY "41" // Remote System Interface
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+DIGITAL_INPUT playPause, stop, next, prev, shuffleCycle, repeatCycle;
+DIGITAL_INPUT _SKIP_;
+ANALOG_INPUT stateStamp;
+
+STRING_OUTPUT msgOut;
+
+STRING tempMsg[255];
+
+STRING_FUNCTION getCheckSum(STRING msg)
+{
+	INTEGER msgLen, sum, i;
+
+	msgLen = len(msg);
+
+	for (i=1 to msgLen)
+	{
+		sum = sum + byte(msg, i);
+	}
+
+	while (sum > 256) sum = sum - 256;
+
+	sum = 256 - sum;
+
+	return (chr(sum));
+}
+
+FUNCTION sendMsg()
+{
+	msgOut = tempMsg + getCheckSum(tempMsg);
+}
+ 
+//=====================================================
+
+PUSH playPause
+{
+	tempMsg = "\x55\x09\x90\x31\x00" + chr(stateStamp) + "\x00\x02\x00";
+	sendMsg();
+}
+
+PUSH stop
+{
+	tempMsg = "\x55\x09\x90\x31\x00" + chr(stateStamp) + "\x00\x05\x00";
+	sendMsg();
+}
+
+PUSH next
+{
+	tempMsg = "\x55\x09\x90\x31\x00" + chr(stateStamp) + "\x00\x06\x00";
+	sendMsg();
+}
+
+PUSH prev
+{
+	tempMsg = "\x55\x09\x90\x31\x00" + chr(stateStamp) + "\x00\x07\x00";
+	sendMsg();
+}
+
+PUSH shuffleCycle
+{
+	tempMsg = "\x55\x09\x90\x31\x00" + chr(stateStamp) + "\x00\x16\x00";
+	sendMsg();
+}
+
+PUSH repeatCycle
+{
+	tempMsg = "\x55\x09\x90\x31\x00" + chr(stateStamp) + "\x00\x1A\x00";
+	sendMsg();
+}

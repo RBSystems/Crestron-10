@@ -1,0 +1,167 @@
+#CATEGORY "41" // Remote System Interface
+#DEFAULT_NONVOLATILE
+#ENABLE_STACK_CHECKING
+//#ENABLE_TRACE
+// =============================================================================
+#DEFINE_CONSTANT camCount 9
+// =============================================================================
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT PTZ_Display;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT PTZ_Up, PTZ_Down, PTZ_Left, PTZ_Right, PTZ_Zoom_In, PTZ_Zoom_Out, cEnter, cExit;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT cameraSelect[camCount, camCount];
+// =============================================================================
+STRING_OUTPUT msgOut;
+// =============================================================================
+STRING_FUNCTION getCheckSum(STRING msg)
+{
+	INTEGER msgLen, sum, i;
+
+	msgLen = len(msg);
+
+	for (i=1 to msgLen)
+	{
+		sum = sum + byte(msg, i);
+	}
+
+	while (sum > 256) sum = sum - 256;
+
+	sum = 256 - sum;
+
+	return (chr(sum));
+}
+
+STRING_FUNCTION getCRC(STRING msg)
+{
+	INTEGER msgLen, sum, i, crc;
+
+	msgLen = len(msg);
+
+	for (i=1 to msgLen)
+	{
+		sum = sum + byte(msg, i);
+	}
+
+	//while (sum > 256) sum = sum - 256;
+
+	crc = sum & 255;
+
+	return (chr(crc));
+}
+
+FUNCTION sendMsg(STRING tempMsg)
+{
+	STRING anotherTempMsg[255];
+
+	anotherTempMsg = "\x00\x01\x00\x01" + tempMsg;
+	msgOut = "\x82" + anotherTempMsg + getCRC(anotherTempMsg);
+}
+
+FUNCTION controlEnter()
+{
+	sendMsg("\xD9\x00"); 
+}
+
+FUNCTION controlExit()
+{
+	sendMsg("\xDA\x00"); 
+}
+
+FUNCTION channelSelect(INTEGER channel)
+{
+	STRING msgBuf[5];
+
+	msgBuf = "\xC0\x01" + chr(channel-1);
+
+	controlExit();
+	sendMsg(msgBuf);
+	controlEnter();
+}
+
+FUNCTION display()
+{
+	controlExit();
+	sendMsg("\xC1\x00");
+	controlEnter();
+}
+// =============================================================================
+PUSH PTZ_Up
+{
+	sendMsg("\xCC\x01\x01");
+}
+
+RELEASE PTZ_Up
+{
+	sendMsg("\xCC\x01\x00");
+}
+
+PUSH PTZ_Down
+{
+	sendMsg("\xCD\x01\x01");
+}
+
+RELEASE PTZ_Down
+{
+	sendMsg("\xCD\x01\x00");
+}
+
+PUSH PTZ_Left
+{
+	sendMsg("\xCB\x01\x01");
+}
+
+RELEASE PTZ_Left
+{
+	sendMsg("\xCB\x01\x00");
+}
+
+PUSH PTZ_Right
+{
+	sendMsg("\xCA\x01\x01");
+}
+
+RELEASE PTZ_Right
+{
+	sendMsg("\xCA\x01\x00");
+}
+
+PUSH PTZ_Zoom_In
+{
+	sendMsg("\xD4\x01\x01");
+}
+
+RELEASE PTZ_Zoom_In
+{
+	sendMsg("\xD4\x01\x00");
+}
+
+PUSH PTZ_Zoom_Out
+{
+	sendMsg("\xD3\x01\x01");
+}
+
+RELEASE PTZ_Zoom_Out
+{
+	sendMsg("\xD3\x01\x00");
+}
+
+PUSH cEnter
+{
+	controlEnter();
+}
+
+PUSH cExit
+{
+	controlExit();
+}
+
+PUSH cameraSelect
+{
+	channelSelect(getLastModifiedArrayIndex());
+}
+
+PUSH PTZ_Display
+{
+	display();
+}
