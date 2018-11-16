@@ -1,0 +1,12 @@
+Problemy ze strony AMX:
+
+- Koniecznoœæ "przeklikania" przycisków na stronie ogrzewania w celu wyœwietlania prawid³owych informacji o zadanych temperaturach
+- Brak aktualizowania informacji o aktualnych temperaturach na panelu AMX w czasie rzeczywistym (wg Krzysztofa update-uje siê co mniej wiêcej godzinê)
+- Potrzeba zmiany organizacji interfejsu: wywaliæ tryb ogrodu, a na dole, dziêki wiêkszej iloœci miejsca, daæ informacje o dacie i godzinie, prêdkoœci wiatru oraz temperaturze na zewn¹trz)
+- Pasek na³adowania baterii potrafi wskazywaæ brak na³adowania, mimo, ¿e panel jest zadokowany
+- Bateria panelu trzyma tylko przez 3 godziny od zdjêcia go ze stacji dokuj¹cej
+- Ma³a poprawka graficzna na panelu: przycisk w³¹czania DreamBox-a nie podœwietla siê gdy jest klikany
+- S³abe dzia³anie kodów IR dla DreamBox-a
+- Numer aktualnie wybranej stacji radiowej nie podœwietla siê (jeszcze nie wiadomo, czy da siê to zaprogramowaæ)
+- Strefy audio nie wyciszaj¹ siê po tym, jak zadzwoni domofon
+- Multiroom czasami wariuje: po wybraniu jednego Ÿród³a w strefie, wy³¹czeniu strefy a nastêpnie wybraniu innego Ÿród³a - to Ÿród³o gra przez kilka sekund, po czym nastêpuje zmiana na poprzednio u¿ywane Ÿród³o. W takim przypadku dopiero po ponownym wybraniu po¿¹danego Ÿród³a, gra ono ju¿ ca³y czas.

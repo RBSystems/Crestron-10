@@ -1,0 +1,60 @@
+Struktura komendy:
+
+Bajt 01			=	\x82					// bajt początkowy (zawsze)
+Bajt 02-05		=	\x00\x01\x00\x01		// bajty src i dev ? (zawsze)
+Bajt 03-(N-1)	=	(zmienna)				// bajty właściwej komendy
+Bajt N			=	(crc)					// suma kotronla bajtów 02 - (N-1)
+
+
+=====================================================================================
+
+Komendy:
+
+DEFINE_CALL 'ptzChanelSelect' (integer chan){		// Wybór kamery do sterowania (musi byc wyslane miedzy controlExit a controlEnter)
+    call 'ptzSend' ("$C0,$01,chan-1");
+}
+DEFINE_CALL 'ptzDisplay' {							// Wywoływane po wejściu na stronę kamer (musi byc wyslane miedzy controlExit a controlEnter)
+    call 'ptzSend' ("$C1,$00");
+}
+DEFINE_CALL 'ptzControlEnter' {
+    call 'ptzSend' ("$D9,$00");
+}
+DEFINE_CALL 'ptzControlExit' {
+    call 'ptzSend' ("$DA,$00");
+}
+DEFINE_CALL 'ptzControlUPpress' {
+    call 'ptzSend' ("$CC,$01,$01");
+}
+DEFINE_CALL 'ptzControlUPrelease' {
+    call 'ptzSend' ("$CC,$01,$00");
+}
+DEFINE_CALL 'ptzControlDWNpress' {
+    call 'ptzSend' ("$CD,$01,$01");
+}
+DEFINE_CALL 'ptzControlDWNrelease' {
+    call 'ptzSend' ("$CD,$01,$00");
+}
+DEFINE_CALL 'ptzControlLEFTpress' {
+    call 'ptzSend' ("$CB,$01,$01");
+}
+DEFINE_CALL 'ptzControlLEFTrelease' {
+    call 'ptzSend' ("$CB,$01,$00");
+}
+DEFINE_CALL 'ptzControlRIGHTpress' {
+    call 'ptzSend' ("$CA,$01,$01");
+}
+DEFINE_CALL 'ptzControlRIGHTrelease' {
+    call 'ptzSend' ("$CA,$01,$00");
+}
+DEFINE_CALL 'ptzControlZoomINpress' {
+    call 'ptzSend' ("$D4,$01,$01");
+}
+DEFINE_CALL 'ptzControlZoomINrelease' {
+    call 'ptzSend' ("$D4,$01,$00");
+}
+DEFINE_CALL 'ptzControlZoomOUTpress' {
+    call 'ptzSend' ("$D3,$01,$01");
+}
+DEFINE_CALL 'ptzControlZoomOUTrelease' {
+    call 'ptzSend' ("$D3,$01,$00");
+}

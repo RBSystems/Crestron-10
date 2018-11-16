@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+ 
+<DLoadXExport>
+ 
+<Info language="0"  controlPanel="4" created="2013-12-04 14:03:57" versionXSD="1.0"/>
+ 
+<Users CRC="0;0;0;0;0;0;0;0;0;">
+    <User name="Krzysztof Nowak" number="1" serial="1" permissions="255;78;255;0;" partitions="1;2;3;" enabled="True"/>
+    <User name="Katarzyna Nowak" number="2" serial="2" permissions="255;78;255;0;" partitions="1;2;3;" enabled="True"/>
+    <User name="Kacper Nowak" number="3" serial="1" permissions="255;78;255;0;" partitions="1;2;3;" enabled="True"/>
+    <User name="Użytkownik   4" number="4" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik   5" number="5" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik   6" number="6" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik   7" number="7" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik   8" number="8" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik   9" number="9" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  10" number="10" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  11" number="11" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  12" number="12" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  13" number="13" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  14" number="14" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  15" number="15" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  16" number="16" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  17" number="17" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  18" number="18" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  19" number="19" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  20" number="20" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  21" number="21" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  22" number="22" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  23" number="23" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  24" number="24" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  25" number="25" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  26" number="26" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  27" number="27" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  28" number="28" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  29" number="29" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  30" number="30" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  31" number="31" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  32" number="32" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  33" number="33" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  34" number="34" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  35" number="35" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  36" number="36" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  37" number="37" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  38" number="38" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  39" number="39" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  40" number="40" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  41" number="41" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  42" number="42" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  43" number="43" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  44" number="44" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  45" number="45" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  46" number="46" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  47" number="47" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  48" number="48" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  49" number="49" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  50" number="50" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  51" number="51" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  52" number="52" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  53" number="53" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  54" number="54" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  55" number="55" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  56" number="56" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  57" number="57" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  58" number="58" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  59" number="59" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  60" number="60" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  61" number="61" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  62" number="62" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  63" number="63" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  64" number="64" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  65" number="65" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  66" number="66" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  67" number="67" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  68" number="68" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  69" number="69" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  70" number="70" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  71" number="71" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  72" number="72" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  73" number="73" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  74" number="74" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  75" number="75" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  76" number="76" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  77" number="77" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  78" number="78" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  79" number="79" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  80" number="80" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  81" number="81" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  82" number="82" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  83" number="83" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  84" number="84" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  85" number="85" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  86" number="86" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  87" number="87" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  88" number="88" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  89" number="89" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  90" number="90" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  91" number="91" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  92" number="92" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  93" number="93" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  94" number="94" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  95" number="95" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  96" number="96" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  97" number="97" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  98" number="98" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik  99" number="99" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 100" number="100" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 101" number="101" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 102" number="102" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 103" number="103" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 104" number="104" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 105" number="105" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 106" number="106" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 107" number="107" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 108" number="108" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 109" number="109" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 110" number="110" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 111" number="111" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 112" number="112" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 113" number="113" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 114" number="114" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 115" number="115" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 116" number="116" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 117" number="117" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 118" number="118" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 119" number="119" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 120" number="120" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 121" number="121" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 122" number="122" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 123" number="123" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 124" number="124" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 125" number="125" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 126" number="126" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 127" number="127" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 128" number="128" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 129" number="129" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 130" number="130" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 131" number="131" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 132" number="132" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 133" number="133" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 134" number="134" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 135" number="135" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 136" number="136" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 137" number="137" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 138" number="138" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 139" number="139" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 140" number="140" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 141" number="141" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 142" number="142" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 143" number="143" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 144" number="144" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 145" number="145" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 146" number="146" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 147" number="147" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 148" number="148" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 149" number="149" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 150" number="150" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 151" number="151" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 152" number="152" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 153" number="153" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 154" number="154" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 155" number="155" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 156" number="156" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 157" number="157" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 158" number="158" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 159" number="159" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 160" number="160" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 161" number="161" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 162" number="162" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 163" number="163" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 164" number="164" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 165" number="165" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 166" number="166" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 167" number="167" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 168" number="168" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 169" number="169" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 170" number="170" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 171" number="171" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 172" number="172" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 173" number="173" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 174" number="174" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 175" number="175" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 176" number="176" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 177" number="177" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 178" number="178" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 179" number="179" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 180" number="180" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 181" number="181" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 182" number="182" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 183" number="183" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 184" number="184" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 185" number="185" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 186" number="186" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 187" number="187" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 188" number="188" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 189" number="189" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 190" number="190" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 191" number="191" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 192" number="192" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 193" number="193" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 194" number="194" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 195" number="195" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 196" number="196" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 197" number="197" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 198" number="198" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 199" number="199" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 200" number="200" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 201" number="201" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 202" number="202" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 203" number="203" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 204" number="204" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 205" number="205" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 206" number="206" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 207" number="207" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 208" number="208" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 209" number="209" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 210" number="210" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 211" number="211" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 212" number="212" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 213" number="213" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 214" number="214" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 215" number="215" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 216" number="216" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 217" number="217" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 218" number="218" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 219" number="219" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 220" number="220" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 221" number="221" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 222" number="222" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 223" number="223" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 224" number="224" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 225" number="225" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 226" number="226" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 227" number="227" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 228" number="228" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 229" number="229" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 230" number="230" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 231" number="231" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 232" number="232" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 233" number="233" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 234" number="234" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 235" number="235" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 236" number="236" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 237" number="237" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 238" number="238" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 239" number="239" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Użytkownik 240" number="240" serial="0" permissions="0;0;0;0;" partitions="" enabled="False"/>
+    <User name="Administrator 1" number="241" serial="0" permissions="255;255;255;0;" partitions="1;2;3;" enabled="True"/>
+    <User name="Administrator 2" number="242" serial="1" permissions="255;255;255;0;" partitions="" enabled="False"/>
+    <User name="Administrator 3" number="243" serial="0" permissions="255;255;255;0;" partitions="" enabled="False"/>
+    <User name="Administrator 4" number="244" serial="0" permissions="255;255;255;0;" partitions="" enabled="False"/>
+    <User name="Administrator 5" number="245" serial="0" permissions="255;255;255;0;" partitions="" enabled="False"/>
+    <User name="Administrator 6" number="246" serial="0" permissions="255;255;255;0;" partitions="" enabled="False"/>
+    <User name="Administrator 7" number="247" serial="0" permissions="255;255;255;0;" partitions="" enabled="False"/>
+    <User name="Administrator 8" number="248" serial="0" permissions="255;255;255;0;" partitions="" enabled="False"/>
+</Users>
+ 
+<Partitions CRC="0">
+    <Partition name="PIRY ZEWNĘTRZNE" number="1" enabled="True"/>
+    <Partition name="KONTRAKTRONY" number="2" enabled="True"/>
+    <Partition name="PIRY WEWNĄTRZ" number="3" enabled="True"/>
+    <Partition name="Strefa  4" number="4" enabled="False"/>
+    <Partition name="Strefa  5" number="5" enabled="False"/>
+    <Partition name="Strefa  6" number="6" enabled="False"/>
+    <Partition name="Strefa  7" number="7" enabled="False"/>
+    <Partition name="Strefa  8" number="8" enabled="False"/>
+    <Partition name="Strefa  9" number="9" enabled="False"/>
+    <Partition name="Strefa 10" number="10" enabled="False"/>
+    <Partition name="Strefa 11" number="11" enabled="False"/>
+    <Partition name="Strefa 12" number="12" enabled="False"/>
+    <Partition name="Strefa 13" number="13" enabled="False"/>
+    <Partition name="Strefa 14" number="14" enabled="False"/>
+    <Partition name="Strefa 15" number="15" enabled="False"/>
+    <Partition name="Strefa 16" number="16" enabled="False"/>
+    <Partition name="Strefa 17" number="17" enabled="False"/>
+    <Partition name="Strefa 18" number="18" enabled="False"/>
+    <Partition name="Strefa 19" number="19" enabled="False"/>
+    <Partition name="Strefa 20" number="20" enabled="False"/>
+    <Partition name="Strefa 21" number="21" enabled="False"/>
+    <Partition name="Strefa 22" number="22" enabled="False"/>
+    <Partition name="Strefa 23" number="23" enabled="False"/>
+    <Partition name="Strefa 24" number="24" enabled="False"/>
+    <Partition name="Strefa 25" number="25" enabled="False"/>
+    <Partition name="Strefa 26" number="26" enabled="False"/>
+    <Partition name="Strefa 27" number="27" enabled="False"/>
+    <Partition name="Strefa 28" number="28" enabled="False"/>
+    <Partition name="Strefa 29" number="29" enabled="False"/>
+    <Partition name="Strefa 30" number="30" enabled="False"/>
+    <Partition name="Strefa 31" number="31" enabled="False"/>
+    <Partition name="Strefa 32" number="32" enabled="False"/>
+</Partitions>
+ 
+<Zones CRC="0">
+    <Zone name="Bariera Łazienka" number="1" enabled="True"/>
+    <Zone name="BARIERA 1 GARAŹ" number="2" enabled="True"/>
+    <Zone name="PIR Garaź" number="3" enabled="True"/>
+    <Zone name="PIR Taras PD" number="4" enabled="True"/>
+    <Zone name="PIR Taras Zachód" number="5" enabled="True"/>
+    <Zone name="PIR Ogród" number="6" enabled="True"/>
+    <Zone name="Pir Drzwi wejśc" number="7" enabled="True"/>
+    <Zone name="Bariera Sypialni" number="8" enabled="True"/>
+    <Zone name="Kon.sal+kor gora" number="9" enabled="True"/>
+    <Zone name="PIR Garaz" number="10" enabled="True"/>
+    <Zone name="PIR Salon góra" number="11" enabled="True"/>
+    <Zone name="PIR Łazienka gór" number="12" enabled="True"/>
+    <Zone name="PIR Pokój mamy" number="13" enabled="True"/>
+    <Zone name="PIR Pokój chłopc" number="14" enabled="True"/>
+    <Zone name="PIR Sypialnia" number="15" enabled="True"/>
+    <Zone name="PIR Salon dół" number="16" enabled="True"/>
+    <Zone name="PIR Kuchnia" number="17" enabled="True"/>
+    <Zone name="PIR Strych" number="18" enabled="True"/>
+    <Zone name="PIR Korytarz gór" number="19" enabled="True"/>
+    <Zone name="K.okno sypialnia" number="20" enabled="True"/>
+    <Zone name="K.rol. sypialnia" number="21" enabled="True"/>
+    <Zone name="K.okno kuchnia" number="22" enabled="True"/>
+    <Zone name="K.rol.kuchnia" number="23" enabled="True"/>
+    <Zone name="Bariera Taras" number="24" enabled="True"/>
+    <Zone name="K.pok.chłopca" number="25" enabled="True"/>
+    <Zone name="K.rol.pok.chłopc" number="26" enabled="True"/>
+    <Zone name="K.okno.pok.mamy" number="27" enabled="True"/>
+    <Zone name="K.rol.pok.mamy" number="28" enabled="True"/>
+    <Zone name="K.okno.łaz.góra" number="29" enabled="True"/>
+    <Zone name="K.rol.łaz.góra" number="30" enabled="True"/>
+    <Zone name="K.okno.sal+koryt" number="31" enabled="True"/>
+    <Zone name="K.rol.sal+koryt" number="32" enabled="True"/>
+    <Zone name="OKNO GARAZ PN" number="33" enabled="True"/>
+    <Zone name="OKNO GARAZ PD" number="34" enabled="True"/>
+    <Zone name="ROLETA GARAZ PN" number="35" enabled="True"/>
+    <Zone name="ROLETA GARAZ PD" number="36" enabled="True"/>
+    <Zone name="BRAMA GARAZ PN" number="37" enabled="True"/>
+    <Zone name="BRAMA GARAZ PD" number="38" enabled="True"/>
+    <Zone name="OKNO KOTLOWNIA" number="39" enabled="True"/>
+    <Zone name="ROLETA KOTLOWNIA" number="40" enabled="True"/>
+    <Zone name="OKNO ŁAZIEN DÓŁ" number="41" enabled="True"/>
+    <Zone name="ROLE LAZIENK DÓŁ" number="42" enabled="True"/>
+    <Zone name="KONT DRZWI WEJŚC" number="43" enabled="True"/>
+    <Zone name="OKNO SAL+JAD DÓŁ" number="44" enabled="True"/>
+    <Zone name="ROLE SAL+JAD DÓŁ" number="45" enabled="True"/>
+    <Zone name="Sabotaź syreny" number="46" enabled="True"/>
+    <Zone name="czujka zalania" number="47" enabled="True"/>
+    <Zone name="czujka dymu" number="48" enabled="True"/>
+    <Zone name="roletagora" number="49" enabled="True"/>
+    <Zone name="roletadol" number="50" enabled="True"/>
+    <Zone name="Czujniki Obecno" number="51" enabled="True"/>
+    <Zone name="Kontrakt Wago" number="52" enabled="True"/>
+    <Zone name="Napad" number="53" enabled="True"/>
+    <Zone name="Ide spac" number="54" enabled="True"/>
+    <Zone name="kon. strych" number="55" enabled="True"/>
+    <Zone name="Wejście  56" number="56" enabled="True"/>
+    <Zone name="Wejście  57" number="57" enabled="False"/>
+    <Zone name="Wejście  58" number="58" enabled="False"/>
+    <Zone name="Wejście  59" number="59" enabled="False"/>
+    <Zone name="Wejście  60" number="60" enabled="False"/>
+    <Zone name="Wejście  61" number="61" enabled="False"/>
+    <Zone name="Wejście  62" number="62" enabled="False"/>
+    <Zone name="Wejście  63" number="63" enabled="False"/>
+    <Zone name="Wejście  64" number="64" enabled="False"/>
+    <Zone name="Wejście  65" number="65" enabled="False"/>
+    <Zone name="Wejście  66" number="66" enabled="False"/>
+    <Zone name="Wejście  67" number="67" enabled="False"/>
+    <Zone name="Wejście  68" number="68" enabled="False"/>
+    <Zone name="Wejście  69" number="69" enabled="False"/>
+    <Zone name="Wejście  70" number="70" enabled="False"/>
+    <Zone name="Wejście  71" number="71" enabled="False"/>
+    <Zone name="Wejście  72" number="72" enabled="False"/>
+    <Zone name="Wejście  73" number="73" enabled="False"/>
+    <Zone name="Wejście  74" number="74" enabled="False"/>
+    <Zone name="Wejście  75" number="75" enabled="False"/>
+    <Zone name="Wejście  76" number="76" enabled="False"/>
+    <Zone name="Wejście  77" number="77" enabled="False"/>
+    <Zone name="Wejście  78" number="78" enabled="False"/>
+    <Zone name="Wejście  79" number="79" enabled="False"/>
+    <Zone name="Wejście  80" number="80" enabled="False"/>
+    <Zone name="Wejście  81" number="81" enabled="False"/>
+    <Zone name="Wejście  82" number="82" enabled="False"/>
+    <Zone name="Wejście  83" number="83" enabled="False"/>
+    <Zone name="Wejście  84" number="84" enabled="False"/>
+    <Zone name="Wejście  85" number="85" enabled="False"/>
+    <Zone name="Wejście  86" number="86" enabled="False"/>
+    <Zone name="Wejście  87" number="87" enabled="False"/>
+    <Zone name="Wejście  88" number="88" enabled="False"/>
+    <Zone name="Wejście  89" number="89" enabled="False"/>
+    <Zone name="Wejście  90" number="90" enabled="False"/>
+    <Zone name="Wejście  91" number="91" enabled="False"/>
+    <Zone name="Wejście  92" number="92" enabled="False"/>
+    <Zone name="Wejście  93" number="93" enabled="False"/>
+    <Zone name="Wejście  94" number="94" enabled="False"/>
+    <Zone name="Wejście  95" number="95" enabled="False"/>
+    <Zone name="piry wewnetrzne" number="96" enabled="False"/>
+    <Zone name="piry zewnetrzne" number="97" enabled="False"/>
+    <Zone name="kasuj alarm" number="98" enabled="False"/>
+    <Zone name="wyl.czuwanie" number="99" enabled="False"/>
+    <Zone name="kontraktrony" number="100" enabled="True"/>
+    <Zone name="Brama g lewa" number="101" enabled="True"/>
+    <Zone name="Brama g prawa" number="102" enabled="True"/>
+    <Zone name="Brama wjazdowa" number="103" enabled="True"/>
+    <Zone name="roleta gora" number="104" enabled="False"/>
+    <Zone name="Wejście 105" number="105" enabled="False"/>
+    <Zone name="Wejście 106" number="106" enabled="False"/>
+    <Zone name="Wejście 107" number="107" enabled="False"/>
+    <Zone name="Wejście 108" number="108" enabled="False"/>
+    <Zone name="Wejście 109" number="109" enabled="False"/>
+    <Zone name="Wejście 110" number="110" enabled="False"/>
+    <Zone name="Wejście 111" number="111" enabled="False"/>
+    <Zone name="Wejście 112" number="112" enabled="False"/>
+    <Zone name="Wejście 113" number="113" enabled="False"/>
+    <Zone name="Wejście 114" number="114" enabled="False"/>
+    <Zone name="Wejście 115" number="115" enabled="False"/>
+    <Zone name="Wejście 116" number="116" enabled="False"/>
+    <Zone name="Wejście 117" number="117" enabled="False"/>
+    <Zone name="Wejście 118" number="118" enabled="False"/>
+    <Zone name="Wejście 119" number="119" enabled="False"/>
+    <Zone name="Wejście 120" number="120" enabled="False"/>
+    <Zone name="Wejście 121" number="121" enabled="False"/>
+    <Zone name="Wejście 122" number="122" enabled="False"/>
+    <Zone name="Wejście 123" number="123" enabled="False"/>
+    <Zone name="Wejście 124" number="124" enabled="False"/>
+    <Zone name="Wejście 125" number="125" enabled="False"/>
+    <Zone name="Wejście 126" number="126" enabled="False"/>
+    <Zone name="Wejście 127" number="127" enabled="False"/>
+    <Zone name="Wejście 128" number="128" enabled="False"/>
+</Zones>
+ 
+<Outputs CRC="0">
+    <Output name="Powiad-Syrena" number="1" enabled="True"/>
+    <Output name="Zasilanie" number="2" enabled="True"/>
+    <Output name="Wyjście   3" number="3" enabled="True"/>
+    <Output name="Brama garaż" number="4" enabled="True"/>
+    <Output name="Brama wjazdowa" number="5" enabled="True"/>
+    <Output name="Brama garaż" number="6" enabled="True"/>
+    <Output name="Wyjście   7" number="7" enabled="True"/>
+    <Output name="Wyjście   8" number="8" enabled="True"/>
+    <Output name="Wyjście   9" number="9" enabled="False"/>
+    <Output name="Wyjście  10" number="10" enabled="False"/>
+    <Output name="Wyjście  11" number="11" enabled="False"/>
+    <Output name="Wyjście  12" number="12" enabled="False"/>
+    <Output name="Wyjście  13" number="13" enabled="False"/>
+    <Output name="Wyjście  14" number="14" enabled="False"/>
+    <Output name="Wyjście  15" number="15" enabled="False"/>
+    <Output name="Wyjście  16" number="16" enabled="False"/>
+    <Output name="Wyjście  17" number="17" enabled="False"/>
+    <Output name="Wyjście  18" number="18" enabled="False"/>
+    <Output name="Wyjście  19" number="19" enabled="False"/>
+    <Output name="Wyjście  20" number="20" enabled="False"/>
+    <Output name="Wyjście  21" number="21" enabled="False"/>
+    <Output name="Wyjście  22" number="22" enabled="False"/>
+    <Output name="Wyjście  23" number="23" enabled="False"/>
+    <Output name="Wyjście  24" number="24" enabled="False"/>
+    <Output name="Wyjście  25" number="25" enabled="False"/>
+    <Output name="Wyjście  26" number="26" enabled="False"/>
+    <Output name="Wyjście  27" number="27" enabled="False"/>
+    <Output name="Wyjście  28" number="28" enabled="False"/>
+    <Output name="Wyjście  29" number="29" enabled="False"/>
+    <Output name="Wyjście  30" number="30" enabled="False"/>
+    <Output name="Wyjście  31" number="31" enabled="False"/>
+    <Output name="Wyjście  32" number="32" enabled="False"/>
+    <Output name="Wyjście  33" number="33" enabled="False"/>
+    <Output name="Wyjście  34" number="34" enabled="False"/>
+    <Output name="Wyjście  35" number="35" enabled="False"/>
+    <Output name="Wyjście  36" number="36" enabled="False"/>
+    <Output name="Wyjście  37" number="37" enabled="False"/>
+    <Output name="Wyjście  38" number="38" enabled="False"/>
+    <Output name="Wyjście  39" number="39" enabled="False"/>
+    <Output name="Wyjście  40" number="40" enabled="False"/>
+    <Output name="Wyjście  41" number="41" enabled="False"/>
+    <Output name="Wyjście  42" number="42" enabled="False"/>
+    <Output name="Wyjście  43" number="43" enabled="False"/>
+    <Output name="Wyjście  44" number="44" enabled="False"/>
+    <Output name="Wyjście  45" number="45" enabled="False"/>
+    <Output name="Wyjście  46" number="46" enabled="False"/>
+    <Output name="Wyjście  47" number="47" enabled="False"/>
+    <Output name="Wyjście  48" number="48" enabled="False"/>
+    <Output name="Wyjście  49" number="49" enabled="False"/>
+    <Output name="Wyjście  50" number="50" enabled="False"/>
+    <Output name="Wyjście  51" number="51" enabled="False"/>
+    <Output name="Wyjście  52" number="52" enabled="False"/>
+    <Output name="Wyjście  53" number="53" enabled="False"/>
+    <Output name="Wyjście  54" number="54" enabled="False"/>
+    <Output name="Wyjście  55" number="55" enabled="False"/>
+    <Output name="Wyjście  56" number="56" enabled="False"/>
+    <Output name="Wyjście  57" number="57" enabled="False"/>
+    <Output name="Wyjście  58" number="58" enabled="False"/>
+    <Output name="Wyjście  59" number="59" enabled="False"/>
+    <Output name="Wyjście  60" number="60" enabled="False"/>
+    <Output name="Wyjście  61" number="61" enabled="False"/>
+    <Output name="Wyjście  62" number="62" enabled="False"/>
+    <Output name="Wyjście  63" number="63" enabled="False"/>
+    <Output name="Wyjście  64" number="64" enabled="False"/>
+    <Output name="Wyjście  65" number="65" enabled="False"/>
+    <Output name="Wyjście  66" number="66" enabled="False"/>
+    <Output name="Wyjście  67" number="67" enabled="False"/>
+    <Output name="Wyjście  68" number="68" enabled="False"/>
+    <Output name="Wyjście  69" number="69" enabled="False"/>
+    <Output name="Wyjście  70" number="70" enabled="False"/>
+    <Output name="Wyjście  71" number="71" enabled="False"/>
+    <Output name="Wyjście  72" number="72" enabled="False"/>
+    <Output name="Wyjście  73" number="73" enabled="False"/>
+    <Output name="Wyjście  74" number="74" enabled="False"/>
+    <Output name="Wyjście  75" number="75" enabled="False"/>
+    <Output name="Wyjście  76" number="76" enabled="False"/>
+    <Output name="Wyjście  77" number="77" enabled="False"/>
+    <Output name="Wyjście  78" number="78" enabled="False"/>
+    <Output name="Wyjście  79" number="79" enabled="False"/>
+    <Output name="Wyjście  80" number="80" enabled="False"/>
+    <Output name="Wyjście  81" number="81" enabled="False"/>
+    <Output name="Wyjście  82" number="82" enabled="False"/>
+    <Output name="Wyjście  83" number="83" enabled="False"/>
+    <Output name="Wyjście  84" number="84" enabled="False"/>
+    <Output name="Wyjście  85" number="85" enabled="False"/>
+    <Output name="Wyjście  86" number="86" enabled="False"/>
+    <Output name="Wyjście  87" number="87" enabled="False"/>
+    <Output name="Wyjście  88" number="88" enabled="False"/>
+    <Output name="Wyjście  89" number="89" enabled="False"/>
+    <Output name="Wyjście  90" number="90" enabled="False"/>
+    <Output name="Wyjście  91" number="91" enabled="False"/>
+    <Output name="Wyjście  92" number="92" enabled="False"/>
+    <Output name="Wyjście  93" number="93" enabled="False"/>
+    <Output name="Wyjście  94" number="94" enabled="False"/>
+    <Output name="Wyjście  95" number="95" enabled="False"/>
+    <Output name="Wyjście  96" number="96" enabled="False"/>
+    <Output name="Wyjście  97" number="97" enabled="False"/>
+    <Output name="Wyjście  98" number="98" enabled="False"/>
+    <Output name="Wyjście  99" number="99" enabled="False"/>
+    <Output name="Czuwanie zal" number="100" enabled="False"/>
+    <Output name="Wyjście 101" number="101" enabled="False"/>
+    <Output name="Wyjście 102" number="102" enabled="False"/>
+    <Output name="" number="103" enabled="False"/>
+    <Output name="" number="104" enabled="False"/>
+    <Output name="Wyjście 105" number="105" enabled="False"/>
+    <Output name="Wyjście 106" number="106" enabled="False"/>
+    <Output name="Wyjście 107" number="107" enabled="False"/>
+    <Output name="Wyjście 108" number="108" enabled="False"/>
+    <Output name="Wyjście 109" number="109" enabled="False"/>
+    <Output name="Wyjście 110" number="110" enabled="False"/>
+    <Output name="Wyjście 111" number="111" enabled="False"/>
+    <Output name="Wyjście 112" number="112" enabled="False"/>
+    <Output name="Wyjście 113" number="113" enabled="False"/>
+    <Output name="Wyjście 114" number="114" enabled="False"/>
+    <Output name="Wyjście 115" number="115" enabled="False"/>
+    <Output name="Wyjście 116" number="116" enabled="False"/>
+    <Output name="Wyjście 117" number="117" enabled="False"/>
+    <Output name="Wyjście 118" number="118" enabled="False"/>
+    <Output name="Wyjście 119" number="119" enabled="False"/>
+    <Output name="Wyjście 120" number="120" enabled="False"/>
+    <Output name="Wyjście 121" number="121" enabled="False"/>
+    <Output name="Wyjście 122" number="122" enabled="False"/>
+    <Output name="Wyjście 123" number="123" enabled="False"/>
+    <Output name="Wyjście 124" number="124" enabled="False"/>
+    <Output name="Wyjście 125" number="125" enabled="False"/>
+    <Output name="Wyjście 126" number="126" enabled="False"/>
+    <Output name="Wyjście 127" number="127" enabled="False"/>
+    <Output name="Wyjście 128" number="128" enabled="False"/>
+</Outputs>
+ 
+<Expanders CRC="0">
+    <Expander name="CA-64 E   (00h)" number="129" enabled="False"/>
+    <Expander name="CA-64 EPS (01h)" number="130" enabled="True"/>
+    <Expander name="CA-64 E   (02h)" number="131" enabled="True"/>
+    <Expander name="Expander  (03h)" number="132" enabled="False"/>
+    <Expander name="CA-64 E   (04h)" number="133" enabled="True"/>
+    <Expander name="Expander  (05h)" number="134" enabled="False"/>
+    <Expander name="Expander  (06h)" number="135" enabled="False"/>
+    <Expander name="Expander  (07h)" number="136" enabled="False"/>
+    <Expander name="CA-64 E   (08h)" number="137" enabled="True"/>
+    <Expander name="Expander  (09h)" number="138" enabled="False"/>
+    <Expander name="Expander  (0Ah)" number="139" enabled="False"/>
+    <Expander name="Expander  (0Bh)" number="140" enabled="False"/>
+    <Expander name="Expander  (0Ch)" number="141" enabled="False"/>
+    <Expander name="Expander  (0Dh)" number="142" enabled="False"/>
+    <Expander name="Expander  (0Eh)" number="143" enabled="False"/>
+    <Expander name="Expander  (0Fh)" number="144" enabled="False"/>
+    <Expander name="CA-64 E   (10h)" number="145" enabled="True"/>
+    <Expander name="Ekspander (11h)" number="146" enabled="False"/>
+    <Expander name="Expander  (12h)" number="147" enabled="False"/>
+    <Expander name="Expander  (13h)" number="148" enabled="False"/>
+    <Expander name="Expander  (14h)" number="149" enabled="False"/>
+    <Expander name="Expander  (15h)" number="150" enabled="False"/>
+    <Expander name="Expander  (16h)" number="151" enabled="False"/>
+    <Expander name="Expander  (17h)" number="152" enabled="False"/>
+    <Expander name="CA-64 E   (18h)" number="153" enabled="True"/>
+    <Expander name="Expander  (19h)" number="154" enabled="False"/>
+    <Expander name="Expander  (1Ah)" number="155" enabled="False"/>
+    <Expander name="Expander  (1Bh)" number="156" enabled="False"/>
+    <Expander name="Expander  (1Ch)" number="157" enabled="False"/>
+    <Expander name="Expander  (1Dh)" number="158" enabled="False"/>
+    <Expander name="Expander  (1Eh)" number="159" enabled="False"/>
+    <Expander name="Expander  (1Fh)" number="160" enabled="False"/>
+    <Expander name="INT-KLCD    (0)" number="193" enabled="False"/>
+    <Expander name="INT-KLCD    (1)" number="194" enabled="True"/>
+    <Expander name="INT-RS      (2)" number="195" enabled="True"/>
+    <Expander name="INT-KLCD    (3)" number="196" enabled="False"/>
+    <Expander name="INT-KLCD    (4)" number="197" enabled="False"/>
+    <Expander name="INT-KLCD    (5)" number="198" enabled="False"/>
+    <Expander name="INT-KLCD    (6)" number="199" enabled="False"/>
+    <Expander name="INT-KLCD    (7)" number="200" enabled="False"/>
+</Expanders>
+ 
+<Connect>
+</Connect>
+ 
+</DLoadXExport>
