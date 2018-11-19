@@ -21,7 +21,7 @@
   SmplCName=Long_Short.usp
   Code=1
   SysRev5=4.000
-  SMWRev=3.00.00
+  SMWRev=2.02.05
   InputCue1=in
   InputSigType1=Digital
   OutputCue1=short
@@ -67,8 +67,6 @@
   SymJam=NonExclusive
   FileName=Long_Short.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
