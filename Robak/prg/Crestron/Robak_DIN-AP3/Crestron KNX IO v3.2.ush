@@ -80,8 +80,7 @@
   SymJam=NonExclusive
   FileName=Crestron KNX IO v3.2.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
