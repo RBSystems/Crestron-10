@@ -1,5 +1,24 @@
-router ip: 176.116.151.42
+Adres zewnętrzny	:	185.122.173.137		(ip.42.pl)
 
-wago sterownik: 192.168.0.250
+Router		:	192.168.0.1 (DHCP 50 - 149)
 
-MC3		:	192.168.0.240
+VideoServer	:	192.168.0.190
+
+MC3			:	192.168.0.240
+
+WAGO		:	192.168.0.250
+
+====================
+
+WiFi
+
+SSID		:	TP-Link_8CFE
+Password	:	64602509
+
+
+==================
+
+Dostawca internetu
+LutekLAN Krzysztof Widerkiewicz
+info@luteklan.pl
+600 426 938
