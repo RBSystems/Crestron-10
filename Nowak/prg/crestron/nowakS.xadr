@@ -13,7 +13,7 @@ DefaultEntry=
 [ComSpecs]
 1_usb=usb
 MC3=auto 192.168.0.240
-MC3 Remote=auto 176.116.151.42
+MC3 Remote=auto 185.122.173.137
 ST-COM=MC3:cresnet 03
 
 [Notes]
