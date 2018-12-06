@@ -11,8 +11,10 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
+DIN-AP3=auto 192.168.1.5
 1_USB=usb
 
 [Notes]
+DIN-AP3=
 1_USB=
 

@@ -1,2 +1,28 @@
 DIN-AP3		:		192.168.1.5
 CI-KNX		:		192.168.1.10
+
+==================================
+
+Router				:		192.168.1.1
+DefaultConfigPass	:		fnENDe95
+ConfigPass			:		zdolnyAdmin51
+
+WiFi
+
+SSID		:	PrzyjemNET
+Password	:	mocnehaslo29
+
+
+================
+
+LTE T-Mobile
+
+PIN_1	:	0204
+PIN_2	:	7425
+
+PUK_1	:	92535588
+PUK_2	:	61865938
+
+APN			:	data
+user		:	internet
+password	:	internet
