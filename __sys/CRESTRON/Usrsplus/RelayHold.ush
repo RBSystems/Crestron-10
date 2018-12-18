@@ -65,7 +65,7 @@
   SymJam=NonExclusive
   FileName=RelayHold.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
+  clz1=ssl_Utility
 [END]
 [BEGIN]
   ObjTp=Dp
