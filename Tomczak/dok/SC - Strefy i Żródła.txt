@@ -1,0 +1,21 @@
+Strefy:
+
+1: Łazienka Dzieci
+2: Dzieci Lewy
+3: Dzieci Prawy
+4: Gościnny Prawy
+5: Bawialnia
+6: Taras
+7: Sypialnia
+8: Łazienka Rodziców
+9: Pokój Zosi
+10: Kuchnia
+11: Salon/Jadalnia
+12: Grill
+
+Źródła:
+
+1: <puste>
+2: AppleTv
+3: Sonos
+4: CD Player
