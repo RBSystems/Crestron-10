@@ -11,7 +11,7 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
-DIN-AP3_Remote=auto 188.147.181.71
+DIN-AP3_Remote=ssl 188.147.181.71
 DIN-AP3=ssh 192.168.1.5
 1_USB=usb
 
