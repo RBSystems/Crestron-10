@@ -1,0 +1,22 @@
+[Crestron_Toolbox_Address_Book]
+
+[Entries]
+This .xadr file was created using Toolbox v2.41 or later.=:slot 01
+It is not compatible with this version of Toolbox.=:slot 02
+Please open a .adr Address Book to continue.=:slot 03
+
+[AddressBookInfo]
+Schema=2.0
+Version=1.0
+DefaultEntry=
+
+[ComSpecs]
+CP3=auto 192.168.69.201
+NVX_TX=auto 192.168.69.202
+NVX_RX=auto 192.168.69.203
+
+[Notes]
+CP3=
+NVX_TX=
+NVX_RX=
+
