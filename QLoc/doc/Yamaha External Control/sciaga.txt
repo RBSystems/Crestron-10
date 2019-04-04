@@ -1,0 +1,53 @@
+ZONE
+
+5.1. getStatus (49)
+
+http://{host}/YamahaExtendedControl/v1/main/getStatus
+
+{
+"response_code":0,
+"power":"on",
+"sleep":0,
+"volume":30,
+"mute":false,
+"max_volume":100,
+"input":"pandora",
+"input_text":"Pandora",
+"distribution_enable":true,
+"sound_program":"chamber",
+"surr_decoder_type":"auto",
+" surround_ai ":false,
+" surround_3d ":false,
+"direct":false,
+"pure_direct":false,
+"enhancer":true.
+"tone_control":{
+"bass":0,
+"treble":2
+},
+"dialogue_level":0.
+"dialogue_lift":1,
+"disable_flags":0
+"contents_display":true,
+"actual_volume":{
+"mode":"db",
+"value":-23.5,
+"unit":"dB"
+},
+"audio_select":"auto",
+"party_enable":false
+}
+
+------------------
+5.3. setPower (52)
+------------------
+5.5. setVolume (53)
+------------------
+5.6. setMute (54)
+------------------
+5.7. setInput (54)
+------------------
+??? 5.23. prepareInputChange (63) ???
+------------------
+
+
