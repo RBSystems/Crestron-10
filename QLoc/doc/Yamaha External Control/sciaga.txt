@@ -1,8 +1,12 @@
-ZONE
+10.10.51.101
+
+============================
 
 5.1. getStatus (49)
 
 http://{host}/YamahaExtendedControl/v1/main/getStatus
+
+"GET /YamahaExtendedControl/v1/main/getStatus HTTP/1.1\nHost: 10.10.51.101\n\n"
 
 {
 "response_code":0,
@@ -21,33 +25,64 @@ http://{host}/YamahaExtendedControl/v1/main/getStatus
 "direct":false,
 "pure_direct":false,
 "enhancer":true.
-"tone_control":{
-"bass":0,
-"treble":2
-},
+"tone_control":
+	{
+	"bass":0,
+	"treble":2
+	},
 "dialogue_level":0.
 "dialogue_lift":1,
 "disable_flags":0
 "contents_display":true,
-"actual_volume":{
-"mode":"db",
-"value":-23.5,
-"unit":"dB"
-},
+"actual_volume":
+	{
+	"mode":"db",
+	"value":-23.5,
+	"unit":"dB"
+	},
 "audio_select":"auto",
 "party_enable":false
 }
 
+Sprawdzić co tak naprawdę Crestron odbiera i wkleić tutaj:
+
+
+
 ------------------
-5.3. setPower (52)
+5.3. setPower (52) [GET]
+
+http://{host}/YamahaExtendedControl/v1/main/setPower?power={on|standby}
+
+"GET /YamahaExtendedControl/v1/main/setPower?power=on HTTP/1.1\nHost: 10.10.51.101\n\n"
+"GET /YamahaExtendedControl/v1/main/setPower?power=standby HTTP/1.1\nHost: 10.10.51.101\n\n"
+
 ------------------
-5.5. setVolume (53)
+5.7. setInput (54) [GET]
+
+http://{host}/YamahaExtendedControl/v1/main/setInput?input=<hdmi1|hdmi2|hdmi3|...>
+
+"GET /YamahaExtendedControl/v1/main/setInput?input=hdmi1 HTTP/1.1\nHost: 10.10.51.101\n\n"
+"GET /YamahaExtendedControl/v1/main/setInput?input=hdmi2 HTTP/1.1\nHost: 10.10.51.101\n\n"
+"GET /YamahaExtendedControl/v1/main/setInput?input=hdmi3 HTTP/1.1\nHost: 10.10.51.101\n\n"
+
+------------------
+5.5. setVolume (53) [GET]
+
+http://{host}/YamahaExtendedControl/v1/main/setVolume?volume=<up|down>&step=5
+
+"GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=5 HTTP/1.1\nHost: 10.10.51.101\n\n"
+"GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=5 HTTP/1.1\nHost: 10.10.51.101\n\n"
+
 ------------------
 5.6. setMute (54)
+
+http://{host}/YamahaExtendedControl/v1/main/setMute?enable=<true|false>
+
+"GET /YamahaExtendedControl/v1/main/setMute?enable=true HTTP/1.1\nHost: 10.10.51.101\n\n"
+"GET /YamahaExtendedControl/v1/main/setMute?enable=false HTTP/1.1\nHost: 10.10.51.101\n\n"
+
+
 ------------------
-5.7. setInput (54)
-------------------
-??? 5.23. prepareInputChange (63) ???
-------------------
+ID LIST (122)
 
 
