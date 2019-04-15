@@ -17,10 +17,14 @@
 #DEFINE_CONSTANT COMMA					","
 #DEFINE_CONSTANT COLON					":"
 
-#DEFINE_CONSTANT POWER_KEY				"power"
-#DEFINE_CONSTANT VOLUME_KEY				"volume"
-#DEFINE_CONSTANT MUTE_KEY				"mute"
-#DEFINE_CONSTANT INPUT_KEY				"input"
+#DEFINE_CONSTANT DELIMITER					"\x0D\x0A\x0D\x0A"
+
+
+
+#DEFINE_CONSTANT POWER_KEY				"\x22power\x22"
+#DEFINE_CONSTANT VOLUME_KEY				"\x22volume\x22"
+#DEFINE_CONSTANT MUTE_KEY				"\x22mute\x22"
+#DEFINE_CONSTANT INPUT_KEY				"\x22input\x22"
 
 #DEFINE_CONSTANT ON_VALUE				"on"
 #DEFINE_CONSTANT STANDBY_VALUE			"standby"
@@ -144,8 +148,11 @@ FUNCTION HandlePair(STRING _singlePair)
 // Events
 THREADSAFE CHANGE Rx$
 {
-	STRING singlePacket[BUFFER_SIZE];
+	STRING header[BUFFER_SIZE];
+	STRING content[BUFFER_SIZE];
 	STRING singlePair[MAX_PAIR_LENGTH];
+
+	INTEGER contentLength;
         
 	while(1)
     {
@@ -154,17 +161,24 @@ THREADSAFE CHANGE Rx$
 
 		try
 		{
-			// Wyciecie z bufora pojedynczego pakietu
-			singlePacket = Gather(END_BRACKET, Rx$); // Ewentualnie sprobowac z COMMA
+			// Wyciecie z bufora naglowka pojedynczego pakietu
+			header = Gather(DELIMITER, Rx$);
+			contentLength = atoi(right(header, 7));
+			Trace("Dlugosc contentu: %u", contentLength);
+			content = GatherByLength(contentLength, Rx$);
 
-			while (len(singlePacket) > 0)
+			while (len(content) > 0)
 			{
-				singlePair = Remove(COMMA, singlePacket);
+				singlePair = Remove(COMMA, content);
 
 				if (len(singlePair) = 0) break;
 
+				Trace("Przetwarzam pare <%s>", singlePair);
+
 				HandlePair(singlePair);
 			}
+
+			ClearBuffer(Rx$);
 		}
 		catch
 		{
