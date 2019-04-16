@@ -20897,7 +20897,7 @@ ObjTp=FP
 ObjTp=Bk
 Nm1=\
 Sx1=0
-Sy1=120
+Sy1=0
 Mx1=0
 Nm2=MIMO12x12
 Sx2=0
@@ -20907,20 +20907,6 @@ Nm3=M-02
 Sx3=0
 Sy3=120
 Mx3=0
-]
-[
-ObjTp=Bw
-H=1
-Lx=0
-Ly=120
-Rx=807
-Ry=837
-Xm=-1
-Ym=119
-SH=426
-Z=100
-Ht=1
-Hi=1
 ]
 [
 ObjTp=Bw
@@ -39156,12 +39142,11 @@ ObjVer=1
 SmVr=1082
 PrH=398
 CF=2
-n1I=2
+n1I=1
 n1O=1
 Cmn1=00.12 Busy FB\\
-mI=2
+mI=1
 I1=303
-I2=1701
 mO=1
 tO=1
 O1=1796
