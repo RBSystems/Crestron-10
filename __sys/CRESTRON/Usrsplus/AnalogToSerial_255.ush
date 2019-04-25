@@ -20,7 +20,7 @@
   Name=AnalogToSerial_255
   SmplCName=AnalogToSerial_255.usp
   Code=1
-  SysRev5=4.000
+  SysRev5=4.006
   SMWRev=3.00.00
   InputList2Cue1=[~UNUSED~]
   InputList2SigType1=Analog
@@ -78,7 +78,6 @@
   SymJam=NonExclusive
   FileName=AnalogToSerial_255.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
