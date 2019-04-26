@@ -1,0 +1,5 @@
+Ukryte menu
+
+trzymaæ przycisk settings a¿ do pojawienia sie banera w prawym gorynym rogu (Info o aktualnie wybranym zrodle)
+
+wklepaæ sekwencjê pilotem 1-1-0-5-ok
