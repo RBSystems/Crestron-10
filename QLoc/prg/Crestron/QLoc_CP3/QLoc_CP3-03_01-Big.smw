@@ -3673,6 +3673,7 @@ SmC=155
 Nm=HD-MD4x2-4K-E v1.0.cmc
 ObjVer=1
 PrH=27
+CF=2
 n1I=95
 n1O=95
 LogModDh=597
@@ -4190,21 +4191,21 @@ tO=2
 O1=58
 mP=17
 P1=
-P2=GET /YamahaExtendedControl/v1/main/getStatus HTTP/1.1\nHost: 10.10.51.103\n\n
+P2=GET /YamahaExtendedControl/v1/main/getStatus HTTP/1.1\nHost: 10.10.51.102\n\n
 P3=""
-P4=GET /YamahaExtendedControl/v1/main/setPower?power=on HTTP/1.1\nHost: 10.10.51.103\n\n
-P5=GET /YamahaExtendedControl/v1/main/setPower?power=standby HTTP/1.1\nHost: 10.10.51.103\n\n
+P4=GET /YamahaExtendedControl/v1/main/setPower?power=on HTTP/1.1\nHost: 10.10.51.102\n\n
+P5=GET /YamahaExtendedControl/v1/main/setPower?power=standby HTTP/1.1\nHost: 10.10.51.102\n\n
 P6=""
-P7=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi1 HTTP/1.1\nHost: 10.10.51.103\n\n
-P8=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi2 HTTP/1.1\nHost: 10.10.51.103\n\n
-P9=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi3 HTTP/1.1\nHost: 10.10.51.103\n\n
-P10=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi4 HTTP/1.1\nHost: 10.10.51.103\n\n
-P11=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi5 HTTP/1.1\nHost: 10.10.51.103\n\n
+P7=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi1 HTTP/1.1\nHost: 10.10.51.102\n\n
+P8=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi2 HTTP/1.1\nHost: 10.10.51.102\n\n
+P9=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi3 HTTP/1.1\nHost: 10.10.51.102\n\n
+P10=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi4 HTTP/1.1\nHost: 10.10.51.102\n\n
+P11=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi5 HTTP/1.1\nHost: 10.10.51.102\n\n
 P12=""
-P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=5 HTTP/1.1\nHost: 10.10.51.103\n\n
-P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=5 HTTP/1.1\nHost: 10.10.51.103\n\n
-P15=GET /YamahaExtendedControl/v1/main/setMute?enable=true HTTP/1.1\nHost: 10.10.51.103\n\n
-P16=GET /YamahaExtendedControl/v1/main/setMute?enable=false HTTP/1.1\nHost: 10.10.51.103\n\n
+P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=5 HTTP/1.1\nHost: 10.10.51.102\n\n
+P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=5 HTTP/1.1\nHost: 10.10.51.102\n\n
+P15=GET /YamahaExtendedControl/v1/main/setMute?enable=true HTTP/1.1\nHost: 10.10.51.102\n\n
+P16=GET /YamahaExtendedControl/v1/main/setMute?enable=false HTTP/1.1\nHost: 10.10.51.102\n\n
 P17=
 ]
 [
