@@ -1,0 +1,7 @@
+25 - 421 Cannot connect to SMTP server 10.10.51.64 (10.10.51.64:25), connect error 10061{0D}{0A}
+
+465 - X
+
+443 - OK
+
+587 - 421 Cannot connect to SMTP server 10.10.51.64 (10.10.51.64:587), connect error 10061{0D}{0A}
