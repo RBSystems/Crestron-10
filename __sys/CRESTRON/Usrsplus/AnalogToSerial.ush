@@ -20,8 +20,8 @@
   Name=AnalogToSerial
   SmplCName=AnalogToSerial.usp
   Code=1
-  SysRev5=4.006
-  SMWRev=3.00.00
+  SysRev5=4.000
+  SMWRev=2.02.05
   InputList2Cue1=[~UNUSED~]
   InputList2SigType1=Analog
   InputList2Cue2=[~UNUSED~]

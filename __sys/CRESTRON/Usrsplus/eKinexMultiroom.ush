@@ -20,7 +20,7 @@
   Name=eKinexMultiroom
   SmplCName=eKinexMultiroom.usp
   Code=1
-  SysRev5=4.006
+  SysRev5=4.000
   SMWRev=3.00.00
   InputCue1=Next_Source
   InputSigType1=Digital
@@ -84,8 +84,8 @@
   SymJam=NonExclusive
   FileName=eKinexMultiroom.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
-  clz2=SonosLibrary_v1_0
+  Usl1=usl_AVSystem_Constants.usl
+  clz1=ssl_AVSystem
 [END]
 [BEGIN]
   ObjTp=Dp

@@ -41,7 +41,7 @@
   Expand=expand_inputs_with_outputs
   Expand2=expand_inputs_with_outputs
   ProgramTree=Logic
-  SymbolTree=32
+  SymbolTree=4
   Hint=
   PdfHelp=
   HelpID= 
