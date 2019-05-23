@@ -1,0 +1,71 @@
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+===== Aktualne ustalenia =====
+
+Usterki:
+
+1) Brak poprawnych nazw stref Audio 
+2) Brak mo¿liwoœci sterowania odtwarzaczem multimedialnym ECLER.
+3) Zacinanie siê ekranu od projektora – zatrzymuje siê czêsto w po³owie wysokoœci podczas w³¹czania
+
+-------------------
+
+Dodatkowa funkcjonalnoœæ:
+
+1) Rozbudowa funkcjonalnoœci panela w recepcji - ma sterowaæ oœwietleniem na korytarzach, roletami w showroomie.
+
+// ile obwodów?
+// ile rolet ?
+// czy s¹ ju¿ sterowane z innego miejsca?
+// czy ma byæ, planowana wczeœniej, mo¿liwoœæ wy³¹czenia wszystkich stref jednoczeœnie?
+// rezygnujemy ze sterowania ca³ego oœwietlenia w biurowcu?
+
+2) Do³o¿enie przycisku wy³¹czaj¹cego urz¹dzenia w szafie (Artur do³o¿y stycznik który wy³¹czy napiêcie dla wzmacniaczy itp.) Ty do programujesz relay.
+
+// na jakim interfejsie ma byæ ten przycisk?
+
+3) Dynamiczne harmonogramy dla audio. - np od pon-pt o godzinie "x" wlacz wzmacnacze w szafie, w strefach " y", wl¹cz Ÿród³o "z" i tak samo dla wy³¹czenia.
+
+// wola³bym zacz¹æ od statycznych harmonogramów a dynamiczne wprowadziæ z czasem (to zajmie najwiêcej czasu)
+
+4) Do³o¿enie Ÿród³a SONOS we wszystkich strefach audio (bez sterowania)
+
+// Tylko jeden Sonos na ca³y budynek?
+
+5) Do³o¿enie 2 Ÿróde³ video ( AirMedia ) w pomieszczeniach konferencyjnych i szkoleniowych. Nie wiem tylko czy bêd¹ przydzielane urz¹dzenia dla danych pomieszczeñ czy wszystkie dla wszystkich.
+
+// trzeba wyjaœniæ dla jakich sal maj¹ byæ dostêpne te Ÿród³a
+// gdzie bêd¹ znajdowaæ siê fizycznie urz¹dzenia AirMedia?
+
+6) Stworzenie xPanela dla PC (kopia panela z recepcji + harmonogramy z pkt 3)
+
+?)
+
+// Rezygnujemy z przebudowy panelu w showroom-ie? (wg wczeœniejszych ustaleñ mia³ mieæ tê sam¹ funkcjonalnoœæ co recepcja)
+// Od kogo i kiedy dostanê listê nazw pomieszczeñ / stref audio ?
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+===== Poprzednie ustalenia =====
+
+1)	Zaprogramowanie dodatkowych mo¿liwoœci panelu w recepcji:
+	- mo¿liwoœæ wy³¹czenia wszystkich stref audio jednoczeœnie,
+	- sterowanie oœwietleniem w ca³ym biurowcu (potrzebna lista nowych zmiennych z WAGO od Grzeœka)
+
+2)	Zmiana wizki panelu w showroom-ie - te same funkcje co panel w recepcji, ale ma dzia³aæ niezale¿nie,
+
+3)	Dodanie do programu mo¿liwoœci wyboru 3 nowych Ÿróde³ audio (Sonos NP-90) w ka¿dej z 23 stref audio. Bez integracji sterowania (sterowanie bêdzie z dedykowanej aplikacji Sonos). Przebudowa odpowiednich interfejsów.
+
+4)	Dodanie logiki sterowania przekaŸnikiem do systemu - mo¿liwoœæ w³./wy³. zasilania urz¹dzeñ audio w rack-u z poziomu interfejsów Crestron (lub/i automatycznie) [funkcjonalnoœæ do ustalenia]
+
+5)	Stworzenie dwóch niezale¿nych interfejsów na PC (xPanel) do zaawansowanego zarz¹dzania ca³ym systemem:
+	- powielenie funkcji panelu z recepcji,
+	- dynamiczne tworzenie/usuwanie grup audio (np. zaznaczam strefê AZ-01, AZ-09 i AZ-12, nadajê jej nazwê Grupa_01 i zapisujê - od tej pory Grupa_01 dzia³a jak pojedyncza strefa),
+	- dynamiczne tworzenie harmonogramów i dynamiczne przypisywanie do nich stref/grup audio (np. tworzê harmonogram, który w³¹cza Ÿród³o "Player" o godzinie 7 rano od poniedzia³ku do pi¹tku i wy³¹cza o godzinie 17 - nastêpnie przypisujê do niego dowoln¹ strefê/grupê audio).
+
+6)	Dodanie do programu mo¿liwoœci wyboru nowych Ÿróde³ video. Visual Prezenter od Sony bêdzie widoczny w systemie jako dwa-trzy [do ustalenia - ile konkretnie?] osobne Ÿród³a video. Bez integracji sterowania z poziomu Crestron. Przebudowa odpowiednich interfejsów.
+
+7)	Dodanie do programu mo¿liwoœci korzystania z 3 mikrofonów (mikroporty) w ca³ym budynku tak, ¿eby mo¿na by³o zmiksowaæ w danej strefie audio dŸwiêk wybranego Ÿród³a AV oraz mikrofonów (jedno Ÿród³o, dowolna iloœæ mikrofonów). Gruntowna przebudowa modu³u sterowania matryc¹ Ecler MIMO-88. Przebudowa odpowiednich interfejsów.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

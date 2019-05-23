@@ -1,0 +1,6 @@
+1) Play_All (Default)
+2) Repeat Track
+3) Repeat Folder
+4) Repeat All
+5) Random Play
+6) Intro Play

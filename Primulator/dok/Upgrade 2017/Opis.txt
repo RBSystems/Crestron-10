@@ -1,0 +1,61 @@
+X) Pozosta≥e usterki/poprawki:
+ 
+1)        Brak p≥ynnoúci regulacji obwodÛw úciemnianych - brak moøliwoúci poprawy po stronie programu Crestron (konieczna modyfikacja programu na WAGO)
+ 
+2)        Nadanie opisowych nazw ürÛde≥ wideo (przy≥πcza wejúciowe wideo w pomieszczeniach)
+ 
+3)        Nadanie opisowych nazw obwodÛw úwietlnych (nazwy bÍdπ ustalone podczas prac zwiπzanych z do≥oøeniem dodatkowej funkcjonalnoúci)
+ 
+4)        UdpostÍpnienie programu EclerNet Manager na PC s≥uøacego do zarzπdzania matrycami audio Ecler MIMO-88 w celu regulacji barwy düwiÍku.
+ 
+-----------------------------------------------
+ 
+A) Dodatkowa funkcjonalnoúÊ:
+ 
+1)        Zaprogramowanie dodatkowych moøliwoúci panelu dotykowego w recepcji:
+ 
+            - dodanie moøliwoúci przypisywania ürÛd≥a do grup audio (teraz sπ tylko pojedyncze strefy),
+            - przycisk wy≥πczajπcy wszystkie strefy i urzπdzenia pod≥πczone do przekaünika (patrz pkt. 3),
+            - sterowanie oúwietleniem we wszystkich czÍúciach wspÛlnych oraz w salach szkoleniowych na parterze,
+            - sterowanie roletami na parterze.
+            - sterowanie klimatyzacjπ na parterze
+           
+2)        Przeprogramowanie panelu dotykowego w showroomie na funkcjonalnoúÊ panelu w recepcji i niezaleøne dzia≥anie.
+ 
+3)        Dodanie stycznika oraz automatycznej funkcji w≥πczajπcej/wy≥πczajπcej urzπdzenia w szafie Rack (wzmacniacze oraz odtwarzacz USB). + niezaleøna funkcja wyl/wl z panelu Ñmasterî na recepcji
+ 
+4)        Stworzenie dwÛch niezaleønych interfejsÛw na PC (xPanel) do zaawansowanego zarzπdzania ca≥ym systemem:
+ 
+            - powielenie funkcji panelu z recepcji,
+            - dynamiczne tworzenie/usuwanie grup audio (np. zaznaczam strefÍ AZ-01, AZ-09 i AZ-12, nadajÍ jej nazwÍ Grupa_01 i zapisujÍ - od tej pory Grupa_01 dzia≥a jak pojedyncza strefa),
+
+// tutaj musimy pomyslec ñ bo kaøda ze stref z grup moøe mieÊ niezalezna gloscnosc ñ tutaj po testach juø wiem, ze tak musi byÊ
+            
+			- dynamiczne tworzenie harmonogramÛw i dynamiczne przypisywanie do nich stref/grup audio (np. tworzÍ harmonogram, ktÛry w≥πcza ürÛd≥o "Player" z g≥oúnoúciπ 50% o godzinie 7 rano od poniedzia≥ku do piπtku i wy≥πcza o godzinie 17 - nastÍpnie przypisujÍ do niego dowolnπ strefÍ/grupÍ audio).
+ 
+5)        Dodanie do programu moøliwoúci wyboru 3 nowych ürÛde≥ audio (Sonos NP-90) w kaødej z 23 stref audio. Na interfejsach widoczne bÍdzie tylko jedno urzπdzenie ("Radio Internetowe 1") - dopÛki pozosta≥e nie zostanπ fizycznie dodane do systemu.
+ 
+6)        Dodanie logiki automatyki dla odtwarzacza USB. Po w≥πczeniu urzπdzeÒ (patrz pkt. 3) odtwarzacz ustawi tryb powtarzania na Repeat_All i zacznie odtwarzaÊ utwory z pod≥πczonego do niego na sta≥e PenDrive'a.
+ 
+7)        Logiczny podzia≥ stref na interfejsach globalnych (patrz pkt. 1, 2 i 4) ze wzglÍdu na lokalizacjÍ (parter/piÍtro) oraz na wykorzystanie (wspÛlne/prywatne) za pomocπ kolorÛw/grafik.
+ 
+8)        Wprowadzenie dwÛch poziomÛw dostÍpÛw na wybranych panelach Crestron - ograniczony i pe≥ny. DostÍp pe≥ny bÍdzie przyznany po zalogowaniu siÍ poprzez podanie 4-cyfrowego kodu. DostÍp ograniczony nie bÍdzie pozwala≥ na korzystanie z wybranych funkcji. Jeúli panel nie bÍdzie uøywany przez 5 min lub zostanie wciúniÍty odpowiedni przycisk - nastπpi wylogowanie, czyli powrÛt do ograniczonego dostÍpu.
+ 
+            A) Panel w recpecji oraz w showroomie - ograniczone funkcje
+                        - przypisywane ürÛd≥a do stref/grup ñ
+                        - sterowanie klimatyzacjπ
+           
+            B) Panel w kantynie - ograniczone funkcje 
+                        - wybÛr ürÛd≥a
+ 
+9)        Dodanie moøliwoúci wyboru dwÛch nowych ürÛde≥ wideo (systemy prezentacji bezprzewodowej Crestron AirMedia) dla wszystkich stref. èrÛd≥a te bÍdπ nosi≥y nazwy "AirMedia Konferencja" oraz "AirMedia 2". W celu pod≥πczenia w/w ürÛde≥ wykorzystane bÍdπ wejúcia w matrycy, ktÛre do tej pory by≥y przypisane do lokalnych wejúciowych przy≥πczy wideo, odpowiednio w salach 10-02 (Sala Konferencyjna na piÍtrze) oraz 00-02 (Recepcja). Oznacza to, øe przy≥πcza te bÍdπ nieaktywne.
+ 
+// Pierwsze z w/w ürÛde≥ jest juø dostÍpne (pod starπ nazwπ - "10-02").
+ 
+11) Od≥πczenie pokoju handlowcÛw z systemu i stworzenie dla nich odrÍbnego mini-systemu umoøliwiajπcego im odtwarzanie w≥asnej muzyki za poúrednictwem WiFi.
+ 
+-----------------------------------------------
+ 
+B) Inne:
+ 
+1)        Ustalona kolejnoúÊ ürÛde≥ wyúwietlanych na panelach : Radio FM, Odtwarzacz, Radio Internetowe 1, AirMedia Konferencja, AirMedia 2, [Przy≥πcze lokalne - jeúli wystÍpuje].

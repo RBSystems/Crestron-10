@@ -1,0 +1,55 @@
+==============================================
+
+Usterki do usunięcia:
+
+1) Brak poprawnych nazw stref Audio (zostanie poprawione po dostarczeniu listy nazw stref przez PRIMULATOR) - jedna strefa max. 30 znaków (bez polskich znaków)
+2) Brak możliwości sterowania odtwarzaczem multimedialnym ECLER.
+3) Zacinanie się ekranu od projektora – zatrzymuje się często w połowie wysokości podczas włączania lub wyłączania
+4) Brak płynności regulacji obwodów ściemnianych (będzie zmiana na ściemnianie krokowe co 5%)
+
+-----------------------------------------------
+
+Dodatkowa funkcjonalność:
+
+1)	Zaprogramowanie dodatkowych możliwości panelu w recepcji:
+	- możliwość wyłączenia wszystkich stref audio jednocześnie,
+	- sterowanie oświetleniem i roletami we wszystkich częściach wspólnych oraz w salach szkoleniowych na parterze
+
+2) Dodanie stycznika oraz automatycznej funkcji włączającej/wyłączającej urządzenia w szafie Rack (wzmacniacze oraz odtwarzacz USB)
+
+3)	Stworzenie dwóch niezależnych interfejsów na PC (xPanel) do zaawansowanego zarządzania całym systemem:
+	- powielenie funkcji panelu z recepcji,
+	- dynamiczne tworzenie/usuwanie grup audio (np. zaznaczam strefę AZ-01, AZ-09 i AZ-12, nadaję jej nazwę Grupa_01 i zapisuję - od tej pory Grupa_01 działa jak pojedyncza strefa),
+	- dynamiczne tworzenie harmonogramów i dynamiczne przypisywanie do nich stref/grup audio (np. tworzę harmonogram, który włącza źródło "Player" o godzinie 7 rano od poniedziałku do piątku i wyłącza o godzinie 17 - następnie przypisuję do niego dowolną strefę/grupę audio).
+
+4)	Dodanie do programu możliwości wyboru 3 nowych źródeł audio (Sonos NP-90) w każdej z 23 stref audio. Na początek dokładamy tylko jedno urządzenie.
+
+5)	Dodanie logiki automatyki dla odtwarzacza USB. Po włączeniu urządzeń (patrz pkt. 2) odtwarzacz ustawi tryb powtarzania na Repeat_All i zacznie odtwarzać utwory z podłączonego do niego na stałe PenDrive'a.
+
+6)	Logiczny podział stref na interfejsach globalnych (patrz pkt. 1 i 3) ze względu na lokalizację (parter/piętro) oraz na wykorzystanie (wspólne/prywatne) za pomocą kolorów.
+
+7)	Wprowadzenie dwóch poziomów dostępów na wybranych panelach Crestron - ograniczony i pełny. Dostęp pełny będzie wymagał podania 4-cyfrowego kodu. Dostęp ograniczony nie będzie pozwalał na korzystanie z wybranych funkcji.
+
+8)	Dodanie możliwości wyboru dwóch nowych źródeł wideo Crestron AirMedia. Pierwsza jednostka będzie dostępna tylko i wyłącznie w strefach AZ-10 i AZ-11 (sale szkoleniowe na piętrze). Druga jednostka będzie dostępna dla wszystkich stref umożliwiających odbiór wideo.
+
+9)	Udpostępnienie programu EclerNet Manager na PC do zarządzania matrycami audio Ecler MIMO-88 w celu regulacji barwy dźwięku.
+
+-----------------------------------------------
+
+Pytania:
+
+1)	Co z panelem w showroom-ie (główna wspólna strefa na parterze)? Czy ma zachować charakter lokalny (steruje tylko tym co znajduje się w showroom-ie) czy ma mieć tę samą, globalną funkcjolaność co panel w recepcji?
+
+//	Nie muszę tego wiedzieć teraz - decyzja moze być podjęta na etapie uruchamiania.
+
+2)	Które panele Crestron mają mieć dwa poziomy dostępu? Które funkcje mają być na nich zablokowane?
+
+//	Decyzja musi zostać podjęta przed rozpoczęciem prac i będzie uznawana za wiążącą (nie będzie możliwości zmiany na etapie uruchamiania)
+
+3)	Ustalona kolejność źródeł wyświetlanych na panelach : Radio, Odtwarzacz, Sonos 1, Sonos 2, Sonos 3, AirMedia 1, AirMedia 2, [Przyłącze lokalne] - jeśli występuje.
+
+//	j.w. - jeśli nie ma tutaj zastrzeżeń traktujemy to wiążąco
+
+4)	Do ustalenia na kolejnym spotkaniu - które przyłącza wej/wyj wideo nie są używane? Będzie można je wykorzystać na nowe źródła wideo teraz (AirMedia) i w przyszłości (kamery).
+
+==============================================

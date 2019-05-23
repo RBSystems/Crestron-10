@@ -1,0 +1,5 @@
+W Przypadku resetu matrycy master = ERROR 9 "Invalid client (client not connected)"\x0A
+
+W przypadku wyslania disconnect podczas gdy nie po³¹czono wczeœniej = ERROR 8 "DISCONNECT received while unconnected"\x0A
+
+W przypadku próby po³¹czenia, kiedy wczesniej ju¿ wys³ano CONNECT a nie zakoñczono DISCONNECT = ERROR 7 "CONNECT received while connected"

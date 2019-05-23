@@ -1,0 +1,127 @@
+err sys
+ SYSTEM LOG:
+  1. Info: nk.exe # 17:15:21 11-24-2016  # HwDogDriverInit: device id = 0x1
+  2. Notice: nk.exe # 17:15:21 11-24-2016  # Power On
+  3. Notice: nk.exe # 17:15:21 11-24-2016  # System startup: PRO3 [v1.012.0017 (Aug 26 2015) #00C54AAF]
+  4. setIP: Registry static IP setting = 0.0.0.0
+  5. Info: nk.exe # 17:15:21 11-24-2016  #  UpdateDHCPOptions:HostName option selected 
+  6. Info: nk.exe # 17:15:21 11-24-2016  #  UpdateDHCPOptions:HostName option selected 
+  7. Info: nk.exe # 17:15:21 11-24-2016  # Updating DHCP options on boot
+  8. 	UsbHost : New Hub [address(1) / layer(0)]
+  9. ETO280B3DMU LCD is installed on system
+ 10. Info: nk.exe # 17:15:23 11-24-2016  # UIHAL BASE: device id = 0x1
+ 11. 
+Open existing DSTORE File: UIDStore.bin
+ 12. DATASTORE: Existing File
+ 13. Ethernet auto-negotiated 100Mbps, Full Duplex
+ 14. Info: nk.exe # 17:15:24 11-24-2016  # CExternalHub::WaitForPortStatusChange: port 5 change
+ 15. Info: nk.exe # 17:15:24 11-24-2016  # 
+HubStatusChangeThread: Port 5 Connection Changed, device already exist: 0
+ 16. Info: nk.exe # 17:15:24 11-24-2016  # 
+Port 5 Attached
+ 17. Info: nk.exe # 17:15:24 11-24-2016  # 
+CHub: Dev attached
+ 18. Info: nk.exe # 17:15:24 11-24-2016  # 	UsbHost : New Function [address(4) / layer(1)]
+ 19. Info: CrestronMonitor.exe # 17:15:29 11-24-2016  # Crestron applications already installed
+ 20. ProcessPostInstall: No \windows\postinstall.bat file
+ 21. ProcessPostInstall: No \windows\shipwithinstall.bat file
+ 22. Info: RouterTransportProcess.exe # 17:15:32 11-24-2016  #  Max Count To Wait before resetting router if NO IPAddress Obtained is 3 
+ 23. Info: RouterTransportProcess.exe # 17:15:32 11-24-2016  #  UserPAT list instantiated 301 entries supported starting at port 64000
+ 24. Info: RouterTransportProcess.exe # 17:15:32 11-24-2016  # Attempting to determine DHCP Server's IP
+ 25. Notice: ConsoleServiceCE.exe # 17:15:33 11-24-2016  # Got Security Flag: 0
+ 26. Info: RouterTransportProcess.exe # 17:15:37 11-24-2016  # Successfully Released adapter 
+ 27. Info: RouterTransportProcess.exe # 17:15:37 11-24-2016  # Successfully renewed adapter 
+ 28. Info: TLDM.exe # 17:15:41 11-24-2016  #  THAL loading now  .. 
+ 29. Info: TLDM.exe # 17:15:41 11-24-2016  #  TLDM Starting.. 
+  30. Info: TLDM.exe # 17:15:41 11-24-2016  #  LoadHardwareMapOnStartUp - Running on a PRO3 
+ 31. Info: TLDM.exe # 17:15:41 11-24-2016  #  HostName read in is PRO3-7F6D1AB3 
+ 32. Info: TLDM.exe # 17:15:42 11-24-2016  #  Successfully registered with the console service - Console available 
+ 33. Error: CIPCommandProcessor.exe # 17:15:45 11-24-2016  #  GetFirstInternalAdapterIndexThatHasAValidAddress - Could not find a valid adapter 
+
+ 34. Ok: CIPCommandProcessor.exe # 17:15:45 11-24-2016  #  IP Address not set. HostName resolution order not known - 1 
+
+ 35. Info: CIPCommandProcessor.exe # 17:15:45 11-24-2016  #  TLDMInterfaceReadInMessageQueueSize - Queue size defaults to 500 
+ 36. Ok: CloudClient.exe # 17:15:46 11-24-2016  # CloudUrl: https://api.my.crestron.com/api/Registration
+ 37. Info: CrestronTimerEventEngine.exe # 17:15:47 11-24-2016  # CrestronTimerEventEngine: Application initialized 
+ 38. OSDTLDMInterface::Start -- SENDING REG PACKET
+ 39. Notice: Displaymanager.exe # 17:15:47 11-24-2016  # DisplayManager.exe File Version: 1.0.5714.29531
+ 40. Info: TLDM.exe # 17:15:48 11-24-2016  # RouterMonitorThreadCallbackRoutine: Router is now in application space 
+ 41. 
+
+ checkpoint A 
+ 42. Notice: CrestronListUIApp.exe # 17:15:50 11-24-2016  # List UI : Project file location : ROMDISK\805AE1CF-5780-4F88-98C7-7C933AB56525\Setup\Pro3FrontPanel.bin
+ 43. Notice: CrestronListUIApp.exe # 17:15:50 11-24-2016  # LIST UI::NC: LOG=ListUI :Initializing IPLink..
+ 44. Notice: CrestronListUIApp.exe # 17:15:52 11-24-2016  # ListUIClient: Connecting to server
+ 45. Notice: CrestronListUIApp.exe # 17:15:52 11-24-2016  # ListUIClient:: connected to server. socket: 1
+ 46. Notice: CrestronListUIApp.exe # 17:15:52 11-24-2016  # Sending LIST UI REQUEST message to Host...
+ 47. Ok: SimplSharpPro.exe # 17:15:59 11-24-2016  # SimplSharpPro Version: 1.5.0.07
+ 48. Ok: SimplSharpPro.exe # 17:16:02 11-24-2016  # Successfully registered the application with the TLDM 
+ 49. Info: LogicEngine.exe [App 1] # 17:16:10 11-24-2016  # Loading program from \SIMPL\app01
+ 50. Info: LogicEngine.exe [App 1] # 17:16:10 11-24-2016  # Loading Program \SIMPL\app01\Primulator_PRO3.bin.
+ 51. Notice: LogicEngine.exe # 17:16:22 11-24-2016  # **Program 1 Started**
+ 52. Ok: splusmanagerapp.exe [App 1] # 17:16:22 11-24-2016  #  Application Id 1 - Unable to query for CS Mask. Opening on LAN side for 192.168.70.10 
+
+ 53. Ok: splusmanagerapp.exe # 17:16:22 11-24-2016  #  Application Id 1 - Unable to query for EA_ALL_INTERNAL_ADAPTERS Mask. Opening on LAN side for 192.168.70.10 
+
+ 54. Ok: splusmanagerapp.exe [App 1] # 17:16:22 11-24-2016  #  Application Id 1 - Unable to query for CS Mask. Opening on LAN side for 192.168.70.4 
+
+ 55. Ok: splusmanagerapp.exe # 17:16:22 11-24-2016  #  Application Id 1 - Unable to query for EA_ALL_INTERNAL_ADAPTERS Mask. Opening on LAN side for 192.168.70.4 
+
+ 56. Ok: CIPCommandProcessor.exe # 17:16:22 11-24-2016  #  Enabling UDP server - IP Address not set. Server will be enabled when we get an IP Address ..App 1 - Id 41
+ 57. Info: LogicEngine.exe [App 1] # 17:16:22 11-24-2016  #  Going to steady state now 
+ 58. Ok: CIPCommandProcessor.exe # 17:16:22 11-24-2016  #  Enabling UDP server - IP Address not set. Server will be enabled when we get an IP Address ..App 1 - Id 42
+ 59. Info: TLDM.exe # 17:16:22 11-24-2016  #  Event rcvd is 4104 
+ 60. Info: Displaymanager.exe # 17:16:23 11-24-2016  # SYS_EVENT_ALL_APPS_STARTED - Rcvd 
+ 61. Info: CRESLOG.exe # 17:16:23 11-24-2016  # PersistentLog: Logging is started!
+ 62. Ok: CIPCommandProcessor.exe # 17:16:28 11-24-2016  #  Launching TCP server now 
+ 63. Info: RouterTransportProcess.exe # 17:16:37 11-24-2016  # Attempt to determine DHCP Server's IP Succeeded. Address is 172.22.0.2
+ 64. Info: RouterTransportProcess.exe # 17:16:37 11-24-2016  #  Attempting to connect to (172.22.0.2)
+ 65. Info: RouterTransportProcess.exe # 17:16:37 11-24-2016  # RTP: Connected to Server
+ 66. Info: RouterTransportProcess.exe # 17:16:39 11-24-2016  # RTP: Port Forward Entries Committed
+ 67. Info: RouterTransportProcess.exe # 17:16:39 11-24-2016  # SendRouterConnectEvent: Router got connected
+ 68. Ok: CIPCommandProcessor.exe # 17:16:39 11-24-2016  # Got Router connected event 
+ 69. Notice: CIPCommandProcessor.exe # 17:16:39 11-24-2016  # Link established on CS
+ 70. Notice: splusmanagerapp.exe [App 1] # 17:16:43 11-24-2016  # Module S-2.2.2.1.1 : BRAMKA__MAIN at line 165: TCP Client. Unable to connect to TCP server 192.168.70.10
+ 71. Notice: splusmanagerapp.exe [App 1] # 17:16:43 11-24-2016  # Module S-2.2.1.1.1 : BRAMKA__MAIN at line 165: TCP Client. Unable to connect to TCP server 192.168.70.4
+ 72. Notice: CIPCommandProcessor.exe # 17:16:43 11-24-2016  # TCP Client  App 1 IP-ID51: Unable to connect to TCP server (192.168.70.32:53484)
+ 73. Info: TLDM.exe # 17:16:43 11-24-2016  # ConfigRouterOnStartup: Port Forward Entries Committed
+ 74. Info: TLDM.exe # 17:16:43 11-24-2016  # ConfigRouterOnStartup: No MAC ID's to set
+ 75. Info: TLDM.exe # 17:16:44 11-24-2016  #  Router got Connected 
+ 76. Notice: CIPCommandProcessor.exe # 17:16:48 11-24-2016  # Link established on LAN
+ 77. Error: CloudClient.exe # 17:17:33 11-24-2016  #  CloudClient Frame Response status : NO DATA
+ 
+ 78. Error: splusmanagerapp.exe [App 1] # 05:10:08 11-25-2016  # Module S-2.1.3.3 : Ecler_MIMO88 at line 440: Unhandled Exception: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at Crestron.Logos.Sp 79. Error: splusmanagerapp.exe [App 1] # 05:10:08 11-25-2016  # lusObjects.CrestronString.a(Int32 A_0, CrestronString A_1)
+   at Crestron.Logos.SplusObjects.CrestronString.Remove(Int32 length, Boolean bGrabLock)
+   at Crestron.Logos.SplusObjects.CrestronStringExtentions.Remove(CrestronString CRString, Int32 length)
+ 80. Warning: splusmanagerapp.exe [App 1] # 05:10:08 11-25-2016  # Module S-2.1.3.3 : Ecler_MIMO88 at line 172: UpdateInputValue: Could not get m_BufferReadyEvent
+ 81. Error: splusmanagerapp.exe [App 1] # 05:10:09 11-25-2016  # 
+   at Crestron.Logos.SplusLibrary.Functions.Remove(Int32 length, CrestronString input)
+   at UserModule_ECLER_MIMO88.UserModuleClass_ECLER_MIMO88.RX__DOLLAR___OnChange_3(Object __EventInfo__)
+   at Amib.Threading.Internal.WorkItem.e()
+   at Amib.Threa 82. Error: splusmanagerapp.exe [App 1] # 05:10:09 11-25-2016  # Module S-2.1.3.3 : Ecler_MIMO88 at line 440: Invalid remove length: 21  String length : 0
+ 83. Error: splusmanagerapp.exe [App 1] # 05:10:10 11-25-2016  # ding.Internal.WorkItem.Execute()
+   at Amib.Threading.SmartThreadPool.n(WorkItem A_0)
+   at Amib.Threading.SmartThreadPool.e()
+
+ 84. Error: splusmanagerapp.exe [App 1] # 05:30:44 12-08-2016  # Module S-2.1.2.3 : Ecler_MIMO88 at line 440: Unhandled Exception: System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
+   at System.Text.StringBuilder.Remove(Int32 startIndex, Int32 length)
+   at Crestron.Logos.Sp 85. Error: splusmanagerapp.exe [App 1] # 05:30:44 12-08-2016  # lusObjects.CrestronString.a(Int32 A_0, CrestronString A_1)
+   at Crestron.Logos.SplusObjects.CrestronString.Remove(Int32 length, Boolean bGrabLock)
+   at Crestron.Logos.SplusObjects.CrestronStringExtentions.Remove(CrestronString CRString, Int32 length)
+ 86. Error: splusmanagerapp.exe [App 1] # 05:30:44 12-08-2016  # 
+   at Crestron.Logos.SplusLibrary.Functions.Remove(Int32 length, CrestronString input)
+   at UserModule_ECLER_MIMO88.UserModuleClass_ECLER_MIMO88.RX__DOLLAR___OnChange_3(Object __EventInfo__)
+   at Amib.Threading.Internal.WorkItem.e()
+   at Amib.Threa 87. Error: splusmanagerapp.exe [App 1] # 05:30:44 12-08-2016  # ding.Internal.WorkItem.Execute()
+   at Amib.Threading.SmartThreadPool.n(WorkItem A_0)
+   at Amib.Threading.SmartThreadPool.e()
+
+ 88. Warning: splusmanagerapp.exe [App 1] # 05:30:45 12-08-2016  # Module S-2.1.2.3 : Ecler_MIMO88 at line 116: UpdateInputValue: Could not get m_BufferReadyEvent
+ 89. Error: splusmanagerapp.exe [App 1] # 07:14:36 12-13-2016  # Module S-2.1.2.3 : Ecler_MIMO88 at line 364: Invalid remove length: 5  String length : 3
+ 90. Warning: splusmanagerapp.exe [App 1] # 05:17:54  1-01-2017  # Module S-2.2.2.1.1 : BRAMKA__MAIN at line 202:  Remove - Unable to grab buffer ready event - data could be corrupted 
+ 91. Notice: ConsoleServiceCE.exe # 12:15:04  1-09-2017  # USB Connection has been made.
+ Total Msgs Logged = 91
+ END OF SYSTEM LOG
+
