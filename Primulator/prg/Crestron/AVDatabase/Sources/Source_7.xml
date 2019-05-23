@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>7</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>AM Kon</NameShort>
+  <NameLong>AirMedia Konferencja</NameLong>
+  <AudioId>7</AudioId>
+  <VideoId>5</VideoId>
+</CSource>

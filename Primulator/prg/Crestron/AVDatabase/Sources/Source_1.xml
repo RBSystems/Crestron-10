@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>Radio</NameShort>
+  <NameLong>Radio FM</NameLong>
+  <AudioId>1</AudioId>
+  <VideoId>0</VideoId>
+</CSource>

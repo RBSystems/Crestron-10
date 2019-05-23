@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>4</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>Tech L</NameShort>
+  <NameLong>Technologia L VID</NameLong>
+  <AudioId>4</AudioId>
+  <VideoId>2</VideoId>
+</CSource>

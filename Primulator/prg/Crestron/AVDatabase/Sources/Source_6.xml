@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>6</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>Serwis</NameShort>
+  <NameLong>Serwis Szkolenia VID</NameLong>
+  <AudioId>6</AudioId>
+  <VideoId>4</VideoId>
+</CSource>

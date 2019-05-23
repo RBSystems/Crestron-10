@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>3</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>AM 2</NameShort>
+  <NameLong>AirMedia 2</NameLong>
+  <AudioId>3</AudioId>
+  <VideoId>1</VideoId>
+</CSource>

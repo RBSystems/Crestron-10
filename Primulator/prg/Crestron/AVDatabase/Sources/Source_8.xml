@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>8</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>Konf 2</NameShort>
+  <NameLong>Konferencja 2 VID</NameLong>
+  <AudioId>8</AudioId>
+  <VideoId>6</VideoId>
+</CSource>

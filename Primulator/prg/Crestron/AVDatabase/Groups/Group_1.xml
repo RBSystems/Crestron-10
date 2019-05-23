@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<CGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>AG-1</NameShort>
+  <NameLong>Grupa stref wspolnych</NameLong>
+  <DefaultSourceId>2</DefaultSourceId>
+  <DefaultVolume>50</DefaultVolume>
+  <IsSourceStartupDefault>1</IsSourceStartupDefault>
+  <IsVolumeStartupDefault>0</IsVolumeStartupDefault>
+  <SelectedSourceType>None</SelectedSourceType>
+  <CurrentVolumeType>Equal</CurrentVolumeType>
+  <CurrentMuteType>Off</CurrentMuteType>
+  <CurrentEqualSourceId>0</CurrentEqualSourceId>
+  <Schedule>
+    <IsEnabled>0</IsEnabled>
+    <HourStart>9</HourStart>
+    <MinuteStart>0</MinuteStart>
+    <HourStop>17</HourStop>
+    <MinuteStop>0</MinuteStop>
+    <IsDayOfWeekEnabled>
+      <unsignedShort>0</unsignedShort>
+      <unsignedShort>1</unsignedShort>
+      <unsignedShort>1</unsignedShort>
+      <unsignedShort>1</unsignedShort>
+      <unsignedShort>1</unsignedShort>
+      <unsignedShort>1</unsignedShort>
+      <unsignedShort>0</unsignedShort>
+      <unsignedShort>0</unsignedShort>
+    </IsDayOfWeekEnabled>
+  </Schedule>
+</CGroup>

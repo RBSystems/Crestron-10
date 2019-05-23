@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<CSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>9</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>Dyr.</NameShort>
+  <NameLong>Dyrektor VID</NameLong>
+  <AudioId>9</AudioId>
+  <VideoId>7</VideoId>
+</CSource>

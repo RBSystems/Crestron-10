@@ -1,0 +1,532 @@
+// Compiler Directives
+
+#SYMBOL_NAME "Ecler MIMO88"
+#CATEGORY "28" // Receiver/Processor
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+
+#DEFINE_CONSTANT MAX_CHANNELS_COUNT		16
+#DEFINE_CONSTANT BUFFER_SIZE			512
+#DEFINE_CONSTANT MAX_MSG_LENGTH			85
+#DEFINE_CONSTANT DEF_DELAY				5
+#DEFINE_CONSTANT LONG_DELAY				500
+
+#DEFINE_CONSTANT CONNECT_MSG			"SYSTEM CONNECT"
+#DEFINE_CONSTANT DISCONNECT_MSG			"SYSTEM DISCONNECT"
+#DEFINE_CONSTANT LF_CODE				"\x0A"
+#DEFINE_CONSTANT HEADER_SYSTEM			"SYSTEM "
+#DEFINE_CONSTANT HEADER_DATA			"DATA "
+#DEFINE_CONSTANT HEADER_ERROR			"ERROR "
+#DEFINE_CONSTANT HEADER_GET				"GET "
+#DEFINE_CONSTANT HEADER_SET				"SET "
+#DEFINE_CONSTANT HEADER_INC				"INC "
+#DEFINE_CONSTANT HEADER_DEC				"DEC "
+#DEFINE_CONSTANT HEADER_SUBSCRIBE		"SUBSCRIBE"
+#DEFINE_CONSTANT HEADER_UNSUBSCRIBE		"UNSUBSCRIBE"
+
+#DEFINE_CONSTANT PARAM_OMUTE			"OMUTE "
+#DEFINE_CONSTANT PARAM_XMUTE			"XMUTE "
+#DEFINE_CONSTANT PARAM_OLEVEL			"OLEVEL "
+#DEFINE_CONSTANT PARAM_XLEVEL			"XLEVEL "
+
+#DEFINE_CONSTANT PARAM_ALL				"ALL"
+#DEFINE_CONSTANT PARAM_POWER_ON			"POWER ON"
+#DEFINE_CONSTANT PARAM_POWER_OFF		"POWER OFF"
+#DEFINE_CONSTANT PARAM_YES				"YES"
+#DEFINE_CONSTANT PARAM_NO				"NO"
+#DEFINE_CONSTANT PARAM_INCREASE			" 5"
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Inputs
+DIGITAL_INPUT _SKIP_, _SKIP_;
+DIGITAL_INPUT keepConnection;
+DIGITAL_INPUT pollAllData;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT muteToggle[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT muteOn[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT muteOff[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT volumeIncrease[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT volumeDecrease[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+BUFFER_INPUT Rx$[BUFFER_SIZE];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT source#[MAX_CHANNELS_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT volumeLevel#[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+
+// Outputs
+DIGITAL_OUTPUT _SKIP_, _SKIP_;
+DIGITAL_OUTPUT connection_FB;
+DIGITAL_OUTPUT deviceReady_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT muteOn_FB[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT Tx$;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT source#_FB[MAX_CHANNELS_COUNT];
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT volumeLevel#_FB[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT volumePercent$[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+
+// Parameters
+
+INTEGER_PARAMETER pOutputsCount, pInputsCount, _SKIP_, _SKIP_, pInitTime;
+
+// Parameters properties
+
+#BEGIN_PARAMETER_PROPERTIES pOutputsCount, pInputsCount
+	propValidUnits = unitDecimal;
+	propDefaultUnit = unitDecimal;
+	propBounds = 1d , 16d;
+	propDefaultValue = 8d;
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES pInitTime
+	propValidUnits = unitTime;
+	propDefaultUnit = unitTime;
+	propBounds = 1s , 60s;
+	propDefaultValue = 15s;
+#END_PARAMETER_PROPERTIES
+
+// Global Variables
+
+INTEGER msgLength, gErrorHandlingFlag;
+STRING singleMsg[BUFFER_SIZE];
+STRING tempMsg[MAX_MSG_LENGTH];
+STRING tempString[MAX_MSG_LENGTH];
+
+// Functions
+
+// Wysylanie wiadomosci
+FUNCTION SendMsg(STRING msg)
+{
+	Tx$ = msg + LF_CODE;
+}
+
+// Output Mute FB
+FUNCTION PollOMuteByOutput(INTEGER _output)
+{
+	tempMsg = HEADER_GET + PARAM_OMUTE + itoa(_output);
+	sendMsg(tempMsg);
+    delay(DEF_DELAY);
+}
+
+// Output Level FB
+FUNCTION PollOLevelByOutput(INTEGER _output)
+{
+	tempMsg = HEADER_GET + PARAM_OLEVEL + itoa(_output);
+	sendMsg(tempMsg);
+    delay(DEF_DELAY);
+}
+
+// Matrix Point Mute FB
+FUNCTION PollXMuteByPoint(INTEGER _input, INTEGER _output)
+{
+	tempMsg = HEADER_GET + PARAM_XMUTE + itoa(_input) + " " + itoa(_output);
+	sendMsg(tempMsg);
+	delay(DEF_DELAY);
+}
+
+// Matrix Output Mute FB
+FUNCTION PollXMuteByOutput(INTEGER _output)
+{
+	INTEGER inputNr;
+
+	for(inputNr=1 to pInputsCount)
+	{
+		PollXMuteByPoint(inputNr, _output);
+	}
+}
+
+// Zadanie wiadomosci ze wszystkimi FB
+FUNCTION PollAll()
+{
+	Integer outputNr;
+
+	for (outputNr=1 to pOutputsCount)
+	{
+		PollOMuteByOutput(outputNr);
+        PollOLevelByOutput(outputNr);
+        PollXMuteByOutput(outputNr);
+	}	
+}
+
+// Ustawia wybrany punkt matrycy na ON lub OFF
+FUNCTION SetMatrixPoint(INTEGER _input, INTEGER _output, STRING _mute)
+{
+	tempMsg = HEADER_SET + PARAM_XMUTE + itoa(_input) + " " + itoa(_output) + " " + _mute;
+	SendMsg(tempMsg);
+	delay(DEF_DELAY);
+    PollXMuteByPoint(_input, _output);
+}
+
+// Ustawia wybrany punkt matrycy na ON
+FUNCTION SetMatrixPointOn(INTEGER _input, INTEGER _output)
+{
+	SetMatrixPoint(_input, _output, PARAM_NO);
+}
+
+// Ustawia wybrany punkt matrycy na OFF
+FUNCTION SetMatrixPointOff(INTEGER _input, INTEGER _output)
+{
+	SetMatrixPoint(_input, _output, PARAM_YES);
+}
+
+// Ustawianie konkretnej glonosci konkretnego kanalu
+FUNCTION SetVolumeByChannel(INTEGER _channelNr, INTEGER _value)
+{ 
+	tempMsg = HEADER_SET + PARAM_OLEVEL + itoa(_channelNr) + " " + itoa(_value);
+	SendMsg(tempMsg);
+	delay(DEF_DELAY);
+	PollOLevelByOutput(_channelNr);
+}
+
+// Wlaczanie / wylaczanie Mute konkretnego kanalu
+FUNCTION SetMuteByChannel(INTEGER _channelNr, STRING _mute)
+{
+	tempMsg = HEADER_SET + PARAM_OMUTE + itoa(_channelNr) + " " + _mute;
+	SendMsg(tempMsg);
+
+	delay(DEF_DELAY);
+
+	PollOMuteByOutput(_channelNr);
+}
+
+// Zwiekaszanie glosnosci wybranego kanalu o domyslna wartosc PARAM_INCREASE
+FUNCTION IncreaseVolumeByChannel(INTEGER _channelNr)
+{
+	tempMsg = HEADER_INC + PARAM_OLEVEL + itoa(_channelNr) + " " + PARAM_INCREASE;
+	SendMsg(tempMsg);
+}
+
+// Zmniejszanie glosnosci wybranego kanalu o domyslna wartosc PARAM_INCREASE
+FUNCTION DecreaseVolumeByChannel(INTEGER _channelNr)
+{
+	tempMsg = HEADER_DEC + PARAM_OLEVEL + itoa(_channelNr) + " " + PARAM_INCREASE;
+	SendMsg(tempMsg);
+}
+
+// Zerowanie wyjsc po polaczeniu
+FUNCTION InitializeAfterConnection()
+{
+	Integer inputNr, outputNr;
+
+	for (outputNr=1 to pOutputsCount)
+		for (inputNr=1 to pInputsCount) SetMatrixPointOff(inputNr, outputNr);
+}
+
+// Laczenie z serwerem
+FUNCTION Connect()
+{
+	trace("Outputs Count = %u", pOutputsCount);
+	trace("Inputs Count = %u", pInputsCount);
+	sendMsg(CONNECT_MSG);
+	connection_FB = 1;
+	wait(LONG_DELAY, INIT_WAIT_1)
+	{
+		InitializeAfterConnection();
+		PollAll();
+	}
+	wait(pInitTime, INIT_WAIT_2) deviceReady_FB = 1;
+}
+
+// Rozlaczanie z serwerem
+FUNCTION Disconnect()
+{
+	CancelAllWait();
+	sendMsg(DISCONNECT_MSG);
+	connection_FB = 0;
+	deviceReady_FB = 0;
+}
+
+// Obsluga FB Mute
+// DATA OMUTE 1 YES\X0A
+// DATA OMUTE 1 NO\X0A
+FUNCTION HandleDataOMuteMsg()
+{
+	STRING muteLevelString[MAX_MSG_LENGTH];
+	STRING channelNrString[MAX_MSG_LENGTH];
+	INTEGER channelNr;
+    
+	trace("HandleDataOMuteMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_OMUTE, singleMsg);
+
+	channelNrString = remove(" ", singleMsg);
+
+	// channelNrString = left(channelNrString, 1); // Co jesli nr jest 2 cyfrowy
+    
+	trace("MuteOn_FB: channelNrString = %s", channelNrString);
+
+    channelNr = atoi(channelNrString);
+    
+	if (channelNr < 1 || channelNr > pOutputsCount)
+	{
+		trace("EXCEPTION: muteOn_FB index = %u", channelNr);
+		return;
+	}
+
+	if (find(PARAM_YES, singleMsg) <> 0) muteOn_FB[channelNr] = 1;
+	else muteOn_FB[channelNr] = 0;
+}
+
+// Obsluga FB Mute Marycy
+// DATA OMUTE 8 2 YES\X0A
+// DATA OMUTE 3 5 NO\X0A
+FUNCTION HandleDataXMuteMsg()
+{
+	STRING muteLevelString[MAX_MSG_LENGTH];
+	STRING inputNrString[MAX_MSG_LENGTH];
+	STRING outputNrString[MAX_MSG_LENGTH];
+	INTEGER inputNr, outputNr;
+    
+
+	trace("HandleDataXMuteMsg: %s", singleMsg);	
+
+	tempString = remove(PARAM_XMUTE, singleMsg);
+
+	inputNrString = remove(" ", singleMsg);
+    
+	trace("XMute: inputNrString = %s", inputNrString);
+
+    inputNr = atoi(inputNrString);
+
+	outputNrString = remove(" ", singleMsg);
+    
+	trace("XMute: outputNrString = %s", outputNrString);
+
+    outputNr = atoi(outputNrString);
+	
+	if (inputNr < 1 || inputNr > pInputsCount)
+	{
+		trace("EXCEPTION: XMute input = %u", inputNr);
+		return;
+	}
+    
+    if (outputNr < 1 || outputNr > pOutputsCount)
+	{
+		trace("EXCEPTION: XMute output = %u", outputNr);
+		return;
+	}
+
+}
+
+// Obsluga FB poziomow glosnosci
+// DATA OLEVEL 1 75\x0A
+FUNCTION HandleDataOLevelMsg()
+{
+	//STRING levelString[MAX_MSG_LENGTH];
+	STRING channelNrString[MAX_MSG_LENGTH];
+	INTEGER channelNr;
+	INTEGER level;
+
+	trace("HandleDataOLevelMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_OLEVEL, singleMsg);
+
+	channelNrString = remove(" ", singleMsg);
+
+    channelNr = atoi(channelNrString);
+    
+    
+	if (channelNr < 1 || channelNr > pOutputsCount)
+	{
+		trace("EXCEPTION: volumeLevel_FB index = %u", channelNr);
+		return;
+	}
+    
+	level = atoi(singleMsg);
+    
+	trace("Volume[%u] = %u", channelNr, level);
+
+	volumeLevel#_FB[channelNr] = level;
+	volumePercent$[channelNr] = itoa(level) + " %";
+}
+
+// Ogolna obsluga FB
+FUNCTION HandleDataMsg()
+{
+	//trace("HandleDataMsg: %s", tempString);
+
+	tempString = remove(HEADER_DATA, singleMsg);
+	if (find(PARAM_OMUTE, singleMsg) <> 0) HandleDataOMuteMsg();
+	if (find(PARAM_XMUTE, singleMsg) <> 0) HandleDataXMuteMsg();
+	else if (find(PARAM_OLEVEL, singleMsg) <> 0) HandleDataOLevelMsg();
+}
+
+// Obsluga bledow
+FUNCTION HandleErrorMsg()
+{
+	INTEGER errorNr;
+	
+	trace("HandleErrorMsg: %s", singleMsg);
+
+	tempString = remove(HEADER_ERROR, singleMsg);
+	errorNr = atoi(singleMsg);
+
+	trace("ErrorNr: %u", errorNr);
+
+	switch(ErrorNr)
+	{
+		case(9):
+		{
+			if (deviceReady_FB)
+			{
+				trace("Resetting Connection");
+				connection_FB = 0;
+				deviceReady_FB = 0;
+				Connect();
+			}
+		}
+
+		default: Trace("Unhandled Error");
+	}
+}
+
+// Event Handlers
+
+PUSH keepConnection
+{
+	Connect();
+}
+
+RELEASE keepConnection
+{
+	Disconnect();
+}
+
+PUSH pollAllData
+{
+	PollAll();
+}
+
+CHANGE Rx$
+{
+	INTEGER LF_Pos;
+    
+	if (len(Rx$) < 1)
+	{
+		trace("RX Empty!");
+		return;
+	}
+    
+	while(len(Rx$) > 0)
+    {
+		// Pozycja koncowego znaku LF "\x0A"
+		LF_Pos = find(LF_CODE, Rx$);
+
+		// Wyjatek - bufor nie zawiera koncowego znaku LF "\x0A"
+		if (LF_Pos=0)
+		{
+			trace("LF_Pos error");
+			trace("RX = %s", Rx$);
+			return;
+		}
+    
+		// Wyciecie z bufora pojedynczego pakietu
+		singleMsg = removeByLength(LF_Pos, Rx$);
+    
+		// Rozgalezienie - obsluga wiadomosci w zaleznosci od jej typu
+		if(find(HEADER_DATA, singleMsg) = 1)
+		{
+			HandleDataMsg();
+		}
+		else if(find(HEADER_ERROR, singleMsg) = 1)
+		{
+			HandleErrorMsg();
+		}
+	
+	}
+}
+
+PUSH volumeIncrease
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	IncreaseVolumeByChannel(index);
+}
+
+PUSH volumeDecrease
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	DecreaseVolumeByChannel(index);
+}
+
+PUSH muteOn
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	SetMuteByChannel(index, PARAM_YES);
+}
+
+PUSH muteOff
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	SetMuteByChannel(index, PARAM_NO);
+}
+
+PUSH muteToggle
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	if (muteOn_FB[index] = 1) SetMuteByChannel(index, PARAM_NO);
+	else SetMuteByChannel(index, PARAM_YES);
+}
+
+CHANGE volumeLevel#
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	SetVolumeByChannel(index, volumeLevel#[index]);
+}
+
+CHANGE source#
+{
+	INTEGER inputNr, outputNr;
+
+	outputNr = GetLastModifiedArrayIndex();
+
+	if (outputNr > pOutputsCount) return;
+
+	source#_FB[outputNr] = source#[outputNr];
+
+	for (inputNr = 1 to pInputsCount)
+	{
+		if (source#[outputNr] <> inputNr) SetMatrixPointOff(inputNr, outputNr);
+	}
+
+	if (source#[outputNr] < 1 || source#[outputNr] > pInputsCount) return;
+
+	SetMatrixPointOn(source#[outputNr], outputNr);
+}
+
+// Main
+
+Function Main()
+{
+	gErrorHandlingFlag = 0;
+	WaitForInitializationComplete();
+	//Delay(LONG_DELAY);
+	//Disconnect();
+}

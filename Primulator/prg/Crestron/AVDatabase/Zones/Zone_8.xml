@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<CZone xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>8</Id>
+  <IsEnabled>1</IsEnabled>
+  <NameShort>AZ-08</NameShort>
+  <NameLong>D Serwis</NameLong>
+  <DefaultSourceId>1</DefaultSourceId>
+  <DefaultVolume>50</DefaultVolume>
+  <IsSourceStartupDefault>1</IsSourceStartupDefault>
+  <IsVolumeStartupDefault>0</IsVolumeStartupDefault>
+  <AssignedGroupId>0</AssignedGroupId>
+  <CurrentSourceId>0</CurrentSourceId>
+  <CurrentVolume>0</CurrentVolume>
+  <IsMuted>0</IsMuted>
+</CZone>
