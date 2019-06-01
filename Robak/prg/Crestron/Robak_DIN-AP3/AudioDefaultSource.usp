@@ -1,0 +1,81 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "AudioDefaultSource"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT SOURCES_COUNT 12
+
+// Inputs
+
+DIGITAL_INPUT DefaultSourceSelect[SOURCES_COUNT, SOURCES_COUNT];
+
+// Outputs
+
+DIGITAL_OUTPUT DefaultSource_FB[SOURCES_COUNT, SOURCES_COUNT];
+
+// Parameters
+
+INTEGER_PARAMETER pDefaultSourceToInit;
+// STRING_PARAMETER
+
+// Parameter Properietes
+
+
+#BEGIN_PARAMETER_PROPERTIES pDefaultSourceToInit
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , SOURCES_COUNT d;
+   propDefaultValue = 1d;
+#END_PARAMETER_PROPERTIES
+
+
+
+// Global Variables
+
+NONVOLATILE INTEGER gDefaultSource;
+
+// Functions
+FUNCTION SetFB()
+{
+	INTEGER i;
+
+	for (i=1 to SOURCES_COUNT)
+	{
+		DefaultSource_FB[i] = 0;
+	}
+
+	DefaultSource_FB[gDefaultSource] = 1;
+}
+
+FUNCTION DefineDefaultSource(INTEGER _sourceID)
+{
+	gDefaultSource = _sourceID;
+
+	SetFB();
+}
+
+FUNCTION Initialize()
+{
+	if (gDefaultSource = 0) gDefaultSource = pDefaultSourceToInit;
+
+	SetFB();
+}
+
+// Event Handlers
+
+PUSH DefaultSourceSelect
+{
+	DefineDefaultSource(getLastModifiedArrayIndex());
+}
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	Initialize();
+}
