@@ -1,0 +1,92 @@
+//Compiler Directives
+
+#CATEGORY "41"
+#SYMBOL_NAME "Sonos Favorites Cycle v2"
+#HINT ""
+// HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#DIGITAL_EXPAND OutputsWithParams
+
+// Constants
+
+// #DEFINE_CONSTANT
+
+// Help
+
+#HELP_BEGIN
+	----------------------
+#HELP_END
+
+// Include Libraries
+
+
+
+// Inputs
+
+DIGITAL_INPUT next,previous;
+ANALOG_INPUT favoritesCount#_FB;
+ANALOG_INPUT selectedFavorite#_FB;
+
+// Outputs
+
+ANALOG_OUTPUT selectedFavorite#;
+
+// Sockets
+
+
+
+// Parameters
+
+
+
+// Parameter Properietes
+
+/*
+#BEGIN_PARAMETER_PROPERTIES pVariable
+   propValidUnits= unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+   propDefaultUnit=unitString or unitDecimal or unitHex or unitPercent or unitCharacter or unitTime or unitTicks;
+   propDefaultValue=default_value or "default_value";
+   propList={ "value","label" },{ "value","label" };
+   propBounds=lower_bound , upper_bound;
+   propShortDescription= "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+*/
+
+// Structure Definitions
+
+
+
+// Global Variables
+
+
+
+// Functions
+
+
+
+// Event Handlers
+
+PUSH next
+{
+	if (selectedFavorite#_FB = 0) selectedFavorite# = 1;
+	else if (selectedFavorite#_FB = favoritesCount#_FB) selectedFavorite# = 1;
+	else selectedFavorite# = selectedFavorite#_FB + 1;
+}
+
+PUSH previous
+{
+	if (selectedFavorite#_FB = 0) selectedFavorite# = 1;
+	else if (selectedFavorite#_FB = 1) selectedFavorite# = favoritesCount#_FB;
+	else selectedFavorite# = selectedFavorite#_FB - 1;
+}
+
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}
