@@ -3,6 +3,10 @@ Urządzenia:
 DIN-AP3				:		192.168.1.5
 CI-KNX				:		192.168.1.10
 
+MIMO				:		192.168.1.21
+JVC-DLA				:		192.168.1.22
+Marantz-SR			:		192.168.1.23
+
 ==================================
 Router
 IP zewnętrzne		:		188.147.181.71
@@ -29,3 +33,7 @@ PIN_2	:	7425
 
 PUK_1	:	92535588
 PUK_2	:	61865938
+
+===================
+
+http://manual3.jvckenwood.com/projector/mobile/dla/b5a-2360-05en/BONDSYvxqkwmjo.php
