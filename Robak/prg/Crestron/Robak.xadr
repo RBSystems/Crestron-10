@@ -11,11 +11,13 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
+8SW8-11=DIN-AP3:cresnet 11
 DIN-AP3_Remote=ssl 188.147.181.71
 DIN-AP3=ssh 192.168.1.5
 1_USB=usb
 
 [Notes]
+8SW8-11=
 DIN-AP3_Remote=
 DIN-AP3=
 1_USB=

@@ -1,6 +1,6 @@
-Urządzenia:
+﻿Urządzenia:
 
-DIN-AP3				:		192.168.1.5
+DIN-AP3				:		192.168.1.5 (stary login email : stare psie hasło)
 CI-KNX				:		192.168.1.10
 
 MIMO				:		192.168.1.21
@@ -9,16 +9,23 @@ Marantz-SR			:		192.168.1.23
 
 ==================================
 Router
-IP zewnętrzne		:		188.147.181.71
+
 IP wewnętrzne		:		192.168.1.1
-Password			:		zdolnyAdmin51 (default: fnENDe95)
+Password		:		zdolnyAdmin51 (default: fnENDe95)
 
 ================
 
 WiFi
 
-SSID		:	PrzyjemNET
-Password	:	mocnehaslo29
+SSID		:	AV-2 (2 Ghz)
+SSID		:	AV-5 (5 Ghz)
+Password	:	691515151
+Router		:	192.168.88.1 ()
+
+SSID		:	WLAN1-000225
+Password	:	B03F20F1C2366A3
+Router		:	192.168.1.1 (10332857)
+IP zewnętrzne		:		188.147.181.71
 
 ================
 
@@ -37,3 +44,7 @@ PUK_2	:	61865938
 ===================
 
 http://manual3.jvckenwood.com/projector/mobile/dla/b5a-2360-05en/BONDSYvxqkwmjo.php
+
+===================
+
+693 202 102 (Wojtek AudioDesign)
