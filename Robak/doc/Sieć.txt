@@ -3,7 +3,7 @@
 DIN-AP3				:		192.168.1.5 (stary login email : stare psie hasło)
 CI-KNX				:		192.168.1.10
 
-MIMO				:		192.168.1.21
+MIMO				:		192.168.1.21 (port UDP 2210)
 JVC-DLA				:		192.168.1.22
 Marantz-SR			:		192.168.1.23
 
