@@ -13308,6 +13308,27 @@ P4=0.1s
 ]
 [
 ObjTp=Sm
+H=461
+SmC=858
+Nm=Make String Permanent
+ObjVer=1
+SmVr=1083
+PrH=829
+CF=2
+n1I=6
+Cmn1=AZ Volume Percent\\
+mI=6
+I1=3452
+I2=3487
+I3=3512
+I4=3537
+I5=3562
+I6=3587
+mP=1
+P1=10d
+]
+[
+ObjTp=Sm
 H=462
 SmC=2433
 Nm=DIN-8SW8-I Override Controls
@@ -19376,10 +19397,11 @@ SmVr=1083
 PrH=56
 CF=2
 Cmn1=Sonos ZP-90
-mC=3
+mC=4
 C1=734
 C2=810
 C3=828
+C4=1131
 ]
 [
 ObjTp=Sm
@@ -21639,6 +21661,26 @@ O1=2438
 ]
 [
 ObjTp=Sm
+H=757
+SmC=32
+Nm=Analog Initialize
+ObjVer=1
+SmVr=1083
+PrH=761
+CF=2
+n1I=1
+n1O=1
+Cmn1=AZ-01 Startup Volume\\
+mI=1
+I1=3717
+mO=1
+tO=1
+O1=3030
+mP=1
+P1=90d
+]
+[
+ObjTp=Sm
 H=758
 SmC=98
 Nm=Stepper
@@ -21689,6 +21731,40 @@ P2=0.1s
 ]
 [
 ObjTp=Sm
+H=760
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=761
+CF=2
+n1I=3
+n1O=2
+Cmn1=AZ-01 Startup Volume\\
+mI=3
+I1=3273
+mO=2
+tO=2
+O1=3717
+mP=1
+P1=0.1s
+]
+[
+ObjTp=Sm
+H=761
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=830
+CF=2
+Cmn1=AZ-01 Startup Volume
+mC=2
+C1=757
+C2=760
+]
+[
+ObjTp=Sm
 H=762
 SmC=156
 Nm=SUBSYSTEM
@@ -21700,6 +21776,60 @@ Cmn1=Motion Sensors
 mC=2
 C1=777
 C2=781
+]
+[
+ObjTp=Sm
+H=763
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=811
+CF=2
+Cmn1=AZ-02 Startup Volume
+mC=2
+C1=764
+C2=765
+]
+[
+ObjTp=Sm
+H=764
+SmC=32
+Nm=Analog Initialize
+ObjVer=1
+SmVr=1083
+PrH=763
+CF=2
+n1I=1
+n1O=1
+Cmn1=AZ-02 Startup Volume\\
+mI=1
+I1=3716
+mO=1
+tO=1
+O1=3031
+mP=1
+P1=90d
+]
+[
+ObjTp=Sm
+H=765
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=763
+CF=2
+n1I=3
+n1O=2
+Cmn1=AZ-02 Startup Volume\\
+mI=3
+I1=3274
+mO=2
+tO=2
+O1=3716
+mP=1
+P1=0.1s
 ]
 [
 ObjTp=Sm
@@ -21938,6 +22068,40 @@ P1=0s
 P2=0.1s
 P3=0.1s
 P4=0.1s
+]
+[
+ObjTp=Sm
+H=775
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=904
+CF=2
+Cmn1=AZ-03 Startup Volume
+mC=2
+C1=776
+C2=795
+]
+[
+ObjTp=Sm
+H=776
+SmC=32
+Nm=Analog Initialize
+ObjVer=1
+SmVr=1083
+PrH=775
+CF=2
+n1I=1
+n1O=1
+Cmn1=AZ-03 Startup Volume\\
+mI=1
+I1=3718
+mO=1
+tO=1
+O1=3032
+mP=1
+P1=90d
 ]
 [
 ObjTp=Sm
@@ -22411,6 +22575,26 @@ P30=0.1s
 ]
 [
 ObjTp=Sm
+H=795
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=775
+CF=2
+n1I=3
+n1O=2
+Cmn1=AZ-03 Startup Volume\\
+mI=3
+I1=3275
+mO=2
+tO=2
+O1=3718
+mP=1
+P1=0.1s
+]
+[
+ObjTp=Sm
 H=796
 SmC=98
 Nm=Stepper
@@ -22433,6 +22617,60 @@ P1=0s
 P2=0.1s
 P3=0.1s
 P4=0.1s
+]
+[
+ObjTp=Sm
+H=797
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=927
+CF=2
+Cmn1=AZ-04 Startup Volume
+mC=2
+C1=798
+C2=799
+]
+[
+ObjTp=Sm
+H=798
+SmC=32
+Nm=Analog Initialize
+ObjVer=1
+SmVr=1083
+PrH=797
+CF=2
+n1I=1
+n1O=1
+Cmn1=AZ-04 Startup Volume\\
+mI=1
+I1=3719
+mO=1
+tO=1
+O1=3033
+mP=1
+P1=90d
+]
+[
+ObjTp=Sm
+H=799
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=797
+CF=2
+n1I=3
+n1O=2
+Cmn1=AZ-04 Startup Volume\\
+mI=3
+I1=3276
+mO=2
+tO=2
+O1=3719
+mP=1
+P1=0.1s
 ]
 [
 ObjTp=Sm
@@ -23240,10 +23478,11 @@ SmVr=1083
 PrH=829
 CF=2
 Cmn1=AZ-02 (OUT_02) (MP_13, MP_14) (no keypad)\\
-mC=3
+mC=4
 C1=866
 C2=891
 C3=896
+C4=763
 ]
 [
 ObjTp=Sm
@@ -24797,7 +25036,7 @@ SmVr=1083
 PrH=832
 CF=2
 Cmn1=AudioZones
-mC=8
+mC=9
 C1=830
 C2=811
 C3=904
@@ -24806,6 +25045,7 @@ C5=951
 C6=981
 C7=901
 C8=1009
+C9=461
 ]
 [
 ObjTp=Sm
@@ -24817,11 +25057,12 @@ SmVr=1083
 PrH=829
 CF=2
 Cmn1=AZ-01 (OUT_01) (MP_01, MP_02) (KP_09)\\
-mC=4
+mC=5
 C1=848
 C2=856
 C3=849
 C4=857
+C5=761
 ]
 [
 ObjTp=Sm
@@ -26493,11 +26734,12 @@ SmVr=1083
 PrH=829
 CF=2
 Cmn1=AZ-03 (OUT_03) (MP_25, MP_26) (KP_18)\\
-mC=4
+mC=5
 C1=906
 C2=916
 C3=921
 C4=926
+C5=775
 ]
 [
 ObjTp=Sm
@@ -26997,11 +27239,12 @@ SmVr=1083
 PrH=829
 CF=2
 Cmn1=AZ-04 (OUT_04) (MP_37, MP_38) (KP_11)\\
-mC=4
+mC=5
 C1=928
 C2=940
 C3=945
 C4=950
+C5=797
 ]
 [
 ObjTp=Sm
@@ -27512,11 +27755,12 @@ SmVr=1083
 PrH=829
 CF=2
 Cmn1=AZ-05 (OUT_05) (MP_49, MP_50) (KP_25)\\
-mC=4
+mC=5
 C1=952
 C2=964
 C3=969
 C4=980
+C5=1125
 ]
 [
 ObjTp=Sm
@@ -28169,11 +28413,12 @@ SmVr=1083
 PrH=829
 CF=2
 Cmn1=AZ-06 (OUT_06) (MP_61, MP_62) (KP_19)\\
-mC=4
+mC=5
 C1=982
 C2=997
 C3=1002
 C4=1008
+C5=1128
 ]
 [
 ObjTp=Sm
@@ -32054,6 +32299,171 @@ I2=3712
 mO=1
 tO=1
 O1=3713
+]
+[
+ObjTp=Sm
+H=1125
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=951
+CF=2
+Cmn1=AZ-05 Startup Volume
+mC=2
+C1=1126
+C2=1127
+]
+[
+ObjTp=Sm
+H=1126
+SmC=32
+Nm=Analog Initialize
+ObjVer=1
+SmVr=1083
+PrH=1125
+CF=2
+n1I=1
+n1O=1
+Cmn1=AZ-05 Startup Volume\\
+mI=1
+I1=3720
+mO=1
+tO=1
+O1=3034
+mP=1
+P1=90d
+]
+[
+ObjTp=Sm
+H=1127
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=1125
+CF=2
+n1I=3
+n1O=2
+Cmn1=AZ-05 Startup Volume\\
+mI=3
+I1=3277
+mO=2
+tO=2
+O1=3720
+mP=1
+P1=0.1s
+]
+[
+ObjTp=Sm
+H=1128
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=981
+CF=2
+Cmn1=AZ-06 Startup Volume
+mC=2
+C1=1129
+C2=1130
+]
+[
+ObjTp=Sm
+H=1129
+SmC=32
+Nm=Analog Initialize
+ObjVer=1
+SmVr=1083
+PrH=1128
+CF=2
+n1I=1
+n1O=1
+Cmn1=AZ-06 Startup Volume\\
+mI=1
+I1=3721
+mO=1
+tO=1
+O1=3035
+mP=1
+P1=90d
+]
+[
+ObjTp=Sm
+H=1130
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=1128
+CF=2
+n1I=3
+n1O=2
+Cmn1=AZ-06 Startup Volume\\
+mI=3
+I1=3278
+mO=2
+tO=2
+O1=3721
+mP=1
+P1=0.1s
+]
+[
+ObjTp=Sm
+H=1131
+SmC=156
+Nm=SUBSYSTEM
+ObjVer=1
+SmVr=1083
+PrH=717
+CF=2
+Cmn1=Auto Play
+mC=2
+C1=1132
+C2=1133
+]
+[
+ObjTp=Sm
+H=1132
+SmC=3
+Nm=OR
+ObjVer=1
+SmVr=1083
+PrH=1131
+CF=2
+n1I=6
+n1O=1
+Cmn1=Sonos Active FB\\
+mI=6
+I1=3438
+I2=3469
+I3=3494
+I4=3519
+I5=3544
+I6=3569
+mO=1
+tO=1
+O1=3722
+]
+[
+ObjTp=Sm
+H=1133
+SmC=9
+Nm=One Shot
+ObjVer=1
+SmVr=1083
+PrH=1131
+CF=2
+n1I=3
+n1O=2
+Cmn1=Sonos Play when Active\\
+mI=3
+I1=3722
+mO=2
+tO=2
+O1=3432
+mP=1
+P1=0.1s
 ]
 [
 ObjTp=Sm
@@ -51493,6 +51903,41 @@ Nm=[Macros][KP_02]_B_01_Short_v1
 ObjTp=Sg
 H=3715
 Nm=[Macros][KP_02]_B_01_Short_v2
+]
+[
+ObjTp=Sg
+H=3716
+Nm=[Multiroom][AZ-02][Volume]_Startup
+]
+[
+ObjTp=Sg
+H=3717
+Nm=[Multiroom][AZ-01][Volume]_Startup
+]
+[
+ObjTp=Sg
+H=3718
+Nm=[Multiroom][AZ-03][Volume]_Startup
+]
+[
+ObjTp=Sg
+H=3719
+Nm=[Multiroom][AZ-04][Volume]_Startup
+]
+[
+ObjTp=Sg
+H=3720
+Nm=[Multiroom][AZ-05][Volume]_Startup
+]
+[
+ObjTp=Sg
+H=3721
+Nm=[Multiroom][AZ-06][Volume]_Startup
+]
+[
+ObjTp=Sg
+H=3722
+Nm=[Multiroom][Sonos]_Active_FB
 ]
 [
 ObjTp=Sg
