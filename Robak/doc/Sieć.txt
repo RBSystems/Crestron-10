@@ -11,7 +11,7 @@ Marantz-SR			:		192.168.1.23
 Router
 
 IP wewnętrzne		:		192.168.1.1
-Password		:		zdolnyAdmin51 (default: fnENDe95)
+Password		:		LqB9NeJ8 (default: LqB9NeJ7)
 
 ================
 
