@@ -1684,6 +1684,8 @@
   SymJam=NonExclusive
   FileName=Ecler MIMO12x12.ush
   SIMPLPlusModuleEncoding=0
+  clz1=CrestronKNXLibrary
+  clz2=SonosLibrary_v3_1
 [END]
 [BEGIN]
   ObjTp=Dp
