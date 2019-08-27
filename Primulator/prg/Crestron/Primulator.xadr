@@ -18,7 +18,7 @@ TSW_AZ-01 <00-02>=auto 192.168.70.23
 TSW760_Master <00-11>=auto 192.168.70.24
 TSW_AZ-10 <10-02>=auto 192.168.70.25
 TSW_AZ-12 <10-05>=auto 192.168.70.26
-USB=usb
+1_USB=usb
 
 [Notes]
 PRO3=
@@ -28,5 +28,5 @@ TSW_AZ-01 <00-02>=
 TSW760_Master <00-11>=
 TSW_AZ-10 <10-02>=
 TSW_AZ-12 <10-05>=
-USB=
+1_USB=
 
