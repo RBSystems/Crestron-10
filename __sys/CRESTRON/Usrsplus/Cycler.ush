@@ -68,8 +68,8 @@
   SymJam=NonExclusive
   FileName=Cycler.ush
   SIMPLPlusModuleEncoding=0
-  Usl1=usl_AVSystem_Constants.usl
-  clz1=ssl_AVSystem
+  clz1=ssl_Utility
+  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
