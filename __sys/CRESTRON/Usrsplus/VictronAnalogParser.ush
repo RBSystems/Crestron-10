@@ -22,7 +22,7 @@
   SmplCName=VictronAnalogParser.usp
   Code=1
   SysRev5=4.000
-  SMWRev=3.00.00
+  SMWRev=2.02.05
   InputList2Cue1=analogIn
   InputList2SigType1=Analog
   OutputList2Cue1=serialOut
@@ -70,8 +70,6 @@
   SymJam=NonExclusive
   FileName=VictronAnalogParser.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

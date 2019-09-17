@@ -86,6 +86,7 @@ CHANGE strIn
 	integer n;
 	                        
 	n=find("_",strIn);
+	if (atoi(strIn) = 0) return;
 	str_o[atoi(strIn)]=atoi(right(strIn,len(strIn)-n));      
 }
 

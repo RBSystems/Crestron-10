@@ -21,7 +21,7 @@
   SmplCName=BRAMKA_dig.usp
   Code=1
   SysRev5=4.000
-  SMWRev=3.00.00
+  SMWRev=2.02.05
   InputCue1=connected
   InputSigType1=Digital
   InputCue2=[~UNUSED~]
@@ -78,8 +78,6 @@
   SymJam=NonExclusive
   FileName=BRAMKA_dig.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

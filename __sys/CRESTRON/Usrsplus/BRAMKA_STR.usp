@@ -77,6 +77,7 @@ CHANGE strIn
 	integer n;
 	                        
 	n=find("_",strIn);
+	if (atoi(strIn) = 0) return;
 	str_o[atoi(strIn)]=right(strIn,len(strIn)-n);      
 }
 
