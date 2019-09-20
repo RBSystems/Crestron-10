@@ -20,8 +20,8 @@
   Name=BRAMKA_WORD_A
   SmplCName=BRAMKA_WORD_A.usp
   Code=1
-  SysRev5=3.083
-  SMWRev=2.02.05
+  SysRev5=4.000
+  SMWRev=3.00.00
   InputCue1=connected
   InputSigType1=Digital
   InputCue2=update
@@ -80,6 +80,8 @@
   SymJam=NonExclusive
   FileName=BRAMKA_WORD_A.ush
   SIMPLPlusModuleEncoding=0
+  clz1=ssl_Utility
+  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
