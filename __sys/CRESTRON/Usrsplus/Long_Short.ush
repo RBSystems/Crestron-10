@@ -67,8 +67,7 @@
   SymJam=NonExclusive
   FileName=Long_Short.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
+  clz1=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp

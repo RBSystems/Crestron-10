@@ -202,7 +202,7 @@
   FileName=RoomSourceManager.ush
   SIMPLPlusModuleEncoding=0
   clz1=CrestronKNXLibrary
-  clz2=SonosLibrary_v1_0
+  clz2=SonosLibrary_v3_1
 [END]
 [BEGIN]
   ObjTp=Dp

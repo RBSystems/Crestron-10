@@ -20,7 +20,7 @@
   Name=Keyboard
   SmplCName=Keyboard.usp
   Code=1
-  SysRev5=4.000
+  SysRev5=4.006
   SMWRev=3.00.00
   InputCue1=arm
   InputSigType1=Digital
@@ -82,8 +82,8 @@
   SymJam=NonExclusive
   FileName=Keyboard.ush
   SIMPLPlusModuleEncoding=0
-  Usl1=usl_AVSystem_Constants.usl
-  clz1=ssl_AVSystem
+  clz1=CrestronKNXLibrary
+  clz2=SonosLibrary_v3_1
 [END]
 [BEGIN]
   ObjTp=Dp

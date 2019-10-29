@@ -20,7 +20,7 @@
   Name=NumberOfElements
   SmplCName=NumberOfElements.usp
   Code=1
-  SysRev5=4.000
+  SysRev5=4.006
   SMWRev=3.00.00
   InputCue1=enable
   InputSigType1=Digital
@@ -68,8 +68,8 @@
   SymJam=NonExclusive
   FileName=NumberOfElements.ush
   SIMPLPlusModuleEncoding=0
-  clz1=ssl_Utility
-  clz2=CrestronKNXLibrary
+  clz1=CrestronKNXLibrary
+  clz2=SonosLibrary_v3_1
 [END]
 [BEGIN]
   ObjTp=Dp
