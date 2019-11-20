@@ -9,13 +9,14 @@
 // Constants
 #DEFINE_CONSTANT PULSE_TIME 10
 
+#DEFINE_CONSTANT MODES_MAX_COUNT 5
 #DEFINE_CONSTANT DAYS_OF_WEEK_COUNT 7
 #DEFINE_CONSTANT EVENTS_COUNT 2
 
 #DEFINE_CONSTANT FILE_SIZE 512
 #DEFINE_CONSTANT FILENAME_MAX_LENGTH 64
 #DEFINE_CONSTANT DAY_RECORD_SIZE 32
-#DEFINE_CONSTANT ID_MAX_LENGTH 16
+#DEFINE_CONSTANT STRING_PARAM_MAX_LENGTH 16
 #DEFINE_CONSTANT TIME_STRING_SIZE 7
 
 
@@ -25,39 +26,90 @@
 #DEFINE_CONSTANT DELIMITER "|"
 #DEFINE_CONSTANT COLON ":"
 
+#DEFINE_CONSTANT MODE_0_NAME "BRAK"
+
+#DEFINE_CONSTANT MAX_HOUR 23
+#DEFINE_CONSTANT MAX_MINUTE 55
+
+#DEFINE_CONSTANT HOUR_STEP 1
+#DEFINE_CONSTANT MINUTE_STEP 5
+
 
 
 // Include Libraries
 
 // Inputs
-
 DIGITAL_INPUT saveSchedule, loadSchedule;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event1_ModeCycle[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event1_HourIncrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event1_HourDecrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event1_MinuteIncrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event1_MinuteDecrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_, _SKIP_;
+
+DIGITAL_INPUT event2_ModeCycle[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event2_HourIncrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event2_HourDecrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event2_MinuteIncrease[DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT event2_MinuteDecrease[DAYS_OF_WEEK_COUNT, DAYS_OF_WEEK_COUNT];
+DIGITAL_INPUT _SKIP_, _SKIP_, _SKIP_;
+
 // ANALOG_INPUT
+ANALOG_INPUT currentDayOfWeek, currentHour, currentMinute;
+
 // STRING_INPUT
 // BUFFER_INPUT
 // _SKIP_
 
 // Outputs
+DIGITAL_OUTPUT macroTrigger[MODES_MAX_COUNT, MODES_MAX_COUNT];
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_;
 
-// DIGITAL_OUTPUT
 // ANALOG_OUTPUT
+
+
 // STRING_OUTPUT
+STRING_OUTPUT event1_ModeName$[DAYS_OF_WEEK_COUNT];
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT event1_Time$[DAYS_OF_WEEK_COUNT];
+STRING_OUTPUT _SKIP_, _SKIP_;
+
+STRING_OUTPUT event2_ModeName$[DAYS_OF_WEEK_COUNT];
+STRING_OUTPUT _SKIP_;
+STRING_OUTPUT event2_Time$[DAYS_OF_WEEK_COUNT, DAYS_OF_WEEK_COUNT];
 
 // Parameters
 
 // INTEGER_PARAMETER
-STRING_PARAMETER pScheduleID[ID_MAX_LENGTH];
+STRING_PARAMETER pScheduleID[STRING_PARAM_MAX_LENGTH], _SKIP_;
+STRING_PARAMETER pModeName[MODES_MAX_COUNT][STRING_PARAM_MAX_LENGTH], _SKIP_;
+INTEGER_PARAMETER pModesCount;
 
 // Parameter Properietes
 
 
-#BEGIN_PARAMETER_PROPERTIES pScheduleID
+#BEGIN_PARAMETER_PROPERTIES pScheduleID, pModeName
    propValidUnits = unitString;
    propDefaultUnit = unitString;
 //   propList = { "value","label" },{ "value","label" };
 //   propBounds = lower_bound , upper_bound;
 //   propDefaultValue = default_value or "default_value";
 //   propShortDescription = "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES pModesCount
+   propValidUnits = unitDecimal;
+   propDefaultUnit = unitDecimal;
+   propBounds = 1d , MODES_MAX_COUNT d;
 #END_PARAMETER_PROPERTIES
 
 
@@ -67,9 +119,6 @@ STRUCTURE ScheduleEvent
 	INTEGER mode;
 	INTEGER hour;
 	INTEGER minute;
-
-	//STRING modeName;
-	//STRING timeString[TIME_STRING_SIZE];
 };
 
 STRUCTURE DaySchedule
@@ -82,6 +131,50 @@ DaySchedule daySchedules[DAYS_OF_WEEK_COUNT];
 // Global Variables
 
 // Functions
+
+FUNCTION PrintEventsModeNames(INTEGER dayOfWeek)
+{
+	if (daySchedules[dayOfWeek].events[1].mode = 0) event1_ModeName$[dayOfWeek] = MODE_0_NAME;
+	else if (daySchedules[dayOfWeek].events[1].mode <= pModesCount) event1_ModeName$[dayOfWeek] = pModeName[daySchedules[dayOfWeek].events[1].mode];
+
+	if (daySchedules[dayOfWeek].events[2].mode = 0) event2_ModeName$[dayOfWeek] = MODE_0_NAME;
+	else if (daySchedules[dayOfWeek].events[2].mode <= pModesCount) event2_ModeName$[dayOfWeek] = pModeName[daySchedules[dayOfWeek].events[2].mode];
+}
+
+FUNCTION PrintEvent_1Time(INTEGER dayOfWeek)
+{
+	STRING timeString[TIME_STRING_SIZE];
+
+	timeString = "";
+
+	if (daySchedules[dayOfWeek].events[1].hour < 10) timeString = timeString + "0";
+
+	timeString = timeString + itoa(daySchedules[dayOfWeek].events[1].hour) + " : ";
+    
+	if (daySchedules[dayOfWeek].events[1].minute < 10) timeString = timeString + "0";
+
+    timeString = timeString + itoa(daySchedules[dayOfWeek].events[1].minute);
+	
+	event1_Time$[dayOfWeek] = timeString;
+}
+
+FUNCTION PrintEvent_2Time(INTEGER dayOfWeek)
+{
+	STRING timeString[TIME_STRING_SIZE];
+
+	timeString = "";
+
+	if (daySchedules[dayOfWeek].events[2].hour < 10) timeString = timeString + "0";
+
+	timeString = timeString + itoa(daySchedules[dayOfWeek].events[2].hour) + " : ";
+    
+	if (daySchedules[dayOfWeek].events[2].minute < 10) timeString = timeString + "0";
+
+    timeString = timeString + itoa(daySchedules[dayOfWeek].events[2].minute);
+	
+	event2_Time$[dayOfWeek] = timeString;
+}
+
 
 //  dayOfWeek|e1_mode|e2_mode|e1_time|e2_time (eg.: 2|1|2|06 : 00|18 : 00)
 FUNCTION ProcessDayRecord(STRING _dayRecord)
@@ -96,12 +189,18 @@ FUNCTION ProcessDayRecord(STRING _dayRecord)
 	daySchedules[dayOfWeek].events[1].mode = atoi(remove(DELIMITER, tempString));
 	daySchedules[dayOfWeek].events[2].mode = atoi(remove(DELIMITER, tempString));
 
+	PrintEventsModeNames(dayOfWeek);
+
 	tempTime = remove(DELIMITER, tempString);
+
 	daySchedules[dayOfWeek].events[1].hour = atoi(remove(COLON, tempTime));
 	daySchedules[dayOfWeek].events[1].minute = atoi(tempTime);
 
 	daySchedules[dayOfWeek].events[2].hour = atoi(remove(COLON, tempString));
 	daySchedules[dayOfWeek].events[2].minute = atoi(tempString);
+
+	PrintEvent_1Time(dayOfWeek);
+	PrintEvent_2Time(dayOfWeek);
 }
 
 FUNCTION SaveToFile()
@@ -162,10 +261,9 @@ FUNCTION LoadFromFile()
 
 	EndFileOperations();
 
-	// TODO : PRzetowrz tresc pliku
 	for (i=1 to DAYS_OF_WEEK_COUNT)
 	{
-		trace("%s", fileContent[i]);
+		ProcessDayRecord(fileContent[i]);
 	}
 }
 
