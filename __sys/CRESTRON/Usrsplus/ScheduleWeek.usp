@@ -1,0 +1,190 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "ScheduleWeek"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT PULSE_TIME 10
+
+#DEFINE_CONSTANT DAYS_OF_WEEK_COUNT 7
+#DEFINE_CONSTANT EVENTS_COUNT 2
+
+#DEFINE_CONSTANT FILE_SIZE 512
+#DEFINE_CONSTANT FILENAME_MAX_LENGTH 64
+#DEFINE_CONSTANT DAY_RECORD_SIZE 32
+#DEFINE_CONSTANT ID_MAX_LENGTH 16
+#DEFINE_CONSTANT TIME_STRING_SIZE 7
+
+
+#DEFINE_CONSTANT FILENAME_PREFIX "\\CF0\\Schedules\\"
+#DEFINE_CONSTANT FILENAME_SUFIX ".txt"
+
+#DEFINE_CONSTANT DELIMITER "|"
+#DEFINE_CONSTANT COLON ":"
+
+
+
+// Include Libraries
+
+// Inputs
+
+DIGITAL_INPUT saveSchedule, loadSchedule;
+// ANALOG_INPUT
+// STRING_INPUT
+// BUFFER_INPUT
+// _SKIP_
+
+// Outputs
+
+// DIGITAL_OUTPUT
+// ANALOG_OUTPUT
+// STRING_OUTPUT
+
+// Parameters
+
+// INTEGER_PARAMETER
+STRING_PARAMETER pScheduleID[ID_MAX_LENGTH];
+
+// Parameter Properietes
+
+
+#BEGIN_PARAMETER_PROPERTIES pScheduleID
+   propValidUnits = unitString;
+   propDefaultUnit = unitString;
+//   propList = { "value","label" },{ "value","label" };
+//   propBounds = lower_bound , upper_bound;
+//   propDefaultValue = default_value or "default_value";
+//   propShortDescription = "status_bar_hint_text";
+#END_PARAMETER_PROPERTIES
+
+
+// Structure Definitions
+STRUCTURE ScheduleEvent
+{
+	INTEGER mode;
+	INTEGER hour;
+	INTEGER minute;
+
+	//STRING modeName;
+	//STRING timeString[TIME_STRING_SIZE];
+};
+
+STRUCTURE DaySchedule
+{
+	ScheduleEvent events[EVENTS_COUNT];
+};
+
+DaySchedule daySchedules[DAYS_OF_WEEK_COUNT];
+
+// Global Variables
+
+// Functions
+
+//  dayOfWeek|e1_mode|e2_mode|e1_time|e2_time (eg.: 2|1|2|06 : 00|18 : 00)
+FUNCTION ProcessDayRecord(STRING _dayRecord)
+{
+	INTEGER dayOfWeek;
+	STRING tempString[DAY_RECORD_SIZE];
+	STRING tempTime[TIME_STRING_SIZE];
+
+	tempString = _dayRecord;
+	dayOfWeek = atoi(remove(DELIMITER, tempString));
+
+	daySchedules[dayOfWeek].events[1].mode = atoi(remove(DELIMITER, tempString));
+	daySchedules[dayOfWeek].events[2].mode = atoi(remove(DELIMITER, tempString));
+
+	tempTime = remove(DELIMITER, tempString);
+	daySchedules[dayOfWeek].events[1].hour = atoi(remove(COLON, tempTime));
+	daySchedules[dayOfWeek].events[1].minute = atoi(tempTime);
+
+	daySchedules[dayOfWeek].events[2].hour = atoi(remove(COLON, tempString));
+	daySchedules[dayOfWeek].events[2].minute = atoi(tempString);
+}
+
+FUNCTION SaveToFile()
+{
+	STRING fileName[FILENAME_MAX_LENGTH];
+	INTEGER bytesCount;
+	SIGNED_INTEGER fileHandle;
+
+    STRING fileContent[DAYS_OF_WEEK_COUNT][DAY_RECORD_SIZE];
+	INTEGER i;
+
+	for(i=1 to DAYS_OF_WEEK_COUNT)
+	{
+		fileContent[i] = itoa(i) + DELIMITER + itoa(0) /*e1_mode*/ + DELIMITER + itoa(0) /*e2_mode*/ + DELIMITER + "06 : 00" /*e1_time*/ + DELIMITER + "18 : 00" /*e2_time*/; 
+	}
+
+	fileName = FILENAME_PREFIX + pScheduleID + FILENAME_SUFIX;
+    StartFileOperations();
+	fileHandle = FileOpen(fileName, _O_WRONLY | _O_CREAT);
+
+	if (fileHandle >= 0)
+    {
+     	bytesCount = WriteStringArray(fileHandle, fileContent);
+		FileClose(fileHandle);
+	}
+	else
+	{
+		trace("Nieudany zapis do pliku harmonogramu: %s", pScheduleID);
+	}
+
+	EndFileOperations();
+}
+
+FUNCTION LoadFromFile()
+{
+	STRING fileName[FILENAME_MAX_LENGTH];
+	INTEGER bytesCount;
+	SIGNED_INTEGER fileHandle;
+
+    STRING fileContent[DAYS_OF_WEEK_COUNT][DAY_RECORD_SIZE];
+	INTEGER i;
+
+	fileName = FILENAME_PREFIX + pScheduleID + FILENAME_SUFIX;
+    StartFileOperations();
+	fileHandle = FileOpen(fileName, _O_RDONLY);
+
+	if (fileHandle >= 0)
+    {
+     	bytesCount = ReadStringArray(fileHandle, fileContent);
+		FileClose(fileHandle);
+	}
+	else
+	{
+		trace("Nieudany odczyt pliku harmonogramu: %s", pScheduleID);
+		EndFileOperations();
+		return;
+	}
+
+	EndFileOperations();
+
+	// TODO : PRzetowrz tresc pliku
+	for (i=1 to DAYS_OF_WEEK_COUNT)
+	{
+		trace("%s", fileContent[i]);
+	}
+}
+
+// Event Handlers
+
+PUSH saveSchedule
+{
+	SaveToFile();
+}
+
+PUSH loadSchedule
+{
+	LoadFromFile();
+}
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}
