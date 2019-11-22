@@ -190,7 +190,7 @@ FUNCTION ProcessDayRecord(STRING _dayRecord)
 {
 	INTEGER dayOfWeek;
 	STRING tempString[DAY_RECORD_SIZE];
-	STRING tempTime[8];
+	STRING tempTime[TIME_STRING_SIZE];
 
 	tempString = _dayRecord;
 	dayOfWeek = atoi(remove(DELIMITER, tempString));
@@ -201,7 +201,7 @@ FUNCTION ProcessDayRecord(STRING _dayRecord)
 	PrintEventModeName(1, dayOfWeek);
 	PrintEventModeName(2, dayOfWeek);
 
-	tempTime = remove(DELIMITER, tempString);
+	tempTime = left(remove(DELIMITER, tempString), TIME_STRING_SIZE);
 
 	daySchedules[dayOfWeek].events[1].hour = atoi(remove(COLON, tempTime));
 	daySchedules[dayOfWeek].events[1].minute = atoi(tempTime);
