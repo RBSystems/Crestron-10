@@ -20,7 +20,7 @@
   Name=NumberOfElements
   SmplCName=NumberOfElements.usp
   Code=1
-  SysRev5=3.090
+  SysRev5=4.000
   SMWRev=2.02.05
   InputCue1=enable
   InputSigType1=Digital

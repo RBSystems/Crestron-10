@@ -132,47 +132,56 @@ DaySchedule daySchedules[DAYS_OF_WEEK_COUNT];
 
 // Functions
 
-FUNCTION PrintEventsModeNames(INTEGER dayOfWeek)
+STRING_FUNCTION GetEventModeName(INTEGER _eventNr, INTEGER _dayOfWeek)
 {
-	if (daySchedules[dayOfWeek].events[1].mode = 0) event1_ModeName$[dayOfWeek] = MODE_0_NAME;
-	else if (daySchedules[dayOfWeek].events[1].mode <= pModesCount) event1_ModeName$[dayOfWeek] = pModeName[daySchedules[dayOfWeek].events[1].mode];
+    if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return("");
 
-	if (daySchedules[dayOfWeek].events[2].mode = 0) event2_ModeName$[dayOfWeek] = MODE_0_NAME;
-	else if (daySchedules[dayOfWeek].events[2].mode <= pModesCount) event2_ModeName$[dayOfWeek] = pModeName[daySchedules[dayOfWeek].events[2].mode];
+	if (daySchedules[_dayOfWeek].events[_eventNr].mode = 0) return(MODE_0_NAME);
+	else if (daySchedules[_dayOfWeek].events[_eventNr].mode <= pModesCount) return(pModeName[daySchedules[_dayOfWeek].events[_eventNr].mode]);
 }
 
-FUNCTION PrintEvent_1Time(INTEGER dayOfWeek)
+FUNCTION PrintEventModeName(INTEGER _eventNr, INTEGER _dayOfWeek)
+{	
+	if (_eventNr = 1) event1_ModeName$[_dayOfWeek] = GetEventModeName(_eventNr, _dayOfWeek);
+	else if (_eventNr = 2) event2_ModeName$[_dayOfWeek] = GetEventModeName(_eventNr, _dayOfWeek);
+}
+
+STRING_FUNCTION GetEventTimeString(INTEGER _eventNr, INTEGER _dayOfWeek)
 {
 	STRING timeString[TIME_STRING_SIZE];
 
 	timeString = "";
 
-	if (daySchedules[dayOfWeek].events[1].hour < 10) timeString = timeString + "0";
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return (timeString);
 
-	timeString = timeString + itoa(daySchedules[dayOfWeek].events[1].hour) + " : ";
+	if (daySchedules[_dayOfWeek].events[_eventNr].hour < 10) timeString = timeString + "0";
+
+	timeString = timeString + itoa(daySchedules[_dayOfWeek].events[_eventNr].hour) + " : ";
     
-	if (daySchedules[dayOfWeek].events[1].minute < 10) timeString = timeString + "0";
+	if (daySchedules[_dayOfWeek].events[_eventNr].minute < 10) timeString = timeString + "0";
 
-    timeString = timeString + itoa(daySchedules[dayOfWeek].events[1].minute);
+    timeString = timeString + itoa(daySchedules[_dayOfWeek].events[_eventNr].minute);
 	
-	event1_Time$[dayOfWeek] = timeString;
+	return (timeString);
 }
 
-FUNCTION PrintEvent_2Time(INTEGER dayOfWeek)
+FUNCTION PrintEventTimeString(INTEGER _eventNr, INTEGER _dayOfWeek)
 {
-	STRING timeString[TIME_STRING_SIZE];
+	if (_eventNr = 1) event1_Time$[_dayOfWeek] = GetEventTimeString(_eventNr, _dayOfWeek);
+	else if (_eventNr = 2) event2_Time$[_dayOfWeek] = GetEventTimeString(_eventNr, _dayOfWeek);
+}
 
-	timeString = "";
+FUNCTION PrintAll()
+{
+	INTEGER dayOfWeek;
 
-	if (daySchedules[dayOfWeek].events[2].hour < 10) timeString = timeString + "0";
-
-	timeString = timeString + itoa(daySchedules[dayOfWeek].events[2].hour) + " : ";
-    
-	if (daySchedules[dayOfWeek].events[2].minute < 10) timeString = timeString + "0";
-
-    timeString = timeString + itoa(daySchedules[dayOfWeek].events[2].minute);
-	
-	event2_Time$[dayOfWeek] = timeString;
+	for (dayOfWeek=1 to DAYS_OF_WEEK_COUNT)
+	{
+		PrintEventModeName(1, dayOfWeek);
+		PrintEventModeName(2, dayOfWeek);
+		PrintEventTimeString(1, dayOfWeek);
+		PrintEventTimeString(2, dayOfWeek);
+	}
 }
 
 
@@ -189,7 +198,8 @@ FUNCTION ProcessDayRecord(STRING _dayRecord)
 	daySchedules[dayOfWeek].events[1].mode = atoi(remove(DELIMITER, tempString));
 	daySchedules[dayOfWeek].events[2].mode = atoi(remove(DELIMITER, tempString));
 
-	PrintEventsModeNames(dayOfWeek);
+	PrintEventModeName(1, dayOfWeek);
+	PrintEventModeName(2, dayOfWeek);
 
 	tempTime = remove(DELIMITER, tempString);
 
@@ -199,8 +209,8 @@ FUNCTION ProcessDayRecord(STRING _dayRecord)
 	daySchedules[dayOfWeek].events[2].hour = atoi(remove(COLON, tempString));
 	daySchedules[dayOfWeek].events[2].minute = atoi(tempString);
 
-	PrintEvent_1Time(dayOfWeek);
-	PrintEvent_2Time(dayOfWeek);
+	PrintEventTimeString(1, dayOfWeek);
+	PrintEventTimeString(2, dayOfWeek);
 }
 
 FUNCTION SaveToFile()
@@ -214,7 +224,11 @@ FUNCTION SaveToFile()
 
 	for(i=1 to DAYS_OF_WEEK_COUNT)
 	{
-		fileContent[i] = itoa(i) + DELIMITER + itoa(0) /*e1_mode*/ + DELIMITER + itoa(0) /*e2_mode*/ + DELIMITER + "06 : 00" /*e1_time*/ + DELIMITER + "18 : 00" /*e2_time*/; 
+		fileContent[i] = itoa(i) + DELIMITER
+						+ itoa(daySchedules[i].events[1].mode) /*e1_mode*/ + DELIMITER
+						+ itoa(daySchedules[i].events[2].mode) /*e2_mode*/ + DELIMITER
+						+ GetEventTimeString(1, i) /*e1_time*/ + DELIMITER
+						+ GetEventTimeString(2, i) /*e2_time*/; 
 	}
 
 	fileName = FILENAME_PREFIX + pScheduleID + FILENAME_SUFIX;
@@ -267,6 +281,57 @@ FUNCTION LoadFromFile()
 	}
 }
 
+FUNCTION CycleEventModes(INTEGER _eventNr, INTEGER _dayOfWeek)
+{
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return;
+
+	if (daySchedules[_dayOfWeek].events[_eventNr].mode = pModesCount) daySchedules[_dayOfWeek].events[_eventNr].mode = 0;
+	else daySchedules[_dayOfWeek].events[_eventNr].mode = daySchedules[_dayOfWeek].events[_eventNr].mode + 1;
+
+	PrintEventModeName(_eventNr, _dayOfWeek);
+}
+
+FUNCTION IncreaseEventHour(INTEGER  _eventNr, INTEGER _dayOfWeek)
+{
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return;    
+
+	if (daySchedules[_dayOfWeek].events[_eventNr].hour >= MAX_HOUR) daySchedules[_dayOfWeek].events[_eventNr].hour = 0;
+	else daySchedules[_dayOfWeek].events[_eventNr].hour = daySchedules[_dayOfWeek].events[_eventNr].hour + HOUR_STEP;
+
+	PrintEventTimeString(_eventNr, _dayOfWeek);
+}
+
+FUNCTION DecreaseEventHour(INTEGER  _eventNr, INTEGER _dayOfWeek)
+{
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return;    
+
+	if (daySchedules[_dayOfWeek].events[_eventNr].hour < HOUR_STEP) daySchedules[_dayOfWeek].events[_eventNr].hour = MAX_HOUR;
+	else daySchedules[_dayOfWeek].events[_eventNr].hour = daySchedules[_dayOfWeek].events[_eventNr].hour - HOUR_STEP;
+
+	PrintEventTimeString(_eventNr, _dayOfWeek);
+}
+
+FUNCTION IncreaseEventMinute(INTEGER  _eventNr, INTEGER _dayOfWeek)
+{
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return;    
+
+	if (daySchedules[_dayOfWeek].events[_eventNr].minute >= MAX_MINUTE) daySchedules[_dayOfWeek].events[_eventNr].minute = 0;
+	else daySchedules[_dayOfWeek].events[_eventNr].minute = daySchedules[_dayOfWeek].events[_eventNr].minute + MINUTE_STEP;
+
+	PrintEventTimeString(_eventNr, _dayOfWeek);
+}
+
+FUNCTION DecreaseEventMinute(INTEGER  _eventNr, INTEGER _dayOfWeek)
+{
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return;    
+
+	if (daySchedules[_dayOfWeek].events[_eventNr].minute < MINUTE_STEP) daySchedules[_dayOfWeek].events[_eventNr].minute = MAX_MINUTE;
+	else daySchedules[_dayOfWeek].events[_eventNr].minute = daySchedules[_dayOfWeek].events[_eventNr].minute - MINUTE_STEP;
+
+	PrintEventTimeString(_eventNr, _dayOfWeek);
+}
+
+
 // Event Handlers
 
 PUSH saveSchedule
@@ -279,10 +344,61 @@ PUSH loadSchedule
 	LoadFromFile();
 }
 
+PUSH event1_ModeCycle
+{
+	CycleEventModes(1, GetLastModifiedArrayIndex());
+}
+
+PUSH event2_ModeCycle
+{
+	CycleEventModes(2, GetLastModifiedArrayIndex());
+}
+
+PUSH event1_HourIncrease
+{
+	IncreaseEventHour(1, GetLastModifiedArrayIndex());
+}
+
+PUSH event2_HourIncrease
+{
+	IncreaseEventHour(2, GetLastModifiedArrayIndex());
+}
+
+PUSH event1_HourDecrease
+{
+	DecreaseEventHour(1, GetLastModifiedArrayIndex());
+}
+
+PUSH event2_HourDecrease
+{
+	DecreaseEventHour(2, GetLastModifiedArrayIndex());
+}
+
+PUSH event1_MinuteIncrease
+{
+	IncreaseEventMinute(1, GetLastModifiedArrayIndex());
+}
+
+PUSH event2_MinuteIncrease
+{
+	IncreaseEventMinute(2, GetLastModifiedArrayIndex());
+}
+
+PUSH event1_MinuteDecrease
+{
+	DecreaseEventMinute(1, GetLastModifiedArrayIndex());
+}
+
+PUSH event2_MinuteDecrease
+{
+	DecreaseEventMinute(2, GetLastModifiedArrayIndex());
+}
+
 // Main Function
 
 Function Main()
 {
 	WaitForInitializationComplete();
-	// TODO Init
+	PrintAll();
+	LoadFromFile();
 }

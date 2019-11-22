@@ -2774,7 +2774,7 @@ EtH=6
 ]
 [
 ObjTp=Dv
-Nm=23 (loads 84, 85 blocked)
+Nm=23 (load 84 blocked)
 H=653
 PrH=39
 DvC=2011
@@ -3150,6 +3150,21 @@ Nm2=KP_14
 Sx2=0
 Sy2=0
 Mx2=0
+]
+[
+ObjTp=Bw
+H=1
+Lx=0
+Ly=0
+Rx=1393
+Ry=913
+Xm=-1
+Ym=-1
+SH=1151
+Z=100
+P=876
+Ht=3
+Hi=71
 ]
 [
 ObjTp=Bw
@@ -33484,14 +33499,14 @@ P59=Obwod 078
 P60=Obwod 079
 P61=Obwod 080
 P62=Obwod 081
-P63=Obwod 082
-P64=Obwod 083
-P65=Obwod 084 Zablokowany
-P66=Obwod 085 Zablokowany
-P67=Obwod 086
-P68=Obwod 087
-P69=Obwod 088
-P70=Obwod 089
+P63=Wejscie
+P64=Elewacja
+P65=Taras (Zablokowany)
+P66=Podjazd
+P67=Spa
+P68=Drzewa
+P69=Niski Taras
+P70=Donice
 P71=Obwod 090
 P72=Obwod 091
 P73=""
@@ -35677,14 +35692,14 @@ PrH=6
 CF=2
 n1I=24
 n1O=24
-Cmn1=23 (loads 84, 85 blocked)\\
+Cmn1=23 (load 84 blocked)\\
 mC=2
 C1=1214
 C2=1215
 mI=24
 I1=3603
 I2=3975
-I4=3604
+I4=3976
 I5=3977
 I7=3978
 I8=3979
@@ -55308,11 +55323,6 @@ Nm=[iPhone][Mode][Audio]_NotAvailable_FB
 ObjTp=Sg
 H=3603
 Nm=//[Lighting][Switch]_Load_084_On
-]
-[
-ObjTp=Sg
-H=3604
-Nm=//[Lighting][Switch]_Load_085_On
 ]
 [
 ObjTp=Sg
