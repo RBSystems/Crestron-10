@@ -190,7 +190,7 @@ FUNCTION ProcessDayRecord(STRING _dayRecord)
 {
 	INTEGER dayOfWeek;
 	STRING tempString[DAY_RECORD_SIZE];
-	STRING tempTime[TIME_STRING_SIZE];
+	STRING tempTime[8];
 
 	tempString = _dayRecord;
 	dayOfWeek = atoi(remove(DELIMITER, tempString));
