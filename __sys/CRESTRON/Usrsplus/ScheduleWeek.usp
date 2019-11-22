@@ -331,6 +331,26 @@ FUNCTION DecreaseEventMinute(INTEGER  _eventNr, INTEGER _dayOfWeek)
 	PrintEventTimeString(_eventNr, _dayOfWeek);
 }
 
+FUNCTION CheckEvent(INTEGER _eventNr, INTEGER _dayOfWeek)
+{
+	if (_eventNr = 0 || _eventNr > EVENTS_COUNT) return;
+
+	if (daySchedules[_dayOfWeek].events[_eventNr].hour = currentHour
+		&& daySchedules[_dayOfWeek].events[_eventNr].minute = currentMinute
+		&& daySchedules[_dayOfWeek].events[_eventNr].mode <> 0) pulse(PULSE_TIME, macroTrigger[daySchedules[_dayOfWeek].events[_eventNr].mode]);
+}
+
+FUNCTION CheckSchedule()
+{
+	INTEGER dayOfWeek;
+	
+	if (currentDayOfWeek = 0) dayOfWeek = 7;
+	else dayOfWeek = currentDayOfWeek;
+
+	CheckEvent(1, dayOfWeek);
+	CheckEvent(2, dayOfWeek);
+}
+
 
 // Event Handlers
 
@@ -392,6 +412,11 @@ PUSH event1_MinuteDecrease
 PUSH event2_MinuteDecrease
 {
 	DecreaseEventMinute(2, GetLastModifiedArrayIndex());
+}
+
+CHANGE currentMinute
+{
+	CheckSchedule();
 }
 
 // Main Function
