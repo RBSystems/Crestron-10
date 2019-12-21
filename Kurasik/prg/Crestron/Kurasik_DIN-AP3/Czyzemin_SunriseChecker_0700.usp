@@ -1,0 +1,41 @@
+//Compiler Directives
+#CATEGORY "41" // Remote System Interface
+#SYMBOL_NAME "Czyzemin_SunriseChecker_0700"
+#HINT ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+#DEFINE_CONSTANT PULSE_TIME 10
+#DEFINE_CONSTANT MIN_HOUR 7
+
+// Include Libraries
+
+// Inputs
+
+DIGITAL_INPUT minHour_OS, sunrise_OS;
+ANALOG_INPUT sunriseHour#_FB, sunriseMinute#_FB;
+
+// Outputs
+DIGITAL_OUTPUT triggerOut;
+
+// Event Handlers
+PUSH minHour_OS
+{
+	if (sunriseHour#_FB < MIN_HOUR) pulse(PULSE_TIME, triggerOut);
+}
+
+PUSH sunrise_OS
+{
+	if ((sunriseHour#_FB > MIN_HOUR) || (sunriseHour#_FB = MIN_HOUR && sunriseMinute#_FB > 0)) pulse(PULSE_TIME, triggerOut);
+}
+
+
+// Main Function
+
+Function Main()
+{
+	WaitForInitializationComplete();
+	// TODO Init
+}

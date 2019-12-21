@@ -76,7 +76,8 @@
   SymJam=NonExclusive
   FileName=Presence Simulation.ush
   SIMPLPlusModuleEncoding=0
-  clz1=CrestronKNXLibrary
+  clz1=ssl_Utility
+  clz2=CrestronKNXLibrary
 [END]
 [BEGIN]
   ObjTp=Dp
