@@ -1,0 +1,38 @@
+problem z przyciskiem w ³azience: po wy³¹czeniu ca³ej ³azienki z panelu, ponowna proba w³¹czenia œwiat³a,rolety,wentylatora z przycisku przy prysznicu jest pomyslna dopiero po drugim naciœniêciu z rzêdu. ponad to na jednej funkcji tego przycisku zamieni³ sie obwód: zapala siê led zamiast oœwietlenia górnego.
+ 
+po jakim czasie wylacza sie wentylator w lazience na gorze?
+ 
+dó³:
+led w garderobie nie gasi sie po w³¹czeniu sceny,
+mood w jadalni w scenie pali sie za ciemno - z tego co pamietam to mia³oto wszystko tak byæ zorganizowane aby samemu mo¿na by³o zmieniaæ parametry poszczególnych scen!
+ 
+zmiany:
+do³:
+panel: górny lewy -> moon na pietrze
+lewy -> dolny kuchnia 1
+ 
+ 
+uwaga: nie da sie zatrzymaæ rolet przyciskaj¹c krótko ten sam przycisk !? podczas rozwijania badz zwijania rolet
+ 
+bardzo wa¿ne: chcia³bym aby by³a mo¿liwoœæ gaszenia œwiate³ led w szafach! prawde pisz¹c ja by³em przekonany, ¿e to bedzie opcja oczywista i defoltowa…
+ 
+interface:
+zmiana nazewnictwa:
+salon -> a. salon
+jadalnia -> a.jadalnia
+korytarz ->salon
+ 
+uk³ad:
+a.salon salon korytarz
+a.jadalnia kuchnia1 kuchnia2
+garderoba ³azienka1 ³azienka2
+ 
+na piêtrze w panelu rolet zamienione s¹ opisy pomieszczeñ sypialnia z ³¹zienk¹
+ 
+nie zmieniaj¹ siê procenty na oprawach œciemnianych
+ 
+chcia³bym równie¿ zmieniæ przypisanie kilku obwodów na piêtrze
+ 
+z tego co rozmawia³em z Panem Krzysztofem dawno dawno temu, to mówiliœmy o opcji umieszczenia czujnika temp. w przycisku NICO. pisze o tym dlatego, poniewa¿ chci³bym aby pêtle ogrzewania na górze by³y rozdzielone pod dwa( albo po 3 nie wiem dok³adnie) na pêtle w ³¹zience (czêœæ pod oknem i pod prysznicem) i tu umieœciæ czujnik w przycisku przy prysznicu, oraz pêtle w sypialni) czujnik w panelu tak jak jest.
+ 
+na chwile obecna to chyba wszytko co pamietam… acha i chcialbym jeszcze ponazywac jakos sceny swietle w interfejscie na kom, ale tez myslalem ze bede mogl sam to sobie zmieniaæ!!!! ;>

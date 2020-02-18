@@ -1,0 +1,8 @@
+W za³¹czniku masz listê joinów. 
+¯eby nic nie pomyliæ, obwody w DIGach s¹ w takiej kolejnoœci i z takimi rezerwami jak s¹ fizycznie wpiête na sterowniku.
+
+Obwody opisane jako _pustka_ s¹ fizycznie na suficie piêtra, ale jako ¿e jest tam antresola, to oœwietlaj¹ g³ównie parter. Trzeba bêdzie je pokazaæ na obu rzutach - i piêtra i parteru.
+
+S¹ jeszcze te dwa obwody ³azienkowe o których Ci mówi³em -  podgrzewana mata i wentylator. Nie wiem na które wyjœcia je Artur wpi¹³, ale najpewniej bêd¹ odpalane z automatu.
+
+Resztê ustalimy na miejscu.
