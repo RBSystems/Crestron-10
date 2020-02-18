@@ -1,0 +1,13 @@
+[Entries]
+DIN-AP2 Remote=tcp 083.220.112.212
+DIN-AP2=tcp 192.168.0.251
+New Entry 1=usb
+
+[Settings]
+DefaultEntry=
+
+[Comments]
+DIN-AP2 Remote=
+DIN-AP2=
+New Entry 1=
+

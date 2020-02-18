@@ -1,0 +1,27 @@
+Router 
+Has³o: 86226063
+IP lokalne: 192.168.0.1
+
+IP zewnetrzne: 083.220.112.212
+
+WIFI
+SSID: WiFi
+Pass: zalew123
+
+
+Przekierowania portów
+
+Indeks	Protokó³	Port zdalny	Host lokalny	Port lokalny
+
+1	TCP/UDP		41794		192.168.0.251	41794		Crestron
+2	TCP/UDP		41795		192.168.0.251	41795		Crestron
+3	TCP/UDP		41790		192.168.0.251	41790		Crestron
+4	TCP/UDP		41890		192.168.0.251	41890		Crestron
+5	TCP/UDP		8080		192.168.0.251	80		Crestron
+6	TCP/UDP		2455		192.168.0.250	2455		WAGO CoDeSys
+7	TCP/UDP		3671		192.168.0.250	3671		WAGO KNX/IP
+8	TCP/UDP		82		192.168.0.250	80		WAGO Web-based Management
+9	TCP/UDP		85		192.168.0.150	80		Rejestrator
+10	TCP/UDP		6626		192.168.0.250	6626		WAGO Ethernet Settings
+11	TCP/UDP		137		192.168.0.250	137		WAGO Ethernet Settings
+12	TCP/UDP	  	8081		192.168.0.251	8081		Crestron

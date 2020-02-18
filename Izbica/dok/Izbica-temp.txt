@@ -1,0 +1,1 @@
+1) Czy DIG-i rekuperatora biegToggle i TrybToggle idą do zbiorczej bramki DIG czy jako pulse (jak np. alloffy) ?
