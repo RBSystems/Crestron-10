@@ -1,12 +1,12 @@
-SSID	:	s3art
+SSID	:	art
 Pass	:	s3arts3art
 
 Router	:	192.168.0.1
-Login	:	admin
-Pass	:	admin
+Login	:	poprzez unifi network controller (strychu-starepsiehaslo)
 
 Publiczne IP	:	85.89.190.221
-iPad IP-ID		:	0A
+
+iPad IP-ID	:	0A
 xPanel IP-ID	:	1A
 
 ====================================
@@ -24,6 +24,8 @@ iPad code	:	2601
 SC code		:	3526
 
 ===================
+DIN-AP3 Admin = strycht-drukowanieodpopiola
+
 
 Crestron user
 
