@@ -29,3 +29,22 @@ Crestron user
 
 User : user01
 Pass : crestronDom01
+
+
+2601
+
+Nie gra myzyka w:
+
+1) częsć głośników w salonie (strefa połączona z jadalnią - tam wszystkie graja)
+2) Bawialnia - AZ-05 - 1/5
+3) Goscinny prawy - AZ-04 - 1/4
+
+4) Pokoj dzieci lewy - AZ-02 - 1/2
+5) Pokoj dzieci prawy - AZ-03 - 1/2
+6) Lazienka dzieci - AZ-01 - 1/2
+
+
+Inne problemy:
+- silniki rolet
+- czujka ruchu w sypialni po zaniku zasilania działa całą dobę zamiast tylko do 22:00
+- grzejnik podłogowy w kinie domowym często sam się włącza niezależnie od temperatury
