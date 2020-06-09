@@ -2,6 +2,8 @@ IP Zewnętrzne		:	178.183.78.195
 Router password		:	s3arts3art
 WiFi password		:	s3arts3art
 
+Yamaha WXAD-10		:	192.168.1.21 - 33 (13 szt.)
+
 WAGO-Sauna			:	192.168.1.50
 
 KNX_1				:	192.168.1.51
