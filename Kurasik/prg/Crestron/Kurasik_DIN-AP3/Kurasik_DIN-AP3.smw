@@ -98783,8 +98783,8 @@ P9=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi3 HTTP/1.1\nHost: 192.1
 P10=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi4 HTTP/1.1\nHost: 192.168.1.23\n\n
 P11=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi5 HTTP/1.1\nHost: 192.168.1.23\n\n
 P12=""
-P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=5 HTTP/1.1\nHost: 192.168.1.23\n\n
-P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=5 HTTP/1.1\nHost: 192.168.1.23\n\n
+P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=1 HTTP/1.1\nHost: 192.168.1.23\n\n
+P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=1 HTTP/1.1\nHost: 192.168.1.23\n\n
 P15=GET /YamahaExtendedControl/v1/main/setMute?enable=true HTTP/1.1\nHost: 192.168.1.23\n\n
 P16=GET /YamahaExtendedControl/v1/main/setMute?enable=false HTTP/1.1\nHost: 192.168.1.23\n\n
 P17=
@@ -99022,8 +99022,8 @@ P9=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi3 HTTP/1.1\nHost: 192.1
 P10=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi4 HTTP/1.1\nHost: 192.168.1.24\n\n
 P11=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi5 HTTP/1.1\nHost: 192.168.1.24\n\n
 P12=""
-P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=5 HTTP/1.1\nHost: 192.168.1.24\n\n
-P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=5 HTTP/1.1\nHost: 192.168.1.24\n\n
+P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=1 HTTP/1.1\nHost: 192.168.1.24\n\n
+P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=1 HTTP/1.1\nHost: 192.168.1.24\n\n
 P15=GET /YamahaExtendedControl/v1/main/setMute?enable=true HTTP/1.1\nHost: 192.168.1.24\n\n
 P16=GET /YamahaExtendedControl/v1/main/setMute?enable=false HTTP/1.1\nHost: 192.168.1.24\n\n
 P17=
@@ -99423,8 +99423,8 @@ P9=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi3 HTTP/1.1\nHost: 192.1
 P10=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi4 HTTP/1.1\nHost: 192.168.1.25\n\n
 P11=GET /YamahaExtendedControl/v1/main/setInput?input=hdmi5 HTTP/1.1\nHost: 192.168.1.25\n\n
 P12=""
-P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=5 HTTP/1.1\nHost: 192.168.1.25\n\n
-P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=5 HTTP/1.1\nHost: 192.168.1.25\n\n
+P13=GET /YamahaExtendedControl/v1/main/setVolume?volume=up&step=1 HTTP/1.1\nHost: 192.168.1.25\n\n
+P14=GET /YamahaExtendedControl/v1/main/setVolume?volume=down&step=1 HTTP/1.1\nHost: 192.168.1.25\n\n
 P15=GET /YamahaExtendedControl/v1/main/setMute?enable=true HTTP/1.1\nHost: 192.168.1.25\n\n
 P16=GET /YamahaExtendedControl/v1/main/setMute?enable=false HTTP/1.1\nHost: 192.168.1.25\n\n
 P17=
