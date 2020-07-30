@@ -4,14 +4,15 @@ Pass	:	s3arts3art
 Router	:	192.168.0.1
 Login	:	poprzez unifi network controller (strychu-starepsiehaslo)
 
+Router na grillu	:	192.168.0.3
+( rezerwacja po MAC A4-2B-B0-B6-48-FB) (LAN z puli 192.168.1.1) (Sonos 192.168.1.10)
+
 Publiczne IP	:	85.89.190.221
 
 iPad IP-ID	:	0A
 xPanel IP-ID	:	1A
 
 ====================================
-
-Router dodatkowy	:	192.168.0.177
 
 DIN-AP3		:	192.168.0.201
 CI-KNX_1	:	192.168.0.211
