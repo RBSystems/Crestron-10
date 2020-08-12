@@ -11,7 +11,7 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
-DIM-U4-86_Remote_Indirect=DIN-AP3_Remote:cresnet 86
+DIM-U4-86_Remote_Indirect=DIN-AP3_Remote:cresnet 87
 0_usb=usb
 DIN-AP3=ssh 192.168.1.201
 DIN-DALI_1=auto 192.168.1.211
