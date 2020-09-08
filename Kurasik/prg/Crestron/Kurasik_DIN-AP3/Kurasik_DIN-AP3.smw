@@ -22,7 +22,7 @@ CmVr=3.03
 DbVr=89.05.002.00
 DvcDbVr=115.00.002.00
 PgmNm=Tomasz Strycharz
-DlrNm=s3art
+DlrNm=IS Expert
 CltNm=Kurasik_DIN-AP3
 SmVr=1103
 DvVr=1103
@@ -36,7 +36,7 @@ FltTmp=1
 FpCS=0
 EnType=0
 ZeroOnIoOk=0
-PIT=main
+PIT=Main
 SGMethod=3
 ]
 [
@@ -7083,34 +7083,6 @@ Nm6=CI-KNX Comm
 Sx6=0
 Sy6=0
 Mx6=0
-]
-[
-ObjTp=Bw
-H=1
-Lx=0
-Ly=0
-Rx=1163
-Ry=457
-Xm=-1
-Ym=-1
-SH=59
-Z=100
-Ht=1
-Hi=1
-]
-[
-ObjTp=Bw
-H=1
-Lx=0
-Ly=457
-Rx=1163
-Ry=914
-Xm=-1
-Ym=-1
-SH=498
-Z=100
-Ht=1
-Hi=1
 ]
 [
 ObjTp=Bw
