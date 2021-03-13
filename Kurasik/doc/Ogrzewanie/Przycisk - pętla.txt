@@ -1,0 +1,16 @@
+Przyciski sterujące ogrzewaniem 
+
+Przycisk 1 - Pętla 26
+Przycisk 3 - Pętla 25
+Przycisk 4 - Pętla 24
+Przycisk 12 - Pętla 8, 10, 11, 13
+Przycisk 13 - Pętla 6, 7, 9, 14
+Przycisk 14 - Pętla 1, 2
+Przycisk 15 - Pętla 3
+Przycisk 16 - Pętla 4
+Przycisk 17 - Pętla  15
+Przycisk 22 - Pętla 17
+Przycisk 24 - Pętla 20
+
+Pętle grzane automatycznie:
+5, 12, 16, 18, 19, 21, 22, 27, 28, 29, 30, 31, 39, 40, 41, 42
