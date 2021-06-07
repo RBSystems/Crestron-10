@@ -1,0 +1,12 @@
+- sterowanie 13 roletami zewnętrznymi 220V,
+- 8 punktów świetlnych on/off 220V halogen,
+- 4 punkty świetlne halogen sciemniany phase cut 220V,
+- 2 punkty świetlne Led phase cut... (https://www.aqform.com/pl/oprawy-natynkowe,MIXLINE-LED-surface,MX0014) sterowane przez MeanWell LCM-60KN driver,
+- 2 punkty świetlne taśmy led sterowane MeanWell PWM-120-24KN (do punktów świetlnych sterowanych driverami MeanWell mam poprowadzony przewód KNX),
+- Visu server visualizacyjny Jung.
+
+
+===================
+tutorial knx meanwell
+https://www.youtube.com/watch?v=ItjPJlFwRzM
+=======================
