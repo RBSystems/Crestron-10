@@ -10,3 +10,36 @@
 tutorial knx meanwell
 https://www.youtube.com/watch?v=ItjPJlFwRzM
 =======================
+
+aktor(y) do obsługi 13 rolet zewnętrznych 220V
+
+aktor(y) on/off do obsługi 8 punktów świetlnych 220V bez ściemniania
+
+server
+
+przyciski
+
+------------------------------------------
+zasilacz 640mA (20640 REG) x1
+https://www.jung.de/sg/online-catalogue/358700534/
+
+aktor 24-kanałowy (23024 1S R) x1
+https://www.jung.de/pl/katalog-internetowy/1155818331/
+
+aktor 16-kanałowy (23016 1S R) x1
+https://www.jung.de/pl/katalog-internetowy/1155818326/
+
+Server Smart Visu
+https://www.jung.de/pl/5724/produkty/technologia/system-knx/serwer-smart-visu/
+- czy wymaga on do działania dodatkowych urządzeń, np. knx ip-router?
+- czy wymaga dodatkowego zakupu licencji?
+- w jaki sposób jest zasilany - czy z wspólnego zasilacza KNX czy z osobnego? Jeśli z osobnego, to czy jest w zestawie czy trzeba dokupić osobno?
+
+4093KRMTSD - 4 sztuki z ramką i klawiszem czarne
+https://www.jung.de/pl/katalog-internetowy/69798083/
+
+4191TSM - 2 sztuki z ramką i klawiszem czarne
+https://www.jung.de/pl/katalog-internetowy/347895741/
+
+4194TSM - 2 sztuki z ramką i klawiszem czarne
+https://www.jung.de/pl/katalog-internetowy/347895747/
