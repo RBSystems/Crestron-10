@@ -20,13 +20,13 @@ server
 przyciski
 
 ------------------------------------------
-zasilacz 640mA (20640 REG) x1
+zasilacz 640mA (20640REG) x1
 https://www.jung.de/sg/online-catalogue/358700534/
 
-aktor 24-kanałowy (23024 1S R) x1
+aktor 24-kanałowy (230241SR) x1
 https://www.jung.de/pl/katalog-internetowy/1155818331/
 
-aktor 16-kanałowy (23016 1S R) x1
+aktor 16-kanałowy (230161SR) x1
 https://www.jung.de/pl/katalog-internetowy/1155818326/
 
 Server Smart Visu
