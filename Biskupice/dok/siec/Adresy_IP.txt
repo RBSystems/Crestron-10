@@ -1,11 +1,11 @@
 Adresy IP s3art
 
 	CRESTRON
-AES 		10.9.1.241
-DIN-AP2		10.9.1.240
-iDOC		10.9.1.245
-TouchPC		10.9.1.243
-DM-MD8x8	10.9.1.200
+AES 10.9.1.241 (procesor odpowiedzialny za multiroom audio)
+DIN-AP2 10.9.1.240 (głowny procesor, master, odpowiedzialny m in. za wizualizacje na iPad i inne)
+iDOC 10.9.1.245 (stacja dokująca do iPod-a)
+TouchPC 10.9.1.243 (duży ekran dotykowy przy wejściu)
+DM-MD8x8 10.9.1.200 (jednostka odpowiedzialna za multiroom video - Digital Media)
 
  	WAGO
 WAGO KOTLOWNIA	10.9.1.190
