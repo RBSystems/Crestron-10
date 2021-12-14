@@ -4,4 +4,4 @@ Input 2 = Zasuwa pokrywy basenu (1 = zasunięta)
 Input 3 = Kontaktron basenu (1 = limit otwarcia)
 Input 4 = Kontaktron basenu (1 = limit zamknięcia)
 
-Input 5 = Stan zasilania głównego (1 = aktywne) 
+Input 5 = Stan zasilania głównego (1 = aktywne)
