@@ -1,0 +1,850 @@
+// Compiler Directives
+
+#SYMBOL_NAME "Ecler MIMO88 Farmacja (2-series)"
+#CATEGORY "28" // Receiver/Processor
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+
+// Constants
+
+#DEFINE_CONSTANT MAX_CHANNELS_COUNT		8
+#DEFINE_CONSTANT MAX_MATRIX_SIZE		64
+#DEFINE_CONSTANT BUFFER_SIZE			512
+#DEFINE_CONSTANT MAX_MSG_LENGTH			128
+#DEFINE_CONSTANT DEF_DELAY				8
+#DEFINE_CONSTANT LONG_DELAY				512
+#DEFINE_CONSTANT CONNECT_MSG			"SYSTEM CONNECT"
+#DEFINE_CONSTANT DISCONNECT_MSG			"SYSTEM DISCONNECT"
+#DEFINE_CONSTANT LF_CODE				"\x0A"
+#DEFINE_CONSTANT HEADER_SYSTEM			"SYSTEM "
+#DEFINE_CONSTANT HEADER_DATA			"DATA "
+#DEFINE_CONSTANT HEADER_ERROR			"ERROR "
+#DEFINE_CONSTANT HEADER_GET				"GET "
+#DEFINE_CONSTANT HEADER_SET				"SET "
+#DEFINE_CONSTANT HEADER_INC				"INC "
+#DEFINE_CONSTANT HEADER_DEC				"DEC "
+#DEFINE_CONSTANT HEADER_SUBSCRIBE		"SUBSCRIBE"
+#DEFINE_CONSTANT HEADER_UNSUBSCRIBE		"UNSUBSCRIBE"
+#DEFINE_CONSTANT PARAM_XMUTE			"XMUTE "
+#DEFINE_CONSTANT PARAM_IMUTE			"IMUTE "
+#DEFINE_CONSTANT PARAM_OMUTE			"OMUTE "
+#DEFINE_CONSTANT PARAM_ILEVEL			"ILEVEL "
+#DEFINE_CONSTANT PARAM_OLEVEL			"OLEVEL "
+#DEFINE_CONSTANT PARAM_ALL				"ALL"
+#DEFINE_CONSTANT PARAM_POWER_ON			"POWER ON"
+#DEFINE_CONSTANT PARAM_POWER_OFF		"POWER OFF"
+#DEFINE_CONSTANT PARAM_YES				"YES"
+#DEFINE_CONSTANT PARAM_NO				"NO"
+#DEFINE_CONSTANT PARAM_INCREASE			" 5"
+
+// Inputs
+DIGITAL_INPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_INPUT keepConnection;
+DIGITAL_INPUT pollAllData;
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT inputMuteToggle[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT outputMuteToggle[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT inputMuteOn[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT outputMuteOn[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT inputMuteOff[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT outputMuteOff[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT inputLevelUp[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT outputLevelUp[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT inputLevelDown[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT outputLevelDown[MAX_CHANNELS_COUNT];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT matrixPointOn[MAX_MATRIX_SIZE];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT matrixPointOff[MAX_MATRIX_SIZE];
+DIGITAL_INPUT _SKIP_;
+DIGITAL_INPUT matrixPointToggle[MAX_MATRIX_SIZE, MAX_MATRIX_SIZE];
+DIGITAL_INPUT _SKIP_;
+BUFFER_INPUT Rx$[BUFFER_SIZE];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT inputLevel#[MAX_CHANNELS_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT outputLevel#[MAX_CHANNELS_COUNT];
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT _SKIP_;
+ANALOG_INPUT exclusiveSource#[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+
+// Outputs
+DIGITAL_OUTPUT _SKIP_, _SKIP_, _SKIP_, _SKIP_;
+DIGITAL_OUTPUT connection_FB;
+DIGITAL_OUTPUT deviceReady_FB;
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT inputMuteOn_FB[MAX_CHANNELS_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT outputMuteOn_FB[MAX_CHANNELS_COUNT];
+DIGITAL_OUTPUT _SKIP_;
+DIGITAL_OUTPUT matrixPoint_FB[MAX_MATRIX_SIZE, MAX_MATRIX_SIZE];
+DIGITAL_OUTPUT _SKIP_;
+STRING_OUTPUT Tx$;
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT inputLevel#_FB[MAX_CHANNELS_COUNT];
+ANALOG_OUTPUT _SKIP_;
+ANALOG_OUTPUT outputLevel#_FB[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT inputVolumePercent$[MAX_CHANNELS_COUNT];
+ANALOG_OUTPUT _SKIP_;
+STRING_OUTPUT outputVolumePercent$[MAX_CHANNELS_COUNT, MAX_CHANNELS_COUNT];
+
+// Parameters
+
+INTEGER_PARAMETER pOutputsCount, pInputsCount, pLastSource, pInitTime;
+
+// Parameters properties
+
+#BEGIN_PARAMETER_PROPERTIES pOutputsCount, pInputsCount, pLastSource
+	propValidUnits = unitDecimal;
+	propDefaultUnit = unitDecimal;
+	propBounds = 1d , 8d;
+	propDefaultValue = 8d;
+#END_PARAMETER_PROPERTIES
+
+#BEGIN_PARAMETER_PROPERTIES pInitTime
+	propValidUnits = unitTime;
+	propDefaultUnit = unitTime;
+	propBounds = 1s , 60s;
+	propDefaultValue = 15s;
+#END_PARAMETER_PROPERTIES
+
+// Global Variables
+
+STRING tempMsg[MAX_MSG_LENGTH]; 
+STRING tempString[MAX_MSG_LENGTH];
+
+// Functions
+
+INTEGER_FUNCTION CalculateMatrixIndex(INTEGER _input, INTEGER _output)
+{
+	return (MAX_CHANNELS_COUNT * (_output - 1) + _input);
+}
+
+INTEGER_FUNCTION GetOutputByMatrixIndex(INTEGER _matrixIndex)
+{
+	INTEGER outputNr, matrixIndex;
+
+	matrixIndex = _matrixIndex;
+
+	if (matrixIndex < 1 || matrixIndex > MAX_MATRIX_SIZE)
+	{
+		trace("Matrix Index out of bounds!");
+		return (0);
+	}
+
+	outputNr = 1;
+	
+	while (1)
+	{
+		if (matrixIndex <= MAX_CHANNELS_COUNT) return (outputNr);
+		else
+		{
+			matrixIndex = matrixIndex - MAX_CHANNELS_COUNT;
+			outputNr = outputNr + 1;
+		}
+	}
+}
+
+INTEGER_FUNCTION GetInputByMatrixIndexAndOutput(INTEGER _matrixIndex, INTEGER _output)
+{
+	if (_matrixIndex < 1 || _matrixIndex > MAX_MATRIX_SIZE)
+	{
+		trace("Matrix Index out of bounds!");
+		return (0);
+	}
+
+	return (_matrixIndex - MAX_CHANNELS_COUNT * (_output - 1));
+}
+
+// Wysylanie wiadomosci
+FUNCTION SendMsg(STRING msg)
+{
+	Tx$ = msg + LF_CODE;
+	delay(DEF_DELAY);
+}
+
+// +++++ GET START +++++
+
+// Input Mute FB
+FUNCTION PollIMuteByInput(INTEGER _input)
+{
+	tempMsg = HEADER_GET + PARAM_IMUTE + itoa(_input);
+	sendMsg(tempMsg);    
+}
+
+// Output Mute FB
+FUNCTION PollOMuteByOutput(INTEGER _output)
+{
+	tempMsg = HEADER_GET + PARAM_OMUTE + itoa(_output);
+	sendMsg(tempMsg);
+}
+
+// Input Level FB
+FUNCTION PollILevelByInput(INTEGER _input)
+{
+	tempMsg = HEADER_GET + PARAM_ILEVEL + itoa(_input);
+	sendMsg(tempMsg);
+}
+
+// Output Level FB
+FUNCTION PollOLevelByOutput(INTEGER _output)
+{
+	tempMsg = HEADER_GET + PARAM_OLEVEL + itoa(_output);
+	sendMsg(tempMsg);
+}
+
+// Matrix Point Mute FB
+FUNCTION PollXMuteByPoint(INTEGER _input, INTEGER _output)
+{
+	tempMsg = HEADER_GET + PARAM_XMUTE + itoa(_input) + " " + itoa(_output);
+	sendMsg(tempMsg);
+}
+
+// Matrix Output Mute FB
+FUNCTION PollXMuteByOutput(INTEGER _output)
+{
+	INTEGER inputNr;
+
+	for(inputNr = 1 to pInputsCount)
+	{
+		PollXMuteByPoint(inputNr, _output);
+	}
+}
+
+// Zadanie wiadomosci ze wszystkimi FB
+FUNCTION PollAll()
+{
+	INTEGER index;
+
+	for (index = 1 to pOutputsCount)
+	{
+		PollOMuteByOutput(index);
+        PollOLevelByOutput(index);
+        PollXMuteByOutput(index);
+	}
+
+	for (index = 1 to pInputsCount)
+	{
+		PollIMuteByInput(index);
+        PollILevelByInput(index);
+	}	
+}
+
+// ----- GET STOP -----
+
+// =====================
+
+// +++++ SET START +++++                     
+
+// Ustawia wybrany punkt matrycy na ON lub OFF
+FUNCTION SetMatrixPoint(INTEGER _input, INTEGER _output, STRING _mute)
+{
+	tempMsg = HEADER_SET + PARAM_XMUTE + itoa(_input) + " " + itoa(_output) + " " + _mute;
+	SendMsg(tempMsg);
+    PollXMuteByPoint(_input, _output);
+}
+
+// Ustawia wybrany punkt matrycy na ON
+FUNCTION SetMatrixPointOn(INTEGER _input, INTEGER _output)
+{
+	SetMatrixPoint(_input, _output, PARAM_NO);
+}
+
+// Ustawia wybrany punkt matrycy na OFF
+FUNCTION SetMatrixPointOff(INTEGER _input, INTEGER _output)
+{
+	SetMatrixPoint(_input, _output, PARAM_YES);
+}
+
+// Ustawia wybrany punkt matrycy na OFF
+FUNCTION SetMatrixPointToggle(INTEGER _input, INTEGER _output)
+{
+	if (matrixPoint_FB[calculateMatrixIndex(_input, _output)]) SetMatrixPointOff(_input, _output);
+	else SetMatrixPointOn(_input, _output);
+}
+
+// Ustawianie Mute konkretnego wejscia
+FUNCTION SetInputMute(INTEGER _input, STRING _mute)
+{
+	tempMsg = HEADER_SET + PARAM_IMUTE + itoa(_input) + " " + _mute;
+	SendMsg(tempMsg);
+	PollIMuteByInput(_input);
+}
+
+// Ustawianie Mute konkretnego wyjscia
+FUNCTION SetOutputMute(INTEGER _output, STRING _mute)
+{
+	tempMsg = HEADER_SET + PARAM_OMUTE + itoa(_output) + " " + _mute;
+	SendMsg(tempMsg);
+	PollOMuteByOutput(_output);
+}
+
+// Mute On konkretnego wejscia
+FUNCTION SetInputMuteOn(INTEGER _input)
+{
+	SetInputMute(_input, PARAM_YES);
+}
+
+// Mute On konkretnego wyjscia
+FUNCTION SetOutputMuteOn(INTEGER _output)
+{
+	SetOutputMute(_output, PARAM_YES);
+}
+
+// Mute Off konkretnego wejscia
+FUNCTION SetInputMuteOff(INTEGER _input)
+{
+	SetInputMute(_input, PARAM_NO);
+}
+
+// Mute Off konkretnego wyjscia
+FUNCTION SetOutputMuteOff(INTEGER _output)
+{
+	SetOutputMute(_output, PARAM_NO);
+}
+
+// Mute TOG konkretnego wejscia
+FUNCTION SetInputMuteTOG(INTEGER _input)
+{
+	if (inputMuteOn_FB[_input] = 1) SetInputMuteOff(_input);
+	else SetInputMuteOn(_input);
+}
+
+// Mute TOG konkretnego wyjscia
+FUNCTION SetOutputMuteTOG(INTEGER _output)
+{
+	if (outputMuteOn_FB[_output] = 1) SetOutputMuteOff(_output);
+	else SetOutputMuteOn(_output);
+}
+
+// Ustawianie konkretnej glonosci konkretnego wejscia
+FUNCTION SetInputLevel(INTEGER _input, INTEGER _level)
+{ 
+	tempMsg = HEADER_SET + PARAM_ILEVEL + itoa(_input) + " " + itoa(_level);
+	SendMsg(tempMsg);
+	PollILevelByInput(_input);
+}
+
+// Ustawianie konkretnej glonosci konkretnego wyjscia
+FUNCTION SetOutputLevel(INTEGER _output, INTEGER _level)
+{ 
+	tempMsg = HEADER_SET + PARAM_OLEVEL + itoa(_output) + " " + itoa(_level);
+	SendMsg(tempMsg);
+	PollOLevelByOutput(_output);
+}
+
+// Zwiekaszanie glosnosci wybranego wejscia o domyslna wartosc PARAM_INCREASE
+FUNCTION IncreaseInputLevel(INTEGER _input)
+{
+	tempMsg = HEADER_INC + PARAM_ILEVEL + itoa(_input) + " " + PARAM_INCREASE;
+	SendMsg(tempMsg);
+}
+
+// Zwiekaszanie glosnosci wybranego wyjscia o domyslna wartosc PARAM_INCREASE
+FUNCTION IncreaseOutputLevel(INTEGER _output)
+{
+	tempMsg = HEADER_INC + PARAM_OLEVEL + itoa(_output) + " " + PARAM_INCREASE;
+	SendMsg(tempMsg);
+}
+
+// Zmniejszanie glosnosci wybranego wejscia o domyslna wartosc PARAM_INCREASE
+FUNCTION DecreaseInputLevel(INTEGER _input)
+{
+	tempMsg = HEADER_DEC + PARAM_ILEVEL + itoa(_input) + " " + PARAM_INCREASE;
+	SendMsg(tempMsg);
+}
+
+// Zmniejszanie glosnosci wybranego wyjscia o domyslna wartosc PARAM_INCREASE
+FUNCTION DecreaseOutputLevel(INTEGER _output)
+{
+	tempMsg = HEADER_DEC + PARAM_OLEVEL + itoa(_output) + " " + PARAM_INCREASE;
+	SendMsg(tempMsg);
+}
+
+
+
+// ----- SET STOP -----
+
+// +++++ Exclusive START +++++
+
+FUNCTION SetExclusiveSource(INTEGER _output, INTEGER _input)
+{
+	INTEGER index;
+    
+	if (_input > pLastSource)
+	{
+		Trace("Invalid Exclusive Source Setting");
+		return;
+	}
+
+	for (index = 1 to pLastSource)
+	{
+		SetMatrixPointOff(index, _output);
+	}
+
+	if (_input > 0) SetMatrixPointOn(_input, _output);
+}
+
+// ----- Exclusive STOP -----
+
+// Inicjalizacja matrycy, unmute wszystkich wejsc i wyjsc, mute matrixPoint-ow
+// Ustawienie exclusive source dla wyjsc
+FUNCTION InitializeMatrix()
+{
+	Integer inputNr, outputNr;
+
+	for (outputNr = 1 to pOutputsCount)
+	{
+		SetOutputMuteOff(outputNr);
+
+		for (inputNr = 1 to pInputsCount)
+		{
+			SetInputMuteOff(inputNr);
+			SetMatrixPointOff(inputNr, outputNr);
+		}
+
+		SetExclusiveSource(outputNr, exclusiveSource#[outputNr]);
+	}
+}
+
+
+// ====================
+
+// +++++ CONNECT START +++++
+
+// Laczenie z serwerem
+FUNCTION Connect()
+{
+	ClearBuffer(Rx$); // dodano
+	connection_FB = 1;
+	sendMsg(CONNECT_MSG);
+	wait(LONG_DELAY, INIT_WAIT_1)
+	{
+		InitializeMatrix();
+		PollAll();
+	}
+	wait(pInitTime, INIT_WAIT_2) deviceReady_FB = 1;
+}
+
+// Rozlaczanie z serwerem
+FUNCTION Disconnect()
+{
+	CancelAllWait();
+	sendMsg(DISCONNECT_MSG);
+	connection_FB = 0;
+	deviceReady_FB = 0;
+}
+
+// ----- CONNECT STOP -----
+
+// ====================
+
+// +++++ HANDLING START +++++
+
+// Obsluga FB Matrycy
+// DATA OMUTE 8 2 YES\X0A
+// DATA OMUTE 3 5 NO\X0A
+FUNCTION HandleDataXMuteMsg(STRING singleMsg)
+{
+	STRING inputNrString[MAX_MSG_LENGTH];
+	STRING outputNrString[MAX_MSG_LENGTH];
+	INTEGER inputNr, outputNr, matrixPointNr;
+    
+
+	trace("HandleDataXMuteMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_XMUTE, singleMsg);
+
+	inputNrString = remove(" ", singleMsg);
+    
+	trace("XMute: inputNrString = %s", inputNrString);
+
+    inputNr = atoi(inputNrString);
+
+	outputNrString = remove(" ", singleMsg);
+    
+	trace("XMute: outputNrString = %s", outputNrString);
+
+    outputNr = atoi(outputNrString);
+	
+	if (inputNr < 1 || inputNr > pInputsCount)
+	{
+		trace("EXCEPTION: XMute input = %u", inputNr);
+		return;
+	}
+    
+    if (outputNr < 1 || outputNr > pOutputsCount)
+	{
+		trace("EXCEPTION: XMute output = %u", outputNr);
+		return;
+	}
+    
+	matrixPointNr = CalculateMatrixIndex(inputNr, outputNr);
+	trace("XMute: matrixPointNr = %u", matrixPointNr);
+	
+	if (find(PARAM_NO, singleMsg) <> 0) matrixPoint_FB[matrixPointNr] = 1;
+	else matrixPoint_FB[matrixPointNr] = 0;
+}
+
+// Obsluga FB Mute Wejsc
+// DATA IMUTE 1 YES\X0A
+// DATA IMUTE 1 NO\X0A
+FUNCTION HandleDataIMuteMsg(STRING singleMsg)
+{
+	STRING inputNrString[MAX_MSG_LENGTH];
+	INTEGER inputNr;
+    
+	trace("HandleDataIMuteMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_IMUTE, singleMsg);
+	inputNrString = remove(" ", singleMsg);
+    
+	trace("MuteOn_FB: inputNrString = %s", inputNrString);
+
+    inputNr = atoi(inputNrString);
+    
+	if (inputNr < 1 || inputNr > pInputsCount)
+	{
+		trace("EXCEPTION: inputNrMuteOn_FB index = %u", inputNr);
+		return;
+	}
+
+	if (find(PARAM_YES, singleMsg) <> 0) inputMuteOn_FB[inputNr] = 1;
+	else inputMuteOn_FB[inputNr] = 0;
+}
+
+// Obsluga FB Mute Wyjsc
+// DATA OMUTE 1 YES\X0A
+// DATA OMUTE 1 NO\X0A
+FUNCTION HandleDataOMuteMsg(STRING singleMsg)
+{
+	STRING outputNrString[MAX_MSG_LENGTH];
+	INTEGER outputNr;
+    
+	trace("HandleDataOMuteMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_OMUTE, singleMsg);
+	outputNrString = remove(" ", singleMsg);
+    
+	trace("MuteOn_FB: outputNrString = %s", outputNrString);
+
+    outputNr = atoi(outputNrString);
+    
+	if (outputNr < 1 || outputNr > pOutputsCount)
+	{
+		trace("EXCEPTION: outputNrMuteOn_FB index = %u", outputNr);
+		return;
+	}
+
+	if (find(PARAM_YES, singleMsg) <> 0) outputMuteOn_FB[outputNr] = 1;
+	else outputMuteOn_FB[outputNr] = 0;
+}
+
+// Obsluga FB poziomow glosnosci Wejsc
+// DATA ILEVEL 1 75\x0A
+FUNCTION HandleDataILevelMsg(STRING singleMsg)
+{
+	STRING inputNrString[MAX_MSG_LENGTH];
+	INTEGER inputNr;
+	INTEGER level;
+
+	trace("HandleDataOLevelMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_ILEVEL, singleMsg);
+
+	inputNrString = remove(" ", singleMsg);
+
+    inputNr = atoi(inputNrString);
+    
+    
+	if (inputNr < 1 || inputNr > pInputsCount)
+	{
+		trace("EXCEPTION: volumeLevel_FB index = %u", inputNr);
+		return;
+	}
+    
+	level = atoi(singleMsg);
+    
+	trace("Volume[%u] = %u", inputNr, level);
+
+	inputLevel#_FB[inputNr] = level;
+	inputVolumePercent$[inputNr] = itoa(level) + " %";
+}
+
+// Obsluga FB poziomow glosnosci Wyjsc
+// DATA OLEVEL 1 75\x0A
+FUNCTION HandleDataOLevelMsg(STRING singleMsg)
+{
+	STRING outputNrString[MAX_MSG_LENGTH];
+	INTEGER outputNr;
+	INTEGER level;
+
+	trace("HandleDataOLevelMsg: %s", singleMsg);
+
+	tempString = remove(PARAM_OLEVEL, singleMsg);
+
+	outputNrString = remove(" ", singleMsg);
+
+    outputNr = atoi(outputNrString);
+    
+    
+	if (outputNr < 1 || outputNr > pOutputsCount)
+	{
+		trace("EXCEPTION: volumeLevel_FB index = %u", outputNr);
+		return;
+	}
+    
+	level = atoi(singleMsg);
+    
+	trace("Volume[%u] = %u", outputNr, level);
+
+	outputLevel#_FB[outputNr] = level;
+	outputVolumePercent$[outputNr] = itoa(level) + " %";
+}
+
+// Ogolna obsluga FB
+FUNCTION HandleDataMsg(STRING singleMsg)
+{
+	tempString = remove(HEADER_DATA, singleMsg);
+
+	if (find(PARAM_XMUTE, singleMsg) <> 0)
+	{
+		HandleDataXMuteMsg(singleMsg);
+		return;
+	}
+	if (find(PARAM_IMUTE, singleMsg) <> 0)
+	{
+		HandleDataIMuteMsg(singleMsg);
+		return;
+	}
+	if (find(PARAM_OMUTE, singleMsg) <> 0)
+	{
+		HandleDataOMuteMsg(singleMsg);
+		return;
+	}
+    if (find(PARAM_ILEVEL, singleMsg) <> 0)
+	{
+		HandleDataILevelMsg(singleMsg);
+		return;
+	}
+	if (find(PARAM_OLEVEL, singleMsg) <> 0)
+	{
+		HandleDataOLevelMsg(singleMsg);
+		return;
+	}
+
+	Trace("Unhandled Single Message");
+}
+
+// Obsluga bledow
+FUNCTION HandleErrorMsg(STRING singleMsg)
+{
+	INTEGER errorNr;
+	
+	trace("HandleErrorMsg: %s", singleMsg);
+
+	tempString = remove(HEADER_ERROR, singleMsg);
+	errorNr = atoi(singleMsg);
+
+	trace("ErrorNr: %u", errorNr);
+
+	switch(ErrorNr)
+	{
+		case(9):
+		{
+			if (deviceReady_FB)
+			{
+				trace("Resetting Connection");
+				connection_FB = 0;
+				deviceReady_FB = 0;
+				Connect();
+			}
+		}
+
+		default: Trace("Unhandled Error");
+	}
+}
+
+// ----- HANDLING STOP -----
+
+// ====================
+
+
+
+// Event Handlers
+
+PUSH keepConnection
+{
+	Connect();
+}
+
+RELEASE keepConnection
+{
+	Disconnect();
+}
+
+PUSH pollAllData
+{
+	PollAll();
+}
+
+
+
+// Przetwarzanie FB przychodzacych z urzadzenia
+THREADSAFE CHANGE Rx$
+{
+	STRING singleMsg[MAX_MSG_LENGTH];
+        
+	while(connection_FB = 1)
+    {		
+		// Wyciecie z bufora pojedynczego pakietu
+		singleMsg = Gather(LF_CODE, Rx$);
+			
+		// Rozgalezienie - obsluga wiadomosci w zaleznosci od jej typu
+		if(find(HEADER_DATA, singleMsg) = 1)
+		{
+			HandleDataMsg(singleMsg);
+		}
+		else if(find(HEADER_ERROR, singleMsg) = 1)
+		{
+			HandleErrorMsg(singleMsg);
+		}
+		else
+		{
+			Trace("Header Error, Message = %s", singleMsg);
+		}    
+	}
+}
+
+
+// Matrix
+
+PUSH matrixPointOn
+{
+	INTEGER matrixIndex, outputNr, inputNr;
+
+	matrixIndex = GetLastModifiedArrayIndex();
+	outputNr = GetOutputByMatrixIndex(matrixIndex);
+	inputNr = GetInputByMatrixIndexAndOutput(matrixIndex, outputNr);
+
+	SetMatrixPointOn(inputNr, outputNr);
+}
+
+PUSH matrixPointOff
+{
+	INTEGER matrixIndex, outputNr, inputNr;
+
+	matrixIndex = GetLastModifiedArrayIndex();
+	outputNr = GetOutputByMatrixIndex(matrixIndex);
+	inputNr = GetInputByMatrixIndexAndOutput(matrixIndex, outputNr);
+
+	SetMatrixPointOff(inputNr, outputNr);
+}
+
+PUSH matrixPointToggle
+{
+	INTEGER matrixIndex, outputNr, inputNr;
+
+	matrixIndex = GetLastModifiedArrayIndex();
+	outputNr = GetOutputByMatrixIndex(matrixIndex);
+	inputNr = GetInputByMatrixIndexAndOutput(matrixIndex, outputNr);
+
+	SetMatrixPointToggle(inputNr, outputNr);
+}
+
+// Inputs
+
+PUSH inputMuteOn
+{
+	SetInputMuteOn(GetLastModifiedArrayIndex());
+}
+
+PUSH inputMuteOff
+{
+	SetInputMuteOff(GetLastModifiedArrayIndex());
+}
+
+PUSH inputMuteToggle
+{
+	SetInputMuteTOG(GetLastModifiedArrayIndex());
+}
+
+PUSH inputLevelUp
+{
+	IncreaseInputLevel(GetLastModifiedArrayIndex());
+}
+
+PUSH inputLevelDown
+{
+	DecreaseInputLevel(GetLastModifiedArrayIndex());
+}
+
+CHANGE inputLevel#
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	SetInputLevel(index, inputLevel#[index]);
+}
+
+// Outputs
+
+PUSH outputMuteOn
+{
+	SetOutputMuteOn(GetLastModifiedArrayIndex());
+}
+
+PUSH outputMuteOff
+{
+	SetOutputMuteOff(GetLastModifiedArrayIndex());
+}
+
+PUSH outputMuteToggle
+{
+	SetOutputMuteTOG(GetLastModifiedArrayIndex());
+}
+
+PUSH outputLevelUp
+{
+	IncreaseOutputLevel(GetLastModifiedArrayIndex());
+}
+
+PUSH outputLevelDown
+{
+	DecreaseOutputLevel(GetLastModifiedArrayIndex());
+}
+
+CHANGE outputLevel#
+{
+	INTEGER index;
+	index = GetLastModifiedArrayIndex();
+
+	SetOutputLevel(index, outputLevel#[index]);
+}
+
+CHANGE exclusiveSource#
+{
+	INTEGER index;
+
+	index = GetLastModifiedArrayIndex();
+
+	SetExclusiveSource(index, exclusiveSource#[index]);
+}
+
+// Main
+
+Function Main()
+{
+	WaitForInitializationComplete();
+}
