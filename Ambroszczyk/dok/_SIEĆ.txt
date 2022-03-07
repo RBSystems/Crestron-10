@@ -1,0 +1,38 @@
+ADSL:
+
+User	xYMaVfD@neostrada.pl
+Pass	wkh4V2Af
+
+WiFi:
+
+SSID	sbr
+Pass	43Ab;21R
+
+Router:
+
+User	admin
+Pass	43Ab;21R
+
+DNS noip.com:
+
+Host	ambroman.no-ip.biz
+User	ambroman83
+Pass	43Abj21R
+
+
+Adresy IP:
+
+WAGO 		192.168.0.252
+Crestron	192.168.0.240
+Domophone	192.168.0.230
+
+
+Przekierowane porty:
+
+Rule	Application	 	Protocol	Start Port	End Port	Local IP Address
+1	WAGO			ALL		2455		2455		192.168.0.252
+2	Crestron_iPad		ALL		41890		41891		192.168.0.240
+3	Crestron_iPhone		ALL		41790		41791		192.168.0.240
+4	Crestron		ALL		41794		41795		192.168.0.240
+5	Crestron_HTTP		ALL		81		81		192.168.0.240
+6	Crestron_HTTPporxy	ALL		8080		8081		192.168.0.240
