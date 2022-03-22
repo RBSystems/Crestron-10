@@ -1,0 +1,11 @@
+secret: superSekret
+
+vpn name : Orlowska_VPN
+
+user : Service
+pass : s3arts3art
+
+85.89.190.221
+
+user01 : domowyVPN2020
+user02 : domowyVPN2020
