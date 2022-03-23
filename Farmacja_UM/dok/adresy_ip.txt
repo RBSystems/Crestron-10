@@ -1,5 +1,5 @@
-192.168.5.198 - DM
-192.168.5.199 - DIN AP2
-192.168.5.200 - Panel biurko 1
-192.168.5.201 - Panel biurko 2
+192.168.5.198 - DM [IPID = 03]
+192.168.5.199 - MC3
+192.168.5.200 - Panel Dodatkowy - Sala1 (TPMC4SM) [IPID = 07]
+192.168.5.201 - Panel Główny - Sala2 (TS770 admin:adminadmin) [IPID = 18]
 192.168.5.202 - Ecler MIMO-88

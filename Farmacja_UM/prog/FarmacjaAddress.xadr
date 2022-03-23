@@ -11,16 +11,16 @@ Version=1.0
 DefaultEntry=
 
 [ComSpecs]
-TPMC_2=auto 192.168.5.200
-USB=usb
-TPMC_1=auto 192.168.5.201
+ts770_sala1=auto 192.168.5.201
+1_USB=usb
+TPMC_sala2=auto 192.168.5.200
 DM-MD6x4=auto 192.168.5.198
-DIN-AP2=auto 192.168.5.199
+MC3=auto 192.168.5.199
 
 [Notes]
-TPMC_2=
-USB=
-TPMC_1=
+ts770_sala1=
+1_USB=
+TPMC_sala2=
 DM-MD6x4=
-DIN-AP2=
+MC3=
 
