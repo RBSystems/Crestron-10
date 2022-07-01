@@ -1,3 +1,7 @@
+MRA-1 = 192.168.0.221
+MRA-2 = 192.168.0.222
+
+
 Strefy:
 
 1: Łazienka Dzieci
@@ -6,12 +10,14 @@ Strefy:
 4: Gościnny Prawy
 5: Bawialnia
 6: Taras
-7: Sypialnia
-8: Łazienka Rodziców
-9: Pokój Zosi
-10: Kuchnia
-11: Salon/Jadalnia
-12: Grill
+
+
+7(1): Sypialnia
+8(2): Łazienka Rodziców
+9(3): Pokój Zosi
+10(4): Kuchnia
+11(5): Salon/Jadalnia
+12(x): Grill
 
 Źródła:
 
@@ -19,3 +25,9 @@ Strefy:
 2: AppleTv
 3: Sonos
 4: CD Player
+
+
+==========================================
+
+
+==========================================
