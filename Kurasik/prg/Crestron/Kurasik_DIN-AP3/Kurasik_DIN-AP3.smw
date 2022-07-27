@@ -51020,8 +51020,8 @@ O2=4083
 O3=4207
 O4=4204
 O5=4203
-O6=14531
-O7=14534
+O6=14542
+O7=14547
 ]
 [
 ObjTp=Sm
@@ -109433,8 +109433,6 @@ PrH=2623
 CF=2
 n1I=23
 n1O=22
-OpF=0
-HandF=1
 Cmn1=P_34 MainPower\\
 mI=23
 I1=14238
@@ -109496,8 +109494,6 @@ PrH=267
 CF=2
 n1I=23
 n1O=22
-OpF=0
-HandF=1
 Cmn1=P_34 Allways\\
 mI=23
 I1=2
@@ -185098,11 +185094,6 @@ Nm=[KNX][BRM][Brama_Porsche]_On
 ]
 [
 ObjTp=Sg
-H=14531
-Nm=//[KNX][BRM][Brama_Porsche]_Pulse
-]
-[
-ObjTp=Sg
 H=14532
 Nm=[TSW-750][Mode][Gates]_Brama_Porsche
 ]
@@ -185110,11 +185101,6 @@ Nm=[TSW-750][Mode][Gates]_Brama_Porsche
 ObjTp=Sg
 H=14533
 Nm=[TSW-750][Mode][Gates]_Brama_Osiek
-]
-[
-ObjTp=Sg
-H=14534
-Nm=//[KNX][BRM][Brama_Osiek]_Pulse
 ]
 [
 ObjTp=Sg
