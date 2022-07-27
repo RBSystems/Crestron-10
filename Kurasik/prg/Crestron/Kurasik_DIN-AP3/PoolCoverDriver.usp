@@ -240,4 +240,5 @@ Function Main()
 	StopAndCancel();;
 	CalculateState();
 	CalculateMoving();
+	PULSE(PULSE_TIME, PowerRelay_On);
 }
