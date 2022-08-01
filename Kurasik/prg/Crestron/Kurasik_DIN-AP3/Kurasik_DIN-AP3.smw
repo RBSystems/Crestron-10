@@ -32017,12 +32017,13 @@ SmVr=1168
 PrH=117
 CF=2
 Cmn1=Pool Cover\\
-mC=5
+mC=6
 C1=1457
 C2=805
 C3=679
 C4=640
 C5=636
+C6=2735
 ]
 [
 ObjTp=Sm
@@ -50791,8 +50792,8 @@ O2=89
 O3=3197
 O5=87
 O6=3199
-O8=3744
-O9=4195
+O8=14531
+O9=14534
 O11=38
 O12=65
 O13=66
@@ -110215,6 +110216,27 @@ CF=2
 Cmn1=Garaz
 mC=1
 C1=2736
+]
+[
+ObjTp=Sm
+H=2735
+SmC=20
+Nm=Buffer
+ObjVer=1
+SmVr=1168
+PrH=804
+CF=2
+n1I=3
+n1O=2
+Cmn1=Pool Power Relay\\
+mI=3
+I1=2
+I2=14531
+I3=14534
+mO=2
+tO=2
+O1=3744
+O2=4195
 ]
 [
 ObjTp=Sm
@@ -185294,6 +185316,11 @@ Nm=[KNX][BRM][Brama_Porsche]_On
 ]
 [
 ObjTp=Sg
+H=14531
+Nm=[Pool][PowerRelay]_On_PRE
+]
+[
+ObjTp=Sg
 H=14532
 Nm=[TSW-750][Mode][Gates]_Brama_Porsche
 ]
@@ -185301,6 +185328,11 @@ Nm=[TSW-750][Mode][Gates]_Brama_Porsche
 ObjTp=Sg
 H=14533
 Nm=[TSW-750][Mode][Gates]_Brama_Osiek
+]
+[
+ObjTp=Sg
+H=14534
+Nm=[Pool][PowerRelay]_Off_PRE
 ]
 [
 ObjTp=Sg
