@@ -4,6 +4,8 @@ MRA-2 = 192.168.0.222
 
 Strefy:
 
+MRA-1
+
 1: Łazienka Dzieci
 2: Dzieci Lewy
 3: Dzieci Prawy
@@ -11,6 +13,9 @@ Strefy:
 5: Bawialnia
 6: Taras
 
+
+
+MRA-2
 
 7(1): Sypialnia
 8(2): Łazienka Rodziców
