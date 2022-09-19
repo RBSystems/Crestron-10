@@ -48,3 +48,8 @@ http://manual3.jvckenwood.com/projector/mobile/dla/b5a-2360-05en/BONDSYvxqkwmjo.
 ===================
 
 693 202 102 (Wojtek AudioDesign)
+
+===================
+iphone/ipad
+user = Przyjemna01
+pass = [mojNrTel]
