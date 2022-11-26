@@ -36,6 +36,17 @@ Niezależna
 
 
 ==========================================
-
+1: Lazienka D
+2: Dzieci L
+3: Dzieci P
+4: Goscinny P
+5: Bawialnia
+6: Taras
+7: Sypialnia
+8: Lazienka R
+9: Zosia
+10: Kuchnia
+11: Salon / Jadalnia
+12: Grill
 
 ==========================================
