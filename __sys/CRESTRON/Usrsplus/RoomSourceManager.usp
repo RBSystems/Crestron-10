@@ -187,6 +187,10 @@ CHANGE Video_Source#_FB, Audio_Source#_FB
 	INTEGER videoSourceNr, audioSourceNr;
 
 	videoSourceNr = GetSourceNumberByVideoID(Video_Source#_FB);
+    
+    // przepisanie wejscia na wyjscie, zeby zawsze byly takie same
+    Audio_Source# = Audio_Source#_FB;
+    Video_Source# = Video_Source#_FB;
 
 	if (videoSourceNr > 0)
 	{
