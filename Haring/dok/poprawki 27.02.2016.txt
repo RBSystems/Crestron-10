@@ -1,0 +1,18 @@
+
+Sala VIP:
+
+- dorzucenie ikony  i menu do AppleTv z pilota
+- powiêkszenie przycisków do Manu TV Sat
+- przy Tv Sat trzeba zrobic to tak, ¿eby w³¹cza³a siê po uruchomieniu sceny, a teraz w³¹cza siê dopiero po w³¹czeniu prze³acznika w Menu On Tv
+- przypisaæ dwa pozosta³e przekaŸniki ABB do Barco i BluRay Oppo, ¿eby nie by³y ca³y czas w³¹czone
+
+Kantyna:
+
+- Przy w³aczeniu panela powinien pokazac sie 4 cefrowy KOD do uruchemienia, ¿eby nie ka¿dy ( nieuprawniony ) móg³ to obs³u¿yæ
+- musimy zrobiæ tak, ¿eby przy w³aczeniu ka¿dej sceny mikrofony i wszystkie Ÿród³a by³y wyciszone prawie do zera, na granicy s³yszalnoœci ( mo¿emy ta granicê ustaliæ jutro, unikniemy wtedy a¿ tak g³oœnego strzelania w Ÿród³ach)
+- przy Tv Sat trzeba zrobic to tak, ¿eby w³¹cza³a siê po uruchomieniu sceny, a teraz w³¹cza siê dopiero po w³¹czeniu prze³acznika w Menu On Tv
+powiêkszenie przycisków do Manu TV Sat
+
+Sale lekcyjne:
+
+-musimy zrobiæ to samo, co w Kantynie, czyli daæ ciszej Floor HDMI ( mo¿emy ta granicê ustaliæ jutro, unikniemy wtedy, a¿ tak g³oœnego strzelania w Ÿród³ach, do czasu kiedy Crestron tego nie rozwi¹¿e)

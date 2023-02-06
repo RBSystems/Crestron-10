@@ -1,0 +1,31 @@
+W ka¿dej ze scen bêd¹ mikrofony. Bêd¹ one zmutowane przy w³¹czeniu i œciszone na 50%.
+
+Trzeba bêdzie do³o¿yæ przy scenie z BluRay sterowanie Oppo, i przy scenie z TV sterowanie Tv. Suwak SOURCE te¿musi byc œciszony przy odpaleniu na 50% , ale bez mute.
+Oczywiœcie trzeba te¿ do³o¿yæ regulacjê œwiate³ i ¿aluzji.
+
+Sceny:
+
+0. OFF
+1. Barco
+2. BluRay
+3. TV Sat
+4. Hdmi Floor/DJ ( audio z przy³acza  i HDMI  z przy³¹cza na projektor)
+5. DJ ( samo audio, bez projektora)
+6. Mic ( same mikrofony bez projektora)
+
+Kontrolery Symetrix Solus16
+
+1. Mic_1 (mono)
+2. Mic_2 (mono)
+3. Mic_3 (mono)
+4. Mic_4 (mono)
+
+5. Projector (L) [BluRay, TV Sat, HDMI Floor] 
+6. Projector (R)
+
+7. Barco (L)
+8. Barco (R)
+
+9. DJ (L)
+10. DJ (R)
+

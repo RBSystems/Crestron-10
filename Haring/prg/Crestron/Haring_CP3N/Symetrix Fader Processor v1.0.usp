@@ -1,0 +1,136 @@
+#CATEGORY "0" // Hidden
+
+/*
+Dealer Name:	Symetrix Audio
+System Name:
+System Number:
+Programmer:		MSP
+Comments:
+*/
+
+#SYMBOL_NAME "Symetrix Fader Processor v1.0"          
+
+#HELP_BEGIN
+
+For Use in Symetrix Symnet Global Modules
+
+#HELP_END
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^   CONSTANTS   ^^^^^^^^^^^^^^^^^^^^^^ */
+
+#DEFINE_CONSTANT	TYPICAL		84 			//dB Scale for VCA & Typical Faders
+#DEFINE_CONSTANT	IO			120         //dB Scale for Inputs and Outputs
+                
+/* ^^^^^^^^^^^^^^^^^^^^^      I/O      ^^^^^^^^^^^^^^^^^^^^^^ */
+
+
+ANALOG_INPUT	Level;
+ANALOG_INPUT	Min_level;
+
+BUFFER_INPUT	Controller$[7];
+BUFFER_INPUT	proc_rx$[1000];                            
+
+ANALOG_OUTPUT Current_Level;
+STRING_OUTPUT Symnet_tx$, Level_db$;
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^   VARIABLES   ^^^^^^^^^^^^^^^^^^^^^^ */
+
+INTEGER dbScale;						//Set Scale for dB feedback
+INTEGER	dBlevel;                        //Level in dB
+INTEGER	calc_level;
+INTEGER Controller#;                    //Analog Controller Conversion
+STRING	Proc$[20];                      //Temporoary for parsing
+
+/* ^^^^^^^^^^^^^^^^^^^^^   FUNCTIONS   ^^^^^^^^^^^^^^^^^^^^^^ */
+
+Function dBCalc ()
+
+{                                                 		
+    dBlevel = (Min_level +((dbScale*calc_level+32768)/65535) );
+
+        
+	IF (calc_level = 0)
+    {
+     makestring (Level_db$, "Off");
+    }
+    Else IF (dBlevel S<= 0)
+    {
+     makestring (Level_db$, "%d dB", dBlevel);
+    }
+    Else
+    {
+     makestring (Level_db$, "+%d dB", dBlevel);
+    }
+}
+
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^     EVENTS    ^^^^^^^^^^^^^^^^^^^^^^ */                
+
+Change Min_Level
+
+{
+ 	IF (Min_Level S> -73)
+    {
+     dbScale = TYPICAL;                   
+    }
+    Else
+    {
+     dbScale = IO;
+    }
+    
+    Processlogic ();
+}
+
+
+
+Change Controller$
+
+{
+ 	Controller# = atoi(Controller$);
+}
+
+
+
+Change Level
+
+{
+
+    makestring	(Symnet_tx$, "CS\x20%u\x20%u\x20\x0D", Controller#, Level);
+   	calc_level = Level;
+   	current_level = Level;
+   	call dBCalc ();
+    
+}
+
+ 
+Change	proc_rx$
+
+{    
+	IF	((find (Controller$, proc_rx$)) > 0)
+		{
+			Proc$ = remove("\x0D", proc_rx$, (find(Controller$, proc_rx$)) );		
+    	    current_level = atoi(Mid(Proc$, (Find("=", proc$)+1), 5));
+        	calc_level = current_level;
+	        call dBCalc ();
+		}
+	ELSE
+		{
+		 	Clearbuffer (proc_rx$);
+		}
+}
+
+
+/* ^^^^^^^^^^^^^^^^^^^^^     STARTUP   ^^^^^^^^^^^^^^^^^^^^^^ */
+
+/*
+FUNCTION MAIN()   
+
+{	
+}
+*/                                    
+
+/* ^^^^^^^^^^^^^^^^^^^^^      END      ^^^^^^^^^^^^^^^^^^^^^^ */

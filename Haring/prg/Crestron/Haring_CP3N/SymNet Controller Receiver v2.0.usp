@@ -1,0 +1,153 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:
+System Name:
+System Number:
+Programmer:
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+/*
+ * SymNet Controller Receiver.usp
+ *
+ * 20120405.00
+ *
+ * Receives serial/UDP data directly from SymNet hardware, using Symetrix
+ * SymNet External Control Protocol.
+ *
+ * SIMPL Windows programmer sets the controller #s to detect (ccnum's)
+ * and correspondingly defines an analog signal for each.
+ *
+ * Analog signals will be updated in real time as the SymNet hardware data
+ * comes in.  Unrecognized data, such as ACKs, NAKs, other status messages,
+ * and junk are probably ignored, unless we erroneously mistake them as
+ * controller data.  Note that there is a trade-off between handling the
+ * undocumented junk that seems to trail GSB2 queries, which will trip up
+ * (preclude) the immediately following controller update, and being more
+ * liberal but erroneously detecting certain non-controller status messages
+ * (e.g. GPU 0) as controller updates.  (See GSB2_HACK below.) Remember to use Symnet's PUT command
+ * to set a Threshold, or Limit the amount of Pushed Data coming back from the meters.
+ *
+ */
+
+/* Constants */
+#DEFINE_CONSTANT COM_BUFFER_SIZE 65534  //max is 65534
+#DEFINE_CONSTANT MAX_CONTROLLERS 50  //memory is allocated even if you don't expand the symbol, so don't crank this if you don't need it
+/* Comment this out for normal operation */
+//#DEFINE_CONSTANT GSB2_HACK 1  //set this to liberally detect GSB2 updates, at the expense of falsely detecting non-controller updates
+
+
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ANALOG_SERIAL_EXPAND OutputsWithParams
+
+#HELP_BEGIN
+   (add additional lines of help lines)
+#HELP_END
+
+
+/* Signal interface */
+BUFFER_INPUT From_SymNet_COM[COM_BUFFER_SIZE];
+INTEGER_PARAMETER _SKIP_;
+DIGITAL_OUTPUT _SKIP_;
+
+INTEGER_PARAMETER ccnums[MAX_CONTROLLERS,1];
+ANALOG_OUTPUT ccvals[MAX_CONTROLLERS,1];
+
+
+/* Module Variables */
+integer Max_CC;
+integer daemon_running;
+
+//
+// Processes incoming controller (CC) value, setting ccval output signal array
+// if we have a relevant (parameter set) match.
+//
+function process_cc_val ( integer ccnum, integer ccval ) {
+	integer i;
+	for ( i = 1 to Max_CC ) {
+		if ( ccnums[i] = ccnum ) {
+			ccvals[i] = ccval;
+			//keep looping in case user entered same ccnum more than once
+		}
+	}
+}
+
+//
+// Daemon always running, listening to incoming SymNet data
+// and setting ccvals accordingly.
+// Note that this daemon detects two types of SymNet responses:
+//  <ControllerNumber> <ControllerValue><CR>   (GS2 style)
+//  #<ControllerNumber>=<ControllerValue><CR>  (PUSH style)
+function from_SymNet_daemon() {
+	string cmd[14], sepChar[1];
+	integer ccnum, ccval;
+
+	if ( daemon_running ) return;  //already running (who called us!?!?)
+	daemon_running = 1;
+	print ( "\n\nSymNet Controller Receiver.usp: Starting from_SymNet_daemon()\n\n" );
+
+	/* Listen for each command from SymNet
+	 * (each command is terminated by \r) */
+	while (1) {
+		cmd = gather ( "\r", From_SymNet_COM );
+		/* No Hack */
+		if ( len(cmd) >= 12 ) {
+			/* Length OK... */
+			sepChar = left(right(cmd,7),1);  //char 7 spaces from right of string
+			if ( sepChar = " " ) {
+				/* GS2 style? */
+#IF_NOT_DEFINED GSB2_HACK
+				if ( len(cmd) = 12 ) {
+					/* Looks like GS2 style */
+					ccnum = atoi ( left ( right(cmd,12), 5 ) );  //chars -12 to -8
+					ccval = atoi ( left ( right(cmd,6), 5 ) );  //chars -6 to -2
+					process_cc_val ( ccnum, ccval );
+				}
+#ENDIF
+#IF_DEFINED GSB2_HACK
+				/*** Same code as non-hack, but no length check; allows leading junk ***/
+					/* Looks like GS2 style */
+					ccnum = atoi ( left ( right(cmd,12), 5 ) );  //chars -12 to -8
+					ccval = atoi ( left ( right(cmd,6), 5 ) );  //chars -6 to -2
+					process_cc_val ( ccnum, ccval );
+#ENDIF
+			} else if ( sepChar = "=" ) {
+				/* Push style? Check for leading # char */
+				if ( left ( right(cmd,13), 1 ) = "#" ) {
+					/* Looks like Push style */
+					ccnum = atoi ( left ( right(cmd,12), 5 ) );  //chars -12 to -8
+					ccval = atoi ( left ( right(cmd,6), 5 ) );  //chars -6 to -2
+					process_cc_val ( ccnum, ccval );
+				}
+			}
+		}
+	}
+}
+
+//
+// Determines # of CC value outputs defined by the SIMPL Windows program,
+// so we only will have to check as many as are defined.
+//
+function get_max_cc() {
+	integer i;
+	for ( i = MAX_CONTROLLERS to 1 step -1 ) {  //count down from max max till we find one defined
+		if ( IsSignalDefined ( ccvals[i] ) ) {
+			Max_CC = i;
+			print ( "SymNet Controller Receiver.usp: Max_CC=%u\n", Max_CC );
+			return;
+		}
+	}
+}
+function main() {
+	get_max_cc();
+	WaitForInitializationComplete();
+	wait(0) from_SymNet_daemon();
+}

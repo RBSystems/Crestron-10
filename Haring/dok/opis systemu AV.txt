@@ -1,0 +1,14 @@
+Na Haringa przewidziano:
+
+3 ma³e sale szkoleniowe - na œcianach wyœwietlacze TSW550 które wpiête s¹ do jednego wspólnego switcha  wraz ze Switcherami Crestrona HD-MD4x1-4K-E.
+Do switcherów wpinamy Ÿród³a: Barco CSM na kablu hdmi oko³o 0,5m, przy³¹cze pod³ogowe w postaci kabla HDMI o d³ugoœci oko³o 10-12m. ze switchera wychodzi kabel hdmi o d³ugoœci 1m.
+
+W ka¿dej z 3 sal taki sam zestaw.
+Do sterowania ca³oœci¹ wykorzystamy procesor CP3N który umieszczony bêdzie w szafie A/V w odleg³oœci 80m od switcha do którego bêdzie pod³¹czona reszta urz¹dzeñ.
+
+Pokój g³ówna:
+Wyœwietlacz TSW1050 - 2szt. Switcher z pod³¹czonym Barco CSC, przy³¹cze œcienne po³¹czone kalem hdmi oko³o 15m + blu-ray na kablu hdmi 15m. Wyjœcie switchera pod³aczone do projektora Sony VPL-FHZ700L.
+
+Pokój VIP:
+Wyœwietlacz TSW-1050 1szt.
+DMPS3--150-C do którego pod³¹czamy blu-ray na kablu hdmi 10m + przy³acze œcienne na takim samym kablu hdmi 10m. Wyjœcie DMPS pod³aczone do Telewizora Sony 4K 85cali.

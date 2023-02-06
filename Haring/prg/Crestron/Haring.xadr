@@ -1,0 +1,34 @@
+[Crestron_Toolbox_Address_Book]
+
+[Entries]
+This .xadr file was created using Toolbox v2.41 or later.=:slot 01
+It is not compatible with this version of Toolbox.=:slot 02
+Please open a .adr Address Book to continue.=:slot 03
+
+[AddressBookInfo]
+Schema=2.0
+Version=1.0
+DefaultEntry=
+
+[ComSpecs]
+USB=usb
+CP3N=auto 10.20.50.201
+DMPS-VIP=auto 10.20.50.202
+TSW-550_AZ-01=auto 10.20.50.203
+TSW-550_AZ-02=auto 10.20.50.204
+TSW-550_AZ-03=auto 10.20.50.205
+TSW-1050_A_AZ-04=auto 10.20.50.206
+TSW-1050_B_AZ-04=auto 10.20.50.207
+TSW-1050_AZ-VIP=auto 10.20.50.225
+
+[Notes]
+USB=
+CP3N=
+DMPS-VIP=
+TSW-550_AZ-01=
+TSW-550_AZ-02=
+TSW-550_AZ-03=
+TSW-1050_A_AZ-04=
+TSW-1050_B_AZ-04=
+TSW-1050_AZ-VIP=
+
