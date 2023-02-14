@@ -1,0 +1,49 @@
+Adresy MODBUS klimatyzatorów:
+
+Piêtro:
+salka na koñcu: 	13
+open space prawy:	9,10,11,12
+open space lewy:	0,1,2,3,4,5
+
+Parter:
+poczekalnia na koñcu:	14
+laboratorium:		15, 16, 17, 18
+sala szkoleniowa:	8
+serwerownia:		19
+kantyna:		6, 7
+
+DOMAT:
+Serwerownia:	21
+Laboratorium:	22
+Poczekalnia:	23 (ostatnie pomieszczenie na parterze)
+Pietro:		24
+
+Programy WAGO/Rozdzielnie:
+
+SEW_R_0.22	Parter, Sala szkoleniowa + Kantyna (szafka w Serwerowni)
+SEW_R_1.04	Piêtro, Open space lewy (nad serwerowni¹)
+SEW_R_1.34	Piêtro, Open space prawy (w korytarzu pomiêdzy open space'ami)
+
+SEW_R_01	Hala
+SEW_R_02	- kolejny etap
+SEW_R_03	- kolejny etap
+
+
+Zmiana adresow ip
+
+SEW R_0_2:	10.23.2.44
+SEW R_0_T:	10.23.2.45
+SEW R_0_3:	10.23.2.46
+SEW R_0_22:	10.23.2.47
+SEW R_0_134:	10.23.2.48
+SEW R_0_104:	10.23.2.49
+SEW R_0_1:	10.23.2.50
+
+Maska: 255.255.255.0
+Brama: 10.23.2.1
+DNS1: 10.23.4.14
+DNS2: 10.3.0.74
+
+
+
+
