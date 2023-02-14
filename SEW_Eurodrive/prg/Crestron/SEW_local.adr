@@ -1,0 +1,19 @@
+[Entries]
+USB=usb
+DMPS-300-C=tcp 10.23.2.21
+DM-TX-201-C=tcp 10.23.2.28
+DM-RMC-100-C=tcp 10.23.2.41
+DMPS VideoBoard=tcp 10.23.2.22
+AM-100=tcp 10.23.2.27
+
+[Settings]
+DefaultEntry=
+
+[Comments]
+USB=
+DMPS-300-C=
+DM-TX-201-C=
+DM-RMC-100-C=
+DMPS VideoBoard=
+AM-100=
+
