@@ -1,1 +1,0 @@
-- wykombinowac rozwiazanie dla przekazywania nowPlaying$ zrodel

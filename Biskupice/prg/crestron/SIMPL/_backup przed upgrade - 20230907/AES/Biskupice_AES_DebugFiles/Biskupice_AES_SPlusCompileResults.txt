@@ -1,0 +1,76 @@
+Calling ProjMgr.CompileTargets() for NewOld.csp
+Returned from ProjMgr.CompileTargets() for <NewOld.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for timedate display.csp
+Returned from ProjMgr.CompileTargets() for <timedate display.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for TimeAndDateInfo.csp
+Returned from ProjMgr.CompileTargets() for <TimeAndDateInfo.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Knob Acceleration (Pkt).csp
+Returned from ProjMgr.CompileTargets() for <Knob Acceleration (Pkt).csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AES OOTBF Source Mode v1_1.csp
+Returned from ProjMgr.CompileTargets() for <AES OOTBF Source Mode v1_1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AES OOTBF Room Mode v1_2.csp
+Returned from ProjMgr.CompileTargets() for <AES OOTBF Room Mode v1_2.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Knob Acceleration (Sleep Timer) v1.0.csp
+Returned from ProjMgr.CompileTargets() for <Knob Acceleration (Sleep Timer) v1.0.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio Group Editor v1_0_1.csp
+Returned from ProjMgr.CompileTargets() for <Adagio Group Editor v1_0_1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AES OOTBF Group Source Selector v1.0.csp
+Returned from ProjMgr.CompileTargets() for <AES OOTBF Group Source Selector v1.0.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for APAD Text Edit.csp
+Returned from ProjMgr.CompileTargets() for <APAD Text Edit.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AADS OOTBF Text Scroller v1.csp
+Returned from ProjMgr.CompileTargets() for <AADS OOTBF Text Scroller v1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AES Installer Tools Small v1.1.csp
+Returned from ProjMgr.CompileTargets() for <AES Installer Tools Small v1.1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio System Info v1_1.csp
+Returned from ProjMgr.CompileTargets() for <Adagio System Info v1_1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Installer Tools - AudioNet Setup v4.csp
+Returned from ProjMgr.CompileTargets() for <Installer Tools - AudioNet Setup v4.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Installer Tools - Network - Hostname Edit v2.csp
+Returned from ProjMgr.CompileTargets() for <Installer Tools - Network - Hostname Edit v2.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio OOTBF Group Evaluator v1.csp
+Returned from ProjMgr.CompileTargets() for <Adagio OOTBF Group Evaluator v1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AES OOTBF XML Functions v2_0_0.csp
+Returned from ProjMgr.CompileTargets() for <AES OOTBF XML Functions v2_0_0.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio OOTBF Priority Processor v1.csp
+Returned from ProjMgr.CompileTargets() for <Adagio OOTBF Priority Processor v1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Multiple Now Playing Combiner (10) v2.csp
+Returned from ProjMgr.CompileTargets() for <Multiple Now Playing Combiner (10) v2.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for ATC-Audionet System Info v1_3.csp
+Returned from ProjMgr.CompileTargets() for <ATC-Audionet System Info v1_3.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for text scroller.csp
+Returned from ProjMgr.CompileTargets() for <text scroller.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AMFM Preset Scroller v3.csp
+Returned from ProjMgr.CompileTargets() for <AMFM Preset Scroller v3.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio N of M String.csp
+Returned from ProjMgr.CompileTargets() for <Adagio N of M String.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Search Cursor.csp
+Returned from ProjMgr.CompileTargets() for <Search Cursor.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AMFM Station.csp
+Returned from ProjMgr.CompileTargets() for <AMFM Station.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio Now Playing Combiner.csp
+Returned from ProjMgr.CompileTargets() for <Adagio Now Playing Combiner.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio AMFM Preset Selector.csp
+Returned from ProjMgr.CompileTargets() for <Adagio AMFM Preset Selector.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Adagio AMFM GUI Processor v1.csp
+Returned from ProjMgr.CompileTargets() for <Adagio AMFM GUI Processor v1.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AMFM Guide Engine v1_0_0.csp
+Returned from ProjMgr.CompileTargets() for <AMFM Guide Engine v1_0_0.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AMFM Large TP GUI Processor v1_0_2.csp
+Returned from ProjMgr.CompileTargets() for <AMFM Large TP GUI Processor v1_0_2.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for AMFM Station v1_0_2.csp
+Returned from ProjMgr.CompileTargets() for <AMFM Station v1_0_2.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for Now Playing Combiner (ISERVER+IDOCV+DSW) v1.0.csp
+Returned from ProjMgr.CompileTargets() for <Now Playing Combiner (ISERVER+IDOCV+DSW) v1.0.csp>: Result: 0
+Calling ProjMgr.CompileTargets() for D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\Source Definition Writer.usp
+Returned from ProjMgr.CompileTargets() for <D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\Source Definition Writer.usp>: Result: 0
+Calling ProjMgr.CompileTargets() for D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\Source Definition Reader.usp
+Returned from ProjMgr.CompileTargets() for <D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\Source Definition Reader.usp>: Result: 0
+Calling ProjMgr.CompileTargets() for D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\RemoteSourceSelect.usp
+Returned from ProjMgr.CompileTargets() for <D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\RemoteSourceSelect.usp>: Result: 0
+Calling ProjMgr.CompileTargets() for D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\AnalogToSerial.usp
+Returned from ProjMgr.CompileTargets() for <D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\AnalogToSerial.usp>: Result: 0
+Calling ProjMgr.CompileTargets() for D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\APAD PL.usp
+Returned from ProjMgr.CompileTargets() for <D:\s3art\SVN\biskupice\prg\crestron\SIMPL\AES\APAD PL.usp>: Result: 0
+Calling ProjMgr.LinkTargets()...
+Returned from ProjMgr.LinkTargets(): Result: 0
