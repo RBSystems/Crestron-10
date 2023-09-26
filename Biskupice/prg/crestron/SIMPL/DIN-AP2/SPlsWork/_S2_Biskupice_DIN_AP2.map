@@ -1,0 +1,613 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x80000000         0x00500000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                __DYNAMIC=0x0
+                0x00400000                PROVIDE (__stack, 0x400000)
+                0x00000000                PROVIDE (hardware_init_hook, 0x0)
+                0x00000000                PROVIDE (_hardware_init_hook, 0x0)
+                0x00000000                PROVIDE (software_init_hook, 0x0)
+                0x00000000                PROVIDE (_software_init_hook, 0x0)
+
+.text           0x80000000    0x28690
+ *(.text)
+ .text          0x80000000      0x78a S2_TV_SAT_Presets.o
+                0x80000732                S2_TV_SAT_PresetsEventHandler00000
+                0x80000646                S2_TV_SAT_Presets_main
+                0x8000058a                S2_TV_SAT_Presets_EventHandler
+ *fill*         0x8000078a        0x2
+ .text          0x8000078c      0x828 S2_Bramka_Connected.o
+                0x80000d98                S2_Bramka_ConnectedEventHandler00000
+                0x80000d04                S2_Bramka_ConnectedWAITON
+                0x800008aa                S2_Bramka_ConnectedEventHandler00002
+                0x80000bb4                S2_Bramka_Connected_main
+                0x80000ea6                S2_Bramka_ConnectedEventHandler00001
+                0x80000ac8                S2_Bramka_Connected_EventHandler
+                0x80000d4e                S2_Bramka_ConnectedWAITOFF
+ .text          0x80000fb4     0x105c S2_BRAMKA__MAIN.o
+                0x80000fb4                S2_BRAMKA__MAINEventHandler00000
+                0x800019d0                S2_BRAMKA__MAIN_EventHandler
+                0x80001382                S2_BRAMKA__MAINEventHandler00006
+                0x80001f1a                S2_BRAMKA__MAINEventHandler00005
+                0x80001104                S2_BRAMKA__MAINEventHandler00003
+                0x80001ec2                S2_BRAMKA__MAINEventHandler00004
+                0x80001e6c                S2_BRAMKA__MAINEventHandler00002
+                0x80001dfa                S2_BRAMKA__MAINEventHandler00001
+                0x80001b7c                S2_BRAMKA__MAIN_main
+                0x80001f90                S2_BRAMKA__MAINEventHandler00007
+ .text          0x80002010      0xb2e S2_BRAMKA_tryb.o
+                0x800025bc                S2_BRAMKA_tryb_main
+                0x80002986                S2_BRAMKA_trybEventHandler00003
+                0x80002010                S2_BRAMKA_trybEventHandler00000
+                0x80002876                S2_BRAMKA_trybEventHandler00002
+                0x80002758                S2_BRAMKA_trybEventHandler00001
+                0x80002a96                S2_BRAMKA_trybEventHandler00004
+                0x80002266                S2_BRAMKA_trybEventHandler00005
+                0x800024e2                S2_BRAMKA_tryb_EventHandler
+ *fill*         0x80002b3e        0x2
+ .text          0x80002b40      0x38a S2_BRAMKA_dig_pulse.o
+                0x80002b40                S2_BRAMKA_dig_pulseEventHandler00000
+                0x80002dde                S2_BRAMKA_dig_pulse_EventHandler
+                0x80002e84                S2_BRAMKA_dig_pulse_main
+ *fill*         0x80002eca        0x2
+ .text          0x80002ecc      0xd44 S2_BRAMKA_dig.o
+                0x80003a92                S2_BRAMKA_digEventHandler00002
+                0x800039e6                S2_BRAMKA_digEventHandler00000
+                0x800038aa                S2_BRAMKA_dig_main
+                0x80003b3a                S2_BRAMKA_digEventHandler00003
+                0x800031da                S2_BRAMKA_dig__SPLS_TMPVAR__WAITLABEL_1__
+                0x80003784                S2_BRAMKA_dig_EventHandler
+                0x80002ecc                S2_BRAMKA_dig__SPLS_TMPVAR__WAITLABEL_0__
+                0x800034aa                S2_BRAMKA_digEventHandler00001
+                0x80003342                S2_BRAMKA_dig__SPLS_TMPVAR__WAITLABEL_2__
+ .text          0x80003c10     0x1246 S2_BRAMKA_dim_one.o
+                0x80004cfe                S2_BRAMKA_dim_one_EventHandler
+                0x800045e0                S2_BRAMKA_dim_oneEventHandler00006
+                0x800042e0                S2_BRAMKA_dim_oneEventHandler00004
+                0x80003e60                S2_BRAMKA_dim_oneEventHandler00001
+                0x80004de2                S2_BRAMKA_dim_one_main
+                0x80004160                S2_BRAMKA_dim_oneEventHandler00003
+                0x80003c10                S2_BRAMKA_dim_oneEventHandler00000
+                0x80003fe0                S2_BRAMKA_dim_oneEventHandler00002
+                0x800047d0                S2_BRAMKA_dim_oneEventHandler00007
+                0x80004460                S2_BRAMKA_dim_oneEventHandler00005
+ *fill*         0x80004e56        0x2
+ .text          0x80004e58      0x37c S2_BRAMKA_dig_All_Off.o
+                0x80004e58                S2_BRAMKA_dig_All_OffEventHandler00000
+                0x80005030                S2_BRAMKA_dig_All_Off_EventHandler
+                0x800050d6                S2_BRAMKA_dig_All_Off_main
+ .text          0x800051d4      0x328 S2_AnalogToSerial.o
+                0x800051d4                S2_AnalogToSerialEventHandler00000
+                0x8000546a                S2_AnalogToSerial_main
+                0x800053ca                S2_AnalogToSerial_EventHandler
+ .text          0x800054fc     0x11f4 S2_BRAMKA_dim_one_KNX.o
+                0x800060bc                S2_BRAMKA_dim_one_KNXEventHandler00007
+                0x80005ecc                S2_BRAMKA_dim_one_KNXEventHandler00006
+                0x8000667c                S2_BRAMKA_dim_one_KNX_main
+                0x80005a4c                S2_BRAMKA_dim_one_KNXEventHandler00003
+                0x800058cc                S2_BRAMKA_dim_one_KNXEventHandler00002
+                0x80005d4c                S2_BRAMKA_dim_one_KNXEventHandler00005
+                0x800054fc                S2_BRAMKA_dim_one_KNXEventHandler00000
+                0x8000574c                S2_BRAMKA_dim_one_KNXEventHandler00001
+                0x80005bcc                S2_BRAMKA_dim_one_KNXEventHandler00004
+                0x80006598                S2_BRAMKA_dim_one_KNX_EventHandler
+ .text          0x800066f0      0x5e0 S2_BRAMKA_rol.o
+                0x80006c46                S2_BRAMKA_rol_EventHandler
+                0x8000686e                S2_BRAMKA_rolEventHandler00001
+                0x800066f0                S2_BRAMKA_rolEventHandler00000
+                0x80006c00                S2_BRAMKA_rol_main
+                0x800069ec                S2_BRAMKA_rolEventHandler00002
+ .text          0x80006cd0     0x167c S2_BRAMKA_pogoda.o
+                0x800074ee                S2_BRAMKA_pogodaEventHandler00004
+                0x800082da                S2_BRAMKA_pogoda_main
+                0x80006cd0                S2_BRAMKA_pogodaEventHandler00000
+                0x80007704                S2_BRAMKA_pogodaEventHandler00005
+                0x80008214                S2_BRAMKA_pogoda_EventHandler
+                0x800070c2                S2_BRAMKA_pogodaEventHandler00002
+                0x800072d8                S2_BRAMKA_pogodaEventHandler00003
+                0x80006eac                S2_BRAMKA_pogodaEventHandler00001
+ .text          0x8000834c     0x172e S2_BRAMKA_BIQ.o
+                0x8000879c                S2_BRAMKA_BIQEventHandler00008
+                0x800092e8                S2_BRAMKA_BIQEventHandler00000
+                0x80009544                S2_BRAMKA_BIQEventHandler00002
+                0x800098ce                S2_BRAMKA_BIQEventHandler00005
+                0x800084cc                S2_BRAMKA_BIQWAITSCENA
+                0x80009224                S2_BRAMKA_BIQ_main
+                0x800099fc                S2_BRAMKA_BIQEventHandler00006
+                0x80009672                S2_BRAMKA_BIQEventHandler00003
+                0x80009416                S2_BRAMKA_BIQEventHandler00001
+                0x800097a0                S2_BRAMKA_BIQEventHandler00004
+                0x8000914a                S2_BRAMKA_BIQ_EventHandler
+                0x800085fe                S2_BRAMKA_BIQEventHandler00007
+ *fill*         0x80009a7a        0x2
+ .text          0x80009a7c      0x6cc S2_BRAMKA_WORD.o
+                0x8000a034                S2_BRAMKA_WORDEventHandler00000
+                0x80009f14                S2_BRAMKA_WORD_main
+                0x80009e16                S2_BRAMKA_WORD_EventHandler
+                0x80009a7c                S2_BRAMKA_WORDEventHandler00001
+                0x80009bf8                S2_BRAMKA_WORDEventHandler00002
+ .text          0x8000a148      0xf30 S2_BRAMKA_SatelZone.o
+                0x8000a60c                S2_BRAMKA_SatelZoneEventHandler00003
+                0x8000a48a                S2_BRAMKA_SatelZoneEventHandler00002
+                0x8000ad5c                S2_BRAMKA_SatelZone_EventHandler
+                0x8000a308                S2_BRAMKA_SatelZoneEventHandler00001
+                0x8000ae74                S2_BRAMKA_SatelZone_main
+                0x8000af6e                S2_BRAMKA_SatelZoneEventHandler00000
+ .text          0x8000b078     0x1076 S2_Keyboard.o
+                0x8000b8f8                S2_KeyboardEventHandler00003
+                0x8000b538                S2_KeyboardEventHandler00001
+                0x8000bc14                S2_KeyboardEventHandler00005
+                0x8000c02c                S2_Keyboard_main
+                0x8000b320                S2_KeyboardEventHandler00000
+                0x8000b750                S2_KeyboardEventHandler00002
+                0x8000bf8c                S2_Keyboard_EventHandler
+                0x8000baac                S2_KeyboardEventHandler00004
+ *fill*         0x8000c0ee        0x2
+ .text          0x8000c0f0      0x344 S2_Multiple_Serial_Send.o
+                0x8000c348                S2_Multiple_Serial_SendEventHandler00000
+                0x8000c2a4                S2_Multiple_Serial_Send_main
+                0x8000c1e8                S2_Multiple_Serial_Send_EventHandler
+ .text          0x8000c434      0xe54 S2_Zone_multiroom.o
+                0x8000d218                S2_Zone_multiroomEventHandler00007
+                0x8000cce0                S2_Zone_multiroom_main
+                0x8000d058                S2_Zone_multiroomEventHandler00004
+                0x8000cf34                S2_Zone_multiroomEventHandler00002
+                0x8000d10c                S2_Zone_multiroomEventHandler00005
+                0x8000cfe4                S2_Zone_multiroomEventHandler00003
+                0x8000cc02                S2_Zone_multiroom_EventHandler
+                0x8000c9ac                S2_Zone_multiroomEventHandler00006
+                0x8000cde6                S2_Zone_multiroomEventHandler00000
+                0x8000ce5c                S2_Zone_multiroomEventHandler00001
+ .text          0x8000d288      0x454 S2_TimeToString.o
+                0x8000d5d6                S2_TimeToString_EventHandler
+                0x8000d288                S2_TimeToStringEventHandler00000
+                0x8000d676                S2_TimeToString_main
+ .text          0x8000d6dc      0xc2c S2_Multiroom_iPhone.o
+                0x8000deae                S2_Multiroom_iPhone_EventHandler
+                0x8000e224                S2_Multiroom_iPhoneEventHandler00003
+                0x8000e092                S2_Multiroom_iPhoneEventHandler00000
+                0x8000dc74                S2_Multiroom_iPhoneEventHandler00005
+                0x8000e298                S2_Multiroom_iPhoneEventHandler00006
+                0x8000e198                S2_Multiroom_iPhoneEventHandler00002
+                0x8000db48                S2_Multiroom_iPhoneEventHandler00004
+                0x8000e10c                S2_Multiroom_iPhoneEventHandler00001
+                0x8000df8c                S2_Multiroom_iPhone_main
+ .text          0x8000e308      0xbf4 S2_Multiroom.o
+                0x8000ee18                S2_MultiroomEventHandler00003
+                0x8000ec18                S2_MultiroomEventHandler00000
+                0x8000ee8c                S2_MultiroomEventHandler00006
+                0x8000e6ce                S2_MultiroomEventHandler00004
+                0x8000eb12                S2_Multiroom_main
+                0x8000ec90                S2_MultiroomEventHandler00001
+                0x8000e7fa                S2_MultiroomEventHandler00005
+                0x8000ed68                S2_MultiroomEventHandler00002
+                0x8000ea34                S2_Multiroom_EventHandler
+ .text          0x8000eefc     0x88b2 S2_Sharp_LC_52LE925UN_v1_1_Processor.o
+                0x8001342a                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler0000A
+                0x80012c00                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00005
+                0x8001748e                S2_Sharp_LC_52LE925UN_v1_1_Processor_main
+                0x800138ec                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler0000D
+                0x800159e0                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler0000E
+                0x800130fe                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00008
+                0x80012daa                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00006
+                0x800166ee                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler0000F
+                0x8001734a                S2_Sharp_LC_52LE925UN_v1_1_Processor_EventHandler
+                0x80013294                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00009
+                0x80013756                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler0000C
+                0x80012a56                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00004
+                0x80012f54                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00007
+                0x800123ae                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00000
+                0x800128ac                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00003
+                0x800135c0                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler0000B
+                0x80012702                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00002
+                0x80012558                S2_Sharp_LC_52LE925UN_v1_1_ProcessorEventHandler00001
+ *fill*         0x800177ae        0x2
+ .text          0x800177b0     0x5de4 S2_Oppo_Time_Processor_v1_0.o
+                0x8001d2a0                S2_Oppo_Time_Processor_v1_0_main
+                0x8001b294                S2_Oppo_Time_Processor_v1_0EventHandler00001
+                0x8001bb38                S2_Oppo_Time_Processor_v1_0EventHandler00003
+                0x8001bc78                S2_Oppo_Time_Processor_v1_0EventHandler00004
+                0x8001d200                S2_Oppo_Time_Processor_v1_0_EventHandler
+                0x800177b0                S2_Oppo_Time_Processor_v1_0EventHandler00000
+                0x8001b3d4                S2_Oppo_Time_Processor_v1_0EventHandler00002
+                0x8001caf6                S2_Oppo_Time_Processor_v1_0EventHandler00006
+                0x8001c3dc                S2_Oppo_Time_Processor_v1_0EventHandler00005
+ .text          0x8001d594      0x192 S2_Czujniki_EN_Reboot.o
+                0x8001d680                S2_Czujniki_EN_RebootEventHandler00000
+                0x8001d594                S2_Czujniki_EN_Reboot_EventHandler
+                0x8001d63a                S2_Czujniki_EN_Reboot_main
+ *fill*         0x8001d726        0x2
+ .text          0x8001d728     0x5836 library.o
+                0x80021914                RotateRightLong
+                0x80021f22                IsSystem
+                0x80021878                Seed
+                0x8001f170                Remove
+                0x800214f4                Ltoa
+                0x80021220                Atoi
+                0x80020588                InitRampInfoArray
+                0x80021cce                Right
+                0x80022cfe                LockInputSema
+                0x800217a2                Mod
+                0x8002198a                Getc
+                0x800216d6                SMuldiv
+                0x80021f04                IsHidden
+                0x800215ba                Min
+                0x80022b12                hextosi
+                0x800220a8                WriteIntegerArray
+                0x8002261e                GetSignedIntArrayElementPtr
+                0x80020f42                CheckStructArray
+                0x80022b26                hextosl
+                0x8002222e                WriteSignedIntegerArray
+                0x80020c0a                InitStringParamArray
+                0x8001fedc                ReadSignedLongIntegerArray
+                0x8001edfe                GatherToDelimiter
+                0x80020a2e                InitStringArray
+                0x80021594                Max
+                0x80021f5e                IsReadOnly
+                0x8002169e                SMax
+                0x8001efa2                GatherByLength
+                0x8002142e                Chr
+                0x80022080                ReadSignedLongInteger
+                0x800214ac                Itohex
+                0x80020eb4                GetStructArrayElement
+                0x800211a8                UNS_SetByte
+                0x80021ca2                ReverseFindi
+                0x80020384                ReadStringArray
+                0x8002242e                GetIntArrayElementPtr
+                0x80021ade                Lower
+                0x80021894                RotateLeft
+                0x80022c46                ResizeIfAutogrow
+                0x800206b4                CheckInputArray
+                0x8001dc96                ResizeStringArray
+                0x800213c0                Atosl
+                0x800211e8                High
+                0x80021844                Rnd
+                0x80021766                UMod
+                0x800218ea                RotateLeftLong
+                0x80022d72                FindNumericChar
+                0x80022876                CheckIOArrayBounds2
+                0x80021ebc                MakeProgramFilename
+                0x800216ba                SMin
+                0x80021a12                Left
+                0x80021954                CheckBufferThreshold
+                0x80022038                ReadSignedInteger
+                0x80021212                LowWord
+                0x8001d728                Bit
+                0x80021fe8                ReadLongInteger
+                0x80021026                Byte
+                0x80022526                GetLongArrayElementPtr
+                0x80021c74                ReverseFind
+                0x80021ed2                GetSeries
+                0x80022e3e                InitTcpServer
+                0x80021ac6                Len
+                0x80022946                InitializeRampInfoInternal
+                0x800215e0                Divide
+                0x8002132c                Atol
+                0x80021ec8                GetModelNumber
+                0x8002280e                CheckIOArrayBounds
+                0x8002070e                CheckStringInputArray
+                0x800222f0                WriteSignedLongIntegerArray
+                0x80020dfe                GetStringArrayElement
+                0x80021538                Ltohex
+                0x80021464                Itoa
+                0x800218be                RotateRight
+                0x8001f45e                InternalReverseFind
+                0x80021fc8                WriteLongInteger
+                0x80020932                InitDynamicStringStruct
+                0x80020824                SetStringArray
+                0x8001fcba                ReadSignedIntegerArray
+                0x80020768                SetOutputArray
+                0x80021f78                WriteInteger
+                0x80020d92                InitStructDynamicArray
+                0x8001f6e8                SetString
+                0x800217de                Random
+                0x80022010                WriteSignedInteger
+                0x8001d98c                Find
+                0x80021edc                GetProgramNumber
+                0x80021bb2                Mid
+                0x80022db0                InitTcpClient
+                0x8001e87a                ResizeStructArray
+                0x80022716                GetSignedLongArrayElementPtr
+                0x80022b38                hextol
+                0x800200fe                ReadString
+                0x80020ac4                InitDynamicStringArray
+                0x80022c1e                UpperChar
+                0x800212bc                Atosi
+                0x80021fa0                ReadInteger
+                0x80021652                Muldiv
+                0x800207d6                SetStringOutputArray
+                0x800223b4                WriteString
+                0x8001e2ee                ResizeIntegerArray
+                0x8002067c                InitInOutArray
+                0x80020cd2                InitNvramStringArray
+                0x8002157c                Abs
+                0x80021722                SDivide
+                0x8001f878                ReadIntegerArray
+                0x8001d838                CompareStrings
+                0x80022bf6                LowerChar
+                0x80022ece                InitUdpSocket
+                0x8002193c                ClearBuffer
+                0x80021d8a                Upper
+                0x80020d6e                InitStructArray
+                0x80021e60                MakeLower
+                0x80021f40                IsVolume
+                0x8001f2ca                RemoveByLength
+                0x80020fbe                CheckStringOutputArrayIndex
+                0x8002216a                WriteLongIntegerArray
+                0x800229f2                InitRampInfoStructArray
+                0x80021204                HighWord
+                0x8001db00                ResizeString
+                0x80021ee6                IsDirectory
+                0x8001fa98                ReadLongIntegerArray
+                0x800211f6                Low
+                0x8001eca4                Gather
+                0x80021e8e                MakeUpper
+                0x800208f4                InitStringStruct
+                0x800228de                CheckStringArrayBounds
+                0x80021624                CheckDenominator
+                0x80022afa                hextoi
+                0x8002021c                WriteStringArray
+                0x800210e6                SetByte
+                0x8002299c                InitializeRampInfo
+                0x80022d38                UnLockInputSema
+                0x80022060                WriteSignedLongInteger
+                0x800209e6                InitNvramStringStruct
+ *fill*         0x80022f5e        0x2
+                0x80022f60                .=ALIGN(0x10)
+ *(.eh_frame)
+                0x80022f60                .=ALIGN(0x10)
+ *(.gnu.linkonce.t.*)
+                0x80022f60                .=ALIGN(0x4)
+                0x80022f60                __CTOR_LIST__=.
+                0x80022f60                ___CTOR_LIST__=.
+                0x80022f60        0x4 LONG 0x0 (((__CTOR_END__-__CTOR_LIST__)/0x4)-0x2)
+ *(.ctors)
+                0x80022f64        0x4 LONG 0x0
+                0x80022f68                __CTOR_END__=.
+                0x80022f68                __DTOR_LIST__=.
+                0x80022f68                ___DTOR_LIST__=.
+                0x80022f68        0x4 LONG 0x0 (((__DTOR_END__-__DTOR_LIST__)/0x4)-0x2)
+ *(.dtors)
+                0x80022f6c        0x4 LONG 0x0
+                0x80022f70                __DTOR_END__=.
+ *(.rodata)
+ .rodata        0x80022f70      0x253 S2_TV_SAT_Presets.o
+ .rodata        0x800231c3      0x29a S2_Bramka_Connected.o
+ .rodata        0x8002345d      0x37b S2_BRAMKA__MAIN.o
+ .rodata        0x800237d8      0x2c2 S2_BRAMKA_tryb.o
+ .rodata        0x80023a9a      0x2b0 S2_BRAMKA_dig_pulse.o
+ .rodata        0x80023d4a      0x382 S2_BRAMKA_dig.o
+ .rodata        0x800240cc      0x305 S2_BRAMKA_dim_one.o
+ .rodata        0x800243d1      0x298 S2_BRAMKA_dig_All_Off.o
+ .rodata        0x80024669      0x281 S2_AnalogToSerial.o
+ .rodata        0x800248ea      0x2f6 S2_BRAMKA_dim_one_KNX.o
+ .rodata        0x80024be0      0x297 S2_BRAMKA_rol.o
+ .rodata        0x80024e77      0x3a0 S2_BRAMKA_pogoda.o
+ .rodata        0x80025217      0x369 S2_BRAMKA_BIQ.o
+ .rodata        0x80025580      0x2a1 S2_BRAMKA_WORD.o
+ .rodata        0x80025821      0x362 S2_BRAMKA_SatelZone.o
+ .rodata        0x80025b83      0x2d3 S2_Keyboard.o
+ .rodata        0x80025e56      0x242 S2_Multiple_Serial_Send.o
+ .rodata        0x80026098      0x24b S2_Zone_multiroom.o
+ .rodata        0x800262e3      0x2e9 S2_TimeToString.o
+ .rodata        0x800265cc      0x24b S2_Multiroom_iPhone.o
+ .rodata        0x80026817      0x24b S2_Multiroom.o
+ .rodata        0x80026a62      0x730 S2_Sharp_LC_52LE925UN_v1_1_Processor.o
+ .rodata        0x80027192      0x666 S2_Oppo_Time_Processor_v1_0.o
+ .rodata        0x800277f8      0x22f S2_Czujniki_EN_Reboot.o
+ .rodata        0x80027a27      0xc54 library.o
+ *(.gcc_except_table)
+ *fill*         0x8002867b        0x1
+                0x8002867c                .=ALIGN(0x2)
+                0x8002867c                __INIT_SECTION__=.
+                0x8002867c        0x4 LONG 0x4e560000
+ *(.init)
+                0x80028680        0x2 SHORT 0x4e5e
+                0x80028682        0x2 SHORT 0x4e75
+                0x80028684                __FINI_SECTION__=.
+                0x80028684        0x4 LONG 0x4e560000
+ *(.fini)
+                0x80028688        0x2 SHORT 0x4e5e
+                0x8002868a        0x2 SHORT 0x4e75
+ *(.lit)
+ *fill*         0x8002868c        0x4
+                0x80028690                .=ALIGN(0x10)
+                0x80028690                _etext=.
+                0x80028690                etext=.
+
+.data           0x80028690        0x0
+                0x80028690                copy_start=.
+ *(.shdata)
+ *(.data)
+ *(.gnu.linkonce.d.*)
+                0x80028690                .=ALIGN(0x10)
+                0x80028690                _edata=.
+                0x80028690                copy_end=.
+
+.got
+ *(.got.plt)
+ *(.got)
+
+EntryList       0x80028690     0x1980
+ *(EntryList)
+ EntryList      0x80028690      0x110 S2_TV_SAT_Presets.o
+                0x80028690                S2_TV_SAT_Presets_Entry
+ EntryList      0x800287a0      0x110 S2_Bramka_Connected.o
+                0x800287a0                S2_Bramka_Connected_Entry
+ EntryList      0x800288b0      0x110 S2_BRAMKA__MAIN.o
+                0x800288b0                S2_BRAMKA__MAIN_Entry
+ EntryList      0x800289c0      0x110 S2_BRAMKA_tryb.o
+                0x800289c0                S2_BRAMKA_tryb_Entry
+ EntryList      0x80028ad0      0x110 S2_BRAMKA_dig_pulse.o
+                0x80028ad0                S2_BRAMKA_dig_pulse_Entry
+ EntryList      0x80028be0      0x110 S2_BRAMKA_dig.o
+                0x80028be0                S2_BRAMKA_dig_Entry
+ EntryList      0x80028cf0      0x110 S2_BRAMKA_dim_one.o
+                0x80028cf0                S2_BRAMKA_dim_one_Entry
+ EntryList      0x80028e00      0x110 S2_BRAMKA_dig_All_Off.o
+                0x80028e00                S2_BRAMKA_dig_All_Off_Entry
+ EntryList      0x80028f10      0x110 S2_AnalogToSerial.o
+                0x80028f10                S2_AnalogToSerial_Entry
+ EntryList      0x80029020      0x110 S2_BRAMKA_dim_one_KNX.o
+                0x80029020                S2_BRAMKA_dim_one_KNX_Entry
+ EntryList      0x80029130      0x110 S2_BRAMKA_rol.o
+                0x80029130                S2_BRAMKA_rol_Entry
+ EntryList      0x80029240      0x110 S2_BRAMKA_pogoda.o
+                0x80029240                S2_BRAMKA_pogoda_Entry
+ EntryList      0x80029350      0x110 S2_BRAMKA_BIQ.o
+                0x80029350                S2_BRAMKA_BIQ_Entry
+ EntryList      0x80029460      0x110 S2_BRAMKA_WORD.o
+                0x80029460                S2_BRAMKA_WORD_Entry
+ EntryList      0x80029570      0x110 S2_BRAMKA_SatelZone.o
+                0x80029570                S2_BRAMKA_SatelZone_Entry
+ EntryList      0x80029680      0x110 S2_Keyboard.o
+                0x80029680                S2_Keyboard_Entry
+ EntryList      0x80029790      0x110 S2_Multiple_Serial_Send.o
+                0x80029790                S2_Multiple_Serial_Send_Entry
+ EntryList      0x800298a0      0x110 S2_Zone_multiroom.o
+                0x800298a0                S2_Zone_multiroom_Entry
+ EntryList      0x800299b0      0x110 S2_TimeToString.o
+                0x800299b0                S2_TimeToString_Entry
+ EntryList      0x80029ac0      0x110 S2_Multiroom_iPhone.o
+                0x80029ac0                S2_Multiroom_iPhone_Entry
+ EntryList      0x80029bd0      0x110 S2_Multiroom.o
+                0x80029bd0                S2_Multiroom_Entry
+ EntryList      0x80029ce0      0x110 S2_Sharp_LC_52LE925UN_v1_1_Processor.o
+                0x80029ce0                S2_Sharp_LC_52LE925UN_v1_1_Processor_Entry
+ EntryList      0x80029df0      0x110 S2_Oppo_Time_Processor_v1_0.o
+                0x80029df0                S2_Oppo_Time_Processor_v1_0_Entry
+ EntryList      0x80029f00      0x110 S2_Czujniki_EN_Reboot.o
+                0x80029f00                S2_Czujniki_EN_Reboot_Entry
+                0x8002a010                .=ALIGN(0x4)
+
+FunctionList    0x8002a010        0x4
+ *(FunctionList)
+ FunctionList   0x8002a010        0x4 globals.o
+                0x8002a010                g_pFunctions
+                0x8002a014                .=ALIGN(0x4)
+
+.bss            0x8002a014        0x0
+                0x8002a014                .=ALIGN(0x4)
+                0x8002a014                __bss_start=.
+ *(.shbss)
+ *(.bss)
+ *(COMMON)
+                0x8002a018                _end=ALIGN(0x8)
+                0x8002a018                __end=_end
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+LOAD S2_TV_SAT_Presets.o
+LOAD S2_Bramka_Connected.o
+LOAD S2_BRAMKA__MAIN.o
+LOAD S2_BRAMKA_tryb.o
+LOAD S2_BRAMKA_dig_pulse.o
+LOAD S2_BRAMKA_dig.o
+LOAD S2_BRAMKA_dim_one.o
+LOAD S2_BRAMKA_dig_All_Off.o
+LOAD S2_AnalogToSerial.o
+LOAD S2_BRAMKA_dim_one_KNX.o
+LOAD S2_BRAMKA_rol.o
+LOAD S2_BRAMKA_pogoda.o
+LOAD S2_BRAMKA_BIQ.o
+LOAD S2_BRAMKA_WORD.o
+LOAD S2_BRAMKA_SatelZone.o
+LOAD S2_Keyboard.o
+LOAD S2_Multiple_Serial_Send.o
+LOAD S2_Zone_multiroom.o
+LOAD S2_TimeToString.o
+LOAD S2_Multiroom_iPhone.o
+LOAD S2_Multiroom.o
+LOAD S2_Sharp_LC_52LE925UN_v1_1_Processor.o
+LOAD S2_Oppo_Time_Processor_v1_0.o
+LOAD S2_Czujniki_EN_Reboot.o
+LOAD globals.o
+LOAD library.o
+OUTPUT(_S2_Biskupice_DIN_AP2.spl elf32-m68k)
+
+.comment        0x8002a014      0x3dc
+ .comment       0x8002a014       0x26 S2_TV_SAT_Presets.o
+ .comment       0x8002a03a       0x26 S2_Bramka_Connected.o
+ .comment       0x8002a060       0x26 S2_BRAMKA__MAIN.o
+ .comment       0x8002a086       0x26 S2_BRAMKA_tryb.o
+ .comment       0x8002a0ac       0x26 S2_BRAMKA_dig_pulse.o
+ .comment       0x8002a0d2       0x26 S2_BRAMKA_dig.o
+ .comment       0x8002a0f8       0x26 S2_BRAMKA_dim_one.o
+ .comment       0x8002a11e       0x26 S2_BRAMKA_dig_All_Off.o
+ .comment       0x8002a144       0x26 S2_AnalogToSerial.o
+ .comment       0x8002a16a       0x26 S2_BRAMKA_dim_one_KNX.o
+ .comment       0x8002a190       0x26 S2_BRAMKA_rol.o
+ .comment       0x8002a1b6       0x26 S2_BRAMKA_pogoda.o
+ .comment       0x8002a1dc       0x26 S2_BRAMKA_BIQ.o
+ .comment       0x8002a202       0x26 S2_BRAMKA_WORD.o
+ .comment       0x8002a228       0x26 S2_BRAMKA_SatelZone.o
+ .comment       0x8002a24e       0x26 S2_Keyboard.o
+ .comment       0x8002a274       0x26 S2_Multiple_Serial_Send.o
+ .comment       0x8002a29a       0x26 S2_Zone_multiroom.o
+ .comment       0x8002a2c0       0x26 S2_TimeToString.o
+ .comment       0x8002a2e6       0x26 S2_Multiroom_iPhone.o
+ .comment       0x8002a30c       0x26 S2_Multiroom.o
+ .comment       0x8002a332       0x26 S2_Sharp_LC_52LE925UN_v1_1_Processor.o
+ .comment       0x8002a358       0x26 S2_Oppo_Time_Processor_v1_0.o
+ .comment       0x8002a37e       0x26 S2_Czujniki_EN_Reboot.o
+ .comment       0x8002a3a4       0x26 globals.o
+ .comment       0x8002a3ca       0x26 library.o
