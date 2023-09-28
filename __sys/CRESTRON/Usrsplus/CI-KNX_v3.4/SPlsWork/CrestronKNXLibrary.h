@@ -2,16 +2,16 @@ namespace CrestronKNXLibrary.Data_Types;
         // class declarations
          class DataTypeComponent;
          class KNXFourBitSimplSharpComponent;
+         class KNXSixByteSimplSharpComponent;
+         class KNXTwoByteSimplSharpComponent;
+         class KNXOneByteSimplSharpComponent;
+         class KNXFourteenByteSimplSharpComponent;
+         class KNXFourBytesSimplSharpComponent;
          class KNXDateSimplSharpComponent;
          class KNXTimeSimplSharpComponent;
          class KNXThreeByteSimplSharpComponent;
-         class KNXFourBytesSimplSharpComponent;
-         class KNXSixByteSimplSharpComponent;
-         class KNXTwoByteSimplSharpComponent;
          class KNXOneBitSimplSharpComponent;
-         class KNXOneByteSimplSharpComponent;
          class KNXTwoBitSimplSharpComponent;
-         class KNXFourteenByteSimplSharpComponent;
            class DelegateNoParameters;
            class RouterComponent;
            class DelegateInteger;
@@ -52,6 +52,35 @@ namespace CrestronKNXLibrary.Data_Types;
         FUNCTION DimUp ();
         FUNCTION DimDown ();
         FUNCTION StopDimming ();
+        FUNCTION DimUpByStep ();
+        FUNCTION DimDownByStep ();
+        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
+        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
+        FUNCTION PollValue ();
+        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
+        STRING_FUNCTION ToString ();
+
+        // class variables
+        INTEGER StepCode;
+
+        // class properties
+        DelegateProperty DelegateInteger initializationIsComplete;
+        DelegateProperty DelegateInteger UpdateFourBitValue;
+        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
+    };
+
+     class KNXSixByteSimplSharpComponent 
+    {
+        // class delegates
+        delegate FUNCTION DelegateUshort ( INTEGER value );
+        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
+        delegate FUNCTION DelegateNoParameters ( );
+
+        // class events
+
+        // class functions
+        FUNCTION BeginInitialization ();
+        FUNCTION ChangeValue ( LONG_INTEGER lowBytes , LONG_INTEGER midBytes , LONG_INTEGER highBytes );
         FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
         FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
         FUNCTION PollValue ();
@@ -62,8 +91,130 @@ namespace CrestronKNXLibrary.Data_Types;
         INTEGER __class_id__;
 
         // class properties
-        DelegateProperty DelegateInteger initializationIsComplete;
-        DelegateProperty DelegateInteger UpdateFourBitValue;
+        DelegateProperty DelegateUshort initializationIsComplete;
+        DelegateProperty DelegateUshort UpdateSixByteValueLowBytes;
+        DelegateProperty DelegateUshort UpdateSixByteValueMidBytes;
+        DelegateProperty DelegateUshort UpdateSixByteValueHighBytes;
+        DelegateProperty DelegateString UpdateSixBytesUnsignedValue;
+        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
+    };
+
+     class KNXTwoByteSimplSharpComponent 
+    {
+        // class delegates
+        delegate FUNCTION DelegateUshort ( INTEGER value );
+        delegate FUNCTION DelegateShort ( SIGNED_INTEGER value );
+        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
+        delegate FUNCTION DelegateNoParameters ( );
+
+        // class events
+
+        // class functions
+        FUNCTION BeginInitialization ();
+        FUNCTION ChangeValue ( SIGNED_LONG_INTEGER value );
+        FUNCTION ChangeEIS5Value ( SIGNED_LONG_INTEGER sign , SIGNED_LONG_INTEGER value );
+        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
+        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
+        FUNCTION PollValue ();
+        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
+        STRING_FUNCTION ToString ();
+
+        // class variables
+        INTEGER __class_id__;
+
+        // class properties
+        DelegateProperty DelegateUshort initializationIsComplete;
+        DelegateProperty DelegateUshort UpdateTwoByteValue;
+        DelegateProperty DelegateUshort UpdateTwoByteEIS5MantissaValue;
+        DelegateProperty DelegateUshort UpdateTwoByteEIS5ExponentValue;
+        DelegateProperty DelegateUshort UpdateTwoByteEIS5SignValue;
+        DelegateProperty DelegateShort UpdateTwoByteEIS5AbsoluteValue;
+        DelegateProperty DelegateString UpdateTwoByteEIS5AbsoluteValueText;
+        DelegateProperty DelegateString UpdateTwoByteEIS5DecimalValueText;
+        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
+    };
+
+     class KNXOneByteSimplSharpComponent 
+    {
+        // class delegates
+        delegate FUNCTION DelegateUshort ( INTEGER value );
+        delegate FUNCTION DelegateNoParameters ( );
+
+        // class events
+
+        // class functions
+        FUNCTION BeginInitialization ();
+        FUNCTION ChangeValue ( SIGNED_LONG_INTEGER value );
+        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
+        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
+        FUNCTION PollValue ();
+        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
+        STRING_FUNCTION ToString ();
+
+        // class variables
+        INTEGER __class_id__;
+
+        // class properties
+        DelegateProperty DelegateUshort initializationIsComplete;
+        DelegateProperty DelegateUshort UpdateOneByteValue;
+        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
+    };
+
+     class KNXFourteenByteSimplSharpComponent 
+    {
+        // class delegates
+        delegate FUNCTION DelegateUshort ( INTEGER value );
+        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
+        delegate FUNCTION DelegateNoParameters ( );
+
+        // class events
+
+        // class functions
+        FUNCTION BeginInitialization ();
+        FUNCTION ChangeValue ( STRING value );
+        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
+        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
+        FUNCTION PollValue ();
+        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
+        STRING_FUNCTION ToString ();
+
+        // class variables
+        INTEGER __class_id__;
+
+        // class properties
+        DelegateProperty DelegateUshort initializationIsComplete;
+        DelegateProperty DelegateString UpdateFourteenByteValue;
+        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
+    };
+
+     class KNXFourBytesSimplSharpComponent 
+    {
+        // class delegates
+        delegate FUNCTION DelegateUshort ( INTEGER value );
+        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
+        delegate FUNCTION DelegateNoParameters ( );
+
+        // class events
+
+        // class functions
+        FUNCTION BeginInitialization ();
+        FUNCTION ChangeValue ( LONG_INTEGER lowBytes , LONG_INTEGER highBytes );
+        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
+        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
+        FUNCTION PollValue ();
+        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
+        STRING_FUNCTION ToString ();
+
+        // class variables
+        INTEGER __class_id__;
+
+        // class properties
+        DelegateProperty DelegateUshort initializationIsComplete;
+        DelegateProperty DelegateUshort UpdateFourByteValueLowBytes;
+        DelegateProperty DelegateUshort UpdateFourByteValueHighBytes;
+        DelegateProperty DelegateString UpdateFourBytesUnsignedValue;
+        DelegateProperty DelegateString UpdateFourBytesSignedValue;
+        DelegateProperty DelegateString UpdateFourBytesFPValue;
         DelegateProperty DelegateNoParameters basicInitializationIsComplete;
     };
 
@@ -156,102 +307,6 @@ namespace CrestronKNXLibrary.Data_Types;
         DelegateProperty DelegateNoParameters basicInitializationIsComplete;
     };
 
-     class KNXFourBytesSimplSharpComponent 
-    {
-        // class delegates
-        delegate FUNCTION DelegateUshort ( INTEGER value );
-        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
-        delegate FUNCTION DelegateNoParameters ( );
-
-        // class events
-
-        // class functions
-        FUNCTION BeginInitialization ();
-        FUNCTION ChangeValue ( LONG_INTEGER lowBytes , LONG_INTEGER highBytes );
-        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
-        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
-        FUNCTION PollValue ();
-        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
-        STRING_FUNCTION ToString ();
-
-        // class variables
-        INTEGER __class_id__;
-
-        // class properties
-        DelegateProperty DelegateUshort initializationIsComplete;
-        DelegateProperty DelegateUshort UpdateFourByteValueLowBytes;
-        DelegateProperty DelegateUshort UpdateFourByteValueHighBytes;
-        DelegateProperty DelegateString UpdateFourBytesUnsignedValue;
-        DelegateProperty DelegateString UpdateFourBytesSignedValue;
-        DelegateProperty DelegateString UpdateFourBytesFPValue;
-        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
-    };
-
-     class KNXSixByteSimplSharpComponent 
-    {
-        // class delegates
-        delegate FUNCTION DelegateUshort ( INTEGER value );
-        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
-        delegate FUNCTION DelegateNoParameters ( );
-
-        // class events
-
-        // class functions
-        FUNCTION BeginInitialization ();
-        FUNCTION ChangeValue ( LONG_INTEGER lowBytes , LONG_INTEGER midBytes , LONG_INTEGER highBytes );
-        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
-        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
-        FUNCTION PollValue ();
-        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
-        STRING_FUNCTION ToString ();
-
-        // class variables
-        INTEGER __class_id__;
-
-        // class properties
-        DelegateProperty DelegateUshort initializationIsComplete;
-        DelegateProperty DelegateUshort UpdateSixByteValueLowBytes;
-        DelegateProperty DelegateUshort UpdateSixByteValueMidBytes;
-        DelegateProperty DelegateUshort UpdateSixByteValueHighBytes;
-        DelegateProperty DelegateString UpdateSixBytesUnsignedValue;
-        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
-    };
-
-     class KNXTwoByteSimplSharpComponent 
-    {
-        // class delegates
-        delegate FUNCTION DelegateUshort ( INTEGER value );
-        delegate FUNCTION DelegateShort ( SIGNED_INTEGER value );
-        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
-        delegate FUNCTION DelegateNoParameters ( );
-
-        // class events
-
-        // class functions
-        FUNCTION BeginInitialization ();
-        FUNCTION ChangeValue ( SIGNED_LONG_INTEGER value );
-        FUNCTION ChangeEIS5Value ( SIGNED_LONG_INTEGER sign , SIGNED_LONG_INTEGER value );
-        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
-        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
-        FUNCTION PollValue ();
-        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
-        STRING_FUNCTION ToString ();
-
-        // class variables
-        INTEGER __class_id__;
-
-        // class properties
-        DelegateProperty DelegateUshort initializationIsComplete;
-        DelegateProperty DelegateUshort UpdateTwoByteValue;
-        DelegateProperty DelegateUshort UpdateTwoByteEIS5MantissaValue;
-        DelegateProperty DelegateUshort UpdateTwoByteEIS5ExponentValue;
-        DelegateProperty DelegateUshort UpdateTwoByteEIS5SignValue;
-        DelegateProperty DelegateShort UpdateTwoByteEIS5AbsoluteValue;
-        DelegateProperty DelegateString UpdateTwoByteEIS5AbsoluteValueText;
-        DelegateProperty DelegateString UpdateTwoByteEIS5DecimalValueText;
-        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
-    };
-
      class KNXOneBitSimplSharpComponent 
     {
         // class delegates
@@ -275,32 +330,6 @@ namespace CrestronKNXLibrary.Data_Types;
         // class properties
         DelegateProperty DelegateUshort initializationIsComplete;
         DelegateProperty DelegateUshort UpdateOneBitValue;
-        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
-    };
-
-     class KNXOneByteSimplSharpComponent 
-    {
-        // class delegates
-        delegate FUNCTION DelegateUshort ( INTEGER value );
-        delegate FUNCTION DelegateNoParameters ( );
-
-        // class events
-
-        // class functions
-        FUNCTION BeginInitialization ();
-        FUNCTION ChangeValue ( SIGNED_LONG_INTEGER value );
-        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
-        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
-        FUNCTION PollValue ();
-        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
-        STRING_FUNCTION ToString ();
-
-        // class variables
-        INTEGER __class_id__;
-
-        // class properties
-        DelegateProperty DelegateUshort initializationIsComplete;
-        DelegateProperty DelegateUshort UpdateOneByteValue;
         DelegateProperty DelegateNoParameters basicInitializationIsComplete;
     };
 
@@ -332,39 +361,12 @@ namespace CrestronKNXLibrary.Data_Types;
         DelegateProperty DelegateNoParameters basicInitializationIsComplete;
     };
 
-     class KNXFourteenByteSimplSharpComponent 
-    {
-        // class delegates
-        delegate FUNCTION DelegateUshort ( INTEGER value );
-        delegate FUNCTION DelegateString ( SIMPLSHARPSTRING value );
-        delegate FUNCTION DelegateNoParameters ( );
-
-        // class events
-
-        // class functions
-        FUNCTION BeginInitialization ();
-        FUNCTION ChangeValue ( STRING value );
-        FUNCTION InitializeSettings ( SIGNED_LONG_INTEGER id , STRING version , STRING address );
-        FUNCTION KNXRouterInitializationCompleteEventHandler ( SIGNED_LONG_INTEGER id , RouterComponent router );
-        FUNCTION PollValue ();
-        SIGNED_LONG_INTEGER_FUNCTION GetHashCode ();
-        STRING_FUNCTION ToString ();
-
-        // class variables
-        INTEGER __class_id__;
-
-        // class properties
-        DelegateProperty DelegateUshort initializationIsComplete;
-        DelegateProperty DelegateString UpdateFourteenByteValue;
-        DelegateProperty DelegateNoParameters basicInitializationIsComplete;
-    };
-
 namespace CrestronKNXLibrary.Communication;
         // class declarations
          class KNXCommunicationComponent;
+         class CIKNXCommunication;
          class CIKNX2Communication;
          class CGEIBIPCommunication;
-         class CIKNXCommunication;
      class KNXCommunicationComponent 
     {
         // class delegates
