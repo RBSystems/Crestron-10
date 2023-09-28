@@ -4951,7 +4951,7 @@ Ad=01,02,03,04,05,06,07,08,09,0A,0B,0C,0D,0E,0F,11,12,13,14,15,16,17,18,19,1A,1B
 ]
 [
 ObjTp=Dv
-Nm=Ethernet Intersystem Communications
+Nm=DIN-AP2
 H=881
 PrH=376
 DvC=232
@@ -22104,7 +22104,7 @@ CF=2
 n1I=879
 n2I=65
 n1O=879
-Cmn1=Ethernet Intersystem Communications
+Cmn1=DIN-AP2\\
 mI=1255
 I1=7619
 I3=7620

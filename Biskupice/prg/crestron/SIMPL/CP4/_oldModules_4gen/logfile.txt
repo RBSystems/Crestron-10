@@ -1,0 +1,186 @@
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  11d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  13d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  12d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  15d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  16d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  1d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  4d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  8d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  2d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  6d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  7d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  61d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  113d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  114d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  22d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  76d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  75d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  77d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  81d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  135d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  48d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  51d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  52d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  50d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  62d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  151d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  56d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  54d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  70d from old symbol S-2.1.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  11d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  13d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  12d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  15d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  16d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  1d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  4d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  8d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  2d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  6d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  7d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  61d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  113d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  114d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  22d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  76d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  75d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  77d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  81d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  135d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  48d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  51d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  52d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  50d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  62d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  151d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  56d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  54d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  0d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  70d from old symbol S-2.2.1 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPadGlowny][Funkcje][Lokalne][Multiroom][iPod][Main]_Time$ from old symbol S-4.1.6.7.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPod]_Remaining_Time from old symbol S-4.1.6.7.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPadGoscinny][Funkcje][Lokalne][Multiroom][iPod][Main]_Time$ from old symbol S-4.2.10.7.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPod]_Remaining_Time from old symbol S-4.2.10.7.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPhone][Funkcje][Lokalne][Multiroom][iPod][Main]_Time$ from old symbol S-4.3.4.6.5 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPod]_Remaining_Time from old symbol S-4.3.4.6.5 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPad_XPanel][Funkcje][Lokalne][Multiroom][iPod][Main]_Time$ from old symbol S-4.4.6.6.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPod]_Remaining_Time from old symbol S-4.4.6.6.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [TPMC-4X][Funkcje][Lokalne][Multiroom][iPod][Main]_Time$ from old symbol S-4.5.2.14.4.4 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPod]_Remaining_Time from old symbol S-4.5.2.14.4.4 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [XMac][Funkcje][Lokalne][Multiroom][iPod][Main]_Time$ from old symbol S-4.8.6.7.6 to replacement symbol
+ERROR  (183)  
+        Unable to move signal, or parameter value,  [iPod]_Remaining_Time from old symbol S-4.8.6.7.6 to replacement symbol
+WARNING(212)  
+        Cannot transfer Device: [iPad_Glowny] to new program. Either there was not a valid location to move the device to in the new program, the device was not in use (i.e. it's symbol had no programming) or children devices were moved to another location in new program
