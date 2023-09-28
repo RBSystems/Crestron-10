@@ -1297,7 +1297,7 @@ RelStat=Release
 ]
 [
 ObjTp=Dv
-Nm=Ethernet Intersystem Communications
+Nm=AES
 H=557
 PrH=305
 DvC=232
@@ -5411,7 +5411,7 @@ CF=2
 n1I=879
 n2I=65
 n1O=879
-Cmn1=Ethernet Intersystem Communications
+Cmn1=AES\\
 mI=1223
 I1=403
 I3=404
