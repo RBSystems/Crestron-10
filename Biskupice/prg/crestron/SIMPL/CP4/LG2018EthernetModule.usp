@@ -1,0 +1,442 @@
+//Compiler Directives
+#CATEGORY "46" "Crestron Certified Drivers" // Custom
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ENCODING_INHERIT_FROM_PROGRAM
+
+#USER_SIMPLSHARP_LIBRARY "Lg2018TvTcp"
+
+DIGITAL_INPUT Initialize;
+STRING_INPUT  IpAddress[200];
+ANALOG_INPUT  Port;
+ 
+// IPower
+DIGITAL_OUTPUT	Power_F;
+DIGITAL_INPUT	PowerOn;
+DIGITAL_INPUT	PowerOff;
+ANALOG_INPUT	SetWarmupTime;
+ANALOG_INPUT	SetCooldownTime;
+DIGITAL_OUTPUT	WarmingUp;
+DIGITAL_OUTPUT	CoolingDown;
+ANALOG_OUTPUT	WarmupTime;
+ANALOG_OUTPUT	CooldownTime;
+
+// IInputs
+ANALOG_OUTPUT  ActiveInputType;
+ANALOG_INPUT   SetInput;
+
+//INavigation
+DIGITAL_INPUT  UpArrow;
+DIGITAL_INPUT  DownArrow;
+DIGITAL_INPUT  LeftArrow;
+DIGITAL_INPUT  RightArrow;  
+DIGITAL_INPUT  Select;
+DIGITAL_INPUT  Exit;
+DIGITAL_INPUT  Home;
+DIGITAL_INPUT  Menu;
+
+//IMediaSources
+DIGITAL_INPUT YouTube;
+DIGITAL_INPUT Netflix;
+DIGITAL_INPUT Hulu;
+DIGITAL_INPUT AmazonVideo;
+DIGITAL_INPUT SlingTv;
+DIGITAL_INPUT PhotoAndVideo;
+DIGITAL_INPUT Music;
+
+//IMediaTransports
+DIGITAL_INPUT  ForwardScan;
+DIGITAL_INPUT  ReverseScan;
+DIGITAL_INPUT  ReturnCommand;
+DIGITAL_INPUT  Back;
+DIGITAL_INPUT  PlayPause;
+
+// IVolume
+ANALOG_OUTPUT  Volume_F;
+DIGITAL_OUTPUT Mute_F;
+DIGITAL_INPUT  MuteOn;
+DIGITAL_INPUT  MuteOff;
+DIGITAL_INPUT  MuteToggle;
+ANALOG_INPUT   SetVolume;
+DIGITAL_INPUT  VolumeUp;
+DIGITAL_INPUT  VolumeDown;
+      
+// IConnection
+DIGITAL_OUTPUT Connection_F;
+DIGITAL_INPUT  Disconnect;
+DIGITAL_INPUT  Reconnect;
+DIGITAL_INPUT  Connect;
+
+// IBasicLogger
+DIGITAL_INPUT  	EnableLogging;
+DIGITAL_INPUT 	EnableTxDebug;
+DIGITAL_INPUT   EnableRxDebug;
+STRING_OUTPUT  	Log;  
+   
+
+// IBasicInformation2
+DIGITAL_INPUT 	UserAttribute_SendItIn[2];
+STRING_INPUT 	UserAttribute_StringValue[2][50];                          
+                       
+ANALOG_OUTPUT DisplayInputType[6]; 
+  
+integer _initilizationComplete;
+                
+// S# References
+SimplDisplay simplSharpComponent;    
+
+// IPower
+PUSH PowerOn
+{
+	simplSharpComponent.SimplPowerOn();
+}
+PUSH PowerOff
+{
+	simplSharpComponent.SimplPowerOff();
+}
+
+RELEASE PowerOn
+{
+	simplSharpComponent.SimplRelease();
+}
+RELEASE PowerOff
+{
+	simplSharpComponent.SimplRelease();
+}
+
+CHANGE SetWarmupTime
+{
+	simplSharpComponent.SimplWarmUpTime(SetWarmupTime);
+}
+
+CHANGE SetCooldownTime
+{
+	simplSharpComponent.SimplCoolDownTime(SetCooldownTime);
+}
+
+// IInputs
+CHANGE SetInput
+{
+	simplSharpComponent.SimplSetInputSource(SetInput);
+}
+ 
+// IVolume
+PUSH VolumeUp
+{
+	simplSharpComponent.VolUpHold();
+}
+PUSH VolumeDown
+{
+	simplSharpComponent.VolDownHold();
+}
+PUSH MuteToggle
+{
+	simplSharpComponent.SimplMute();
+}
+PUSH MuteOn
+{
+	simplSharpComponent.SimplMuteOn();
+}
+PUSH MuteOff
+{
+	simplSharpComponent.SimplMuteOff();
+} 
+RELEASE VolumeUp
+{
+	simplSharpComponent.VolUpRelease();
+}
+
+RELEASE VolumeDown
+{
+	simplSharpComponent.VolDownRelease();
+}
+RELEASE MuteToggle
+{
+	simplSharpComponent.SimplRelease();
+}
+RELEASE MuteOn
+{
+	simplSharpComponent.SimplRelease();
+}
+RELEASE MuteOff
+{
+	simplSharpComponent.SimplRelease();
+}
+CHANGE SetVolume
+{	
+	simplSharpComponent.SimplSetVolume(SetVolume);
+}
+
+// IConnection
+PUSH Reconnect
+{
+	simplSharpComponent.SimplReconnect();	
+}
+
+PUSH Disconnect
+{
+	simplSharpComponent.SimplDisconnect();	
+}
+  
+PUSH Connect
+{
+ 	simplSharpComponent.SimplConnect();
+}
+
+// IBasicLogger
+PUSH EnableLogging
+{
+	simplSharpComponent.SimplEnableLogging();
+}
+RELEASE EnableLogging
+{
+	simplSharpComponent.SimplDisableLogging();
+}
+PUSH EnableTxDebug
+{
+	simplSharpComponent.SimplEnableTxDebug();
+}
+RELEASE EnableTxDebug
+{
+	simplSharpComponent.SimplDisableTxDebug();
+}
+PUSH EnableRxDebug
+{
+	simplSharpComponent.SimplEnableRxDebug();
+}
+RELEASE EnableRxDebug 
+{
+	simplSharpComponent.SimplDisableRxDebug();
+}
+   
+//Navigation 
+PUSH  UpArrow
+{
+	simplSharpComponent.SimplArrowKey("Up");
+}
+
+PUSH  DownArrow
+{
+	simplSharpComponent.SimplArrowKey("Down");
+}
+
+PUSH  LeftArrow
+{
+	simplSharpComponent.SimplArrowKey("Left");
+}
+
+PUSH  RightArrow 
+{
+	simplSharpComponent.SimplArrowKey("Right");
+}
+ 
+PUSH  Select
+{
+	simplSharpComponent.SimplSelect();
+}
+
+PUSH  Exit
+{
+	simplSharpComponent.SimplExit();
+}
+
+PUSH  Home
+{
+	simplSharpComponent.SimplHome();
+}
+
+PUSH  Menu
+{
+	simplSharpComponent.SimplMenu();
+}
+
+RELEASE  UpArrow
+RELEASE  DownArrow
+RELEASE  LeftArrow
+RELEASE  RightArrow 
+{
+	simplSharpComponent.SimplReleaseArrow();
+} 
+
+RELEASE  Select
+RELEASE  Exit
+RELEASE  Home
+RELEASE  Menu
+{
+	simplSharpComponent.SimplRelease();
+}
+
+//IMediaSources
+PUSH YouTube
+{
+	simplSharpComponent.SimplYouTube();
+}
+
+PUSH Netflix
+{
+	simplSharpComponent.SimplNetflix();
+}
+
+PUSH Hulu
+{
+	simplSharpComponent.SimplHulu();
+}
+
+PUSH AmazonVideo
+{
+	simplSharpComponent.SimplAmazonVideo();
+}
+
+PUSH SlingTv
+{
+	simplSharpComponent.SimplSlingTv();
+}
+
+PUSH PhotoAndVideo
+{
+	simplSharpComponent.SimplSendCustomCommandByName("Photo & Video");
+}
+
+PUSH Music
+{
+	simplSharpComponent.SimplSendCustomCommandByName("Music");
+}
+
+RELEASE YouTube
+RELEASE Netflix
+RELEASE Hulu
+RELEASE AmazonVideo
+RELEASE SlingTv
+RELEASE PhotoAndVideo
+RELEASE Music
+{
+	simplSharpComponent.SimplRelease();
+}
+
+
+//IMediaTransports
+
+PUSH  ForwardScan
+{
+	simplSharpComponent.SimplForwardScan();
+}
+
+PUSH  ReverseScan
+{
+	simplSharpComponent.SimplReverseScan();
+}
+
+PUSH  ReturnCommand
+{
+	simplSharpComponent.SimplReturn();
+}
+
+PUSH  Back
+{
+	simplSharpComponent.SimplBack();
+}
+
+PUSH  PlayPause
+{
+	simplSharpComponent.SimplPlayPause();
+}
+
+RELEASE  ForwardScan
+RELEASE  ReverseScan
+RELEASE  ReturnCommand
+RELEASE  Back
+RELEASE  PlayPause
+{
+	simplSharpComponent.SimplRelease();	
+}
+
+
+// IBasicInformation2
+PUSH UserAttribute_SendItIn
+{
+	integer index;
+	index = GetLastModifiedArrayIndex();
+	simplSharpComponent.SimplSetStringUserAttribute(index, UserAttribute_StringValue[index]);			
+}
+
+THREADSAFE PUSH Initialize
+{
+    string pathToDriver[200];
+
+	pathToDriver = simplSharpComponent.ApplicationDirectory + "\\Lg2018TvTcp.dll";                  
+    while (_initilizationComplete = 0)
+	{
+		delay(10);
+	}  
+	
+    simplSharpComponent.Initialize(pathToDriver, 0, IpAddress, Port, 0, 0);
+}
+
+// Common Callbacks       
+CALLBACK FUNCTION LogOutCallback(string messageS)
+{
+	Log = messageS;
+}
+
+// DeviceType-specific Callbacks
+CALLBACK FUNCTION DisplayStatusCallback(integer powerS, integer warmingUpS, integer coolingDownS, integer inputTypeS, string inputConnectorS, string inputDescriptionS, integer volumeS, integer muteS, integer connectionStatusS, integer videoMuteS)
+{
+	Power_F      			= powerS;
+	Volume_F     			= volumeS;
+	Mute_F       			= muteS;
+	Connection_F			= connectionStatusS;
+	ActiveInputType 	   	= inputTypeS;
+	WarmingUp 				= warmingUpS;
+	CoolingDown				= coolingDownS;
+}
+
+CALLBACK FUNCTION InputDetailsCallback()
+{
+	integer i;
+	for(i = 1 to 6)
+	{
+		DisplayInputType[i] 		= simplSharpComponent.SimplInputTypes[i-1];
+	}
+}
+
+CALLBACK FUNCTION DriverAuthUpdateCallback(integer authStatus)
+{
+}
+
+CALLBACK FUNCTION PowerSupportsCallback(integer supportsDiscretePowerS, integer supportsTogglePowerS, integer supportsPowerFeedbackS, integer supportsWarmUpTimeS, integer supportsCoolDownTimeS, integer warmUpTimeI, integer coolDownTimeI)
+{
+	CoolDowntime	= coolDownTimeI;
+	WarmUptime		= warmUpTimeI;
+} 
+
+                                                                    
+FUNCTION RegisterDelegates()
+{   
+	RegisterDelegate(simplSharpComponent, LogOut, LogOutCallback);
+  	RegisterDelegate(simplSharpComponent, DisplayStatusUpdated, DisplayStatusCallback);	
+  	RegisterDelegate(simplSharpComponent, InputDetailsUpdated, InputDetailsCallback);
+	RegisterDelegate(simplSharpComponent, DriverAuthenticationUpdateCallback, DriverAuthUpdateCallback);
+	RegisterDelegate(simplSharpComponent, PowerSupportsUpdated, PowerSupportsCallback);
+}
+
+FUNCTION Main()
+{      
+	_initilizationComplete = 0;     
+
+	ActiveInputType = 0;                     
+
+    WaitForInitializationComplete();
+
+	RegisterDelegates();
+	_initilizationComplete = 1;
+}
+
+
+
+
+
+
+
+
+
