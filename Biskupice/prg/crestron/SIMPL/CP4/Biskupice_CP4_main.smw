@@ -1614,6 +1614,20 @@ Sy1=0
 Mx1=0
 ]
 [
+ObjTp=Bw
+H=1
+Lx=0
+Ly=0
+Rx=1019
+Ry=915
+Xm=-1
+Ym=-1
+SH=625
+Z=100
+Ht=1
+Hi=1
+]
+[
 ObjTp=Et
 H=1
 DvH=584
@@ -13083,26 +13097,26 @@ PrH=24
 CF=2
 Cmn1=AC Cool/Heat Status\\
 mC=20
-C1=501
-C2=504
-C3=507
-C4=510
-C5=513
-C6=516
-C7=519
-C8=522
-C9=525
-C10=528
+C1=537
+C2=543
+C3=534
+C4=528
+C5=507
+C6=504
+C7=501
+C8=555
+C9=510
+C10=522
 C11=531
-C12=534
-C13=537
-C14=540
-C15=543
-C16=546
-C17=549
-C18=552
-C19=555
-C20=558
+C12=540
+C13=546
+C14=549
+C15=513
+C16=558
+C17=516
+C18=519
+C19=525
+C20=552
 ]
 [
 ObjTp=Sm
@@ -13113,7 +13127,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_001 (Basen)\\
+Cmn1=Zone_10 (Strefa Basenowa)\\
 mC=2
 C1=502
 C2=503
@@ -13128,12 +13142,12 @@ PrH=501
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_001 Cool\\
+Cmn1=Zone_10 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1134
-O4=1135
+O3=1132
+O4=1134
 mP=2
 P1=1d
 P2=171
@@ -13148,12 +13162,12 @@ PrH=501
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_001 Heat\\
+Cmn1=Zone_10 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1132
-O4=1133
+O3=1136
+O4=1138
 mP=2
 P1=1d
 P2=172
@@ -13167,7 +13181,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_002 (Fitness)\\
+Cmn1=Zone_09 (Fitness)\\
 mC=2
 C1=505
 C2=506
@@ -13182,12 +13196,12 @@ PrH=504
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_002 Cool\\
+Cmn1=Zone_09 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1136
-O4=1137
+O3=1154
+O4=1156
 mP=2
 P1=1d
 P2=173
@@ -13202,12 +13216,12 @@ PrH=504
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_002 Heat\\
+Cmn1=Zone_09 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1138
-O4=1139
+O3=1135
+O4=1158
 mP=2
 P1=1d
 P2=174
@@ -13221,7 +13235,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_003 (Gabinet)\\
+Cmn1=Zone_08 (Gabinet)\\
 mC=2
 C1=508
 C2=509
@@ -13236,12 +13250,12 @@ PrH=507
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_003 Cool\\
+Cmn1=Zone_08 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1140
-O4=1141
+O3=1172
+O4=1174
 mP=2
 P1=1d
 P2=175
@@ -13256,12 +13270,12 @@ PrH=507
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_003 Heat\\
+Cmn1=Zone_08 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1142
-O4=1143
+O3=1137
+O4=1176
 mP=2
 P1=1d
 P2=176
@@ -13275,7 +13289,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_004 (Garaz)\\
+Cmn1=Zone_13 (Garaz)\\
 mC=2
 C1=511
 C2=512
@@ -13290,12 +13304,12 @@ PrH=510
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_004 Cool\\
+Cmn1=Zone_13 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1144
-O4=1145
+O3=1190
+O4=1192
 mP=2
 P1=1d
 P2=177
@@ -13310,12 +13324,12 @@ PrH=510
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_004 Heat\\
+Cmn1=Zone_13 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1146
-O4=1147
+O3=1141
+O4=1194
 mP=2
 P1=1d
 P2=178
@@ -13329,7 +13343,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_005 (Lazienka Goscinna)\\
+Cmn1=Zone_21 (Lazienka Goscinna)\\
 mC=2
 C1=514
 C2=515
@@ -13344,12 +13358,12 @@ PrH=513
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_005 Cool\\
+Cmn1=Zone_21 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1148
-O4=1149
+O3=1208
+O4=1209
 mP=2
 P1=1d
 P2=179
@@ -13364,12 +13378,12 @@ PrH=513
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_005 Heat\\
+Cmn1=Zone_21 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1150
-O4=1151
+O3=1145
+O4=1210
 mP=2
 P1=1d
 P2=180
@@ -13383,7 +13397,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_006 (Goscinny)\\
+Cmn1=Zone_24 (Salon Goscinny)\\
 mC=2
 C1=517
 C2=518
@@ -13398,12 +13412,12 @@ PrH=516
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_006 Cool\\
+Cmn1=Zone_24 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1152
-O4=1153
+O3=1796
+O4=1797
 mP=2
 P1=1d
 P2=181
@@ -13418,12 +13432,12 @@ PrH=516
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_006 Heat\\
+Cmn1=Zone_24 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1154
-O4=1155
+O3=1149
+O4=1798
 mP=2
 P1=1d
 P2=182
@@ -13437,7 +13451,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_007 (Sypialnia Goscinna)\\
+Cmn1=Zone_25 (Sypialnia Goscinna)\\
 mC=2
 C1=520
 C2=521
@@ -13452,12 +13466,12 @@ PrH=519
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_007 Cool\\
+Cmn1=Zone_25 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1156
-O4=1157
+O3=1805
+O4=1806
 mP=2
 P1=1d
 P2=183
@@ -13472,12 +13486,12 @@ PrH=519
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_007 Heat\\
+Cmn1=Zone_25 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1158
-O4=1159
+O3=1153
+O4=1807
 mP=2
 P1=1d
 P2=184
@@ -13491,7 +13505,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_008 (Korytarz Parter)\\
+Cmn1=Zone_14 (Korytarz Parter)\\
 mC=2
 C1=523
 C2=524
@@ -13506,12 +13520,12 @@ PrH=522
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_008 Cool\\
+Cmn1=Zone_14 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1160
-O4=1161
+O3=1814
+O4=1815
 mP=2
 P1=1d
 P2=185
@@ -13526,12 +13540,12 @@ PrH=522
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_008 Heat\\
+Cmn1=Zone_14 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1162
-O4=1163
+O3=1157
+O4=1816
 mP=2
 P1=1d
 P2=186
@@ -13545,7 +13559,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_009 (Korytarz Pietro)\\
+Cmn1=Zone_26 (Korytarz Pietro)\\
 mC=2
 C1=526
 C2=527
@@ -13560,12 +13574,12 @@ PrH=525
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_009 Cool\\
+Cmn1=Zone_26 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1164
-O4=1165
+O3=1823
+O4=1824
 mP=2
 P1=1d
 P2=187
@@ -13580,12 +13594,12 @@ PrH=525
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_009 Heat\\
+Cmn1=Zone_26 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1166
-O4=1167
+O3=1161
+O4=1825
 mP=2
 P1=1d
 P2=188
@@ -13599,7 +13613,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_010 (Sala kinowa)\\
+Cmn1=Zone_07 (Sala Kinowa)\\
 mC=2
 C1=529
 C2=530
@@ -13614,12 +13628,12 @@ PrH=528
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_010 Cool\\
+Cmn1=Zone_07 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1168
-O4=1169
+O3=1832
+O4=1833
 mP=2
 P1=1d
 P2=189
@@ -13634,12 +13648,12 @@ PrH=528
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_010 Heat\\
+Cmn1=Zone_07 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1170
-O4=1171
+O3=1165
+O4=1834
 mP=2
 P1=1d
 P2=190
@@ -13653,7 +13667,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_011 (Salonik)\\
+Cmn1=Zone_17 (Salonik)\\
 mC=2
 C1=532
 C2=533
@@ -13668,12 +13682,12 @@ PrH=531
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_011 Cool\\
+Cmn1=Zone_17 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1172
-O4=1173
+O3=1841
+O4=1842
 mP=2
 P1=1d
 P2=191
@@ -13688,12 +13702,12 @@ PrH=531
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_011 Heat\\
+Cmn1=Zone_17 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1174
-O4=1175
+O3=1169
+O4=1843
 mP=2
 P1=1d
 P2=192
@@ -13707,7 +13721,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_012 (Salon)\\
+Cmn1=Zone_05 (Strefa Dzienna)\\
 mC=2
 C1=535
 C2=536
@@ -13722,12 +13736,12 @@ PrH=534
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_012 Cool\\
+Cmn1=Zone_05 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1176
-O4=1177
+O3=1850
+O4=1851
 mP=2
 P1=1d
 P2=193
@@ -13742,12 +13756,12 @@ PrH=534
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_012 Heat\\
+Cmn1=Zone_05 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1178
-O4=1179
+O3=1173
+O4=1852
 mP=2
 P1=1d
 P2=194
@@ -13761,7 +13775,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_013 (SPA)\\
+Cmn1=Zone_01 (SPA)\\
 mC=2
 C1=538
 C2=539
@@ -13776,12 +13790,12 @@ PrH=537
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_013 Cool\\
+Cmn1=Zone_01 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1180
-O4=1181
+O3=1859
+O4=1860
 mP=2
 P1=1d
 P2=195
@@ -13796,12 +13810,12 @@ PrH=537
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_013 Heat\\
+Cmn1=Zone_01 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1182
-O4=1183
+O3=1177
+O4=1861
 mP=2
 P1=1d
 P2=196
@@ -13815,7 +13829,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_014 (Sypialnia)\\
+Cmn1=Zone_18 (Sypialnia Intymna)\\
 mC=2
 C1=541
 C2=542
@@ -13830,12 +13844,12 @@ PrH=540
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_014 Cool\\
+Cmn1=Zone_18 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1184
-O4=1185
+O3=1868
+O4=1869
 mP=2
 P1=1d
 P2=197
@@ -13850,12 +13864,12 @@ PrH=540
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_014 Heat\\
+Cmn1=Zone_18 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1186
-O4=1187
+O3=1181
+O4=1870
 mP=2
 P1=1d
 P2=198
@@ -13869,7 +13883,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_015 (Wiatrolap)\\
+Cmn1=Zone_03 (Wiatrolap)\\
 mC=2
 C1=544
 C2=545
@@ -13884,12 +13898,12 @@ PrH=543
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_015 Cool\\
+Cmn1=Zone_03 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1188
-O4=1189
+O3=1877
+O4=1878
 mP=2
 P1=1d
 P2=199
@@ -13904,12 +13918,12 @@ PrH=543
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_015 Heat\\
+Cmn1=Zone_03 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1190
-O4=1191
+O3=1185
+O4=1879
 mP=2
 P1=1d
 P2=200
@@ -13923,7 +13937,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_016 (Lazienka)\\
+Cmn1=Zone_19 (Lazienka Intymna)\\
 mC=2
 C1=547
 C2=548
@@ -13938,12 +13952,12 @@ PrH=546
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_016 Cool\\
+Cmn1=Zone_19 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1192
-O4=1193
+O3=1886
+O4=1887
 mP=2
 P1=1d
 P2=201
@@ -13958,12 +13972,12 @@ PrH=546
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_016 Heat\\
+Cmn1=Zone_19 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1194
-O4=1195
+O3=1189
+O4=1888
 mP=2
 P1=1d
 P2=202
@@ -13977,7 +13991,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_017 (Garderoba SOLO)\\
+Cmn1=Zone_20 (Garderoba Intymna SOLO)\\
 mC=2
 C1=550
 C2=551
@@ -13992,12 +14006,12 @@ PrH=549
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_017 Cool\\
+Cmn1=Zone_20 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1196
-O4=1197
+O3=1895
+O4=1896
 mP=2
 P1=1d
 P2=203
@@ -14012,12 +14026,12 @@ PrH=549
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_017 Heat\\
+Cmn1=Zone_20 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1198
-O4=1199
+O3=1193
+O4=1897
 mP=2
 P1=1d
 P2=204
@@ -14054,8 +14068,8 @@ Cmn1=AC_018 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1200
-O4=1201
+O3=1967
+O4=1197
 mP=2
 P1=1d
 P2=205
@@ -14076,8 +14090,8 @@ Cmn1=AC_018 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1202
-O4=1203
+O3=1945
+O4=1199
 mP=2
 P1=1d
 P2=206
@@ -14091,7 +14105,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_019 (Pralnia SOLO)\\
+Cmn1=Zone_12 (Pralnia SOLO)\\
 mC=2
 C1=556
 C2=557
@@ -14106,12 +14120,12 @@ PrH=555
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_019 Cool\\
+Cmn1=Zone_12 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1204
-O4=1205
+O3=1903
+O4=1904
 mP=2
 P1=1d
 P2=207
@@ -14126,12 +14140,12 @@ PrH=555
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_019 Heat\\
+Cmn1=Zone_12 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1206
-O4=1207
+O3=1201
+O4=1905
 mP=2
 P1=1d
 P2=208
@@ -14145,7 +14159,7 @@ ObjVer=1
 SmVr=1194
 PrH=500
 CF=2
-Cmn1=AC_020 (Garderoba Goscinna SOLO)\\
+Cmn1=Zone_22 (Garderoba Goscinna SOLO)\\
 mC=2
 C1=559
 C2=560
@@ -14160,12 +14174,12 @@ PrH=558
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_020 Cool\\
+Cmn1=Zone_22 Cool\\
 mI=4
 mO=4
 tO=4
-O3=1208
-O4=1209
+O3=1913
+O4=1914
 mP=2
 P1=1d
 P2=209
@@ -14180,12 +14194,12 @@ PrH=558
 CF=2
 n1I=4
 n1O=4
-Cmn1=AC_020 Heat\\
+Cmn1=Zone_22 Heat\\
 mI=4
 mO=4
 tO=4
-O3=1210
-O4=1211
+O3=1205
+O4=1915
 mP=2
 P1=1d
 P2=210
@@ -14766,7 +14780,7 @@ SmVr=1194
 PrH=589
 CF=2
 Cmn1=All
-mC=26
+mC=27
 C1=591
 C2=592
 C3=593
@@ -14793,6 +14807,7 @@ C23=613
 C24=614
 C25=615
 C26=616
+C27=625
 ]
 [
 ObjTp=Sm
@@ -15916,11 +15931,10 @@ SmVr=1194
 PrH=621
 CF=2
 Cmn1=Lighting
-mC=4
-C1=625
-C2=623
-C3=632
-C4=624
+mC=3
+C1=623
+C2=632
+C3=624
 ]
 [
 ObjTp=Sm
@@ -16333,7 +16347,7 @@ SmC=20
 Nm=Buffer
 ObjVer=1
 SmVr=1194
-PrH=622
+PrH=590
 CF=2
 n1I=24
 n1O=23
@@ -16506,46 +16520,46 @@ n1O=40
 Cmn1=AC RTC Status\\
 mI=41
 I1=2
-I2=1134
-I3=1132
-I4=1136
-I5=1138
-I6=1140
-I7=1142
-I8=1144
-I9=1146
-I10=1148
-I11=1150
-I12=1152
-I13=1154
-I14=1156
-I15=1158
-I16=1160
-I17=1162
-I18=1164
-I19=1166
-I20=1168
-I21=1170
-I22=1172
-I23=1174
-I24=1176
-I25=1178
-I26=1180
-I27=1182
-I28=1184
-I29=1186
-I30=1188
-I31=1190
-I32=1192
-I33=1194
-I34=1196
-I35=1198
-I36=1200
-I37=1202
-I38=1204
-I39=1206
-I40=1208
-I41=1210
+I2=1132
+I3=1136
+I4=1154
+I5=1135
+I6=1172
+I7=1137
+I8=1190
+I9=1141
+I10=1208
+I11=1145
+I12=1796
+I13=1149
+I14=1805
+I15=1153
+I16=1814
+I17=1157
+I18=1823
+I19=1161
+I20=1832
+I21=1165
+I22=1841
+I23=1169
+I24=1850
+I25=1173
+I26=1859
+I27=1177
+I28=1868
+I29=1181
+I30=1877
+I31=1185
+I32=1886
+I33=1189
+I34=1895
+I35=1193
+I36=1967
+I37=1945
+I38=1903
+I39=1201
+I40=1913
+I41=1205
 mO=40
 tO=40
 O1=1667
@@ -17488,28 +17502,28 @@ PrH=25
 CF=2
 Cmn1=AC Temperatures
 mC=23
-C1=658
-C2=661
-C3=665
-C4=669
-C5=673
-C6=677
-C7=681
-C8=685
-C9=689
-C10=693
-C11=697
-C12=701
-C13=705
-C14=709
-C15=713
+C1=705
+C2=737
+C3=713
+C4=741
+C5=701
+C6=745
+C7=693
+C8=665
+C9=661
+C10=658
+C11=729
+C12=669
+C13=685
+C14=697
+C15=709
 C16=717
 C17=721
-C18=729
+C18=673
 C19=733
-C20=737
-C21=741
-C22=745
+C20=677
+C21=681
+C22=689
 C23=725
 ]
 [
@@ -17576,13 +17590,13 @@ PrH=658
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_001 TempSet\\
+Cmn1=Zone_10 TempSet\\
 mI=10
-I5=1791
+I5=1140
 mO=10
 tO=10
-O5=1792
-O7=1793
+O5=1142
+O7=1144
 mP=2
 P1=2d
 P2=81
@@ -17596,7 +17610,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_001
+Cmn1=Zone_10 (Strefa Basenowa)\\
 mC=3
 C1=657
 C2=659
@@ -17612,12 +17626,12 @@ PrH=658
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_001 TempAct\\
+Cmn1=Zone_10 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1795
-O7=1794
+O5=1146
+O7=1148
 mP=2
 P1=2d
 P2=82
@@ -17633,14 +17647,14 @@ PrH=658
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_001 TempSet\\
+Cmn1=Zone_10 TempSet\\
 mI=4
-I1=1796
-I2=1797
-I4=1792
+I1=1150
+I2=1152
+I4=1142
 mO=1
 tO=1
-O1=1791
+O1=1140
 mP=6
 P1=50d
 P2=20s
@@ -17658,7 +17672,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_002
+Cmn1=Zone_09 (Fitness)\\
 mC=3
 C1=662
 C2=663
@@ -17674,13 +17688,13 @@ PrH=661
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_002 TempSet\\
+Cmn1=Zone_09 TempSet\\
 mI=10
-I5=1798
+I5=1133
 mO=10
 tO=10
-O5=1799
-O7=1800
+O5=1160
+O7=1162
 mP=2
 P1=2d
 P2=83
@@ -17695,12 +17709,12 @@ PrH=661
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_002 TempAct\\
+Cmn1=Zone_09 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1801
-O7=1802
+O5=1164
+O7=1166
 mP=2
 P1=2d
 P2=84
@@ -17716,14 +17730,14 @@ PrH=661
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_002 TempSet\\
+Cmn1=Zone_09 TempSet\\
 mI=4
-I1=1803
-I2=1804
-I4=1799
+I1=1168
+I2=1170
+I4=1160
 mO=1
 tO=1
-O1=1798
+O1=1133
 mP=6
 P1=50d
 P2=20s
@@ -17741,7 +17755,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_003
+Cmn1=Zone_08 (Gabinet)\\
 mC=3
 C1=666
 C2=667
@@ -17757,13 +17771,13 @@ PrH=665
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_003 TempSet\\
+Cmn1=Zone_08 TempSet\\
 mI=10
-I5=1805
+I5=1139
 mO=10
 tO=10
-O5=1806
-O7=1807
+O5=1178
+O7=1180
 mP=2
 P1=2d
 P2=85
@@ -17778,12 +17792,12 @@ PrH=665
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_003 TempAct\\
+Cmn1=Zone_08 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1808
-O7=1809
+O5=1182
+O7=1184
 mP=2
 P1=2d
 P2=86
@@ -17799,14 +17813,14 @@ PrH=665
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_003 TempSet\\
+Cmn1=Zone_08 TempSet\\
 mI=4
-I1=1810
-I2=1811
-I4=1806
+I1=1186
+I2=1188
+I4=1178
 mO=1
 tO=1
-O1=1805
+O1=1139
 mP=6
 P1=50d
 P2=20s
@@ -17824,7 +17838,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_004
+Cmn1=Zone_13 (Garaz)\\
 mC=3
 C1=670
 C2=671
@@ -17840,13 +17854,13 @@ PrH=669
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_004 TempSet\\
+Cmn1=Zone_13 TempSet\\
 mI=10
-I5=1812
+I5=1143
 mO=10
 tO=10
-O5=1813
-O7=1814
+O5=1196
+O7=1198
 mP=2
 P1=2d
 P2=87
@@ -17861,12 +17875,12 @@ PrH=669
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_004 TempAct\\
+Cmn1=Zone_13 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1815
-O7=1816
+O5=1200
+O7=1202
 mP=2
 P1=2d
 P2=88
@@ -17882,14 +17896,14 @@ PrH=669
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_004 TempSet\\
+Cmn1=Zone_13 TempSet\\
 mI=4
-I1=1817
-I2=1818
-I4=1813
+I1=1204
+I2=1206
+I4=1196
 mO=1
 tO=1
-O1=1812
+O1=1143
 mP=6
 P1=50d
 P2=20s
@@ -17907,7 +17921,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_005
+Cmn1=Zone_21 (Lazienka Goscinna)\\
 mC=3
 C1=674
 C2=675
@@ -17923,13 +17937,13 @@ PrH=673
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_005 TempSet\\
+Cmn1=Zone_21 TempSet\\
 mI=10
-I5=1819
+I5=1147
 mO=10
 tO=10
-O5=1820
-O7=1821
+O5=1211
+O7=1791
 mP=2
 P1=2d
 P2=93
@@ -17944,12 +17958,12 @@ PrH=673
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_005 TempAct\\
+Cmn1=Zone_21 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1822
-O7=1823
+O5=1792
+O7=1793
 mP=2
 P1=2d
 P2=94
@@ -17965,14 +17979,14 @@ PrH=673
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_005 TempSet\\
+Cmn1=Zone_21 TempSet\\
 mI=4
-I1=1824
-I2=1825
-I4=1820
+I1=1794
+I2=1795
+I4=1211
 mO=1
 tO=1
-O1=1819
+O1=1147
 mP=6
 P1=50d
 P2=20s
@@ -17990,7 +18004,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_006
+Cmn1=Zone_24 (Salon Goscinny)\\
 mC=3
 C1=678
 C2=679
@@ -18006,13 +18020,13 @@ PrH=677
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_006 TempSet\\
+Cmn1=Zone_24 TempSet\\
 mI=10
-I5=1826
+I5=1151
 mO=10
 tO=10
-O5=1827
-O7=1828
+O5=1799
+O7=1800
 mP=2
 P1=2d
 P2=95
@@ -18027,12 +18041,12 @@ PrH=677
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_006 TempAct\\
+Cmn1=Zone_24 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1829
-O7=1830
+O5=1801
+O7=1802
 mP=2
 P1=2d
 P2=96
@@ -18048,14 +18062,14 @@ PrH=677
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_006 TempSet\\
+Cmn1=Zone_24 TempSet\\
 mI=4
-I1=1831
-I2=1832
-I4=1827
+I1=1803
+I2=1804
+I4=1799
 mO=1
 tO=1
-O1=1826
+O1=1151
 mP=6
 P1=50d
 P2=20s
@@ -18073,7 +18087,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_007
+Cmn1=Zone_25 (Sypialnia Goscinna)\\
 mC=3
 C1=682
 C2=683
@@ -18089,13 +18103,13 @@ PrH=681
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_007 TempSet\\
+Cmn1=Zone_25 TempSet\\
 mI=10
-I5=1833
+I5=1155
 mO=10
 tO=10
-O5=1834
-O7=1835
+O5=1808
+O7=1809
 mP=2
 P1=2d
 P2=97
@@ -18110,12 +18124,12 @@ PrH=681
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_007 TempAct\\
+Cmn1=Zone_25 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1836
-O7=1837
+O5=1810
+O7=1811
 mP=2
 P1=2d
 P2=98
@@ -18131,14 +18145,14 @@ PrH=681
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_007 TempSet\\
+Cmn1=Zone_25 TempSet\\
 mI=4
-I1=1838
-I2=1839
-I4=1834
+I1=1812
+I2=1813
+I4=1808
 mO=1
 tO=1
-O1=1833
+O1=1155
 mP=6
 P1=50d
 P2=20s
@@ -18156,7 +18170,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_008
+Cmn1=Zone_14 (Korytarz Parter)\\
 mC=3
 C1=686
 C2=687
@@ -18172,13 +18186,13 @@ PrH=685
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_008 TempSet\\
+Cmn1=Zone_14 TempSet\\
 mI=10
-I5=1840
+I5=1159
 mO=10
 tO=10
-O5=1841
-O7=1842
+O5=1817
+O7=1818
 mP=2
 P1=2d
 P2=102
@@ -18193,12 +18207,12 @@ PrH=685
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_008 TempAct\\
+Cmn1=Zone_14 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1843
-O7=1844
+O5=1819
+O7=1820
 mP=2
 P1=2d
 P2=103
@@ -18214,14 +18228,14 @@ PrH=685
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_008 TempSet\\
+Cmn1=Zone_14 TempSet\\
 mI=4
-I1=1845
-I2=1846
-I4=1841
+I1=1821
+I2=1822
+I4=1817
 mO=1
 tO=1
-O1=1840
+O1=1159
 mP=6
 P1=50d
 P2=20s
@@ -18239,7 +18253,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_009
+Cmn1=Zone_26 (Korytarz Pietro)\\
 mC=3
 C1=690
 C2=691
@@ -18255,13 +18269,13 @@ PrH=689
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_009 TempSet\\
+Cmn1=Zone_26 TempSet\\
 mI=10
-I5=1847
+I5=1163
 mO=10
 tO=10
-O5=1848
-O7=1849
+O5=1826
+O7=1827
 mP=2
 P1=2d
 P2=104
@@ -18276,12 +18290,12 @@ PrH=689
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_009 TempAct\\
+Cmn1=Zone_26 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1850
-O7=1851
+O5=1828
+O7=1829
 mP=2
 P1=2d
 P2=105
@@ -18297,14 +18311,14 @@ PrH=689
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_009 TempSet\\
+Cmn1=Zone_26 TempSet\\
 mI=4
-I1=1852
-I2=1853
-I4=1848
+I1=1830
+I2=1831
+I4=1826
 mO=1
 tO=1
-O1=1847
+O1=1163
 mP=6
 P1=50d
 P2=20s
@@ -18322,7 +18336,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_010
+Cmn1=Zone_07 (Sala Kinowa)\\
 mC=3
 C1=694
 C2=695
@@ -18338,13 +18352,13 @@ PrH=693
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_010 TempSet\\
+Cmn1=Zone_07 TempSet\\
 mI=10
-I5=1854
+I5=1167
 mO=10
 tO=10
-O5=1855
-O7=1856
+O5=1835
+O7=1836
 mP=2
 P1=2d
 P2=109
@@ -18359,12 +18373,12 @@ PrH=693
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_010 TempAct\\
+Cmn1=Zone_07 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1857
-O7=1858
+O5=1837
+O7=1838
 mP=2
 P1=2d
 P2=110
@@ -18380,14 +18394,14 @@ PrH=693
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_010 TempSet\\
+Cmn1=Zone_07 TempSet\\
 mI=4
-I1=1859
-I2=1860
-I4=1855
+I1=1839
+I2=1840
+I4=1835
 mO=1
 tO=1
-O1=1854
+O1=1167
 mP=6
 P1=50d
 P2=20s
@@ -18405,7 +18419,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_011
+Cmn1=Zone_17 (Salonik)\\
 mC=3
 C1=698
 C2=699
@@ -18421,13 +18435,13 @@ PrH=697
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_011 TempSet\\
+Cmn1=Zone_17 TempSet\\
 mI=10
-I5=1861
+I5=1171
 mO=10
 tO=10
-O5=1862
-O7=1863
+O5=1844
+O7=1845
 mP=2
 P1=2d
 P2=114
@@ -18442,12 +18456,12 @@ PrH=697
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_011 TempAct\\
+Cmn1=Zone_17 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1864
-O7=1865
+O5=1846
+O7=1847
 mP=2
 P1=2d
 P2=115
@@ -18463,14 +18477,14 @@ PrH=697
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_011 TempSet\\
+Cmn1=Zone_17 TempSet\\
 mI=4
-I1=1866
-I2=1867
-I4=1862
+I1=1848
+I2=1849
+I4=1844
 mO=1
 tO=1
-O1=1861
+O1=1171
 mP=6
 P1=50d
 P2=20s
@@ -18488,7 +18502,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_012
+Cmn1=Zone_05 (Strefa Dzienna)\\
 mC=3
 C1=702
 C2=703
@@ -18504,13 +18518,13 @@ PrH=701
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_012 TempSet\\
+Cmn1=Zone_05 TempSet\\
 mI=10
-I5=1868
+I5=1175
 mO=10
 tO=10
-O5=1869
-O7=1870
+O5=1853
+O7=1854
 mP=2
 P1=2d
 P2=112
@@ -18525,12 +18539,12 @@ PrH=701
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_012 TempAct\\
+Cmn1=Zone_05 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1871
-O7=1872
+O5=1855
+O7=1856
 mP=2
 P1=2d
 P2=113
@@ -18546,14 +18560,14 @@ PrH=701
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_012 TempSet\\
+Cmn1=Zone_05 TempSet\\
 mI=4
-I1=1873
-I2=1874
-I4=1869
+I1=1857
+I2=1858
+I4=1853
 mO=1
 tO=1
-O1=1868
+O1=1175
 mP=6
 P1=50d
 P2=20s
@@ -18571,7 +18585,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_013
+Cmn1=Zone_01 (SPA)\\
 mC=3
 C1=706
 C2=707
@@ -18587,13 +18601,13 @@ PrH=705
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_013 TempSet\\
+Cmn1=Zone_01 TempSet\\
 mI=10
-I5=1875
+I5=1179
 mO=10
 tO=10
-O5=1876
-O7=1877
+O5=1862
+O7=1863
 mP=2
 P1=2d
 P2=116
@@ -18608,12 +18622,12 @@ PrH=705
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_013 TempAct\\
+Cmn1=Zone_01 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1878
-O7=1879
+O5=1864
+O7=1865
 mP=2
 P1=2d
 P2=117
@@ -18629,14 +18643,14 @@ PrH=705
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_013 TempSet\\
+Cmn1=Zone_01 TempSet\\
 mI=4
-I1=1880
-I2=1881
-I4=1876
+I1=1866
+I2=1867
+I4=1862
 mO=1
 tO=1
-O1=1875
+O1=1179
 mP=6
 P1=50d
 P2=20s
@@ -18654,7 +18668,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_014
+Cmn1=Zone_18 (Sypialnia Intymna)\\
 mC=3
 C1=710
 C2=711
@@ -18670,13 +18684,13 @@ PrH=709
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_014 TempSet\\
+Cmn1=Zone_18 TempSet\\
 mI=10
-I5=1882
+I5=1183
 mO=10
 tO=10
-O5=1883
-O7=1884
+O5=1871
+O7=1872
 mP=2
 P1=2d
 P2=118
@@ -18691,12 +18705,12 @@ PrH=709
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_014 TempAct\\
+Cmn1=Zone_18 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1885
-O7=1886
+O5=1873
+O7=1874
 mP=2
 P1=2d
 P2=119
@@ -18712,14 +18726,14 @@ PrH=709
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_014 TempSet\\
+Cmn1=Zone_18 TempSet\\
 mI=4
-I1=1887
-I2=1888
-I4=1883
+I1=1875
+I2=1876
+I4=1871
 mO=1
 tO=1
-O1=1882
+O1=1183
 mP=6
 P1=50d
 P2=20s
@@ -18737,7 +18751,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_015
+Cmn1=Zone_03 (Wiatrolap)\\
 mC=3
 C1=714
 C2=715
@@ -18753,13 +18767,13 @@ PrH=713
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_015 TempSet\\
+Cmn1=Zone_03 TempSet\\
 mI=10
-I5=1889
+I5=1187
 mO=10
 tO=10
-O5=1890
-O7=1891
+O5=1880
+O7=1881
 mP=2
 P1=2d
 P2=121
@@ -18774,12 +18788,12 @@ PrH=713
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_015 TempAct\\
+Cmn1=Zone_03 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1892
-O7=1893
+O5=1882
+O7=1883
 mP=2
 P1=2d
 P2=122
@@ -18795,14 +18809,14 @@ PrH=713
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_015 TempSet\\
+Cmn1=Zone_03 TempSet\\
 mI=4
-I1=1894
-I2=1895
-I4=1890
+I1=1884
+I2=1885
+I4=1880
 mO=1
 tO=1
-O1=1889
+O1=1187
 mP=6
 P1=50d
 P2=20s
@@ -18820,7 +18834,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_016
+Cmn1=Zone_19 (Lazienka Intymna)\\
 mC=3
 C1=718
 C2=719
@@ -18836,13 +18850,13 @@ PrH=717
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_016 TempSet\\
+Cmn1=Zone_19 TempSet\\
 mI=10
-I5=1896
+I5=1191
 mO=10
 tO=10
-O5=1897
-O7=1898
+O5=1889
+O7=1890
 mP=2
 P1=2d
 P2=100
@@ -18857,12 +18871,12 @@ PrH=717
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_016 TempAct\\
+Cmn1=Zone_19 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1899
-O7=1900
+O5=1891
+O7=1892
 mP=2
 P1=2d
 P2=101
@@ -18878,14 +18892,14 @@ PrH=717
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_016 TempSet\\
+Cmn1=Zone_19 TempSet\\
 mI=4
-I1=1901
-I2=1902
-I4=1897
+I1=1893
+I2=1894
+I4=1889
 mO=1
 tO=1
-O1=1896
+O1=1191
 mP=6
 P1=50d
 P2=20s
@@ -18903,7 +18917,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_017
+Cmn1=Zone_20 (Garderoba Intymna SOLO)\\
 mC=3
 C1=722
 C2=723
@@ -18919,13 +18933,13 @@ PrH=721
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_017 TempSet\\
+Cmn1=Zone_20 TempSet\\
 mI=10
-I5=1903
+I5=1195
 mO=10
 tO=10
-O5=1904
-O7=1905
+O5=1898
+O7=1899
 mP=2
 P1=2d
 P2=89
@@ -18940,12 +18954,12 @@ PrH=721
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_017 TempAct\\
+Cmn1=Zone_20 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1906
-O7=1907
+O5=1900
+O7=1901
 mP=2
 P1=2d
 P2=90
@@ -18961,14 +18975,14 @@ PrH=721
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_017 TempSet\\
+Cmn1=Zone_20 TempSet\\
 mI=4
-I1=1908
-I2=1909
-I4=1904
+I1=1902
+I2=1906
+I4=1898
 mO=1
 tO=1
-O1=1903
+O1=1195
 mP=6
 P1=50d
 P2=20s
@@ -18989,51 +19003,51 @@ CF=2
 n1I=45
 Cmn1=AC Temperatures\\
 mI=45
-I1=1794
-I2=1802
-I3=1809
-I4=1816
-I5=1823
-I6=1830
-I7=1837
-I8=1844
-I9=1851
-I10=1858
-I11=1865
-I12=1872
-I13=1879
-I14=1886
-I15=1893
-I16=1900
-I17=1907
+I1=1148
+I2=1166
+I3=1184
+I4=1202
+I5=1793
+I6=1802
+I7=1811
+I8=1820
+I9=1829
+I10=1838
+I11=1847
+I12=1856
+I13=1865
+I14=1874
+I15=1883
+I16=1892
+I17=1901
 I18=41
-I19=1921
-I20=1928
-I21=1935
-I22=1942
-I23=1949
+I19=1910
+I20=1919
+I21=1923
+I22=1925
+I23=1927
 I24=41
 I25=41
-I26=1793
-I27=1800
-I28=1807
-I29=1814
-I30=1821
-I31=1828
-I32=1835
-I33=1842
-I34=1849
-I35=1856
-I36=1863
-I37=1870
-I38=1877
-I39=1884
-I40=1891
-I41=1898
-I42=1905
+I26=1144
+I27=1162
+I28=1180
+I29=1198
+I30=1791
+I31=1800
+I32=1809
+I33=1818
+I34=1827
+I35=1836
+I36=1845
+I37=1854
+I38=1863
+I39=1872
+I40=1881
+I41=1890
+I42=1899
 I43=41
-I44=1919
-I45=1926
+I44=1908
+I45=1917
 mP=1
 P1=10d
 ]
@@ -19046,7 +19060,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_019
+Cmn1=Zone_12 (Pralnia)\\
 mC=3
 C1=730
 C2=731
@@ -19062,13 +19076,13 @@ PrH=729
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_019 TempSet\\
+Cmn1=Zone_12 TempSet\\
 mI=10
-I5=1917
+I5=1203
 mO=10
 tO=10
-O5=1918
-O7=1919
+O5=1907
+O7=1908
 mP=2
 P1=2d
 P2=107
@@ -19083,12 +19097,12 @@ PrH=729
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_019 TempAct\\
+Cmn1=Zone_12 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1920
-O7=1921
+O5=1909
+O7=1910
 mP=2
 P1=2d
 P2=108
@@ -19104,14 +19118,14 @@ PrH=729
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_019 TempSet\\
+Cmn1=Zone_12 TempSet\\
 mI=4
-I1=1922
-I2=1923
-I4=1918
+I1=1911
+I2=1912
+I4=1907
 mO=1
 tO=1
-O1=1917
+O1=1203
 mP=6
 P1=50d
 P2=20s
@@ -19129,7 +19143,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_020
+Cmn1=Zone_22 (Garderoba Goscinna SOLO)\\
 mC=3
 C1=734
 C2=735
@@ -19145,13 +19159,13 @@ PrH=733
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_020 TempSet\\
+Cmn1=Zone_22 TempSet\\
 mI=10
-I5=1924
+I5=1207
 mO=10
 tO=10
-O5=1925
-O7=1926
+O5=1916
+O7=1917
 mP=2
 P1=2d
 P2=91
@@ -19166,12 +19180,12 @@ PrH=733
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_020 TempAct\\
+Cmn1=Zone_22 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1927
-O7=1928
+O5=1918
+O7=1919
 mP=2
 P1=2d
 P2=92
@@ -19187,14 +19201,14 @@ PrH=733
 CF=2
 n1I=4
 n1O=1
-Cmn1=AC_020 TempSet\\
+Cmn1=Zone_22 TempSet\\
 mI=4
-I1=1929
-I2=1930
-I4=1925
+I1=1920
+I2=1921
+I4=1916
 mO=1
 tO=1
-O1=1924
+O1=1207
 mP=6
 P1=50d
 P2=20s
@@ -19212,7 +19226,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_021
+Cmn1=Zone_02 (SPA WC)\\
 mC=1
 C1=739
 ]
@@ -19226,12 +19240,12 @@ PrH=737
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_021 TempAct\\
+Cmn1=Zone_02 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1934
-O7=1935
+O5=1922
+O7=1923
 mP=2
 P1=2d
 P2=106
@@ -19245,7 +19259,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_022
+Cmn1=Zone_04 (Szatnia)\\
 mC=1
 C1=743
 ]
@@ -19259,12 +19273,12 @@ PrH=741
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_022 TempAct\\
+Cmn1=Zone_04 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1941
-O7=1942
+O5=1924
+O7=1925
 mP=2
 P1=2d
 P2=120
@@ -19278,7 +19292,7 @@ ObjVer=1
 SmVr=1194
 PrH=652
 CF=2
-Cmn1=AC_023
+Cmn1=Zone_06 (Kuchnia)\\
 mC=1
 C1=747
 ]
@@ -19292,12 +19306,12 @@ PrH=745
 CF=2
 n1I=10
 n1O=10
-Cmn1=AC_023 TempAct\\
+Cmn1=Zone_06 TempAct\\
 mI=10
 mO=10
 tO=10
-O5=1948
-O7=1949
+O5=1926
+O7=1927
 mP=2
 P1=2d
 P2=111
@@ -25032,402 +25046,438 @@ Nm=[KNX][Sensors][EntranceDeathZone]_Open_FB
 [
 ObjTp=Sg
 H=1132
-Nm=[KNX][AirCondition][AC_001][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1133
-Nm=[KNX][AirCondition][AC_001][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_09]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1134
-Nm=[KNX][AirCondition][AC_001][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1135
-Nm=[KNX][AirCondition][AC_001][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_09]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1136
-Nm=[KNX][AirCondition][AC_002][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1137
-Nm=[KNX][AirCondition][AC_002][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_08]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1138
-Nm=[KNX][AirCondition][AC_002][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1139
-Nm=[KNX][AirCondition][AC_002][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_08]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1140
-Nm=[KNX][AirCondition][AC_003][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1141
-Nm=[KNX][AirCondition][AC_003][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_13]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1142
-Nm=[KNX][AirCondition][AC_003][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1143
-Nm=[KNX][AirCondition][AC_003][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_13]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1144
-Nm=[KNX][AirCondition][AC_004][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1145
-Nm=[KNX][AirCondition][AC_004][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_21]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1146
-Nm=[KNX][AirCondition][AC_004][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1147
-Nm=[KNX][AirCondition][AC_004][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_21]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1148
-Nm=[KNX][AirCondition][AC_005][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_10]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1149
-Nm=[KNX][AirCondition][AC_005][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_24]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1150
-Nm=[KNX][AirCondition][AC_005][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_10][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1151
-Nm=[KNX][AirCondition][AC_005][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_24]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1152
-Nm=[KNX][AirCondition][AC_006][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_10][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1153
-Nm=[KNX][AirCondition][AC_006][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_25]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1154
-Nm=[KNX][AirCondition][AC_006][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1155
-Nm=[KNX][AirCondition][AC_006][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_25]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1156
-Nm=[KNX][AirCondition][AC_007][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1157
-Nm=[KNX][AirCondition][AC_007][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_14]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1158
-Nm=[KNX][AirCondition][AC_007][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1159
-Nm=[KNX][AirCondition][AC_007][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_14]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1160
-Nm=[KNX][AirCondition][AC_008][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1161
-Nm=[KNX][AirCondition][AC_008][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_26]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1162
-Nm=[KNX][AirCondition][AC_008][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1163
-Nm=[KNX][AirCondition][AC_008][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_26]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1164
-Nm=[KNX][AirCondition][AC_009][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1165
-Nm=[KNX][AirCondition][AC_009][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_07]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1166
-Nm=[KNX][AirCondition][AC_009][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_09]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1167
-Nm=[KNX][AirCondition][AC_009][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_07]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1168
-Nm=[KNX][AirCondition][AC_010][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_09][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1169
-Nm=[KNX][AirCondition][AC_010][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_17]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1170
-Nm=[KNX][AirCondition][AC_010][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_09][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1171
-Nm=[KNX][AirCondition][AC_010][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_17]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1172
-Nm=[KNX][AirCondition][AC_011][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1173
-Nm=[KNX][AirCondition][AC_011][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_05]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1174
-Nm=[KNX][AirCondition][AC_011][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1175
-Nm=[KNX][AirCondition][AC_011][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_05]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1176
-Nm=[KNX][AirCondition][AC_012][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1177
-Nm=[KNX][AirCondition][AC_012][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_01]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1178
-Nm=[KNX][AirCondition][AC_012][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1179
-Nm=[KNX][AirCondition][AC_012][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_01]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1180
-Nm=[KNX][AirCondition][AC_013][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1181
-Nm=[KNX][AirCondition][AC_013][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_18]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1182
-Nm=[KNX][AirCondition][AC_013][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1183
-Nm=[KNX][AirCondition][AC_013][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_18]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1184
-Nm=[KNX][AirCondition][AC_014][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_08]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1185
-Nm=[KNX][AirCondition][AC_014][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_03]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1186
-Nm=[KNX][AirCondition][AC_014][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_08][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1187
-Nm=[KNX][AirCondition][AC_014][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_03]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1188
-Nm=[KNX][AirCondition][AC_015][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_08][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1189
-Nm=[KNX][AirCondition][AC_015][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_19]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1190
-Nm=[KNX][AirCondition][AC_015][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1191
-Nm=[KNX][AirCondition][AC_015][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_19]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1192
-Nm=[KNX][AirCondition][AC_016][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1193
-Nm=[KNX][AirCondition][AC_016][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_20]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1194
-Nm=[KNX][AirCondition][AC_016][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1195
-Nm=[KNX][AirCondition][AC_016][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_20]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1196
-Nm=[KNX][AirCondition][AC_017][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1197
-Nm=[KNX][AirCondition][AC_017][Cool]_Off_FB
+Nm=[KNX][AirCondition][AC_018]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1198
-Nm=[KNX][AirCondition][AC_017][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1199
-Nm=[KNX][AirCondition][AC_017][Heat]_Off_FB
+Nm=[KNX][AirCondition][AC_018]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1200
-Nm=[KNX][AirCondition][AC_018][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1201
-Nm=[KNX][AirCondition][AC_018][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_12]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1202
-Nm=[KNX][AirCondition][AC_018][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_13]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1203
-Nm=[KNX][AirCondition][AC_018][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_12]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1204
-Nm=[KNX][AirCondition][AC_019][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_13][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1205
-Nm=[KNX][AirCondition][AC_019][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_22]_Heat_FB
 ]
 [
 ObjTp=Sg
 H=1206
-Nm=[KNX][AirCondition][AC_019][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_13][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1207
-Nm=[KNX][AirCondition][AC_019][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_22]_TempSet#
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1208
-Nm=[KNX][AirCondition][AC_020][Cool]_On_FB
+Nm=[KNX][AirCondition][Zone_21]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1209
-Nm=[KNX][AirCondition][AC_020][Cool]_Off_FB
+Nm=[KNX][AirCondition][Zone_21]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1210
-Nm=[KNX][AirCondition][AC_020][Heat]_On_FB
+Nm=[KNX][AirCondition][Zone_21]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1211
-Nm=[KNX][AirCondition][AC_020][Heat]_Off_FB
+Nm=[KNX][AirCondition][Zone_21]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
@@ -28386,796 +28436,760 @@ Nm=[AZ-01][SonyVPL]_TurnOff_Busy_FB
 [
 ObjTp=Sg
 H=1791
-Nm=[KNX][AirCondition][AC_001]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_21]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1792
-Nm=[KNX][AirCondition][AC_001]_TempSet#_FB
+Nm=[KNX][AirCondition][Zone_21]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1793
-Nm=[KNX][AirCondition][AC_001]_TempSet$
+Nm=[KNX][AirCondition][Zone_21]_TempAct$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1794
-Nm=[KNX][AirCondition][AC_001]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_21][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1795
-Nm=[KNX][AirCondition][AC_001]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_21][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1796
-Nm=[KNX][AirCondition][AC_001][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_24]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1797
-Nm=[KNX][AirCondition][AC_001][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_24]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1798
-Nm=[KNX][AirCondition][AC_002]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_24]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1799
-Nm=[KNX][AirCondition][AC_002]_TempSet#_FB
+Nm=[KNX][AirCondition][Zone_24]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1800
-Nm=[KNX][AirCondition][AC_002]_TempSet$
+Nm=[KNX][AirCondition][Zone_24]_TempSet$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1801
-Nm=[KNX][AirCondition][AC_002]_TempAct#_FB
+Nm=[KNX][AirCondition][Zone_24]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1802
-Nm=[KNX][AirCondition][AC_002]_TempAct$
+Nm=[KNX][AirCondition][Zone_24]_TempAct$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1803
-Nm=[KNX][AirCondition][AC_002][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_24][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1804
-Nm=[KNX][AirCondition][AC_002][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_24][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1805
-Nm=[KNX][AirCondition][AC_003]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_25]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1806
-Nm=[KNX][AirCondition][AC_003]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_25]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1807
-Nm=[KNX][AirCondition][AC_003]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_25]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1808
-Nm=[KNX][AirCondition][AC_003]_TempAct#_FB
+Nm=[KNX][AirCondition][Zone_25]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1809
-Nm=[KNX][AirCondition][AC_003]_TempAct$
+Nm=[KNX][AirCondition][Zone_25]_TempSet$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1810
-Nm=[KNX][AirCondition][AC_003][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_25]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1811
-Nm=[KNX][AirCondition][AC_003][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_25]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1812
-Nm=[KNX][AirCondition][AC_004]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_25][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1813
-Nm=[KNX][AirCondition][AC_004]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_25][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1814
-Nm=[KNX][AirCondition][AC_004]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_14]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1815
-Nm=[KNX][AirCondition][AC_004]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_14]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1816
-Nm=[KNX][AirCondition][AC_004]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_14]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1817
-Nm=[KNX][AirCondition][AC_004][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_14]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1818
-Nm=[KNX][AirCondition][AC_004][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_14]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1819
-Nm=[KNX][AirCondition][AC_005]_TempSet#
+Nm=[KNX][AirCondition][Zone_14]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1820
-Nm=[KNX][AirCondition][AC_005]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_14]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1821
-Nm=[KNX][AirCondition][AC_005]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_14][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1822
-Nm=[KNX][AirCondition][AC_005]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_14][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1823
-Nm=[KNX][AirCondition][AC_005]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_26]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1824
-Nm=[KNX][AirCondition][AC_005][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_26]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1825
-Nm=[KNX][AirCondition][AC_005][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_26]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1826
-Nm=[KNX][AirCondition][AC_006]_TempSet#
+Nm=[KNX][AirCondition][Zone_26]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1827
-Nm=[KNX][AirCondition][AC_006]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_26]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1828
-Nm=[KNX][AirCondition][AC_006]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_26]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1829
-Nm=[KNX][AirCondition][AC_006]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_26]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1830
-Nm=[KNX][AirCondition][AC_006]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_26][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1831
-Nm=[KNX][AirCondition][AC_006][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_26][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1832
-Nm=[KNX][AirCondition][AC_006][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_07]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1833
-Nm=[KNX][AirCondition][AC_007]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_07]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1834
-Nm=[KNX][AirCondition][AC_007]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_07]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1835
-Nm=[KNX][AirCondition][AC_007]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_07]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1836
-Nm=[KNX][AirCondition][AC_007]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_07]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1837
-Nm=[KNX][AirCondition][AC_007]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_07]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1838
-Nm=[KNX][AirCondition][AC_007][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_07]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1839
-Nm=[KNX][AirCondition][AC_007][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_07][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1840
-Nm=[KNX][AirCondition][AC_008]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_07][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1841
-Nm=[KNX][AirCondition][AC_008]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_17]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1842
-Nm=[KNX][AirCondition][AC_008]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_17]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1843
-Nm=[KNX][AirCondition][AC_008]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_17]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1844
-Nm=[KNX][AirCondition][AC_008]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_17]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1845
-Nm=[KNX][AirCondition][AC_008][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_17]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1846
-Nm=[KNX][AirCondition][AC_008][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_17]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1847
-Nm=[KNX][AirCondition][AC_009]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_17]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1848
-Nm=[KNX][AirCondition][AC_009]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_17][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1849
-Nm=[KNX][AirCondition][AC_009]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_17][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1850
-Nm=[KNX][AirCondition][AC_009]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_05]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1851
-Nm=[KNX][AirCondition][AC_009]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_05]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1852
-Nm=[KNX][AirCondition][AC_009][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_05]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1853
-Nm=[KNX][AirCondition][AC_009][TempSet]_Down
-]
-[
-ObjTp=Sg
-H=1854
-Nm=[KNX][AirCondition][AC_010]_TempSet#
+Nm=[KNX][AirCondition][Zone_05]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
+H=1854
+Nm=[KNX][AirCondition][Zone_05]_TempSet$
+SgTp=4
+]
+[
+ObjTp=Sg
 H=1855
-Nm=[KNX][AirCondition][AC_010]_TempSet#_FB
+Nm=[KNX][AirCondition][Zone_05]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1856
-Nm=[KNX][AirCondition][AC_010]_TempSet$
+Nm=[KNX][AirCondition][Zone_05]_TempAct$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1857
-Nm=[KNX][AirCondition][AC_010]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_05][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1858
-Nm=[KNX][AirCondition][AC_010]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_05][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1859
-Nm=[KNX][AirCondition][AC_010][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_01]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1860
-Nm=[KNX][AirCondition][AC_010][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_01]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1861
-Nm=[KNX][AirCondition][AC_011]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_01]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1862
-Nm=[KNX][AirCondition][AC_011]_TempSet#_FB
+Nm=[KNX][AirCondition][Zone_01]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1863
-Nm=[KNX][AirCondition][AC_011]_TempSet$
+Nm=[KNX][AirCondition][Zone_01]_TempSet$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1864
-Nm=[KNX][AirCondition][AC_011]_TempAct#_FB
+Nm=[KNX][AirCondition][Zone_01]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1865
-Nm=[KNX][AirCondition][AC_011]_TempAct$
+Nm=[KNX][AirCondition][Zone_01]_TempAct$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1866
-Nm=[KNX][AirCondition][AC_011][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_01][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1867
-Nm=[KNX][AirCondition][AC_011][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_01][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1868
-Nm=[KNX][AirCondition][AC_012]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_18]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1869
-Nm=[KNX][AirCondition][AC_012]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_18]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1870
-Nm=[KNX][AirCondition][AC_012]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_18]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1871
-Nm=[KNX][AirCondition][AC_012]_TempAct#_FB
+Nm=[KNX][AirCondition][Zone_18]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1872
-Nm=[KNX][AirCondition][AC_012]_TempAct$
+Nm=[KNX][AirCondition][Zone_18]_TempSet$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1873
-Nm=[KNX][AirCondition][AC_012][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_18]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1874
-Nm=[KNX][AirCondition][AC_012][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_18]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1875
-Nm=[KNX][AirCondition][AC_013]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_18][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1876
-Nm=[KNX][AirCondition][AC_013]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_18][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1877
-Nm=[KNX][AirCondition][AC_013]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_03]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1878
-Nm=[KNX][AirCondition][AC_013]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_03]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1879
-Nm=[KNX][AirCondition][AC_013]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_03]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1880
-Nm=[KNX][AirCondition][AC_013][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_03]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1881
-Nm=[KNX][AirCondition][AC_013][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_03]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1882
-Nm=[KNX][AirCondition][AC_014]_TempSet#
+Nm=[KNX][AirCondition][Zone_03]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1883
-Nm=[KNX][AirCondition][AC_014]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_03]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1884
-Nm=[KNX][AirCondition][AC_014]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_03][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1885
-Nm=[KNX][AirCondition][AC_014]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_03][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1886
-Nm=[KNX][AirCondition][AC_014]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_19]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1887
-Nm=[KNX][AirCondition][AC_014][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_19]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1888
-Nm=[KNX][AirCondition][AC_014][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_19]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1889
-Nm=[KNX][AirCondition][AC_015]_TempSet#
+Nm=[KNX][AirCondition][Zone_19]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1890
-Nm=[KNX][AirCondition][AC_015]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_19]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1891
-Nm=[KNX][AirCondition][AC_015]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_19]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1892
-Nm=[KNX][AirCondition][AC_015]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_19]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1893
-Nm=[KNX][AirCondition][AC_015]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_19][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1894
-Nm=[KNX][AirCondition][AC_015][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_19][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1895
-Nm=[KNX][AirCondition][AC_015][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_20]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1896
-Nm=[KNX][AirCondition][AC_016]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_20]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1897
-Nm=[KNX][AirCondition][AC_016]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_20]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1898
-Nm=[KNX][AirCondition][AC_016]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_20]_TempSet#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1899
-Nm=[KNX][AirCondition][AC_016]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_20]_TempSet$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1900
-Nm=[KNX][AirCondition][AC_016]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_20]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1901
-Nm=[KNX][AirCondition][AC_016][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_20]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1902
-Nm=[KNX][AirCondition][AC_016][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_20][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1903
-Nm=[KNX][AirCondition][AC_017]_TempSet#
-SgTp=2
+Nm=[KNX][AirCondition][Zone_12]_Cool_FB
 ]
 [
 ObjTp=Sg
 H=1904
-Nm=[KNX][AirCondition][AC_017]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_12]_Cool_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1905
-Nm=[KNX][AirCondition][AC_017]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_12]_Heat_FB_NOT
 ]
 [
 ObjTp=Sg
 H=1906
-Nm=[KNX][AirCondition][AC_017]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_20][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1907
-Nm=[KNX][AirCondition][AC_017]_TempAct$
-SgTp=4
-]
-[
-ObjTp=Sg
-H=1908
-Nm=[KNX][AirCondition][AC_017][TempSet]_Up
-]
-[
-ObjTp=Sg
-H=1909
-Nm=[KNX][AirCondition][AC_017][TempSet]_Down
-]
-[
-ObjTp=Sg
-H=1917
-Nm=[KNX][AirCondition][AC_019]_TempSet#
+Nm=[KNX][AirCondition][Zone_12]_TempSet#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
+H=1908
+Nm=[KNX][AirCondition][Zone_12]_TempSet$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=1909
+Nm=[KNX][AirCondition][Zone_12]_TempAct#_FB
+SgTp=2
+]
+[
+ObjTp=Sg
+H=1910
+Nm=[KNX][AirCondition][Zone_12]_TempAct$
+SgTp=4
+]
+[
+ObjTp=Sg
+H=1911
+Nm=[KNX][AirCondition][Zone_12][TempSet]_Up
+]
+[
+ObjTp=Sg
+H=1912
+Nm=[KNX][AirCondition][Zone_12][TempSet]_Down
+]
+[
+ObjTp=Sg
+H=1913
+Nm=[KNX][AirCondition][Zone_22]_Cool_FB
+]
+[
+ObjTp=Sg
+H=1914
+Nm=[KNX][AirCondition][Zone_22]_Cool_FB_NOT
+]
+[
+ObjTp=Sg
+H=1915
+Nm=[KNX][AirCondition][Zone_22]_Heat_FB_NOT
+]
+[
+ObjTp=Sg
+H=1916
+Nm=[KNX][AirCondition][Zone_22]_TempSet#_FB
+SgTp=2
+]
+[
+ObjTp=Sg
+H=1917
+Nm=[KNX][AirCondition][Zone_22]_TempSet$
+SgTp=4
+]
+[
+ObjTp=Sg
 H=1918
-Nm=[KNX][AirCondition][AC_019]_TempSet#_FB
+Nm=[KNX][AirCondition][Zone_22]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1919
-Nm=[KNX][AirCondition][AC_019]_TempSet$
+Nm=[KNX][AirCondition][Zone_22]_TempAct$
 SgTp=4
 ]
 [
 ObjTp=Sg
 H=1920
-Nm=[KNX][AirCondition][AC_019]_TempAct#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_22][TempSet]_Up
 ]
 [
 ObjTp=Sg
 H=1921
-Nm=[KNX][AirCondition][AC_019]_TempAct$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_22][TempSet]_Down
 ]
 [
 ObjTp=Sg
 H=1922
-Nm=[KNX][AirCondition][AC_019][TempSet]_Up
+Nm=[KNX][AirCondition][Zone_02]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1923
-Nm=[KNX][AirCondition][AC_019][TempSet]_Down
+Nm=[KNX][AirCondition][Zone_02]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1924
-Nm=[KNX][AirCondition][AC_020]_TempSet#
+Nm=[KNX][AirCondition][Zone_04]_TempAct#_FB
 SgTp=2
 ]
 [
 ObjTp=Sg
 H=1925
-Nm=[KNX][AirCondition][AC_020]_TempSet#_FB
-SgTp=2
+Nm=[KNX][AirCondition][Zone_04]_TempAct$
+SgTp=4
 ]
 [
 ObjTp=Sg
 H=1926
-Nm=[KNX][AirCondition][AC_020]_TempSet$
-SgTp=4
+Nm=[KNX][AirCondition][Zone_06]_TempAct#_FB
+SgTp=2
 ]
 [
 ObjTp=Sg
 H=1927
-Nm=[KNX][AirCondition][AC_020]_TempAct#_FB
-SgTp=2
-]
-[
-ObjTp=Sg
-H=1928
-Nm=[KNX][AirCondition][AC_020]_TempAct$
+Nm=[KNX][AirCondition][Zone_06]_TempAct$
 SgTp=4
 ]
 [
 ObjTp=Sg
-H=1929
-Nm=[KNX][AirCondition][AC_020][TempSet]_Up
+H=1945
+Nm=[KNX][AirCondition][AC_018]_Heat_FB
 ]
 [
 ObjTp=Sg
-H=1930
-Nm=[KNX][AirCondition][AC_020][TempSet]_Down
-]
-[
-ObjTp=Sg
-H=1934
-Nm=[KNX][AirCondition][AC_021]_TempAct#_FB
-SgTp=2
-]
-[
-ObjTp=Sg
-H=1935
-Nm=[KNX][AirCondition][AC_021]_TempAct$
-SgTp=4
-]
-[
-ObjTp=Sg
-H=1941
-Nm=[KNX][AirCondition][AC_022]_TempAct#_FB
-SgTp=2
-]
-[
-ObjTp=Sg
-H=1942
-Nm=[KNX][AirCondition][AC_022]_TempAct$
-SgTp=4
-]
-[
-ObjTp=Sg
-H=1948
-Nm=[KNX][AirCondition][AC_023]_TempAct#_FB
-SgTp=2
-]
-[
-ObjTp=Sg
-H=1949
-Nm=[KNX][AirCondition][AC_023]_TempAct$
-SgTp=4
+H=1967
+Nm=[KNX][AirCondition][AC_018]_Cool_FB
 ]
